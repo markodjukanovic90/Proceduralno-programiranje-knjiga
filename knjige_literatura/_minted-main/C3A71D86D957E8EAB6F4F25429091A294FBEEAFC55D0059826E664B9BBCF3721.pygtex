@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+   \PYG{k}{for} \PYG{n}{x}\PYG{p}{,} \PYG{n}{y} \PYG{o+ow}{in} \PYG{n}{dct}\PYG{o}{.}\PYG{n}{items}\PYG{p}{():}
+      \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Ključ=\PYGZdq{}}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{} vrijednost=\PYGZdq{}}\PYG{p}{,} \PYG{n}{y}\PYG{p}{)}
+\end{Verbatim}

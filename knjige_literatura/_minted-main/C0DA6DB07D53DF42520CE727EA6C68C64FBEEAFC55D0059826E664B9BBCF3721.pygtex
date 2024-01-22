@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+   \PYG{k}{def} \PYG{n+nf}{catalan}\PYG{p}{(}\PYG{n}{n}\PYG{p}{):}
+       \PYG{k}{if} \PYG{n}{n} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+          \PYG{k}{return} \PYG{l+m+mi}{1}
+       \PYG{n}{catalan\PYGZus{}n} \PYG{o}{=} \PYG{l+m+mi}{0}
+       \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{n}\PYG{p}{):}
+           \PYG{n}{catalan\PYGZus{}n} \PYG{o}{+=} \PYG{n}{catalan}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)} \PYG{o}{*} \PYG{n}{catalan}\PYG{p}{(}\PYG{n}{n}\PYG{o}{\PYGZhy{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}
+       \PYG{k}{return} \PYG{n}{catalan\PYGZus{}n}
+\end{Verbatim}

@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{try}\PYG{p}{:}
+   \PYG{c+c1}{\PYGZsh{} kod koji može da aktivira izuzetak}
+\PYG{k}{finally}\PYG{p}{:}
+   \PYG{c+c1}{\PYGZsh{} kod koji će se uvijek izvršiti, bez obzira na to}
+   \PYG{c+c1}{\PYGZsh{} hoce li se izuzetak desiti}
+\end{Verbatim}

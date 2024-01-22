@@ -1,0 +1,32 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{k}{def} \PYG{n+nf}{fraction}\PYG{p}{(}\PYG{n}{i}\PYG{p}{):}
+  	\PYG{k}{return} \PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{/} \PYG{n}{W}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+
+  \PYG{k}{def} \PYG{n+nf}{fraction\PYGZus{}knapsack}\PYG{p}{():}
+
+  	\PYG{n}{products} \PYG{o}{=} \PYG{p}{[}\PYG{n}{i} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{W}\PYG{p}{))]} \PYG{c+c1}{\PYGZsh{}lsit of prods}
+  	\PYG{n}{products}\PYG{o}{.}\PYG{n}{sort}\PYG{p}{(}\PYG{n}{key} \PYG{o}{=} \PYG{n}{fraction}\PYG{p}{,} \PYG{n}{reverse}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+  	\PYG{c+c1}{\PYGZsh{}print(products)}
+  	\PYG{n}{current\PYGZus{}C} \PYG{o}{=} \PYG{n}{C}
+  	\PYG{n}{sol} \PYG{o}{=} \PYG{p}{[]}
+  	\PYG{n}{parts} \PYG{o}{=} \PYG{p}{[]}
+
+  	\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{products}\PYG{p}{:}
+
+  		\PYG{n}{part} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{current\PYGZus{}C} \PYG{o}{/} \PYG{n}{W}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{l+m+mi}{1}\PYG{p}{)}
+
+  		\PYG{k}{if} \PYG{n}{part} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+  			\PYG{n}{sol}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}
+  			\PYG{n}{parts}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{part}\PYG{p}{)}
+  			\PYG{n}{current\PYGZus{}C} \PYG{o}{\PYGZhy{}=} \PYG{n}{part} \PYG{o}{*} \PYG{n}{W}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+
+  		\PYG{k}{else}\PYG{p}{:} \PYG{c+c1}{\PYGZsh{} knapsack filled}
+  			\PYG{k}{return} \PYG{n}{sol}\PYG{p}{,} \PYG{n}{parts}
+    \PYG{k}{return} \PYG{n}{sol}\PYG{p}{,} \PYG{n}{parts}
+    \PYG{c+c1}{\PYGZsh{}instanca:}
+    \PYG{n}{W} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{20}\PYG{p}{,} \PYG{l+m+mi}{30}\PYG{p}{]}
+    \PYG{n}{P} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{60}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{,} \PYG{l+m+mi}{120}\PYG{p}{]}
+    \PYG{n}{C} \PYG{o}{=} \PYG{l+m+mi}{50}
+    \PYG{n}{sol}\PYG{p}{,} \PYG{n}{parts} \PYG{o}{=} \PYG{n}{fraction\PYGZus{}knapsack}\PYG{p}{()}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{sol}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{} parts: \PYGZdq{}}\PYG{p}{,} \PYG{n}{parts}\PYG{p}{)}
+\end{Verbatim}

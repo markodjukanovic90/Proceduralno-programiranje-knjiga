@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{umnozi}\PYG{p}{(}\PYG{n}{ime}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}Mirko\PYGZdq{}}\PYG{p}{,} \PYG{n}{umnozi\PYGZus{}puta} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{):}
+    \PYG{n}{umnozeno} \PYG{o}{=} \PYG{n}{ime} \PYG{o}{*} \PYG{n}{umnozi\PYGZus{}puta}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{umnozeno}\PYG{p}{)}
+\end{Verbatim}

@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+     \PYG{n}{brojevi} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{]}
+     \PYG{n}{doubled} \PYG{o}{=} \PYG{n+nb}{map}\PYG{p}{(}\PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n}{x}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{brojevi}\PYG{p}{)}
+     \PYG{n+nb}{print}\PYG{p}{(}\PYG{n+nb}{list}\PYG{p}{(}\PYG{n}{doubled}\PYG{p}{))}  \PYG{c+c1}{\PYGZsh{} Output: [2, 4, 6, 8, 10]}
+\end{Verbatim}

@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+ \PYG{n}{Input} \PYG{n}{file} \PYG{o+ow}{is} \PYG{l+s+s2}{\PYGZdq{} ulaz.txt}
+ \PYG{n}{Output} \PYG{n}{file} \PYG{o+ow}{is} \PYG{l+s+s2}{\PYGZdq{} izlaz.txt}
+\end{Verbatim}

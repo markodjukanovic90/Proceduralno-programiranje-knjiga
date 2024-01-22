@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k+kn}{import} \PYG{n+nn}{math}
+	\PYG{k}{def} \PYG{n+nf}{min\PYGZus{}dist\PYGZus{}par}\PYG{p}{(}\PYG{n}{S}\PYG{p}{):}
+		\PYG{n}{min\PYGZus{}dist} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}inf\PYGZsq{}}\PYG{p}{)}
+		\PYG{n}{point1} \PYG{o}{=} \PYG{k+kc}{None}	
+		\PYG{n}{point2} \PYG{o}{=} \PYG{k+kc}{None}
+		\PYG{k}{for} \PYG{n}{p1} \PYG{o+ow}{in} \PYG{n}{S}\PYG{p}{:}
+			\PYG{k}{for} \PYG{n}{p2} \PYG{o+ow}{in} \PYG{n}{S}\PYG{p}{:}
+				\PYG{k}{if} \PYG{n}{p1} \PYG{o}{!=} \PYG{n}{p2}\PYG{p}{:}
+					\PYG{n}{distance} \PYG{o}{=} \PYG{n}{math}\PYG{o}{.}\PYG{n}{dist}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{,} \PYG{n}{p2}\PYG{p}{)}
+					\PYG{k}{if} \PYG{n}{distance} \PYG{o}{\PYGZlt{}} \PYG{n}{min\PYGZus{}dist}\PYG{p}{:}
+					     \PYG{n}{min\PYGZus{}dist} \PYG{o}{=} \PYG{n}{distance}
+    			 		\PYG{n}{point1} \PYG{o}{=} \PYG{n}{p1}
+    			 		\PYG{n}{point2} \PYG{o}{=} \PYG{n}{p2}
+\end{Verbatim}

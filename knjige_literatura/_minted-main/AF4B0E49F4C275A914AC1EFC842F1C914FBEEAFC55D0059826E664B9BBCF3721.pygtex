@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{add}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{):}
+    \PYG{k}{return} \PYG{n}{x} \PYG{o}{+} \PYG{n}{y}
+
+\PYG{k}{def} \PYG{n+nf}{subtract}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{):}
+    \PYG{k}{return} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{y}
+
+\PYG{k}{def} \PYG{n+nf}{multiply}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{):}
+    \PYG{k}{return} \PYG{n}{x} \PYG{o}{*} \PYG{n}{y}
+
+\PYG{k}{def} \PYG{n+nf}{divide}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{):}
+    \PYG{k}{if} \PYG{n}{y} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Ne možemo dijeliti sa 0\PYGZdq{}}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{x} \PYG{o}{/} \PYG{n}{y}
+\end{Verbatim}

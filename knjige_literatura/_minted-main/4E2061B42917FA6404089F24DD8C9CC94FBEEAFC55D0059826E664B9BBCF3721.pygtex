@@ -1,0 +1,28 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  	
+  	\PYG{k}{def} \PYG{n+nf}{initialization}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,} \PYG{n}{k}\PYG{p}{):}
+  	    \PYG{n}{Binom} \PYG{o}{=} \PYG{p}{[[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{*} \PYG{p}{(}\PYG{n}{k}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}  \PYG{k}{for} \PYG{n}{\PYGZus{}} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{n}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)]}
+  	    \PYG{k}{return} \PYG{n}{Binom}
+  	
+  	\PYG{k}{def} \PYG{n+nf}{binom\PYGZus{}memoization}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{,} \PYG{n}{Binom}\PYG{p}{):}
+  	
+  	    \PYG{k}{if} \PYG{n}{Binom}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{!=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{:}
+  	       \PYG{k}{return} \PYG{n}{Binom}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]}
+  	    \PYG{k}{if} \PYG{n}{j} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+  	       \PYG{n}{Binom}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}
+  	       \PYG{k}{return} \PYG{l+m+mi}{1}
+  	    \PYG{k}{if} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{j}\PYG{p}{:}
+  	       \PYG{n}{Binom}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}
+  	       \PYG{k}{return} \PYG{l+m+mi}{0}
+  	    \PYG{n}{Binom}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{binom\PYGZus{}memoization}\PYG{p}{(}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{j}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{Binom}\PYG{p}{)}
+  	                \PYG{o}{+} \PYG{n}{binom\PYGZus{}memoization}\PYG{p}{(}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{j}\PYG{p}{,} \PYG{n}{Binom}\PYG{p}{)}
+  	    \PYG{k}{return} \PYG{n}{Binom}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]}
+
+    \PYG{c+c1}{\PYGZsh{}poziv metode:}
+    \PYG{n}{n} \PYG{o}{=} \PYG{l+m+mi}{10}
+    \PYG{n}{k} \PYG{o}{=} \PYG{l+m+mi}{4}
+    \PYG{n}{Binom} \PYG{o}{=} \PYG{n}{initialization}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,} \PYG{n}{k}\PYG{p}{)}
+
+    \PYG{n}{n\PYGZus{}over\PYGZus{}k} \PYG{o}{=} \PYG{n}{binom\PYGZus{}memoization}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,} \PYG{n}{k}\PYG{p}{,} \PYG{n}{Binom}\PYG{p}{)}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{n\PYGZus{}over\PYGZus{}k}\PYG{p}{)}
+\end{Verbatim}

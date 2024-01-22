@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{                }\PYG{n}{tip}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{unos}\PYG{+w}{ }\PYG{n}{sa}\PYG{+w}{ }\PYG{n}{tastature}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{n}{tip}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}1\PYGZdq{}}
+\PYG{+w}{		   }\PYG{n}{ispiši}\PYG{+w}{ }\PYG{n}{odgovor}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Unesen je broj 1\PYGZdq{}}
+\PYG{+w}{		}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{n}{tip}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}2\PYGZdq{}}
+\PYG{+w}{		   }\PYG{n}{ispiši}\PYG{+w}{ }\PYG{n}{odgovor}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Unesen je broj 2\PYGZdq{}}
+\end{Verbatim}

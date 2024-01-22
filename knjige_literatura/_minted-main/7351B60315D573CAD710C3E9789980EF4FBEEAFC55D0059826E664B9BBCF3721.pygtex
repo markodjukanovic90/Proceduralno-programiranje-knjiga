@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{k}{while} \PYG{n}{uslov}\PYG{p}{:}
+	  \PYG{n}{naredba} \PYG{c+c1}{\PYGZsh{} blok koda koji se izvršava}
+\end{Verbatim}

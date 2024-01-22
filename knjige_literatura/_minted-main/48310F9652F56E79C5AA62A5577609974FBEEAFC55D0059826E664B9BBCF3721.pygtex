@@ -1,0 +1,24 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	    	
+	    	\PYG{k}{def} \PYG{n+nf}{LCS}\PYG{p}{(}\PYG{n}{s1}\PYG{p}{,} \PYG{n}{s2}\PYG{p}{):}
+	    	
+	    	  \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{s1}\PYG{p}{)}\PYG{o}{==}\PYG{l+m+mi}{0} \PYG{o+ow}{or} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{s2}\PYG{p}{)}\PYG{o}{==}\PYG{l+m+mi}{0}\PYG{p}{:}
+	    	     \PYG{k}{return} \PYG{l+m+mi}{0}
+	    	
+	    	  \PYG{n}{DP} \PYG{o}{=} \PYG{p}{[} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{*}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{s2}\PYG{p}{)}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{k}{for} \PYG{n}{\PYGZus{}} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{s1}\PYG{p}{)}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)]}
+	              \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{s1}\PYG{p}{)}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{):}
+	    	      \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{s2}\PYG{p}{)}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{):}
+	    		     \PYG{k}{if} \PYG{n}{s1}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{==} \PYG{n}{s2}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]:}
+	    		         \PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{n}{j}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{:}
+	    		     \PYG{k}{else}\PYG{p}{:}
+	    		         \PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{n}{j}\PYG{p}{],} \PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{])}
+	    		
+	    	\PYG{k}{return} \PYG{n}{DP}\PYG{p}{[}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{s1}\PYG{p}{)][}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{s2}\PYG{p}{)]}
+	    		
+	    	
+	    	\PYG{c+c1}{\PYGZsh{}instanca:}
+	    	\PYG{n}{s1} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}abcdcdcdaa\PYGZdq{}}
+	    	\PYG{n}{s2} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}abbaabcccddd\PYGZdq{}}
+	    	\PYG{n}{lcs} \PYG{o}{=} \PYG{n}{LCS}\PYG{p}{(}\PYG{n}{s1}\PYG{p}{,} \PYG{n}{s2}\PYG{p}{)}
+	    	\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Duzina LCS\PYGZhy{}a je: \PYGZdq{}}\PYG{p}{,} \PYG{n}{lcs}\PYG{p}{)}
+\end{Verbatim}

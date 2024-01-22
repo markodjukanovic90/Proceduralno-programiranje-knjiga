@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{print\PYGZus{}brojevi}\PYG{p}{(}\PYG{o}{*}\PYG{n}{nums}\PYG{p}{):}
+    \PYG{k}{for} \PYG{n}{num} \PYG{o+ow}{in} \PYG{n}{nums}\PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{num}\PYG{p}{)}
+\PYG{k}{def} \PYG{n+nf}{print\PYGZus{}vrijednosti\PYGZus{}dict}\PYG{p}{(}\PYG{o}{**}\PYG{n}{key\PYGZus{}vals}\PYG{p}{):}
+    \PYG{k}{for} \PYG{n}{key}\PYG{p}{,} \PYG{n}{vals} \PYG{o+ow}{in} \PYG{n}{key\PYGZus{}vals}\PYG{o}{.}\PYG{n}{items}\PYG{p}{():}
+         \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Ključevi: \PYGZdq{}}\PYG{p}{,} \PYG{n}{key}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{} vrijednosti: \PYGZdq{}}\PYG{p}{,} \PYG{n}{vals}\PYG{p}{)}
+
+\PYG{n}{print\PYGZus{}vrijednosti\PYGZus{}dict}\PYG{p}{(\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}ime\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Mirko\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}prezime\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Mirkovic\PYGZdq{}}\PYG{p}{\PYGZcb{})}
+\end{Verbatim}

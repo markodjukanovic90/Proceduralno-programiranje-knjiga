@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{mathOps}
+
+\PYG{n}{result} \PYG{o}{=} \PYG{n}{mathOps}\PYG{o}{.}\PYG{n}{add}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{result}\PYG{p}{)}   \PYG{c+c1}{\PYGZsh{} Output: 7}
+
+\PYG{n}{result} \PYG{o}{=} \PYG{n}{mathOps}\PYG{o}{.}\PYG{n}{divide}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{result}\PYG{p}{)}   \PYG{c+c1}{\PYGZsh{} Output: 5.0}
+
+\PYG{n}{result} \PYG{o}{=} \PYG{n}{mathOps}\PYG{o}{.}\PYG{n}{divide}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} Output: ValueError: Ne možemo dijeliti sa 0}
+\end{Verbatim}

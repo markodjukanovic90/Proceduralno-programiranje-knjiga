@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{dodaj\PYGZus{}elem\PYGZus{}u\PYGZus{}listu}\PYG{p}{(}\PYG{n}{elem}\PYG{p}{,} \PYG{n}{lista}\PYG{p}{):}
+
+    \PYG{n}{lista}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{elem}\PYG{p}{)}
+
+\PYG{n}{lista} \PYG{o}{=} \PYG{n+nb}{list}\PYG{p}{(}\PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{))}
+\PYG{n}{dodaj\PYGZus{}elem\PYGZus{}u\PYGZus{}listu}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{,} \PYG{n}{lista}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{lista}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Output: [1, 2, 3, 5]}
+\end{Verbatim}

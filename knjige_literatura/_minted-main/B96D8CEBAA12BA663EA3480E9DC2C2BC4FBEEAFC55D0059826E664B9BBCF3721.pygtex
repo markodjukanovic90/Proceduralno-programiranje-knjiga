@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{n}{ar} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{],} \PYG{n}{dtype}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}int32\PYGZdq{}}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} niz}
+\PYG{n}{matrica} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([[}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{5} \PYG{p}{],} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{7}\PYG{p}{]} \PYG{p}{],} \PYG{n}{dytpe}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}int32\PYGZdq{}}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} matrica (2D\PYGZhy{}niz)}
+\PYG{n}{matrica3D} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(} \PYG{p}{[[[}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{5} \PYG{p}{],} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{7}\PYG{p}{]} \PYG{p}{],} \PYG{p}{[[}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{],} \PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{]]],} \PYGZbs{}
+\PYG{n}{dytpe}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}int32\PYGZdq{}}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} 3D matrica}
+\end{Verbatim}

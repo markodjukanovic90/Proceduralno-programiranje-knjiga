@@ -1,0 +1,32 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+   \PYG{k}{def} \PYG{n+nf}{exponential\PYGZus{}search}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{l}\PYG{p}{):}
+
+   	\PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{1}\PYG{p}{:}
+   	  \PYG{k}{if} \PYG{n}{x} \PYG{o+ow}{in} \PYG{n}{niz}\PYG{p}{:}
+   		 \PYG{k}{return}  \PYG{n}{l} \PYG{o}{+} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{x} \PYG{o+ow}{in} \PYG{n}{niz}\PYG{p}{)}
+   	  \PYG{k}{else}\PYG{p}{:}
+  		 \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}
+
+   	  \PYG{k}{if} \PYG{n}{l} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+   		 \PYG{n}{pos} \PYG{o}{=} \PYG{l+m+mi}{2}
+   	  \PYG{k}{else}\PYG{p}{:}
+   		 \PYG{n}{pos} \PYG{o}{=} \PYG{n}{l} \PYG{o}{*} \PYG{l+m+mi}{2}
+
+   	  \PYG{k}{if} \PYG{n}{pos} \PYG{o}{\PYGZgt{}=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{):}
+   		 \PYG{n}{ind\PYGZus{}found} \PYG{o}{=} \PYG{n}{binary\PYGZus{}search}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{[}\PYG{n}{l}\PYG{p}{:],} \PYG{n}{x}\PYG{p}{)}
+		 \PYG{c+c1}{\PYGZsh{} ako x ne postoji u sufiksu}
+   		 \PYG{k}{if} \PYG{n}{ind\PYGZus{}found} \PYG{o}{==} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{:}
+   			\PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}
+   		 \PYG{k}{else}\PYG{p}{:}
+   			 \PYG{k}{return} \PYG{n}{l} \PYG{o}{+} \PYG{n}{binary\PYGZus{}search}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{[}\PYG{n}{l}\PYG{p}{:],} \PYG{n}{x}\PYG{p}{)}
+   	  \PYG{k}{else}\PYG{p}{:}
+   		 \PYG{k}{if} \PYG{n}{niz}\PYG{p}{[}\PYG{n}{l}\PYG{p}{]} \PYG{o}{\PYGZlt{}=} \PYG{n}{x} \PYG{o+ow}{and} \PYG{n}{x} \PYG{o}{\PYGZlt{}=} \PYG{n}{niz}\PYG{p}{[}\PYG{n}{pos}\PYG{p}{]} \PYG{p}{:}
+   		    \PYG{k}{return} \PYG{n}{l} \PYG{o}{+} \PYG{n}{binary\PYGZus{}search}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{[}\PYG{n}{l}\PYG{p}{:} \PYG{n}{pos}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{x}\PYG{p}{)}
+   		 \PYG{k}{else}\PYG{p}{:}
+   		    \PYG{k}{return} \PYG{n}{exponential\PYGZus{}search}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{pos}\PYG{p}{)}
+   \PYG{c+c1}{\PYGZsh{} instanca:}
+   \PYG{n}{niz} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{22}\PYG{p}{,} \PYG{l+m+mi}{38}\PYG{p}{,} \PYG{l+m+mi}{44}\PYG{p}{,} \PYG{l+m+mi}{51}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{,} \PYG{l+m+mi}{220}\PYG{p}{,} \PYG{l+m+mi}{550}\PYG{p}{,} \PYG{l+m+mi}{880}\PYG{p}{]}
+   \PYG{n}{x} \PYG{o}{=} \PYG{l+m+mi}{10}
+   \PYG{c+c1}{\PYGZsh{} poziv funkcije:}
+   \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{exponential\PYGZus{}search}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{))}
+\end{Verbatim}

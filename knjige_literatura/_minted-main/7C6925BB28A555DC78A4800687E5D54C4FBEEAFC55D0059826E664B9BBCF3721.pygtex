@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+ 	\PYG{k+kn}{from} \PYG{n+nn}{math} \PYG{k+kn}{import} \PYG{n}{ceil}
+ 	\PYG{k}{def} \PYG{n+nf}{lucky\PYGZus{}number}\PYG{p}{(}\PYG{n}{n}\PYG{p}{):}
+
+ 	
+ 	   \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{n}\PYG{p}{):} \PYG{c+c1}{\PYGZsh{}iteracije}
+ 	       \PYG{k}{if} \PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1} \PYG{o}{\PYGZgt{}} \PYG{n}{ceil}\PYG{p}{(}\PYG{n}{n}\PYG{o}{/}\PYG{n}{i}\PYG{p}{):}
+ 	          \PYG{k}{return} \PYG{k+kc}{True}
+ 	       \PYG{k}{if} \PYG{n}{ceil}\PYG{p}{(}\PYG{n}{n}\PYG{o}{/}\PYG{n}{i}\PYG{p}{)}  \PYG{o}{\PYGZpc{}} \PYG{p}{(}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+ 	          \PYG{k}{return} \PYG{k+kc}{False}
+ 	   \PYG{k}{return} \PYG{k+kc}{True}
+
+          \PYG{c+c1}{\PYGZsh{}poziv funkcije}
+          \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{lucky\PYGZus{}number}\PYG{p}{(}\PYG{l+m+mi}{7}\PYG{p}{))} \PYG{c+c1}{\PYGZsh{}True	}
+\end{Verbatim}

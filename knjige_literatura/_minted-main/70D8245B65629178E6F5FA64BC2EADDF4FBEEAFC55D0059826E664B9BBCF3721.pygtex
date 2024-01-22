@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	
+   \PYG{k}{def} \PYG{n+nf}{NQueens}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{,} \PYG{n}{N}\PYG{p}{):}
+       \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{)} \PYG{o}{==} \PYG{n}{N}\PYG{p}{:} \PYG{c+c1}{\PYGZsh{} kompletno rješenje}
+               \PYG{k}{return} \PYG{n}{niz}
+       \PYG{k}{else}\PYG{p}{:}
+              \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{N}\PYG{p}{):}
+                  \PYG{n}{niz} \PYG{o}{=} \PYG{n}{niz} \PYG{o}{+} \PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+                  \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{valid}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{):} \PYG{c+c1}{\PYGZsh{}backtrack ako nije}
+                     \PYG{n}{NQueens}\PYG{p}{(}\PYG{n}{niz} \PYG{o}{+} \PYG{p}{[}\PYG{n}{i}\PYG{p}{])}
+
+\PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{8}
+\PYG{n}{sol} \PYG{o}{=} \PYG{n}{NQueens}\PYG{p}{([],} \PYG{n}{N}\PYG{p}{)}
+\PYG{k}{if} \PYG{n}{sol} \PYG{o}{!=} \PYG{k+kc}{None}\PYG{p}{:}
+   \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Rješenje je: \PYGZdq{}}\PYG{p}{,} \PYG{n}{sol}\PYG{p}{)}
+\PYG{k}{else}\PYG{p}{:}
+   \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Nema rješenja\PYGZdq{}}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{}npr. za N=3}
+\end{Verbatim}

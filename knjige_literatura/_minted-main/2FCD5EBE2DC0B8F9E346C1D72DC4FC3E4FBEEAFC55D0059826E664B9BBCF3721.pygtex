@@ -1,0 +1,44 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	  \PYG{n}{best\PYGZus{}fitness}\PYG{p}{:} \PYG{n+nb}{float} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+	
+	  \PYG{c+c1}{\PYGZsh{}instance example:}
+	  \PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{4}
+	  \PYG{n}{w} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{]}
+	  \PYG{n}{p} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{20}\PYG{p}{,} \PYG{l+m+mi}{30}\PYG{p}{,} \PYG{l+m+mi}{50}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{]}
+	  \PYG{n}{C} \PYG{o}{=} \PYG{l+m+mi}{16}
+	  \PYG{c+c1}{\PYGZsh{} helper function}
+	  \PYG{k}{def} \PYG{n+nf}{objective}\PYG{p}{(}\PYG{n}{solution}\PYG{p}{):}
+	
+	  	\PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{solution}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+	  		\PYG{k}{return} \PYG{n+nb}{float}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}inf\PYGZsq{}}\PYG{p}{)}
+	  	\PYG{n}{fitness}\PYG{p}{:} \PYG{n+nb}{float} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+	  	\PYG{n}{weight}\PYG{p}{:} \PYG{n+nb}{float} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+	
+	  	\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{solution}\PYG{p}{:}
+	  		\PYG{n}{fitness} \PYG{o}{+=} \PYG{n}{p}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+	  		\PYG{n}{weight} \PYG{o}{+=} \PYG{n}{w}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+	
+	  	\PYG{k}{if} \PYG{n}{weight} \PYG{o}{\PYGZgt{}} \PYG{n}{C}\PYG{p}{:}
+	  		\PYG{k}{return} \PYG{n+nb}{float}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}inf\PYGZsq{}}\PYG{p}{)}
+	  	\PYG{k}{else}\PYG{p}{:}
+	  		\PYG{k}{return} \PYG{n}{fitness}
+	
+	  \PYG{c+c1}{\PYGZsh{} brute force recursion}
+	  \PYG{k}{def} \PYG{n+nf}{knapsack\PYGZus{}brute\PYGZus{}force}\PYG{p}{(}\PYG{n}{solution}\PYG{p}{):}
+	  	\PYG{k}{global} \PYG{n}{best\PYGZus{}fitness}
+	
+	  	\PYG{k}{if} \PYG{n}{objective}\PYG{p}{(}\PYG{n}{solution}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{n}{best\PYGZus{}fitness}\PYG{p}{:}
+	  		\PYG{n}{best\PYGZus{}fitness} \PYG{o}{=} \PYG{n}{objective}\PYG{p}{(}\PYG{n}{solution}\PYG{p}{)}
+	
+	  	\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{N}\PYG{p}{):}
+	  		\PYG{k}{if}  \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{solution}\PYG{p}{)} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{1}\PYG{p}{:}
+	  			\PYG{k}{if} \PYG{n}{i} \PYG{o}{\PYGZgt{}} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{solution}\PYG{p}{)} \PYG{p}{:} \PYG{c+c1}{\PYGZsh{} symmetry breaking}
+	  				\PYG{c+c1}{\PYGZsh{}print(solution + [i])}
+	  				\PYG{n}{knapsack\PYGZus{}brute\PYGZus{}force}\PYG{p}{(}\PYG{n}{solution} \PYG{o}{+} \PYG{p}{[}\PYG{n}{i}\PYG{p}{])}
+	  		\PYG{k}{else}\PYG{p}{:}
+	  			\PYG{n}{knapsack\PYGZus{}brute\PYGZus{}force}\PYG{p}{(}\PYG{n}{solution} \PYG{o}{+} \PYG{p}{[}\PYG{n}{i}\PYG{p}{])}
+	
+	  \PYG{n}{knapsack\PYGZus{}brute\PYGZus{}force}\PYG{p}{([])}
+	  \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{best\PYGZus{}fitness}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} 80.0	}
+	
+\end{Verbatim}

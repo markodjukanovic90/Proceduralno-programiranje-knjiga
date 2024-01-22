@@ -1,0 +1,29 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+ \PYG{k}{def} \PYG{n+nf}{mergeSort}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{):}
+
+   \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{1}\PYG{p}{:}
+	 	\PYG{k}{return} \PYG{n}{niz}
+   \PYG{k}{else}\PYG{p}{:}
+      \PYG{c+c1}{\PYGZsh{}\PYGZsh{}partition:}
+      \PYG{n}{nizLeftSort} \PYG{o}{=} \PYG{n}{niz}\PYG{p}{[}\PYG{l+m+mi}{0} \PYG{p}{:} \PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{)}\PYG{o}{//}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{p}{]}
+	  \PYG{n}{nizRightSort} \PYG{o}{=} \PYG{n}{niz}\PYG{p}{[} \PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{)} \PYG{o}{//} \PYG{l+m+mi}{2}\PYG{p}{)} \PYG{p}{:]}
+	  \PYG{n}{mergeSort}\PYG{p}{(}\PYG{n}{nizLeftSort}\PYG{p}{)}
+	  \PYG{n}{mergeSort}\PYG{p}{(}\PYG{n}{nizRightSort}\PYG{p}{)}
+	  \PYG{c+c1}{\PYGZsh{}\PYGZsh{} combine}
+	  \PYG{n}{niz}\PYG{o}{.}\PYG{n}{clear}\PYG{p}{()}
+	  \PYG{n}{indexL} \PYG{o}{=} \PYG{n}{indexR} \PYG{o}{=}  \PYG{l+m+mi}{0}
+	  \PYG{k}{while}\PYG{p}{(}\PYG{n}{indexL} \PYG{o}{\PYGZlt{}} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{nizLeftSort}\PYG{p}{)} \PYG{o+ow}{and} \PYG{n}{indexR} \PYG{o}{\PYGZlt{}} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{nizRightSort}\PYG{p}{)):}
+	 	 \PYG{k}{if}\PYG{p}{(}\PYG{n}{nizLeftSort}\PYG{p}{[} \PYG{n}{indexL} \PYG{p}{]} \PYG{o}{\PYGZgt{}=} \PYG{n}{nizRightSort}\PYG{p}{[} \PYG{n}{indexR} \PYG{p}{]):}
+	 		 \PYG{n}{niz}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{nizLeftSort}\PYG{p}{[}\PYG{n}{indexL}\PYG{p}{])}
+	 		 \PYG{n}{indexL} \PYG{o}{=} \PYG{n}{indexL} \PYG{o}{+} \PYG{l+m+mi}{1}
+	 	 \PYG{k}{else}\PYG{p}{:}
+	 		 \PYG{n}{niz}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{nizRightSort}\PYG{p}{[}\PYG{n}{indexR}\PYG{p}{])}
+	 		 \PYG{n}{indexR} \PYG{o}{=} \PYG{n}{indexR} \PYG{o}{+} \PYG{l+m+mi}{1}
+	
+	  \PYG{k}{if}\PYG{p}{(}\PYG{n}{indexL} \PYG{o}{\PYGZlt{}} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{nizLeftSort}\PYG{p}{)):}
+	 	 \PYG{n}{niz} \PYG{o}{+=} \PYG{n}{nizLeftSort}\PYG{p}{[}\PYG{n}{indexL} \PYG{p}{:} \PYG{p}{]}
+	  \PYG{k}{elif} \PYG{p}{(}\PYG{n}{indexR} \PYG{o}{\PYGZlt{}} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{nizRightSort}\PYG{p}{)):}
+	 	 \PYG{n}{niz} \PYG{o}{+=} \PYG{n}{nizRightSort}\PYG{p}{[}\PYG{n}{indexR} \PYG{p}{:} \PYG{p}{]}
+	
+	  \PYG{k}{return} \PYG{n}{niz}
+\end{Verbatim}

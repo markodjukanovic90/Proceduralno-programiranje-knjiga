@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{saberi\PYGZus{}func} \PYG{o}{=} \PYG{n}{lib\PYGZus{}dodaj}\PYG{o}{.}\PYG{n}{saberi}
+	\PYG{n}{saberi\PYGZus{}func}\PYG{o}{.}\PYG{n}{argtypes} \PYG{o}{=} \PYG{p}{[}\PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{c\PYGZus{}int}\PYG{p}{,} \PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{c\PYGZus{}int}\PYG{p}{]}
+	\PYG{n}{saberi\PYGZus{}func}\PYG{o}{.}\PYG{n}{restype} \PYG{o}{=} \PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{c\PYGZus{}int}
+\end{Verbatim}

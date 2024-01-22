@@ -1,0 +1,31 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	
+	\PYG{k}{def} \PYG{n+nf}{initialization}\PYG{p}{(}\PYG{n}{n}\PYG{p}{):}
+	   \PYG{n}{Cat} \PYG{o}{=} \PYG{p}{[} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}   \PYG{k}{for} \PYG{n}{\PYGZus{}} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{n}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}  \PYG{p}{]}
+	   \PYG{k}{return} \PYG{n}{Cat}
+	
+	\PYG{k}{def} \PYG{n+nf}{c}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,} \PYG{n}{Cat}\PYG{p}{):}
+	
+	\PYG{k}{if} \PYG{n}{Cat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{!=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{:}
+	    \PYG{k}{return} \PYG{n}{Cat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+	\PYG{k}{if} \PYG{n}{i} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+	   \PYG{n}{Cat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}
+	   \PYG{k}{return} \PYG{l+m+mi}{1}
+
+    \PYG{n}{catalan\PYGZus{}n} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{k}{for} \PYG{n}{k} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{i}\PYG{p}{):}
+        \PYG{n}{catalan\PYGZus{}n} \PYG{o}{+=} \PYG{n}{catalan\PYGZus{}memoization}\PYG{p}{(}\PYG{n}{k}\PYG{p}{,} \PYG{n}{Cat}\PYG{p}{)} \PYG{o}{*}
+         \PYG{n}{catalan\PYGZus{}memoization}\PYG{p}{(}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{n}{k}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{Cat}\PYG{p}{)}
+
+    \PYG{n}{Cat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{catalan\PYGZus{}n}
+    \PYG{k}{return} \PYG{n}{Cat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+
+	
+	\PYG{c+c1}{\PYGZsh{}poziv metode:}
+	\PYG{n}{n} \PYG{o}{=} \PYG{l+m+mi}{10}
+	\PYG{n}{Cat} \PYG{o}{=} \PYG{n}{initialization}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}
+	
+	\PYG{n}{cat\PYGZus{}n} \PYG{o}{=} \PYG{n}{catalan\PYGZus{}n}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,} \PYG{n}{Cat}\PYG{p}{)}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{cat\PYGZus{}n}\PYG{p}{)}
+	
+\end{Verbatim}

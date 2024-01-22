@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{dct} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}ime\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Mirko\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}godine\PYGZdq{}}\PYG{p}{:} \PYG{l+m+mi}{30}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}grad\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Banja Luka\PYGZdq{}}\PYG{p}{\PYGZcb{}}
+	\PYG{k}{del} \PYG{n}{dct}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}grad\PYGZdq{}}\PYG{p}{]}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{dct}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Output: \PYGZob{}\PYGZdq{}ime\PYGZdq{}: \PYGZdq{}Mirko\PYGZdq{}, \PYGZdq{}godine\PYGZdq{}: 30\PYGZcb{}}
+	
+	\PYG{n}{dct} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}ime\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Mirko\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}godine\PYGZdq{}}\PYG{p}{:} \PYG{l+m+mi}{30}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}grad\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Banja Luka\PYGZdq{}}\PYG{p}{\PYGZcb{}}
+	\PYG{n}{dct}\PYG{o}{.}\PYG{n}{pop}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}grad\PYGZdq{}}\PYG{p}{)}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{dct}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{}  Output: \PYGZob{}\PYGZdq{}ime\PYGZdq{}: \PYGZdq{}Mirko\PYGZdq{}, \PYGZdq{}godine\PYGZdq{}: 30\PYGZcb{}}
+\end{Verbatim}

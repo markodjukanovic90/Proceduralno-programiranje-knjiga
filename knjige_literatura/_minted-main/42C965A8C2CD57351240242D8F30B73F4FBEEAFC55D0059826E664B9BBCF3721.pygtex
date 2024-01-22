@@ -1,0 +1,39 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+ \PYG{k}{def} \PYG{n+nf}{ProfitSort}\PYG{p}{(}\PYG{n}{i}\PYG{p}{):}
+ 	\PYG{k}{return} \PYG{n}{Profit}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+
+ \PYG{c+c1}{\PYGZsh{} možemo li dodati i\PYGZhy{}ti proizvod ili ne (\PYGZhy{}1) u I\PYGZus{}s}
+ \PYG{k}{def} \PYG{n+nf}{find\PYGZus{}next\PYGZus{}interval}\PYG{p}{(}\PYG{n}{I\PYGZus{}s\PYGZus{}covered}\PYG{p}{,} \PYG{n}{i}\PYG{p}{):}
+
+ 	\PYG{k}{for} \PYG{n}{index}\PYG{p}{,} \PYG{n}{covered} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{n}{I\PYGZus{}s\PYGZus{}covered}\PYG{p}{):}
+ 		\PYG{k}{if} \PYG{n}{index} \PYG{o}{\PYGZgt{}=} \PYG{n}{Deadline}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]:}
+ 			\PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}
+ 		\PYG{k}{if} \PYG{n}{covered} \PYG{o}{==} \PYG{k+kc}{False}\PYG{p}{:}
+ 			\PYG{k}{return} \PYG{n}{index}
+ 	\PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}
+
+ \PYG{k}{def} \PYG{n+nf}{sequnetial\PYGZus{}scheduling}\PYG{p}{():}
+
+ 	\PYG{n}{I\PYGZus{}s\PYGZus{}covered} \PYG{o}{=} \PYG{p}{[}\PYG{k+kc}{False}\PYG{p}{]} \PYG{o}{*}  \PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{Deadline}\PYG{p}{)}
+ 	\PYG{n}{I\PYGZus{}s} \PYG{o}{=} \PYG{p}{[]}
+ 	\PYG{c+c1}{\PYGZsh{}sortiranje jobs u odnosu na Profit (preprocessing):}
+ 	\PYG{n}{Jobs}\PYG{o}{.}\PYG{n}{sort}\PYG{p}{(}\PYG{n}{key}\PYG{o}{=}\PYG{n}{ProfitSort}\PYG{p}{,} \PYG{n}{reverse}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+
+ 	\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{Jobs}\PYG{p}{:}
+
+ 		\PYG{n}{interval} \PYG{o}{=} \PYG{n}{find\PYGZus{}next\PYGZus{}interval}\PYG{p}{(}\PYG{n}{I\PYGZus{}s\PYGZus{}covered}\PYG{p}{,} \PYG{n}{i}\PYG{p}{)}
+ 		\PYG{k}{if} \PYG{n}{interval} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{0}\PYG{p}{:} \PYG{c+c1}{\PYGZsh{}nadjena (dopustiv) interval:}
+ 			\PYG{n}{I\PYGZus{}s\PYGZus{}covered}\PYG{p}{[}\PYG{n}{interval}\PYG{p}{]} \PYG{o}{=} \PYG{k+kc}{True} \PYG{c+c1}{\PYGZsh{}zauzet}
+ 			\PYG{n}{I\PYGZus{}s}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}
+
+ 	\PYG{k}{return} \PYG{n}{I\PYGZus{}s}\PYG{p}{,} \PYG{n+nb}{sum}\PYG{p}{([} \PYG{n}{Profit}\PYG{p}{[}\PYG{n}{I\PYGZus{}s}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]]}  \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{I\PYGZus{}s}\PYG{p}{))} \PYG{p}{])}
+
+ \PYG{c+c1}{\PYGZsh{}instanca:}
+ \PYG{n}{num\PYGZus{}jobs} \PYG{o}{=} \PYG{l+m+mi}{5}
+ \PYG{n}{Jobs} \PYG{o}{=} \PYG{p}{[}\PYG{n}{i} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{num\PYGZus{}jobs}\PYG{p}{)]}
+ \PYG{n}{Deadline} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{]}
+ \PYG{n}{Profit} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{100}\PYG{p}{,} \PYG{l+m+mi}{19}\PYG{p}{,} \PYG{l+m+mi}{27}\PYG{p}{,} \PYG{l+m+mi}{25}\PYG{p}{,} \PYG{l+m+mi}{15}\PYG{p}{]}
+ \PYG{c+c1}{\PYGZsh{} izvrsavanje algoritma:}
+ \PYG{n}{I\PYGZus{}s}\PYG{p}{,} \PYG{n}{profit} \PYG{o}{=} \PYG{n}{sequnetial\PYGZus{}scheduling}\PYG{p}{()}
+ \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{I\PYGZus{}s}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{} profit: \PYGZdq{}}\PYG{p}{,} \PYG{n}{profit}\PYG{p}{)}
+\end{Verbatim}

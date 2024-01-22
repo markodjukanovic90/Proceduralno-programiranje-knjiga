@@ -1,0 +1,26 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	 \PYG{k}{def} \PYG{n+nf}{knapsack}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,} \PYG{n}{C}\PYG{p}{,} \PYG{n}{W}\PYG{p}{,} \PYG{n}{p}\PYG{p}{):}
+	 	\PYG{n}{DP} \PYG{o}{=} \PYG{p}{[[}\PYG{l+m+mi}{0} \PYG{k}{for} \PYG{n}{x} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{C} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)]} \PYG{k}{for} \PYG{n}{x} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{n} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)]}
+	
+	 	\PYG{c+c1}{\PYGZsh{} tabuliranje}
+	 	\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{n} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{):}
+	 		\PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{C} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{):}
+	 			\PYG{k}{if} \PYG{n}{i} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{o+ow}{or} \PYG{n}{j} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+	 				\PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}
+	 			\PYG{k}{elif} \PYG{n}{W}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{\PYGZlt{}=} \PYG{n}{j}\PYG{p}{:}
+	 				\PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{p}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}
+	 				         \PYG{o}{+} \PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{n}{j}\PYG{o}{\PYGZhy{}}\PYG{n}{W}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]],}
+	 				         \PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{n}{j}\PYG{p}{])}
+	 			\PYG{k}{else}\PYG{p}{:}
+	 				\PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]}
+	
+	 	\PYG{k}{return} \PYG{n}{K}\PYG{p}{[}\PYG{n}{n}\PYG{p}{][}\PYG{n}{C}\PYG{p}{]}
+	
+	 \PYG{c+c1}{\PYGZsh{}instanca:}
+	 \PYG{n}{p} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{60}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{,} \PYG{l+m+mi}{120}\PYG{p}{]}
+	 \PYG{n}{W} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{20}\PYG{p}{,} \PYG{l+m+mi}{30}\PYG{p}{]}
+	 \PYG{n}{C} \PYG{o}{=} \PYG{l+m+mi}{50}
+	 \PYG{n}{n} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{profit}\PYG{p}{)}
+	 \PYG{c+c1}{\PYGZsh{}poziv funkcije}
+	 \PYG{n+nb}{print} \PYG{n}{knapSack}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,} \PYG{n}{C}\PYG{p}{,} \PYG{n}{W}\PYG{p}{,} \PYG{n}{p}\PYG{p}{,} \PYG{n}{n}\PYG{p}{)}
+\end{Verbatim}

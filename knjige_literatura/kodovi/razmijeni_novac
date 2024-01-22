@@ -1,0 +1,16 @@
+	 def razmijeni(P, X):
+	 	rjesenje = []
+	 	i = 0
+	 	usitnjeno = 0
+	 	brojNovcanica = 0
+	 	sortApoeni = sort(P) # sort apoene opadajuće
+	 	while i <  n and usitnjeno < X :
+	 		k = (X - usitnjeno) // P[i]  #br. novcanica sortApoeni[i] ide u razmjenu
+	 		if k > 0:
+	 			usitnjeno = usitnjeno + k * sortApoeni[i]
+	 			brojNovcanica = brojNovcanica + k
+	 		i = i + 1
+	 	if usitnjeno == X:
+	 		return brojNovcanica
+	 	else:
+	 		return -1 # ne može se usitniti

@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	 \PYG{k}{def} \PYG{n+nf}{razmijeni}\PYG{p}{(}\PYG{n}{P}\PYG{p}{,} \PYG{n}{X}\PYG{p}{):}
+	 	\PYG{n}{rjesenje} \PYG{o}{=} \PYG{p}{[]}
+	 	\PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}
+	 	\PYG{n}{usitnjeno} \PYG{o}{=} \PYG{l+m+mi}{0}
+	 	\PYG{n}{brojNovcanica} \PYG{o}{=} \PYG{l+m+mi}{0}
+	 	\PYG{n}{sortApoeni} \PYG{o}{=} \PYG{n}{sort}\PYG{p}{(}\PYG{n}{P}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} sort apoene opadajuće}
+	 	\PYG{k}{while} \PYG{n}{i} \PYG{o}{\PYGZlt{}}  \PYG{n}{n} \PYG{o+ow}{and} \PYG{n}{usitnjeno} \PYG{o}{\PYGZlt{}} \PYG{n}{X} \PYG{p}{:}
+	 		\PYG{n}{k} \PYG{o}{=} \PYG{p}{(}\PYG{n}{X} \PYG{o}{\PYGZhy{}} \PYG{n}{usitnjeno}\PYG{p}{)} \PYG{o}{//} \PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}  \PYG{c+c1}{\PYGZsh{}br. novcanica sortApoeni[i] ide u razmjenu}
+	 		\PYG{k}{if} \PYG{n}{k} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+	 			\PYG{n}{usitnjeno} \PYG{o}{=} \PYG{n}{usitnjeno} \PYG{o}{+} \PYG{n}{k} \PYG{o}{*} \PYG{n}{sortApoeni}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+	 			\PYG{n}{brojNovcanica} \PYG{o}{=} \PYG{n}{brojNovcanica} \PYG{o}{+} \PYG{n}{k}
+	 		\PYG{n}{i} \PYG{o}{=} \PYG{n}{i} \PYG{o}{+} \PYG{l+m+mi}{1}
+	 	\PYG{k}{if} \PYG{n}{usitnjeno} \PYG{o}{==} \PYG{n}{X}\PYG{p}{:}
+	 		\PYG{k}{return} \PYG{n}{brojNovcanica}
+	 	\PYG{k}{else}\PYG{p}{:}
+	 		\PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1} \PYG{c+c1}{\PYGZsh{} ne može se usitniti}
+\end{Verbatim}

@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{proizvod\PYGZus{}brojeva}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{):}
+    \PYG{n}{prod} \PYG{o}{=} \PYG{n}{x} \PYG{o}{*} \PYG{n}{y}
+    \PYG{k}{return} \PYG{n}{prod}
+\end{Verbatim}

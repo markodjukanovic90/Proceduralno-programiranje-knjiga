@@ -1,0 +1,31 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{def} \PYG{n+nf}{g}\PYG{p}{(}\PYG{n}{X\PYGZus{}S}\PYG{p}{,} \PYG{n}{C}\PYG{p}{):}
+		\PYG{k}{return} \PYG{n+nb}{len}\PYG{p}{((}\PYG{n}{X}\PYG{o}{.}\PYG{n}{difference}\PYG{p}{(}\PYG{n}{X\PYGZus{}S}\PYG{p}{))}\PYG{o}{.}\PYG{n}{intersection}\PYG{p}{(}\PYG{n}{C}\PYG{p}{))}
+	\PYG{k}{def} \PYG{n+nf}{cover\PYGZus{}X}\PYG{p}{():}
+		\PYG{n}{X\PYGZus{}S} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{(())}
+		\PYG{n}{S} \PYG{o}{=} \PYG{p}{[]} \PYG{c+c1}{\PYGZsh{} solution}
+	
+		\PYG{k}{while}\PYG{p}{(}\PYG{n}{X\PYGZus{}S} \PYG{o}{!=} \PYG{n}{X}\PYG{p}{):}
+			\PYG{n}{C\PYGZus{}star} \PYG{o}{=} \PYG{n}{istar} \PYG{o}{=} \PYG{k+kc}{None}
+			\PYG{n}{g\PYGZus{}best} \PYG{o}{=} \PYG{l+m+mi}{0}
+	
+			\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{F}\PYG{p}{)):}\PYG{c+c1}{\PYGZsh{} iteration best\PYGZhy{}next}
+				\PYG{k}{if} \PYG{n}{i}  \PYG{o+ow}{not}  \PYG{o+ow}{in} \PYG{n}{S}\PYG{p}{:}
+					\PYG{n}{g\PYGZus{}i} \PYG{o}{=} \PYG{n}{g}\PYG{p}{(}\PYG{n}{X\PYGZus{}S}\PYG{p}{,} \PYG{n}{F}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}
+					\PYG{k}{if} \PYG{n}{g\PYGZus{}best} \PYG{o}{\PYGZlt{}} \PYG{n}{g\PYGZus{}i}\PYG{p}{:}
+						\PYG{n}{g\PYGZus{}best} \PYG{o}{=} \PYG{n}{g\PYGZus{}i}
+						\PYG{n}{i\PYGZus{}star} \PYG{o}{=} \PYG{n}{i}
+	
+			\PYG{n}{X\PYGZus{}S} \PYG{o}{=} \PYG{n}{X\PYGZus{}S}\PYG{o}{.}\PYG{n}{union}\PYG{p}{(}\PYG{n}{F}\PYG{p}{[}\PYG{n}{i\PYGZus{}star}\PYG{p}{])} \PYG{c+c1}{\PYGZsh{}update cover}
+			\PYG{n}{S}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{i\PYGZus{}star}\PYG{p}{)}
+		\PYG{k}{return}  \PYG{n}{S}
+	
+	\PYG{c+c1}{\PYGZsh{}instanca:}
+	\PYG{n}{X} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{\PYGZcb{}}
+	\PYG{n}{F} \PYG{o}{=} \PYG{p}{[\PYGZob{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{\PYGZcb{},} \PYG{p}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{\PYGZcb{},} \PYG{p}{\PYGZob{}}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{\PYGZcb{},} \PYG{p}{\PYGZob{}}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{\PYGZcb{},} \PYG{p}{\PYGZob{}}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{\PYGZcb{},} \PYG{p}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{\PYGZcb{}]}
+	\PYG{n}{sol} \PYG{o}{=} \PYG{p}{[]}
+	\PYG{n}{C} \PYG{o}{=} \PYG{l+m+mi}{50}
+	\PYG{n}{sol} \PYG{o}{=} \PYG{n}{cover\PYGZus{}X}\PYG{p}{()}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{sol}\PYG{p}{)}
+	
+\end{Verbatim}

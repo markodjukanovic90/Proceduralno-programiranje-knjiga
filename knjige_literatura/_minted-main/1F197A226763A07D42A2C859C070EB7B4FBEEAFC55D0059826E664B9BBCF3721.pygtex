@@ -1,0 +1,38 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+   \PYG{k}{def} \PYG{n+nf}{sieve\PYGZus{}adaptation}\PYG{p}{(}\PYG{n}{n}\PYG{p}{):}
+
+       \PYG{n}{sieve\PYGZus{}fact} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{*} \PYG{p}{(}\PYG{n}{n}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}
+       \PYG{n}{sieve\PYGZus{}fact}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{sieve\PYGZus{}fact}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}
+
+       \PYG{n}{p} \PYG{o}{=} \PYG{l+m+mi}{2}
+       \PYG{k}{while} \PYG{n}{p} \PYG{o}{\PYGZlt{}=} \PYG{n}{n}\PYG{p}{:}
+
+           \PYG{k}{if} \PYG{n}{sieve\PYGZus{}fact}\PYG{p}{[}\PYG{n}{p}\PYG{p}{]} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+
+       		  \PYG{n}{index} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{p}
+       		  \PYG{k}{while} \PYG{n}{index} \PYG{o}{\PYGZlt{}=} \PYG{n}{n}\PYG{p}{:}
+       			 \PYG{n}{sieve\PYGZus{}fact}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]} \PYG{o}{=} \PYG{n}{p}
+       			 \PYG{n}{index} \PYG{o}{+=} \PYG{n}{p}
+           \PYG{n}{p} \PYG{o}{=} \PYG{n}{p} \PYG{o}{+} \PYG{l+m+mi}{1}
+ 	
+	\PYG{k}{return} \PYG{n}{sieve\PYGZus{}fact}
+ 	
+   \PYG{k}{def} \PYG{n+nf}{factorization}\PYG{p}{(}\PYG{n}{n}\PYG{p}{):}
+
+       \PYG{n}{factorize\PYGZus{}min\PYGZus{}p} \PYG{o}{=} \PYG{n}{sieve\PYGZus{}fact}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}
+       \PYG{n}{F} \PYG{o}{=} \PYG{p}{[]}
+       \PYG{k}{while} \PYG{k+kc}{True}\PYG{p}{:}
+           \PYG{n}{i} \PYG{o}{=} \PYG{n}{factorize\PYGZus{}min\PYGZus{}p}\PYG{p}{[}\PYG{n}{n}\PYG{p}{]}
+           \PYG{k}{if} \PYG{n}{i} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+              \PYG{n}{F}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}
+              \PYG{k}{return} \PYG{n}{F}
+           \PYG{k}{else}\PYG{p}{:}
+              \PYG{n}{n} \PYG{o}{=} \PYG{n}{n} \PYG{o}{//} \PYG{n}{i}
+              \PYG{n}{F}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}
+       \PYG{k}{return} \PYG{n}{F}
+
+   \PYG{c+c1}{\PYGZsh{}ulaz:}
+   \PYG{n}{n} \PYG{o}{=} \PYG{l+m+mi}{120}
+   \PYG{n}{F} \PYG{o}{=} \PYG{n}{factorization}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}
+   \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Lista faktora je: \PYGZdq{}}\PYG{p}{,} \PYG{n}{F}\PYG{p}{)}
+\end{Verbatim}

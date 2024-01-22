@@ -1,0 +1,26 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{getopt}
+\PYG{k+kn}{import} \PYG{n+nn}{sys}
+
+\PYG{k}{def} \PYG{n+nf}{main}\PYG{p}{(}\PYG{n}{argv}\PYG{p}{):}
+    \PYG{n}{inputfile} \PYG{o}{=} \PYG{n}{outputfile} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}
+    \PYG{k}{try}\PYG{p}{:}
+        \PYG{n}{opts}\PYG{p}{,} \PYG{n}{args} \PYG{o}{=} \PYG{n}{getopt}\PYG{o}{.}\PYG{n}{getopt}\PYG{p}{(}\PYG{n}{argv}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}hi:o:\PYGZdq{}}\PYG{p}{,[}\PYG{l+s+s2}{\PYGZdq{}ifile=\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}ofile=\PYGZdq{}}\PYG{p}{])}
+    \PYG{k}{except} \PYG{n}{getopt}\PYG{o}{.}\PYG{n}{GetoptError}\PYG{p}{:}
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}test.py \PYGZhy{}i \PYGZlt{}inputfile\PYGZgt{} \PYGZhy{}o \PYGZlt{}outputfile\PYGZgt{}\PYGZsq{}}\PYG{p}{)}
+        \PYG{n}{sys}\PYG{o}{.}\PYG{n}{exit}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{opt}\PYG{p}{,} \PYG{n}{arg} \PYG{o+ow}{in} \PYG{n}{opts}\PYG{p}{:}
+        \PYG{k}{if} \PYG{n}{opt} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}h\PYGZsq{}}\PYG{p}{:}
+                \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}test.py \PYGZhy{}i \PYGZlt{}inputfile\PYGZgt{} \PYGZhy{}o \PYGZlt{}outputfile\PYGZgt{}\PYGZsq{}}\PYG{p}{)}
+                \PYG{n}{sys}\PYG{o}{.}\PYG{n}{exit}\PYG{p}{()}
+        \PYG{k}{elif} \PYG{n}{opt} \PYG{o+ow}{in} \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZhy{}i\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}\PYGZhy{}\PYGZhy{}ifile\PYGZdq{}}\PYG{p}{):}
+                \PYG{n}{inputfile} \PYG{o}{=} \PYG{n}{arg}
+        \PYG{k}{elif} \PYG{n}{opt} \PYG{o+ow}{in} \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZhy{}o\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}\PYGZhy{}\PYGZhy{}ofile\PYGZdq{}}\PYG{p}{):}
+                \PYG{n}{outputfile} \PYG{o}{=} \PYG{n}{arg}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Input file is \PYGZdq{}\PYGZsq{}}\PYG{p}{,} \PYG{n}{inputfile}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Output file is \PYGZdq{}\PYGZsq{}}\PYG{p}{,} \PYG{n}{outputfile}\PYG{p}{)}
+
+\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}\PYGZdq{}}\PYG{p}{:}
+    \PYG{n}{main}\PYG{p}{(}\PYG{n}{sys}\PYG{o}{.}\PYG{n}{argv}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:])}
+\end{Verbatim}

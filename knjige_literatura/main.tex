@@ -1,0 +1,88 @@
+\documentclass[b4paper,12pt]{book}
+   
+\usepackage{amsfonts}
+\usepackage[serbian]{babel}
+ 
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{minted}
+\usepackage{fixme}
+\usepackage{theorem}
+\usepackage{algorithm} 
+\usepackage{algpseudocode}
+
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{definition}{Definicija}[chapter]
+%\newtheorem{example}{Primjer}[chapter]{\begin{trivlist}
+%		\item[\hskip \labelsep {\bfseries #1}]\end{trivlist}}
+
+\newenvironment{proof}[1][Dokaz]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+%\newenvironment{theorem}[1][Teorema]{\begin{trivlist}
+%			\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+ 
+%\newenvironment{example}[1][Primjer]{\begin{trivlist}
+%		\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+	
+\newenvironment{solution}[1][\emph{Rješenje}.]{\begin{trivlist}
+			\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+		
+		
+		\makeatletter
+		\renewcommand{\ALG@name}{Algoritam}
+		\makeatother
+ 
+		
+		
+\begin{document}
+
+\author{Marko Đukanović}
+\title{Osnovne algoritamske paradigme kroz programski jezik Pajton}
+\date{Avgust 2023}
+
+%\frontmatter
+ 
+\maketitle
+ 
+\tableofcontents
+ \clearpage
+ \setcounter{page}{1}
+%\mainmatter
+
+\chapter*{Predgovor}
+
+Ova skripta je napisana za predmet Proceduralno programiranje, koji se obrađuje na prvoj godini Studijskog programa Matematike i informatike -- smjer Informatika na Prirodno-matematičkom fakultetu, Univerziteta u Banjoj Luci. Skipta se sastoji od četiri dijela. Prvi dio obrađuje osnovne pojmove poput pojma programa, algoritma, modela izraču\-navanja, ali bez ulaženja u širinu i glavne detalje, koji se po planu izučavaju na višim godinama iz kurseva Algoritmike i srodnih kurseva. Drugi dio je vezan za osnove programskog jezika Pajton, prvo se obrađuju  osnovni tipovi podatka, pa složeni tipovi podataka, bitni ugrađeni moduli, pa sve od pisanja korisničkih modula i njihovog postavljanja na zvanični repozitorij \texttt{PyPI}. Treći dio se odnosi na konceptualizaciju osnovnih algoritamskih paradigmi poput paradigme brutalne sile, podijeli pa zavladaj, pohlepnih algoritama, dinamičkog programiranja, te njihovih primjena na rješavanje raznih tipova problema. Četvri dio je vezan za probleme iz aritmetike i njihovo efikasno rješavanje pomoću raznih algoritamskih paradigmi. 
+
+ 
+
+\include{chapter-01-02/chapter02}
+\include{chapter-01-02/chapter01}
+ 
+\include{chapter-03-04/chapter03}
+\include{chapter-03-04/chapter04}
+\backmatter
+% bibliography, glossary and index would go here.
+\begin{thebibliography}{9}
+	\bibitem{comen}
+	T.Cormen, C. Leiserson, R. Rives, Introduction to algorithms, MIT Press, Cambridge, 2001.
+	\bibitem{citekey}
+	Ognjanovic, Zoran, and Nenad Krdzavac. "Uvod u teorijsko racunarstvo." Fakultet organizacionih nauka, Beograd (2004).
+	\bibitem{ziv}
+	Živković, Dejan. Uvod u algoritme i strukture podataka. Univerzitet Singidunum, 2010.
+	\bibitem{geeks}
+	 https://www.geeksforgeeks.org
+	\bibitem{link-zadaci}  {https://adriann.github.io/programming\_problems.html}
+   \bibitem{ram-model}
+   http://people.seas.harvard.edu/~cs125/fall14/lec6.pdf
+     \bibitem{zivkovic-algoritmi}
+    Miodrag Živković. Algoritmi. Matematički fakultet, Beograd, 2000
+    \bibitem{alg-design}
+    Steven S. Skiena. The Algorithm Design Manual, Springer
+    \bibitem{alg-design-2} Jeff Erickson. Algorithms, 2023
+\end{thebibliography}
+
+\end{document}

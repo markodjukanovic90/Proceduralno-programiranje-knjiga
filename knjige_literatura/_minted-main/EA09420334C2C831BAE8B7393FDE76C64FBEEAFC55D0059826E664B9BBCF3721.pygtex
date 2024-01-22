@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{def} \PYG{n+nf}{func}\PYG{p}{():}
+	
+	    \PYG{c+c1}{\PYGZsh{} Ove varijable dobijaju memoriju}
+	    \PYG{c+c1}{\PYGZsh{} alociranu na steku}
+	    \PYG{n}{a} \PYG{o}{=} \PYG{l+m+mi}{10}
+	    \PYG{n}{b} \PYG{o}{=} \PYG{p}{[]}
+            \PYG{n}{c} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}abc\PYGZdq{}}
+\end{Verbatim}

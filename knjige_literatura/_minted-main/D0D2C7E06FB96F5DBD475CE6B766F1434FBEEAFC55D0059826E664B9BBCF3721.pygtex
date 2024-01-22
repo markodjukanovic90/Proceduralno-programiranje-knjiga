@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+     \PYG{k}{def} \PYG{n+nf}{binom}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,} \PYG{n}{k}\PYG{p}{):}
+         \PYG{k}{if} \PYG{n}{k} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+            \PYG{k}{return} \PYG{l+m+mi}{1}
+         \PYG{k}{if} \PYG{n}{n} \PYG{o}{\PYGZlt{}} \PYG{n}{k}\PYG{p}{:}
+            \PYG{k}{return} \PYG{l+m+mi}{0}
+         \PYG{k}{return} \PYG{n}{binom}\PYG{p}{(}\PYG{n}{n}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{k}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{+} \PYG{n}{binom}\PYG{p}{(}\PYG{n}{n}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{k}\PYG{p}{)}
+\end{Verbatim}

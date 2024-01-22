@@ -1,0 +1,35 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{M} \PYG{o}{=} \PYG{k+kc}{None} \PYG{c+c1}{\PYGZsh{}matrica sa svim \PYGZhy{}1}
+	\PYG{k}{def} \PYG{n+nf}{init}\PYG{p}{(}\PYG{n}{n}\PYG{p}{):}
+
+        \PYG{n}{M} \PYG{o}{=} \PYG{p}{[} \PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{*} \PYG{n}{n} \PYG{k}{for} \PYG{n}{\PYGZus{}} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}  \PYG{p}{]}
+		
+        \PYG{n}{M}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{A}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{c+c1}{\PYGZsh{}bazni slučaj}
+        \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{n}\PYG{p}{):}
+             \PYG{n}{M}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}
+	
+	\PYG{k}{def} \PYG{n+nf}{solve}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{):}
+		\PYG{k}{if} \PYG{n}{i} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+			\PYG{k}{return} \PYG{n}{M}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}
+			
+		\PYG{k}{if} \PYG{n}{M}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{!=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{:} \PYG{c+c1}{\PYGZsh{}Podproblem vec izračunat}
+			\PYG{k}{return} \PYG{n}{M}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]}
+		
+		\PYG{n}{best} \PYG{o}{=} \PYG{n}{rec}\PYG{p}{(}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{j}\PYG{p}{)}
+		\PYG{k}{if} \PYG{n}{j} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+			\PYG{n}{best} \PYG{o}{=} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{best}\PYG{p}{,} \PYG{n}{solve}\PYG{p}{(}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{j}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{))}
+		\PYG{n}{M}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{best} \PYG{o}{+} \PYG{n}{A}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{]}
+		\PYG{k}{return} \PYG{n}{M}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]}
+
+	\PYG{c+c1}{\PYGZsh{}instanca}
+	\PYG{n}{A}\PYG{o}{=} \PYG{p}{[[}\PYG{l+m+mi}{4} \PYG{l+m+mi}{5} \PYG{l+m+mi}{7} \PYG{l+m+mi}{0}\PYG{p}{]}
+    	\PYG{p}{[}\PYG{l+m+mi}{2} \PYG{l+m+mi}{3} \PYG{l+m+mi}{1} \PYG{l+m+mi}{3}\PYG{p}{]}
+    	\PYG{p}{[}\PYG{l+m+mi}{1} \PYG{l+m+mi}{1} \PYG{l+m+mi}{3} \PYG{l+m+mi}{1}\PYG{p}{]}
+    	\PYG{p}{[}\PYG{l+m+mi}{2} \PYG{l+m+mi}{3} \PYG{l+m+mi}{3} \PYG{l+m+mi}{3}\PYG{p}{]}
+        \PYG{p}{]}	
+	\PYG{n}{init}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{A}\PYG{p}{))}
+	\PYG{n}{sum\PYGZus{}path} \PYG{o}{=} \PYG{l+m+mi}{0}
+	\PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)):}
+		\PYG{n}{init}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{A}\PYG{p}{))}
+		\PYG{n}{sum\PYGZus{}path} \PYG{o}{=} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{sum\PYGZus{}path}\PYG{p}{,} \PYG{n}{solve}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{j}\PYG{p}{))}
+\end{Verbatim}

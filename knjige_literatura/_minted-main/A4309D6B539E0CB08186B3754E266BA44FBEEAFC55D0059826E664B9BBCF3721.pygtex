@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k+kn}{import} \PYG{n+nn}{json}
+	
+	\PYG{c+c1}{\PYGZsh{} Pajton objekat}
+	\PYG{n}{objekat} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}ime\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}Mirko\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}godine\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mi}{30}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}grad\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}Banja Luka\PYGZsq{}}\PYG{p}{\PYGZcb{}}
+	\PYG{c+c1}{\PYGZsh{} Enkoduj objekat u JSON string}
+	\PYG{n}{json\PYGZus{}string} \PYG{o}{=} \PYG{n}{json}\PYG{o}{.}\PYG{n}{dumps}\PYG{p}{(}\PYG{n}{objekat}\PYG{p}{)}
+	\PYG{c+c1}{\PYGZsh{} Dekodiraj JSON string nazad u pajtonov objekat (dict)}
+	\PYG{n}{dekodiran\PYGZus{}objekat} \PYG{o}{=} \PYG{n}{json}\PYG{o}{.}\PYG{n}{loads}\PYG{p}{(}\PYG{n}{json\PYGZus{}string}\PYG{p}{)}
+	
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n+nb}{type}\PYG{p}{(}\PYG{n}{json\PYGZus{}string}\PYG{p}{))}   \PYG{c+c1}{\PYGZsh{} \PYGZlt{}class \PYGZsq{}str\PYGZsq{}\PYGZgt{}}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n+nb}{type}\PYG{p}{(}\PYG{n}{dekodiran\PYGZus{}objekat}\PYG{p}{))}   \PYG{c+c1}{\PYGZsh{} \PYGZlt{}class \PYGZsq{}dict\PYGZsq{}\PYGZgt{}}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{dekodiran\PYGZus{}objekat}\PYG{p}{)}    \PYG{c+c1}{\PYGZsh{} \PYGZob{}\PYGZsq{}ime\PYGZsq{}: \PYGZsq{}Mirko\PYGZsq{}, \PYGZsq{}godine\PYGZsq{}: 30,}
+		                        \PYG{c+c1}{\PYGZsh{} \PYGZsq{}grad\PYGZsq{}: \PYGZsq{}Banja Luka\PYGZsq{}\PYGZcb{}}
+\end{Verbatim}

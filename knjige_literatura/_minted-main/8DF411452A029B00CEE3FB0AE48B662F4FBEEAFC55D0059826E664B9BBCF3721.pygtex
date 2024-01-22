@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{def} \PYG{n+nf}{interpolation\PYGZus{}search}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{,} \PYG{n}{l}\PYG{p}{,} \PYG{n}{r}\PYG{p}{,} \PYG{n}{x}\PYG{p}{):}
+
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{lo} \PYG{o}{\PYGZlt{}=} \PYG{n}{hi} \PYG{o+ow}{and} \PYG{n}{x} \PYG{o}{\PYGZgt{}=} \PYG{n}{niz}\PYG{p}{[}\PYG{n}{l}\PYG{p}{]} \PYG{o+ow}{and} \PYG{n}{x} \PYG{o}{\PYGZlt{}=} \PYG{n}{niz}\PYG{p}{[}\PYG{n}{r}\PYG{p}{]):}
+			\PYG{n}{pos} \PYG{o}{=} \PYG{n}{l} \PYG{o}{+} \PYG{p}{((}\PYG{n}{r} \PYG{o}{\PYGZhy{}} \PYG{n}{l}\PYG{p}{)} \PYG{o}{//} \PYG{p}{(}\PYG{n}{niz}\PYG{p}{[}\PYG{n}{r}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{niz}\PYG{p}{[}\PYG{n}{lo}\PYG{p}{])} \PYG{o}{*} \PYGZbs{}
+			\PYG{p}{(}\PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{niz}\PYG{p}{[}\PYG{n}{l}\PYG{p}{]))}
+	
+			\PYG{k}{if} \PYG{n}{niz}\PYG{p}{[}\PYG{n}{pos}\PYG{p}{]} \PYG{o}{==} \PYG{n}{x}\PYG{p}{:}
+				\PYG{k}{return} \PYG{n}{pos}
+	
+			\PYG{c+c1}{\PYGZsh{}desni podniz}
+			\PYG{k}{if} \PYG{n}{niz}\PYG{p}{[}\PYG{n}{pos}\PYG{p}{]} \PYG{o}{\PYGZlt{}} \PYG{n}{x}\PYG{p}{:}
+				\PYG{k}{return} \PYG{n}{interpolation\PYGZus{}search}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{,} \PYG{n}{pos} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{r}\PYG{p}{,} \PYG{n}{x}\PYG{p}{)}
+	
+			\PYG{c+c1}{\PYGZsh{}lijevi podniz}
+			\PYG{k}{if} \PYG{n}{niz}\PYG{p}{[}\PYG{n}{pos}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{x}\PYG{p}{:}
+				\PYG{k}{return} \PYG{n}{interpolation\PYGZus{}search}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{,} \PYG{n}{l}\PYG{p}{,} \PYG{n}{pos} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{x}\PYG{p}{)}
+		\PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}
+\end{Verbatim}

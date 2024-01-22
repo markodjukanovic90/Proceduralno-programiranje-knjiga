@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+     \PYG{c+c1}{\PYGZsh{} Memorija za 10 brojeva}
+     \PYG{c+c1}{\PYGZsh{} je alocirana na hipu}
+     \PYG{n}{a} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{*}\PYG{l+m+mi}{10}
+\end{Verbatim}

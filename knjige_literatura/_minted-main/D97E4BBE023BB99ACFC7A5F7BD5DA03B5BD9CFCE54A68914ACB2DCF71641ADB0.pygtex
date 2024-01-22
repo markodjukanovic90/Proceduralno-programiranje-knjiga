@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{algoritam} \PYG{n}{sort}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{n}\PYG{p}{)}
+  \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{l+m+mi}{1}  \PYG{n}{to} \PYG{n}{n}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1} \PYG{n}{do}
+     \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{l+m+mi}{0} \PYG{n}{to}  \PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1} \PYG{n}{do}
+        \PYG{k}{if} \PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{a}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]} \PYG{n}{then}
+           \PYG{n}{swap} \PYG{p}{(}\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{a}\PYG{p}{[}\PYG{n}{j}\PYG{p}{])}
+\end{Verbatim}

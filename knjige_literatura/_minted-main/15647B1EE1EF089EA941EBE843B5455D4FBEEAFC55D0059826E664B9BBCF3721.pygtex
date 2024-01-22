@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{x} \PYG{o}{=} \PYG{l+m+mi}{5}        \PYG{c+c1}{\PYGZsh{} int}
+	\PYG{n}{y} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}       \PYG{c+c1}{\PYGZsh{} int}
+	\PYG{n}{z} \PYG{o}{=} \PYG{l+m+mf}{3.14}     \PYG{c+c1}{\PYGZsh{} float\PYGZhy{}point number}
+	\PYG{n}{w} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.325}   \PYG{c+c1}{\PYGZsh{} float\PYGZhy{}point number}
+\end{Verbatim}

@@ -1,0 +1,25 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{def} \PYG{n+nf}{sieve}\PYG{p}{(}\PYG{n}{N}\PYG{p}{):}
+	
+	   \PYG{n}{sieve} \PYG{o}{=} \PYG{p}{[}\PYG{k+kc}{True}\PYG{p}{]} \PYG{o}{*} \PYG{p}{(}\PYG{n}{N}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}
+	   \PYG{n}{sieve}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{sieve} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{k+kc}{False}
+	
+	   \PYG{n}{p} \PYG{o}{=} \PYG{l+m+mi}{2}
+	   \PYG{k}{while} \PYG{n}{p} \PYG{o}{\PYGZlt{}=} \PYG{n}{N}\PYG{p}{:}
+	
+	       \PYG{k}{if}  \PYG{n}{sieve}\PYG{p}{[}\PYG{n}{p}\PYG{p}{]:}
+	
+	           \PYG{n}{index} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{p}
+	           \PYG{k}{while} \PYG{n}{index} \PYG{o}{\PYGZlt{}=} \PYG{n}{N}\PYG{p}{:}
+	               \PYG{n}{sieve}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]} \PYG{o}{=} \PYG{k+kc}{False}
+	               \PYG{n}{index} \PYG{o}{+=} \PYG{n}{p}
+	
+	        \PYG{n}{p} \PYG{o}{=} \PYG{n}{p} \PYG{o}{+} \PYG{l+m+mi}{1}
+	
+	   \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{N}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{):}
+	       \PYG{k}{if} \PYG{n}{sieve}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]:} \PYG{c+c1}{\PYGZsh{}broj je prost}
+	          \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}
+       \PYG{c+c1}{\PYGZsh{}poziv funkcije:}
+       \PYG{n}{n} \PYG{o}{=} \PYG{l+m+mi}{1000}
+       \PYG{n}{sieve}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}
+\end{Verbatim}

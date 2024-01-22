@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{try}\PYG{p}{:}
+	    \PYG{c+c1}{\PYGZsh{} kod koji moze \PYGZdq{}baciti\PYGZdq{} izuzetak}
+	\PYG{k}{except} \PYG{n}{ExceptionType}\PYG{p}{:}
+	    \PYG{c+c1}{\PYGZsh{} kod za obradu izuzetka}
+\end{Verbatim}

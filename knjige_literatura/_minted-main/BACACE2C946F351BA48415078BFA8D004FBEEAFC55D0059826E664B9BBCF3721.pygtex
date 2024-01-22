@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+   \PYG{k+kn}{from} \PYG{n+nn}{setuptools} \PYG{k+kn}{import} \PYG{n}{setup}
+
+   \PYG{n}{setup}\PYG{p}{(}
+   \PYG{n}{name}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}modul1\PYGZsq{}}\PYG{p}{,}
+   \PYG{n}{version}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}0.0.1\PYGZsq{}}\PYG{p}{,}
+   \PYG{n}{author}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Mirko Mirkovic\PYGZsq{}}\PYG{p}{,}
+   \PYG{n}{description}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}modul1\PYGZsq{}}\PYG{p}{,}
+   \PYG{n}{packages}\PYG{o}{=}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}modul1\PYGZsq{}}\PYG{p}{],}
+   \PYG{n}{install\PYGZus{}requires}\PYG{o}{=}\PYG{p}{[}
+   \PYG{l+s+s1}{\PYGZsq{}numpy\PYGZsq{}}\PYG{p}{,}
+   \PYG{l+s+s1}{\PYGZsq{}pandas\PYGZsq{}}
+   \PYG{p}{]}
+   \PYG{p}{)}
+\end{Verbatim}

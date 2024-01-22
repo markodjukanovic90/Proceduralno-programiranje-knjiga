@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Otvaranje fajla za citanje}
+\PYG{n}{file} \PYG{o}{=} \PYG{n+nb}{open}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}datoteka.txt\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}r\PYGZdq{}}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} Citanje sadrzaja iz fajla}
+\PYG{n}{sadrzaj} \PYG{o}{=} \PYG{n}{file}\PYG{o}{.}\PYG{n}{read}\PYG{p}{()}
+\PYG{c+c1}{\PYGZsh{} Zatvaranje fajla}
+\PYG{n}{file}\PYG{o}{.}\PYG{n}{close}\PYG{p}{()}
+\PYG{c+c1}{\PYGZsh{} Ispisivanje sadrzaja fajla}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{sadrzaj}\PYG{p}{)}
+\end{Verbatim}
