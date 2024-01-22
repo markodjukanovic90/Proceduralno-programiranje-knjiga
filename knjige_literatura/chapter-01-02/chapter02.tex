@@ -621,7 +621,7 @@ Postoji nekoliko načina da se formalno provjeri valjanost algoritama; tri  su o
 	Ovdje se koriste matematičke tehnike za analizu logike algoritma i za utvrđivanje da algoritam radi ispravno za sve moguće ulaze. Jedana od metoda je \textit{metoda invarijantne petlje}, kojom ćemo se pozabaviti u nastavku ove sekcije. 
 	
     \item \textit{Formalna verifikacija}. Formalna verifikacija je proces upotrebe matematičkih tehnika i alata za provjeru da li algoritam ispunjava određene specifikacije. Ovo uključuje modelovanje algoritma korištenjem formalnog jezika, a zatim korištenje automatiziranih alata za provjeru da li model zadovoljava određena svojstva. U osnovi, ovi metodi su iz domena vještaške inteligencije specijalno namijenjeni za verifikaciju softvera.
-    \item \textit{Testiranje}.  Iako testiranje nije formalna metoda već empirijska, ona predstavlja važan način za provjeru valjanosti algoritma. Pokretanjem algoritma sa raznim ulaznim vrijednostima i provjeravanjem izlaza u odnosu na očekivane rezultate, može se steći povjerenje o tome da li je algoritam ispravan.
+    \item \textit{Testiranje}.  Iako testiranje nije formalna metoda već \textit{empirijska}, ona predstavlja važan način za provjeru valjanosti algoritma. Pokretanjem algoritma sa raznim ulaznim vrijednostima i provjeravanjem izlaza u odnosu na očekivane rezultate, može se steći povjerenje o tome da li je algoritam ispravan.
 
 \end{itemize}
 
@@ -664,7 +664,7 @@ Prije ulaska u prvu iteraciju petlje imamo $nzd^* \leq nzd = d_0 = \min(n, m)$.
 Neka je prije ulaska u $k$-tu iteraciju petlje $d_{k-1} = nzd$. Tada je  $nzd^* < d_{k-1}$ jer se  ulaskom u $k$-tu iteraciju petlje uvjeravamo da $d_{k-1}$ ne može biti NZD ulaznih brojeva (jer tada zadovoljava uslov \textit{while}-petlje). Tada imamo $d_{k} = d_{k-1} -1 \geq nzd^*$ nakon završetka $k$-te iteracije, čime je uslov invarijantne petlje i tada zadovoljen.   Pretpostavimo da se u iteraciji $k^*$ program prekida. To znači da je $d_{k^*-1}$ zasigurno zajednički djelilac. Kako tražimo najveći takav, onda je i $d_{k^*-1} \leq nzd^*$. S obzirom da je  $d_{k^*-1} \geq nzd^*$ zbog uslova invarijantne petlje, slijedi da je 
 $d_{k^*-1} = nzd^*$, čine smo pokazali valjanost algoritma.
 \end{example}
-Pokazivanje valjanosti kompleksnih algoritama pomoću metoda invarnijantne petlje je nerijetko  nepraktično. Jedan od razloga je taj što definisanje samog uslova invarijantnosti nije trivijalan zadatak, kao  i to da instrukcije koje se izvršavaju u svakoj iteraciji nisu trivijalne  (kao što je to slučaj sa prethodnim programom), te mogu uključivati  pozivanje složenijih pomoćnih funkcija. U takvim slučajevima, valjanost algoritma provjeravamo empirijski, izvršavajući ga nad instancama različitih veličina i distribucija te provjeravajući  validnost vraćenih rezultata (za instance za koje znamo tačan rezultat, dok za one za koje ne znamo, provjeravamo ispunjivost uslova zadatka). 
+Pokazivanje valjanosti kompleksnih algoritama pomoću metoda invarnijantne petlje je rijetko  praktično. Jedan od razloga je taj što definisanje samog uslova invarijantnosti nije trivijalan zadatak, kao  i to da instrukcije koje se izvršavaju u svakoj iteraciji nisu trivijalne  (kao što je to slučaj sa prethodnim programom), te mogu uključivati  pozivanje složenijih pomoćnih funkcija. U takvim slučajevima, valjanost algoritma provjeravamo empirijski, izvršavajući ga nad instancama različitih veličina i distribucija te provjeravajući  validnost vraćenih rezultata (za instance za koje znamo tačan rezultat, dok za one za koje ne znamo, provjeravamo ispunjivost uslova zadatka). 
 
 \section{Euklidov algoritam: kompleksnost}
 Klasični algoritam za nalazak NZD je Euklidov algoritam, dat Algoritmom~\ref{alg:nzd-euclid}. On predstavlja jedan od najpoznatijih algoritama u polju aritmetike. Izvedimo njegovu vremensku kompleksnost. 
@@ -696,7 +696,7 @@ Klasični algoritam za nalazak NZD je Euklidov algoritam, dat Algoritmom~\ref{al
 	ta dva broja.  
 	Dakle, imamo $T(n)  = \Omega(q) = \Omega(2^{n_2}) =  \Omega(2^{n/2})$.
 	
-	U svrhu pokazivanja kompleksnosti, iskoristimo sljedeću teoremu, koju i formalno pokazujemo. 
+	U svrhu pokazivanja kompleksnosti, iskoristimo sljedeću teoremu, koju i formalno dokazujemo. 
 	\begin{theorem}
 		 Za svaka dva broja $p$ i $q$ vrijedi
 		 $$ x \% y \leq x / 2.$$
@@ -741,7 +741,7 @@ Primijetimo da je prostorna kompleksnost Euklidovog algoritma konstanta, tj. jed
 Napomenimo da valjanost Euklidovog algoritma slijedi iz algebarskog svojstva da je skup djelilaca brojeva $p$ i $q$, jednak skupu djelilaca brojeva $q$ i $p\%q$, pa su stoga transformacije parova brojeva za koje se razmatra NZD u svakom koraku validne, dok se ne dođe od trivijanog slučaja, tj. dok drugi broj ne bude jednak nuli, čime se vraća vrijednost prvog broja kao krajnji rezultat. 
 
 Kako smo vidjeli, iako je Euklidov algoritam relativno jednostavnog k\^oda, njegovu kompleksnost nije bilo trivijalno odrediti. Napomenimo da Euklidov algoritam predstavlja jedan vid rekurzivnog algoritma.  %, gdje rekurzija u tijelu funkcije poziva samu sebe, ali sa ulazom manje veličine. 
- U osnovi, za računanje kompleksnosti ovakvih algoritama, o kojima će biti više riječi u Glavi 3, koristi se poznata Master teorema. Ovu teoremu navodimo bez dokaza, uz napomenu da se ona navodi i formalno dokazuje na nekim od kurseva algoritmike na višim godinama studija. Mi ćemo je koristiti isključivo samo kao pomoćni alat u već pomenutoj Glavi 3, kod određivanja kompleksnosti algoritama problema koje budemo rješavali. 
+ U osnovi, za računanje kompleksnosti ovakvih algoritama, o kojima će biti više riječi u Glavi 3, koristi se poznata Master teorema. Ovu teoremu navodimo bez dokaza, uz napomenu da se ona navodi i formalno dokazuje na nekim od kurseva algoritmike na višim godinama studija. Mi ćemo je koristiti isključivo samo kao pomoćni alat u već pomenutoj Glavi 3, kod određivanja kompleksnosti algoritama nekih problema koje budemo rješavali. 
 
 \begin{theorem}[Master teorema]
 	Neka je data jednačina 
@@ -749,9 +749,9 @@ $$T(n) = aT\left(\frac{n}{b}\right) + f(n)$$
 gdje je  $n$  veličina ulaza, broj $a$ predstavlja  broj podproblema,
 $n/b$ veličinu svakog podproblema, $f(n)$ broj instrukcija koji je potreban pored rekurzivnog poziva, uz $a\geq 1$ i $b>1$, dok je $f(n)\geq 0$. Vrijedi sljedeće:
 \begin{itemize}
-	\item Ako je $f(n) = O(n^{log_b (a) - \epsilon})$ za neki $\epsilon>0$, onda $ T(n) = \Theta (n^{log_b (a)})$;
-	\item Ako je $f(n) = \Theta (n^{log_b (a)})$, onda je $T(n) = \Theta (n^{log_b (a)} log(n))$;
-	\item Ako je $f(n) = \Omega (n^{log_b (a) + \epsilon})$  za neki $\epsilon>0$, onda je $T(n) = \Theta (f(n))$. 
+	\item Ako je $f(n) = O(n^{\log_b (a) - \epsilon})$ za neki $\epsilon>0$, onda $ T(n) = \Theta (n^{\log_b (a)})$;
+	\item Ako je $f(n) = \Theta (n^{\log_b (a)})$, onda je $T(n) = \Theta (n^{\log_b (a)} \log(n))$;
+	\item Ako je $f(n) = \Omega (n^{\log_b (a) + \epsilon})$  za neki $\epsilon>0$, onda je $T(n) = \Theta (f(n))$. 
 	
 \end{itemize}
 \end{theorem} 
@@ -762,14 +762,14 @@ Na sljedećim primjerima pokazujemo kako funkcioniše primjena Master teoreme. %
 \begin{example}
 	Posmatrajmo formulu:
 	$$T(n) = 2T\left(\frac{n}{2}\right) + n.$$
-	Kako je $a = 2, b = 2, f(n) = n$, te $f(n) = n = n^{log_b (a)} = n^{log_2 (2)} = n$, iz Master teoreme, na osnovu slučaja 2,  možemo zaključiti da je 
-	$$T(n) = \Theta (n^{log_b (a)} log (n)) = \Theta (n log n).$$
+	Kako je $a = 2, b = 2, f(n) = n$, te $f(n) = n = n^{log_b (a)} = n^{\log_2 (2)} = n$, iz Master teoreme, na osnovu slučaja 2,  možemo zaključiti da je 
+	$$T(n) = \Theta (n^{\log_b (a)} \log (n)) = \Theta (n \log n).$$
 \end{example}
 
 \begin{example} Neka je data formula
 	$T(n) = T(\frac{n}{2}) + O(1)$
 	Imamo $a = 1, b = 2, f(n) = 1$, pa je $$f(n) = 1 = n^{\log_b (a)} = n^{\log_2 (1)} = n^{0} = 1.$$
-	Na osnovu Master teoreme, slučaja 2, imamo
+	Na osnovu Master teoreme, slučaj 2, imamo
 	$$T(n) = \Theta (n^{\log_b (a)} \log (n)) = \Theta (\log n).$$
 \end{example}
 
@@ -778,7 +778,7 @@ Na sljedećim primjerima pokazujemo kako funkcioniše primjena Master teoreme. %
 	$$T(n) = T(\frac{n}{2}) + cn, c >0.$$
 	
 	Imamo $a = 1, b = 2, f(n) = cn$, pa je 
-	$$f(n) = cn = n^{log_b (a)} = n^{log_2 (1) + \varepsilon} = n^{\varepsilon} \text{ za neki } \varepsilon \leq 1.$$
+	$$f(n) = cn = n^{\log_b (a)} = n^{\log_2 (1) + \varepsilon} = n^{\varepsilon} \text{ za neki } \varepsilon \leq 1.$$
 	
 	Na osnovu Master teoreme, slučaj 3, imamo % $$ah(\frac{n}{b}) = \frac{cn}{2} = \frac{1}{2}h(n)$$ 
 	%pa je 
@@ -792,44 +792,52 @@ Na sljedećim primjerima pokazujemo kako funkcioniše primjena Master teoreme. %
 	
 	\begin{algorithm}[H]
 		\begin{algorithmic}[1]
+		\Procedure{Zad1}{$N$}
 		    \State $ a \gets  0$
 		    \For{$i = 0 \text{ to } N$}
 		         \For{$j = N \text{ downto } i$}
 		    		\State $a \gets  a + i + j$
 		         \EndFor
-		     \EndFor	    
+		     \EndFor
+	    \EndProcedure	 	    
 		\end{algorithmic}
 	\end{algorithm}
 \item Izračunati vremensku kompleksnost sljedećeg programa 
 	\begin{algorithm}[H]
 	\begin{algorithmic}[1]
+	 \Procedure{Zad2}{$n$}
 		\State $i, j, k \gets  0$
 		\For{$i = n / 2 \text{ to } n$}
-			\For{$j = 2; j <= n; j = j * 2$}
+			\For{$j = 2; j \leq n; j = j * 2$}
 				\State $k \gets  k + n / 2$
 			\EndFor
 		\EndFor
+	\EndProcedure	 
 	\end{algorithmic}
 \end{algorithm}
  \item Izračunati vremensku kompleksnost sljedećeg programa 
 
 	\begin{algorithm}[H]
 	\begin{algorithmic}[1]
+     \Procedure{Zad3}{$N$}
 		\State $a \gets 0, i \gets N$
 		\While{$i > 0$}
 			\State $a \gets a+ i$
 			\State $i \gets i / 2$
 		\EndWhile
-		 
+    \EndProcedure	 
 	\end{algorithmic}
 \end{algorithm}
  \item Izračunati vremensku kompleksnost sljedećeg programa 
 
 \begin{algorithm}[H]
 	\begin{algorithmic}[1]
+	 \Procedure{Zad4}{$n$}
+		\State $k \gets 3$
 		\For{$i=0 \text{ to } n-1$}
 		    \State $i \gets i * k$
 		\EndFor
+	   \EndProcedure
 	\end{algorithmic}
 \end{algorithm}
 
@@ -837,6 +845,7 @@ Na sljedećim primjerima pokazujemo kako funkcioniše primjena Master teoreme. %
 
 \begin{algorithm}[H]
 	\begin{algorithmic}[1]
+	\Procedure{Zad5}{$n$}
 	  \State $sum \gets 0$
 	  \For{$i = 1 \text{ to } n$}
 	      \For{$j = 1 \text{ to } i\cdot i$}
@@ -848,12 +857,13 @@ Na sljedećim primjerima pokazujemo kako funkcioniše primjena Master teoreme. %
               \EndIf
           \EndFor
      \EndFor
+    \EndProcedure
 	\end{algorithmic}
 \end{algorithm}
 
 
  
- \item Izračunati kompleksnost sljedeće rekurzije:
+ \item Izračunati (ukupnu) kompleksnost sljedeće rekurzije:
 
 \begin{algorithm}[H]
 	\begin{algorithmic}[1]
@@ -878,17 +888,17 @@ Na sljedećim primjerima pokazujemo kako funkcioniše primjena Master teoreme. %
   
  $$	T(n) = 
  \begin{cases}    
-         &3T(n-1), \text{ako }  n > 0 , \\
-        & 1, inače 
+         &3\cdot T(n-1), \text{ako }  n > 0 , \\
+         & 1, \text{inače} 
    \end{cases}$$
 
   \item Izračunati kompleksnost sljedeće rekurzije:
 
 $$	T(n) = 
-\begin{cases}  { 
-		&2T(n-1) – 1, \text{ako } n>0, \\
-		& 1, inače
-	\end{cases}
+\begin{cases} 
+  		&2T(n-1) - 1, \text{ako } n>0, \\
+		& 1, \text{inače}
+\end{cases}
 $$
 
 \item Izračunati prostornu kompleksnost programa datog sljedećim pseudokodom
