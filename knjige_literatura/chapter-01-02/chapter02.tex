@@ -105,11 +105,9 @@ Na raspolaganju je nekoliko tipova (paradigmi) algoritama. Neke važnije paradig
     \\
   
 Dizajniranje efikasnog algoritma je obično dugotrajan proces koji nije direktan, te zahtijeva veliko domensko znanje o problemu te domišljatost onoga koji rješava vezano za način rješavanja samog  problema.  Međutim, postoje neka pravila kojima se vodimo kada konstruišemo algoritam, kao što su korištenje paradigmi za koje znamo da su dovoljno efikasne u rješavaju određenog tipa problema. 
+ \\ 
  
- %Etymology of the word “Algorithm”
- \\  \vspace{0.3cm}
- 
- U nastavku govorimo malo o istorijskoj pozadini nastanka riječi \textit{algoritam}. Riječ “Algoritam” je iskrivljena transliteracija imena “al-Khwarizmi”. Al-Khwarizmi bio je persijski matematičar iz IX veka, rođen na prostorima današnjeg Uzbekistana, studirao i radio u Bagdadu za vrijeme Abasidskog kalifata; oko 820. godine nove ere imenovan je za
+ U nastavku govorimo malo o istorijskoj pozadini nastanka riječi \textit{algoritam}. Riječ ``Algoritam'' je iskrivljena transliteracija imena ``al-Khwarizmi''. Al-Khwarizmi bio je persijski matematičar iz IX veka, rođen na prostorima današnjeg Uzbekistana, studirao i radio u Bagdadu za vrijeme Abasidskog kalifata; oko 820. godine nove ere imenovan je za
   šefa biblioteke ``Kuće mudrosti'' u Bagdadu. Napisao je nekoliko
  uticajnih knjiga, uključujući i jednu sa naslovom ``O kalkulaciji sa hinduistanskim brojevima'', koja opisuje kako se izvodi aritmetika koristeći arapske brojeve (aka arapsko-hindu, a kraće hinduistički brojevi). Originalni rukopis je izgubljen, ali latinski prevod iz 
  1100. godine uveo je ovaj brojevni sistem u Evropu te se smatra odgovornim  za današnje korišćenje  arapskih brojeva.   Stara francuska riječ \textit{algorisme} značila je
@@ -121,7 +119,7 @@ Pri razvoju algoritama, postavljaju se nekoliko ključnih pitanja:
 \begin{enumerate}
 	\item Da li je naš algoritam efikasan? 
 	\item Da li je jedan algoritam brži od drugog? 
-	\item Koliko je najgore očekivano vrijeme izvršavanja algoritma za velike ulaze? 
+	\item Koliko je najgore očekivano vrijeme izvršavanja algoritma za ulaze velikih dimenzija? 
 \end{enumerate}
  
 
@@ -132,16 +130,16 @@ podijeljena na diskretne ćelije, od kojih se svakoj može pristupiti i direktno
 
 Mašina sa slučajnim pristupom predstavlja varijaciju RAM modela koji uključuje randomizaciju u svojim operacijama. Gledajući fizički RAM model, redoslijed instrukcija je fiksan, ali u RAM-u se neke operacije mogu nasumično rasporediti. Npr. RAM može imati ``slučajnu''  instrukciju koja nasumično odabira ćeliju u memoriji i izvodi odgovarajuću operaciju u odabranoj ćeliji.
 
-Mašina sa slučajnim pristupom je model (apstrakcija) koja se koristi u analizi algoritama i njihove složenosti jer omogućava \textit{precizno} izračunavanje broja instrukcija potrebnih za obavljanje određenog zadatka. Ovaj model pretpostavlja da su vremena pristupa memoriji konstantna, što nije tačno na realnim računarima. U praksi, pristup memoriji može uzimati različito vrijeme ovisno o faktorima kao što su keširanje, pristup disku i kašnjenje mreže.
+Ova mašina predstavlja model (apstrakciju) koja se koristi u analizi algoritama i njihove složenosti jer omogućava \textit{precizno} izračunavanje broja instrukcija potrebnih za obavljanje određenog zadatka. Ovaj model pretpostavlja da su vremena pristupa memoriji konstantna, što nije tačno na realnim računarima. U praksi, pristup memoriji može uzimati različito vrijeme ovisno o faktorima kao što su keširanje, pristup disku i kašnjenje mreže.
 
 %http://people.seas.harvard.edu/~cs125/fall14/lec6.pdf ==> follow
-Krenimo sa formalizovanjem modela koji 
+Krenimo sa formalizovanjem teorijskog modela koji 
 se standardno koristi za analizu algoritma.  Posmatrajući viši nivo,   karakteristike modela su sljedeće:
 
 \begin{itemize}
 	\item Glavna memorija je niz $M = (M[0], \ldots, M[S-1])$  $w$-bitnih riječi, koje se takođe mogu prikazati kao brojevi u intervalu
  $\{0,\ldots , 2^w - 1\}$.
- 	\item Niz $R = (R[0], \ldots , R[r - 1])$,  gdje je $r = O(1)$ broj registara, koji su takođe $w$-bitne riječi. Registri se koriste za privremeno pohranjivanje podataka tokom izvođenja programa, za pohranjivanje adresa za dohvaćanje podataka iz RAM-a, kao i za čuvanje privremenih rezultata izračunavanja. 
+ 	\item Niz $R = (R[0], \ldots , R[r - 1])$,  gdje je $r$ broj registara, koji su takođe $w$-bitne riječi. Registri se koriste za privremeno pohranjivanje podataka tokom izvođenja programa, te za pohranjivanje adresa za dohvaćanje podataka iz RAM-a.  %, kao i za čuvanje privremenih rezultata izračunavanja. 
  	
  	\item Algoritmima je dozvoljen samo direktan pristup registrima. Preostalim memorijskim lokacijama može se pristupiti samo
  	indirektnim adresiranjem -- intepretirajući riječi (u registru) kao pokazivač na drugu memorijsku lokaciju. Dakle, zahtjevamo
@@ -159,13 +157,13 @@ Formalno, dopuštene se sljedeće instrukcije za indekse $i, j, k, m \in \mathbb
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=260pt,height=250pt]{slike/instructions_ram.png}
+	\includegraphics[width=300pt,height=280pt]{slike/instructions_ram.png}
 
 	\caption{Pregled instrukcija u RAM modelu.}	\label{fig: ram_instructions}
 \end{figure}
 
 \begin{definition}
-   \emph{w}-RAM program je bilo koji konačan niz instrukcija $P = (P_1, P_2,\ldots, P_q)$ gore navedenog tipa. Broj $r$ registara je implicitno definiran kao  najveći indeks direktne memorijske adrese (među indeksima $i, j, k$ u skup instrukcija sa Slike~\ref{fig: ram_instructions}) koji se javljaju u programu.
+   ${w}$-RAM program je bilo koji konačan niz instrukcija $P = (P_1, P_2,\ldots, P_q)$ gore navedenog tipa. Broj $r$ registara je implicitno definiran kao  najveći indeks direktne memorijske adrese (među indeksima $i, j, k$ u skup instrukcija sa Slike~\ref{fig: ram_instructions}) koji se javljaju u programu.
 \end{definition}
 
 \subsection{Formalizacija računanja na RAM-u}
@@ -183,8 +181,8 @@ niz registara, i $M = (M[0], \ldots, M[|S| - 1]) \in  \{0, \ldots, 2^w - 1\}^{|S
  \begin{itemize}
  	\item Ako je $P_l$ = ``IF $R[i] = 0$, GOTO $m$'' za neke $i < r$ i $m \in  \{1, \ldots , q\}$, onda  $K' = (l', S, w, R, M)$ gdje je  $l'= m$ ako je $R[i] = 0$, a $l' = l + 1$ inače. 
  	\item Ako je $P_l$ = ``$R[i] \leftarrow  m$'' za $i < r$, onda $K' = (l  + 1, S, w, R', M)$ gdje  $R'[i] = m$ \emph{mod} $2^w$ i $R'[ j] = R[ j]$ za sve $j \neq i$. 
- 	\item Ako je $P_l$ = ``$R[i] \leftarrow R[ j] + R[k]$'' za neki $i, j, k < r$, onda  $K' = (l+1, S, w, R′, M)$   gdje je $R'[i] = (R[ j]+R[k])$ \textit{mod} $2^w$
- 	i $R'[m] = R[m]$ za sve $j \neq i$.
+ 	\item Ako je $P_l$ = ``$R[i] \leftarrow R[ j] + R[k]$'' za neki $i, j, k < r$, onda  $K' = (l+1, S, w, R', M)$   gdje je $R'[i] = (R[ j]+R[k])$ \textit{mod} $2^w$
+ 	i $R'[j] = R[j]$ za sve $j \neq i$.
  	\item Ako je $P_l$ = ``$M[R[ j]] \leftarrow R[i]$'' za $i, j < r$ i $R[ j] < S$, onda $K' = (l+ 1, S, w, R, M')$ gdje je $M'[R[ j]] = R[i]$ i
  	$M'[k] = M[k]$ za sve  $k \neq  R[ j]$.
  	\item Ako je $P_l$ = ``MALLOC'', onda je $K' = (l+ 1, S + 1, w', R, M')$, gdje je $w' = \max\{w, \lceil log_2(S + 1) \rceil \}$, $M'[S] = 0$ i
@@ -198,7 +196,7 @@ niz registara, i $M = (M[0], \ldots, M[|S| - 1]) \in  \{0, \ldots, 2^w - 1\}^{|S
 Napomenimo da smo prethodno naveli   samo neke od instrukcija, dok se ostale definišu slično. \\
 
 
-Definišimo formalno pojam računskog problema shodno prethodno definisanom pojmu RAM modela. 
+Definišimo sada formalno pojam računarskog problema shodno prethodno definisanom pojmu RAM modela. 
 \begin{definition}
 	 RAM program $P = (P_1, \ldots, P_q)$ sa $r \geq 2$ registara rješava problem $f \colon \mathbb{N}^* \rightarrow 2^{\mathbb{N}^* } $
 	ako za svaki ulaz $x = (x_1,\ldots, x_n) \in \mathbb{N}^* $ i $k \geq \max\{x_1,\ldots, x_n, m\}$ gdje je $m$ najveća konstanta koja se pojavljuje u $P$, postoji niz konfiguracija $K_0,\ldots,K_t$ tako da:
@@ -216,14 +214,14 @@ Definišimo formalno pojam računskog problema shodno prethodno definisanom pojm
 (kad $n, k \rightarrow \infty$).
     \item Računanje se odvija nizom “baznih” operacija.
     \item Ne namećemo a priori ograničenje za vrijeme (broj koraka) ili prostor   (memorija). Ove resurse 
-      želimo minimizirati, ali i dalje teorijski RAM model  smatra  algoritmom čak i ako on koristi ogromne količine vremena i prostora, što se, vidjećemo, razlikuje od pratičnog aspekta algoritama. 
+      želimo minimizirati, ali i dalje teorijski RAM model  smatra  algoritmom čak i ako on koristi ogromne količine vremena i prostora, što se, vidjećemo, razlikuje od praktičnog aspekta algoritama. 
 \end{itemize}
 
 Pri računanju broja instrukcija izvršavanja programa $P$, u obzir uzimamo sljedeće operacije: aritmetičke i bitske operacije (+, -, *, /, \&, $\mid,\ldots $), logičke ($\wedge$,$\vee$, $\Rightarrow$, $\Leftrightarrow$), operacija dodjele, te ulazno/izlazne operacije. Ove operacije nazivamo \textit{jediničnim instrukcijama}.  Pretpostavka je da se sve jednične instrukcija izvršavaju u jediničnom vremenu.  Vremenska složenost programa se upravo mjeri na osnovu ukupnog broja jediničnih instrukcija, o čemu ćemo više reći u narednoj sekciji. 
 
 \section{Pojam kompleksnosti}
 
-Napomenimo da je jediničnim modelom kompleksnosti definisan (teorijski) RAM model, tj. svaka operacija se izvršava u jediničnom vremenu.  Bez obzira što operacije sabiranja i množenja nemaju isto vrijeme izvođenja na stvarnom računaru, to ne umanjuje značaj teorijskog RAM modela, što ćemo prikazati u nastavku.   
+Napomenimo da je jediničnim modelom kompleksnosti definisan (teorijski) RAM model gdje se svaka operacija izvršava u jediničnom vremenu.  Bez obzira što operacije sabiranja i množenja nemaju isto vrijeme izvođenja na stvarnom računaru, to ne umanjuje značaj teorijskog RAM modela, što ćemo prikazati u nastavku.   
 
 Definišimo sada vremensku kompleksnost izvršavanja programa $P$ na RAM modelu.
 
@@ -231,7 +229,7 @@ Definišimo sada vremensku kompleksnost izvršavanja programa $P$ na RAM modelu.
 	Vrijeme rada $P$ za ulaz  $x \in \mathbb{N}^*$ je broj $t$ koraka prije nego $P$ dostigne zaustavnu
 	konfiguracija (operacija ``HALT'') za $x$. Dakle, najmanji $t$ za koji postoji niz $K_0 \Rightarrow_P  K_1 \Rightarrow_P \cdots \Rightarrow_P K_t$ takav da je $K_0$
 	početna konfiguracija od $P$ za ulaz $x$, a $K_t$ je konfiguracija zaustavljanja (gdje se programski brojač  ažurira na $q + 1$, a $q$
-	broj instrukcija u programu $P$).  
+	označava broj instrukcija u programu $P$).  
 	Pogledajmo sljedeći primjer. 
 	
 \end{definition}
@@ -249,12 +247,12 @@ Definišimo sada vremensku kompleksnost izvršavanja programa $P$ na RAM modelu.
 
 %\end{example}
 
-Izračunajmo tačan broj instrukcija programa konkretnog ulaza $a = [1\ 5\ 2\ 10\ 7]$ i $n = 5$. Imamo: prva linija sadrži jednu instrukciju (dodjela). Unutar petlje (koja se izvršava $n-1$ puta, za koju se dodjeljuje nova  vrijednost iteratoru \texttt{i}, te se potom provjerava da li je ona veća od $n$), broj instrukcija koji je uvjetovan prolazom kroz niz $\texttt{a}$ je $5, 3, 5$ i $3$, što je ukupno $1+5+3+5+3=17$ izvršenih instrukcija.  U kombinaciji sa instrukcijama za varijable \texttt{i} u \emph{for} petlji, ovaj program izvršava ukupno $17+ 4 \cdot 2 + 1 = 26$ instrukcija.
+Izračunajmo tačan broj instrukcija programa konkretnog ulaza $a = [1\ 5\ 2\ 10\ 7]$ i $n = 5$. Imamo: prva linija sadrži jednu instrukciju (dodjela). Unutar petlje (koja se izvršava $n-1$ puta, za koju se dodjeljuje nova  vrijednost iteratoru \texttt{i}, te se potom provjerava da li je ona veća od $n$), broj instrukcija koji je uvjetovan prolazom elementima niza  $\texttt{a}$ je $5, 3, 5$ i $3$, što je ukupno $1+5+3+5+3=17$ izvršenih instrukcija.  U kombinaciji sa instrukcijama za varijable \texttt{i} u \emph{for} petlji, ovaj program izvršava ukupno $17+ 4 \cdot 2 + 1 = 26$ instrukcija.
 
 
 
 Vremenska složenost izvršavanja programa se mjeri u odnosu na ukupan broj
-jediničnih instrukcija. Tačan broj instrukcija za svaki ulaz u kompleksnim programima je     teško precizno izračunati. Zbog toga uvedimo pojam \textit{najgoreg vremena izvršavanja} programa (eng. \textit{worst-case running time}) koji nam pruža   lakši način računanja broja instrukcija programa, ali opet dovoljno reprezentativan da ukaže na to koliko je algoritam efikasan. 
+jediničnih instrukcija. Tačan broj instrukcija za svaki ulaz u kompleksnim programima je     teško precizno izračunati. Zbog toga uvodimo pojam \textit{najgoreg vremena izvršavanja} programa (eng. \textit{worst-case running time}) koji nam pruža   lakši način računanja broja instrukcija programa, ali opet dovoljno reprezentativan da ukaže na to koliko je algoritam efikasan. 
 
 \begin{definition}
 	  Najgore vrijeme izvršavanja programa $P$ je funkcija $T \colon \mathbb{N} \times \mathbb{N} \rightarrow \mathbb{N}$ gdje je $T (n, k)$ maksimalno
@@ -263,8 +261,7 @@ jediničnih instrukcija. Tačan broj instrukcija za svaki ulaz u kompleksnim pro
 
 \begin{example} 
 	
-	Pogledajmo sljedeći program  \\  \vspace{0.3cm} \\
-	
+	Pogledajmo sljedeći program  \\  \vspace{0.3cm} 
 \begin{minted}{Python}
 
 algoritam sort(a, n)
@@ -281,20 +278,20 @@ $$ \sum_{i=1}^{n-1} \sum_{j=0}^{i-1} 2 \cdot 3 = 6 \sum_{i=1}^{n-1} i = 3 \cdot 
 \\
 
 
-Za najgore vrijeme izvršavanja  uzimamo najgori slučaj ulaznih podataka određene dimenzije za koji će se izvršiti maksimalan broj instrukcija. Motivacija za računanje najgoreg vremena izvršavanje programa (algoritama) je sljedeća. Najgori slučaj izvršavanja algoritma je obično lakši za detektovanje i izračunavanje nego je to slučaj sa   tačnim brojem koraka (instrukcija) za konkretnu instancu, koji ne govori mnogo o broju instrukcija programa za ulaze drugačijih distribucija. Prepoznavanje najgoreg slučaja za ulazne podatke određene dimenzije za koje program radi najduže nam omogućuje da utvrdimo gornju granicu za broj instrukcija svakog mogućeg izvršenja programa. Ovakvo vrijeme izvršavanja ne zavisi od konkretne (distribucije) instance date dimenzije, čime se dobija bolji osjećaj o efikasnosti programa u odnosu na veličinu ulaza.
+Za najgore vrijeme izvršavanja  uzimamo najgori slučaj ulaznih podataka određene dimenzije za koji će se izvršiti maksimalan broj instrukcija. Motivacija za računanje najgoreg vremena izvršavanje programa (algoritama) je sljedeća. Najgori slučaj izvršavanja algoritma je obično lakši za detektovanje i izračunavanje nego je to slučaj sa   tačnim brojem koraka (instrukcija) za konkretnu instancu, koji ne govori mnogo o broju instrukcija programa za ulaze drugačijih distribucija. Prepoznavanje najgoreg slučaja za ulazne podatke određene dimenzije za koje program radi najduže nam omogućuje da utvrdimo gornju granicu za broj instrukcija svakog mogućeg izvršenja programa. Ovakvo vrijeme izvršavanja ne  zavisi od konkretne (distribucije) ulazne instance, čime se dobija bolji osjećaj o efikasnosti programa u odnosu na veličinu ulaza.
  
 Bez obzira na ovakva pojednostavljenja, i dalje je egzaktno računanje najgoreg vremena izvršavanja težak posao u većini kompleksnih programa. Stoga, u nastavku govorimo o pojmu \textit{asimptotskog} vremena izvršavanja programa.  Gotovo uvijek se broj koraka izvršavanja u algoritmu povećava shodno povećavanju dimenzije ulaza. Prema tome, ima smisla posmatrati ponašanje algoritma na  
-ulazima velike dimenzije jer se često programi čiji su ulazi  malih dimenzija ionako efikasno izvršavaju (imaju kratko vrijeme izvršavanja)  nezavisno od algoritamske tehnike rješavanja. U sljedećoj podsekciji, uvedimo formalno pojam $O$--notacije. 
+ulazima velike dimenzije jer se često programi čiji su ulazi  malih dimenzija ionako efikasno izvršavaju (imaju kratko vrijeme izvršavanja)  nezavisno od algoritamske tehnike rješavanja. U sljedećoj podsekciji, formalno uvedimo pojam $O$--notacije. 
  
  
 \subsection{$O$--notacija} 
-$O$-notacija   dodatno pojednostavljuje ocjenjivanje broja izvršenih instrukcija  programa, fokusirajući se na ponašanje algoritma pri ulazima velikih dimenzija.  Pretpostavimo da imamo sljedeću situaciju o ocjeni najgoreg scenarija izvršavanja dva algoritma (na istom posmatranom problemu): 
+$O$-notacija   dodatno pojednostavljuje ocjenjivanje broja izvršenih instrukcija  programa, fokusirajući se na ponašanje algoritma na ulazima velikih dimenzija.  Pretpostavimo da imamo sljedeću situaciju o ocjeni najgoreg scenarija izvršavanja dva algoritma (na istom posmatranom problemu): 
 \begin{itemize}
 	\item $T_1(n) = 2 n^{\frac{3}{2}} + 3n + 10$
 	\item $T_2(n) = 4 n \cdot \log n + \lceil \sqrt{n} \rceil + 22 $
 \end{itemize}
 
-Upoređivanje ovakvih funkcija zahtjeva analitičku obradu obje funkcije, pri čemu se može utvrditi da je prvi algoritam (koji se izvršava u $T_1$ vremenu u odnosu na ulaz veličine $n$) je brži (zahtjeva izvođenje manjeg broja instrukcija) za manje $n$, dok je za veće $n$ očigledno u prednosti algoritam 2 ($n \log n$ dosta sporije raste od funkcije $n^{\frac{3}{2}}$). 
+Upoređivanje ovakvih funkcija zahtjeva analitičku analizu obje funkcije, pri čemu se može utvrditi da je prvi algoritam (koji se izvršava u $T_1$ vremenu u odnosu na ulaz veličine $n$)  brži -- zahtjeva izvođenje manjeg broja instrukcija -- za manje $n$, dok je za veće $n$ očigledno u prednosti algoritam sa vremenom izvršavanja $T_2$ ($n \log n$ dosta sporije raste od funkcije $n^{\frac{3}{2}}$). 
 
 Dakle, cilj je je pojednostaviti računanje izvršenog broja instrukcija, koje se postiže uvođenjem sljedećih konvencija u svrhu ocijenjivanja ponašanja algoritma na instancama velikih dimenzija.
 \begin{enumerate}
@@ -309,7 +306,7 @@ Za $T_1(n)$  je dominantni term funkcija $n^{\frac{3}{2}}$, dok je to za $T_2(n)
 %%https://www.khanacademy.org/computing/computer-science/algorithms/asymptotic-notation/a/big-o-notation
 
 \begin{definition}
-Neka su date dvije funkcije $f$ i $g$. Kažemo da $f = O(g)$ akko postoji konstanta $c >0$ tako da $f(n) \leq c \cdot g(n)$ počevši od nekog dovoljno velikog $N$. tj. za $n \geq \mathbb{N}$. Kažemo da je $g$ (gornja) asimptotska granica za $f$. 
+Neka su date dvije funkcije $f$ i $g$. Kažemo da $f = O(g)$ akko postoji konstanta $c >0$ tako da $f(n) \leq c \cdot g(n)$ počevši od nekog dovoljno velikog $N$. tj. za $n \geq {N}$. Kažemo da je $g$ (gornja) asimptotska granica za $f$. 
 \end{definition}
 
 \begin{figure}[H]
@@ -328,7 +325,7 @@ Neka su date dvije funkcije $f$ i $g$. Kažemo da $f = O(g)$ akko postoji konsta
 
 U osnovi, dominirajući term nam govori o asimptotskoj granici čitavog izraza (dobijen računanjem (najgoreg mogućeg) broja instrukcija izvršenog u programu), jer kad je $n$ dovoljno veliko, vrijednost izraza dominantno zavisi od dominirajućeg terma, dok se ostali termi doprinose u ne tako značajnoj mjeri da bi se promijenio zaključak o asimptotskom ponašalju porasta broja instrukacija programa sa porastom dimenzije ulaza. 
 
-$O$--notacija, bez obzira na praktičnost i jednostavnost, dovodi i do određenih  dvosmislenosti. Npr.\  $n^2 + n = O(n^2)$, ali vrijedi i $n^2 + n = O(n^3)$. U svakom slučaju, korisniji zaključak dobijamo uzimajući prvi od ova dva.  Ovo nas dovodi do definisanja $\Theta$--notacije (eng. Big-$\Theta$).
+$O$--notacija, bez obzira na praktičnost i jednostavnost, dovodi i do određenih  dvosmislenosti. Npr.\  $n^2 + n = O(n^2)$, ali vrijedi i $n^2 + n = O(n^3)$. U svakom slučaju, korisniji zaključak dobijamo uzimajući prvi od ova dva.  Ovo nas dovodi do definisanja $\Theta$--notacije (eng. Big-Theta).
 
 \begin{definition}
 Neka su date dvije funkcije $f$ i $g$.  Ako $f = \Theta(g)$, onda postoje konstante $c_1, c_2 >0$ tako da $c_1 g(n) \leq f(n) \leq c_2 g(n)$, počevši od nekog dovoljno velikog $n$. 
@@ -359,7 +356,7 @@ $\Omega$-notacija govori o funkcijama za koje je $g$ asimptotska donja granica, 
 \end{example}
 
 \begin{definition}
-	Neka su date dvije funkcije $f$ i $g$. Kažemo da $f = o(g)$ akko za sve $c > 0$ postoji   $k > 0$ takav da je $0 \leq f(n) < cg(n)$ za sve $n \geq k$. 
+	Neka su date dvije funkcije $f$ i $g$. Kažemo da $f = o(g)$ akko za sve $c > 0$ postoji   $N > 0$ takav da je $0 \leq f(n) < cg(n)$ za sve $n \geq N$. 
 	
 \end{definition}
 
@@ -373,7 +370,7 @@ Neformalno, ako $f(n) = o(g(n))$, to znači da  $f$ postaje beznačajno mala u o
 
 \subsection{Neka svojstva $O$--notacije}
 
-\begin{theorem} Neka su $f, g$ i $h$ pozitivne funkcije, pozitivnih argumenata.  Vrijede sljedeće tvrdnje:
+\begin{theorem} Neka su $f, g$ i $h$ pozitivne funkcije, pozitivnih vrijednosti argumenata.  Vrijede sljedeće tvrdnje:
 	\begin{itemize}
 		\item 	  $f = O(c \cdot f)$ za svako $c > 0$ (konstantni faktori su irelevantni);
 		\item Ako $f = O(g +  h)$ i $h = O(g)$, onda je i $f = O(g)$  (pravilo dominantnog terma);
@@ -391,13 +388,14 @@ Neformalno, ako $f(n) = o(g(n))$, to znači da  $f$ postaje beznačajno mala u o
 
 \subsection{Uputstva za procjenu kompleksnosti algoritama}
 
-Prethodna skecija nam je dala na uvid neke od osnovnih notacija za ocjenjivanje kompleksnosti   algoritma, tj. izvršenja broja instrukcija programa koja se obično razmatra i zavisnosti od veličine ulaza. 
+Prethodna sekcija nam daje na uvid neke od osnovnih notacija za ocjenjivanje kompleksnosti   algoritma, tj. izvršenja broja instrukcija programa koja se obično razmatra u zavisnosti od veličine ulaza. 
 
  Najčešće funkcije koje se pominju u analizi kompleksnosti izvršavanja algoritama su nabrojane u Tabeli~\ref{tab:kompleksnosti}. 
  
  \begin{table}[H]
- 	\centering
- 	\begin{tabular}{l |l}
+ 	   \caption{Rast funkcija. }  \label{fig:kompleksnosti_funkcije}
+ 	\centering 
+ 	\begin{tabular}{l |l} \hline 
  		\textbf{Funkcija}   & \textbf{Kompleksnost} \\ \hline
  		1          & konstantna \\
  		$\log n$   & logaritamska \\
@@ -409,8 +407,7 @@ Prethodna skecija nam je dala na uvid neke od osnovnih notacija za ocjenjivanje 
  		$n!$       & faktorijel \\
  		\hline
   	\end{tabular}
- 
-  \caption{Razni tipovi kompleksnosti. }  \label{tab:kompleksnosti}
+
  \end{table}
  Rast svake od ovih funkcija sa porastom ulaza ($n$) je prikazan na Slici~\ref{fig:kompleksnosti_funkcije}
  \begin{figure}[H]
@@ -420,14 +417,15 @@ Prethodna skecija nam je dala na uvid neke od osnovnih notacija za ocjenjivanje 
  \end{figure}
 
 
-U praksi, neželjena kompleksnost algoritma je eksponencijalna, dok su logaritamska, linearna i log-linearna kompleksnost željene i takvi algoritmi su obično veoma efikasni u rješavanju problema, tj. instanci velikih dimenzija. U zavisnosti od tipa problema, kvadratna kompleksnost može ali i ne mora biti garant za rješavanje realnih instanci razmatranog  problema. %U najvećem broju slučajeva, klasa funkcija koja  koja prelazi kvadratnu je nedovoljno dobra. 
+U praksi, neželjena kompleksnost algoritma je eksponencijalna, dok su logaritamska, linearna i log-linearna kompleksnost poželjne i takvi algoritmi su obično veoma efikasni u rješavanju problema, tj. instanci velikih dimenzija. U zavisnosti od tipa problema, kvadratna kompleksnost može ali i ne mora biti garant za rješavanje realnih instanci većih dimenzija razmatranog  problema. %U najvećem broju slučajeva, klasa funkcija koja  koja prelazi kvadratnu je nedovoljno dobra. 
 
 
 U nastavku izlažemo neka uputstva koja olakšavaju računanje kompleksnosti algoritma. Za (pod)program $P$, označimo njegovu kompleksnost izvođenja sa funkcijom $T(P)$ koja (direktno ili indirektno) zavisi od dimenzije ulaza ($n$). 
  
 \begin{table}[H]
+		\caption{Uputstva za računanje kompleksnosti algoritma.}  \label{tab:uputstva_racunanje}
 	\centering
-	\begin{tabular}{l |l}
+	\begin{tabular}{l |l} \hline 
 		\textbf{Konstrukcija}         & \textbf{Računanje kompleksnosti} \\ \hline
 		Jedinične instrukcije         & 1 \\
         Serija naredbi $S$: $N_1$; $N_2$; &  $T(S) = T(N_1) + T(N_2)$  \\ \hline
@@ -438,12 +436,10 @@ U nastavku izlažemo neka uputstva koja olakšavaju računanje kompleksnosti alg
          2) \textbf{FOR} $i=j$ \textbf{to} $p$ \textbf{DO} $N_1$  &    $T(S)= n\cdot T(N_1)$     \\  \hline
          
 	\end{tabular}
-	
-	\caption{Uputstva za računanje kompleksnosti algoritma.}  \label{tab:uputstva_racunanje}
 \end{table}
 
-Odgovorimo sada na pitanja kako znamo da je jedan algoritam efikasniji od drugoga?
-Upravo, odgovor nam daju notacije za kompleksnost koje smo naučili u ovoj glavi, i to dvije najznačajnije: $O$ i $\Theta$--notacije. Kažemo da je jedan algoritam $X$ \textit{asimptotski efikasniji} od drugog algoritma  $Y$ akko sa porastom veličine ulaza u oba algoritma, vrijeme rada algoritma $X$ će na kraju postati kraće od vremena rada $Y$. To znači da $X$ pripada nižoj $O$--klasi složenosti od $Y$. %https://www.geeksforgeeks.org/algorithms-analysis-of-algorithms-question-16/ 
+Odgovorimo sada na pitanja da li je jedan algoritam efikasniji od drugoga?
+Upravo, odgovor nam daju notacije za kompleksnost koje smo naučili u ovoj glavi, i to dvije najznačajnije: $O$ i $\Theta$--notacije. Kažemo da je jedan algoritam $X$ \textit{asimptotski efikasniji} od drugog algoritma  $Y$ akko sa porastom veličine ulaza u oba algoritma, vrijeme rada algoritma $X$ postaje kraće od vremena rada $Y$. To znači da $X$ pripada nižoj $O$--klasi složenosti od $Y$. %https://www.geeksforgeeks.org/algorithms-analysis-of-algorithms-question-16/ 
 Prema tome, za velike ulaze, algoritam $X$ je uvijek biti bolji izbor od  algoritma $Y$ u smislu efikasnosti (vremena izvođenja). Međutim, za male ulaze moguće je da je $Y$ i dalje brži od $X$. Stoga se ne može reći da je $X$ uvijek bolji izbor za sve ulazne vrijednosti, već da će $X$ biti bolji izbor za sve ulaze osim eventualno malih ulaza.
 
 
@@ -455,14 +451,14 @@ U narednom primjeru dajemo jedan zadatak, rješavamo ga na dva načina, te izvod
 \end{example}
 \begin{solution}
  
- Neka je dat ulaz $\texttt{a} = [1, 4, -2, 2, 10, -7, 1]$.  Jedan neprekidan podniz je $[ -2, 2, 10 ]$ (početne pozicije 2, te završne pozicije 4), ali $[-2, -7, 10]$ nije neprekidan podniz. 
+ Neka je dat ulaz $\texttt{a} = [1, 4, -2, 2, 10, -7, 1]$.  Jedan neprekidan podniz ovog niza je $[ -2, 2, 10 ]$ (početne pozicije 2, te završne pozicije 4), ali $[-2, -7, 10]$ nije neprekidan podniz. 
  
 Koristimo se naivnim pristupom rješavanja problema. Definišimo $$S(i, j) := \max  \{ a[i], \ldots, a[j] \},$$
 
 gdje je $S(i, i ) = a[i]$. 
 Funkcija $S(i,j)$ računa sumu elemenata neprekidnog podniza niza \texttt{a}, sa početnom pozicijom  $i$, te završnom pozicijom $j$.
 Za izračunavanje funkcije $S(i, j)$, potrebno je $j-i+1$ instrukcija, što definitivno pripada klasi $O(n)$. Da bismo riješili problem na ovaj način, 
-treba da pozovemo funkciju $S(i,j)$ za svaki par $(i,j),  {i, j \in \{0, \ldots , n-1\},  i \leq j}$, a to je ukupno $\binom{n}{2} + n$ puta, što odgovara klasi kompleksnosti $O(n^2)$. Dakle, kompleksnost ovakvog algoritma je $O(n)\cdot O(n^2) = O(n^3)$. 
+treba da pozovemo funkciju $S(i,j)$ za svaki par $(i,j),  {i, j \in \{0, \ldots , n-1\},  i \leq j}$, a to je ukupno $\binom{n}{2} + n$ puta, što odgovara klasi kompleksnosti $O(n^2)$. Dakle, kompleksnost ovakvog algoritma je $O(n)\cdot O(n^2) = O(n^3)$ što je kubna kompleksnost. 
 
 Pokušajmo konstruisati ``pametniji'' algoritam. Iskoristimo činjenicu da postoji jasna rekurzivna zavisnost između vrijednosti dva susjedna $S(i,j)$ i $S(i, j+1)$, tj. da je $S(i, j+1) = a[j+1] + S(i, j)$, za $j \in \{i, \ldots, n-2\}$. Definišimo sada:
 $$ S(i):= \max \{ S(i, i), S(i, i+1), \ldots, S(i, n-1)\}.$$
