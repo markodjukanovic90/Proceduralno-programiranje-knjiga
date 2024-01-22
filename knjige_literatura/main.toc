@@ -69,9 +69,9 @@
 \contentsline {section}{\numberline {3.5}Algoritamska paradigma podijeli pa zavladaj}{116}%
 \contentsline {section}{\numberline {3.6}Algoritamska paradigma vraćanja unazad }{119}%
 \contentsline {section}{\numberline {3.7}Pohlepni algoritmi}{124}%
-\contentsline {subsection}{\numberline {3.7.1}Problem razmjene novca}{126}%
+\contentsline {subsection}{\numberline {3.7.1}Problem razmjene novca}{125}%
 \contentsline {subsection}{\numberline {3.7.2}Dijeljeni problem ruksaka}{127}%
-\contentsline {section}{\numberline {3.8}Dinamičko programiranje}{135}%
+\contentsline {section}{\numberline {3.8}Dinamičko programiranje}{134}%
 \contentsline {subsection}{\numberline {3.8.1}Rekurzija vs. Dinamičko programiranje}{136}%
 \contentsline {subsection}{\numberline {3.8.2}Primjene dinamičkog programiranja}{137}%
 \contentsline {chapter}{\numberline {4}Primjena algoritamskih paradigmi na probleme iz aritmetike}{153}%

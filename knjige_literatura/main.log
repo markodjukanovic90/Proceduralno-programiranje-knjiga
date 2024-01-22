@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.31)  22 JAN 2024 14:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.31)  22 JAN 2024 16:32
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -364,6 +364,7 @@ Document Style - pseudocode environments for use with the `algorithmicx' style
 )
 \c@theorem=\count301
 \c@definition=\count302
+\c@example=\count303
  (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
@@ -388,42 +389,48 @@ runsystem(rm main.aex)...executed.
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count303
+\l__kernel_color_stack_int=\count304
 \l__pdf_internal_box=\box56
 )
 
 LaTeX Warning: Unused global option(s):
     [b4paper].
 
-No file main.aux.
+(./main.aux (./chapter-01-02/chapter02.aux
+
+LaTeX Warning: Label `fig:kompleksnosti_funkcije' multiply defined.
+
+) (./chapter-01-02/chapter01.aux) (./chapter-03-04/chapter03.aux)
+(./chapter-03-04/chapter04.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count304
+\scratchcounter=\count305
 \scratchdimen=\dimen164
 \scratchbox=\box57
-\nofMPsegments=\count305
-\nofMParguments=\count306
+\nofMPsegments=\count306
+\nofMParguments=\count307
 \everyMPshowfont=\toks34
-\MPscratchCnt=\count307
+\MPscratchCnt=\count308
 \MPscratchDim=\dimen165
-\MPnumerator=\count308
-\makeMPintoPDFobject=\count309
+\MPnumerator=\count309
+\makeMPintoPDFobject=\count310
 \everyMPtoPDFconversion=\toks35
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -434,13 +441,13 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 49.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 49.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -450,18 +457,18 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
-]
-No file main.toc.
+] (./main.toc [3] [4])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
-[3] [1
+ [5] [1
 
 
 ]
 \openout2 = `chapter-01-02/chapter02.aux'.
 
- (./chapter-01-02/chapter02.tex [2
+
+(./chapter-01-02/chapter02.tex [2
 
 
 ]
@@ -489,31 +496,18 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-! LaTeX Error: There's no line here to end.
+Underfull \hbox (badness 10000) in paragraph at lines 107--109
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.110  \\  \vspace
-                  {0.3cm}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+ []
 
 [8] [9]
-<slike/instructions_ram.png, id=54, 493.845pt x 511.9125pt>
+<slike/instructions_ram.png, id=61, 493.845pt x 511.9125pt>
 File: slike/instructions_ram.png Graphic file (type png)
 <use slike/instructions_ram.png>
-Package pdftex.def Info: slike/instructions_ram.png  used on input line 162.
-(pdftex.def)             Requested size: 259.9959pt x 249.99571pt.
+Package pdftex.def Info: slike/instructions_ram.png  used on input line 160.
+(pdftex.def)             Requested size: 299.99411pt x 279.99832pt.
  [10]
-
-LaTeX Warning: Reference `fig: ram_instructions' on page 11 undefined on input 
-line 168.
-
-
-Overfull \hbox (16.8155pt too wide) in paragraph at lines 175--178
+Overfull \hbox (16.8155pt too wide) in paragraph at lines 173--176
 []\OT1/cmr/m/it/12 Konfiguracija \OT1/cmr/m/n/12 w\OT1/cmr/m/it/12 --RAM pro-gr
 a-ma $\OML/cmm/m/it/12 P$ \OT1/cmr/m/it/12 je tor-ka $\OML/cmm/m/it/12 K \OT1/c
 mr/m/n/12 = (\OML/cmm/m/it/12 l; S; w; R; M\OT1/cmr/m/n/12 )$\OT1/cmr/m/it/12 ,
@@ -521,379 +515,107 @@ mr/m/n/12 = (\OML/cmm/m/it/12 l; S; w; R; M\OT1/cmr/m/n/12 )$\OT1/cmr/m/it/12 ,
  []
 
 
-Overfull \hbox (32.1914pt too wide) in paragraph at lines 181--182
+Overfull \hbox (32.1914pt too wide) in paragraph at lines 179--180
 []\OT1/cmr/m/it/12 Za kon-fi-gu-ra-ci-ju $\OML/cmm/m/it/12 K \OT1/cmr/m/n/12 = 
 (\OML/cmm/m/it/12 l; S; w; R; M\OT1/cmr/m/n/12 )$ \OT1/cmr/m/it/12 w-RAM pro-gr
 a-ma $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 P[]; [] ; P[]\OT1/cmr/m/n/12 )$
  []
 
 [11 <./slike/instructions_ram.png>]
-
-! Package inputenc Error: Unicode character ′ (U+2032)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.186 ..., j, k < r$, onda  $K' = (l+1, S, w, R′
-                                                  , M)$   gdje je $R'[i] = (...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
 
  []
 
 [12]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -S default -f latex -P commandprefix=PYG > _minted-main/de
-fault-pyg-prefix.pygstyle)...executed.
-
  (./_minted-main/default-pyg-prefix.pygstyle)
-runsystem(pygmentize -S default -f latex -P commandprefix=PYGdefault > _minted-
-main/default.pygstyle)...executed.
-
-
 (./_minted-main/default.pygstyle)
-runsystem(pygmentize -l C -f latex -P commandprefix=PYG -F tokenmerge -o _minte
-d-main/C8C15D4D56BCE45237E6F3BEC0AF8CD52F427962ED4E6A717DE0D192A922302F.pygtex 
-main.pyg)...executed.
-
-
 (./_minted-main/C8C15D4D56BCE45237E6F3BEC0AF8CD52F427962ED4E6A717DE0D192A922302
 F.pygtex
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 4.
  [13])
-Overfull \hbox (20.10681pt too wide) in paragraph at lines 252--253
+Overfull \hbox (20.10681pt too wide) in paragraph at lines 250--251
 []\OT1/cmr/m/n/12 Izra^^Tcunajmo ta^^Tcan broj in-struk-ci-ja pro-gra-ma kon-kr
 et-nog ula-za $\OML/cmm/m/it/12 a \OT1/cmr/m/n/12 = [1 5 2 10 7]$
  []
 
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.264 \begin{example}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 266--267
-
- []
-
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l Python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/D97E4BBE023BB99ACFC7A5F7BD5DA03B5BD9CFCE54A68914ACB2DCF71641ADB0.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/D97E4BBE023BB99ACFC7A5F7BD5DA03B5BD9CFCE54A68914ACB2DCF71641ADB
-0.pygtex)
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.277 \end{example}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 280--282
+0.pygtex
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 3.
+) [14]
+Underfull \hbox (badness 10000) in paragraph at lines 277--279
 
  []
 
 [15]
-<slike/O_notation.png, id=78, 723.70375pt x 753.81625pt>
+<slike/O_notation.png, id=85, 723.70375pt x 753.81625pt>
 File: slike/O_notation.png Graphic file (type png)
 <use slike/O_notation.png>
-Package pdftex.def Info: slike/O_notation.png  used on input line 317.
+Package pdftex.def Info: slike/O_notation.png  used on input line 314.
 (pdftex.def)             Requested size: 119.99123pt x 109.99644pt.
-
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.325 \begin{example}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.327 \end{example}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[16 <./slike/O_notation.png>]
-Overfull \hbox (8.88237pt too wide) in paragraph at lines 331--332
+ [16 <./slike/O_notation.png>]
+Overfull \hbox (8.88237pt too wide) in paragraph at lines 328--329
 []$\OML/cmm/m/it/12 O$\OT1/cmr/m/n/12 --notacija, bez ob-zi-ra na prak-ti^^Tcno
 st i jed-no-stav-nost, do-vo-di i do odre[]denih
  []
 
-
-LaTeX Warning: Reference `fig:theta_notation' on page 17 undefined on input lin
-e 337.
-
-<slike/theta_notation.jpg, id=85, 211.79124pt x 212.795pt>
+<slike/theta_notation.jpg, id=91, 211.79124pt x 212.795pt>
 File: slike/theta_notation.jpg Graphic file (type jpg)
 <use slike/theta_notation.jpg>
-Package pdftex.def Info: slike/theta_notation.jpg  used on input line 341.
+Package pdftex.def Info: slike/theta_notation.jpg  used on input line 338.
 (pdftex.def)             Requested size: 119.99837pt x 120.00209pt.
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.346 \begin{example}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.348 \end{example}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.357 \begin{example}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.359 \end{example}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 [17 <./slike/theta_notation.jpg>]
 
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.370 \begin{example}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.372 \end{example}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
 LaTeX Warning: Reference `tab:kompleksnosti' on page 18 undefined on input line
- 396.
+ 393.
 
 [18]
-
-LaTeX Warning: Reference `fig:kompleksnosti_funkcije' on page 19 undefined on i
-nput line 415.
-
-<slike/growth.png, id=93, 1056.94875pt x 721.69624pt>
+<slike/growth.png, id=99, 1056.94875pt x 721.69624pt>
 File: slike/growth.png Graphic file (type png)
 <use slike/growth.png>
-Package pdftex.def Info: slike/growth.png  used on input line 418.
+Package pdftex.def Info: slike/growth.png  used on input line 415.
 (pdftex.def)             Requested size: 269.99413pt x 199.99226pt.
 
-Overfull \hbox (14.07578pt too wide) in paragraph at lines 426--427
+Overfull \hbox (14.07578pt too wide) in paragraph at lines 423--424
 \OT1/cmr/m/n/12 sno-sti al-go-rit-ma. Za (pod)program $\OML/cmm/m/it/12 P$\OT1/
 cmr/m/n/12 , ozna^^Tcimo nje-go-vu kom-plek-snost izvo[]denja
  []
 
-[19 <./slike/growth.png>]
+[19 <./slike/growth.png>] [20] [21]
 
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.452 \begin{example}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 519.
 
 
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.455 \end{example}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[20]
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.494  \begin{example}
-                      
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[21]
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.526  \end{example}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 519.
 
 [22]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l C -f latex -P commandprefix=PYG -F tokenmerge -o _minte
-d-main/72826253E4A3AD6D37A3D98059F8209E2F427962ED4E6A717DE0D192A922302F.pygtex 
-main.pyg)...executed.
-
 
 (./_minted-main/72826253E4A3AD6D37A3D98059F8209E2F427962ED4E6A717DE0D192A922302
-F.pygtex) [23]
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.569 \begin{example}
-                      Napisati pseudokod za nalazak najvećeg elementa u niz...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
+F.pygtex [23])
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l C -f latex -P commandprefix=PYG -F tokenmerge -o _minte
-d-main/9EBEAF8F791AB820B5FA1F1133F707E52F427962ED4E6A717DE0D192A922302F.pygtex 
-main.pyg)...executed.
 
 
 (./_minted-main/9EBEAF8F791AB820B5FA1F1133F707E52F427962ED4E6A717DE0D192A922302
 F.pygtex
-Underfull \hbox (badness 10000) in paragraph at lines 569--1
+Underfull \hbox (badness 10000) in paragraph at lines 565--1
 
  []
 
 )
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.579 \end{example}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1259) has occurred while \output is active []
 
  [24]
-[25]
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.647 \begin{example}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-LaTeX Warning: Reference `alg:nzd' on page 26 undefined on input line 648.
-
-[26]
+[25] [26] [27] [28]
 
 ! LaTeX Error: \begin{document} ended by \end{example}.
 
@@ -901,25 +623,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.670 \end{example}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-LaTeX Warning: Reference `alg:nzd-euclid' on page 27 undefined on input line 67
-4.
-
-[27] [28]
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.743 \end{example}
+l.739 \end{example}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -928,98 +632,18 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.743 \end{example}
+l.739 \end{example}
                    
 Things are pretty mixed up, but I think the worst is over.
 
-[29]
+[29] [30] [31]
 
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.766 \begin{example}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.771 \end{example}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.773 \begin{example}
-                      Neka je data formula
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.778 \end{example}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.780 \begin{example}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[30]
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.790 \end{example}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[31]
-
-LaTeX Warning: Command \v invalid in math mode on input line 886.
+LaTeX Warning: Command \v invalid in math mode on input line 882.
 
 ! Please use \mathaccent for accents in math mode.
 \add@accent ... \let \ignorespaces \relax \accent 
                                                   #1 #2\egroup \spacefactor ...
-l.886         & 1, inač
+l.882         & 1, inač
                         e
 I'm changing \accent to \mathaccent here; wish me luck.
 (Accents are not the same in formulas as they are in text.)
@@ -1027,7 +651,7 @@ I'm changing \accent to \mathaccent here; wish me luck.
 ! You can't use `\spacefactor' in math mode.
 \add@accent ... \accent #1 #2\egroup \spacefactor 
                                                   \accent@spacefactor 
-l.886         & 1, inač
+l.882         & 1, inač
                         e
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -1039,22 +663,22 @@ Missing character: There is no � in font cmex10!
 ! Missing } inserted.
 <inserted text> 
                 }
-l.893 		&
+l.889 		&
          2T(n-1) – 1, \text{ako } n>0, \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
 
 
-LaTeX Warning: Command \textendash invalid in math mode on input line 893.
+LaTeX Warning: Command \textendash invalid in math mode on input line 889.
 
 
-LaTeX Warning: Command \v invalid in math mode on input line 894.
+LaTeX Warning: Command \v invalid in math mode on input line 890.
 
 ! Please use \mathaccent for accents in math mode.
 \add@accent ... \let \ignorespaces \relax \accent 
                                                   #1 #2\egroup \spacefactor ...
-l.894 		& 1, inač
+l.890 		& 1, inač
                   e
 I'm changing \accent to \mathaccent here; wish me luck.
 (Accents are not the same in formulas as they are in text.)
@@ -1062,7 +686,7 @@ I'm changing \accent to \mathaccent here; wish me luck.
 ! You can't use `\spacefactor' in math mode.
 \add@accent ... \accent #1 #2\egroup \spacefactor 
                                                   \accent@spacefactor 
-l.894 		& 1, inač
+l.890 		& 1, inač
                   e
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -1080,16 +704,12 @@ Missing character: There is no � in font cmex10!
 ]
 Glava 2.
 
-LaTeX Warning: Reference `fig: popular_program_lang' on page 35 undefined on in
-put line 4.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 4--4
 [][]\OT1/cmr/m/n/10 Podaci pre-u-ze-ti sa https://statisticsanddata.org/data/th
 e-most-popular-
  []
 
-<slike/most_popular_language.png, id=149, 1247.66125pt x 620.3175pt>
+<slike/most_popular_language.png, id=155, 1247.66125pt x 620.3175pt>
 File: slike/most_popular_language.png Graphic file (type png)
 <use slike/most_popular_language.png>
 Package pdftex.def Info: slike/most_popular_language.png  used on input line 8.
@@ -1110,78 +730,50 @@ T1/cmr/m/n/12 ).
 [37]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/053A681634FA92EBE9750C8AF180DCBB4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/053A681634FA92EBE9750C8AF180DCBB4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/49791559F37B4D73EBA7CD0CB48BA3244FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/49791559F37B4D73EBA7CD0CB48BA3244FBEEAFC55D0059826E664B9BBCF372
 1.pygtex) [38]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l C -f latex -P commandprefix=PYG -F tokenmerge -o _minte
-d-main/DBD379BAF3FB2CB20304C53226A1B8162F427962ED4E6A717DE0D192A922302F.pygtex 
-main.pyg)...executed.
-
 
 (./_minted-main/DBD379BAF3FB2CB20304C53226A1B8162F427962ED4E6A717DE0D192A922302
 F.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/D24557879D67FEF32B6CB775F44327E64FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/D24557879D67FEF32B6CB775F44327E64FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [39])
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/86475E134733D164363C0643AAD9378F4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/86475E134733D164363C0643AAD9378F4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-<slike/variable_object.png, id=167, 415.5525pt x 274.626pt>
+<slike/variable_object.png, id=174, 415.5525pt x 274.626pt>
 File: slike/variable_object.png Graphic file (type png)
 <use slike/variable_object.png>
 Package pdftex.def Info: slike/variable_object.png  used on input line 108.
 (pdftex.def)             Requested size: 139.9988pt x 99.9967pt.
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/C66B1A1F5F9F823C0125320A5C82BDCD4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/C66B1A1F5F9F823C0125320A5C82BDCD4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-<slike/point_two_vars.png, id=168, 428.802pt x 231.264pt>
+<slike/point_two_vars.png, id=175, 428.802pt x 231.264pt>
 File: slike/point_two_vars.png Graphic file (type png)
 <use slike/point_two_vars.png>
 Package pdftex.def Info: slike/point_two_vars.png  used on input line 119.
 (pdftex.def)             Requested size: 140.0002pt x 99.99913pt.
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/25CE05D8DCFB8B59B36FBAEF030B1B7E4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/25CE05D8DCFB8B59B36FBAEF030B1B7E4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-<slike/vars_different_assigned.png, id=169, 404.712pt x 245.718pt>
+<slike/vars_different_assigned.png, id=176, 404.712pt x 245.718pt>
 File: slike/vars_different_assigned.png Graphic file (type png)
 <use slike/vars_different_assigned.png>
 Package pdftex.def Info: slike/vars_different_assigned.png  used on input line 
@@ -1189,15 +781,11 @@ Package pdftex.def Info: slike/vars_different_assigned.png  used on input line
 (pdftex.def)             Requested size: 140.00249pt x 99.9989pt.
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/935884F14991F3C6B720923B3A03195D4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/935884F14991F3C6B720923B3A03195D4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [40 <./slike/variable_object.png> <./slike/point_two_vars.png> <./slik
 e/vars_different_assigned.png>])
-<slike/varX_different_assigned.png, id=174, 424.58624pt x 254.75175pt>
+<slike/varX_different_assigned.png, id=180, 424.58624pt x 254.75175pt>
 File: slike/varX_different_assigned.png Graphic file (type png)
 <use slike/varX_different_assigned.png>
 Package pdftex.def Info: slike/varX_different_assigned.png  used on input line 
@@ -1205,115 +793,67 @@ Package pdftex.def Info: slike/varX_different_assigned.png  used on input line
 (pdftex.def)             Requested size: 139.99727pt x 99.99805pt.
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/82AA35FAE30E2202BCF9CE2C79A56B4B4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/82AA35FAE30E2202BCF9CE2C79A56B4B4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex) [41 <./slike/varX_different_assigned.png>]
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/15647B1EE1EF089EA941EBE843B5455D4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/15647B1EE1EF089EA941EBE843B5455D4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/A2AB6758F3E377DE64A9E972F072349D4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/A2AB6758F3E377DE64A9E972F072349D4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-
-LaTeX Warning: Reference `fig: operatori_poredjenja' on page 42 undefined on in
-put line 188.
-
-<slike/operatori_poredjenja.png, id=178, 397.485pt x 186.6975pt>
+<slike/operatori_poredjenja.png, id=184, 397.485pt x 186.6975pt>
 File: slike/operatori_poredjenja.png Graphic file (type png)
 <use slike/operatori_poredjenja.png>
 Package pdftex.def Info: slike/operatori_poredjenja.png  used on input line 192
 .
 (pdftex.def)             Requested size: 220.00633pt x 100.0004pt.
-[42]
+ [42]
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/D299AA86D0F6CA3FD7C97DDBA6E5682D4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/D299AA86D0F6CA3FD7C97DDBA6E5682D4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/105C8CA1ECD177CDF9E3DD08CBB6A3684FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/105C8CA1ECD177CDF9E3DD08CBB6A3684FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [43 <./slike/operatori_poredjenja.png>])
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/D88200AEDC3E923FED741441EC3DE1D44FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/D88200AEDC3E923FED741441EC3DE1D44FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/7351B60315D573CAD710C3E9789980EF4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/7351B60315D573CAD710C3E9789980EF4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/0DD06EE51892EC87EE9AA14A55525D774FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/0DD06EE51892EC87EE9AA14A55525D774FBEEAFC55D0059826E664B9BBCF372
 1.pygtex) [44]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/A18CC6D4EFF91C2B1886E1EDAC97B6B64FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/A18CC6D4EFF91C2B1886E1EDAC97B6B64FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/54266EA16A32A207FB5A40F1173D6B5E4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/54266EA16A32A207FB5A40F1173D6B5E4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/BFFCBD4368C00DF710E63472B67C993D4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/BFFCBD4368C00DF710E63472B67C993D4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex) [45]
-<slike/str_mem_organization.png, id=192, 543.02875pt x 163.61125pt>
+<slike/str_mem_organization.png, id=200, 543.02875pt x 163.61125pt>
 File: slike/str_mem_organization.png Graphic file (type png)
 <use slike/str_mem_organization.png>
 Package pdftex.def Info: slike/str_mem_organization.png  used on input line 296
@@ -1321,32 +861,20 @@ Package pdftex.def Info: slike/str_mem_organization.png  used on input line 296
 (pdftex.def)             Requested size: 199.99774pt x 59.99846pt.
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l C -f latex -P commandprefix=PYG -F tokenmerge -o _minte
-d-main/9DFB1042D9A3900D43A9668BB30616572F427962ED4E6A717DE0D192A922302F.pygtex 
-main.pyg)...executed.
-
 
 (./_minted-main/9DFB1042D9A3900D43A9668BB30616572F427962ED4E6A717DE0D192A922302
 F.pygtex) [46 <./slike/str_mem_organization.png>]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/44D3144EFE042FBE465953734FFE5DA94FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/44D3144EFE042FBE465953734FFE5DA94FBEEAFC55D0059826E664B9BBCF372
 1.pygtex) [47]
-
-LaTeX Warning: Reference `fig: mem_list_org' on page 48 undefined on input line
- 350.
-
-<slike/list_mem_org.png, id=202, 374.39874pt x 323.2075pt>
+<slike/list_mem_org.png, id=208, 374.39874pt x 323.2075pt>
 File: slike/list_mem_org.png Graphic file (type png)
 <use slike/list_mem_org.png>
 Package pdftex.def Info: slike/list_mem_org.png  used on input line 355.
 (pdftex.def)             Requested size: 229.99963pt x 160.00053pt.
-<slike/list_mem_management.png, id=203, 568.1225pt x 324.21124pt>
+<slike/list_mem_management.png, id=209, 568.1225pt x 324.21124pt>
 File: slike/list_mem_management.png Graphic file (type png)
 <use slike/list_mem_management.png>
 Package pdftex.def Info: slike/list_mem_management.png  used on input line 363.
@@ -1354,123 +882,66 @@ Package pdftex.def Info: slike/list_mem_management.png  used on input line 363.
 (pdftex.def)             Requested size: 320.01022pt x 149.99977pt.
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/9B723816CD3C21210646B18AD67455944FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/9B723816CD3C21210646B18AD67455944FBEEAFC55D0059826E664B9BBCF372
-1.pygtex [48 <./slike/list_mem_org.png>])
-
-LaTeX Warning: Reference `tab: Tip podataka u objektu array' on page 49 undefin
-ed on input line 380.
-
-[49 <./slike/list_mem_management.png>]
+1.pygtex [48 <./slike/list_mem_org.png>]) [49 <./slike/list_mem_management.png>
+]
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/9049BE01E826D8EADC90E6EA89F771644FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/9049BE01E826D8EADC90E6EA89F771644FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/46687FEBA5409E52A5E5C7459BF1800F4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/46687FEBA5409E52A5E5C7459BF1800F4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/1E54DC7628DA2C623F2456CCFD04AB044FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/1E54DC7628DA2C623F2456CCFD04AB044FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/D28398787C7A82CFCFD96461D76243F94FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/D28398787C7A82CFCFD96461D76243F94FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/79A58058F53C6DD3C8316C6E03982B3A4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/79A58058F53C6DD3C8316C6E03982B3A4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [50])
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/536A2AC169DDB61D5F6A9F8E2FD830024FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/536A2AC169DDB61D5F6A9F8E2FD830024FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/74AA7765D9974F36FB0F0BFA4C01A49E4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/74AA7765D9974F36FB0F0BFA4C01A49E4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/ABAE74FADDA67D3C3CE50CC2F476B4954FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/ABAE74FADDA67D3C3CE50CC2F476B4954FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/FA59BC3A91868841DB4C27BC0A746A044FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/FA59BC3A91868841DB4C27BC0A746A044FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [51])
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/FE283638FB098FD065E6141497AA22D74FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/FE283638FB098FD065E6141497AA22D74FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/C3A71D86D957E8EAB6F4F25429091A294FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/C3A71D86D957E8EAB6F4F25429091A294FBEEAFC55D0059826E664B9BBCF372
-1.pygtex)
-
-LaTeX Warning: Reference `fig: dict_mem_organization' on page 52 undefined on i
-nput line 499.
-
-[52]
-<slike/dict_mem_organization.png, id=222, 596.2275pt x 314.17375pt>
+1.pygtex) [52]
+<slike/dict_mem_organization.png, id=228, 596.2275pt x 314.17375pt>
 File: slike/dict_mem_organization.png Graphic file (type png)
 <use slike/dict_mem_organization.png>
 Package pdftex.def Info: slike/dict_mem_organization.png  used on input line 51
@@ -1478,23 +949,15 @@ Package pdftex.def Info: slike/dict_mem_organization.png  used on input line 51
 (pdftex.def)             Requested size: 239.997pt x 139.99623pt.
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/80DAC89AA69DD7B92D533113CEF6A32F4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/80DAC89AA69DD7B92D533113CEF6A32F4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [53]) [54 <./slike/dict_mem_organization.png>] [55]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/9DE1FBD2010F7E54881316B5DD033F414FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/9DE1FBD2010F7E54881316B5DD033F414FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-<slike/set_mem_organization.png, id=233, 225.84375pt x 209.28188pt>
+<slike/set_mem_organization.png, id=239, 225.84375pt x 209.28188pt>
 File: slike/set_mem_organization.png Graphic file (type png)
 <use slike/set_mem_organization.png>
 Package pdftex.def Info: slike/set_mem_organization.png  used on input line 567
@@ -1502,59 +965,35 @@ Package pdftex.def Info: slike/set_mem_organization.png  used on input line 567
 (pdftex.def)             Requested size: 200.01126pt x 99.99748pt.
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/3BD990517ED7DC9911F9AD3484C9F5854FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/3BD990517ED7DC9911F9AD3484C9F5854FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/9F5961A9DC00A01522A9B19678071A9E4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/9F5961A9DC00A01522A9B19678071A9E4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/D2FF82C9F6821961D08D7F2119ECBC594FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/D2FF82C9F6821961D08D7F2119ECBC594FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/AD1BFEB24C1ABB8EFD5453328341A9114FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/AD1BFEB24C1ABB8EFD5453328341A9114FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [56 <./slike/set_mem_organization.png>])
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/C2E8BC58507D26157D7563827B481ABD4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/C2E8BC58507D26157D7563827B481ABD4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/F4C2F15A1468EC517AEE68A829DEA6494FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/F4C2F15A1468EC517AEE68A829DEA6494FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-<slike/tupel_mem_organization.png, id=238, 579.16376pt x 87.32625pt>
+<slike/tupel_mem_organization.png, id=245, 579.16376pt x 87.32625pt>
 File: slike/tupel_mem_organization.png Graphic file (type png)
 <use slike/tupel_mem_organization.png>
 Package pdftex.def Info: slike/tupel_mem_organization.png  used on input line 6
@@ -1563,122 +1002,65 @@ Package pdftex.def Info: slike/tupel_mem_organization.png  used on input line 6
  [57]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/C8822F79D62702C2661782B4DAF3BCC14FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/C8822F79D62702C2661782B4DAF3BCC14FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/52DFDC6AE4A390BF0DDC11192958DFE34FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/52DFDC6AE4A390BF0DDC11192958DFE34FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/0C51BEC047AD8166D149BA0B5E6DDD5C4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/0C51BEC047AD8166D149BA0B5E6DDD5C4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [58 <./slike/tupel_mem_organization.png>])
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/7B94189D1E50D0375B248BFCA5E03EEE4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/7B94189D1E50D0375B248BFCA5E03EEE4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/1AF73C8480502CD09C1D5939634A1A574FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/1AF73C8480502CD09C1D5939634A1A574FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/3099F0C8ABB2F554E2CF63D6E48DA6304FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/3099F0C8ABB2F554E2CF63D6E48DA6304FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [59])
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/8AD9E478F461DCE4B6B4944BFE9D77694FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/8AD9E478F461DCE4B6B4944BFE9D77694FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/AFFFBC76DE664F6C9F0A4858B73460534FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/AFFFBC76DE664F6C9F0A4858B73460534FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [60])
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/20D60F38A19BE9F8D792B1DC3C224DB24FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/20D60F38A19BE9F8D792B1DC3C224DB24FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/D45440EC4B5B6A0FC89DEF84A99313C04FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/D45440EC4B5B6A0FC89DEF84A99313C04FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/F62668370C46FCBE1FB470BAB9D9A8EF4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/F62668370C46FCBE1FB470BAB9D9A8EF4FBEEAFC55D0059826E664B9BBCF372
-1.pygtex)
-
-LaTeX Warning: Reference `sec:concepts-pyhton' on page 61 undefined on input li
-ne 749.
-
-[61]
+1.pygtex) [61]
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/EA09420334C2C831BAE8B7393FDE76C64FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/EA09420334C2C831BAE8B7393FDE76C64FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/9D64E0128D1D591444B6C4446E35B7904FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/9D64E0128D1D591444B6C4446E35B7904FBEEAFC55D0059826E664B9BBCF372
@@ -1688,7 +1070,7 @@ Overfull \hbox (14.58331pt too wide) in paragraph at lines 792--793
 m je-zi-ku Paj-ton uklju^^Tcuje
  []
 
-<slike/python-code-copiler-machine-code.png, id=259, 963.6pt x 542.025pt>
+<slike/python-code-copiler-machine-code.png, id=266, 963.6pt x 542.025pt>
 File: slike/python-code-copiler-machine-code.png Graphic file (type png)
 <use slike/python-code-copiler-machine-code.png>
 Package pdftex.def Info: slike/python-code-copiler-machine-code.png  used on in
@@ -1699,47 +1081,26 @@ Underfull \vbox (badness 4608) has occurred while \output is active []
 
  [63]
 [64 <./slike/python-code-copiler-machine-code.png>]
-
-LaTeX Warning: Reference `fig:comp_interpreting' on page 65 undefined on input 
-line 828.
-
-
 Overfull \hbox (45.8456pt too wide) in paragraph at lines 831--831
 []\OT1/cmr/bx/n/17.28 O ne-kim pro-gram-skim kon-cep-ti-ma i ugra[]denim
  []
 
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/4AC35C08FE739F26555F111DB09E79474FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/4AC35C08FE739F26555F111DB09E79474FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/D2D429E2BC267E6C8B171217CB6939AC4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/D2D429E2BC267E6C8B171217CB6939AC4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/C96B1CE77C233F8945CC260D9FBC67FE4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/C96B1CE77C233F8945CC260D9FBC67FE4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/E3D56ECDFAF774BC3B66516C6BB071C34FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/E3D56ECDFAF774BC3B66516C6BB071C34FBEEAFC55D0059826E664B9BBCF372
@@ -1758,72 +1119,40 @@ t/12 fil-ter\OT1/cmr/m/n/12 () i \OT1/cmr/m/it/12 re-du-ce\OT1/cmr/m/n/12 () su
 
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/798EF55DDB6CA83AC9DAD473F76FE7A34FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/798EF55DDB6CA83AC9DAD473F76FE7A34FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/B0CCF59CB8F908CC5CD997F71E04EAA04FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/B0CCF59CB8F908CC5CD997F71E04EAA04FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/48CDABB9375AF9AA9391878A295762AA4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/48CDABB9375AF9AA9391878A295762AA4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/A836D3B8DFBC56487D489F628345EBEE4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/A836D3B8DFBC56487D489F628345EBEE4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [66])
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/A1E10CDEF8B4A312811EB32FCD3AB1654FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/A1E10CDEF8B4A312811EB32FCD3AB1654FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/792D70B1A6DFA514615DE04EB786F4994FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/792D70B1A6DFA514615DE04EB786F4994FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/2F8A3BC0E460258C820F10350A85FF9C4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/2F8A3BC0E460258C820F10350A85FF9C4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/EE07EA5070FB0717B8AAE4FD5F8CCFBD4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/EE07EA5070FB0717B8AAE4FD5F8CCFBD4FBEEAFC55D0059826E664B9BBCF372
@@ -1836,108 +1165,60 @@ Overfull \hbox (49.8303pt too wide) has occurred while \output is active
 [67])
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/058E1BA0C2715CEA4B1216A58ACFF3174FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/058E1BA0C2715CEA4B1216A58ACFF3174FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/590263F580C5EC8EAF4D90E01E35D62E4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/590263F580C5EC8EAF4D90E01E35D62E4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/05A5ED4C1425843DFF73F72AFD84DFD74FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/05A5ED4C1425843DFF73F72AFD84DFD74FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/3176C40F8091B8F3C260740284E67E4D4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/3176C40F8091B8F3C260740284E67E4D4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex) [68]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/A171D6898518A7713635F20218E45C2B4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/A171D6898518A7713635F20218E45C2B4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/F76C554CF0B8AB17083E5EA96DA91D1D4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/F76C554CF0B8AB17083E5EA96DA91D1D4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/2EA259A27B0C37BB57895436E54A4B854FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/2EA259A27B0C37BB57895436E54A4B854FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/E6612573A3547D36E27F1FFC2ED8A49B4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/E6612573A3547D36E27F1FFC2ED8A49B4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex) [69]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/BF51300EEFF51460E49737001BCF34A94FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/BF51300EEFF51460E49737001BCF34A94FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/747AA5E32A7EF88FE4C3A766268A83444FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/747AA5E32A7EF88FE4C3A766268A83444FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/99ACE57B6CAD1CBF604984E3D3ED7BF84FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/99ACE57B6CAD1CBF604984E3D3ED7BF84FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/5523E1DBE152252F041756C3D580568D4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/5523E1DBE152252F041756C3D580568D4FBEEAFC55D0059826E664B9BBCF372
@@ -1950,45 +1231,25 @@ Overfull \hbox (2.11954pt too wide) in paragraph at lines 1101--1102
 [73]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/BC2465834FC2911299F65263E5F2E9814FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/BC2465834FC2911299F65263E5F2E9814FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/DD5C245D55CA5DD93EDF0469AFF73E2E4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/DD5C245D55CA5DD93EDF0469AFF73E2E4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/8279D5174290D16B3600CEA004C989474FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/8279D5174290D16B3600CEA004C989474FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/2C6BF7438FC9CA1F7A64AF2F306442A14FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/2C6BF7438FC9CA1F7A64AF2F306442A14FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [74])
-
-LaTeX Warning: Reference `fig: exceptions' on page 75 undefined on input line 1
-148.
-
-<slike/419627_1_En_2_Fig4_HTML.jpg, id=298, 687.56876pt x 480.79625pt>
+<slike/419627_1_En_2_Fig4_HTML.jpg, id=305, 687.56876pt x 480.79625pt>
 File: slike/419627_1_En_2_Fig4_HTML.jpg Graphic file (type jpg)
 <use slike/419627_1_En_2_Fig4_HTML.jpg>
 Package pdftex.def Info: slike/419627_1_En_2_Fig4_HTML.jpg  used on input line 
@@ -2001,36 +1262,20 @@ Overfull \hbox (9.99667pt too wide) in paragraph at lines 1152--1153
 
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/4CE561679B49D294B12FFAE22AA2B28E4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/4CE561679B49D294B12FFAE22AA2B28E4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex) [75 <./slike/419627_1_En_2_Fig4_HTML.jpg>]
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/95E7AD731743C06897B067F2467AB8004FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/95E7AD731743C06897B067F2467AB8004FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/E8CF8185EF2AC98BEC90724ADB1185E84FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/E8CF8185EF2AC98BEC90724ADB1185E84FBEEAFC55D0059826E664B9BBCF372
 1.pygtex) [76]
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/A4309D6B539E0CB08186B3754E266BA44FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/A4309D6B539E0CB08186B3754E266BA44FBEEAFC55D0059826E664B9BBCF372
@@ -2110,99 +1355,54 @@ ili gru-pe, i oni odre[]duju u^^Tcestalost
 [79]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/0052282D894D782C273788FB89215D394FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/0052282D894D782C273788FB89215D394FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/F8DF58E128363850A4A5893FF1926C4D4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/F8DF58E128363850A4A5893FF1926C4D4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex) [80]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/CE03F54BF3489B79DA506B995DFE02E14FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/CE03F54BF3489B79DA506B995DFE02E14FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/587057EE3BFEE005356C1AEA8866FB594FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/587057EE3BFEE005356C1AEA8866FB594FBEEAFC55D0059826E664B9BBCF372
 1.pygtex) [81]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/77DC6BB64991428D50A6BB59767415BE4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/77DC6BB64991428D50A6BB59767415BE4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [82])
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/5F3B1A00668A3835CA7CCE4489FD2EBA4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/5F3B1A00668A3835CA7CCE4489FD2EBA4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/EAF10ED57975B09FECB0A3EECBCABD714FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/EAF10ED57975B09FECB0A3EECBCABD714FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-
-LaTeX Warning: Reference `fig:numpy_array' on page 83 undefined on input line 1
-412.
-
-<slike/numpy_array.png, id=325, 631.35875pt x 429.605pt>
+<slike/numpy_array.png, id=331, 631.35875pt x 429.605pt>
 File: slike/numpy_array.png Graphic file (type png)
 <use slike/numpy_array.png>
 Package pdftex.def Info: slike/numpy_array.png  used on input line 1416.
 (pdftex.def)             Requested size: 249.99571pt x 170.00348pt.
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/B96D8CEBAA12BA663EA3480E9DC2C2BC4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/B96D8CEBAA12BA663EA3480E9DC2C2BC4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [83]) [84 <./slike/numpy_array.png>]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/1016CF7DD6C54D349F86E5A5FF69AF064FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/1016CF7DD6C54D349F86E5A5FF69AF064FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-
-LaTeX Warning: Reference `fig:numpy_array' on page 85 undefined on input line 1
-460.
-
-
 Overfull \hbox (47.83247pt too wide) in paragraph at lines 1465--1466
 \OT1/cmr/m/n/12 je. Npr. za 2D niz, \OT1/cmr/m/it/12 stri-de \OT1/cmr/m/n/12 to
 r-ka je de-fi-ni-sa-na sa (bajt[]za[]pomicanje[]u[]smjeru[]reda,
@@ -2217,63 +1417,35 @@ h)
 
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l C -f latex -P commandprefix=PYG -F tokenmerge -o _minte
-d-main/DD87C38849FB153FE5AE7417B5C8FBA62F427962ED4E6A717DE0D192A922302F.pygtex 
-main.pyg)...executed.
-
 
 (./_minted-main/DD87C38849FB153FE5AE7417B5C8FBA62F427962ED4E6A717DE0D192A922302
 F.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l C -f latex -P commandprefix=PYG -F tokenmerge -o _minte
-d-main/BB42D2068607D4F9BC14188976A8EFC82F427962ED4E6A717DE0D192A922302F.pygtex 
-main.pyg)...executed.
 
 
 (./_minted-main/BB42D2068607D4F9BC14188976A8EFC82F427962ED4E6A717DE0D192A922302
 F.pygtex [86])
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/F2F7EA957E5D953A9F2D12C4DB3CFDB84FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/F2F7EA957E5D953A9F2D12C4DB3CFDB84FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/F4452C4FB38778F82A05FB6A410321C94FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/F4452C4FB38778F82A05FB6A410321C94FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/E9D868BE5B31ABA22390F9EB470BDD074FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/E9D868BE5B31ABA22390F9EB470BDD074FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/AF4B0E49F4C275A914AC1EFC842F1C914FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/AF4B0E49F4C275A914AC1EFC842F1C914FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [87])
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/B3204B4BF4A7F96358798C849A9B2F944FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/B3204B4BF4A7F96358798C849A9B2F944FBEEAFC55D0059826E664B9BBCF372
@@ -2294,36 +1466,20 @@ and I'll forget about whatever was undefined.
 
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/C4764F1D047E287E7266C5E080465EB14FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/C4764F1D047E287E7266C5E080465EB14FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/BACACE2C946F351BA48415078BFA8D004FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/BACACE2C946F351BA48415078BFA8D004FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/9FAE0AF0C5492C1C623C942E4959F3434FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/9FAE0AF0C5492C1C623C942E4959F3434FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/589C658ACD6BC816411B409C75D025884FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/589C658ACD6BC816411B409C75D025884FBEEAFC55D0059826E664B9BBCF372
@@ -2336,18 +1492,10 @@ TORIJ \OT1/cmr/m/n/12 89
 [89])
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/D1A5B0AA45B742DCF316C3D6B4D2EC394FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/D1A5B0AA45B742DCF316C3D6B4D2EC394FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/D952FB92E458847653793A355F9E77F84FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/D952FB92E458847653793A355F9E77F84FBEEAFC55D0059826E664B9BBCF372
@@ -2407,10 +1555,6 @@ nje.
 
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/D1C4808D4B26759CCCBF19D93E5095784FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/D1C4808D4B26759CCCBF19D93E5095784FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [97])
@@ -2422,200 +1566,60 @@ OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n\OT1/cmr/m/n/12 ) =
 
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/7012B7D877226FBCF76A1973CA1863334FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/7012B7D877226FBCF76A1973CA1863334FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-
-LaTeX Warning: Reference `fig:rec_tree' on page 98 undefined on input line 79.
-
-<slike/factorial_recursion_tree.png, id=375, 524.96124pt x 466.74374pt>
+<slike/factorial_recursion_tree.png, id=381, 524.96124pt x 466.74374pt>
 File: slike/factorial_recursion_tree.png Graphic file (type png)
 <use slike/factorial_recursion_tree.png>
 Package pdftex.def Info: slike/factorial_recursion_tree.png  used on input line
  83.
 (pdftex.def)             Requested size: 220.0016pt x 139.99571pt.
-[98 <./slike/factorial_recursion_tree.png>]
+ [98 <./slike/factorial_recursion_tree.png>]
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/8DAB524AEED9232F11C6BC419C19D2D84FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/8DAB524AEED9232F11C6BC419C19D2D84FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/1D346A0C858D26E15647653C86A4C6204FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/1D346A0C858D26E15647653C86A4C6204FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [99]) [100]
-<slike/mandelbrot.png, id=387, 1204.5pt x 1204.5pt>
+<slike/mandelbrot.png, id=393, 1204.5pt x 1204.5pt>
 File: slike/mandelbrot.png Graphic file (type png)
 <use slike/mandelbrot.png>
 Package pdftex.def Info: slike/mandelbrot.png  used on input line 172.
 (pdftex.def)             Requested size: 99.98267pt x 79.98613pt.
  [101 <./slike/mandelbrot.png>]
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.184 \begin{example}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.187 \end{example}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/AA1FC1D9FBB020011BBB5A316A96CFBE4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/AA1FC1D9FBB020011BBB5A316A96CFBE4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-<slike/fib_rec.jpeg, id=392, 604.2575pt x 321.2pt>
+<slike/fib_rec.jpeg, id=398, 604.2575pt x 321.2pt>
 File: slike/fib_rec.jpeg Graphic file (type jpg)
 <use slike/fib_rec.jpeg>
 Package pdftex.def Info: slike/fib_rec.jpeg  used on input line 218.
 (pdftex.def)             Requested size: 249.9969pt x 140.00023pt.
  [102]
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.226  \begin{example}
-                      
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.234   \end{example}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-LaTeX Warning: Reference `fig:tower' on page 103 undefined on input line 241.
-
-<slike/tower.png, id=396, 466.74374pt x 211.79124pt>
+<slike/tower.png, id=402, 466.74374pt x 211.79124pt>
 File: slike/tower.png Graphic file (type png)
 <use slike/tower.png>
 Package pdftex.def Info: slike/tower.png  used on input line 245.
 (pdftex.def)             Requested size: 270.01361pt x 150.00443pt.
-[103 <./slike/fib_rec.jpeg>]
+ [103 <./slike/fib_rec.jpeg>]
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/91F6F959261509DBA0322E48DCEFB2F84FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/91F6F959261509DBA0322E48DCEFB2F84FBEEAFC55D0059826E664B9BBCF372
-1.pygtex [104 <./slike/tower.png>])
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.294 \begin{example}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.296 \end{example}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[105]
+1.pygtex [104 <./slike/tower.png>]) [105]
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/5F19D7F55625EF04AB54E9116E3DE9D34FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/5F19D7F55625EF04AB54E9116E3DE9D34FBEEAFC55D0059826E664B9BBCF372
-1.pygtex)
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.319 \begin{example}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.321 \end{example}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[106]
+1.pygtex) [106]
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/2FCD5EBE2DC0B8F9E346C1D72DC4FC3E4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/2FCD5EBE2DC0B8F9E346C1D72DC4FC3E4FBEEAFC55D0059826E664B9BBCF372
@@ -2631,18 +1635,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [108]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/C5E55D68D4E5712CFA20BD21B15937214FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/C5E55D68D4E5712CFA20BD21B15937214FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [109])
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/B6D68F7A11DD1946E6C31099F85B80024FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/B6D68F7A11DD1946E6C31099F85B80024FBEEAFC55D0059826E664B9BBCF372
@@ -2662,10 +1658,6 @@ uk-tu-ri po-da-ta-ka, struk-
 [110]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/66E1713D6B7F22BEC0D5DC9B814643EB4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/66E1713D6B7F22BEC0D5DC9B814643EB4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex) [111]
@@ -2683,80 +1675,30 @@ L/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 3\OML/cmm/m
 
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/8D2A1487FD5D5A0F5309FA495AB1DD884FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/8D2A1487FD5D5A0F5309FA495AB1DD884FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [112]) [113]
-
-LaTeX Warning: Reference `eq_interpolation-search-formula' on page 114 undefine
-d on input line 569.
-
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/8DF411452A029B00CEE3FB0AE48B662F4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/8DF411452A029B00CEE3FB0AE48B662F4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex) [114]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/CC9A923CEDE589BAD17A6B608788D46A4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/CC9A923CEDE589BAD17A6B608788D46A4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [115])
-
-LaTeX Warning: Reference `alg:d-n-c' on page 116 undefined on input line 655.
-
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/EEC91274EFBB7EE91047C9C103F513924FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/EEC91274EFBB7EE91047C9C103F513924FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [116] [117])
-<slike/merge-sort-example.png, id=445, 608.2725pt x 618.31pt>
+<slike/merge-sort-example.png, id=452, 608.2725pt x 618.31pt>
 File: slike/merge-sort-example.png Graphic file (type png)
 <use slike/merge-sort-example.png>
 Package pdftex.def Info: slike/merge-sort-example.png  used on input line 725.
 (pdftex.def)             Requested size: 199.99731pt x 150.00131pt.
-
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.730 \begin{example}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.733 \end{example}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[118 <./slike/merge-sort-example.png>]
+ [118 <./slike/merge-sort-example.png>]
 Overfull \hbox (5.02177pt too wide) in paragraph at lines 747--748
 \OT1/cmr/m/n/12 Iz ma-ster te-o-re-me, sli-je-di da je sa-da kom-plek-snost al-
 go-rit-ma jed-na-ka $\OML/cmm/m/it/12 O\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n[]\OT
@@ -2768,139 +1710,40 @@ Overfull \hbox (0.6878pt too wide) in paragraph at lines 750--750
 []\OT1/cmr/bx/n/17.28 Algoritamska pa-ra-dig-ma vra^^Scanja una-zad 
  []
 
-
-LaTeX Warning: Reference `alg:backtrack' on page 119 undefined on input line 76
-1.
-
 [119]
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.785     \begin{example}
-                         
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.787     \end{example}
-                       
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Overfull \hbox (16.24167pt too wide) in paragraph at lines 786--788
-\OT1/cmr/m/n/12 Smje-sti-ti $\OML/cmm/m/it/12 N$ \OT1/cmr/m/n/12 kra-lji-ca na 
-^^Tsahovsku plo^^Tcu ta-ko da se ni-ko-je dvi-je kra-lji-ce me[]dusobno
- []
-
-<slike/n-queen-problem.png, id=454, 185.69376pt x 168.63pt>
+<slike/n-queen-problem.png, id=460, 185.69376pt x 168.63pt>
 File: slike/n-queen-problem.png Graphic file (type png)
 <use slike/n-queen-problem.png>
 Package pdftex.def Info: slike/n-queen-problem.png  used on input line 794.
 (pdftex.def)             Requested size: 200.00507pt x 180.0026pt.
-[120 <./slike/n-queen-problem.png>]
-\openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/70D8245B65629178E6F5FA64BC2EADDF4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [120]
+\openout3 = `main.pyg'.
 
 
 (./_minted-main/70D8245B65629178E6F5FA64BC2EADDF4FBEEAFC55D0059826E664B9BBCF372
-1.pygtex)
-<slike/recursion-tree-backtracking-n-queens.png, id=459, 447.6725pt x 326.21875
+1.pygtex [121 <./slike/n-queen-problem.png>])
+<slike/recursion-tree-backtracking-n-queens.png, id=468, 447.6725pt x 326.21875
 pt>
 File: slike/recursion-tree-backtracking-n-queens.png Graphic file (type png)
 <use slike/recursion-tree-backtracking-n-queens.png>
 Package pdftex.def Info: slike/recursion-tree-backtracking-n-queens.png  used o
 n input line 827.
 (pdftex.def)             Requested size: 320.00827pt x 250.00949pt.
- [121] [122 <./slike/recursion-tree-backtracking-n-queens.png>]
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.848 \begin{example}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.851 \end{example}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
+ [122 <./slike/recursion-tree-backtracking-n-queens.png>]
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/491D2E91926E32853BFFEC3D1D7A06034FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/491D2E91926E32853BFFEC3D1D7A06034FBEEAFC55D0059826E664B9BBCF372
-1.pygtex [123])
-
-LaTeX Warning: Reference `alg:greedy-algorithm' on page 124 undefined on input 
-line 891.
-
-[124]
+1.pygtex) [123] [124]
 Overfull \hbox (3.746pt too wide) in paragraph at lines 931--932
 []\OT1/cmr/m/n/12 U na-stav-ku na-vo-di-mo ne-ko-li-ko pri-mje-na po-help-nih a
 l-go-ri-ta-ma u rje^^Tsavanju
  []
 
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.935 \begin{example}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 [125]
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.940 \end{example}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 943--947
 
  []
@@ -2913,10 +1756,6 @@ vo raz-ma-tra-mo nov^^Tcanice
 
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/5829B647B21E982D0356872943605B654FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/5829B647B21E982D0356872943605B654FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [126])
@@ -2927,100 +1766,38 @@ m/it/12 n [] n\OT1/cmr/m/n/12 )$.
  []
 
 
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.977 \begin{example}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 978--979
 
  []
-
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.981 \end{example}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 984--989
 
  []
 
-[127]
+
 Overfull \hbox (25.65535pt too wide) in paragraph at lines 993--995
 []\OT1/cmr/m/it/12 Parcijalno rje^^Tsenje i kom-po-nen-te rje^^Tsenja\OT1/cmr/m
 /n/12 . Par-ci-jal-no rje^^Tsenje $\OML/cmm/m/it/12 c \OT1/cmr/m/n/12 = \OMS/cm
 sy/m/n/12 f\OML/cmm/m/it/12 c[]; [] ; c[]\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 ,
  []
 
-
+[127]
 Underfull \hbox (badness 10000) in paragraph at lines 996--997
 
  []
 
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/E22BBB77EFCC79C68D329E7425C8A6234FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/E22BBB77EFCC79C68D329E7425C8A6234FBEEAFC55D0059826E664B9BBCF372
-1.pygtex [128])
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1044 \begin{example}
-                       \textbf{Problem pokrivanja skupa}. Neka je dat skup $...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1050 \end{example}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[129]
+1.pygtex [128]) [129]
 Overfull \hbox (0.16486pt too wide) in paragraph at lines 1061--1062
 []\OT1/cmr/m/it/12 Parcijalno rje^^Tsenje i kom-po-nen-ta rje^^Tsenja\OT1/cmr/m
 /n/12 . Pod par-ci-jal-nim rje^^Tsenjem ovog
  []
 
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/F46706AEFC8D9B3BA6EB914142E5C95F4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/F46706AEFC8D9B3BA6EB914142E5C95F4FBEEAFC55D0059826E664B9BBCF372
@@ -3042,40 +1819,12 @@ t/12 ; \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 4\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 5\
 OMS/cmsy/m/n/12 gg$\OT1/cmr/m/n/12 . 
  []
 
-[131]
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1116 \begin{example}
-                        \textbf{\textit{Problem sekvencijalnog raspoređivan...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 1116--1120
 
  []
 
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1123 \end{example}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[132]
+[131] [132]
 Overfull \hbox (0.69756pt too wide) in paragraph at lines 1170--1171
 []\OT1/cmr/m/it/12 Pohlepna funk-ci-ja\OT1/cmr/m/n/12 . Za par-ci-jal-no rje^^T
 senje $\OML/cmm/m/it/12 I[]$\OT1/cmr/m/n/12 , oda-bra-ti kom-po-nen-tu rje^^Tse
@@ -3084,102 +1833,30 @@ nja
 
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/42C965A8C2CD57351240242D8F30B73F4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/42C965A8C2CD57351240242D8F30B73F4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [133]) [134]
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/5885934411EA137394CCF607563ABB9C4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/5885934411EA137394CCF607563ABB9C4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [135])
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/11AB637D21E46C6FFC0A36D34C3C77834FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/11AB637D21E46C6FFC0A36D34C3C77834FBEEAFC55D0059826E664B9BBCF372
 1.pygtex) [136]
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1293 \begin{example}
-                      
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1298 \end{example}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-LaTeX Warning: Reference `fig:pijun-putanja' on page 137 undefined on input lin
-e 1301.
-
-<slike/dp-table-1.png, id=512, 272.01625pt x 263.98625pt>
+<slike/dp-table-1.png, id=518, 272.01625pt x 263.98625pt>
 File: slike/dp-table-1.png Graphic file (type png)
 <use slike/dp-table-1.png>
 Package pdftex.def Info: slike/dp-table-1.png  used on input line 1306.
 (pdftex.def)             Requested size: 100.00108pt x 99.99759pt.
-[137 <./slike/dp-table-1.png>]
+ [137 <./slike/dp-table-1.png>]
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/8E7B4D97FB0D27D311BC8271CFED99244FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/8E7B4D97FB0D27D311BC8271CFED99244FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [138])
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1369 \begin{example}
-                      
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1371 \end{example}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 
 ! LaTeX Error: There's no line here to end.
 
@@ -3194,134 +1871,41 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[139]
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/6CCBA4672CA29ED7C39FEED9E83DD70E4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/6CCBA4672CA29ED7C39FEED9E83DD70E4FBEEAFC55D0059826E664B9BBCF372
-1.pygtex) [140] [141]
+1.pygtex [139])
+Underfull \vbox (badness 6708) has occurred while \output is active []
 
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1525  \begin{example}
-                       
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[142]
+ [140]
+[141]
 Underfull \hbox (badness 10000) in paragraph at lines 1528--1529
 
  []
 
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1532  \end{example}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
+[142]
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/48310F9652F56E79C5AA62A5577609974FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/48310F9652F56E79C5AA62A5577609974FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [143])
-<slike/dp-lcs-table.png, id=536, 173.89969pt x 213.04594pt>
+<slike/dp-lcs-table.png, id=542, 173.89969pt x 213.04594pt>
 File: slike/dp-lcs-table.png Graphic file (type png)
 <use slike/dp-lcs-table.png>
 Package pdftex.def Info: slike/dp-lcs-table.png  used on input line 1579.
 (pdftex.def)             Requested size: 99.99948pt x 100.00156pt.
-
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1587 \begin{example}
-                      
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1592 \end{example}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[144 <./slike/dp-lcs-table.png>]
+ [144 <./slike/dp-lcs-table.png>]
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/D44CB3D3E22E85E8DD42EC374DAB18894FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/D44CB3D3E22E85E8DD42EC374DAB18894FBEEAFC55D0059826E664B9BBCF372
-1.pygtex [145])
+1.pygtex) [145]
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/276727138E710ACF97A412876FD58D074FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/276727138E710ACF97A412876FD58D074FBEEAFC55D0059826E664B9BBCF372
 1.pygtex) [146]
-
-! LaTeX Error: Environment example undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1667 \begin{example}
-                      
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{document} ended by \end{example}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1672 \end{example}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
 Overfull \hbox (2.15204pt too wide) in paragraph at lines 1683--1684
 []\OT1/cmr/m/it/12 Rekurzija\OT1/cmr/m/n/12 . Pod-pro-blem in-du-ko-van vri-jed
 -no^^Ts^^Scu $\OML/cmm/m/it/12 i$ \OT1/cmr/m/n/12 mo^^Tzemo ri-je^^Tsiti rje^^T
@@ -3329,10 +1913,6 @@ savaju^^Sci
  []
 
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/B8AD3480812D9F16FD662ABC23BF071E4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/B8AD3480812D9F16FD662ABC23BF071E4FBEEAFC55D0059826E664B9BBCF372
@@ -3343,20 +1923,13 @@ m/n/12 for \OT1/cmr/m/n/12 pe-tlje iz-vr^^Tsavaju ukup-no naj-vi^^Tse $\OML/cmm
 /m/it/12 O\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 d[]\OT1/cmr/m/n/12 )$.
  []
 
-
-LaTeX Warning: Reference `fig:brute-force-stick-cut' on page 148 undefined on i
-nput line 1717.
-
-<slike/brute-force-cutting-stick.png, id=550, 648.4225pt x 533.995pt>
+<slike/brute-force-cutting-stick.png, id=557, 648.4225pt x 533.995pt>
 File: slike/brute-force-cutting-stick.png Graphic file (type png)
 <use slike/brute-force-cutting-stick.png>
 Package pdftex.def Info: slike/brute-force-cutting-stick.png  used on input lin
 e 1721.
 (pdftex.def)             Requested size: 270.00058pt x 219.99861pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [148]
+[148 <./slike/brute-force-cutting-stick.png>]
 
 ! Package inputenc Error: Unicode character − (U+2212)
 (inputenc)                not set up for use with LaTeX.
@@ -3370,12 +1943,12 @@ l.1740 ...o traženi broj ne postoji, vratiti $−
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[149 <./slike/brute-force-cutting-stick.png>]
+[149]
 Underfull \hbox (badness 10000) in paragraph at lines 1768--1769
 
  []
 
-[150]
+
 Overfull \hbox (49.60138pt too wide) detected at line 1770
 \OML/cmm/m/it/12 dict \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f[]\OML/cmm/m/it/12 ; 
 []; []; []; []; []; []; []; []; []; []; []; []; []; []; []\OMS/cmsy/m/n/12 g
@@ -3389,13 +1962,13 @@ Overfull \hbox (3.05618pt too wide) in paragraph at lines 1773--1775
 \OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 3\OML/cmm/m/it/12 ; []$\OT1/cmr/m/n/12 . 
  []
 
-<slike/plococe-dp-zadatak.png, id=562, 194.7275pt x 180.675pt>
+<slike/plococe-dp-zadatak.png, id=565, 194.7275pt x 180.675pt>
 File: slike/plococe-dp-zadatak.png Graphic file (type png)
 <use slike/plococe-dp-zadatak.png>
 Package pdftex.def Info: slike/plococe-dp-zadatak.png  used on input line 1783.
 
 (pdftex.def)             Requested size: 119.99884pt x 100.0001pt.
-) [151 <./slike/plococe-dp-zadatak.png>]
+[150]) [151 <./slike/plococe-dp-zadatak.png>]
 \openout2 = `chapter-03-04/chapter04.aux'.
 
  (./chapter-03-04/chapter04.tex
@@ -3412,10 +1985,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--19
 
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/749F07CE2EA764BE1D9AF2261CA3FC534FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/749F07CE2EA764BE1D9AF2261CA3FC534FBEEAFC55D0059826E664B9BBCF372
 1.pygtex [153])
@@ -3424,10 +1993,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
  []
 
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/C97E709460685107E561497791ED24A44FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/C97E709460685107E561497791ED24A44FBEEAFC55D0059826E664B9BBCF372
@@ -3438,12 +2003,12 @@ Overfull \hbox (113.53528pt too wide) has occurred while \output is active
  []
 
 [154])
-<slike/sieve-it-0.png, id=577, 871.255pt x 249.93375pt>
+<slike/sieve-it-0.png, id=583, 871.255pt x 249.93375pt>
 File: slike/sieve-it-0.png Graphic file (type png)
 <use slike/sieve-it-0.png>
 Package pdftex.def Info: slike/sieve-it-0.png  used on input line 72.
 (pdftex.def)             Requested size: 340.0008pt x 120.00116pt.
-<slike/sieve-it-1.png, id=578, 860.21375pt x 243.91125pt>
+<slike/sieve-it-1.png, id=584, 860.21375pt x 243.91125pt>
 File: slike/sieve-it-1.png Graphic file (type png)
 <use slike/sieve-it-1.png>
 Package pdftex.def Info: slike/sieve-it-1.png  used on input line 81.
@@ -3466,10 +2031,6 @@ Da-ke, za broj $\OML/cmm/m/it/12 n$\OT1/cmr/m/n/12 , na[]dimo
 
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/1F197A226763A07D42A2C859C070EB7B4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/1F197A226763A07D42A2C859C070EB7B4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex
@@ -3485,10 +2046,6 @@ i-ci-jen-ta. Da-kle, ako ozna^^Tcimo
  []
 
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/D0D2C7E06FB96F5DBD475CE6B766F1434FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/D0D2C7E06FB96F5DBD475CE6B766F1434FBEEAFC55D0059826E664B9BBCF372
@@ -3506,14 +2063,10 @@ Overfull \hbox (113.53528pt too wide) has occurred while \output is active
 [158]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/4E2061B42917FA6404089F24DD8C9CC94FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/4E2061B42917FA6404089F24DD8C9CC94FBEEAFC55D0059826E664B9BBCF372
 1.pygtex) [159]
-<slike/catalan-net.png, id=596, 729.72626pt x 345.29pt>
+<slike/catalan-net.png, id=603, 729.72626pt x 345.29pt>
 File: slike/catalan-net.png Graphic file (type png)
 <use slike/catalan-net.png>
 Package pdftex.def Info: slike/catalan-net.png  used on input line 229.
@@ -3530,10 +2083,6 @@ n/12 4862\OML/cmm/m/it/12 ; []$
 
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/C0DA6DB07D53DF42520CE727EA6C68C64FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/C0DA6DB07D53DF42520CE727EA6C68C64FBEEAFC55D0059826E664B9BBCF372
 1.pygtex
@@ -3544,10 +2093,6 @@ Overfull \hbox (113.53528pt too wide) has occurred while \output is active
 
 [160 <./slike/catalan-net.png>])
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/4737DFDAD62087241C22E193553745A44FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/4737DFDAD62087241C22E193553745A44FBEEAFC55D0059826E664B9BBCF372
@@ -3560,10 +2105,6 @@ Overfull \hbox (113.53528pt too wide) has occurred while \output is active
 [162]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/7C6925BB28A555DC78A4800687E5D54C4FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
-
 
 (./_minted-main/7C6925BB28A555DC78A4800687E5D54C4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
@@ -3573,10 +2114,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 350--351
 
 [163]
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
-minted-main/C2D67C23E4DA8B569116E15DCF1001E64FBEEAFC55D0059826E664B9BBCF3721.py
-gtex main.pyg)...executed.
 
 
 (./_minted-main/C2D67C23E4DA8B569116E15DCF1001E64FBEEAFC55D0059826E664B9BBCF372
@@ -3620,17 +2157,17 @@ FiXme Summary: Number of notes: 1,
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
 runsystem(rm main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 9106 strings out of 482584
- 200387 string characters out of 5956256
- 476895 words of memory out of 5000000
- 23465 multiletter control sequences out of 15000+600000
- 545342 words of font info for 74 fonts, out of 8000000 for 9000
+ 9129 strings out of 482584
+ 200837 string characters out of 5956256
+ 490708 words of memory out of 5000000
+ 23476 multiletter control sequences out of 15000+600000
+ 546140 words of font info for 76 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  41i,10n,62p,1156b,571s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/marko/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600
@@ -3654,10 +2191,10 @@ st/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (170 pages, 2971347 bytes).
+Output written on main.pdf (172 pages, 2976856 bytes).
 PDF statistics:
- 700 PDF objects out of 1000 (max. 8388607)
- 444 compressed objects within 5 object streams
+ 706 PDF objects out of 1000 (max. 8388607)
+ 448 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
  166 words of extra memory for PDF output out of 10000 (max. 10000000)
 
