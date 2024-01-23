@@ -204,7 +204,7 @@ Sintaksa bazne naredbe \texttt{if} (sa neobaveznom alternativom) je data sa:
         naredba_2
 \end{minted}
 
-Tok naredbe je sljedeći: ako je \emph{uslov} ispunjen, izvršava se \textit{naredba\_1} (koja može da bude i blok naredbi), inače se izvršava blok \textit{naredba\_2}. Primijetimo pravila uvlačenja (indentacije) k\^oda pod \texttt{if} blokom. Nakon izvršavanja jedne od naredbi, program izlazi iz ugnježdenog bloka \texttt{if} naredbe, te prelazi na izvršavanje sljedeće naredbe po redu u programu. Kao i u svakom programskom jeziku, tok izvršavanja naredbi je  odozgo prema dolje. Primijetimo da prethodna sintaksa za \texttt{if} radi sam samo dvije alternative. \texttt{If} koji dozvoljava više alternativa se poziva na sljedeći način. 
+Tok naredbe je sljedeći: ako je \emph{uslov} ispunjen, izvršava se \textit{naredba\_1} (koja može da bude i blok naredbi), inače se izvršava blok \textit{naredba\_2}. Primijetimo pravila uvlačenja ili indentacije (eng. \textit{indentation}) k\^oda pod \texttt{if} blokom koja se moraju poštovati kao sintaksno pravilo. Nakon izvršavanja jedne od naredbi, program izlazi iz ugnježdenog bloka \texttt{if} naredbe, te prelazi na izvršavanje sljedeće naredbe po redu u programu. Kao i u svakom programskom jeziku, tok izvršavanja naredbi je  odozgo prema dolje. Primijetimo da prethodna sintaksa za \texttt{if} radi sam samo dvije alternative. \texttt{If} koji dozvoljava više alternativa se poziva na sljedeći način. 
 
  \begin{minted}{python}
  	if uslov_1:
@@ -218,13 +218,13 @@ Tok naredbe je sljedeći: ako je \emph{uslov} ispunjen, izvršava se \textit{nar
  	    naredba_n
  \end{minted}
 
-Program provjerava redom uslove krenuvši od prvog. U slučaju da se naiđe na  uslov koji je tačan, izvršavaju se odgovarajuće naredbe (u sklopu ugnježdenog  bloka), te program  nastavlja sa izvršavanjem prve naredne naredbe poslije \texttt{if} naredbe. U slučaju da niti jedan od uslova nije tačan, izvršava se \emph{naredba\_n} (ulazi u ugniježdeni blok pod \textit{else} naredbom). Nakon toga, izlazi se iz \texttt{if} bloka te program nastavlja sa prvom narednom naredbom ispod.  
+Program provjerava redom uslove krenuvši od prvog. U slučaju da se naiđe na  uslov koji je tačan, izvršavaju se odgovarajuće naredbe (u sklopu ugnježdenog  bloka), te program  nastavlja sa izvršavanjem prve naredne naredbe poslije \texttt{if} naredbe pod istim bloku. U slučaju da niti jedan od uslova nije tačan, izvršava se \emph{naredba\_n} (ulazi u ugniježdeni blok pod \textit{else} komandom). Nakon toga, izlazi se iz \texttt{if} bloka te program nastavlja sa prvom narednom naredbom pod istim blokom (uravnanjem).  
 
 \subsection{For i While petlje }
 
-Petlje se koriste za izvršavanje bloka k\^oda uzastopno, sve dok se ne ispuni određeni uslov (prekida). Pajton sadrži dvije vrste petlji: \texttt{for} i \texttt{while} petlja.
+Petlje se koriste za iterativno izvršavanje bloka k\^oda, sve dok se ne ispuni određeni uslov (prekida). Pajton sadrži dvije vrste petlji: \texttt{for} i \texttt{while} petlja.
 
-Petlja \texttt{for} se koristi za iterisanje kroz nizovne objekte (kao što je lista, torka, ili string) ili duge iterabilne objekte (rječnici i skupovi).
+Petlja se može koristiti \texttt{for} za iterisanje kroz nizovne objekte (kao što je lista, torka, ili string) ili duge iterabilne objekte (rječnici i skupovi).
 
 Sintaksa za petlju \texttt{for} je data sa:
 \begin{minted}{python}
@@ -239,7 +239,7 @@ Sintaksa za petlju \texttt{while} je data sa:
     while uslov:
 	  naredba # blok koda koji se izvršava
 \end{minted}
-\emph{Uslov} podrazumijeva bulov izraz, koji se provjerava prije svakog izvršavanja blok koda \emph{naredba}, koja se potom izvršava ukoliko izraz \emph{uslov} vraća vrijednost  \emph{True}, inače se izlazi iz petlje i tok izvršavanja programa seli na prvu narednu naredbu u programu van ugnježdenih naredbi pod  tom petljom. 
+\emph{Uslov} podrazumijeva bulov izraz, koji se provjerava prije svakog izvršavanja blok koda \emph{naredba}, koja se potom izvršava ukoliko izraz \emph{uslov} vraća vrijednost  \emph{True}, inače se izlazi iz petlje i tok izvršavanja programa seli na prvu narednu naredbu u programu na istom nivou ugnježdnja kao i \texttt{while} petlja. 
 
 Npr. ispisivanje prvih 10 parnih cijelih brojeva pomoću \textit{while} petlje se dobija izvršavanjem sljedećeg k\^oda.
 
@@ -275,7 +275,7 @@ Višelinijski stringovi se kreiraju koristeći trostruke navodnike.
 \textit{Metode}.
 \begin{itemize}
 	\item Konkatenacija stringova se realizuje pomoću operatora '+'. 
-	\item Pristupanje karakterima stringa je obezbjeđeno operatorom '[]'. Karakteri stringova su indeksirani brojevima $0, 1,\ldots$ idući od početka stringa ka njegovom kraju, ili sa $-1, -2,\ldots$ idući od kraja stringa ka početku  (reverzno). 
+	\item Pristupanje karakterima stringa je obezbjeđeno operatorom '[]'. Karakteri stringova su indeksirani brojevima $0, 1,\ldots$ idući od početka stringa ka njegovom kraju, ili sa $-1, -2,\ldots$ idući sa kraja stringa ka početku  (reverzno). 
 	\item Rezanje stringa (eng. \textit{slicing}) se realizuje sa `[:]' na sljedeći način:
 	\begin{minted}{python}
 	 string1 = 'world'
@@ -286,7 +286,7 @@ Višelinijski stringovi se kreiraju koristeći trostruke navodnike.
 	\item  Binarnim operatorom '*' ``lijepimo'' više istih kopija stringa u jedan novi. Drugim argumentom operatora definišemo broj kopija datog stringa.  
 	\item Dužina stringa se dobija primjenom funkcije \emph{len}(). 
 	\item Brisanje stringa iz memorije se realizuje pomoću ključne riječi \textit{del} koja se pozicionira ispred stringa koji se briše. 
-    \item Postoji mnogo pomoćnih funkcija koje nabrojavamo ovdje bez detalja: \textit{lower}(), \textit{upper}(), \textit{strip}(), \textit{replace}(), \textit{find}(), itd. 
+    \item Postoji mnogo pomoćnih funkcija koje nabrajamo ovdje bez detalja: \textit{lower}(), \textit{upper}(), \textit{strip}(), \textit{replace}(), \textit{find}(), itd. 
 \end{itemize}
 
 \textit{Memorijska organizacija}. Objekat tipa \texttt{str} je predstavljen nizom Unicode karaktera koji je smješten u neprekidnom bloku memorije. Svaki karakter u tom nizu je predstavljen brojem (kodom) tog karaktera u Unicode standardu. Svaki takav k\^od je predstavljen fiksnim brojem bajtova, u zavisnosti od platforme, što je obično ili 2 ili 4 bajta. Stringovi se često prosljeđuju kao reference na originalni stringovni objekat. %U prevodu,   ako dvije varijable referenciraju na isti string, promjene koje su napravljene putem jedne varijable vidljive su takođe putem druge varijable.
@@ -294,7 +294,7 @@ Višelinijski stringovi se kreiraju koristeći trostruke navodnike.
 	\begin{figure}
 	\centering
 	\includegraphics[width=200pt,height=60pt]{slike/str_mem_organization.png}
-	\caption{Pojednostavljen prikaz unutrašnje memorijske strukture jednog stringa   u pajtonu. }
+	\caption{Pojednostavljen prikaz unutrašnje memorijske strukture jednog stringa   u Pajtonu. }
 \end{figure}
 
 
@@ -335,10 +335,10 @@ Lista je nehomogena, uređena, indeksirana i promjenljiva kolekcija elemenata. U
 \textit{Osnovne metode}.   
 
 \begin{itemize}
-	\item Operator\textit{ [index]}: vraća element liste na poziciji \textit{index}; 
+	\item Operator [$index$]: vraća element liste na poziciji \textit{index} (prvi element liste indeksiran sa 0); 
 	\item Operator otkidanja \textit{[indeks1 : indeks2 : k]}: vraća listu uzimajući svaki \textit{k}-ti  element date liste  krenuvši sa elementom na poziciji \textit{indeks1} (0 ako nije naveden),  pa sve do elementa sa indeksom \textit{indeks2} (dužina liste, ako nije naveden) isključno; 
 	\item Operator \textit{in}: ispituje da li je element u listi -- vraća \emph{True} ili \emph{False};
-	\item for $x$ in \emph{lista}: iterisanje kroz listu prema indeksu; 
+	\item \texttt{for} $x$ in \emph{lista}: iterisanje kroz listu prema indeksu; 
 	\item \textit{append(elem)}: dodaje se element na kraj liste;
 	\item  \textit{remove(elem)}: briše element \textit{elem} iz liste;
 	\item  \textit{pop}(): briše posljednji element iz liste;
@@ -373,11 +373,11 @@ Lista je nehomogena, uređena, indeksirana i promjenljiva kolekcija elemenata. U
 Da bi se elementi liste automatski obrisali od strane pajtonovog sakupljača otpadaka, listi je potrebno dodijeliti \texttt{None} vrijednost.  U tom slučaju, svi elementi liste koji nemaju drugih (aktivnih) pokazivača koji pokazuju na date elemente se automatski brišu iz memorije. 
 
 %https://www.analyticsvidhya.com/blog/2021/05/why-you-should-avoid-using-python-lists/
-\textit{Dodatne napomene}. Kao što smo napomeuli, za razliku od nizova u programskom jeziku $C$, liste mogu biti heterogene. Međutim, ova fleksibilnost je prilično skupa. Da bi lista bila heterogena, svaki od elemenata liste mora sadržavati informaciju o vlastitom tipu, broju referenci, stvarnu vrijednost na koju pokazuje itd. Drugim riječima, svaka stavka je kompletan pajtonov objekat. Dakle, ako   dalje raščlanimo, lista u pajtonu sadrži pokazivač koji   pokazuje na   blok pokazivača, a unutar svakog bloka,  pokazivači redom pokazuju na odvojeni puni pajtonov objekat.  Ako su sve varijable istog tipa, većina ovih informacija postaje suvišna. Alternativa u takvom slučaju je korištenje \textit{array} ugrađenog tipa, o kojem više govorimo u sljedećem odjeljku.   %poput onog koji smo vidjeli ranije. %% Ovo je kao jedna velika lutka!
+\textit{Dodatne napomene}. Kao što smo napomeuli, za razliku od nizova u programskom jeziku $C$, liste mogu biti heterogene. Međutim, ova fleksibilnost je prilično skupa. Da bi lista bila heterogena, svaki od elemenata liste mora sadržavati informaciju o vlastitom tipu, broju referenci, stvarnu vrijednost na koju pokazuje itd. Drugim riječima, svaka stavka je kompletan pajtonov objekat. Dakle, ako   dalje raščlanimo, lista u pajtonu sadrži pokazivač koji   pokazuje na   blok pokazivača, a unutar svakog bloka,  pokazivači redom pokazuju na odvojeni (puni) pajtonov objekat.  Ako su sve varijable istog tipa, većina ovih informacija postaje suvišna. Alternativa u takvom slučaju je korištenje \textit{array} ugrađenog tipa, o kojem više govorimo u sljedećem odjeljku.   %poput onog koji smo vidjeli ranije. %% Ovo je kao jedna velika lutka!
 
-\subsection{Nizovi (Array)}
+\subsection{Nizovi: modul Array}
 
-Pajton sadrži ugrađeni modul \textit{array} koji je sličan nizovima u jeziku  \textit{C} ili \textit{C}++. U ovom kontejneru, podaci se smiještaju u neprekidnom bloku memorije. Kao i nizovi u jeziku \textit{C} ili \textit{C}++, oni podržavaju unos jednog tipa podataka u isto vrijeme, dakle nisu heterogeni poput listi u Pajtonu, već homogene strukture. Indeksiranje je slično listama. Tip eleemnata niza mora biti specificiran pomoću koda, koji su dati u Tabeli~ \ref{tab: Tip podataka u objektu array} (podešavajući vrijednost parametra typecode). 
+Pajton sadrži ugrađeni modul \textit{array} koji je sličan nizovima u jeziku  \textit{C} ili \textit{C}++. U ovom kontejneru, podaci se smiještaju u neprekidnom bloku memorije. Kao i nizovi u jeziku \textit{C} ili \textit{C}++, oni podržavaju unos jednog tipa podataka u isto vrijeme, dakle nisu heterogeni poput listi u Pajtonu, već homogene strukture. Indeksiranje je slično listama. Tip eleemnata niza mora biti specificiran pomoću koda, koji su pobrojani u Tabeli~ \ref{tab: Tip podataka u objektu array} (podešavajući vrijednost parametra \textit{typecode}). 
 
 \begin{table}[!ht]
 	\centering
@@ -496,20 +496,16 @@ U slučaju da dati ključ ne postoji u mapi, par  (``godine'', 31) se dodaje u m
 	
 	Kada se rječnik kreira u Pajtonu, prvo se heš tabela određene veličine  inicijalizuje u memoriji koja skladišti parove ključ--vrednost. Veličina heš tabele je obično veća od broja inicijalno unesenih elemenata, kako bi se spriječilo često (dinamičko) menjanje veličine heš mape.
 	
-	Svaki ključ u rječniku se preslikava u cjelobrojnu vrijednost koristeći heš funkciju, a potom se dobijeni broj koristi kao indeks u heš tabeli. Ako se dva ključa heširaju istom heš vrijednosti, dolazi do pojave heš kolizija. Heš tabela tu situaciju rješava tako što oba para ključ---vrijednost čuva u istom indeksu, stvarajući povezanu listu parova ključ--vrijednost, pogledati Sliku~\ref{fig: dict_mem_organization}.
-	
-	Da bi se dohvatila vrijednost pridružena ključu, Pajton prvo izračunava heš vrijednost ključa pa ga potom koristi za lociranje indeksa u heš tabeli u kojoj je pohranjen odgovarajući par ključ-vrijednost. Ako je ključ pronađen, vraća se odgovarajuća vrijednost; u suprotnom se javlja greška.
-	
-	Kada se novi par ključ-vrijednost treba dodati u rečnik, pajton izračunava heš vrijednost ključa kojeg koristi za pronalazak  indeksa u heš tabeli na čiju poziciju treba da bude pohranjen novi par ključ-vrednost. Ako je indeks već zauzet drugim parom ključ/vrijednost, novi par ključ--vrijednost se dodaje u   listu povezanu sa tim indeksom. Ako broj parova ključ--vrijednost u rječniku premašuje određenu granicu, heš tabela može promijeniti svoju dužinu kako bi se smanjila vjerovatnoća pojavljivanja heš kolizija u svrhu poboljšavanja performansi.
+	Svaki ključ u rječniku se preslikava u cjelobrojnu vrijednost koristeći heš funkciju, a potom se dobijeni broj koristi kao indeks u heš tabeli. Ako se dva ključa heširaju istom heš vrijednosti, dolazi do pojave heš kolizija. Heš tabela tu situaciju rješava tako što oba para ključ---vrijednost čuva u istom indeksu, stvarajući povezanu listu parova ključ--vrijednost, pogledati Sliku~\ref{fig: dict_mem_organization}. Da bi se dohvatila vrijednost pridružena ključu, Pajton prvo izračunava heš vrijednost ključa pa ga potom koristi za lociranje indeksa u heš tabeli u kojoj je pohranjen odgovarajući par ključ-vrijednost. Ako je ključ pronađen, vraća se odgovarajuća vrijednost; u suprotnom se javlja greška.  Kada se novi par ključ-vrijednost treba dodati u rečnik, pajton izračunava heš vrijednost ključa kojeg koristi za pronalazak  indeksa u heš tabeli na čiju poziciju treba da bude pohranjen novi par ključ-vrednost. Ako je indeks već zauzet drugim parom ključ/vrijednost, novi par ključ--vrijednost se dodaje u   listu povezanu sa tim indeksom. Ako broj parova ključ--vrijednost u rječniku premašuje određenu granicu, heš tabela može promijeniti svoju dužinu kako bi se smanjila vjerovatnoća pojavljivanja heš kolizija u svrhu poboljšavanja performansi.
 	
 	Što se tiče heš funkcija, Pajton koristi heš funkciju zvanu \textbf{hash()} za ugrađene tipove kao što su stringovi (\texttt{str}), cijeli brojevi (\texttt{int}) i torke (\texttt{tuple}). Međutim, za prilagođene objekte, može se definisati vlastita heš funkcija implementacijom metode \_\_\textbf{hash}\_\_(). Funkcija \textbf{hash()}  vraća cjelobrojnu vrijednost koja predstavlja heš vrijednost objekta. Objekti koji se upoređuju kao jednaki treba da imaju istu heš vrijednost, radi ispravnog funkcioniranja rječnika. Napomenimo da za stringove i bajtove, Pajton koristi algoritam \textit{MurmurHash3} za hešovanje vrijednosti. Ovaj algoritam je konstruisan tako da uniformno raspoređuje heš vrijednosti minimizirajući broj kolizija. Za korisnički definisane klase, Pajton koristi zadanu \textbf{hash()} funkciju, koja generiše jedinstvenu heš vrijednost za svaku instancu klase na osnovu memorijske adrese pridružena instanci. Međutim, kao što je ranije rečeno, ovo ponašanje se može nadjačati definisanjem vlastite heš metode. 
 	
 	
 	\begin{figure}
 		\centering
-		\includegraphics[width=240pt,height=140pt]{slike/dict_mem_organization.png}
+		\includegraphics[width=270pt,height=160pt]{slike/dict_mem_organization.png}
  
-		\caption{Pojednostavljen prikaz unutrašnje memorijske strukture jedne heš mape (rječnika) u Pajtonu. }		\label{fig: dict_mem_organization}
+		\caption{Pojednostavljen prikaz unutrašnje memorijske strukture jedne heš mape (rječnika) u Pajtonu.\footnote{Slika posuđena sa: https://www.geeksforgeeks.org/internal-structure-of-python-dictionary}}		\label{fig: dict_mem_organization}
 	\end{figure}
 	%https://www.geeksforgeeks.org/internal-structure-of-python-dictionary/ ==> pročitati
 	
@@ -543,10 +539,10 @@ Skupovi  predstavljaju neindeksirane, neuređene, promjenjive strukture podataka
  
 
 
-\textit{Memorijska organizacija}. U Pajtonu se skupovna struktura podataka implementira kao neuređena kolekcija jedinstvenih elemenata. Za implementaciju se koristi heš tabela ili rječnik; elementi skupa su ključevi rječnika dok odgovarajuće vrijednosti njima pridružene nisu od važnosti (mogu se pridružiti \textit{None} vrijednosti, koje se za definisanje nula vrijednosti ili vrijednosti koja u suštini ne označava ``ništa''. Napomenimo da je \emph{None} vlastiti tip podatka (\texttt{NoneType}).).  
+\textit{Memorijska organizacija}. U Pajtonu se skupovna struktura podataka implementira kao neuređena kolekcija jedinstvenih elemenata. Za implementaciju se koristi heš tabela ili rječnik; elementi skupa su ključevi rječnika dok odgovarajuće vrijednosti njima pridružene nisu od važnosti (mogu se pridružiti \textit{None} vrijednosti, koje se za definisanje nula vrijednosti ili vrijednost koja u suštini  označava ``ništa''. Napomenimo da je \emph{None} vlastiti tip podatka (\texttt{NoneType}).).  
 
-Kada se skupu doda novi element, Pajton uz pomoć odgovarajuće heš funkcije izračunava   heš vrijednost koja odgovara  njegovoj  poziciji u heš tabeli. Ako na dobijenoj poziciji nema elementa, novi element se jednostavno dodaje u skup. U slučaju da već postoji element na toj poziciji, provjerava se da li je novi element jednak postojećem (koristeći metodu \_\_eq\_\_). Ako su dva elementa jednaka, odbija se dodavanje elementa skupu. Inače, po defaultnom principu se element dodaje u linkovanu listu priduržena datom indeksu. Takođe, određeni kompajleri  
-koriste algoritam  otvorenog adresiranja da se pronađe prazna poziciju u heš tabeli gdje bi se potom dodao novi element. 
+Kada se skupu doda novi element, Pajton uz pomoć odgovarajuće heš funkcije izračunava   heš vrijednost koja odgovara  njegovoj  poziciji u heš tabeli. Ako na dobijenoj poziciji nema elementa, novi element se jednostavno dodaje u skup. U slučaju da već postoji element na toj poziciji, provjerava se da li je novi element jednak postojećem (koristeći metodu \_\_eq\_\_()). Ako su dva elementa jednaka, odbija se dodavanje elementa skupu. Inače, po defaultnom principu se element dodaje u linkovanu listu priduržena datom indeksu. Takođe, određeni kompajleri  
+koriste algoritam  otvorenog adresiranja da se pronađe pogodna prazna pozicija u heš tabeli gdje bi se potom dodao novi element. 
 Otvoreno adresiranje koristi sekvencijalno ispitivanje pozicija da bi se pronašla prazna pozicija u tabeli. Pozicije se provjeravaju sekvencijalno po nekom pravilu dok se ne pronađe prva prazna. Postoji nekoliko pravila  definisanja sekvence probavanja pozicija, kao što je linearno, kvadratno ispitivanje ili dvostruko heširanje. Npr. ako heš pozicija nije prazna, izračunamo sljedeću poziciju u nizu dodavanjem neke konstantne vrijednosti (recimo 1) trenutnoj heš poziciji kretajući se ciklično po pozicijama heš tabele. Ako je trenutna pozicija 4, a konstantna vrijednost 1, sljedeća pozicija koja se ispituje je 5. Ako je sljedeća pozicija prazna,  element se umeće na tu poziciju. Inače, ponovimo prethodni korak dok god se ne pronađe prazna pozicija ili dok se ne pretraži cijela heš tabela. 
  
 
@@ -564,8 +560,8 @@ Sljedeći kod pokazuje tip strukture podataka u Pajtonu koja predstavlja skup, a
 
  	\begin{figure}[!ht]
 	\centering
-	\includegraphics[width=200pt,height=100pt]{slike/set_mem_organization.png}
-	\caption{Prikaz unutrašnje memorijske strukture jednog skupa (set) u pajtonu. }
+	\includegraphics[width=250pt,height=150pt]{slike/set_mem_organization.png}
+	\caption{Prikaz unutrašnje memorijske strukture jednog skupa (set) u Pajtonu. }
 \end{figure}  %https://www.javatpoint.com/python-set 
 
 \subsection{Torke}
@@ -626,11 +622,11 @@ Pošto su objekti tipa \texttt{tuple} nepromjenljive strukture, elementi se ne m
 
 \section{Funkcije}
 
-Programski jezik Pajton svaku funkciju predstavlja kao jedan objekat. Prema tome, funkcije se mogu dodijeliti varijablama, proslijediti kao argument  drugim funkcijama, a takođe vratiti kao vrijednost    drugih funkcija.  Preciznije, funkcije su implementirane korištenjem pajtonove interne klase  \texttt{function}. Ova klasa je dio ugrađenih tipova ovog jezika koja pruža osnovnu funkcionalnost za kreiranje i izvršavanje funkcija. Kada se funkcija definiše, interpreter inicijalizuje novi objekat klase \texttt{function} koji predstavlja tu funkciju -- sadrži informacije o nazivu funkcije, argumentima, k\^odu i drugim metapodacima.
+Programski jezik Pajton svaku funkciju predstavlja kao jedan objekat. Prema tome, funkcije se mogu dodijeliti varijablama, proslijediti kao argument  drugim funkcijama, a takođe vratiti kao vrijednost    drugih funkcija.  Preciznije, funkcije su implementirane korištenjem Pajtonove interne klase  \texttt{function}. Ova klasa je dio ugrađenih tipova ovog jezika koja pruža osnovnu funkcionalnost za kreiranje i izvršavanje funkcija. Kada se funkcija definiše, interpreter inicijalizuje novi objekat klase \texttt{function} koji predstavlja tu funkciju -- sadrži informacije o nazivu funkcije, argumentima, k\^odu i drugim metapodacima.
 
 Funkcija je predstavljena blokom k\^oda koji obavlja određeni zadatak a može se pozivati i izvršavati više puta kroz program. Uloga funkcija je da se k\^od učini modularnijim, efikasnijim i čitljivijim, jer omogućavaju  podijelu složenih programa na manje dijelove kojima je lakše upravljati.
 
-Sintaksno, funkcije se definišu pomoću ključne riječi "\textit{def}" nakon čega slijedi naziv funkcije, zagrade (u kojima se opciono navode argumenti) pa dvotočka. Tijelo funkcije se uvlači ispod zaglavlja. Naredba \texttt{return} vraća rezultat date funkcije, nakon čega se izlazi iz tijela funkcije. Evo primjera jednostavne funkcije koja računa proizvod dva broja:
+Sintaksno, funkcije se definišu pomoću ključne riječi \texttt{def} nakon čega slijedi naziv funkcije, zagrade (u kojima se opciono navode argumenti) pa dvotočka. Tijelo funkcije se uvlači ispod zaglavlja. Naredba \texttt{return} vraća rezultat date funkcije, nakon čega se izlazi iz tijela funkcije. Evo primjera jednostavne funkcije koja računa proizvod dva broja:
 
 \begin{minted}{python}
 def proizvod_brojeva(x, y):
@@ -671,7 +667,7 @@ Funkcije takođe mogu da vraćaju nekoliko vrijednosti koristeći torke:
 def visestruko_vracanje(x, y):
     dio = x / y
     ostatak = x % y
-	return dio, ostatak
+    return dio, ostatak
 
 d, o = visestruko_vracanje(10, 3)
 print(d, " ", o) # Output: 3 1
@@ -731,7 +727,7 @@ result = primjena(dodaj, 2, 3)
 print(result)  # Output: 5
   \end{minted}
 
-\textit{Anonimne funkcije.}  Anonimne funkcije su definirane pomoću ključne riječi \textit{lambda}, tako da se ponekad nazivaju i lambda funkcije.  Naziv anonimne funkcije su dobile jer ne zahtjevaju eksplicitnu dodjelu naziva kao u regularnoj funkciji. Sintaksa lambda funkcije je data sa:
+\textit{Anonimne funkcije.}  Anonimne funkcije su definirane pomoću ključne riječi \texttt{lambda}, tako da se ponekad nazivaju i lambda funkcije.  Naziv anonimne funkcije su dobile jer ne zahtjevaju eksplicitnu dodjelu naziva kao u regularnoj funkciji. Sintaksa lambda funkcije je data sa:
 
 \begin{minted}{python}
 lambda argumenti: izraz
