@@ -1,7 +1,7 @@
 \chapter{Uvod u programski jezik Pajton} 
  
 
-Pajton je objektno-orjentisani programski jezik visokog nivoa,  opšte   namjene,   pušten u upotrebu u februaru 1991. godine. Kreiran je od strane Guido van Rossum-a. Naziv Pajton potiče od britanske komičarske grupe \textit{Monty Python}. Od svog nastanka, Pajton je imao nekoliko  izdanja; danas je jedan od najpopularnijih programskih jezika na svijetu, pogledati Sliku~\ref{fig: popular_program_lang}\footnote{Podaci preuzeti sa  https://statisticsanddata.org/data/the-most-popular-programming-languages-1965-2022-new-update/ .}.
+Pajton je objektno-orjentisani programski jezik visokog nivoa,  opšte   namjene,   pušten u upotrebu u februaru 1991. godine. Kreiran je od strane Guido van Rossum-a. Naziv Pajton potiče od britanske komičarske grupe \textit{Monty Python}. Od svog nastanka, Pajton je imao nekoliko  izdanja; danas je jedan od najpopularnijih programskih jezika na svijetu, pogledajte Sliku~\ref{fig: popular_program_lang}\footnote{Podaci preuzeti sa  https://statisticsanddata.org/data/the-most-popular-programming-languages-1965-2022-new-update/ .}.
 
 \begin{figure}[H]
 	\centering
@@ -17,12 +17,12 @@ Godine 1989. Guido van Rossum je samoinicijativno započeo rad na kreiranju novo
  Prva verzija Pajtona, verzija 0.9.0, je objavljena  u februaru 1991. godine.
 Pajton 1.0 je objavljen u januaru 1994. godine.  Uključio je nekoliko novih funkcionalnosti, preuzimajući uglavnom dobre koncepte funkcionalnih jezika, kao što su lambda, mapa, filter i funkcije redukcije.
 Pajton 2.0 je objavljen 2000. godine i uveo je komprehenziju liste, sakupljač otpadaka i mnoga druga poboljšanja.
-Pajton 3.0 je objavljen 2008. godine kao veliko ažuriranje koje je uvelo nekoliko izmjena koje su nekompatibilne sa prethodnim verzijama. \\ 
+Pajton 3.0 je objavljen 2008. godine kao veliko ažuriranje koje je uključilo nekoliko izmjena koje nisu bile kompatibilne sa prethodnim verzijama. \\ 
 
 Glavna odlika verzije Pajton 3.0 bio je pročišćavanje jezika i uklanjanje redudantnih funkcija.
-Od pojavljivanja Pajton 3, razvojni pajtonov tim pušta glavne verzije jezika svakih 18-24 mjeseca. Svaka nova verzija uključuje nove funkcije i poboljšanja, čuvajući kompatibilnosti sa prethodnim verzijama.
+Od pojavljivanja Pajton 3, tim zadužen za razvoj pajtona pušta glavne verzije jezika svakih 18-24 mjeseca. Svaka nova verzija uključuje nove funkcije i poboljšanja, čuvajući kompatibilnosti sa prethodnim verzijama.
 Danas se Pajton koristi u gotovo svemu, od razvoja veb aplikacija, do naučnog računarstva, analize podataka, vještačke inteligencije, mašinskog učenja itd. Prednost 
-Pajtona je velika i aktivna zajednicu programera koja   svakodnevno doprinosi  jeziku kreiranjem biblioteka, frejmvorka i drugih alata. Neke od popularnih biblioteka i frejmvorka za Pajton uključuju NumPy, Pandas, Matplotlib, Django, TensorFlow.
+Pajtona je velika i aktivna zajednicu programera koja   svakodnevno doprinose  jeziku kreiranjem biblioteka, frejmvorka i drugih alata. Neke od popularnih biblioteka i frejmvorka za Pajton uključuju NumPy, Pandas, Matplotlib, Django, TensorFlow.
 
 
 Razvoj Pajtona karakteriše njegova sintaksna jednostavnost, čitljivost i fleksibilnost. Ovi aspekti su pomogli  da Pajton postane popularan jezik među početnicima ali i iskusnijim  programerima.
@@ -32,10 +32,10 @@ Razvoj Pajtona karakteriše njegova sintaksna jednostavnost, čitljivost i fleks
 
 \begin{itemize}
 	\item Pajton je \textit{jezik visokog nivoa} (eng. \textit{high-level language}):  programski jezik koji je dizajniran tako da ga ljudi lako čitaju, pišu i razumiju. U prevodu,  obezbjeđuje koncepte koje omogućavaju pisanje k\^oda na višem nivou apstrakcije, čime ga približava sintaksi prirodnog jezika, za razliku od jezika niskog nivoa, kao što su asemblerski ili mašinski k\^od.
-	\item Pajton je \textit{dinamički tipizirani jezik}. To znači da  se tip varijable određuje u vrijeme izvođenja programa, a ne u vrijeme kompajliranja. Drugim riječima, tip varijable se može promijeniti tokom izvršavanja programa. Nasuprot ovome, statički tipiziranim jezicima,  tip varijable je fiksiran u vrijeme kompajliranja i nepromjenljiv je tokom vremena izvršavanja. U statički tipiziranim jezicima,  tip svake varijable se mora deklarisati prije upotrebe, a potom kompajler provjerava da li se tip varijable dosljedno upotrebljava u cijelom programu.
+	\item Pajton je \textit{dinamički tipizirani jezik}. To znači da  se tip varijable određuje u vrijeme izvođenja programa, a ne u vrijeme kompajliranja ili kodiranja. Drugim riječima, tip varijable se može promijeniti tokom izvršavanja programa. Nasuprot ovome, statički tipiziranim jezicima,  tip varijable je fiksiran u vrijeme kompajliranja i nepromjenljiv je tokom vremena izvršavanja. U statički tipiziranim jezicima,  tip svake varijable se mora deklarisati prije upotrebe, a potom kompajler provjerava da li se tip varijable dosljedno upotrebljava u cijelom programu.
 	\item Pajton je \textit{objektno-orijentisani jezik}.  Objektno orijentisani programski (OOP) jezik  je tip programskog jezika koji koristi objekte kao svoje osnovne gradivne blokove. Objekti su instance klasa koje enkapsuliraju podatke i operacije (metode) koje se mogu izvršiti na tim podacima. U osnovi,  OOP koncept potiče prirodniji način razmišljanja o problemima tako što ih modeluje u smislu objekata i njihovih interakcija.
-	\item Pajton je \textit{skriptni jezik}. Programski jezik koji je dizajniran dijelom za  skriptiranje,   pisanja tipa programa koji se koristi za automatizaciju zadataka, kao što je izvođenje niza naredbi ili manipulaciju podacima. Skriptni jezici se obično interpretiraju, a ne kompajliraju, što znači da se izvorni kod može izvršiti direktno, bez prethodnog prevođenja u mašinski k\^od.  	Jezici za skriptiranje se često koriste za   automatizacija zadataka koji se ponavljaju, pisanje malih potpornih programa ili ugrađivanje funkcionalnosti u druge aplikacije. Jedna od glavnih prednosti skriptnih jezika je njihova jednostavnost upotrebe i fleksibilnost.
-	\item Pajton posjeduje \textit{aitomatsko čišćenje memorije} (eng. \textit{garbage--collected}).  Pajton automatski upravlja   identifikovanjem i oslobađanjem memorije koju program više ne koristi.  Oslobađena memorija  stavljanja se na raspolaganje drugim dijelovima programa za korištenje.   Ovaj mehanizam omogućuje  programerima  da se usredotoče na pisanje koda bez vođenja brige o ručnom dodeljivanju i oslobađanju memorije (dok to nije slučaj u, recimo, programskom jeziku $C$).
+	\item Pajton je \textit{skriptni jezik}. Programski jezik koji je dizajniran dijelom za  skriptiranje,   pisanja tipa programa koji se koristi za automatizaciju zadataka, kao što je izvođenje niza naredbi ili manipulaciju podacima. Skriptni jezici se obično interpretiraju, a ne kompajliraju, što znači da se izvorni kod može izvršiti direktno, bez prethodnog prevođenja u mašinski k\^od.  	Jezici za skriptiranje se često koriste za   automatizacija zadataka koji se ponavljaju, pisanje malih potpornih programa ili ugrađivanje funkcionalnosti u drugim aplikacijama. Jedna od glavnih prednosti skriptnih jezika je njihova jednostavnost upotrebe i fleksibilnost.
+	\item Pajton posjeduje \textit{aitomatsko čišćenje memorije} (eng. \textit{garbage--collected} language).  Pajton automatski upravlja   identifikovanjem i oslobađanjem memorije koju program više ne koristi.  Oslobađena memorija  stavljanja se na raspolaganje drugim dijelovima programa za korištenje.   Ovaj mehanizam omogućuje  programerima  da se usredotoče na pisanje koda bez vođenja brige o ručnom dodeljivanju i oslobađanju memorije (dok to nije slučaj u, recimo, programskom jeziku $C$).
 \end{itemize}
 
 \section{Pregled ugrađenih tipova podataka}
@@ -55,7 +55,7 @@ Pajton nudi nekoliko \textit{ugrađenih} (eng. \textit{built-in}) tipova podatak
 
 Svaki od ovih tipova posjeduje različite funkcionalnosti za skladištenje i manipulaciju podacima, te se koriste za kreiranje složenih struktura podataka i algoritama. Osim toga, Pajton pruža širok raspon biblioteka koje proširuju funkcionalnost ovih ugrađenih tipova, time omogućavaju kreiranje moćnih i fleksibilnih aplikacija sa lakoćom.
 
-\section{Deklaracija varijabli i memorijska organizacija}
+\section{Deklarisanje varijabli i memorijska organizacija}
 
 Dodjela vrijednosti varijablama se izvršava pomoću operatora (dodjele) ``='', kao i kod većine programskih jezika. Da bismo kreirali varijablu, prvo odaberemo naziv varijable, a potom joj dodijelimo vrijednost pomoću operatora ``=''. Npr. za kreiranje varijable pod nazivom \textit{x} sa vrijednošću   5, koristimo sljedeći kod:
 
@@ -71,9 +71,9 @@ Da bismo kreirali varijablu pod nazivom \textit{y} i dodijelili joj stringovnu v
 Više o cjelobrojnim i stringovnim tipovima podataka biće riječi u nastavku. 
  
 Pajton je objektno-orjentisani jezik, gdje se svaka varijabla tretira kao objekat neke klase.  
-Objekti koji su varijable sa cjelobrojnom vrijednošću se tretiraju kao objekat tipa \texttt{int}. Dalje, varijabla koja je referencirana na string se tretira kao objekat tipa \texttt{str}.  Inače, gledajući memorijsku organizaciju, pojednostavljeno govoreći varijable pretstavljaju reference na memorijsko mjesto gdje je upisan sadržaj na koji referenciraju.  
+Objekti koji su varijable sa cjelobrojnom vrijednošću se tretiraju kao objekat tipa \texttt{int}. Dalje, varijabla koja je referencirana na string se tretira kao objekat tipa \texttt{str}.  Inače, gledajući memorijsku organizaciju, pojednostavljeno govoreći, varijable pretstavljaju reference na memorijsko mjesto gdje je upisan sadržaj na koji referenciraju.  
 %https://www.analyticsvidhya.com/blog/2021/05/why-you-should-avoid-using-python-lists/
-Detaljnije, pajtonov interpreter (o kome će biti više riječi u nastavku) je   napisan u \textit{C}-u, pa su svi pajtonovi objekti prikrivena verzija \textit{C} struktura, stoga  sadrže ne samo svoju vrijednost, već i druge informacije. Objekat nije samo sirovi cijeli broj (ili string ili drugi tip podatka), već pokazivač na složenu \textit{C} strukturu (npr. \texttt{PyLongObject}) koja sadrži nekoliko vrijednosti. Ako istražimo dublje, možemo saznati kako ova \textit{C} struktura izgleda.
+Detaljnije, pajtonov interpreter (o kome će biti više riječi u nastavku) je   napisan u \textit{C}-u, pa su svi pajtonovi objekti prikrivena verzija \textit{C} struktura, stoga  sadrže ne samo svoju vrijednost, već i druge informacije. Objekat nije samo sirovi cijeli broj (ili string ili drugi tip podatka), već pokazivač na složenu \textit{C} strukturu (npr. \texttt{PyLongObject}) koja sadrži nekoliko vrijednosti. Ako istražimo dublje, možemo vidjeti kako ova \textit{C} struktura izgleda.
 
 \begin{minted}{C}
 	struct _longobject {
@@ -140,7 +140,7 @@ imamo odgovarajuću sliku
 
 Primijetimo da na memorijsko mjesto gdje je broj 42 bio upisan ne pokazuje niti jedan pokazivač.  Pajton koristi tehniku zvanu \textit{brojač referenci} (atribut \textit{ob\_refcnt}) za upravljanje memorijom. Za svaki objekt, uključujući i složenije strukture kao što su kolekcije, vezuje se jedan broj referenci koji prati broj referenci na objekt. Kada referentni broj postene nula, objekt se briše iz memorije uz pomoć sakupljača otpadaka (eng. \textit{garbage collector}).
 
-Sakupljač otpadaka   povremeno skenira hip u potrazi za objektima sa referentnim brojem nula te ih briše   iz memorije. Na ovaj način se osigurava i slučaj  ako postoje kružne reference, gdje dva ili više objekata referenciraju jedan na drugog.
+Sakupljač otpadaka   povremeno skenira hip u potrazi za objektima sa referentnim brojem nula te ih briše   iz memorije. Na ovaj način se osigurava brisanje i u slučaju  ako postoje kružne reference, gdje dva ili više objekata referenciraju jedan na drugog.
 
 Očitavanje broja memorijske ćelije te heksadekadnog broja na koju pokazuje varijabla $x$ se izvršava pomoću koda:
 \begin{minted}{python}
@@ -148,7 +148,7 @@ Očitavanje broja memorijske ćelije te heksadekadnog broja na koju pokazuje var
 	idhex = hex(id(x)) 
 \end{minted} 
 %https://insideaiml.com/blog/Python-Memory-Management-1176 ==> procitati: BITNO 
- Napomenimo da se ispisivanje rezultata na ekranu vrši pomoću naredbe \emph{print}(). Poruka može biti string ali i bilo koji drugi objekat. Svaki objekat će biti konvertovan u string prije nego što se ispiše na ekran. Ukoliko konverzija nije moguća, javiće se poruka o greški. Pisanje komentara u jeziku Pajton je realizovano na više načina: jednolinijski i višelinijski. Jednolinijski komentari počinju sa simbolom tab (\#), nakon čega slijedi opis komentara. U slučaju višelinijskog komentara, početak komentara počinje i završava sa tri uzastopna apostrofa (''), koji se moraju pravilno uravnati (sa ostatkom k\^oda), da ne bi došlo do pojave sintaksne greške.  
+ Napomenimo da se ispisivanje rezultata na ekranu vrši pomoću naredbe \emph{print}(). Poruka može biti string ali i bilo koji drugi objekat. Svaki objekat će biti konvertovan u string prije nego što se ispiše na ekran. Ukoliko konverzija nije moguća, javiće se poruka o greški. Pisanje komentara u jeziku Pajton je realizovano na više načina: jednolinijski i višelinijski. Jednolinijski komentari počinju sa simbolom tab (\#), nakon čega slijedi opis komentara. U slučaju višelinijskog komentara, početak komentara počinje i završava sa tri uzastopna apostrofa ('''), koji se moraju pravilno uravnati (sa ostatkom k\^oda), da ne bi došlo do pojave sintaksne greške.  
  
 
 
@@ -165,11 +165,11 @@ Slijede primjeri inicijalizacije ovakvih tipova.
 	w = -0.325   # float-point number
 \end{minted}
 
-Nad ovim numeričkim tipovima  je moguće primjenjivati razne aritmetičke operacije, koje su manje-više sintaksno i smenatnički iste kao i kod većine ostalih programskih jezika. Napomenimo jednu suštinsku razliku, a to je operator '/' koji podrazumijeva realno dijeljenje, dok '//' označava cjelobrojno dijeljenje. Npr. 5/2 vraća rezultat 2.5, dok 5//2 vraća 2.  
+Nad ovim numeričkim tipovima  je moguće primjenjivati razne aritmetičke operacije, koje su manje-više sintaksno i semantnički iste kao i kod većine ostalih programskih jezika. Napomenimo jednu suštinsku razliku, a to je operator '/' koji podrazumijeva realno dijeljenje, dok '//' označava cjelobrojno dijeljenje. Npr. 5/2 vraća rezultat 2.5, dok 5//2 vraća 2.  
 
 Pored ovih osnovnih aritmetičkih operacija, postoje i druge ugrađene funkcije i metode koje se mogu koristiti sa int i float vrijednostima, kao što su \textit{abs}(), \textit{round}(), \textit{min}(), \textit{max}(), itd.
 
-Numerički tip \textbf{complex} predstavlja kompleksne brojeve koji su dati u obliku a+b\textbf{j}, gdje su $a$ i $b$ oba realni brojevi, dok je  \textbf{\textit{j}} imaginarna jedinica.
+Numerički tip \texttt{complex} predstavlja kompleksne brojeve koji su dati u obliku a+b\textbf{j}, gdje su $a$ i $b$ oba realni brojevi, dok je  \textbf{\textit{j}} imaginarna jedinica.
 \begin{minted}{python}
 	x = 1 + 1j 
 	y = 2 +  j 
@@ -181,7 +181,7 @@ Numerički tip \textbf{complex} predstavlja kompleksne brojeve koji su dati u ob
 Napomenimo da se kompleksni brojevi mogu inicijalizovati pomoću funkcije  \textit{complex}($x, y$), gdje je $x$ vrijednost realnog, a $y$ vrijednost imaginarnog dijela broja. 
 
 
-\section{Naredba grananja i petlje}
+\section{Naredbe grananja i petlje}
 %https://petlja.org/biblioteka/r/lekcije/TxtProgInPythonSrLat/02_console-02_console_08_if
 U ovoj sekciji navodimo sintaksu naredbe grananja \texttt{if}, te osnovnih petlji \texttt{for} i \texttt{while}. 
 
