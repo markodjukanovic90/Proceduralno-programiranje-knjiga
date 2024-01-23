@@ -814,7 +814,7 @@ Ključne uloge PVM su navedene u nastavku.
 \item \textit{Poboljšane performanse izvršavanja}: PVM koristi bajtkod  interpreter, koji je brži od direktnog interpretera izvornog k\^oda. PVM može koristiti \textit{Just-In-Time} (JIT) kompilaciju za dalje poboljšanje performansi.
 \item \textit{Dinamičko tipiziranje}: Pajton je dinamički tipiziran jezik, što znači da se tip varijable dodjeljuje u vremenu izvođenja programa. PVM je dizajnirana da efikasno upravlja ovim procesom.
 \item  \textit{Upravljanje memorijom}: PVM automatski upravlja memorijom, što može olakšati pisanje sigurnog memorijskog k\^oda. PVM  automatski oslobađa memoriju koja se više ne koristi.
-\item \textit{Lak pristup eksternim bibliotekama}: PVM se intenzivno koristi u pajton ekosistemu, koji uključuje veliki broj otvorenih biblioteka. Ove biblioteke pružaju širok spektar funkcionalnosti vezano za  veb programiranje, mašinsko učenje, itd. Importovanje bIblioteka se vrši pomoću naredbe \texttt{import}. 
+\item \textit{Lak pristup eksternim bibliotekama}: PVM se intenzivno koristi u pajton ekosistemu, koji uključuje veliki broj otvorenih biblioteka. Ove biblioteke pružaju širok spektar funkcionalnosti vezano za  veb programiranje, mašinsko učenje, itd. Importovanje biblioteka se vrši pomoću naredbe \texttt{import}. 
 \end{itemize}
 
 
@@ -1140,7 +1140,7 @@ finally:
    # hoce li se izuzetak desiti
 \end{minted}
 
-Sve vrste klasa izuzetaka, te njihova organizacija u Pajtonu se mogu vidjeti sa Slici~\ref{fig: exceptions}.  
+Sve vrste klasa izuzetaka, te njihova organizacija u Pajtonu se mogu vidjeti na Slici~\ref{fig: exceptions}.  
 %python-exception-classes.jpg
 \begin{figure}[H]
 	\centering
@@ -1178,7 +1178,7 @@ Dakle, prvo otvaramo datoteku  \texttt{datoteka.txt} samo za čitanje. Zatim či
 
 
 
-\textit{Pisanje u fajl}. Za pisanje u datoteku koristimo funkciju \textit{open}(), koja otvara fajl sa određenim nazivom, ali ovaj put sa načinom ``\textit{w}" (eng. write), čime se dopušta pisanje u fajl. Pogledajmo sljedeći primjer.
+\textit{Pisanje u fajl}. Za pisanje u datoteku koristimo funkciju \textit{open}(), koja otvara fajl sa određenim nazivom, ali ovaj put sa načinom ``\textit{w}" (eng. \textit{write}), čime se dopušta pisanje u fajl. Pogledajmo sljedeći primjer.
 \begin{minted}{python}
 # Otvaranje fajla za pisanje
 file = open("datoteka.txt", "w")
@@ -1189,7 +1189,7 @@ file.close()
 \end{minted}
 
 
-\textit{Dodavanje u fajl}. Da biste dodali sadržaj u postojeći sadržaj datoteke, otvaramo fajl sa načinom ``\textit{a}" (eng. append), a potom pomoću funkcije \textit{write}() upisujemo novi sadržaj na postojeći. 
+\textit{Dodavanje u fajl}. Da biste dodali sadržaj u postojeći sadržaj datoteke, otvaramo fajl sa načinom ``\textit{a}" (eng. \textit{append}), a potom pomoću funkcije \textit{write}() upisujemo novi sadržaj na postojeći. 
 
 Napomenimo da je dobra praksa zatvoriti datoteku nakon što završite rad sa njom, kako bismo izbjegli bilo kakve potencijalne probleme sa oštećenjem datoteke ili gubitkom podataka. Praksa je da se rad u fajlovima odvija pod \textit{try}-\textit{except} blokom. Klase izuzetaka koje se u tim slučajevima mogu koristiti su: \texttt{FileNotFoundError} i \texttt{OSError}. 
 
@@ -1197,13 +1197,13 @@ Napomenimo da je dobra praksa zatvoriti datoteku nakon što završite rad sa njo
 
 \subsection{Modul Json}
 
-Modul \texttt{json} se koristi  za kodiranje i dekodiranje podataka sa i u JSON format (eng. \textit{Java Script Object Notation}) formatu. JSON je  široko rasprostranjen format za razmjenu podataka, ljudima jednostavan za čitanje i pisanje, a mašinama za raščlanjivanje i generisanje.
+Modul \texttt{json} se koristi  za enkodiranje i dekodiranje podataka sa i u JSON format (eng. \textit{Java Script Object Notation}) formatu. JSON je  široko rasprostranjen format za razmjenu podataka, ljudima jednostavan za čitanje i pisanje, a mašinama za raščlanjivanje i generisanje.
 
 Modul \texttt{json} nudi dvije glavne metode za rad sa JSON podacima:
 
 
 \begin{itemize}
-	\item json.\textit{dump}() -- koristi se za kodiranje pajton objekata u JSON format i njegovo spremanje u objekat  datoteka.
+	\item json.\textit{dump}() -- koristi se za enkodiranje pajton objekata u JSON format i njegovo spremanje u objekat  datoteka.
 	\item json.\textit{loads}() -- koristi se za dekodiranje JSON niza u pajtonov objekat (obično heš mapa).
 \end{itemize}
 
@@ -1226,7 +1226,7 @@ Pogledajmo i jedan primjer upotrebe \texttt{json} modula.
 \end{minted}
 
 
-Primijetite da funkcija \textit{dumps}() pretvara pajtonov objekat u string (kodiranje), dok funkcija \textit{loads}() radi obrnutu stvar, od stringa pravi pajtonov objekat (enkodiranje). 
+Primijetite da funkcija \textit{dumps}() pretvara pajtonov objekat u string (kodiranje), dok funkcija \textit{loads}() radi obrnutu akciju, od stringa pravi pajtonov objekat (enkodiranje). 
 
 \section{Regularni izrazi}
 
@@ -1247,7 +1247,7 @@ Osnovni koncepti regularnih izraza su:
     	\item ``$.$'': sparuje bilo koji karakter samo jednom; 
     	\item $[]$: sparuje bilo koji karakter pod (uglastim) zagradama samo jednom. Npr. ako želimo da označimo skup sva malih slova, odgovarajući patern bi bio [$a-z$], dok bismo velika označili sa [$A-Z$], a jedna i druga sa [$a-zA-Z$]
     	\item $\backslash d$: sparuje bilo koju cifru samo jednom. Drugi način je koristiti patern sa zagradama: [$0-9$];
-    	\item $[\^ \  ]$: sparuje bilo koji karakter tačno jednom koji pripada komplementu skupa karaktera pod
+    	\item $[\^ \   ]$: sparuje bilo koji karakter tačno jednom koji pripada komplementu skupa karaktera pod
     	uglastim zagradama; 
     	\item $\backslash w$: sparuje bilo koji karakter riječi (slova, brojevi ili povlaka); 
     	\item $\backslash n$: sparuje novi red;
