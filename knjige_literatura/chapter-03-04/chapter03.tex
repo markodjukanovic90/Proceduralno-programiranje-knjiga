@@ -285,16 +285,17 @@ Rekurzija se izvrašava u $O(2^n)$ vremenu.  %Prema tome, $T(n) = O(2^n)$, što 
 
 % https://textbooks.cs.ksu.edu/cc310/4-data-structures-and-algorithms/12-brute-force/
 
-Prva algoritamska tehnika koja se najčešće  koristiti u rješavanju   je tehnika grube sile. Ovo je algoritamska paradigma sa kojom se većina čitalaca susretala do sada, mada možda nesvjesno da je riječ o baš toj tehnici rješavanja problema.
+Jedna od prvih algoritamska tehnika koja se koristiti u rješavanju  računarskih problema je tehnika grube sile. Ovo je algoritamska paradigma sa kojom se većina čitalaca susretala do sada, mada možda nesvjesno da je riječ o baš toj tehnici rješavanja problema.
 
-Prosto rečeno, paradigma grube sile pokušava sva moguća rješenja problema, a zaustavlja se kada pronađe ono koje je stvarno rješenje. U stvarnom životu,  primjer algoritma brutalne sile je uključivanje USB kabela. Prvo pokušamo  na jedan način, a ako to ne uspije, isprobamo drugi port.  Slično, ako imamo veliki broj ključeva, a nismo sigurni koji od njih otključava vrata, možemo jednostavno isprobati svaki ključ za datu bravu dok jedan ne proradi. Upravo je ovo suština algoritamskog dizajna ove paradigme.
+Prosto rečeno, paradigma grube sile pokušava sva moguća rješenja problema, vraćajući ono koje je najbolje (ili prvo koje zadovoljava uslove zadatka, ako je riječ o problemima zadoovljenja -- tzv. SAT problemi). U stvarnom životu,  primjer algoritma brutalne sile je uključivanje USB kabela. Prvo pokušamo  na jedan način, a ako to ne uspije, isprobamo drugi port.  Slično, ako imamo veliki broj ključeva, a nismo sigurni koji od njih otključava vrata, možemo jednostavno isprobati svaki ključ za datu bravu dok jedan ne proradi. Upravo je ovo suština algoritamskog dizajna ove paradigme.
 
 \begin{example}
-	Odličan primjer algoritma grube sile je pronalaženje najbližeg para tačaka u višedimenzionalnom (ralnom) prostoru. Neka su date $n$ tačaka u $\mathbb{R}^m$, tj. $S=\{ \textbf{x}_i \mid \textbf{x}_i \in  \mathbb{R}^m, i=1, \ldots, n\}$. Naći dvije tačke $x_i, x_j \in S$ koje su međusobno najbliže među svim ostalim parovima tačaka skupa $S$.
+	Odličan primjer algoritma grube sile je pronalaženje najbližeg para tačaka u višedimenzionalnom (realnom) prostoru. Neka su date $n$ tačaka u $\mathbb{R}^m$, tj. $S=\{ \textbf{x}_i \mid \textbf{x}_i \in  \mathbb{R}^m, i=1, \ldots, n\}$. Naći dvije tačke $x_i, x_j \in S$ koje su međusobno najbliže gledajući sve parove tačaka skupa $S$.
 \end{example}
 \begin{solution}
     Da bismo pronašli odgovor grubom silom,  izračunamo udaljenost između svakog pojedinačnog para tačaka, a zatim pratimo minimalnu pronađenu udaljenost. Verzija ovog algoritma je data narednim k\^odom.
-    
+   
+\footnotesize{
 \begin{minted}{python}
 	import math 
 	def min_dist_par(S):
@@ -309,7 +310,7 @@ Prosto rečeno, paradigma grube sile pokušava sva moguća rješenja problema, a
 					     min_dist = distance
     			 		point1 = p1
     			 		point2 = p2
-\end{minted}
+\end{minted}}
 \end{solution}
 
 \textit{Kompleksnost algoritma}. Kako je $|S| = n$, lako se primijeti da je broj parova tačaka jednak $O(n^2)$. Dalje, računanje (euklidove) udaljenosti između dvije $m$-dimenzionalne tačke se izvršava u $O(m)$ vremenu. Prema tome, ukupno vrijeme izvršavanja je $O(n^2)\cdot O(m) = O(n^2\cdot m) = O(n^2)$, jer je $m$ konstantno.
@@ -334,7 +335,7 @@ Neka je kapacitet ruksaka $C=16$.
 
 \end{solution}
 
-Enumeracijom prostora mogućih rješenja, dobijamo tabelu.
+Enumeracijom prostora mogućih rješenja (kojih ima ukupno $2^4=16$), dobijamo sljedeću tabelu.
 \begin{center}
 	\begin{tabular}{lcl}
      Rješenja (proizvodi u ruksaku) & Ukupna težina & Ukupna cijena \\ \hline
@@ -359,6 +360,8 @@ Iz prethodne tabele, lako se vidi da je najbolje odabrati proizvod 2 i 3 i stavi
 
 Jasno je da je skup rješenja problema ruksaka poistovijećen sa pretraživanjem svih podskupova skupa $[n]$.  Prema tome, kompleksnost ovakvig pristupa je eksponencijalna, tj. $O(2^n)$. Pristup je dat sljedećim 
 kodom. 
+
+%\footnotesize
 \begin{minted}{python}
 	  best_fitness: float = 0.0
 	  
@@ -404,9 +407,9 @@ kodom.
 	  
 \end{minted}
 
-Kako primjećujemo na osn
-ovu prethodne (rekurzivne) implementacije, svaki od  
-rekurzivnih poziva, kojih je tačno $2^n$, poziva funkciju \texttt{objective}. Preciznije, kompleksnost pristupa brutalne sile je $O(2^n)$. Napomenimo da postoje dosta efikasnij pristupi za rješavanje problema ruksaka. Među njima, izdvajamo metod dinamičkog programiranja, o kojem će biti više riječi u nastavku.
+
+Kako primjećujemo na osnovu prethodne (rekurzivne) implementacije, svaki od  
+rekurzivnih poziva, kojih je tačno $2^n$, poziva funkciju \textit{objective}. Preciznije, kompleksnost pristupa brutalne sile je $O(2^n)$. Napomenimo da postoje dosta efikasniji pristupi za rješavanje problema ruksaka. Među njima, izdvajamo metod dinamičkog programiranja, o kojem će biti više riječi u nastavku.
 
 
 \section{Algoritmi pretraživanja}
@@ -421,7 +424,7 @@ Ovi algoritmi se generalno dijele u dvije kategorije na osnovu načina pretraži
 \end{itemize}
 
 \subsection{Linearna pretraga}
-Ovo je sekvencijalna pretraga, koja pretražuje (nizovne) strukture tako što prolazi kroz svaki njeni element dok se ne pronađe željeni element,  ili se ne dođe do kraja skupa podataka strukture (tj. svi elementi strukture su posjećeni pretragom).  Iterativna implementacija linearne pretage je data sljedećim kodom.
+Ovo je sekvencijalna pretraga, koja pretražuje (nizovne) strukture tako što prolazi kroz svaki njeni element dok se ne pronađe željeni element,  ili se ne dođe do kraja skupa podataka strukture (tj. svi elementi strukture su posjećeni pretragom).  Iterativna implementacija linearne pretage je data sljedećim k\^odom.
 
 \begin{minted}{python}
 	def search(arr, x):
@@ -443,7 +446,7 @@ Ovo je sekvencijalna pretraga, koja pretražuje (nizovne) strukture tako što pr
 %https://www.geeksforgeeks.org/linear-search/: LINEARNA PRETRAGA
 \textit{Kompleksnost algoritma}. Lako se vidi da je kompleksnost linearne pretrage upravo linearna, $O(n)$, gdje je $n$ veličina (nizovne) strukture. 
 
-Implementacija rekurzivnog pristupa za linearnu pretragu je dat narednim k\^odom.
+Implementacija rekurzivnog pristupa za linearnu pretragu je data narednim k\^odom.
 
 \begin{minted}{python}
 	def linear_search(arr, x, n):
