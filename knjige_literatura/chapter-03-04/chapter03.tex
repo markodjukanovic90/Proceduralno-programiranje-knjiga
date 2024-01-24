@@ -17,13 +17,13 @@ Različiti programski jezici često podržavaju jednu ili više paradigmi, a nek
 
 Kada je riječ o \textit{algoritamskim paradigmama}, one predstavljaju  pristupe ili metode za dizajniranje algoritama koji rješavaju   računske probleme. Postoji nekoliko algoritamskih paradigmi; svaka  ima svoje prednosti i slabosti. 
 
-Evo nekih od najčešćih algoritamskih paradigmi su date u nastavku pomoću kratkog opisa. 
+Neke od najčešćih algoritamskih paradigmi su date u nastavku pomoću kratkog opisa. 
 
 \begin{itemize}
 	\item \textit{Rekurzivni algoritmi} --  uključuje rješavanje problema dijeljenjem na manje (pod)probleme, koji se potom rekurzivno rješavaju. Prekid rekurzije se dešava dolaskom do baznih slučajeva koji rješavaju trivijalne (ili skoro trivijalne) podprobleme. 
 	\item \textit{Algoritmi grube sile} (eng.\textit{ brute force}) -- uključuje isprobavanje svakog mogućeg rješenja problema dok se ne pronađe ispravno. Obično se upotrebljava samo za male probleme zbog svoje (ne)efikasnosti.
     \item \textit{ Podijeli i vladaj} (eng. \textit{divide-and-conquer}) --  uključuje podjelu problema na manje podprobleme, rješavanje svakog podproblema nezavisno, a zatim se rezultati  kombinuju da bi se riješio originalni problem. Dakle,  koristi se za efikasno rješavanje problema koji se mogu podijeliti na manje, nezavisne dijelove.
-    \item \textit{Pohlepni algoritmi} (eng. \textit{greedy}) --  uključuje donošenje lokalno optimalnog izbora u svakom koraku algoritma u nadi da će to dovesti do globalno optimalnog rješenja. Ova paradigma je često korištena za rješavanje problema optimizacije.
+    \item \textit{Pohlepni algoritmi} (eng. \textit{greedy}) --  uključuje donošenje lokalno optimalnog izbora u svakom koraku algoritma u nadi da će to dovesti do globalno optimalnog rješenja. Ova paradigma je često korištena za rješavanje problema optimizacije kao prva opcija zbog soje jednostavnosti ali i toga da ne traži intezivne memorijske niti vremenske resurse. 
     \item \textit{Algoritmi dinamičkog programiranja} (eng. \textit{dynamic programming}) --  uključuje razbijanje problema na manje podprobleme i rješavanje svakog podproblema samo jednom. Kada se podproblem riješi, rezultati podproblema se pohranjuju u odgovarajuću (memorijsku) strukturu.    Često se koristi za probleme sa podproblemima koji se preklapaju.
     \item \textit{Algoritmi vraćanja unazad} (eng. \textit{backtracking}) --  uključuje istraživanje svih mogućih rješenja problema postepenom izgradnjom   i napuštanjem parcijalnog rješenja ako se utvrdi da je netačno (nedopustivo). Često se koristi za probleme koji se mogu predstaviti putem grafa (stanja).
     \item \textit{Randomizirani algoritmi} (eng. \textit{randomized}) --  uključuje uvođenje slučajnosti u algoritam radi poboljšanja performansi ili smanjenja složenosti. Često se koristi za probleme optimizacije ili probleme koji imaju mnogo mogućih rješenja.
@@ -37,14 +37,14 @@ Različite algoritamske paradigme mogu se   prilagoditi ili međusobno kombinova
  Riječ rekurzija potiče od latinske riječi \textit{recurrere}, što doslovno znači vraćanje. U programiranju, funkcija koja u tijelu poziva samu sebe se naziva rekurzivna. Pozivanje iste funkcije unutar same funkcije podrazumijeva sistematično smanjivanje veličine ulaza funkcije koja se poziva,  shodno problemu koji se rješava. Smanjivanje dimenzije ulaza odgovara  rješavanju odgovarajućih podproblema početnog problema rekurzivnim putem. %Potom se kombiniraju rješenja podproblema,   da bi se riješio izvorni problem. 
    Da bi se rekurzija izvršavala u konačnom broju koraka, neophodno je definisati prekidne, tzv. \textit{bazne}, slučajeve rekurzije. Bazni slučajevi su bitni iz razloga što su oni okidač prekida rada rekurzije. 
  
- Prepoznavanje pogodne rekurzije igra bitnu ulogu u rješavanju problema rekurzivnim načinom. Demonstrirajmo sada rekurziju i rekurzivni način rješavajnja problema na jednostavnom problemu računanja $n$-tog prirodnog broja. Neka $f(n)$ predstavlja $n$-ti po redoslijedu parni broj u skupu $\mathbb{N}$. Prvi broj u ovom skupu je 0, pa definišimo $f(0)= 0$. Svaki sljedeći je za dva veći od prethodnog, %(relacija ``biti sljedbenik''), 
+ Prepoznavanje pogodne rekurzije igra bitnu ulogu u rješavanju problema rekurzivnim načinom. Demonstrirajmo sada rekurziju i rekurzivni način rješavajnja problema na jednostavnom problemu računanja $n$-tog parnog prirodnog broja. Neka $f(n)$ predstavlja $n$-ti po redoslijedu parni broj u skupu $\mathbb{N}$. Prvi broj u ovom skupu je 0, pa definišimo $f(0)= 0$. Svaki sljedeći je za dva veći od prethodnog, %(relacija ``biti sljedbenik''), 
  što je definisano rekurzijom: 
  $$f(n) = f(n-1) + 2, n \geq 1, f(0) = 0.$$
   
   Dakle, da bismo izračunali treći parni broj po redu u skupu $\mathbb{N}$, imamo sljedeći niz jednakosti:  
   $$f(3)= f(2) + 2 = f(1) + 2 + 2 = f(0) + 2 + 2 + 2 = 0 + 6 = 6.$$
  
- Dakle, poziv $f(3)$ zahtjeva poziv funkcije $f$ sa vrijednosti 2, koja potom zahtjeva poziv fukcije sa vrijednosti (argumenta) 1, sve do trivijalnog koraka, računanja $f(0)$.  Potom se, vraćanjem unazad, računa vrijednost $f(1)$, pa se pomoću nje računa vrijednost za $f(2)$, dok ne dobijemo rješenje za $f(3)$. Napomenimo da se u programskom jeziku Pajton, za svaki poziv funkcije $f$ formira (lokalni) stek, koji nakon izlaza iz funkcije (vraćanjem rezultata) biva obrisan.  
+ Dakle, poziv $f(3)$ zahtjeva poziv funkcije $f$ sa vrijednosti 2, koja potom zahtjeva poziv fukcije sa vrijednosti (argumenta) 1, i tako sve do trivijalnog koraka, računanja $f(0)$.  Potom se, vraćanjem unazad, računa vrijednost $f(1)$, pa se pomoću nje računa vrijednost za $f(2)$, dok ne dobijemo rješenje za $f(3)$. Napomenimo da se u programskom jeziku Pajton, za svaki poziv funkcije $f$ formira (lokalni) stek, koji nakon izlaza iz funkcije (vraćanjem rezultata) biva obrisan.  
  
 Napomenimo da se rekurzivne funkcije (tzv. linearne, homogene) kao u prethodnom primjeru mogu izraziti preko eksplicitne funkcije u odnosu na veličinu ulaza problema, pa rekurzivni pozivi za njihovo  računanje i nisu potrebni. Jasno se vidi da je gore $f(n)=2n$. 
  
@@ -53,7 +53,7 @@ Rekurzija u jeziku Pajton  prethodnog    problema je data u nastavku.
 \begin{minted}{python}
 	def even(n):
 		if n==0:
-			return 0
+		   return 0
 		return 2 + even(n-1) 
 		
 	n = input("Unesite broj:")
@@ -61,18 +61,16 @@ Rekurzija u jeziku Pajton  prethodnog    problema je data u nastavku.
 
 \end{minted}
 
-\textit{Kompleksnost rekurzije}. Jasno se vidi da se program izvršava u linearnom $O(n)$ vremenu. 
+\textit{Kompleksnost rekurzije}. Jasno se vidi da se program izvršava u linearnom $O(n)$ vremenu. \\ \vspace{0.2cm}
 
 Napišimo sada rekurziju za računanje faktorijela broja $n$. Označimo $f(n) = n!$. Iz definicije faktorijela, imamo: 
-
 $$f(n) = n! = n \cdot (n-1) \cdots 2 \cdot 1  = n \cdot (n-1)! = n \cdot f(n-1).$$
 
 Bazni korak rekurzije je $f(1)= 1$. Prema tome, rekurzivna implementacija faktorijel funkcije izgleda ovako:
-
 \begin{minted}{python}
 	def fact(n):
 		if n == 1:
-			return 1
+		   return 1
 		return n * fact(n-1)
 \end{minted}
 
@@ -88,7 +86,7 @@ Na Slici~\ref{fig:rec_tree}, dato je drvo rekurzije prethodnog programa za konkr
  
 
 
-\textit{Kompleksnost rekurzije}. Vidi se da je kompleksnost linearna, tj. $O(n)$.
+\textit{Kompleksnost rekurzije}. Jasno je da je kompleksnost ove rekurzije linearna, tj. $O(n)$. \\ \vspace{0.2cm}
 
 
 Ako bazni slučaj nije dostignut ili nije definisan, može doći do problema  prekoračenja steka (eng. \textit{stack overflow}). Posmatrajmo sljedeći program.
@@ -106,7 +104,7 @@ Ovaj program će izazvati prekoračenje steka u slučaju kada je ulaz $n<100$;  
 
 \section{Vrste rekurzija}
 
-Funkciju \texttt{fun} nazivamo \textit{direktnom} rekurzivnom ako ona poziva istu funkciju \texttt{fun}. Funkcija \texttt{fun} se naziva \textit{indirektnom} rekurzivna ako poziva drugu funkciju koja potom poziva direktno ili indirektno funkciju \texttt{fun}. Razlika između direktne i indirektne rekurzije ilustrovana je data u narednom programu.
+Funkciju  nazivamo \textit{direktnom} rekurzivnom ako ona poziva istu funkciju. Funkcija \texttt{fun} se naziva \textit{indirektnom} rekurzivna ako poziva drugu funkciju koja potom poziva direktno ili indirektno funkciju \texttt{fun}. Razlika između direktne i indirektne rekurzije ilustrovana je data u narednom programu.
 
 \begin{minted}{python}
 	# Direktna rekurzija
@@ -155,7 +153,7 @@ Iako rekurzija i iteracija u ugnježdenim petljama na prvi pogled djeluju dosta 
 
 Rekurzivni program ima veće zahtjeve za prostorom od (ekvivalentnog) iterativnog programa, jer će sve funkcije ostati na steku dok se ne dostigne bazni slučaj. Takođe,  zahtjevi za vremenom su veći zbog poziva funkcija i   troškova vraćanja rezultata. Dodatno, zbog manje dužine k\^oda, kodovi znaju biti teški za razumevanje i stoga je potrebno uložiti  dodatnu pažnju prilikom pisanja k\^oda zbog mogućih previda. %Računar može ostati bez memorije ako rekurzivni pozivi nisu ispravno provjereni.
 
-Prednost korištenja rekurzija je u čistom i jednostavnom načinu pisanja koda. Neki problemi su inherentno rekurzivni, npr. obilazak stabala, problem hanojskih kula, itd. Za takve probleme, poželjno je, a i intuitivnije,  pisati rekurzivni k\^od. Kako smo već naveli, takve kodove možemo pisati i iterativno uz pomoć strukture podataka steka.
+Prednost korištenja rekurzija je u čistom i jednostavnijem načinu pisanja k\^oda. Neki problemi su inherentno rekurzivni, npr. obilazak stabala, problem hanojskih kula, itd. Za takve probleme, poželjno je, a i intuitivnije,  pisati rekurzivni k\^od. Kako smo već naveli, takve kodove možemo pisati i iterativno uz pomoć strukture podataka steka.
 
 \subsection{Primjene rekurzivnog pristupa}
 
@@ -227,7 +225,7 @@ Dakle, u svakom koraku, ako se ne dođe do trivijalnog koraka, rekurzivni poziv 
  	\textbf{\emph{Problem Hanojskih kula}}. Neka su data tri štapa i $n$ diskova. Zadatak ovog problema je u što manje poteza
  	premjestiti diskove sa jednog štapa na drugi štap. Sljedeća pravila vrijede pri prebacivanju diskova. 
  	\begin{itemize}
- 		\item Inicijalno, diskovi stoje poredani na jednom štapu ($A$) jedan na drugom gdje  manji diskovi stoje na većim diskovima (pretpostavka je da su diskovi različitih dimenzija). 
+ 		\item Inicijalno, diskovi stoje poredani na jednom štapu ($A$) jedan na drugi gdje  manji diskovi stoje na većim diskovima (pretpostavka je da su diskovi različitih dimenzija). 
  		\item Potez se sastoji od premiještanja jednog diska sa vrha jednog štapa na vrh drugog štapa.   
  		\item Veći disk ne može nikada da bude stavljen na manji disk u bilo kojoj iteraciji premiještanja.
  	\end{itemize}
@@ -250,7 +248,7 @@ Dakle, u svakom koraku, ako se ne dođe do trivijalnog koraka, rekurzivni poziv 
 
  Prvo se najmanji (zeleni) disk prebacuje na štap $C$. Drugi korak je prebacivanje plavog (disk srednje veličine) na štap $B$. Potom, u koraku tri, zeleni disk sa štapa $C$ premiještamo na štap $B$. Korak četiri je rezervisan za prebacivanje najvećeg diska (sa štapa $A$)  na štap $C$. Dalje, potom zeleni disk sa $B$ premiještamo na štap $A$, a plavi na štap $C$. Konačno, u koraku sedam, zeleni disk sa štapa $A$ prebacujemo na štap $C$.  
  
-Označimo sa $T(n)$ broj koraka koji je potreban da prebacimo $n$ diskova sa štapa $A$ na štap $C$. Bazni slučaj je $T(1) = 1$. Izvedimo rekurzivni korak za ovaj problem. Kako smo pomenuli, ideja rekurzije je svesti početni problem na rješavanje problema manjih dimenzija (podprobleme) koje ponovo   rekurzivno rješavamo. U ovom slučaju, ``hvatamo'' se za činjenicu da ukoliko je najveći disk sam na jednom štapu, ostalih $n-1$ diskova sa drugog štapa možemo nesmetano prebacivati koristeći sva tri štapa (na veliki disk može da se stavi bilo koji od $n-1$ diskova). Rekurzivno prebacimo $n-1$ diskova sa vrha štapa $A$ na štap $C$, koristeći štap $B$. Nakon toga, situacija je  sljedeća: ($i$) najveći disk se nalazu na štapu $A$; ($ii$) ostalih $n-1$ diskova su složeni na štapu $B$; ($iii$) štap $C$ je prazan. Sljedeći korak je prebacivanje najvećeg diska sa štapa $B$ na štap $C$. Nakon toga, ponovo rekurzivno prebacujemo $n-1$ diskova sa štapa $B$ na štap $C$, koristeći štap $A$. Prema tome, vrijedi rekurzija:
+Označimo sa $T(n)$ broj koraka koji je potreban da prebacimo $n$ diskova sa štapa $A$ na štap $C$ koriteći pomoćni štap $B$. Bazni slučaj je $T(1) = 1$. Izvedimo rekurzivni korak za ovaj problem. Kako smo pomenuli, ideja rekurzije je svesti početni problem na rješavanje problema manjih dimenzija (podprobleme) koje ponovo   rekurzivno rješavamo. U ovom slučaju, ``hvatamo'' se za činjenicu da ukoliko je najveći disk sam na jednom štapu, ostalih $n-1$ diskova sa drugog štapa možemo nesmetano prebacivati koristeći sva tri štapa (na veliki disk može da se stavi bilo koji od $n-1$ diskova). Rekurzivno prebacimo $n-1$ diskova sa vrha štapa $A$ na štap $B$, koristeći štap $C$. Nakon toga, situacija je  sljedeća: ($i$) najveći disk se nalazu na štapu $A$; ($ii$) ostalih $n-1$ diskova su složeni na štapu $B$; ($iii$) štap $C$ je prazan. Sljedeći korak je prebacivanje najvećeg diska sa štapa $A$ na štap $C$. Nakon toga, ponovo rekurzivno prebacujemo $n-1$ diskova sa štapa $B$ na štap $C$, koristeći štap $A$. Prema tome, vrijedi rekurzija:
 $$ T(n) = 2 \cdot T(n-1) + 1, T(1) = 1.$$
  
 Implementacija rekurzivnog pristupa problema Hanojskih kula je data sljedećim k\^odom. 
@@ -273,7 +271,7 @@ Implementacija rekurzivnog pristupa problema Hanojskih kula je data sljedećim k
 \end{minted} 
 
 \textit{Vremenska kompleksnost}. Vrlo lako dobijamo eksplicitnu funkciju koja odgovara   rekurzivnoj relaciji problema: $T(n)= 2  T(n-1) + 1 = 2 \cdot ( 2 \cdot T(n-2) + 1) + 1 = \cdots = 2^{n-2} + 2^{n-1} + \cdots + 2 + 1 = 2^n -1.$
-Prema tome, $T(n) = O(2^n)$, što je eksponencijalno vrijeme izvođenja. 
+Rekurzija se izvrašava u $O(2^n)$ vremenu.  %Prema tome, $T(n) = O(2^n)$, što je eksponencijalno vrijeme izvođenja. 
 
 
 \end{solution}	
