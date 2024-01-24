@@ -504,7 +504,7 @@ Implementacija rekurzivnog pristupa binarne pretrage je data sljedećim k\^odom.
 \textit{Kompleksnost algoritma}. Broj interacija u rekurziji koju zadovoljava binarna pretraga je $T(n) = T(n/2) + c$, gdje je $c=O(1)$. na osnovu Master teoreme, kompleksnost algoritma je jednaka $O(\log n)$. 
 
 Binarnu pretragu koristimo u situacijama kada pretražujemo veliki skupa  podataka, jer ima vremensku složenost od $O(\log n)$, dakle, mnogo brže od linearne pretrage. Pri tom  skup podataka treba biti sortiran.
-Bitno je i da podaci u nizu nemaju složenu strukturu ili odnose između sebe, jer to narušava efikasnost pretrage te kompleksnost rješavanja ne mora više ne bude logaritamska.  
+Bitno je i da podaci u nizu nemaju složenu strukturu ili odnose između sebe, jer to narušava efikasnost pretrage te kompleksnost rješavanja ne mora više da bude logaritamska.  
 
 %https://www.geeksforgeeks.org/jump-search/: JUMP SEARCH
 \subsection{Pretraga preskakanjem}
@@ -528,7 +528,7 @@ Pretpostavimo da imamo niz \emph{niz} veličine $n$ i dužinu bloka (elemenata) 
  
 Relurzivna implementacija pretage preskakanjem  je data sljedećim kodom   u jeziku Pajton. 
  
- \begin{minted}{python}
+ \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
  def jump_search(niz, x, jump, k):
  
  	if k * jump >= len(niz): #empty array
@@ -573,8 +573,8 @@ Relurzivna implementacija pretage preskakanjem  je data sljedećim kodom   u jez
   	\item Ponavljati korake 1-3, sve dok se ne pronađe podudaranje ili dok podniz ne postane prazan.
   \end{enumerate}
 
-Implementacija reekurzivnog pristupa interpolacijske pretrage je data narednim k\^odom. 
-\begin{minted}{python}
+Implementacija rekurzivnog pristupa interpolacijske pretrage je data narednim k\^odom. 
+\begin{minted}[fontsize=\footnotesize,scale=0.7]{python}
 	def interpolation_search(niz, l, r, x):
 
 		if (lo <= hi and x >= niz[l] and x <= niz[r]):
@@ -604,9 +604,9 @@ Naziv ovog algoritma potiče iz načina biranja sljedećeg elementa u pretrazi.
 Eksponencijalna pretraga uključuje dva koraka. Prvo, pronađimo interval u kojem se element potencijalno nalazi (ako se nalazi) koristeći eksponencijalne korake. Potom, na datom intervalu primijenimo binarnu pretragu. Za  poziciju \emph{pos} uzimamo $0, 2, 4, \ldots$ dok ne nađemo indeks  $i$ tako da je traženi element $x$ veći ili jednak od elementa  na poziciji $2^{i-1}$ a manji ili jednak od elementa na poziciji $2^i$ niza koji se pretražuje. 
 
 
-   Implementacija ove pretrage je data narednim kodom koji je napisan u jeziku pajton. 
+   Implementacija ove pretrage je data narednim k\^odom. 
    
-   \begin{minted}{python}
+   \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
    def exponential_search(niz, x, l):
    
    	if len(niz) <= 1:
@@ -644,7 +644,7 @@ Eksponencijalna pretraga uključuje dva koraka. Prvo, pronađimo interval u koje
 
 Eksponencijalna pretraga je posebno korisna za pretraživanja u kojima je  veličina niza ogromna.  Ova pretraga se pokazala efikasnijom   od binarnog pretraživanja za ograničene nizove (maksimalni element je unaprijed ograničen nekom konstantom), a takođe i kada je element koji se traži bliži prvom elementu.
 
-\section{Algoritamska paradigma podijeli pa zavladaj}
+\section{Algoritamska paradigma podijeli-pa-zavladaj}
 %https://textbooks.cs.ksu.edu/cc310/4-data-structures-and-algorithms/13-divide-and-conquer/
 Ideja ovog (rekurzivnog) prostupa je sljedeća:
 \begin{itemize}
