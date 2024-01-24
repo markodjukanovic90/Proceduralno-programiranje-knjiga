@@ -1230,7 +1230,7 @@ Primijetite da funkcija \textit{dumps}() pretvara pajtonov objekat u string (kod
 
 \section{Regularni izrazi}
 
-U ovoj sekciji izlažemo uoptšteno o regularnim izrazima. Potom, će biti riječi o pajtonovom modulu \texttt{re} specijalno namijenjenog za rad sa regularnim izrazima. Na kraju ćemo dati nekoliko primjera upotrebe ovog modula. 
+U ovoj sekciji izlažemo uoptšteno o regularnim izrazima. Potom, će biti riječi o Pajtonovom modulu \texttt{re} specijalno namijenjenom za rad sa regularnim izrazima. Na kraju ćemo dati nekoliko primjera upotrebe ovog modula. 
 
 \subsection{Uopšteno o regularnim izrazima}
 
@@ -1272,14 +1272,14 @@ Regularni izraz za definisanje datum rođenja (sa vodećim nulama za jednocifren
 $$(\backslash d \{2\})\backslash.(\backslash d \{2\})\backslash.(\backslash d \{4\})\backslash. $$ 
 
 \subsection{Modul Re}
-Modul \texttt{re}  je ugrađeni modul koji je namijenjen za rad sa regularnim izrazima. Ovaj modul omogućuje programerima da izrade i primjenjuju regularne izraze, te da se efikasno nalaze paterni u tekstu koji se uklapaju u njih. 
+Modul \texttt{re}  je ugrađeni modul koji je namijenjen za rad sa regularnim izrazima. Ovaj modul omogućuje programerima da izrade i primjenjuju regularne izraze, te da se efikasno nalaze paterni u tekstu koji se uklapaju u date izraze. 
 
 Neke od metoda modula \texttt{re} su date u nastavku.
 \begin{itemize}
 	\item Metod \textit{search}(pattern, str): pretraživanje niza znakova za određen \textit{pattern} u tekstu \textit{str}.
 	\item Metod \textit{match}(pattern, str): pronalaženje  uzoraka na osnovu obrasca \textit{pattern} iz niza znakova \emph{str}; vraćanje po redoslijedu pojavljivanja   uzorka se vrši primjenom funkcije \emph{group}() na objekat vraćen prethodnom funkcijom, (Vrijednost argumenta koji se prosljećuje označava redni broj uzorka koji se izdvaja.)
 	
-	\item Metod \textit{sub}(pattern, strChange, str): mijenja sva podudaranja obasca \textit{pattern} sa drugim nizom znakova (\textit{strChange}) u stringu \texttt{str}.
+	\item Metod \textit{sub}(pattern, strChange, str): mijenja sva podudaranja obasca \textit{pattern} sa drugim nizom znakova (\textit{strChange}) u stringu {str}.
 	%\item Provjera je li je niz znakova u skladu s određenim regularnim izrazom.
 	\item Metod \textit{split}(pattern, str): razdvaja  niza znakova stringa \emph{str} na osnovu  obrasca \emph{pattern}, te vraća niz razdvojenih (pod)stringova.
 \end{itemize}
@@ -1382,8 +1382,8 @@ def main(argv):
         elif opt in ("-o", "--ofile"):
                 outputfile = arg
 
-print('Input file is "', inputfile)
-print('Output file is "', outputfile)
+print('Ulazni fajl je:' , inputfile)
+print('Izlazni fajl je: ', outputfile)
 
 if __name__ == "__main__":
     main(sys.argv[1:])
@@ -1396,15 +1396,15 @@ za izlazni fajl. U slučaju da korisnik ne proslijedi (obavezne) argumente, skri
 python3 test.py -i ulaz.txt -o izlaz.txt
  \end{minted}
  Nakon pokretanja skripte, prikazaće se sljedeće:
- \begin{minted}{python}
- Input file is " ulaz.txt
- Output file is " izlaz.txt
+\begin{minted}{python}
+Ulazni fajl je ulaz.txt
+Izlazni fajl je izlaz.txt
  \end{minted}
 
 \section{Modul Numpy}
 
 Ovaj modul je specijalizovan za rad sa nizovima i nizovnim strukturama kao što su
-matrice, 3D matrice, proizvoljne matrice,  velikih dimenzija. Riječ \texttt{numpy} predstavlja skraćenicu  engleske fraze \emph{numerical python}.  Kreirana je 2005. od strane Travisa Oliphanta, a napisana je u jezicima C/C++. Jedan numpy  objekat predstavlja neprekidan (statičan) dio u memoriji, a za razliku od liste, ovaj objekat je homogene strukture, vidjeti Sliku 	\ref{fig:numpy_array}. Zbog svega toga, pogodan je   za rad  sa velikim tipovima podataka, i brži je za red velicine (oko 50 puta) od tradicionalne liste.
+matrice, 3D matrice, proizvoljne matrice,  velikih dimenzija. Riječ \texttt{numpy} predstavlja skraćenicu  engleske fraze \emph{numerical python}.  Kreirana je 2005. od strane Travisa Oliphanta, a napisana je u jezicima C/C++. Jedan numpy  objekat predstavlja neprekidan (statičan) dio u memoriji, a za razliku od liste, ovaj objekat je homogene strukture, vidjeti Sliku 	\ref{fig:numpy_array}. Zbog svega toga, pogodan je   za rad  sa velikim tipovima podataka, i brži je što je tiče osnovnih operacija za red velicine (oko 50 puta) od tradicionalne liste.
 
 \begin{figure}%https://stackoverflow.com/questions/57262885/how-is-the-memory-allocated-for-numpy-arrays-in-python
 	\centering
