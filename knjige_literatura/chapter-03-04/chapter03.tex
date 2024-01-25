@@ -1330,23 +1330,19 @@ Implementacija ovog rješenje je data sljedećim k\^odom (pristup odozgo prema d
 	def init(n):
         
             A = [ [-1] * n for _ in range(n)  ]
-		
             A[0][0] = M[0][0] #bazni slučaj
-            for j in range(n):
-                 A[0][j] = 0
 	
-	def solve(i, j):
-		if i == 0:
-			return A[0][0]
-			
-		if A[i][j] != -1: #Podproblem vec izračunat
-			return M[i][j]
-		
-		best = solve(i-1, j)
-		if j > 0:
-			best = max(best, solve(i-1, j-1))
-		A[i][j] = best + M[i][j]
-		return A[i][j]
+	def solve():#tabuliranje
+	
+	    for i in range(1, len(M)):
+	        for j in range(0, i):
+	            best = A[i-1][j]  
+	            if j>0 and A[i-1][j-1] != -1:
+	                best = max(best,  A[i-1][j-1])
+	        A[i][j] = best + A[i][j]
+	 
+ 
+		return A
 
 	#instanca
 	M=[[4, 5, 7, 0],
@@ -1355,14 +1351,15 @@ Implementacija ovog rješenje je data sljedećim k\^odom (pristup odozgo prema d
     	[2, 3, 3, 3]
         ]	
 	init(len(A))
+	A = solve()
 	max_sum_path = 0
 	for j in range(len(M)):
-		max_sum_path = max(max_sum_path, solve(len(A)-1, j))
-	        init(len(A)) #sljedeći element posljenje vrste
+		max_sum_path = max(max_sum_path, A[len(A)-1, j])
+		
 	print(max_sum_path)
 \end{minted}
 
-\textit{Kompleksnost algoritma}. Rekurzija \texttt{solve} se poziva  $n$ puta. Dalje,  svaki poziv funkcije se izvršava u $O(n)$ vremenskoj kompleksnosti. Prema tome, ukupna kompleksnost algoritma je $O(n^2)$.
+\textit{Kompleksnost algoritma}. Funkcija \textit{solve} se izvršava u $O(n^2)$ vremenskoj kompleksnosti kao najzahtjevniji dio implementacije. Prema tome, ukupna kompleksnost algoritma je $O(n^2)$.
 
 \end{solution}
 
