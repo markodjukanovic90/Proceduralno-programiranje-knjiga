@@ -648,7 +648,7 @@ Eksponencijalna pretraga je posebno korisna za pretraživanja u kojima je  veli�
 %https://textbooks.cs.ksu.edu/cc310/4-data-structures-and-algorithms/13-divide-and-conquer/
 Ideja ovog (rekurzivnog) prostupa je sljedeća:
 \begin{itemize}
-	\item  Podijelimo problem   na nezavisne podprobleme efikasno;
+	\item  Podijelimo efikasno problem   na nezavisne podprobleme;
 	\item Riješimo podprobleme rekurzivno;
 	\item  Kombinujmo rješenja podproblema na efikasan način, tako da rezultat ostane validan i za veći podproblem.
 \end{itemize}
@@ -676,9 +676,9 @@ Pseudokod date paradigme je dat  Algoritmom~\ref{alg:d-n-c}.
 \EndProcedure
 \end{algorithmic}
 
-\caption{Pseudokod algoritamske paradigme Zavadi pa vladaj.}\label{alg:d-n-c}
+\caption{Pseudokod algoritamske paradigme Podijeli-pa-zavladaj.}\label{alg:d-n-c}
 \end{algorithm}
-Dobro poznati primjer gdje se ova algoritamska paradigma primjenjuje je sortiranje spajanjem, gdje se sortiranje $n$ brojeva odvija u $n \log n$ vremenu. 
+Dobro poznati primjer gdje se ova algoritamska paradigma primjenjuje je sortiranje spajanjem, gdje se sortiranje $n$ brojeva odvija u $O(n \log n)$ vremenu. 
 
 Ideja sortiranja niza je sljedeća:
 \begin{itemize}
@@ -688,14 +688,14 @@ Ideja sortiranja niza je sljedeća:
 \end{itemize}
 
 Izvorni kod za sortiranje spajanjem u programskom jeziku Pajton je dat u nastavku.
-\begin{minted}{python}
+\begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
  def mergeSort(niz):  
 
    if len(niz) <= 1:    
-	 	return niz
+         return niz
    else:
-      ##partition:
-      nizLeftSort = niz[0 : (len(niz)//2) ]
+      #partitioning:
+          nizLeftSort = niz[0 : (len(niz)//2) ]
 	  nizRightSort = niz[ (len(niz) // 2) :] 
 	  mergeSort(nizLeftSort) 
 	  mergeSort(nizRightSort)
@@ -730,27 +730,27 @@ Glavna \texttt{while}-petlja u rekurziji radi spajanje dva sorirtrana dijela niz
 
 \begin{example}
 
-\textbf{\textit{Množenje cijelih brojeva}}. Za  množenje dva $n$-cifrena broja, metodom koji se uči u nižim razredima osnovne škole, množeći cifru po cifru, zahtijeva se vrijeme izvršavanja od $O(n^2)$.  Konstruisati algoritam zasnovan na paradigmi podijeli pa zavladaj za problem množenje dva broja. 
+\textbf{\textit{Množenje cijelih brojeva}}. Za  množenje dva $n$-cifrena broja, metodom koji se uči u nižim razredima osnovne škole, množeći cifru po cifru, zahtijeva se vrijeme izvršavanja od $O(n^2)$.  Konstruisati algoritam zasnovan na paradigmi podijeli pa zavladaj za problem množenja dva broja. 
 \end{example}
 \begin{solution}
  
  
  Jednostavnosti radi, smatramo da su u ulazu binarni brojevi sa istim brojem cifara.
-Pokušajmo sa alternativnom metodom koja će voditi paradigmi zavadi pa vladaj.  Napišimo svaki od brojeva u obliku: $x= x_1 2^{n/2} + x_2, y= y_1 2^{n/2} + y_2$.
+Pokušajmo sa alternativnom metodom koja će voditi paradigmi podijeli pa vladaj.  Napišimo svaki od brojeva u obliku: $x= x_1 2^{n/2} + x_2, y= y_1 2^{n/2} + y_2$.
 Tada je 
 $$ xy = (x_1 2^{n/2} + x_2) \cdot (y_1 2^{n/2} + y_2) = x_1 y_1 2^n + (x_1 y_2 + y_1 x_2)2^{n/2} + x_2y_2.$$
-Dakle, da bismo izračunali proizvod dva (binarna) broja sa $n$ cifara, treba da izračunamo proizvod $q=4$ broja sa po $n/2$ cifara. Stoga, kompleksnost u ovom sljučaju je i dalje $O(n^{\log_2 4}) = O(n^2)$. Da bismo ubrzali algoritam,   uradimo sljedeće operacije u datom redoslijedu:
+Dakle, da bismo izračunali proizvod dva (binarna) broja sa $n$ cifara, treba da izračunamo proizvod $q=4$ broja sa po $n/2$ cifara. Stoga, kompleksnost u ovom slučaju je i dalje $O(n^{\log_2 4}) = O(n^2)$. Da bismo ubrzali algoritam,   uradimo sljedeće operacije u datom redoslijedu:
 \begin{itemize}
 	\item Izračunajmo $x_1y_1$ i $x_2 y_2$.
 	\item Izračunajmo $(x_1 + x_2 ) \cdot (y_1 + y_2) = x_1y_1 + x_1y_2 + x_2 y_1 + x_2 y_2$.
 	\item Iz prethodnog izraza izvucimo vrijednost $x_1 y_2 + x_2 y_1$.
 \end{itemize}
-Iz master teoreme, slijedi da je sada kompleksnost algoritma jednaka $O(n^{\log_2 3})$.
+Iz Master teoreme, slijedi da je sada kompleksnost algoritma jednaka $O(n^{\log_2 3})$.
 \end{solution}
 
 \section{Algoritamska paradigma vraćanja unazad }
 
-  \textit{Vraćanje unazad} je algoritamska tehnika za rekurzivno rješavanje problema postepenom izgradnjom  rješenja, dio po dio, uklanjajući ona (parcijalna) rješenja koja ne zadovoljavaju ograničenja problema, momentalno nakon dodavanja nove komponente (odnosi se na vrijeme koje je proteklo do dostizanja bilo kojeg nivoa stabla pretraživanja). Za ovu paradigmu se može reći da je ona  poboljšanje pristupa grube sile.
+  \textit{Vraćanje unazad} (\textit{backtracking}) je algoritamska tehnika za rekurzivno rješavanje problema postepenom izgradnjom  rješenja, dio-po-dio, uklanjajući ona (parcijalna) rješenja koja ne zadovoljavaju ograničenja problema, momentalno nakon dodavanja nove komponente koja narušava uslove dopustivosti (odnosi se na vrijeme koje je proteklo do dostizanja bilo kojeg nivoa stabla pretraživanja). Za ovu paradigmu se može reći da je ona  poboljšanje pristupa grube sile.
   
   U osnovi,   traži  se  rješenje problema među svim dostupnim opcijama. U početku krećemo od jedne moguće opcije i ako se problem može riješiti tom opcijom, vraćamo dato rješenje. U suprotnom vraćamo se unazad, birajući drugu opciju među preostalim   opcijama. Slučaj u kojem  niti jedna od opcija ne daje rješenje rezultira scenarijem da se neće naći nikakvo rješenje za  određeni problem.  Vraćanje unazad predstavlja rekurzivni pristup jer se proces pronalaska rješenja iz različitih dostupnih opcija rekurzivno ponavlja, sve dok se ne nađe rješenje problema ili dok se dođe do konačnog stanja.
   
@@ -803,7 +803,7 @@ Algoritam vraćanja unazad kreće od inicijalno prazne ploče i u svakom koraku 
    
 Implementacija u Pajtonu koja rješava ovaj problem je data narednim k\^odom. 
 
-\begin{minted}{python}
+\begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
 	
    def NQueens(niz, N):
        if len(niz) == N: # kompletno rješenje
@@ -856,7 +856,7 @@ Napomenimo da ovdje nismo prikazali implementaciju funkcije \textit{valid}(), ko
 	
  Implementacija algoritma vraćanja unazad za ovaj problem je dat narednim k\^odom.
  
- \begin{minted}{python}
+ \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
  	  
 from math import sqrt, pow
 
@@ -864,7 +864,7 @@ def FourSquareSum(sol):
 	sum = 0
 	for s in sol:
 		sum += pow(s, 2)
-	return int(sum)
+	return sum
 
 def FourSumSquares(sol, n):
 	if len(sol) == 4:
@@ -887,13 +887,13 @@ FourSumSquares([], 20)
  
 \section{Pohlepni algoritmi}
  % https://www.programiz.com/dsa/greedy-algorithm
-\textit{Pohlepni algoritam} je pristup rješavanju problema odabirom najbolje dostupne opcije u datom trenutku za trenutno rješenje u koristeći neki (pohlepni, intuitivni) kriterijum. Pristup ne brine da li će lokalno najbolji odabir uticati ili ne na optimalni rezultat. Algoritam nikada ne poništava raniju odluku čak i u slučaju da je izbor pogrešan. Upravo zbog toga se ovom algoritamskom paradigmom generalno ne može  garantovati nalazak optimalnog rješenja. Dakle, uvijek se traži najbolji lokalni izbor očekujući da će ta odluks voditi   najboljem globalnom rezultatu. U principu, ova paradigma pripada   pristupu \textit{odozgo prema dolje} (eng. \textit{top-down approach}). 
+\textit{Pohlepni algoritam} je pristup rješavanju problema odabirom najbolje dostupne opcije u datom trenutku za trenutno rješenje u koristeći neki (pohlepni, intuitivni) kriterijum. Pristup ne brine da li će lokalno najbolji odabir uticati ili ne na optimalni rezultat. Algoritam nikada ne poništava raniju odluku čak i u slučaju da je izbor pogrešan. Upravo zbog toga se ovom algoritamskom paradigmom generalno ne može  garantovati nalazak optimalnog rješenja. Dakle, uvijek se traži najbolji lokalni izbor u nadi da će ta odluka voditi   najboljem globalnom rezultatu. U principu, ova paradigma pripada   pristupu \textit{odozgo prema dolje} (eng. \textit{top-down approach}). 
 
 U neformalnom smislu, pohlepni algoritam je algoritam koji počinje jednostavnim, nekompletnim, tj. parcijalnim rješenjem (teškog) problema, a zatim iterativno traži najbolji način za poboljšanje rješenja proširujući ga iterativno, dok ono ne postane kompletno (neproširivo). Pseudokod ove algoritamske paradigme je dat Algoritmom~\ref{alg:greedy-algorithm}. 
 
 Ulaz u algoritam su problem $\mathcal{P}$, instanca problema, te pohlepna funkcija $g$.  Algoritam kreće od nekog, obično praznog, parcijalnog rješenja koje se kroz iteracije nastoji proširiti najboljim mogućim odlukama (komponentama). U svakoj iteraciji izvršava se sljedeće:
  \begin{itemize}
- 	\item Za trenutno rješenje $x$, izračunavaju se komponente koje dopustivo (u odnosu na ograničenja problema) proširuju $x$;
+ 	\item Za trenutno rješenje $x$, izračunava se skup komponenti koje na dopustiv način (u odnosu na ograničenja problema $\mathcal{P}$) proširuju $x$;
  	\item Među svim takvim komponentama, bira se ono koje (naizgled) najviše doprinosi kvalitetu krajnjeg rješenja; ova odluka se donosi na osnovu pohepne funkcije $g$, koja se još naziva i \textit{heuristička} funkcija. 
  	\item Proširimo rješenje sa najboljom komponentom rješenja.
  \end{itemize}
@@ -931,12 +931,12 @@ problema.  Ovi algoritmi se takođe koriste u svrhu dobijanja početnog rješenj
 
 U nastavku navodimo nekoliko primjena pohelpnih algoritama u rješavanju raznih tipova (kombinatornih) problema. 
 
-\subsection{Problem razmjene novca}
+\subsection{Problem razmjenjivanja novca}
 
 \begin{example}
  Imamo  $X$ KM-ova. Na rapolaganju su apoeni od $x_1, x_2, \ldots , x_k$ KM-ova, negoraničene količine. Pretpostavimo da su $X, x_i, i=1,\ldots, n$ prirodni brojevi.
 
-Kako razmijeniti $X$ KM-ova tako da dobijemo što manji broj
+Na koji način razmijeniti $X$ KM-ova tako da se dobije što manji broj
 novčanica? Rješiti zadatak pomoću paradigme pohlepnih algoritama.
 \end{example}
 
@@ -946,12 +946,12 @@ novčanica? Rješiti zadatak pomoću paradigme pohlepnih algoritama.
 	 (razmjenjena je količina od $X$ KM-ova) prestavlja (dopustivo) rješenje. 
 	 Parcijalno rješenje problema je bilo koja $s$-torka $(p_1, p_2, \ldots , p_s )$ za koju je $\sum_i^s p_i \leq X, s \leq k$.  Ovakvo rješenje se može nadopuniti do dopustovog. \\ 
 	 
-	 Konstruišimo sada pohlepnu funkciju. Ideja je da prvo razmatramo novčanice najvećeg mogućeg apoena koji je manji od $X$. Uzmemo takvih novčanica koliko možemo, ali da ne pređemo vrijednost od $X$. Od preostalog iznosa $X'$ koji treba da bude razmijenjen, uzmemo onoliko novčanica maksimalnog apoena, koji je manji od $X'$, koliko god je to  moguće. Ovaj proces nastavimo, dok ne dobijemo dopustivo rješenje. 
+	 Konstruišimo sada pohlepnu funkciju. Ideja je da prvo razmatramo novčanice najvećeg mogućeg apoena koji je manji od $X$. Uzmimo  koliko možemo takvih novčanica, ali da se ne premaši ukupna vrijednost od $X$. Od preostalog iznosa $X'$ koji treba da bude razmijenjen, uzmemo onoliko novčanica maksimalne vrijednosti apoena, koja je manji od $X'$, u količini koliko god je to  moguće. Ovaj proces nastavimo, dok ne dobijemo dopustivo rješenje. 
 	 
 	 Prema tome, prvo sortiramo vrijednosti apoena od najvećeg do najmanjeg. Pretpostavimo bez smanjenja opštosti da je  početni redoslijed apoena $x_1, \ldots, x_k$ dat u sortiranom poretku. Pohlepna funkcija od trenutnog parcijalnog rješenja $s_{partial}=(p_1, \ldots, p_s), s \leq k$ nalazi najmanji indeks apoena $i$ koji je veći od $s$, a da je pri tome $x_i \leq X'= X - \sum_i^s p_i x_i$. Tada je novo prošireno parcijalno rješenje jednako 
-	 $$s'_{partial}=(p_1, \ldots, p_s,{0,\ldots, 0}, \underbrace{\lfloor X'/x_i \rfloor}_{p_i} ).$$ 
-	 Algoritam se završava kada razmotrimo sve apoene, ili prije toga, kada algoritam nađe rješenje.  K\^od algoritma   je dat u nastavku.
-	 \begin{minted}{python}
+	 $$s'_{partial}=(p_1, \ldots, p_s,\underbrace{0,\ldots, 0}_{*}, \underbrace{\lfloor X'/x_i \rfloor}_{p_i} ).$$ 
+	 Algoritam se zaustavlja ili kada razmotrimo sve apoene, ili prije toga, kada algoritam nađe (odgovarajuće) rješenje. Implementacija algoritma ovog problema  je data u nastavku.
+	 \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
 	 def razmijeni(P, X):
 	 	rjesenje = []
 	 	i = 0
@@ -959,10 +959,10 @@ novčanica? Rješiti zadatak pomoću paradigme pohlepnih algoritama.
 	 	brojNovcanica = 0
 	 	sortApoeni = sort(P) # sort apoene opadajuće
 	 	while i <  n and usitnjeno < X :
-	 		k = (X - usitnjeno) // P[i]  #br. novcanica sortApoeni[i] ide u razmjenu
-	 		if k > 0:
-	 			usitnjeno = usitnjeno + k * sortApoeni[i]
-	 			brojNovcanica = brojNovcanica + k
+	 		pi = (X - usitnjeno) // P[i]  #br. novcanica sortApoeni[i]
+	 		if pi > 0:
+	 			usitnjeno = usitnjeno + pi * sortApoeni[i]
+	 			brojNovcanica = brojNovcanica + pi
 	 		i = i + 1
 	 	if usitnjeno == X:
 	 		return brojNovcanica
@@ -976,33 +976,33 @@ novčanica? Rješiti zadatak pomoću paradigme pohlepnih algoritama.
 
 \subsection{Dijeljeni problem ruksaka}
 \begin{example}
-  Ovaj problem je relaksirana verzija problema ruksaka, obrađen u prethodnim sekcijama. Odluka da li uzeti (cio)  proizvod ili ne i staviti u ruksak se relaksira na to da se bilo koji (razlomljeni) dio proizoda može uzeti i staviti u ruksak. Zamislimo da je u pitanju proizvod kao što je šećer ili ulje koji (teorijski) može da se dijeli na bilo koji razlomljeni  (realni) dio.  \\
+  Ovaj problem je relaksirana verzija problema ruksaka, obrađen u prethodnim sekcijama. Odluka da li uzeti (cio)  proizvod ili ne i staviti u ruksak se relaksira na to da se bilo koji (razlomljeni) dio tog proizoda može uzeti i staviti u ruksak. Zamislimo da je u pitanju proizvod kao što je šećer ili ulje koji (teorijski) može da se dijeli na bilo koji razlomljeni  (realni) dio.  \\
   
    Zadatak je odabrati proizvode (dijelove proizvoda) i staviti u ruksak, tako da je profit maksimalan, ali da se poštuje ograničenje za kapacitet  ruksaka. Koristiti paradigmu pohlepnih algoritama. 
 \end{example}
 
 \begin{solution}
 	Posmatrajmo primjer instance: $$n = 3, w = [10, 20, 30], p = [60, 100, 120],$$  a 
-	kapacitet $C = 50$.  Rješenje ove konkretne instance je uzeti prvi i drugi proizvod u potupnosti (svih 10 i
+	kapacitet $C = 50$.  Rješenje ove konkretne instance je uzeti prvi i drugi proizvod u potpunosti (svih 10 i
 	20(kg)), dok uzimamo 2/3 trećeg proizvoda (20). Kapacitet ruksaka je zadovoljen,
 	a vrijednost proizvoda u ruksaku je jednaka $60 + 100 + 2/3 \cdot  120
 	= 240$. \\
 	
     \textit{Rješenje i struktura problema}.  Rješenje $c = \{c_1,\ldots, c_n\}$, gdje je $0 \leq c_i \leq 1$ dio uzetog
-    proizvoda $i$ koji je stavljen u ruksak, a pri tome je zadovoljen  uslov o nepremašivanju kapaciteta ruksaka u vrijednosti   $C$.
+    proizvoda $i$ koji je stavljen u ruksak, a pri tome je zadovoljen  uslov o poštovanju kapaciteta ruksaka u vrijednosti   $C$.
     
-    \textit{Parcijalno rješenje i komponente rješenja}. Parcijalno rješenje $c = \{ c_{i_1}, \ldots, c_{i_k}  \}$, pri čemu je $i_s \in [n],  i_s \neq i_r, s\neq r,   k \leq n$, a kapacitet ruksaka je zadovoljen. 
-    Komponente rješenje u odnosu na parcijalno rješenje $s$ su svi oni proizvodi $C_s = [n] \setminus \{  {i_1}, \ldots, {i_k} \}$ koji se trenutno ne nalaze   u ruksaku. Proširenje parcijalnog rješenja podrazumijeva operaciju dodavanja  količine $c_r>0$ onog proizvoda $r \in C_s$, tako da proširivanjem rješenja $s$ ovom komponentom ne narušavamo kapacitet ruksaka. 
+    \textit{Parcijalno rješenje i komponente rješenja}. Parcijalno rješenje je datu o obliku $c = \{ c_{i_1}, \ldots, c_{i_k}  \}$, pri čemu je $i_s \in [n],  i_s \neq i_r, s\neq r,   k \leq n$, a kapacitet ruksaka je zadovoljen. 
+    Komponente rješenje u odnosu na parcijalno rješenje $s$ su svi oni proizvodi $C_s = [n] \setminus \{  {i_1}, \ldots, {i_k} \}$ koji se trenutno ne nalaze   u ruksaku. Proširenje parcijalnog rješenja podrazumijeva operaciju dodavanja  količine $c_r>0$ onog proizvoda $r \in C_s$, tako da proširivanjem rješenja $c$ ovom komponentom ne narušavamo kapacitet ruksaka. 
     
-    \textit{Pohlepna funkcija}.  Razmotrimo sljedeću razumnu strategiju. Favorizujmo proizvode koji imaju veću cijenu po (jednici) težine, tj. kojima je količnik  $\frac{c_i}{w_i}$ veći u odnosu na ostale. Sortirajmo proizvode po ovom kriterijumu. Neka je, bez smanjenja opštosti, sortirani redosljed proizvoda po ovom kriterijumu dat sa (indeksima) $1,2, \ldots, n$.   \\
+    \textit{Pohlepna funkcija}.  Razmotrimo sljedeću razumnu strategiju. Favorizujmo proizvode koji imaju veću cijenu po (jednici) težine, tj. kojima je količnik  $\frac{p_i}{w_i}$ veći u odnosu na ostale. Sortirajmo proizvode po ovom kriterijumu. Neka je, bez smanjenja opštosti, sortirani redosljed proizvoda po ovom kriterijumu dat sa (indeksima) $1,2, \ldots, n$.   \\
     
     
-    Dodajmo dio $c_1$ proizvoda indekiranim sa $1$ koliko god je to moguće (maksimalno 1) u odnosu na kapacitet ruksaka. Ako je  $c_1 = 0$, to znači da je kapacitet ruksaka zadovoljen, pretraga se završava. Inače, nastavimo istom strategijom, ažurirajući preostalo stanje ruksaka koji treba da se popuni, a zatim posmatrajući naredni proizvod (sa indeksom 2). Potom određujemo maksimalni udio proizvoda $c_2\geq 0$ koji   (dopustivo) proširuje trenutno  parcijalno rješenje, itd. Petpostavimo da smo istom strategijom generisali rješenje $s = \{ c_{1}, \ldots, c_{k}\}$. %, i_1< \ldots < i_k$.
+    Dodajmo dio $c_1$ proizvoda indekiranim sa $1$ koliko god je to moguće (maksimalno 1) u odnosu na kapacitet ruksaka. Ako je  $c_1 = 0$, to znači da je kapacitet ruksaka zadovoljen, pretraga se završava. Inače, nastavimo istom strategijom, ažurirajući preostalo stanje ruksaka koji treba da se popuni, a zatim posmatrajući naredni proizvod (sa indeksom 2). Potom određujemo maksimalni udio proizvoda $c_2\geq 0$ koji   (dopustivo) proširuje trenutno  parcijalno rješenje, itd. Petpostavimo da smo istom strategijom generisali rješenje $c = \{ c_{1}, \ldots, c_{k}\}$. %, i_1< \ldots < i_k$.
      Slično, posmatramo naredni proizvod sa indeksom $i =  k+1$, te izračunamo udio tog proizvoda $c_{i}$ kojeg ćemo ubaciti u ruksak, tj. proširiti rješenje $s$. Ako je $c_i = 0$, pretraga se završava. U protivnom, dodajemo komponentu u trenutno parcijalno rješenje, uz ažuriranje stanja o kapacitetu ruksaka koji je preostao za popunjavanje. Pretraga traje sve dok ne popunimo ruksak ili ne razmotrimo sve proizvode.  
-    
+      
    Implementacija algoritma je data naredim k\^odom. 
    
-   \begin{minted}{python}
+   \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
   def fraction(i):
   	return P[i]/ W[i]
   
@@ -1018,7 +1018,6 @@ novčanica? Rješiti zadatak pomoću paradigme pohlepnih algoritama.
   	for i in products:
   
   		part = min(current_C / W[i], 1)
-  
   		if part > 0:
   			sol.append(i)
   			parts.append(part)
@@ -1026,7 +1025,7 @@ novčanica? Rješiti zadatak pomoću paradigme pohlepnih algoritama.
   
   		else: # knapsack filled
   			return sol, parts
-    return sol, parts
+          return sol, parts
     #instanca: 
     W = [10, 20, 30]
     P = [60, 100, 120]
@@ -1061,8 +1060,8 @@ Napomenimo da ovaj algoritam takođe garantuje nalazak optimalnog rješenja.
 
 \textit{Parcijalno rješenje i komponenta rješenja}. Pod parcijalnim rješenjem ovog problema podrazumijevamo bilo koji (pod)skup $S \subseteq \mathcal{F}$ koji ne mora obavezno zadovoljavati uslov o pokrivanju skupa $X$.  Komponenta rješenja $S$ je bilo koji skup iz $C \in \mathcal{F} \setminus S $, dok proširenje rješenja $S$ komponentom rješenja $C$ podrazumijeva operaciju unije, tj. $S' = S \cup \{ C \} $.
 
-\textit{Pohlepna funkcija}. Neka je $S$ parcijalno rješenje i neka ono pokriva $X_S' \subseteq X$ elemenata. Intuitivno, bolja opcija podrazumijeva biranje kompomente rješenja $C$ koja u presjeku sa skupom $X \setminus X_S'$ ima više elemanta  nego neki drugi $C'$ sa manjim takvim brojem. Razlog je taj što nastojimo pokriti što više skupa $X$ u što manjem broju koraka pohlepnog algoritma. U simboličnom zapisu, pohlepna funkcija ima sljedeći oblik
-$$ g(S, C) = | C \cap ( X \setminus X'_S) |,$$
+\textit{Pohlepna funkcija}. Neka je $S$ parcijalno rješenje i neka ono pokriva $X_S \subseteq X$ elemenata. Intuitivno, bolja opcija podrazumijeva biranje kompomente rješenja $C$ koja u presjeku sa skupom $X \setminus X_S$ ima više elemanta  nego neki drugi sa manjim takvim brojem. Razlog je taj što nastojimo pokriti što više skupa $X$ u što manjem broju koraka pohlepnog algoritma. U simboličkom zapisu, pohlepna funkcija ima sljedeći oblik
+$$ g(S, C) = | C \cap ( X \setminus X_S) |,$$
 dok biramo element $C^*$ tako da 
 $$ C^* \gets argmax \{ g(s, C') \mid C'\in \mathcal{F} \setminus S\} $$
 kao element koji će proširiti parcijalno rješenje $S$ u datoj iteraciji.
@@ -1072,7 +1071,7 @@ Algoritam u svakom koraku bira skup $C^*\in \mathcal{F}$ u odnosu na pohlepnu fu
 
 Implementacija algoritma  je data u nastavku sljedećim k\^odom.
 
-\begin{minted}{python}
+\begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
 	def g(X_S, C):
 		return len((X.difference(X_S)).intersection(C))
 	def cover_X():
@@ -1104,13 +1103,15 @@ Implementacija algoritma  je data u nastavku sljedećim k\^odom.
 	
 \end{minted}
 
-\textit{Kompleksnost algoritma}. Glavna \texttt{while}-petlja se izvršava u najviše $n$ iteracija. Dalje, U unutrašnjoj \texttt{for}-petlji, koja se izvršava  $ |\mathcal{F}|$ puta, najskuplja operacija je pozivanje \texttt{g} funkcije, koja se izvršava u   najviše linearnom vremenu, tj. pripada $O(n)$. Dakle, kompleksnost čitave \texttt{for} petlje je $O(n \cdot  |\mathcal{F} |)$. Dakle, kompleksnost algoritma je $O(n^2 \cdot  |\mathcal{F} |)$. Prema tome, efikasnost algoritma najviše zavisi od veličine skupa $\mathcal{F}$. 
+\textit{Kompleksnost algoritma}. Glavna \texttt{while}-petlja se izvršava u najviše $n$ iteracija. Dalje, U unutrašnjoj \texttt{for}-petlji, koja se izvršava  $ |\mathcal{F}|$ puta, najskuplja operacija je pozivanje pohlepne \textit{g} funkcije, koja se izvršava u   najviše linearnom vremenu, tj. pripada $O(n)$. Dakle, kompleksnost čitave \texttt{for} petlje je $O(n \cdot  |\mathcal{F} |)$. Dakle, kompleksnost algoritma je $O(n^2 \cdot  |\mathcal{F} |)$. Prema tome, efikasnost algoritma najviše zavisi od veličine skupa $\mathcal{F}$. 
 
 Napomenimo da ovako dizajniran algoritam ne garantuje nalazak optimalnog rješenja  kao u prethodna dva problema. 
 
 
   Uzmimo npr. instancu $X= \{1, 2, 3, 4, 5, 6\}$, te $$\mathcal{F}= \{\{1,2\}, \{3, 4\}, \{4, 5\}, \{3, 6\}, \{5\}, \{6\} \}.$$   
-  Prva iteracija u algoritmu će uzeti, recimo, prvi skup $\{1, 2\}$ u parcijalno rješenje. Dalje, naredna iteracija uzima skup $\{3, 4\}$. Nakon toga, bira se $\{4, 5\}$, pa $\{6\}$. Dakle, konačno rješenje je kardinalnosti 4. Međutim, to očigledno nije optimalno rječenje. Optimalno rješenje   je veličine 3 i dato je sa $\{ \{1, 2\}, \{3, 6\}, \{4,5\}\}$.  
+  Prva iteracija u algoritmu će uzeti, recimo, prvi skup $\{1, 2\}$ u parcijalno rješenje. Dalje, naredna iteracija uzima skup $\{3, 4\}$. Nakon toga, bira se $\{4, 5\}$, pa $\{6\}$. Dakle, konačno rješenje je kardinalnosti 4. Međutim, to očigledno nije optimalno rječenje. 
+  
+  Optimalno rješenje   je veličine 3 i dato je sa $\{ \{1, 2\}, \{3, 6\}, \{4,5\}\}$.  
 	 
 \end{solution}
 
@@ -1119,8 +1120,8 @@ Napomenimo da ovako dizajniran algoritam ne garantuje nalazak optimalnog rješen
 	prije tog vremena. Pretpostavimo da je za izvršavanje svakog posla  potrebno identično (jedinično)
 	vrijeme. Startno vrijeme za izvršavanje svih poslova je isto za sve poslove (pretpostavljamo da kreće od 0). \\
 	
-	  Maksimizovati ukupni profit, ako samo jedan
-	posao može da bude izvršen u svakoj jedinici vremena. Riješiti problem pomoću paradigme pohlepnih algoritma. 
+	  Maksimizovati ukupni profit, pod ograničenjem da se maksimalno jedan
+	posao može izvršiti u svakoj jedinici vremena. Riješiti problem pomoću paradigme pohlepnih algoritma. 
 \end{example} 
 
 \begin{solution}
@@ -1162,7 +1163,7 @@ Rješenje za ovu instancu je odabir poslova iz skupa $\{3, 1,5 \}$ redom kako su
 
 Prva ideja za rješavanje ovog problema je koristiti potpunu enumeraciju: generisati sve podskupove
 skupa poslova te za svaki od njih provjeriti dopustivost i na taj način pratiti  
-maksimalni profit. Međutim, razmotrimo  tehniku pohlepnih algoritama. 
+maksimalni profit. Međutim, razmotrimo  tehniku pohlepnih algoritama.   \\ \vspace{0.2cm}
 
 \textit{Rješenje i struktura rješenja}. Svaki podskup $I_s$ skupa svih poslova $I=\{1,\ldots, n\}$ koji zadovoljava uslove zadatka (da se svi mogu izvršiti u okviru njihovog krajnjeg vremena izvršavanja, te nijedan se ne izvršava paralelno sa drugim),  predstavlja rješenje problema. Dalje, struktura rješenja može da bude predstavljena strukturom podataka koja odgovara skupu. 
 
@@ -1178,9 +1179,9 @@ maksimalni profit. Međutim, razmotrimo  tehniku pohlepnih algoritama.
 	\item Posao sa indeksom $i+1$ može da bude dodan u $I_s$. U tom slučaju, nalazimo prvi slobodan jedinični interval u kojem taj posao može da bude izvršen, u odnosu na već raspoređene poslove u trenutnom rješenju $I_s$.  
 \end{itemize} 
 
-Algoritam se izvršava sve dok se ne iteriše kroz sve poslove, nakon čega se vraća konačno rješenje. Implementacija algoritma je data sljedećim k\^odom. 
+Algoritam se izvršava sve dok se ne razmotre svi poslovi, nakon čega se vraća konačno rješenje. Implementacija algoritma je data sljedećim k\^odom. 
  
- \begin{minted}{python}
+ \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
  
  def ProfitSort(i):
  	return Profit[i]
