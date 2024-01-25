@@ -57,10 +57,10 @@ Implementacija algoritma je data narednim k\^odom.
 	       if sieve[i]: #broj je prost
 	          print(i)
        #poziv funkcije:
-       n = 1000
-       sieve(n)
+       N = 1000
+       sieve(N)
 \end{minted}  
-\textit{Kompleksnost algoritma}.  Može se pokazati da je kompleksnost prethodnog algoritma jednaka $O(n \log\log n )$. 
+\textit{Kompleksnost algoritma}.  Može se pokazati da je kompleksnost prethodnog algoritma jednaka $O(N \log\log N )$. 
 
 
 Demonstrirajmo   prvih nekoliko iteracija ovog algoritma u tabelarnom zapisu, za $N=50.$ 
@@ -73,7 +73,7 @@ U početnoj iteraciji, inicira se niz (tabela) brojeva gdje su svi brojevi ozna�
 \end{figure}
 
 
-Dalje, u prvoj iteraciji, nalazimo se na poziciji 2, gdje elemente na pozicijama $k\cdot 2, k=2, \ldots, 50$ eliminišemo kroz sito (kao oni koji nisu prosti, dodijeljujući im vrijednost \emph{False}). Vizuelno, preostali brojevi za ispitivanje su oni neoznačeni:
+Dalje, u prvoj iteraciji, nalazimo se na poziciji 2, gdje elemente na pozicijama $2 \cdot k, k=2, \ldots, 50$ eliminišemo kroz sito (kao oni koji nisu prosti, dodijeljujući im vrijednost \emph{False}). Vizuelno, preostali brojevi za ispitivanje su oni neoznačeni:
 
 
 \begin{figure}[H]
@@ -83,7 +83,7 @@ Dalje, u prvoj iteraciji, nalazimo se na poziciji 2, gdje elemente na pozicijama
 
 
 
-Dalje, u drugoj iteraciji, prelazimo na poziciju 3. Kako je ona označena sa \emph{True} (prost broj), elemente na pozicijama $k\cdot 3, k=2, \ldots, 16$ eliminišemo kroz sito (jer nisu prosti). Prelostali brojevi za ispitivanje su oni neoznačeni u narednoj tabeli. 
+Dalje, u drugoj iteraciji, prelazimo na poziciju 3. Kako je ona označena sa \emph{True} (prost broj), elemente na pozicijama $3\cdot k, k=2, \ldots, 16$ eliminišemo kroz sito (jer nisu prosti). Prelostali brojevi za ispitivanje su oni neoznačeni u narednoj tabeli. 
 
 \begin{figure}[H]
 	\centering
@@ -100,7 +100,7 @@ Fundamentalna teorema aritmetike nam kaže da se svaki broj $n \in \mathbb{N}$ m
  
  Npr. broj 120 se može faktorisati kao $2^3 \cdot 3^1 \cdot 5^1$.
  
- Sa stanovišta izračunavanja, postavlja se pitanje kako problem izračunavanja faktorizacije broja izvršiti efikasno.  U tu svrhu, iskoristimo znanje o Eratostenovom situ. 
+ Sa stanovišta izračunavanja, postavlja se pitanje kako problem izračunavanja faktorizacije broja izvršiti efikasno.  U tu svrhu, iskoristićemo znanje o Eratostenovom situ. 
  
  Prvo primijenimo paradigmu podijeli pa zavladaj. Dake, za broj $n$, nađimo najmanji prost broj $p$ koji dijeli $n$. Tada vrijedi $n = p \cdot n/p$. Dalje, rekurzivno primijenjujemo istu akciju za broj $n/p$ sve dok je $n>1$. Bazni slučaj je kada je broj $n$ prost, i pri tome se kao takav i vraća, prekidajući momentalno rad rekurzije. 
  
@@ -114,12 +114,9 @@ Fundamentalna teorema aritmetike nam kaže da se svaki broj $n \in \mathbb{N}$ m
    
        sieve_fact = [0] * (n+1)
        sieve_fact[0] = sieve_fact[1] = 0
-       
        p = 2
        while p <= n:
-       
            if sieve_fact[p] == 0:
-       
        		  index = 2 * p
        		  while index <= n:
        			 sieve_fact[index] = p
