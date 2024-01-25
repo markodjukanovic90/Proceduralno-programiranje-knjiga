@@ -1529,12 +1529,12 @@ Diskutujmo slučaj $DP[2][4]=4$. Ako rješenje podproblema ne uzima proizvod 2, 
  \end{example}
 
 \begin{solution}
-	    Definišimo podproblem indukovan parom $(i,j), 0 \leq i \leq |s_1|, 0 \leq j \leq |s_2|$  za dva stringa: prvi predstavlja  prefiks dužine $i$ stringa $s_1$,  a drugi predstavlja prefiks dužine $j$ stringa $s_2$.  Čuvajmo rješenje svakog podproblema indukovanog sa $(i,j)$ u matrici $DP$ na poziciji $(i, j)$, tj. $DP[i][j]$.
+	    Definišimo podproblem indukovan parom cijelih brojeva $(i,j), 0 \leq i \leq |s_1|, 0 \leq j \leq |s_2|$  za dva stringa: prvi predstavlja  prefiksni string dužine $i$ stringa $s_1$,  a drugi predstavlja prefiks string dužine $j$ stringa $s_2$.  Čuvajmo rješenje ovakog para prefiksnih stringova indukovanog sa $(i,j)$ u matrici $DP$ na poziciji $(i, j)$, tj. $DP[i][j]$.
 	    
-	    \textit{Rekurzija}. Neka je dat podproblem $(i, j)$. Nađimo strategiju razbijanja problema na manje podprobleme i sve podprobleme na osnovu kojih se može konstruisati rješenje podproblema $(i, j)$. Posmatrajmo karaktere na pozicijama $i$ i $j$, prvog i drugog ulaznog stringa, redom.  Moguća su dva slučaja.
+	    \textit{Rekurzija}. Neka je dat podproblem $(i, j)$. Nađimo strategiju razbijanja problema na manje podprobleme kao i sve podprobleme relevantni za konstrukciju rješenja podproblema $(i, j)$. Posmatrajmo karaktere na pozicijama $i$ i $j$, prvog i drugog ulaznog stringa, redom.  Moguća su dva slučaja.
 	    \begin{itemize}
 	    	\item $s_1[i-1] = s_2[j-1]$: U ovom slučaju, vrijedi rekurzija $DP[i][j] = 1 + DP[i-1][j-1]$, jer  se optimalno rješenje podproblema $(i-1, j-1)$ tada može proširiti za 1 (karakter $s_1[i-1]$) tako da je novonastalo rješenje optimalno za podproblem $(i,j)$.
-	    	\item  $s_1[i-1] \neq s_2[j-1]$: U ovom slučaju, sigurno karkter predstavljen parom karaktera $(s_1[i-1]$, $s_2[j-1])$ ne doprinosi optimalnom rješenju podproblema $(i,j)$. Dakle,  za određivanje optimuma podproblema $(i,j)$ relevantna su dva podproblema: $(i-1, j)$ i $(i, j-1)$, nastala izbacivanjem krajnjih karaktera prvo u prvom, pa onda u drugom prefiksu. Duže rješenja ta dva podproblema će činiti i optimalno rješenje za podproblem $(i,j)$. Dakle, u ovom slučaju vrijedi rekurzija:
+	    	\item  $s_1[i-1] \neq s_2[j-1]$: U ovom slučaju, sigurno karakter predstavljen komponentnim parom  $(s_1[i-1]$, $s_2[j-1])$ ne doprinosi optimalnom rješenju podproblema $(i,j)$. Dakle,  za određivanje optimuma podproblema $(i,j)$ relevantna su dva podproblema: $(i-1, j)$ i $(i, j-1)$, nastala izbacivanjem krajnjih karaktera prvo u prvom, pa onda u drugom prefiksu. Duže (optimalno) rješenje ta dva podproblema će činiti i optimalno rješenje za podproblem $(i,j)$. Dakle, u ovom slučaju vrijedi rekurzija:
 	    	$$DP[i][j] = \max \{ DP[i-1][j], DP[i][j-1] \} $$ 
 	    	
 	    \end{itemize}
@@ -1543,9 +1543,9 @@ Diskutujmo slučaj $DP[2][4]=4$. Ako rješenje podproblema ne uzima proizvod 2, 
 	    \textit{Bazni slučajevi}. Ako je jedan od ulaznih strigova prazan, rješenje je jednako 0, tj.  $DPi][0]= 0, 0 \leq i \leq |s_1|,  DP[0][j] = 0, 0 \leq j \leq |s_2|$. 
 	    
 	 Implementacija paradigme dinamičkog programiranja za rješavanje LCSP je data narednim k\^odom. 
- \begin{minted}{python}
+ \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
 	    	
-	    	def LCS(s1, s2):
+	    	def LCS(s1, s2): #tabuliranje^
 	    	      
 	    	  if len(s1)==0 or len(s2)==0:
 	    	     return 0
@@ -1564,6 +1564,7 @@ Diskutujmo slučaj $DP[2][4]=4$. Ako rješenje podproblema ne uzima proizvod 2, 
 	    	#instanca:
 	    	s1 = "abcdcdcdaa"
 	    	s2 = "abbaabcccddd"
+	    	#poziv DP metoda
 	    	lcs = LCS(s1, s2)
 	    	print("Duzina LCS-a je: ", lcs)     
  \end{minted}
@@ -1573,7 +1574,7 @@ Diskutujmo slučaj $DP[2][4]=4$. Ako rješenje podproblema ne uzima proizvod 2, 
 	     
 	     \begin{figure}[H]
 	     	\centering
-	     	\includegraphics[width=100pt,height=100pt]{slike/dp-lcs-table.png}
+	     	\includegraphics[width=150pt,height=150pt]{slike/dp-lcs-table.png}
 	     	\caption{DP matrica za dva stringa $s_1=$\texttt{MZJAWXU} i $s_2=$\texttt{XMJYAUZ}. Rješenje je dužine 4 (pogledati donji desni ugao matrice). }
 	     \end{figure}
  	      
@@ -1589,22 +1590,24 @@ Diskutujmo slučaj $DP[2][4]=4$. Ako rješenje podproblema ne uzima proizvod 2, 
 \end{example}
 
 \begin{solution}
-   Definišimo podproblem indukovan parom $(i, j)$, $0 \leq i \leq n, 0 \leq j \leq sum$ koji razmatra prvih $i$ brojeva niza \emph{niz} i za njih vraća odgovor ($True$ ili $False$) da li se među njima nalaze brojevi čiji je zbir jednak \emph{j}. Čuvajmo rješenje ovakvog podproblema u matrici $DP$, na poziciji $(i,j)$, tj. $DP[i][j]$. 
+   Definišimo podproblem indukovan parom $(i, j)$, $0 \leq i \leq n, 0 \leq j \leq sum$ koji razmatra prvih $i$ brojeva niza \emph{niz} i za njih vraća odgovor ($True$ ili $False$) da li se među njima nalaze brojevi čiji je zbir jednak \emph{j}. Čuvajmo rješenje ovakvog podproblema u matrici $DP$, na poziciji $(i,j)$, tj. $DP[i][j]$.  \\ \vspace{0.15cm}
    
    \textit{Rekurzija}. Analizirajmo podprobleme koji su relevantni za rješavanje podproblema $(i,j)$. Razlikujemo dva slučaja:
    \begin{itemize}
-   	\item $i$-ti element niza \emph{niz} može biti dio rješenja. Tada se podproblem $(i, j)$ redukuje na podproblem $(i-1, j-niz[i-1])$ -- pod uslovom da je  $j-niz[i-1]\geq  0$ --  i podproblem $(i-1, j)$
-   	    $$ DP[i, j] = DP[i-1, j]\ \vee\  DP[i-1][ j- niz[i-1] ]. $$
+   	\item $i$-ti element niza \emph{niz} može biti dio rješenja. Tada se podproblem $(i, j)$ redukuje na podprobleme $(i-1, j-niz[i-1])$ za sve $j$ za koje je  $j-niz[i-1]\geq  0$, dakle %--  i podproblem $(i-1, j)$
+   	    $$ DP[i, j] =    DP[i-1][ j- niz[i-1] ]. $$ %DP[i-1, j]\ \vee\
    	\item $i$-ti element niza \emph{niz} nije dio rješenja. Tada se podproblem $(i, j)$ redukuje na podproblem $(i-1, j)$, a rekurzija data sa 
    	$$ DP[i][j] = DP[i-1][j]. $$
 
    \end{itemize}
-   
+   Kombinovanjem ova dva slučaja dobijamo da je
+   $$DP[i, j] =   DP[i-1][ j- niz[i-1] ] \vee DP[i-1][j] $$ ako je  $j- niz[i-1]\geq 0$ ili  
+     $$DP[i, j] =   DP[i-1][ j- niz[i-1] ] \vee DP[i-1][j],$$ inače. \\
    \textit{Bazni slučajevi}. $DP[i][0] = True, i \geq 0,$ i $DP[0][j] = False,$ za $ j \geq 1$. 
    
-    Implementacija paradigme dinamičkog programiranja za rješavanje problema sume podskupa je data narednim k\^odom. 
+    Implementacija paradigme dinamičkog programiranja za rješavanje problema \emph{sume podskupa} je data narednim k\^odom. 
    
-   \begin{minted}{python}
+   \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
    	  def sum_array(niz, suma):
    	      #tabulation:
    	      DP = [[False] * (suma +1) for _ in range(len(niz) + 1) ]
@@ -1630,7 +1633,7 @@ Primijetimo da smo dinamičko programiranje implementirali pomoću pristupa \tex
 
 Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo prema dolje.
 
-   \begin{minted}{python}
+   \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
 	def init(niz, sum):
 		global DP
 		DP = [[-1] * (sum +1) for _ in range(len(niz) + 1) ]
@@ -1662,7 +1665,7 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 
 
 \begin{example}
-	\textbf{\textit{Problem rezanja štapa}}. Dat je štap dužine $n$ i lista \textit{price} koja odgovara cijenama štapa dužine $i$, za sve $1 \leq i \leq n$.
+	{\textit{Problem rezanja štapa}}. Dat je štap dužine $n$ i lista cijena štapa dužine $i$, za sve $1 \leq i \leq n$.
 	
 	Pronaći optimalan način da se isiječe  štap na manje
 	štapove da bi se maksimizovao ukupan profit.
@@ -1673,7 +1676,7 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 	Posmatrajmo primjer jedne instance problema: 
 	$$ price = [1, 5, 8, 9, 10,
 	17, 17, 20].$$  Neka je štap dužine $d=4$.
-	Rješenje konkretne instance je rezati štap na dva dijela dužine od po 2. Zarada je u tom slučaju jednaka $5 + 5 = 10$. 
+	Rješenje konkretne instance je rezati štap na dva dijela dužine od po 2. Zarada je u tom slučaju jednaka $5 + 5 = 10$.  \\ \vspace{0.2cm}
 	
 	 Podprobleme datog problema indukujemo indeksima $i$, $0 \leq i \leq n$, gdje vrijednost indeksa $i$ označava instancu problem rezanja štapa dužine $i$. Pretpostavimo da vrijednost optimalnog rezanja (tj. optimalno rješenje)  instance dužine $i$ čuvamo u nizovnoj strukturi $DP$ na poziciji $i$, tj. $DP[i]$.
 	 
@@ -1689,7 +1692,7 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 
  Implementacija paradigme dinamičkog programiranja za rješavanje problema  rezanja štapa je data narednim k\^odom. 
  
- \begin{minted}{python}
+ \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
 	def stick_cut(d, price):
 
 		DP = [-1] * (d+1)  #init
@@ -1711,7 +1714,7 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 
 \textit{Kompleksnost algoritma}. Dvije \texttt{for} petlje izvršavaju ukupno najviše $O(d^2)$. Kako se svaka iteracija izvršava u konstantnom vremenu, zaključujemo da je kompleksnost algoritma jednaka $O(d^2)$.
 
-\textit{Napomena}. Pogledajmo drvo koje se kreira algoritmom grube sile na slici~\ref{fig:brute-force-stick-cut}  pri rješavanju problema rezanja štapa za $d=4$. Ovaj pristup enumeriše sva moguća rješenja za rezanje štapa dužine $d=4$. Prvo uzima cio štap u razmatranje (i njegovu cijenu), zatim otkida dio štapa dužine 1, dok se ostatak štapa (dužine 3) rješava (dijeli) rekurzivno itd. Kompletno rješenje dobijamo sa listovima stabla (označeni sa 0). 
+\textit{Napomena}. Pogledajmo drvo koje se kreira algoritmom grube sile na Slici~\ref{fig:brute-force-stick-cut}  pri rješavanju problema rezanja štapa za $d=4$. Ovaj pristup enumeriše sva moguća rješenja za rezanje štapa dužine $d=4$. Prvo uzima cio štap u razmatranje (i njegovu cijenu), zatim otkida dio štapa dužine 1, dok se ostatak štapa (dužine 3) rješava (dijeli) rekurzivno itd. Kompletno rješenje dobijamo sa listovima stabla (označeni sa 0). 
 \begin{center}
 	\begin{figure}[H]
 		\centering
@@ -1757,7 +1760,7 @@ $(1\ 1\ 1\ 1\ 0), (1\ 0\ 1\ 1\ 1), (0\ 1\ 1\ 1\ 1), \ldots ,$ $(2\ 1\ 0\ 0\ 1), 
 	
 	\item Riješiti problem nalaska najdužeg zajedničkog podniza dva stringa pomoću dinamičkog programiranja pristupom odozgo prema dolje. 
 	
-	\item Neka je dat niz brojeva u ulazu. Konstruisati algoritam dinamičkog programiranja koji daje odgovor na pitanje li postoji particionisanje niza na dva (disjunktna) skupa tako da je zbir u obe particije jednak.
+	\item Neka je dat niz brojeva u ulazu. Konstruisati algoritam dinamičkog programiranja koji daje odgovor na pitanje li postoji particionisanje niza na dva (disjunktna) skupa tako da je zbir u obje particije jednak.
 	\item Implementirati metod dinamičkog progrmairanja  za problem rezanja štapa koristeći pristup odozgo prema dolje.
 	
 	\item Neka su u ulazu data dva striga $s_1$ i $s_2$. Uz pomoć dinamičkog programiranja, pronaći najkraći string $s$ tako da
