@@ -1,4 +1,4 @@
-\chapter{Neformalni uvod u teoriju algoritama}
+\chapter{Osnove teorije algoritama}
 
 \section{Računarski problem}
 %https://www.cs.stanford.edu/~trevisan/cs254-10/lecture02.pdf ==> dijelom pratimo:
@@ -100,9 +100,7 @@ Na raspolaganju je nekoliko tipova (paradigmi) algoritama. Neke važnije paradig
     \item \textit{Dinamičko programiranje}: Ovaj tip algoritma koristi koncept korištenja već pronađenog rješenja (koje se čuva u memoriji) kako bi se izbjeglo ponavljanje izračunavanja istog dijela problema. Ova paradigma dijeli problem na manje podprobleme, koji se preklapaju, a potom ih rekurzivno rješava.
 \end{enumerate}
    
-   Većina ovih tipova algoritama predstavljaju generičke sheme (paradigme) koje se mogu primijeniti na  rješavanje većeg opsega različitih problema. Tu pripadaju algoritmi brutalne sile, rekurzivni algoritmi, podijeli i zavladaj, algoritam vraćanja unazad, pohlepni algoritmi, dinamičko programiranje isl. U glavi 3 biće detaljno obrađene  neke od pomenutih paradigmi.
-   
-    \\
+   Većina ovih tipova algoritama predstavljaju generičke sheme (paradigme) koje se mogu primijeniti na  rješavanje većeg opsega različitih problema. Tu pripadaju algoritmi brutalne sile, rekurzivni algoritmi, podijeli i zavladaj, algoritam vraćanja unazad, pohlepni algoritmi, dinamičko programiranje isl. U glavi 3 biće detaljno obrađene  neke od pomenutih paradigmi. \\
   
 Dizajniranje efikasnog algoritma je obično dugotrajan proces koji nije direktan, te zahtijeva veliko domensko znanje o problemu te domišljatost onoga koji rješava vezano za način rješavanja samog  problema.  Međutim, postoje neka pravila kojima se vodimo kada konstruišemo algoritam, kao što su korištenje paradigmi za koje znamo da su dovoljno efikasne u rješavaju određenog tipa problema. 
  \\ 
@@ -153,17 +151,32 @@ se standardno koristi za analizu algoritma.  Posmatrajući viši nivo,   karakte
  	pojavljuju ili u ulazu ili kao konstanta u programu; ($iii$) Registar 0 se inicijalizira sa $w$, a registar 1 sa $n$.
  \end{itemize}
 
-Formalno, dopuštene se sljedeće instrukcije za indekse $i, j, k, m \in \mathbb{N} $:
+Formalno, dopuštene se sljedeće instrukcije (u RAM modelu) za indekse $i, j, k, m \in \mathbb{N} $:
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=300pt,height=280pt]{slike/instructions_ram.png}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=300pt,height=280pt]{slike/instructions_ram.png}
+%
+%	\caption{Pregled instrukcija u RAM modelu.}	\label{fig: ram_instructions}
+%\end{figure}
 
-	\caption{Pregled instrukcija u RAM modelu.}	\label{fig: ram_instructions}
-\end{figure}
+\begin{itemize}
+	\item $R[i] \gets m$ (dodjela)
+	\item $R[i] \gets R[j] \pm R[k]$
+	\item $R[i] \gets R[j] \cdot/ R[k] $
+	\item $R[i] \gets R[j] \/ R[k] $
+	\item $R[i] \gets R[j] \wedge R[k]$
+	\item $R[i] \gets \neq R[j] $ (bitovska negacija)
+	\item $R[i] \gets M[R[j]]$
+	\item $M[R[j]] \gets R[i]$
+	\item IF $R[i] = 0$, GOTO $l$
+	\item HALT
+	\item MALLOC (inicijalizacija dodatne memorije)
+	\item $\vdots$
+\end{itemize}
 
 \begin{definition}
-   ${w}$-RAM program je bilo koji konačan niz instrukcija $P = (P_1, P_2,\ldots, P_q)$ gore navedenog tipa. Broj $r$ registara je implicitno definiran kao  najveći indeks direktne memorijske adrese (među indeksima $i, j, k$ u skup instrukcija sa Slike~\ref{fig: ram_instructions}) koji se javljaju u programu.
+   ${w}$-RAM program je bilo koji konačan niz instrukcija $P = (P_1, P_2,\ldots, P_q)$ gore navedenog tipa. Broj $r$ registara je implicitno definisan kao  najveći indeks direktne memorijske adrese (među indeksima $i, j, k$ skupa instrukcija) koji se javljaju u programu.
 \end{definition}
 
 \subsection{Formalizacija računanja na RAM-u}
@@ -337,7 +350,7 @@ U prevodu, funkcije $f$ i $g$ imaju isto asimptotsko ponašanje (dakle, za velik
 	\centering
 	\includegraphics[width=120pt,height=120pt]{slike/theta_notation.jpg}
  
-	\caption{$\Theta$--notacija: vizuelizacija.}	\label{fig:theta_notation}
+	\caption{$\Theta$--notacija: vizuelizacija za slučaj $f(n)=\Theta(g(n))$.}	\label{fig:theta_notation}
 \end{figure}
 
 \begin{example}
@@ -409,7 +422,7 @@ Prethodna sekcija nam daje na uvid neke od osnovnih notacija za ocjenjivanje kom
   	\end{tabular}
 
  \end{table}
- Rast svake od ovih funkcija sa porastom ulaza ($n$) je prikazan na Slici~\ref{fig:kompleksnosti_funkcije}
+ Rast nekih funkcija sa porastom ulaza ($n$) je prikazan na Slici~\ref{fig:kompleksnosti_funkcije}
  \begin{figure}[H]
  	\centering
  	\includegraphics[width=270pt,height=200pt]{slike/growth.png}%growth-Functions.jpg}
