@@ -243,8 +243,10 @@ Dakle, u svakom koraku, ako se ne dođe do trivijalnog koraka, rekurzivni poziv 
  		\includegraphics[width=270pt,height=150pt]{slike/tower.png}
 
 
- 	 \caption{Problem hanojskih kula, $n=3$ diska.}     \label{fig:tower}
+ 	 \caption{Problem hanojskih kula, $n=3$ diska.\protect\footnotemark}     \label{fig:tower}
  	 	\end{figure}
+\footnotetext{Slika sa linka \url{https://www.geeksforgeeks.org/c-program-for-tower-of-hanoi/}}
+
 
  Prvo se najmanji (zeleni) disk prebacuje na štap $C$. Drugi korak je prebacivanje plavog (disk srednje veličine) na štap $B$. Potom, u koraku tri, zeleni disk sa štapa $C$ premiještamo na štap $B$. Korak četiri je rezervisan za prebacivanje najvećeg diska (sa štapa $A$)  na štap $C$. Dalje, potom zeleni disk sa $B$ premiještamo na štap $A$, a plavi na štap $C$. Konačno, u koraku sedam, zeleni disk sa štapa $A$ prebacujemo na štap $C$.  
  
@@ -362,7 +364,7 @@ Jasno je da je skup rješenja problema ruksaka poistovijećen sa pretraživanjem
 kodom. 
 
 %\footnotesize
-\begin{minted}{python}
+\begin{minted}[fontsize=\footnotesize, scale=0.8]{python}
 	  best_fitness: float = 0.0
 	  
 	  #instance example:
@@ -396,9 +398,8 @@ kodom.
 	  
 	  	for i in range(N):
 	  		if  len(solution) >= 1: 
-	  			if i > max(solution) : # symmetry breaking 
-	  				#print(solution + [i])
-	  				knapsack_brute_force(solution + [i]) 
+	  		  if i > max(solution) : # symmetry breaking 
+	  			knapsack_brute_force(solution + [i]) 
 	  		else:
 	  			knapsack_brute_force(solution + [i]) 
 	  
@@ -793,7 +794,7 @@ Iz Master teoreme, slijedi da je sada kompleksnost algoritma jednaka $O(n^{\log_
       \begin{figure}[H]
       	\centering
       	\includegraphics[width=200pt,height=180pt]{slike/n-queen-problem.png}
-       
+       \caption{Primjer jednog rješenja problema 8-kraljica.}\label{fig:8-queen-sol-example}
   \end{figure}
 
 Jasno je da se po jedna kraljica smiješta u svakom redu šahovske ploče. Pozicija kraljice u $i$-tom redu je određena brojem kolone u kojoj je ta kraljica postavljena. U prevodu, svako rješenje koje odgovara poziciji kraljica na ploči možemo kodirati nizom \emph{niz} dužine $N$, gdje se na poziciji $i$ nalazi broj kolone u $i$-tom redu u kojoj je smještena kraljica. Konkretno, rješenje (pozicije kraljica)  na prethodnoj slici kodirano je nizom $[5, 7, 1, 4, 2, 8, 6, 3]$. 
@@ -825,9 +826,10 @@ else:
 %%https://codeahoy.com/learn/recursion/ch10/
 \begin{figure}
 	\centering
-	\includegraphics[width=320pt, height=250pt]{slike/recursion-tree-backtracking-n-queens.png}
-	\caption{Primjer stabla stanja formiranog algoritmom vraćanja unazad za problem 4 kraljice}
+	\includegraphics[width=450pt, height=300pt]{slike/n-queen-backtracking.png} %recursion-tree-backtracking-n-queens-1.png}
+	\caption{Primjer stabla stanja formiranog algoritmom vraćanja unazad za problem 4 kraljice.\protect\footnotemark}
 \end{figure}
+\footnotetext{Slika sa linka \url{https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/}}
 
 Napomenimo da ovdje nismo prikazali implementaciju funkcije \textit{valid}(), koja vraća \textit{True} ako je pozicija kraljica  validna, u protivnom vraća \textit{False}. Ovo ostavljamo čitaocu kao zadatak za vježbanje. 
 
@@ -931,9 +933,9 @@ problema.  Ovi algoritmi se takođe koriste u svrhu dobijanja početnog rješenj
 
 U nastavku navodimo nekoliko primjena pohelpnih algoritama u rješavanju raznih tipova (kombinatornih) problema. 
 
-\subsection{Problem razmjenjivanja novca}
 
-\begin{example}
+
+\begin{example}\textbf{Problem razmjenjivanja novca}. 
  Imamo  $X$ KM-ova. Na rapolaganju su apoeni od $x_1, x_2, \ldots , x_k$ KM-ova, negoraničene količine. Pretpostavimo da su $X, x_i, i=1,\ldots, n$ prirodni brojevi.
 
 Na koji način razmijeniti $X$ KM-ova tako da se dobije što manji broj
@@ -974,9 +976,8 @@ novčanica? Rješiti zadatak pomoću paradigme pohlepnih algoritama.
 \textit{Kompleksnost algoritma}. Sortiranje algoritma zahtjeva vrijeme od $O(n \log n)$. Dalje, glavna petlja se izvršava u $O(n)$ vremenu, odakle slijedi da je ukupno vrijeme izvršavanja algoritma jednako $O(n \log n)$, što je, svakako, polinomijalno.  Naopmenimo da ovakvom strategijom garantujemo nalazak optimalnog rješenja problema (ili utvrđujemo da rješenje ne postoji). 
 
 
-\subsection{Dijeljeni problem ruksaka}
-\begin{example}
-  Ovaj problem je relaksirana verzija problema ruksaka, obrađen u prethodnim sekcijama. Odluka da li uzeti (cio)  proizvod ili ne i staviti u ruksak se relaksira na to da se bilo koji (razlomljeni) dio tog proizoda može uzeti i staviti u ruksak. Zamislimo da je u pitanju proizvod kao što je šećer ili ulje koji (teorijski) može da se dijeli na bilo koji razlomljeni  (realni) dio.  \\
+\begin{example} \textbf{Razlomljeni problem ruksaka}. 
+  Ovaj problem predstavlja relaksiranu verziju problema ruksaka, obrađen u prethodnim sekcijama. Odluka da li uzeti (cio)  proizvod ili ne i staviti u ruksak se relaksira na to da se bilo koji (razlomljeni) dio tog proizoda može uzeti i staviti u ruksak. Zamislimo da je u pitanju proizvod kao što je šećer ili ulje koji (teorijski) može da se dijeli na bilo koji razlomljeni  (realni) dio.  \\
   
    Zadatak je odabrati proizvode (dijelove proizvoda) i staviti u ruksak, tako da je profit maksimalan, ali da se poštuje ograničenje za kapacitet  ruksaka. Koristiti paradigmu pohlepnih algoritama. 
 \end{example}
@@ -1570,14 +1571,32 @@ Diskutujmo slučaj $DP[2][4]=4$. Ako rješenje podproblema ne uzima proizvod 2, 
  \end{minted}
 	     Primijetimo da implementacija koristi princip odozdo-nagore.
 	     
-	     \textit{Kompleksnost algoritma}. Dvije \texttt{for}-petlje  izvršavaju ukupno $O(|s_1|\cdot |s_2|)$ iteracija. Svaka od iteracija se izvršava u konstantnom vremenu, pa je shodno tome ukupno vrijeme izvršavanja algoritma jednako $O(|s_1| \cdot |s_2|)$. Ako je $n = \max\{|s1|, |s2|\}$, dobijamo kvadratnu $O(n^2)$ kompleksnost. 
+	     \textit{Kompleksnost algoritma}. Dvije \texttt{for}-petlje  izvršavaju ukupno $O(|s_1|\cdot |s_2|)$ iteracija. Svaka od iteracija se izvršava u konstantnom vremenu, pa je shodno tome ukupno vrijeme izvršavanja algoritma jednako $O(|s_1| \cdot |s_2|)$. Ako je $n = \max\{|s1|, |s2|\}$, dobijamo (kvadratnu) $O(n^2)$ kompleksnost. 
 	     
-	     \begin{figure}[H]
-	     	\centering
-	     	\includegraphics[width=150pt,height=150pt]{slike/dp-lcs-table.png}
-	     	\caption{DP matrica za dva stringa $s_1=$\texttt{MZJAWXU} i $s_2=$\texttt{XMJYAUZ}. Rješenje je dužine 4 (pogledati donji desni ugao matrice). }
-	     \end{figure}
- 	      
+	     %\begin{figure}[H]
+	     %	\centering
+	     %	\includegraphics[width=150pt,height=150pt]{slike/dp-lcs-table.png}
+	     %	\caption{DP matrica za dva stringa $s_1=$\texttt{MZJAWXU} i $s_2=$\texttt{XMJYAUZ}. Rješenje je dužine 4 (pogledati donji desni ugao matrice). }
+	     %\end{figure}
+     
+     \begin{table}
+     	  \centering
+     	  \begin{tabular}{cc|cccccccc}
+     	  	& & 0&1 &2 &3 &4 &5 &6 &7   \\
+     	  
+     	  	& & $\emptyset$&\texttt{M} &\texttt{Z} &\texttt{J} &\texttt{A} &\texttt{W} &\texttt{X} &\texttt{U}  \\ \hline \hline
+     	  	
+     	  	0&$\emptyset$ &0& 0& 0&  0&0 &0 & 0   & 0 	   \\
+     	  	1& \texttt{X}& 0& 0& 0& 0& 0& 0&  1  & 1                \\	
+     	  	2& \texttt{M}& 0& 1& 1& 1& 1& 1&  1  & 1                \\	
+     	  	3& \texttt{J}& 0& 1& 1& 2& 2& 2&  2  & 2                \\	
+     	  	4& \texttt{Y}&0 & 1& 1& 2& 2& 2&  2  & 2                 \\	
+      	  	5& \texttt{A}& 0& 1& 1& 2& 3& 3&  3  & 3                \\	
+      	  	6& \texttt{U}& 0& 1& 1& 2& 3& 3&  3  & 4                \\	
+      	  	7& \texttt{Z}& 0& 1& 2& 2& 3& 3&  3  & 4                \\	 \hline \hline
+     	  \end{tabular}
+ 	 \caption{DP matrica za dva stringa $s_1=$\texttt{MZJAWXU} i $s_2=$\texttt{XMJYAUZ}. Rješenje je dužine 4 (pogledati donji desni ugao matrice). }  \label{tab:dp-lcs-example} 
+ 	\end{table}
 \end{solution}
 
 %https://www.programiz.com/dsa/longest-common-subsequence ==> primjer tabele sa rješenjem...
@@ -1665,7 +1684,7 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 
 
 \begin{example}
-	{\textit{Problem rezanja štapa}}. Dat je štap dužine $n$ i lista cijena štapa dužine $i$, za sve $1 \leq i \leq n$.
+	\textbf{\textit{Problem rezanja štapa}}. Dat je štap dužine $n$ i lista cijena štapa dužine $i$, za sve $1 \leq i \leq n$.
 	
 	Pronaći optimalan način da se isiječe  štap na manje
 	štapove da bi se maksimizovao ukupan profit.

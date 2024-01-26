@@ -186,7 +186,7 @@ Fundamentalna teorema aritmetike nam kaže da se svaki broj $n \in \mathbb{N}$ m
   	    
   	def binom_memoization(i, j, Binom): 
   	    
-  	    if Binom[i][j] != -1: # već računat^
+  	    if Binom[i][j] != -1: # već računat
   	       return Binom[i][j] 
   	    if j == 0: 
   	       Binom[i][j] = 1
@@ -225,7 +225,7 @@ Fundamentalna teorema aritmetike nam kaže da se svaki broj $n \in \mathbb{N}$ m
  		\includegraphics[width=280pt,height=160pt]{slike/catalan-net.png}
  	\end{figure}
  	\item Broj permutacija skupa $\{1, \ldots, n \}$ koji ne sadrže patern \texttt{123} (ili bilo koji drugi, dužine 3) su predstavljeni Katalanovim brojevima. Npr. za $n = 3$, sljedeće permutacije zadovoljavaju uslove: $132,
- 	213, 231, 312$ i $3˘21$.  Dakle, ima ih ukupno 5. 
+ 	213, 231, 312$ i $321$.  Dakle, ima ih ukupno 5. 
  \end{itemize}
  
  Prvih nekoliko Katalanovih brojeva su: $1, 1, 2, 5, 14, 42, 132,
