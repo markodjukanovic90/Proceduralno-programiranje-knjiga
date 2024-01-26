@@ -176,7 +176,7 @@ Fundamentalna teorema aritmetike nam kaže da se svaki broj $n \in \mathbb{N}$ m
    \end{minted}
   \textit{Kompleksnost algoritma}. Faktor grananja rekurzije je 2. To znači da na svakoj narednoj dubini rekurzije imamo (najviše) duplo više rekurzivnih poziva nego je to slučaj na dubini prije.  Kako je dubina rekurzije maksimalno $n$ (vrijednost prvog ili drugog atributa se smanjuje za 1 u narednom pozivu rekurzije), zaključujemo da je maksimalni broj poziva rekurzije reda veličine $O(2^n)$, što nam daje eksponencijalnu kompleksnost. \\
   
-  Pokušajmo optimizovati ovu naivnu implementaciju rekurzije.  Jasno se vidi da se većina podproblema rješava više puta iz nule. Zbog toga upotrebimo princip memoizacije. Struktura u koju čuvamo rješenja je matrica $B[i][j]= \binom{i}{j}$. Bazni slučaj je  dat sa $B(n, 0) = 1 = B(n,n)$. Takođe, ako je $i < j$, imamo $B[i][j] = 0$. Implementacija memoizacije za izračunavanje binomnog koeficijenta $\binom{n}{k}$ je data narednim k\^odom. 
+  Pokušajmo optimizovati ovu naivnu implementaciju rekurzije za računanje binomnih koeficijenata.  Jasno se vidi da se većina podproblema rješava više puta iz nule. Zbog toga upotrebimo princip memoizacije. Struktura u koju čuvamo rješenja je matrica $B[i][j]= \binom{i}{j}$. Bazni slučaj je  dat sa $B(n, 0) = 1 = B(n,n)$. Takođe, ako je $i < j$, imamo $B[i][j] = 0$. Implementacija memoizacije za izračunavanje binomnog koeficijenta $\binom{n}{k}$ je data narednim k\^odom. 
   
   \begin{minted}{python}
   	
@@ -186,14 +186,14 @@ Fundamentalna teorema aritmetike nam kaže da se svaki broj $n \in \mathbb{N}$ m
   	    
   	def binom_memoization(i, j, Binom): 
   	    
-  	    if Binom[i][j] != -1:
+  	    if Binom[i][j] != -1: # već računat^
   	       return Binom[i][j] 
   	    if j == 0: 
   	       Binom[i][j] = 1
-  	       return 1 
+  	       return Binom[i][j] 
   	    if i < j: 
   	       Binom[i][j] = 0 
-  	       return 0
+  	       return Binom[i][j]
   	    Binom[i][j] = binom_memoization(i-1, j-1, Binom) 
   	                + binom_memoization(i-1, j, Binom) 
   	    return Binom[i][j]
@@ -202,7 +202,6 @@ Fundamentalna teorema aritmetike nam kaže da se svaki broj $n \in \mathbb{N}$ m
     n = 10
     k = 4
     Binom = initialization(n, k) 
-    
     n_over_k = binom_memoization(n, k, Binom) 
     print(n_over_k)
     
@@ -226,7 +225,7 @@ Fundamentalna teorema aritmetike nam kaže da se svaki broj $n \in \mathbb{N}$ m
  		\includegraphics[width=280pt,height=160pt]{slike/catalan-net.png}
  	\end{figure}
  	\item Broj permutacija skupa $\{1, \ldots, n \}$ koji ne sadrže patern \texttt{123} (ili bilo koji drugi, dužine 3) su predstavljeni Katalanovim brojevima. Npr. za $n = 3$, sljedeće permutacije zadovoljavaju uslove: $132,
- 	213, 231, 312 i 321$.  Dakle, ima ih ukupno 5. 
+ 	213, 231, 312$ i $3˘21$.  Dakle, ima ih ukupno 5. 
  \end{itemize}
  
  Prvih nekoliko Katalanovih brojeva su: $1, 1, 2, 5, 14, 42, 132,
@@ -250,7 +249,7 @@ Fundamentalna teorema aritmetike nam kaže da se svaki broj $n \in \mathbb{N}$ m
         
  \end{minted}
   
-  \emph{Kompleksnost algoritma}. Faktor grananja rekurzije je (najviše) $n$. Dubina rekurzije je $n+1$. Dakle, kompleksnost ovog algoritma je $O(n^n)$, dakle eksponencijalna. 
+  \emph{Kompleksnost algoritma}. Faktor grananja rekurzije je (najviše) $n$. Dubina rekurzije je $n+1$. Dakle, kompleksnost ovog algoritma je ogromna (eksponencijalna) i iznosi $O(n^n)$. 
 
 Pokušajmo optimizovati ovaj (direktni) rekurzivni pristup. Iskoristimo princip memoizacije, zbog toga što se svaki podproblem izražunava iznova više puta. U nizovnoj strukturi $Cat(i)$ čuvajmo vrijednost $i$-tog Katalanovog broja prvi put kada se izračuna.  Vrijedi svojstvo optimalne podstrukture: $Cat(n+1) = \sum_{i=0}^{n} Cat(i) \cdot Cat(n-i).$ Bazni slučaj je dat sa $Cat(0) =1$.
 
@@ -262,21 +261,21 @@ Implementacija memoizacije je data sljedećim k\^odom.
 	   Cat = [ -1   for _ in range(n+1)  ] 
 	   return Cat 
 	
-	def c(i, Cat): 
+	def catalan_i(i, Cat): 
 	
-	if Cat[i] != -1:
-	    return Cat[i]
-	if i == 0: 
-	   Cat[i] = 1
-	   return 1 
+	    if Cat[i] != -1:
+	        return Cat[i]
+	    if i == 0: 
+	       Cat[i] = 1
+	       return Cat[i] 
      
-    catalan_n = 0
-    for k in range(i): 
-        catalan_n += catalan_memoization(k, Cat) *
-         catalan_memoization(i-k-1, Cat)
+            catalan_i = 0
+            for k in range(i): 
+                catalan_i += catalan_memoization(k, Cat) *
+                     catalan_memoization(i-1-k, Cat)
     
-    Cat[i] = catalan_n
-    return Cat[i]
+            Cat[i] = catalan_i
+            return Cat[i]
     
 	   
 	#poziv metode:
@@ -339,7 +338,7 @@ U prvoj iteraciji ($i=1$) će biti obrisani svi brojevi na parnoj poziciji u niz
  %https://www.geeksforgeeks.org/mathematical-algorithms/
  %https://www.geeksforgeeks.org/horners-method-polynomial-evaluation/
 \begin{definition}
-	\textbf{\textit{Hornerov metod za računanje vrijednosti polinoma}}. Neka je dat polinom $c_n x^n + c_{n-1}x^{n-1} + \cdots + c_1 x + c_0$ kao i tačka $x \in \mathbb{R}$. Naći vrijednost polinoma u tački $x$. Napomenimo da je ulaz vezan za polinom dat u obliku niza $ coef$ gdje   $coef[i]$ predstavlja koeficijent uz monom  $x^{n-i}$, $i \in \{0, \ldots, n\}$. 
+	\textbf{\textit{Hornerov metod za računanje vrijednosti polinoma}}. Neka je dat polinom $P(x)=c_n x^n + c_{n-1}x^{n-1} + \cdots + c_1 x + c_0$ kao i tačka $x \in \mathbb{R}$. Naći vrijednost polinoma $P$ u tački $x$. Napomenimo da je ulaz vezan za polinom dat u obliku niza $ coef$ gdje   $coef[i]$ p˙redstavlja koeficijent uz monom  $x^{n-i}$, $i \in \{0, \ldots, n\}$. 
 
 \end{definition}
 
@@ -393,7 +392,9 @@ U prvoj iteraciji ($i=1$) će biti obrisani svi brojevi na parnoj poziciji u niz
  	\item Broj je savršen akko je jednak zbiru svojih djelilaca (ne računajući njega samog). Npr. 6 i 28 su savršeni jer je $6 = 1 + 2 + 3; 28 = 1 + 2 + 4 + 7 + 14$. Napisati program koji ispituje da li je broj savršen korištenjem Eratostenovog sita. Kolika je vremenska složenost algoritma? Uporediti ovaj algoritam sa algoritamskom paradigmom brutalne sile.
  	\item Broj je ružan akko su mu jedini prosti faktori 2 ili 3 ili 5. Niz prvih ružnih brojeva je dat sa $1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, \ldots$ (1 je po
  	konvenciji uključen). U ulazu je  dat broj $n$. Izračunati $n$-ti ružni broj. Koristiti paradigmu dinamičkog programiranja.
- 	\item Sfenički brojevi su pozitivni cijeli brojevi koji se dobijaju kao proizvod tačno 3 različita prosta faktora. Npr. $30, 42, 66, 70, 78, 102, 105, 110, 114, \ldots$ su neki od takvih brojeva. U ulazu je dat broj n. Ispitati da li je on sfenički? \textit{Primjer}. $30=2 \cdot 3 \cdot 5$ jeste sfenički, dok $60 = 2^2 \cdot 3 \cdot 5 $ nije sfenički. 
+ 	\item Sfenički brojevi su pozitivni cijeli brojevi koji se dobijaju kao proizvod tačno 3 različita prosta faktora. Npr. $30, 42, 66, 70, 78, 102, 105, 110, 114, \ldots$ su neki od takvih brojeva. U ulazu je dat broj $n$. Ispitati da li je on sfenički? 
+ 	
+ 	\textit{Primjer}. $30=2 \cdot 3 \cdot 5$ jeste sfenički, dok $60 = 2^2 \cdot 3 \cdot 5 $ nije sfenički. 
  	\item Za broj se kaže da je slobodan od kvadrata ako ga nijedan
  	prosti faktor ne dijeli više od jednom, tj. najveći stepen prostog
  	faktora koji dijeli $n$  je jedan.  Prvih nekoliko slobodnih kvadrata brojeva su $$1, 2, 3, 5, 6, 7,
