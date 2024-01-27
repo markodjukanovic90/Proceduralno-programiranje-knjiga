@@ -120,7 +120,7 @@ dobijamo situaciju    koja odgovara slici
 \end{figure}
 U slučaju da dodamo sljedeću liniju koda na prethodni k\^od
 \begin{minted}{python}
-	x = 72
+	y = 72
 \end{minted}
 dobijamo sljedeći prikaz
 \begin{figure}[H]
@@ -187,12 +187,26 @@ U ovoj sekciji navodimo sintaksu naredbe grananja \texttt{if}, te osnovnih petlj
 
 Prije toga, u Tabeli~\ref{fig: operatori_poredjenja} navodimo osnovne operatore poređenja u jeziku Pajton. Napomenimo da svaki ovakav izraz vraća bulove konstante \emph{True} ili \emph{False}, u zavisnosti od toga da li je tačan ili ne, respektivno. 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=220pt,height=100pt]{slike/operatori_poredjenja.png}
-	\caption{Osnovni operatori poređenja u Pajtonu.}
-	\label{fig: operatori_poredjenja}
-\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=220pt,height=100pt]{slike/operatori_poredjenja.png}
+%	\caption{Osnovni operatori poređenja u Pajtonu.}
+%	\label{fig: operatori_poredjenja}
+%\end{figure}
+
+\begin{table}
+		\caption{Osnovni operatori poređenja u Pajtonu.}	\label{fig: operatori_poredjenja}
+		\hline
+	\begin{tabular}{lll}
+		Matematička notacija & Pajtonova notacija & Značenje \\ \hline
+		$a < b$              &  $a < b$           & $a$ je manje od $b$ \\
+		 $a \leq b$          &  $a <= b$          &$ a$ je manje ili jednako $b$ \\  
+		 $a > b$             &   $a >b$           & $a$ je veće od $b$   \\
+		 $a \geq b$          &   $a >= b$         & $a$ je veće ili jednako od $b$   \\
+		 $a=b$               &   $a==b$           & $a$ je jednako $b$               \\
+		 $a \neq b$          & $a!=b$             &  $a$ nije jednako $b$            \\ \hline    
+  	\end{tabular} 
+\end{table}
 
 \subsection{Uslovna naredba If}
 
@@ -294,7 +308,7 @@ Višelinijski stringovi se kreiraju koristeći trostruke navodnike.
 	\begin{figure}
 	\centering
 	\includegraphics[width=200pt,height=60pt]{slike/str_mem_organization.png}
-	\caption{Pojednostavljen prikaz unutrašnje memorijske strukture jednog stringa   u Pajtonu. }
+	\caption{Pojednostavljen prikaz unutrašnje memorijske strukture stringa x=\texttt{code}   u Pajtonu. }
 \end{figure}
 
 
@@ -358,11 +372,11 @@ Lista je nehomogena, uređena, indeksirana i promjenljiva kolekcija elemenata. U
 \end{figure}
 
 
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=320pt,height=150pt]{slike/list_mem_management.png}
-	\caption{Liste u pajtonu (pojednostavljena prezentacija): dodavanje elementa 5 na početnu listu} 
-\end{figure}%\footnote{Slika sa linka: \url{https://www.laurentluce.com/images/blog/list/list_insert.png}}
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=320pt,height=150pt]{slike/list_mem_management.png}
+%	\caption{Liste u pajtonu (pojednostavljena prezentacija): dodavanje elementa 5 na početnu listu} 
+%\end{figure}%\footnote{Slika sa linka: \url{https://www.laurentluce.com/images/blog/list/list_insert.png}}
 
 
  Kada se lista promijeni, interpreter po potrebi dodijeljuje novi blok memorije veće veličine gdje se postojeći elementi liste kopiraju u novododijeljeni blok. Ovaj proces se naziva \textit{realokacija}.  U slučaju kada je potrebno osigurati čuvanje niza, a realokacija nema toliko prostora, stvoriće se nova memorija i kopija što će rezultirati veoma skupom operacijom. Da bismo se to izbjeglo, možemo unaprijed rezervisati potrebnu memoriju. To se može uraditi sljedećim kodom:
@@ -373,16 +387,17 @@ Lista je nehomogena, uređena, indeksirana i promjenljiva kolekcija elemenata. U
 Da bi se elementi liste automatski obrisali od strane pajtonovog sakupljača otpadaka, listi je potrebno dodijeliti \texttt{None} vrijednost.  U tom slučaju, svi elementi liste koji nemaju drugih (aktivnih) pokazivača koji pokazuju na date elemente se automatski brišu iz memorije. 
 
 %https://www.analyticsvidhya.com/blog/2021/05/why-you-should-avoid-using-python-lists/
-\textit{Dodatne napomene}. Kao što smo napomeuli, za razliku od nizova u programskom jeziku $C$, liste mogu biti heterogene. Međutim, ova fleksibilnost je prilično skupa. Da bi lista bila heterogena, svaki od elemenata liste mora sadržavati informaciju o vlastitom tipu, broju referenci, stvarnu vrijednost na koju pokazuje itd. Drugim riječima, svaka stavka je kompletan pajtonov objekat. Dakle, ako   dalje raščlanimo, lista u pajtonu sadrži pokazivač koji   pokazuje na   blok pokazivača, a unutar svakog bloka,  pokazivači redom pokazuju na odvojeni (puni) pajtonov objekat.  Ako su sve varijable istog tipa, većina ovih informacija postaje suvišna. Alternativa u takvom slučaju je korištenje \textit{array} ugrađenog tipa, o kojem više govorimo u sljedećem odjeljku.   %poput onog koji smo vidjeli ranije. %% Ovo je kao jedna velika lutka!
+\textit{Dodatne napomene}. Kao što smo napomenuli, za razliku od nizova u programskom jeziku $C$, liste mogu biti heterogene. Međutim, ova fleksibilnost je prilično skupa. Da bi lista bila heterogena, svaki od elemenata liste mora sadržavati informaciju o vlastitom tipu, broju referenci, stvarnu vrijednost na koju pokazuje itd. Drugim riječima, svaka stavka je kompletan pajtonov objekat. Dakle, ako   dalje raščlanimo, lista u pajtonu sadrži pokazivač koji   pokazuje na   blok pokazivača, a unutar svakog bloka,  pokazivači redom pokazuju na odvojeni (puni) pajtonov objekat.  Ako su sve varijable istog tipa, većina ovih informacija postaje suvišna. Alternativa u takvom slučaju je korištenje \textit{array} ugrađenog tipa, o kojem više govorimo u sljedećem odjeljku.   %poput onog koji smo vidjeli ranije. %% Ovo je kao jedna velika lutka!
 
 \subsection{Nizovi: modul Array}
 
 Pajton sadrži ugrađeni modul \textit{array} koji je sličan nizovima u jeziku  \textit{C} ili \textit{C}++. U ovom kontejneru, podaci se smiještaju u neprekidnom bloku memorije. Kao i nizovi u jeziku \textit{C} ili \textit{C}++, oni podržavaju unos jednog tipa podataka u isto vrijeme, dakle nisu heterogeni poput listi u Pajtonu, već homogene strukture. Indeksiranje je slično listama. Tip eleemnata niza mora biti specificiran pomoću koda, koji su pobrojani u Tabeli~ \ref{tab: Tip podataka u objektu array} (podešavajući vrijednost parametra \textit{typecode}). 
 
 \begin{table}[!ht]
+	\caption{ Tip podataka u objektu \textit{array}}\label{tab: Tip podataka u objektu array}
 	\centering
 	\begin{tabular}{llll}  \hline \hline
-		Code      & Datatype                  & Python type & Size (Byte) \\ \hline \hline
+		\emph{Typecode}      & Tip podatka                  & Pajtonov tip & Veličina (Byte) \\ \hline \hline
 		`b' / `B' & signed / unsigned char    & int   & 1 \\
 		
 		`h' / `H'  & signed / unsigned  short  & int   & 2 \\
@@ -390,10 +405,10 @@ Pajton sadrži ugrađeni modul \textit{array} koji je sličan nizovima u jeziku 
         `l' / `L'  &  signed / unsigned long   & int   & 4 \\
         `q' / `Q'  & signed / unsigned long long & int & 8 \\
         `f'        & float                       & float & 4 \\
-         `F'       & double                      & double & 8 \\ \hline \hline
+         `F'       & double                      & float & 8 \\ \hline \hline
 		
 	\end{tabular} 
-\caption{ Tip podataka u objektu \textit{array}}\label{tab: Tip podataka u objektu array}
+
 \end{table}
 
 Da bismo koristili modul \texttt{array}, prvo ga uvedemo sa naredbom \texttt{import}: 
@@ -507,7 +522,7 @@ U slučaju da dati ključ ne postoji u mapi, par  (``godine'', 31) se dodaje u m
 		\caption{Pojednostavljen prikaz unutrašnje memorijske strukture jedne heš mape (rječnika) u Pajtonu.\protect\footnotemark}		\label{fig: dict_mem_organization}
 	\end{figure}
 	%https://www.geeksforgeeks.org/internal-structure-of-python-dictionary/ ==> pročitati
-	\footnotetext{Slika posuđena sa: \url{https://www.geeksforgeeks.org/internal-structure-of-python-dictionary}}
+	\footnotetext{Slika posuđena sa https://www.geeksforgeeks.org/internal-structure-of-python-dictionary}
 \subsection{Skupovi}
 
 Skupovi  predstavljaju neindeksirane, neuređene, promjenjive strukture podataka čija je osnovna namjena da se na efikasan način izvrši operacija provjere pripadnosti elementa. Ova struktura odgovara matematičkom pojmu skupa, što znači da duplikati u njoj nisu dozvoljeni. Skup može sadržati bilo koju vrstu elementa kao što je \texttt{int}, \texttt{float}, \texttt{tuple}, \texttt{complex}, itd. ali promjenjive kolekcije kao što su iste, rječnici, skupovi ne mogu biti elementi skupa. 
@@ -527,7 +542,7 @@ Skupovi  predstavljaju neindeksirane, neuređene, promjenjive strukture podataka
 	\item \textit{add(elem)}: dodavanje elementa \texttt{elem} u skup; 
 	\item \textit{remove(elem)}: brisanje elementa \textit{elem} iz skupa; izbaciće se greška, ukoliko element ne postoji u skupu (\texttt{KeyError} izuzetak, o izuzecima više u narednim sekcijama);
 	\item \textit{discard(elem)}: Uklanja element iz skupa ako je prisutan. Ne aktivira grešku ako element nije u skupu;
-	\item \textit{pop()}: Uklanja i vraća proizvoljan element iz skupa;
+	\item \textit{pop()}: Vraća i uklanja proizvoljan element iz skupa;
 	\item \textit{clear()}: Uklanja sve elemente iz skupa;
 	\item \textit{union()}: Vraća novi skup koji je unija elemenata datog skupa i drugog skupa (koji se prenosi kao vrijednost argumenta metoda); kraći zapis ove metode je pomoću znaka  ``$\mid$''.
     \item \textit{intersection()}: Vraća novi skup koji je presjek datog skupa i drugog skupa; kraći zapis ove metode je pomoću znaka ``$\&$''.
