@@ -78,7 +78,7 @@ Na Slici~\ref{fig:rec_tree}, dato je drvo rekurzije prethodnog programa za konkr
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=220pt,height=140pt]{slike/factorial_recursion_tree.png} 
+	\includegraphics[width=220pt,height=160pt]{slike/factorial_recursion_tree.png} 
 	\label{fig:rec_tree}
 	\caption{Drvo rekurzije.}
 \end{figure}
@@ -243,9 +243,9 @@ Dakle, u svakom koraku, ako se ne dođe do trivijalnog koraka, rekurzivni poziv 
  		\includegraphics[width=270pt,height=150pt]{slike/tower.png}
 
 
- 	 \caption{Problem hanojskih kula, $n=3$ diska.\protect\footnotemark}     \label{fig:tower}
+ 	 \caption{Problem hanojskih kula, $n=3$ diska.}     \label{fig:tower}
  	 	\end{figure}
-\footnotetext{Slika sa linka \url{https://www.geeksforgeeks.org/c-program-for-tower-of-hanoi/}}
+%\protect\footnotemark\footnotetext{Slika sa linka \url{https://www.geeksforgeeks.org/c-program-for-tower-of-hanoi/}}
 
 
  Prvo se najmanji (zeleni) disk prebacuje na štap $C$. Drugi korak je prebacivanje plavog (disk srednje veličine) na štap $B$. Potom, u koraku tri, zeleni disk sa štapa $C$ premiještamo na štap $B$. Korak četiri je rezervisan za prebacivanje najvećeg diska (sa štapa $A$)  na štap $C$. Dalje, potom zeleni disk sa $B$ premiještamo na štap $A$, a plavi na štap $C$. Konačno, u koraku sedam, zeleni disk sa štapa $A$ prebacujemo na štap $C$.  
@@ -324,8 +324,8 @@ Prosto rečeno, paradigma grube sile pokušava sva moguća rješenja problema, v
 \begin{solution}
 	Posmatrajmo primjer instance problema.
 \begin{center}	
-	\begin{tabular}{ccc}
-		\emph{proizvod} & \emph{težina} & \emph{cijena} \\ \hline
+	\begin{tabular}{lll}
+		\emph{Proizvod} & \emph{Težina} & \emph{Cijena} \\ \hline
 		1        &  2	& 20 \\
 		2		& 	5	& 30 \\
 		3		& 10	& 50 \\
@@ -645,7 +645,7 @@ Eksponencijalna pretraga uključuje dva koraka. Prvo, pronađimo interval u koje
 
 Eksponencijalna pretraga je posebno korisna za pretraživanja u kojima je  veličina niza ogromna.  Ova pretraga se pokazala efikasnijom   od binarnog pretraživanja za ograničene nizove (maksimalni element je unaprijed ograničen nekom konstantom), a takođe i kada je element koji se traži bliži prvom elementu.
 
-\section{Algoritamska paradigma podijeli-pa-zavladaj}
+\section{Paradigma podijeli-pa-zavladaj}
 %https://textbooks.cs.ksu.edu/cc310/4-data-structures-and-algorithms/13-divide-and-conquer/
 Ideja ovog (rekurzivnog) prostupa je sljedeća:
 \begin{itemize}
@@ -724,9 +724,9 @@ Glavna \texttt{while}-petlja u rekurziji radi spajanje dva sorirtrana dijela niz
 
  \begin{figure}
  	\centering
- 	\includegraphics[width=200pt,height=150pt]{slike/merge-sort-example.png}
+ 	\includegraphics[width=200pt,height=150pt]{slike/mege.png} %merge-sort-example.png}
  	\label{fig:merge-sort}
- 	\caption{Sortiranje spajanjem pomoću podijeli pa zavladaj paradigme: koraci}
+ 	\caption{Sortiranje spajanjem pomoću podijeli pa zavladaj paradigme: korak po korak}
  \end{figure}
 
 \begin{example}
@@ -827,9 +827,9 @@ else:
 \begin{figure}
 	\centering
 	\includegraphics[width=450pt, height=300pt]{slike/n-queen-backtracking.png} %recursion-tree-backtracking-n-queens-1.png}
-	\caption{Primjer stabla stanja formiranog algoritmom vraćanja unazad za problem 4 kraljice.\protect\footnotemark}
+	\caption{Primjer stabla stanja formiranog algoritmom vraćanja unazad za problem 4 kraljice.}
 \end{figure}
-\footnotetext{Slika sa linka \url{https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/}}
+%\protect\footnotemark\footnotetext{Slika sa linka \url{https://towardsdatascience.com/genetic-algorithm-vs-backtracking-n-queen-problem-cdf38e15d73f}}
 
 Napomenimo da ovdje nismo prikazali implementaciju funkcije \textit{valid}(), koja vraća \textit{True} ako je pozicija kraljica  validna, u protivnom vraća \textit{False}. Ovo ostavljamo čitaocu kao zadatak za vježbanje. 
 
@@ -1132,7 +1132,7 @@ Napomenimo da ovako dizajniran algoritam ne garantuje nalazak optimalnog rješen
  
 	\begin{tabular}{ccc }
 	 \centering
-	Posao (ID) & Krajnji rok (Dedlajn) & Profit \\ \hline \hline
+	Posao (ID) & Krajnji rok (Deadline) & Profit \\ \hline \hline
 	$1$	&	4	&	20 \\
 	$2$	&	1	&	10\\
 	$3$	&	1	&	40\\
@@ -1148,7 +1148,7 @@ Posmatrajmo narednu instancu problema.
 	
 	\begin{tabular}{ccc }
 		\centering
-		Posao (ID) & Krajnji rok (Dedlajn) & Profit \\ \hline \hline
+		Posao (ID) & Krajnji rok (Deadline) & Profit \\ \hline \hline
 		$1$	&	2	&	100 \\
 		$2$	&	1	&	19\\
 		$3$	&	2	&	27\\

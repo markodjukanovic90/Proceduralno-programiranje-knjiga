@@ -696,7 +696,7 @@ Klasični algoritam za nalazak NZD je Euklidov algoritam, dat Algoritmom~\ref{al
 	\end{algorithmic}   \caption{NZD dva broja.} \label{alg:nzd-euclid}
 \end{algorithm}
 
-\begin{solution}
+\begin{example}
 	Prvo izvedimo korake algoritma na konkretnoj instanci. Neka je $p=400$, a $q=24$. Tada imamo korake:
 	$$(400, 24) \rightarrow (24, 16) \rightarrow (16, 8) \rightarrow (8, 0),$$
 	odakle slijedi da je NZD$(400, 24)=8$. Za razliku od naivnog algoritma za nalazak NZD iz prethodnog poglavlja, koji bi za ovu instancu izveo 17 iteracija do nalaska rješenja, vidimo da za Euklidov algoritam treba svega 4 iteracije da nađe tačno rješenje. 
@@ -747,9 +747,8 @@ Iz svega imamo da je kompleksnost algoritma:
 $$ O(n^2)\cdot O(n) = O(n^3)= O(\log \max\{p,q\}).$$
 
 Primijetimo da je prostorna kompleksnost Euklidovog algoritma konstanta, tj. jednaka je $O(1)$. 
-\end{solution}
-
 \end{example}
+
 
 Napomenimo da valjanost Euklidovog algoritma slijedi iz algebarskog svojstva da je skup djelilaca brojeva $p$ i $q$, jednak skupu djelilaca brojeva $q$ i $p\%q$, pa su stoga transformacije parova brojeva za koje se razmatra NZD u svakom koraku validne, dok se ne dođe od trivijanog slučaja, tj. dok drugi broj ne bude jednak nuli, čime se vraća vrijednost prvog broja kao krajnji rezultat. 
 

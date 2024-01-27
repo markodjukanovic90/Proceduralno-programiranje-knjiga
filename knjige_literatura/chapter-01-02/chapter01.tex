@@ -575,7 +575,7 @@ Sljedeći kod pokazuje tip strukture podataka u Pajtonu koja predstavlja skup, a
  	\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=250pt,height=150pt]{slike/set_mem_organization.png}
-	\caption{Prikaz unutrašnje memorijske strukture jednog skupa (set) u Pajtonu. }
+	\caption{Prikaz unutrašnje memorijske strukture skupa (set) u Pajtonu. }
 \end{figure}  %https://www.javatpoint.com/python-set 
 
 \subsection{Torke}
@@ -622,23 +622,22 @@ Sljedeći kod pokazuje tip strukture podataka u Pajtonu koja predstavlja skup, a
     \end{minted}
  \end{itemize}
  
-\textit{Memorijska organizacija}.  Pri kreiranju torke, u memoriji se rezerviše fiksna količina memorije za čuvanje svih njenih elemenata. Svaki njen element je pohranjen u kontinuiranom (neprekidnom) bloku memorije, sa fiksnom količinom prostora (nepromjenljiv objekat) dodijeljena svakom elementu na osnovu njegovog tipa.
+\textit{Memorijska organizacija}.  Pri kreiranju torke, u memoriji se rezerviše fiksna količina memorije za čuvanje svih njenih elemenata. Svaki njen element je pohranjen u kontinuualnom  (neprekidnom) bloku memorije, koji referenciraju na objekte koji zauzimaju fiksnu količinu prostora (nepromjenljiv objekat) određen na osnovu tipova podataka. Memorijska adresa prvog elementa torke se koristi kao referenca na cijeli objekat. %Pristup pojedinačnom elementu torke zahtijeva izračunavanje memorijske adrese željenog elementa na osnovu njegovog indeksa i veličine   elemenata u torci. Za posljedicu, 
+Pristup pojedinačnim elementima torke se izvršava mnogo efikasnije od pristupa elementima liste jer se indeks svakog elementa torke može  izračunati direktno na osnovu njegove pozicije u memoriji. 
 
-Memorijska adresa prvog elementa torke se koristi kao referenca na cijeli objekat. U prevodu,  pristup pojedinačnom elementu torke zahtijeva izračunavanje memorijske adrese željenog elementa na osnovu njegovog indeksa i veličine   elemenata u torci. Za posljedicu, pristup pojedinačnim elementima torke se izvršava mnogo efikasnije od pristupa elementima liste jer indeks svakog elementa torke može da se izračuna direktno na osnovu njegove pozicije u memoriji. 
-
-Pošto su objekti tipa \texttt{tuple} nepromjenljive strukture, elementi se ne mijenjaju  nakon što su kreirani. Ako je  potrebno izmijeniti određene elemente, treba da se kreira novi objekat ntorka sa željenim promjenama. Strukture ntorki su  efikasnije u smislu upotrebe memorije u poređenju sa promjenjivim strukturama podataka (liste, rječnici), jer nema potrebe  za dodijelom dodatnih memorijskih lokacija da bismo prilagodili promjene u podacima.
+Pošto su objekti tipa \texttt{tuple} nepromjenljive strukture, elementi se ne mijenjaju  nakon što su kreirani. Ako je  potrebno izmijeniti određene elemente, treba da se kreira novi objekat torka sa željenim promjenama. Strukture torki su  efikasnije u smislu upotrebe memorije u poređenju sa promjenjivim strukturama podataka (liste, rječnici), jer ne postoji potreba za dodijelom dodatnih memorijskih lokacija da bismo prilagodili promjene u podacima.
  
- 	\begin{figure}
- 	\centering
- 	\includegraphics[width=230pt,height=50pt]{slike/tupel_mem_organization.png}
- 	\caption{Pojednostavljen prikaz unutrašnje memorijske strukture jednog objekta torke (tuple) u Pajtonu -- \text{element\_0}, \text{element\_1},$\ldots$ predstavljaju pokazivače na vrijednosti  (smješteni na uzastopnim lokacijama). }
- \end{figure}
+ %\begin{figure}
+ %	\centering
+ %	\includegraphics[width=230pt,height=50pt]{slike/tupel_mem_organization.png}
+ %	\caption{Pojednostavljen prikaz unutrašnje memorijske strukture jednog objekta torke (tuple) u Pajtonu -- \text{element\_0}, \text{element\_1},$\ldots$ predstavljaju reference na vrijednosti  (reference smještene u neprekidnom bloku memorije). }
+ %\end{figure}
 
 \section{Funkcije}
 
 Programski jezik Pajton svaku funkciju predstavlja kao jedan objekat. Prema tome, funkcije se mogu dodijeliti varijablama, proslijediti kao argument  drugim funkcijama, a takođe vratiti kao vrijednost    drugih funkcija.  Preciznije, funkcije su implementirane korištenjem Pajtonove interne klase  \texttt{function}. Ova klasa je dio ugrađenih tipova ovog jezika koja pruža osnovnu funkcionalnost za kreiranje i izvršavanje funkcija. Kada se funkcija definiše, interpreter inicijalizuje novi objekat klase \texttt{function} koji predstavlja tu funkciju -- sadrži informacije o nazivu funkcije, argumentima, k\^odu i drugim metapodacima.
 
-Funkcija je predstavljena blokom k\^oda koji obavlja određeni zadatak a može se pozivati i izvršavati više puta kroz program. Uloga funkcija je da se k\^od učini modularnijim, efikasnijim i čitljivijim, jer omogućavaju  podijelu složenih programa na manje dijelove kojima je lakše upravljati.
+Funkcija je predstavljena blokom k\^oda (nazvan još i definicija tijela funkcije) koji obavlja određeni zadatak a može se pozivati i izvršavati više puta kroz program. Uloga funkcija je da se k\^od učini modularnijim, efikasnijim i čitljivijim, jer omogućavaju  podijelu složenih programa na manje dijelove kojima je lakše upravljati.
 
 Sintaksno, funkcije se definišu pomoću ključne riječi \texttt{def} nakon čega slijedi naziv funkcije, zagrade (u kojima se opciono navode argumenti) pa dvotočka. Tijelo funkcije se uvlači ispod zaglavlja. Naredba \texttt{return} vraća rezultat date funkcije, nakon čega se izlazi iz tijela funkcije. Evo primjera jednostavne funkcije koja računa proizvod dva broja:
 
@@ -798,7 +797,6 @@ Napomenimo još jednom da Pajton koristi algoritam za sakupljanje otpadaka (eng.
 \subsection{Kompajliranje i izvršavanje}
 
 Proces kompilacije   i izvršavanja k\^oda u programskom jeziku Pajton je kompleskan proces kojeg nećemo izlagati u svim detljima nego ćemo ukratko navesti osnovne principe na kojima je baziran ovaj proces. On uključuje četiri osnovna koraka.
-
 \begin{itemize}
 	\item \textit{Leksička analiza} -- Izvorni k\^od se prvo prosljeđuje leksičkom analizatoru,  koji razlaže k\^od na pojedinačne tokene kao što su ključne riječi, identifikatori, operatori, itd.
 	\item \textit{Parisiranje} -- Tokeni se zatim prosleđuju parseru, koji koristi gramatiku bez konteksta za izgradnju \emph{apstraktnog sintaksnog stabla} (AST) koje predstavlja strukturu k\^oda. U detalje ovog procesa nećemo ulaziti jer izlazi iz domena ove knjige.
@@ -812,11 +810,11 @@ Napomenimo da tokom procesa izvršavanja, interpreter izvodi nekoliko optimizaci
 	\centering
 	
 	\includegraphics[width=350pt,height=170pt]{slike/python-code-copiler-machine-code.png}%compile_python.png}
-\caption{Vizuelizacija procesa izvršavanja pajton koda.\protect\footnotemark}
+\caption{Vizuelizacija procesa izvršavanja k\^oda u Pajtonu.\protect\footnotemark}
 \label{fig:comp_interpreting}
 \end{figure}
 
-\footnotetext{Slika sa linka: \url{https://www.astateofdata.com/python-programming/can-python-be-compiled/}}
+\footnotetext{Slika sa linka: {https://www.astateofdata.com/python-programming/can-python-be-compiled/}}
 %%https://www.astateofdata.com/python-programming/can-python-be-compiled/
 % Na osnovu prethodnog, pajton je i kompajliran i interpretiran jezik. 
 %https://www.astateofdata.com/python-programming/can-python-be-compiled/ ==> procitati ovdje...
@@ -1159,8 +1157,8 @@ Sve vrste klasa izuzetaka, te njihova organizacija u Pajtonu se mogu vidjeti na 
 %python-exception-classes.jpg
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=400pt,height=260pt]{slike/419627_1_En_2_Fig4_HTML.jpg}
-	\caption{Klasa izuzetaka u programskom jeziku Pajton.}
+	\includegraphics[width=400pt,height=260pt]{slike/class-exceptions.png}
+	\caption{Klasna organizacija najvažnijih izuzetaka u programskom jeziku Pajton.}
 	\label{fig: exceptions}
 \end{figure}
 
@@ -1425,7 +1423,7 @@ matrice, 3D matrice, proizvoljne matrice,  velikih dimenzija. Riječ \texttt{num
 	\centering
 	\includegraphics[width=320pt,height=170pt]{slike/numpy-array-memory.png} %numpy_array.png}
 
-	\caption{Struktura podataka numpy niza.\protect \footnotemark}	 \label{fig:numpy_array}
+	\caption{Struktura podataka numpy niza (sa tipom podataka $int$).\protect \footnotemark}	 \label{fig:numpy_array}
  
 \end{figure} 
 \footnotetext{https://www.geeksforgeeks.org/python-lists-vs-numpy-arrays/}
