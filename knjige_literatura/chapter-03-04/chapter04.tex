@@ -67,30 +67,79 @@ Demonstrirajmo   prvih nekoliko iteracija ovog algoritma u tabelarnom zapisu, za
 
 U početnoj iteraciji, inicira se niz (tabela) brojeva gdje su svi brojevi označeni kao prosti (na poziciji koja odgovara broju se čuva vrijednost \emph{True}).
 
-\begin{figure}[H]
-	 \centering
-	 \includegraphics[width=340pt,height=120pt]{slike/sieve-it-0.png}
-\end{figure}
+%\begin{figure}[H]
+%	 \centering
+%	 \includegraphics[width=340pt,height=120pt]{slike/sieve-it-0.png}
+%\end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c} \hline
+       & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+    11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 \\ \hline
+    21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 \\ \hline
+    31 & 32 & 33 & 34 & 35 & 36 & 37 & 38 & 39 & 40 \\ \hline
+    41 & 42 & 43 & 44 & 45 & 46 & 47 & 48 & 49 & 50 \\ \hline     
+	\end{tabular}
+    \caption{Inicijalizacija.} \label{eratosten-sieve-it-0}
+\end{table}
 
 
 Dalje, u prvoj iteraciji, nalazimo se na poziciji 2, gdje elemente na pozicijama $2 \cdot k, k=2, \ldots, 50$ eliminišemo kroz sito (kao oni koji nisu prosti, dodijeljujući im vrijednost \emph{False}). Vizuelno, preostali brojevi za ispitivanje su oni neoznačeni:
 
 
-\begin{figure}[H]
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=340pt,height=120pt]{slike/sieve-it-1.png}
+%\end{figure}
+
+\begin{table}[H]
 	\centering
-	\includegraphics[width=340pt,height=120pt]{slike/sieve-it-1.png}
-\end{figure}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c} \hline
+		& 2 & 3 & \cellcolor{red!30}  4 & 5 & \cellcolor{red!30} 6 & 7 & \cellcolor{red!30} 8 & 9 & \cellcolor{red!30} 10 \\ \hline
+		11 &\cellcolor{red!30}  12 & 13 & \cellcolor{red!30} 14 & 15 & \cellcolor{red!30} 16 & 17 & \cellcolor{red!30} \cellcolor{red!30} 18 & 19 & \cellcolor{red!30} \cellcolor{red!30} 20 \\ \hline
+		21 & \cellcolor{red!30} 22 & 23 & \cellcolor{red!30} 24 & 25 & \cellcolor{red!30} 26 & 27 &\cellcolor{red!30}  28 & 29 & \cellcolor{red!30} \cellcolor{red!30} 30 \\ \hline
+		31 & \cellcolor{red!30} 32 & 33 & \cellcolor{red!30} 34 & 35 & \cellcolor{red!30} 36 & 37 & \cellcolor{red!30} 38 & 39 & \cellcolor{red!30} 40 \\ \hline
+		41 & \cellcolor{red!30} 42 & 43 & \cellcolor{red!30} 44 & 45 & \cellcolor{red!30} 46 & 47 &\cellcolor{red!30}  48 & 49 &\cellcolor{red!30}  50 \\ \hline     
+	\end{tabular}
+        \caption{Eratostenovo sito: iteracija 1.} \label{eratosten-sieve-it-1}
+\end{table}
 
 
 
 Dalje, u drugoj iteraciji, prelazimo na poziciju 3. Kako je ona označena sa \emph{True} (prost broj), elemente na pozicijama $3\cdot k, k=2, \ldots, 16$ eliminišemo kroz sito (jer nisu prosti). Prelostali brojevi za ispitivanje su oni neoznačeni u narednoj tabeli. 
 
-\begin{figure}[H]
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=340pt,height=120pt]{slike/sieve-it-1.png}
+%\end{figure}
+
+\begin{table}[H]
 	\centering
-	\includegraphics[width=340pt,height=120pt]{slike/sieve-it-1.png}
-\end{figure}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c} \hline
+	& 2 & 3 & \cellcolor{red!30}  4 & 5 & \cellcolor{red!30} 6 & 7 & \cellcolor{red!30} 8 & \cellcolor{red!70} 9 & \cellcolor{red!30} 10 \\ \hline
+	11 &\cellcolor{red!30}  12 & 13 & \cellcolor{red!30} 14 & 15 & \cellcolor{red!30} 16 & 17 & \cellcolor{red!30} \cellcolor{red!30} 18 & 19 & \cellcolor{red!30} \cellcolor{red!30} 20 \\ \hline
+	21 & \cellcolor{red!30} 22 & 23 & \cellcolor{red!30} 24 & 25 & \cellcolor{red!30} 26 & \cellcolor{red!70}  27 &\cellcolor{red!30}  28 & 29 & \cellcolor{red!30} \cellcolor{red!30} 30 \\ \hline
+	31 & \cellcolor{red!30} 32 & 33 & \cellcolor{red!30} 34 & 35 & \cellcolor{red!30} 36 & 37 & \cellcolor{red!30} 38 & 39 & \cellcolor{red!30} 40 \\ \hline
+	41 & \cellcolor{red!30} 42 & 43 & \cellcolor{red!30} 44 & 45 & \cellcolor{red!30} 46 & 47 &\cellcolor{red!30}  48 & 49 &\cellcolor{red!30}  50 \\ \hline     
+\end{tabular}
+        \caption{Eratostenovo sito: iteracija 2.} \label{eratosten-sieve-it-2}
+\end{table}
 
 U narednoj iteraciji prelazimo na poziciji 4. Kako to nije prost broj (dakle filtriran prethodno), prelazimo na naredni broj (5), koji je prost, nakon čega ponavljamo operacije opisane prethodnim iteracijama. 
+
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c} \hline
+		& 2 & 3 & \cellcolor{red!30}  4 & 5 & \cellcolor{red!30} 6 & 7 & \cellcolor{red!30} 8 & \cellcolor{red!70} 9 & \cellcolor{red!30} 10 \\ \hline
+		11 &\cellcolor{red!30}  12 & 13 & \cellcolor{red!30} 14 & 15 & \cellcolor{red!30} 16 & 17 & \cellcolor{red!30} \cellcolor{red!30} 18 & 19 & \cellcolor{red!30} \cellcolor{red!30} 20 \\ \hline
+		21 & \cellcolor{red!30} 22 & 23 & \cellcolor{red!30} 24 & \cellcolor{red!90} 25 & \cellcolor{red!30} 26 & \cellcolor{red!70}  27 &\cellcolor{red!30}  28 & 29 & \cellcolor{red!30} \cellcolor{red!30} 30 \\ \hline
+		31 & \cellcolor{red!30} 32 & 33 & \cellcolor{red!30} 34 & 35 & \cellcolor{red!30} 36 & 37 & \cellcolor{red!30} 38 & 39 & \cellcolor{red!30} 40 \\ \hline
+		41 & \cellcolor{red!30} 42 & 43 & \cellcolor{red!30} 44 & 45 & \cellcolor{red!30} 46 & 47 &\cellcolor{red!30}  48 & 49 &\cellcolor{red!30}  50 \\ \hline     
+	\end{tabular}
+	\caption{Eratostenovo sito: iteracija 3.} \label{eratosten-sieve-it-3}
+\end{table}
 
 \section{Faktorizacija broja}
 
@@ -223,6 +272,7 @@ Fundamentalna teorema aritmetike nam kaže da se svaki broj $n \in \mathbb{N}$ m
  	\begin{figure}[H]
  		\centering
  		\includegraphics[width=280pt,height=160pt]{slike/catalan-net.png}
+ 		\caption{Putevi dužine 8 za tablu dimenzija $4\times 4$.} \label{fig:catalan-n-4}
  	\end{figure}
  	\item Broj permutacija skupa $\{1, \ldots, n \}$ koji ne sadrže patern \texttt{123} (ili bilo koji drugi, dužine 3) su predstavljeni Katalanovim brojevima. Npr. za $n = 3$, sljedeće permutacije zadovoljavaju uslove: $132,
  	213, 231, 312$ i $321$.  Dakle, ima ih ukupno 5. 
@@ -244,7 +294,7 @@ Fundamentalna teorema aritmetike nam kaže da se svaki broj $n \in \mathbb{N}$ m
           return 1
        catalan_n = 0 
        for i in range(n): 
-           catalan_n += catalan(i) * catalan(n-i-1) 
+           catalan_n += catalan(i) * catalan(n-1-i) 
        return catalan_n
         
  \end{minted}
@@ -259,15 +309,13 @@ Implementacija memoizacije je data sljedećim k\^odom.
 	
 	def initialization(n):
 	   Cat = [ -1   for _ in range(n+1)  ] 
+	   Cat[0]=1
 	   return Cat 
 	
 	def catalan_i(i, Cat): 
 	
 	    if Cat[i] != -1:
 	        return Cat[i]
-	    if i == 0: 
-	       Cat[i] = 1
-	       return Cat[i] 
      
             catalan_i = 0
             for k in range(i): 
