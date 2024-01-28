@@ -348,7 +348,7 @@ U prevodu, funkcije $f$ i $g$ imaju isto asimptotsko ponašanje (dakle, za velik
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=120pt,height=120pt]{slike/theta_notation.jpg}
+	\includegraphics[width=170pt,height=150pt]{slike/theta-notation.png}
  
 	\caption{$\Theta$--notacija: vizuelizacija za slučaj $f(n)=\Theta(g(n))$.}	\label{fig:theta_notation}
 \end{figure}
@@ -403,13 +403,13 @@ Neformalno, ako $f(n) = o(g(n))$, to znači da  $f$ postaje beznačajno mala u o
 
 Prethodna sekcija nam daje na uvid neke od osnovnih notacija za ocjenjivanje kompleksnosti   algoritma, tj. izvršenja broja instrukcija programa koja se obično razmatra u zavisnosti od veličine ulaza. 
 
- Najčešće funkcije koje se pominju u analizi kompleksnosti izvršavanja algoritama su nabrojane u Tabeli~\ref{tab:kompleksnosti}. 
+ Najčešće funkcije koje se pominju u analizi kompleksnosti izvršavanja algoritama su nabrojane u Tabeli~\ref{tab:kompleksnosti_funkcijea}. 
  
  \begin{table}[H]
- 	   \caption{Rast funkcija. }  \label{fig:kompleksnosti_funkcije}
+ 	   \caption{Česte klase $O$--kompleksnosti. }  \label{tab:kompleksnosti_funkcijea}
  	\centering 
  	\begin{tabular}{l |l} \hline 
- 		\textbf{Funkcija}   & \textbf{Kompleksnost} \\ \hline
+ 		\textbf{Funkcija}   &  \textbf{Klasa kompleksnosti} \\ \hline
  		1          & konstantna \\
  		$\log n$   & logaritamska \\
  		$n$        &  linearna \\
@@ -425,8 +425,8 @@ Prethodna sekcija nam daje na uvid neke od osnovnih notacija za ocjenjivanje kom
  Rast nekih funkcija sa porastom ulaza ($n$) je prikazan na Slici~\ref{fig:kompleksnosti_funkcije}
  \begin{figure}[H]
  	\centering
- 	\includegraphics[width=270pt,height=200pt]{slike/growth.png}%growth-Functions.jpg}
-   \caption{Rast funkcija. }  \label{fig:kompleksnosti_funkcije}
+ 	\includegraphics[width=170pt,height=130pt]{slike/growth.png}%growth-Functions.jpg}
+   \caption{Grafik odnosa klasa $O$-kompleksnosti.}  \label{fig:kompleksnosti_funkcije}
  \end{figure}
 
 
