@@ -129,7 +129,7 @@ dobijamo sljedeći prikaz
 \end{figure}
 Konačno, ako postavimo y na novu vrijednost, tj.
 \begin{minted}{python}
-	x = "abcd" 
+	x = "Text" 
 \end{minted}
 imamo odgovarajuću sliku 
 
@@ -148,7 +148,9 @@ Očitavanje broja memorijske ćelije te heksadekadnog broja na koju pokazuje var
 	idhex = hex(id(x)) 
 \end{minted} 
 %https://insideaiml.com/blog/Python-Memory-Management-1176 ==> procitati: BITNO 
- Napomenimo da se ispisivanje rezultata na ekranu vrši pomoću naredbe \emph{print}(). Poruka može biti string ali i bilo koji drugi objekat. Svaki objekat će biti konvertovan u string prije nego što se ispiše na ekran. Ukoliko konverzija nije moguća, javiće se poruka o greški. Pisanje komentara u jeziku Pajton je realizovano na više načina: jednolinijski i višelinijski. Jednolinijski komentari počinju sa simbolom tab (\#), nakon čega slijedi opis komentara. U slučaju višelinijskog komentara, početak komentara počinje i završava sa tri uzastopna apostrofa, koji se moraju pravilno uravnati (sa ostatkom k\^oda), da ne bi došlo do pojave sintaksne greške.  
+ Napomenimo da se ispisivanje rezultata na ekranu vrši pomoću naredbe \emph{print}(). Poruka može biti string ali i bilo koji drugi objekat. Svaki objekat će biti konvertovan u string prije nego što se ispiše na ekran. Ukoliko konverzija nije moguća, javiće se poruka o greški. 
+ 
+ Pisanje komentara u jeziku Pajton je realizovano na više načina: jednolinijski i multilinijski. Jednolinijski komentari počinju sa simbolom tab (\#), nakon čega slijedi opis komentara. U slučaju višelinijskog komentara, početak komentara počinje i završava sa tri uzastopna apostrofa, koji se moraju pravilno uravnati (sa ostatkom k\^oda), da ne bi došlo do pojave sintaksne greške.  
  
 
 
@@ -196,7 +198,7 @@ Prije toga, u Tabeli~\ref{fig: operatori_poredjenja} navodimo osnovne operatore 
 
 \begin{table}
 		\caption{Osnovni operatori poređenja u Pajtonu.}	\label{fig: operatori_poredjenja}
-		\hline
+~	\hline
 	\begin{tabular}{lll}
 		Matematička notacija & Pajtonova notacija & Značenje \\ \hline
 		$a < b$              &  $a < b$           & $a$ je manje od $b$ \\
@@ -334,6 +336,21 @@ Struktura PyUnicodeObject sadrži pokazivač na ove podatke.
 Kada se objekt tipa \texttt{str} kreira, prvo se memorija dodjeljuje nizu, a potom se inicijalizuju i metapodaci. Pri nizovnoj manipulaciji, interni bafer se eventualno mijenja kako bi se prilagodio novim podacima. Objekt \texttt{str} je   optimiziran za dijeljenje, kako je već napomenuto. %Preciznije, ako više \texttt{str} objekata sadrži iste znakovne podatke, oni mogu dijeliti isti interni bafer podataka radi uštede memorije. 
  Za stringove je vezan i proces   \textit{interniranja stringova} što označava ponovnu upotrebu postojećih stringovnih objekata umjesto stvaranja novih sa istom vrijednošću. Ovaj proces se izvodi   globalnim keširanjem string objekata i provjerom    keš memorije prije kreiranja novog string objekta. Ako string objekt sa istom vrijednošću već postoji u kešu, on se vraća umjesto kreiranja novog objekta. Ovaj proces štedi memoriju i poboljšava performanse programa, posebno kada se radi sa većim brojem manjih stringovnih objekata.
 
+
+Potoji nekoliko opcija za ispisivanje rezultata na ekran koristeći ugrađene stringovne funkcije ili specifične tipove stringova. Jedan od načina je pomoću metode \textit{format} ugrađivanjem kao na sljedeći način
+
+\begin{minted}{python}
+print("Moje ime je {0} a prezime {1}".format("Marko", "Marković")) 
+# metoda ugradjivanja
+\end{minted}
+Na mjesto $\{0\}$ dolazi prva vrijednost u fukciji \textit{format}, dok na mjesto $\{1\}$ dolazi druga  vrijednost prosljeđena toj funkciji.  
+
+Još jedan metod ispisa se realizuje pomoću formatiranih stringova (tzv. $f$-strings) kao u sljedećem primjeru:
+\begin{minted}{python}
+	ime = "Marko"
+	godine = 32
+	print(f"Ime: {ime}, Godine: {godine}")
+\end{minted}
 
 \subsection{Liste}
 Lista je nehomogena, uređena, indeksirana i promjenljiva kolekcija elemenata. U jeziku Pajton se inicijalizuje kao objekat klase \texttt{list}. Elementi ove kolekcije su indeksirani brojevima, krenuvši od 0. Pajton, za razliku od većine programskih jezika, dopušta indeksiranje negativnim brojevima gdje je u tom slučaju indeks posljednjeg elementa liste -1, pretposljednjeg -2, itd.  
