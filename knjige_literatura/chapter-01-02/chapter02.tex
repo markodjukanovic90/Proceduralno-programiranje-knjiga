@@ -131,6 +131,7 @@ Mašina sa slučajnim pristupom predstavlja varijaciju RAM modela koji uključuj
 Ova mašina predstavlja model (apstrakciju) koja se koristi u analizi algoritama i njihove složenosti jer omogućava \textit{precizno} izračunavanje broja instrukcija potrebnih za obavljanje određenog zadatka. Ovaj model pretpostavlja da su vremena pristupa memoriji konstantna, što nije tačno na realnim računarima. U praksi, pristup memoriji može uzimati različito vrijeme ovisno o faktorima kao što su keširanje, pristup disku i kašnjenje mreže.
 
 %http://people.seas.harvard.edu/~cs125/fall14/lec6.pdf ==> follow
+\subsection{Instrukcije u RAM modelu}
 Krenimo sa formalizovanjem teorijskog modela koji 
 se standardno koristi za analizu algoritma.  Posmatrajući viši nivo,   karakteristike modela su sljedeće:
 
@@ -179,7 +180,7 @@ Formalno, dopuštene se sljedeće instrukcije (u RAM modelu) za indekse $i, j, k
    ${w}$-RAM program je bilo koji konačan niz instrukcija $P = (P_1, P_2,\ldots, P_q)$ gore navedenog tipa. Broj $r$ registara je implicitno definisan kao  najveći indeks direktne memorijske adrese (među indeksima $i, j, k$ skupa instrukcija) koji se javljaju u programu.
 \end{definition}
 
-\subsection{Formalizacija računanja na RAM-u}
+\subsection{Formalizacija programa na RAM-u}
 
 Pojam konfiguracije ima za cilj da obuhvati cjelokupno stanje računanja u određenom trenutku --  sve što je neophodno za određivanje budućeg ponašanja.
 \begin{definition}
