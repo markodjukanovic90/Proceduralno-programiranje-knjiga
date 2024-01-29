@@ -366,9 +366,9 @@ Lista je nehomogena, uređena, indeksirana i promjenljiva kolekcija elemenata. U
 
  \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=230pt,height=160pt]{slike/list_mem_org.png}
+	\includegraphics[width=300pt,height=160pt]{slike/img-list-tuple.png}   %list_mem_org.png}
 
-	\caption{Liste u pajtonu: memorijska organizacija} 	\label{fig: mem_list_org}
+	\caption{Liste u pajtonu: memorijska organizacija i poređenje sa organizacijom torki.} 	\label{fig: mem_list_org}
 \end{figure}
 
 
@@ -518,7 +518,7 @@ U slučaju da dati ključ ne postoji u mapi, par  (``godine'', 31) se dodaje u m
 	
 	\begin{figure}
 		\centering
-		\includegraphics[width=270pt,height=160pt]{slike/dict_mem_organization.png}
+		\includegraphics[width=300pt,height=160pt]{slike/dict_mem_organization.png}
 		\caption{Pojednostavljen prikaz unutrašnje memorijske strukture jedne heš mape (rječnika) u Pajtonu.\protect\footnotemark}		\label{fig: dict_mem_organization}
 	\end{figure}
 	%https://www.geeksforgeeks.org/internal-structure-of-python-dictionary/ ==> pročitati
@@ -622,7 +622,7 @@ Sljedeći kod pokazuje tip strukture podataka u Pajtonu koja predstavlja skup, a
     \end{minted}
  \end{itemize}
  
-\textit{Memorijska organizacija}.  Pri kreiranju torke, u memoriji se rezerviše fiksna količina memorije za čuvanje svih njenih elemenata. Svaki njen element je pohranjen u kontinuualnom  (neprekidnom) bloku memorije, koji referenciraju na objekte koji zauzimaju fiksnu količinu prostora (nepromjenljiv objekat) određen na osnovu tipova podataka. Memorijska adresa prvog elementa torke se koristi kao referenca na cijeli objekat. %Pristup pojedinačnom elementu torke zahtijeva izračunavanje memorijske adrese željenog elementa na osnovu njegovog indeksa i veličine   elemenata u torci. Za posljedicu, 
+\textit{Memorijska organizacija}.  Pri kreiranju torke, u memoriji se rezerviše fiksna količina memorije za čuvanje svih njenih elemenata. Svaki njen element je pohranjen u kontinualnom  (neprekidnom) bloku memorije,  određen na osnovu tipova podataka sadržani u torci.  Memorijska adresa prvog elementa torke se koristi kao referenca na cijeli objekat. %Pristup pojedinačnom elementu torke zahtijeva izračunavanje memorijske adrese željenog elementa na osnovu njegovog indeksa i veličine   elemenata u torci. Za posljedicu, 
 Pristup pojedinačnim elementima torke se izvršava mnogo efikasnije od pristupa elementima liste jer se indeks svakog elementa torke može  izračunati direktno na osnovu njegove pozicije u memoriji. 
 
 Pošto su objekti tipa \texttt{tuple} nepromjenljive strukture, elementi se ne mijenjaju  nakon što su kreirani. Ako je  potrebno izmijeniti određene elemente, treba da se kreira novi objekat torka sa željenim promjenama. Strukture torki su  efikasnije u smislu upotrebe memorije u poređenju sa promjenjivim strukturama podataka (liste, rječnici), jer ne postoji potreba za dodijelom dodatnih memorijskih lokacija da bismo prilagodili promjene u podacima.
