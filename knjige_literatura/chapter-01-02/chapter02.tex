@@ -1,5 +1,6 @@
 \chapter{Osnove teorije algoritama}
-
+  U ovoj sekciji uvodimo pojam računskog problema sa fokusom na računarske nauke. Potom uvodimo i pojam algoritma, navodimo neke vrste algoritama te računarskog problema preko uvedenog teorijskog modela računara. Nakon toga se uvode pojmovi složenosti algoritma. Na kraju izlažemo pojam valjanosti algoritma preko metoda invarijantne petlje.  
+   
 \section{Računski problem}
 %https://www.cs.stanford.edu/~trevisan/cs254-10/lecture02.pdf ==> dijelom pratimo:
 
@@ -39,7 +40,6 @@ Za kraj ovog poglavlja, formalno definišimo računarski problem.
 	Računski problem je funkcija $f \colon \mathbb{N}^* \rightarrow 2^{\mathbb{N}^*}$. $f (x)$ predstavlja skup tačnih odgovora  za ulaz $x$.
 \end{definition} 
  
- \fxnote{Stigao dovde!}
 \section{Računarski program i pojam algoritma}
 %https://stanford-cs161.github.io/winter2023/lectures/ ==> pratimo lekcije 
 
@@ -48,7 +48,7 @@ Računarski program je (konačan) niz instrukcija napisanih u nekom programskom 
 Računarski programi mogu biti dizajnirani za obavljanje specifičnih zadataka ili funkcija,  npr. obrada teksta, analiza podataka,  ili pregledavanje veba.  Razvijaju se za različite platforme i operativne sisteme, uključujući desktop računare, mobilne uređaje, ugrađene sisteme itd.  Kompjuterski programi se mogu kreirati korišćenjem raznih programskih jezika, kao što su Pajton, Java, C++  i mnogi drugi. Kada je program napisan, potrebno ga je kompajlirati ili interpretirati u mašinski k\^od koji je razumljiv procesoru računara. Rezultirajući izvršni k\^od korisnici mogu pokrenuti kako bi izvršili željene zadatke ili funkcije.
 %https://www.geeksforgeeks.org/introduction-to-algorithms/
 
-Algoritam je  korak-po-korak postupak za rješavanje problema ili postizanja određenog   cilja. U informatici, algoritmi se su predstavljeni konačnim  niza instrukcija koje kompjuterski program slijedi da bi riješio određeni problem ili izvršio određeni zadatak. Algoritam najčešće počinje sa inicijalnim ulazom, koji se zatim obrađenim nizom logičkih koraka ili operacija dovodi do očekivanog izlaza ili rezultata.  Analogija algoritma u stvarnom svijetu se može predstaviti primjerom kuhanja po receptu. Da biste skuhali po receptu, neophodno je čitati uputstva i korake te ih izvršavati jedno po jedno, u datom redoslijedu. Dobijeni (očekivani) rezultat je jelo koje je kuhano.  
+Algoritam predstavlja  korak-po-korak postupak za rješavanje problema ili postizanja određenog   cilja. U informatici, algoritmi se su predstavljeni konačnim  niza instrukcija koje kompjuterski program slijedi da bi riješio određeni problem ili izvršio određeni zadatak. Algoritam najčešće počinje sa inicijalnim ulazom, koji zatim nizom logičkih koraka ili operacija dovodi do očekivanog izlaza ili rezultata.  Analogija algoritma u stvarnom svijetu se može predstaviti primjerom kuhanja po receptu. Da biste skuhali po receptu, neophodno je čitati uputstva i korake te ih izvršavati jedno po jedno, u datom redoslijedu. Dobijeni (očekivani) rezultat je jelo koje je kuhano.  
 
  Primjeri dobro poznatih algoritama uključuju algoritme za sortiranje koji se koriste za uređivanje podataka u odnosu na relaciju  uređenja, algoritme pretraživanja koji služe za pronalaženje određenih informacija na velikom skupu podataka, zatim algoritme dešifrovanja i druge.  %koji se koriste za zaštitu osjetljivih informacija od neovlaštenog pristupa.
 
@@ -233,11 +233,11 @@ Definišimo sada formalno pojam računarskog problema shodno prethodno definisan
 
 Pri računanju broja instrukcija izvršavanja programa $P$, u obzir uzimamo sljedeće operacije: aritmetičke i bitske operacije (+, -, *, /, \&, $\mid,\ldots $), logičke ($\wedge$,$\vee$, $\Rightarrow$, $\Leftrightarrow$), operacija dodjele, te ulazno/izlazne operacije. Ove operacije nazivamo \textit{jediničnim instrukcijama}.  Pretpostavka je da se sve jednične instrukcija izvršavaju u jediničnom vremenu.  Vremenska složenost programa se upravo mjeri na osnovu ukupnog broja jediničnih instrukcija, o čemu ćemo više reći u narednoj sekciji. 
 
-\section{Pojam kompleksnosti}
+\section{Pojam složenosti algoritma}
 
-Napomenimo da je jediničnim modelom kompleksnosti definisan (teorijski) RAM model gdje se svaka operacija izvršava u jediničnom vremenu.  Bez obzira što operacije sabiranja i množenja nemaju isto vrijeme izvođenja na stvarnom računaru, to ne umanjuje značaj teorijskog RAM modela, što ćemo prikazati u nastavku.   
+Napomenimo da je jediničnim modelom složenosti definisan (teorijski) RAM model gdje se svaka operacija izvršava u jediničnom vremenu.  Bez obzira što operacije sabiranja i množenja nemaju isto vrijeme izvođenja na stvarnom računaru, to ne umanjuje značaj teorijskog RAM modela, što ćemo prikazati u nastavku.   
 
-Definišimo sada vremensku kompleksnost izvršavanja programa $P$ na RAM modelu.
+Definišimo sada vremensku složenost izvršavanja programa $P$ na RAM modelu.
 
 \begin{definition}
 	Vrijeme rada $P$ za ulaz  $x \in \mathbb{N}^*$ je broj $t$ koraka prije nego $P$ dostigne zaustavnu
@@ -334,7 +334,7 @@ Neka su date dvije funkcije $f$ i $g$. Kažemo da $f = O(g)$ akko postoji konsta
 %https://afteracademy.com/blog/time-and-space-complexity-analysis-of-algorithm/
 
 \begin{example}
-	Jasno je da $T_1 = O(n^2)$, ali i $T_1 = O(n^{\frac{3}{2}})$ Takođe, $T_2 = O(n \log n)$. 
+	Jasno je da $T_1 = O(n^2)$, ali i $T_1 = O(n^{\frac{3}{2}})$. Takođe, $T_2 = O(n \log n)$. 
 \end{example}
 
 U osnovi, dominirajući term nam govori o asimptotskoj granici čitavog izraza (dobijen računanjem (najgoreg mogućeg) broja instrukcija izvršenog u programu), jer kad je $n$ dovoljno veliko, vrijednost izraza dominantno zavisi od dominirajućeg terma, dok se ostali termi doprinose u ne tako značajnoj mjeri da bi se promijenio zaključak o asimptotskom ponašalju porasta broja instrukacija programa sa porastom dimenzije ulaza. 
@@ -358,7 +358,7 @@ U prevodu, funkcije $f$ i $g$ imaju isto asimptotsko ponašanje (dakle, za velik
 Imamo	$T_1 = \Theta(n^{\frac{3}{2}})$, dok je $T_2 = \Theta(n \log n)$.  
 \end{example}
 
-Postoji još nekoliko notacija za kompleksnost algoritama, a to su $\Omega$ i $o$--notacija.
+Postoji još nekoliko notacija za složenost algoritama, a to su $\Omega$ i $o$--notacija.
 
 \begin{definition}
  Neka su date dvije funkcije $f$ i $g$. Kažemo da $f = \Omega(g)$ akko postoji konstanta $c >0$ tako da je $f(n) \geq c g(n)$, počevši od nekog dovoljno velikog $n$.  
@@ -400,17 +400,17 @@ Neformalno, ako $f(n) = o(g(n))$, to znači da  $f$ postaje beznačajno mala u o
 	Dokazi tvrdnji se direktno izvode na osnovu definicije $O$--notacije.
 \end{proof}
 
-\subsection{Uputstva za procjenu kompleksnosti algoritama}
+\subsection{Uputstva za procjenu složenosti algoritama}
 
-Prethodna sekcija nam daje na uvid neke od osnovnih notacija za ocjenjivanje kompleksnosti   algoritma, tj. izvršenja broja instrukcija programa koja se obično razmatra u zavisnosti od veličine ulaza. 
+Prethodna sekcija nam daje na uvid neke od osnovnih notacija za ocjenjivanje složenosti   algoritma, tj. izvršenja broja instrukcija programa koja se obično razmatra u zavisnosti od veličine ulaza. 
 
- Najčešće funkcije koje se pominju u analizi kompleksnosti izvršavanja algoritama su nabrojane u Tabeli~\ref{tab:kompleksnosti_funkcijea}. 
+ Najčešće funkcije koje se pominju u analizi složenosti izvršavanja algoritama su nabrojane u Tabeli~\ref{tab:slozenosti_funkcije-a}. 
  
  \begin{table}[H]
- 	   \caption{Česte klase $O$--kompleksnosti. }  \label{tab:kompleksnosti_funkcijea}
+ 	   \caption{Česte klase $O$--složenosti. }  \label{tab:slozenosti_funkcije-a}
  	\centering 
  	\begin{tabular}{l |l} \hline 
- 		\textbf{Funkcija}   &  \textbf{Klasa kompleksnosti} \\ \hline
+ 		\textbf{Funkcija}   &  \textbf{Klasa složenosti} \\ \hline
  		1          & konstantna \\
  		$\log n$   & logaritamska \\
  		$n$        &  linearna \\
@@ -423,24 +423,24 @@ Prethodna sekcija nam daje na uvid neke od osnovnih notacija za ocjenjivanje kom
   	\end{tabular}
 
  \end{table}
- Rast nekih funkcija sa porastom ulaza ($n$) je prikazan na Slici~\ref{fig:kompleksnosti_funkcije}
+ Rast nekih funkcija sa porastom ulaza ($n$) je prikazan na Slici~\ref{fig:slozenosti_funkcije-a}
  \begin{figure}[H]
  	\centering
  	\includegraphics[width=170pt,height=130pt]{slike/growth.png}%growth-Functions.jpg}
-   \caption{Grafik odnosa klasa $O$-kompleksnosti.}  \label{fig:kompleksnosti_funkcije}
+   \caption{Grafik odnosa klasa $O$-složenosti.}  \label{fig:slozenosti_funkcije-a}
  \end{figure}
 
 
-U praksi, neželjena kompleksnost algoritma je eksponencijalna, dok su logaritamska, linearna i log-linearna kompleksnost poželjne i takvi algoritmi su obično veoma efikasni u rješavanju problema, tj. instanci velikih dimenzija. U zavisnosti od tipa problema, kvadratna kompleksnost može ali i ne mora biti garant za rješavanje realnih instanci većih dimenzija razmatranog  problema. %U najvećem broju slučajeva, klasa funkcija koja  koja prelazi kvadratnu je nedovoljno dobra. 
+U praksi, neželjena složenost algoritma je eksponencijalna, dok su logaritamska, linearna i log-linearna složenost poželjne i takvi algoritmi su obično veoma efikasni u rješavanju problema, tj. instanci velikih dimenzija. U zavisnosti od tipa problema, kvadratna složenost može ali i ne mora biti garant za rješavanje realnih instanci većih dimenzija razmatranog  problema. %U najvećem broju slučajeva, klasa funkcija koja  koja prelazi kvadratnu je nedovoljno dobra. 
 
 
-U nastavku izlažemo neka uputstva koja olakšavaju računanje kompleksnosti algoritma. Za (pod)program $P$, označimo njegovu kompleksnost izvođenja sa funkcijom $T(P)$ koja (direktno ili indirektno) zavisi od dimenzije ulaza ($n$). 
+U nastavku izlažemo neka uputstva koja olakšavaju računanje složenosti algoritma. Za (pod)program $P$, označimo njegovu složenost izvođenja sa funkcijom $T(P)$ koja (direktno ili indirektno) zavisi od dimenzije ulaza ($n$). 
  
 \begin{table}[H]
-		\caption{Uputstva za računanje kompleksnosti algoritma.}  \label{tab:uputstva_racunanje}
+		\caption{Uputstva za računanje složenosti algoritma.}  \label{tab:uputstva_racunanje}
 	\centering
 	\begin{tabular}{l |l} \hline 
-		\textbf{Konstrukcija}         & \textbf{Računanje kompleksnosti} \\ \hline
+		\textbf{Konstrukcija}         & \textbf{Računanje složenosti} \\ \hline
 		Jedinične instrukcije         & 1 \\
         Serija naredbi $S$: $N_1$; $N_2$; &  $T(S) = T(N_1) + T(N_2)$  \\ \hline
         Naredba grananja $S$:           &                                \\
@@ -453,11 +453,11 @@ U nastavku izlažemo neka uputstva koja olakšavaju računanje kompleksnosti alg
 \end{table}
 
 Odgovorimo sada na pitanja da li je jedan algoritam efikasniji od drugoga?
-Upravo, odgovor nam daju notacije za kompleksnost koje smo naučili u ovoj glavi, i to dvije najznačajnije: $O$ i $\Theta$--notacije. Kažemo da je jedan algoritam $X$ \textit{asimptotski efikasniji} od drugog algoritma  $Y$ akko sa porastom veličine ulaza u oba algoritma, vrijeme rada algoritma $X$ postaje kraće od vremena rada $Y$. To znači da $X$ pripada nižoj $O$--klasi složenosti od $Y$. %https://www.geeksforgeeks.org/algorithms-analysis-of-algorithms-question-16/ 
+Upravo, odgovor nam daju notacije za složenost koje smo naučili u ovoj glavi, i to dvije najznačajnije: $O$ i $\Theta$--notacije. Kažemo da je jedan algoritam $X$ \textit{asimptotski efikasniji} od drugog algoritma  $Y$ akko sa porastom veličine ulaza u oba algoritma, vrijeme rada algoritma $X$ postaje kraće od vremena rada $Y$. To znači da $X$ pripada nižoj $O$--klasi složenosti od $Y$. %https://www.geeksforgeeks.org/algorithms-analysis-of-algorithms-question-16/ 
 Prema tome, za velike ulaze, algoritam $X$ je uvijek biti bolji izbor od  algoritma $Y$ u smislu efikasnosti (vremena izvođenja). Međutim, za male ulaze moguće je da je $Y$ i dalje brži od $X$. Stoga se ne može reći da je $X$ uvijek bolji izbor za sve ulazne vrijednosti, već da će $X$ biti bolji izbor za sve ulaze osim eventualno malih ulaza.
 
 
-U narednom primjeru dajemo jedan zadatak, rješavamo ga na dva načina, te izvodimo kompleksnost oba programa.
+U narednom primjeru dajemo jedan zadatak, rješavamo ga na dva načina, te izvodimo složenost oba programa.
 
 \begin{example}
  \textit{{Problem nalaska (neprekidnog) podniza  maksimalne sume}}.  Od svih neprekidnih podnizova datog
@@ -472,12 +472,12 @@ Koristimo se naivnim pristupom rješavanja problema. Definišimo $$S(i, j) := \m
 gdje je $S(i, i ) = a[i]$. 
 Funkcija $S(i,j)$ računa sumu elemenata neprekidnog podniza niza \texttt{a}, sa početnom pozicijom  $i$, te završnom pozicijom $j$.
 Za izračunavanje funkcije $S(i, j)$, potrebno je $j-i+1$ instrukcija, što definitivno pripada klasi $O(n)$. Da bismo riješili problem na ovaj način, 
-treba da pozovemo funkciju $S(i,j)$ za svaki par $(i,j),  {i, j \in \{0, \ldots , n-1\},  i \leq j}$, a to je ukupno $\binom{n}{2} + n$ puta, što odgovara klasi kompleksnosti $O(n^2)$. Dakle, kompleksnost ovakvog algoritma je $O(n)\cdot O(n^2) = O(n^3)$ što je kubna kompleksnost. 
+treba da pozovemo funkciju $S(i,j)$ za svaki par $(i,j),  {i, j \in \{0, \ldots , n-1\},  i \leq j}$, a to je ukupno $\binom{n}{2} + n$ puta, što odgovara klasi složenosti $O(n^2)$. Dakle, složenost ovakvog algoritma je $O(n)\cdot O(n^2) = O(n^3)$ što je kubna složenost. 
 
 Pokušajmo konstruisati ``pametniji'' algoritam. Iskoristimo činjenicu da postoji jasna rekurzivna zavisnost između vrijednosti dva susjedna $S(i,j)$ i $S(i, j+1)$, tj. da je $S(i, j+1) = a[j+1] + S(i, j)$, za $j \in \{i, \ldots, n-2\}$. Definišimo sada:
 $$ S(i):= \max \{ S(i, i), S(i, i+1), \ldots, S(i, n-1)\}.$$
 
-Izvršavanje funkcije $S(i)$ se odvija u linearnoj kompleksnosti, tj. $O(n)$. Kako se ona poziva $n$ puta (za svako $i \in \{0, \ldots n-1\}$ po jednom), ukupna kompleksnost ovog pristupa je $n \cdot O(n) = O(n^2)$, što je znatno efikasnije od prethodnog, naivnog, pristupa. 
+Izvršavanje funkcije $S(i)$ se odvija u linearnoj složenosti, tj. $O(n)$. Kako se ona poziva $n$ puta (za svako $i \in \{0, \ldots n-1\}$ po jednom), ukupna složenost ovog pristupa je $n \cdot O(n) = O(n^2)$, što je znatno efikasnije od prethodnog, naivnog, pristupa. 
  
 
 \end{solution}
@@ -486,23 +486,23 @@ Izvršavanje funkcije $S(i)$ se odvija u linearnoj kompleksnosti, tj. $O(n)$. Ka
 
  
  
- \section{Prostorna kompleksnost}
+ \section{Prostorna složenost}
  
  %https://www.geeksforgeeks.org/g-fact-86
  
- Termin prostorna kompleksnost se na mnogim mjestima pogrešno koristi asocirajući na pomoćni prostor.  \textit{Pomoćni prostor} je dodatni ili privremeni prostor koji koristi algoritam.
+ Termin prostorna složenost se na mnogim mjestima pogrešno koristi asocirajući na pomoćni prostor.  \textit{Pomoćni prostor} je dodatni ili privremeni prostor koji koristi algoritam.
  
  \textit{Prostorna složenost} algoritma je ukupan prostor koji algoritam zauzima u odnosu na veličinu ulaza. Prostorna složenost   uključuje i pomoćni prostor i prostor koji koristi ulaz.
  
  Prostorna složenost se može posmatrati kao pandan koncepta vremenske složenosti. Za kreiranje niza veličine $n$, zahtijeva se dodatan prostor od $O(n)$. Za kreiranje dvodimenzionalnog niza veličine $n \times n$,  zahtijeva se $O(n^2)$ prostora.
- Napomenimo da prostorna kompleksnost zavisi i od programskog jezika, kompajlera, pa  čak i mašine koja pokreće algoritam.
+ Napomenimo da prostorna složenost zavisi i od programskog jezika, kompajlera, pa  čak i mašine koja pokreće algoritam.
  
  
  Efikasnost algoritma uglavnom je definisana u odnosu na  dva faktora, korišteni prostor i vrijeme. ``Dobar'' algoritam je onaj koji koristi manje vremena i prostora; međutim, to nije moguće stalno postići. Zbog toga postoji kompromis između vremena i prostora. Ako želimo skratiti vrijeme izvršavanja algoritma, korišteni prostor se obično povećava. Slično tome, ako želimo smanjiti prostor, vrijeme izvršenja algoritma se obično povećava. %Dakle, treba napraviti kompromis između prostora i vremena.  
  
  
  \begin{example}
- 	Posmatrajmo sljedeći pseudokod, te odredimo prostornu kompleksnost datog 
+ 	Posmatrajmo sljedeći pseudokod, te odredimo prostornu složenost datog 
  	programa. 
  	
  	
@@ -530,7 +530,7 @@ Izvršavanje funkcije $S(i)$ se odvija u linearnoj kompleksnosti, tj. $O(n)$. Ka
  		\end{algorithmic}
  	\end{algorithm}
  	
- 	Prostorna kompleksnost procedure \textsc{AddSequence} je jednaka $O(1)$, bez obzira što se funkcija \textsc{pairSum} poziva $O(n)$ puta. Zašto?
+ 	Prostorna složenost procedure \textsc{AddSequence} je jednaka $O(1)$, bez obzira što se funkcija \textsc{pairSum} poziva $O(n)$ puta. Zašto?
  	
  	
  \end{example}
@@ -680,8 +680,8 @@ $d_{k^*-1} = nzd^*$, čine smo pokazali valjanost algoritma.
 \end{example}
 Pokazivanje valjanosti kompleksnih algoritama pomoću metoda invarnijantne petlje je rijetko  praktično. Jedan od razloga je taj što definisanje samog uslova invarijantnosti nije trivijalan zadatak, kao  i to da instrukcije koje se izvršavaju u svakoj iteraciji nisu trivijalne  (kao što je to slučaj sa prethodnim programom), te mogu uključivati  pozivanje složenijih pomoćnih funkcija. U takvim slučajevima, valjanost algoritma provjeravamo empirijski, izvršavajući ga nad instancama različitih veličina i distribucija te provjeravajući  validnost vraćenih rezultata (za instance za koje znamo tačan rezultat, dok za one za koje ne znamo, provjeravamo ispunjivost uslova zadatka). 
 
-\section{Euklidov algoritam: kompleksnost}
-Klasični algoritam za nalazak NZD je Euklidov algoritam, dat Algoritmom~\ref{alg:nzd-euclid}. On predstavlja jedan od najpoznatijih algoritama u polju aritmetike. Izvedimo njegovu vremensku kompleksnost. 
+\section{Euklidov algoritam: složenost}
+Klasični algoritam za nalazak NZD je Euklidov algoritam, dat Algoritmom~\ref{alg:nzd-euclid}. On predstavlja jedan od najpoznatijih algoritama u polju aritmetike. Izvedimo njegovu vremensku složenost. 
 
 \begin{algorithm}
 	\begin{algorithmic}[1]
@@ -706,11 +706,11 @@ Klasični algoritam za nalazak NZD je Euklidov algoritam, dat Algoritmom~\ref{al
 	Tada je
 	$$n_1 \approx \log_2(p), n_2 \approx \log_2(q),  n = n_1 + n_2 = \log_2(p \cdot q ).$$
 	
-	Vrijednost $n$ je najveća kada su $p$ i $q$ susjedni brojevi, odakle je $ n_1 \approx n_2 \approx n/2$,  pa za kompleksnost algoritma $T(n)$ vrijedi da je proporcionalna vrijednosti manjeg od
+	Vrijednost $n$ je najveća kada su $p$ i $q$ susjedni brojevi, odakle je $ n_1 \approx n_2 \approx n/2$,  pa za složenost algoritma $T(n)$ vrijedi da je proporcionalna vrijednosti manjeg od
 	ta dva broja.  
 	Dakle, imamo $T(n)  = \Omega(q) = \Omega(2^{n_2}) =  \Omega(2^{n/2})$.
 	
-	U svrhu pokazivanja kompleksnosti, iskoristimo sljedeću teoremu, koju i formalno dokazujemo. 
+	U svrhu pokazivanja složenosti, iskoristimo sljedeću teoremu, koju i formalno dokazujemo. 
 	\begin{theorem}
 		 Za svaka dva broja $p$ i $q$ vrijedi
 		 $$ x \% y \leq x / 2.$$
@@ -744,17 +744,17 @@ $$   m < \log (pq ) = n,$$
 odakle imamo $m = O(n)$.
 
 U svakom koraku algoritma, najskuplji korak je računanje modula, za koji je neophodno dijeljenje dva binarna broja. Taj proces zahtjeva $O(n^2)$ instrukcija. 
-Iz svega imamo da je kompleksnost algoritma:
+Iz svega imamo da je složenost algoritma:
 $$ O(n^2)\cdot O(n) = O(n^3)= O(\log \max\{p,q\}).$$
 
-Primijetimo da je prostorna kompleksnost Euklidovog algoritma konstanta, tj. jednaka je $O(1)$. 
+Primijetimo da je prostorna složenost Euklidovog algoritma konstanta, tj. jednaka je $O(1)$. 
 \end{example}
 
 
 Napomenimo da valjanost Euklidovog algoritma slijedi iz algebarskog svojstva da je skup djelilaca brojeva $p$ i $q$, jednak skupu djelilaca brojeva $q$ i $p\%q$, pa su stoga transformacije parova brojeva za koje se razmatra NZD u svakom koraku validne, dok se ne dođe od trivijanog slučaja, tj. dok drugi broj ne bude jednak nuli, čime se vraća vrijednost prvog broja kao krajnji rezultat. 
 
-Kako smo vidjeli, iako je Euklidov algoritam relativno jednostavnog k\^oda, njegovu kompleksnost nije bilo trivijalno odrediti. Napomenimo da Euklidov algoritam predstavlja jedan vid rekurzivnog algoritma.  %, gdje rekurzija u tijelu funkcije poziva samu sebe, ali sa ulazom manje veličine. 
- U osnovi, za računanje kompleksnosti ovakvih algoritama, o kojima će biti više riječi u Glavi 3, koristi se poznata Master teorema. Ovu teoremu navodimo bez dokaza, uz napomenu da se ona navodi i formalno dokazuje na nekim od kurseva algoritmike na višim godinama studija. Mi ćemo je koristiti isključivo samo kao pomoćni alat u već pomenutoj Glavi 3, kod određivanja kompleksnosti algoritama nekih problema koje budemo rješavali. 
+Kako smo vidjeli, iako je Euklidov algoritam relativno jednostavnog k\^oda, njegovu složenost nije bilo trivijalno odrediti. Napomenimo da Euklidov algoritam predstavlja jedan vid rekurzivnog algoritma.  %, gdje rekurzija u tijelu funkcije poziva samu sebe, ali sa ulazom manje veličine. 
+ U osnovi, za računanje složenosti ovakvih algoritama, o kojima će biti više riječi u Glavi 3, koristi se poznata Master teorema. Ovu teoremu navodimo bez dokaza, uz napomenu da se ona navodi i formalno dokazuje na nekim od kurseva algoritmike na višim godinama studija. Mi ćemo je koristiti isključivo samo kao pomoćni alat u već pomenutoj Glavi 3, kod određivanja složenosti algoritama nekih problema koje budemo rješavali. 
 
 \begin{theorem}[Master teorema]
 	Neka je data jednačina 
@@ -801,7 +801,7 @@ Na sljedećim primjerima pokazujemo kako funkcioniše primjena Master teoreme. %
 \section*{Zadaci}
 
 \begin{enumerate}
-	\item Izračunati vremensku kompleksnost sljedećeg programa:
+	\item Izračunati vremensku složenost sljedećeg programa:
 	
 	\begin{algorithm}[H]
 		\begin{algorithmic}[1]
@@ -815,7 +815,7 @@ Na sljedećim primjerima pokazujemo kako funkcioniše primjena Master teoreme. %
 	    \EndProcedure	 	    
 		\end{algorithmic}
 	\end{algorithm}
-\item Izračunati vremensku kompleksnost sljedećeg programa 
+\item Izračunati vremensku složenost sljedećeg programa 
 	\begin{algorithm}[H]
 	\begin{algorithmic}[1]
 	 \Procedure{Zad2}{$n$}
@@ -828,7 +828,7 @@ Na sljedećim primjerima pokazujemo kako funkcioniše primjena Master teoreme. %
 	\EndProcedure	 
 	\end{algorithmic}
 \end{algorithm}
- \item Izračunati vremensku kompleksnost sljedećeg programa 
+ \item Izračunati vremensku složenost sljedećeg programa 
 
 	\begin{algorithm}[H]
 	\begin{algorithmic}[1]
@@ -841,7 +841,7 @@ Na sljedećim primjerima pokazujemo kako funkcioniše primjena Master teoreme. %
     \EndProcedure	 
 	\end{algorithmic}
 \end{algorithm}
- \item Izračunati vremensku kompleksnost sljedećeg programa 
+ \item Izračunati vremensku složenost sljedećeg programa 
 
 \begin{algorithm}[H]
 	\begin{algorithmic}[1]
@@ -854,7 +854,7 @@ Na sljedećim primjerima pokazujemo kako funkcioniše primjena Master teoreme. %
 	\end{algorithmic}
 \end{algorithm}
 
- \item Izračunati vremensku kompleksnost sljedećeg programa 
+ \item Izračunati vremensku složenost sljedećeg programa 
 
 \begin{algorithm}[H]
 	\begin{algorithmic}[1]
@@ -876,7 +876,7 @@ Na sljedećim primjerima pokazujemo kako funkcioniše primjena Master teoreme. %
 
 
  
- \item Izračunati (ukupnu) kompleksnost sljedeće rekurzije:
+ \item Izračunati (ukupnu) složenost sljedeće rekurzije:
 
 \begin{algorithm}[H]
 	\begin{algorithmic}[1]
@@ -897,7 +897,7 @@ Na sljedećim primjerima pokazujemo kako funkcioniše primjena Master teoreme. %
 
  
 	 
- \item Izračunati kompleksnost sljedeće rekurzije: %https://www.geeksforgeeks.org/analysis-algorithms-set-5-practice-problems/?ref=rp
+ \item Izračunati složenost sljedeće rekurzije: %https://www.geeksforgeeks.org/analysis-algorithms-set-5-practice-problems/?ref=rp
   
  $$	T(n) = 
  \begin{cases}    
@@ -905,7 +905,7 @@ Na sljedećim primjerima pokazujemo kako funkcioniše primjena Master teoreme. %
          & 1, \text{inače} 
    \end{cases}$$
 
-  \item Izračunati kompleksnost sljedeće rekurzije:
+  \item Izračunati složenost sljedeće rekurzije:
 
 $$	T(n) = 
 \begin{cases} 
@@ -914,7 +914,7 @@ $$	T(n) =
 \end{cases}
 $$
 
-\item Izračunati prostornu kompleksnost programa datog sljedećim pseudokodom
+\item Izračunati prostornu složenost programa datog sljedećim pseudokodom
 %https://www.prepbytes.com/blog/data-structure/space-complexity/
 
 \begin{algorithm}[H]
@@ -932,7 +932,7 @@ $$
 
 
 
-\item Izračunati prostornu kompleksnost programa datog sljedećim pseudokodom
+\item Izračunati prostornu složenost programa datog sljedećim pseudokodom
 %https://www.prepbytes.com/blog/data-structure/space-complexity/
  
 \begin{algorithm}[H]

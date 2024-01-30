@@ -1,34 +1,35 @@
 \babel@toc {serbian}{}
-\contentsline {chapter}{\numberline {1}Neformalni uvod u teoriju algoritama}{3}%
-\contentsline {section}{\numberline {1.1}Računarski problem}{3}%
+\contentsline {chapter}{\numberline {1}Osnove teorije algoritama}{3}%
+\contentsline {section}{\numberline {1.1}Računski problem}{3}%
 \contentsline {section}{\numberline {1.2}Računarski program i pojam algoritma}{5}%
 \contentsline {subsection}{\numberline {1.2.1}Vrste algoritama}{7}%
 \contentsline {section}{\numberline {1.3}Teorijski RAM model}{9}%
-\contentsline {subsection}{\numberline {1.3.1}Formalizacija računanja na RAM-u}{11}%
-\contentsline {section}{\numberline {1.4}Pojam kompleksnosti}{13}%
-\contentsline {subsection}{\numberline {1.4.1}$O$--notacija}{15}%
+\contentsline {subsection}{\numberline {1.3.1}Instrukcije u RAM modelu}{10}%
+\contentsline {subsection}{\numberline {1.3.2}Formalizacija programa na RAM-u}{12}%
+\contentsline {section}{\numberline {1.4}Pojam složenosti algoritma}{13}%
+\contentsline {subsection}{\numberline {1.4.1}$O$--notacija}{16}%
 \contentsline {subsection}{\numberline {1.4.2}Neka svojstva $O$--notacije}{18}%
-\contentsline {subsection}{\numberline {1.4.3}Uputstva za procjenu kompleksnosti algoritama}{18}%
-\contentsline {section}{\numberline {1.5}Prostorna kompleksnost}{21}%
-\contentsline {section}{\numberline {1.6}Pseudokod}{22}%
+\contentsline {subsection}{\numberline {1.4.3}Uputstva za procjenu složenosti algoritama}{19}%
+\contentsline {section}{\numberline {1.5}Prostorna složenost}{22}%
+\contentsline {section}{\numberline {1.6}Pseudokod}{23}%
 \contentsline {section}{\numberline {1.7}O valjanosti algoritma}{25}%
-\contentsline {section}{\numberline {1.8}Euklidov algoritam: kompleksnost}{27}%
+\contentsline {section}{\numberline {1.8}Euklidov algoritam: složenost}{28}%
 \contentsline {chapter}{\numberline {2}Uvod u programski jezik Pajton}{35}%
 \contentsline {section}{\numberline {2.1}Osnovne karakteristike}{36}%
-\contentsline {section}{\numberline {2.2}Pregled ugrađenih tipova podataka}{37}%
-\contentsline {section}{\numberline {2.3}Deklaracija varijabli i memorijska organizacija}{38}%
+\contentsline {section}{\numberline {2.2}Pregled ugrađenih tipova podataka}{38}%
+\contentsline {section}{\numberline {2.3}Deklarisanje varijabli i memorijska organizacija}{38}%
 \contentsline {section}{\numberline {2.4}Osnovni numerički tipovi podataka}{42}%
-\contentsline {section}{\numberline {2.5}Naredba grananja i petlje}{42}%
+\contentsline {section}{\numberline {2.5}Naredbe grananja i petlje}{43}%
 \contentsline {subsection}{\numberline {2.5.1}Uslovna naredba If}{43}%
 \contentsline {subsection}{\numberline {2.5.2}For i While petlje }{44}%
 \contentsline {section}{\numberline {2.6}Složene strukture podataka}{45}%
 \contentsline {subsection}{\numberline {2.6.1}Stringovni tip podataka}{45}%
-\contentsline {subsection}{\numberline {2.6.2}Liste}{47}%
-\contentsline {subsection}{\numberline {2.6.3}Nizovi (Array)}{49}%
+\contentsline {subsection}{\numberline {2.6.2}Liste}{48}%
+\contentsline {subsection}{\numberline {2.6.3}Nizovi: modul Array}{50}%
 \contentsline {subsection}{\numberline {2.6.4}Rječnici}{51}%
-\contentsline {subsection}{\numberline {2.6.5}Skupovi}{53}%
+\contentsline {subsection}{\numberline {2.6.5}Skupovi}{54}%
 \contentsline {subsection}{\numberline {2.6.6}Torke}{56}%
-\contentsline {section}{\numberline {2.7}Funkcije}{57}%
+\contentsline {section}{\numberline {2.7}Funkcije}{58}%
 \contentsline {section}{\numberline {2.8}Kompajliranje i izvršavanje programa}{62}%
 \contentsline {subsection}{\numberline {2.8.1}Stek vs. Hip}{62}%
 \contentsline {subsection}{\numberline {2.8.2}Kompajliranje i izvršavanje}{63}%
@@ -52,13 +53,12 @@
 \contentsline {section}{\numberline {2.15}Modul Numpy}{83}%
 \contentsline {section}{\numberline {2.16}Modul Ctypes}{86}%
 \contentsline {section}{\numberline {2.17}Pisanje prilagodjenih modula}{87}%
-\contentsline {section}{\numberline {2.18}Postavljanje korisnički kreirani modul na PyPI repozitorij}{88}%
+\contentsline {section}{\numberline {2.18}Postavljanje korisnički kreiranih modula na PyPI repozitorij}{88}%
 \contentsline {chapter}{\numberline {3}Algoritamske paradigme}{95}%
 \contentsline {section}{\numberline {3.1}Rekurzivni algoritmi}{97}%
 \contentsline {section}{\numberline {3.2}Vrste rekurzija}{99}%
 \contentsline {subsection}{\numberline {3.2.1}Prednosti i nedostaci rekurzivnog nad iterativnim pristupom}{100}%
 \contentsline {subsection}{\numberline {3.2.2}Primjene rekurzivnog pristupa}{101}%
-\contentsline {subsection}{\numberline {3.2.3}Primjena rekurzivnog pristupa }{102}%
 \contentsline {section}{\numberline {3.3}Algoritmi grube sile}{105}%
 \contentsline {section}{\numberline {3.4}Algoritmi pretraživanja}{109}%
 \contentsline {subsection}{\numberline {3.4.1}Linearna pretraga}{109}%
@@ -66,17 +66,15 @@
 \contentsline {subsection}{\numberline {3.4.3}Pretraga preskakanjem}{112}%
 \contentsline {subsection}{\numberline {3.4.4}Interpolacijska pretraga}{113}%
 \contentsline {subsection}{\numberline {3.4.5}Eksponencijalna pretraga}{115}%
-\contentsline {section}{\numberline {3.5}Algoritamska paradigma podijeli pa zavladaj}{116}%
-\contentsline {section}{\numberline {3.6}Algoritamska paradigma vraćanja unazad }{119}%
+\contentsline {section}{\numberline {3.5}Paradigma podijeli-pa-zavladaj}{116}%
+\contentsline {section}{\numberline {3.6}Algoritamska paradigma vraćanja unazad }{118}%
 \contentsline {section}{\numberline {3.7}Pohlepni algoritmi}{124}%
-\contentsline {subsection}{\numberline {3.7.1}Problem razmjene novca}{125}%
-\contentsline {subsection}{\numberline {3.7.2}Dijeljeni problem ruksaka}{127}%
 \contentsline {section}{\numberline {3.8}Dinamičko programiranje}{134}%
-\contentsline {subsection}{\numberline {3.8.1}Rekurzija vs. Dinamičko programiranje}{136}%
-\contentsline {subsection}{\numberline {3.8.2}Primjene dinamičkog programiranja}{137}%
-\contentsline {chapter}{\numberline {4}Primjena algoritamskih paradigmi na probleme iz aritmetike}{153}%
-\contentsline {section}{\numberline {4.1}Eratostenovo sito}{153}%
-\contentsline {section}{\numberline {4.2}Faktorizacija broja}{156}%
-\contentsline {section}{\numberline {4.3}Izračunavanje binomnih koeficijenata}{158}%
-\contentsline {section}{\numberline {4.4}Izračunavanje Katalanovih brojeva}{160}%
-\contentsline {section}{\numberline {4.5}Još neki zadaci}{162}%
+\contentsline {subsection}{\numberline {3.8.1}Rekurzija vs. Dinamičko programiranje}{135}%
+\contentsline {subsection}{\numberline {3.8.2}Primjene dinamičkog programiranja}{136}%
+\contentsline {chapter}{\numberline {4}Primjena algoritamskih paradigmi na probleme iz aritmetike}{151}%
+\contentsline {section}{\numberline {4.1}Eratostenovo sito}{151}%
+\contentsline {section}{\numberline {4.2}Faktorizacija broja}{154}%
+\contentsline {section}{\numberline {4.3}Izračunavanje binomnih koeficijenata}{156}%
+\contentsline {section}{\numberline {4.4}Izračunavanje Katalanovih brojeva}{158}%
+\contentsline {section}{\numberline {4.5}Još neki zadaci}{160}%
