@@ -8,9 +8,30 @@
 
 Formalna definicija ovog pojma zahtjeva uvođenje mnogih kompleksnih pojmova poput definicije jezika.  U računskom problemu, dat nam je ulaz za koji, bez gubitka opštosti, pretpostavljamo da je kodiran  binarno kao niz iz skupa binarnih nizova proizvoljne dužine $L=\{0, 1\}^*$, a  izlaz je 
 rješenje koje zadovoljava neko svojstvo: računski problem  opisujemo  pomoću svojstava koje izlaz mora zadovoljiti s obzirom na (svaki validan) zadani ulaz. Ulaz se često naziva \textit{instanca} problema, dok je izlaz \textit{rješenje} problema s obzirom na ulaz. Primjer računskog programa u računarskim naukama je sortiranje numeričkih nizova. Kao ulaz dat je niz brojeva dužine $n$. Kao izlaz problema sortiranja dobijamo uređen niz (po nekom zadanom kriterijumu sortiranja). Međutim, ne moraju samo numerički nizovi da se sortiraju, već uopšteno, bilo koji objekti nad kojima možemo definisati relaciju totalnog uređenja. Zbog toga ima smisla govoriti o rješavanju računskog problema kao 
- uparivanju ulazno-izlaznih parametara. Ulazni i izlazni parametri mogu se predstaviti nekim matematičkim objektima kao što su brojevi, skupovi, nizovi itd. Ulazni dio problema tada nazivamo \textit{generička instanca} problema, dok izlazni nazivamo  \textit{generiško rješenje} generičke instance problema.  { \begin{color}{red}  Defiicija grafa prije svega? \end{color} }
+ uparivanju ulazno-izlaznih parametara. Ulazni i izlazni parametri mogu se predstaviti nekim matematičkim objektima kao što su brojevi, skupovi, nizovi itd. Ulazni dio problema tada nazivamo \textit{generička instanca} problema, dok izlazni nazivamo  \textit{generiško rješenje} generičke instance problema.      
+ Prije nego kažemo nešto više o tipovima različitih problema, uvedimo neformalno definiciju jednog apstraktnog matematičkog objekta, koji će se pominjati u ovoj knjizi, a to je graf. Graf se jednostavno rečeno može posmatrati kao skup indeksiranih tačaka (tzv. \textit{čvorova}) koje međusobno mogu biti povezane linijama (tzv. \textit{granama}). U ovoj knjizi graf je uvijek prost što znači da ne sadrži petlje -- ne postoji grana koja povezuje čvor sa samim sobom -- niti postoje dva čvora povezana sa dvije ili više grana. Graf je usmjeren ako postoji orjentacija (smjer) na linijama koje spajaju dva čvora a inače je neumjeren. Primjer jednog usmjerenog i neusmjerenog grafa je dato na Slici~\ref{fig:graphs}. 
  
- Postoji nekoliko tipova problema u računarskim naukama; ovdje izdvojimo četiri često prisutna u literaturi: problemi odlučivanja, problemi pretraživanja, problemi optimizacije i problemi prebrojavanja. 
+ 
+  \begin{figure}
+      \centering
+  	
+  	  \begin{subfigure}[b]{0.45\textwidth}
+  			\includegraphics[width=\textwidth]{slike/undirected-graph.png}
+      		\caption{Neusmjereni graf. }
+  			\label{fig:neusmjeren-graf}
+  		\end{subfigure}
+  		\hfil
+  		\begin{subfigure}[b]{0.45\textwidth}
+  			\includegraphics[width=\textwidth]{slike/directed-graph.png}
+      		\caption{Neusmjereni graf. }
+			\label{fig:usmjeren-graf}
+  		\end{subfigure}
+  	
+  		\caption{Primjeri grafova.}
+  		\label{fig:graphs}
+  \end{figure}
+ 
+ Postoji nekoliko tipova problema u računarskim naukama; ovdje izdvajamo četiri frekventno prisutna u literaturi: problemi odlučivanja, problemi pretraživanja, problemi optimizacije i problemi prebrojavanja. 
  
  U problemu \textit{odlučivanja}, s obzirom na ulaz $x \in \{0, 1\}^*$, traži se izlaz DA/NE (\emph{True}/\emph{False}). Dakle, u problemu odlučivanja se traži da provjerimo da li instanca problema zadovoljava određeno svojstvo ili ne. Primjer problema odlučivanja je problem \textit{3--bojenja} (3--COL):
  U ulazu problema imamo neusmjereni graf. Potrebno je odrediti da li postoji dodjela   ``boje''  iz skupa $\{1, 2, 3\}$ svakom čvoru grafa tako da niti jedan susjedni čvor nemaju istu dodjeljenu boju.
@@ -113,9 +134,9 @@ Dizajniranje efikasnog algoritma je obično dugotrajan proces koji nije direktan
 
 Pri razvoju algoritama, postavljaju se nekoliko ključnih pitanja: 
 \begin{enumerate}
-	\item Da li je naš algoritam efikasan? 
+	\item Da li je algoritam efikasan? 
 	\item Da li je jedan algoritam brži od drugog? 
-	\item Koliko je najgore očekivano vrijeme izvršavanja algoritma za ulaze velikih dimenzija? 
+	\item Koliko je najlošije očekivano vrijeme izvršavanja algoritma za ulaze velikih dimenzija? 
 \end{enumerate}
  
 
@@ -126,7 +147,7 @@ podijeljena na diskretne ćelije, od kojih se svakoj može pristupiti i direktno
 
 Mašina sa slučajnim pristupom predstavlja varijaciju RAM modela koji uključuje randomizaciju u svojim operacijama. Gledajući fizički RAM model, redoslijed instrukcija je fiksan, ali u RAM-u se neke operacije mogu nasumično rasporediti. Npr. RAM može imati ``slučajnu''  instrukciju koja nasumično odabira ćeliju u memoriji i izvodi odgovarajuću operaciju u odabranoj ćeliji.
 
-Ova mašina predstavlja model (apstrakciju) koja se koristi u analizi algoritama i njihove složenosti jer omogućava \textit{precizno} izračunavanje broja instrukcija potrebnih za obavljanje određenog zadatka. Ovaj model pretpostavlja da su vremena pristupa memoriji konstantna, što nije tačno na realnim računarima. U praksi, pristup memoriji može uzimati različito vrijeme ovisno o faktorima kao što su keširanje, pristup disku i kašnjenje mreže.
+Ova mašina predstavlja model (apstrakciju) koja se koristi u analizi algoritama i njihove složenosti jer omogućava \textit{precizno} izračunavanje broja instrukcija potrebnih za obavljanje određenog zadatka. Ovaj model pretpostavlja da su vremena pristupa memoriji konstantna, što ne odgovara  realnim računarima. U praksi, pristup memoriji može uzimati različito vrijeme ovisno o faktorima kao što su keširanje, brzina pristupa disku i kašnjenje mreže.
 
 %http://people.seas.harvard.edu/~cs125/fall14/lec6.pdf ==> follow
 \subsection{Instrukcije u RAM modelu}
@@ -136,7 +157,7 @@ se standardno koristi za analizu algoritma.  Posmatrajući viši nivo,   karakte
 \begin{itemize}
 	\item Glavna memorija je niz $M = (M[0], \ldots, M[S-1])$  $w$-bitnih riječi, koje se takođe mogu prikazati kao brojevi u intervalu
  $\{0,\ldots , 2^w - 1\}$.
- 	\item Niz $R = (R[0], \ldots , R[r - 1])$,  gdje je $r$ broj registara, koji su takođe $w$-bitne riječi. Registri se koriste za privremeno pohranjivanje podataka tokom izvođenja programa, te za pohranjivanje adresa za dohvaćanje podataka iz RAM-a.  %, kao i za čuvanje privremenih rezultata izračunavanja. 
+ 	\item Niz $R = (R[0], \ldots , R[r - 1])$,  gdje je $r$ broj registara, koji su takođe $w$-bitne riječi. Registri se koriste za privremeno pohranjivanje podataka tokom izvođenja programa, te za pohranjivanje adresa za dohvaćanje podataka iz RAM-a. %Registar $R[0]$ ima specijalan status i uključen je gotovo u svakoj operaciji. %, kao i za čuvanje privremenih rezultata izračunavanja. 
  	
  	\item Algoritmima je dozvoljen samo direktan pristup registrima. Preostalim memorijskim lokacijama može se pristupiti samo
  	indirektnim adresiranjem -- intepretirajući riječi (u registru) kao pokazivač na drugu memorijsku lokaciju. Dakle, zahtjevamo
@@ -146,11 +167,11 @@ se standardno koristi za analizu algoritma.  Posmatrajući viši nivo,   karakte
  	(\texttt{if}--\texttt{else}), \texttt{goto}, kopiranja riječi između registara i glavne memorije, zaustavljanja.
  	\item Dopuštamo \texttt{\textit{malloc}} operaciju, tj. dodavanje dodatne memorijske ćelije, povećavajući $S$ eksplicitno (i $w$ ako je potrebno da osiguramo $S \leq 2^w$).
  	\item Početna konfiguracija memorije je sljedeća:
- 	($i$) Ulaz veličine $n$ smješten je u glavne memorijske lokacije $(M[0],\ldots , M[n - 1])$; ($ii$) Veličina riječi postavljena je na $w = \lfloor \log_2 \max\{n + 1, k + 1\} \rfloor $, gdje je $k$ gornja granica za brojeve koji se
+ 	($i$) Ulaz veličine $n$ se smješta  u glavnu memorijsku lokaciju $(M[0],\ldots , M[n - 1])$; ($ii$) Veličina riječi postavljena je na $w = \lfloor \log_2 \max\{n + 1, k + 1\} \rfloor $, gdje je $k$ gornja granica za brojeve koji se
  	pojavljuju ili u ulazu ili kao konstanta u programu; ($iii$) Registar 0 se inicijalizira sa $w$, a registar 1 sa $n$.
  \end{itemize}
 
-Formalno, dopuštene se sljedeće instrukcije (u RAM modelu) za indekse $i, j, k, m \in \mathbb{N} $:
+Formalno, sljedeće instrukcije (u RAM modelu) su podržane za indekse $i, j, k, m \in \mathbb{N} $:
 
 %\begin{figure}[H]
 %	\centering
@@ -162,17 +183,19 @@ Formalno, dopuštene se sljedeće instrukcije (u RAM modelu) za indekse $i, j, k
 \begin{itemize}
 	\item $R[i] \gets m$ (dodjela)
 	\item $R[i] \gets R[j] \pm R[k]$
-	\item $R[i] \gets R[j] \cdot/ R[k] $
-	\item $R[i] \gets R[j] \/ R[k] $
+	\item $R[i] \gets R[j] \cdot R[k] $
+	\item $R[i] \gets R[j] / R[k] $
 	\item $R[i] \gets R[j] \wedge R[k]$
-	\item $R[i] \gets \neq R[j] $ (bitovska negacija)
+	\item $R[i] \gets \neg R[j] $ (bitovska negacija)
 	\item $R[i] \gets M[R[j]]$
 	\item $M[R[j]] \gets R[i]$
-	\item IF $R[i] = 0$, GOTO $l$
-	\item HALT
+	\item IF $R[i] = 0$, GOTO $l$ (skok)
 	\item MALLOC (inicijalizacija dodatne memorije)
+	\item HALT
 	\item $\vdots$
 \end{itemize}
+
+%{  \begin{color}{red}  Možda dodati sliku izgleda RAM modela... \end{color}}
 
 \begin{definition}
    ${w}$-RAM program je bilo koji konačan niz instrukcija $P = (P_1, P_2,\ldots, P_q)$ gore navedenog tipa. Broj $r$ registara je implicitno definisan kao  najveći indeks direktne memorijske adrese (među indeksima $i, j, k$ skupa instrukcija) koji se javljaju u programu.
