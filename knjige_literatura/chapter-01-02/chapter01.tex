@@ -775,81 +775,6 @@ Ovdje je lambda funkcija pridružena varijabli \textit{suma}, što je moguće je
 Lambda funkcije su često korisne u situaciji kada je potrebno definisati jednostavne (i sadržinski male) funkcije ukoje se koriste u kraćem periodu pa nema smisla da se definišu kao funkcije punog imena. Pored toga, lambda funkcije su često korištene u kombinaciji sa funkcijama, koje su opštepoznate iz funkcijskih jezika, kao što su: \textit{map}(), \textit{filter}(), \textit{reduce}(), o kojima će biti više riječi u nastavku ove knjige, konkretno u Sekciji~\ref{sec:concepts-pyhton}. 
 
 
-\section{Kompajliranje i izvršavanje programa}
-
-\subsection{Stek vs. Hip} 
-
-
-Prilikom izvođenja programa, računarska memorija se dijeli na različite dijelove. Dva važna memorijska dijela su \textit{stek} i \textit{hip} memorija. 
-
-%K\^od sekcija pohranjuje instrukcije koda u obliku koji mašina razumije. Mašina slijedi upute u sekciji koda. Shodno instrukcijama, 
-Pajtonov interpreter učitava funkcije i lokalne varijable (reference) u memoriju steka. 
-Stek memorija je statična i privremena. Statična znači da se veličina objekata pohranjenih u steku ne može da bude promijenjena. Riječ privremeno znači da čim pozvana funkcija vrati svoju vrijednost, funkcija i   varijable vezane za funkciju se uklanjaju sa steka. Pristup memoriji steka nije direktno obezbjeđen programeru, već  briga o ovom dijelu memorije je dodijeljena Pajtonovom interpreteru i OS-u.  Količina memorije koja  se dodijeljuje je poznata interpreteru i kad god se pozove funkcija, njene varijable zauzimaju memoriju koja se rezerviše na steku.
-% Pratimo: https://towardsdatascience.com/python-memory-and-objects-e7bec4a2845ž
-% O steku i hipu: https://www.geeksforgeeks.org/how-are-variables-stored-in-python-stack-or-heap/
-
-\begin{minted}{python}
-	def func():
-	
-	    # Ove varijable dobijaju memoriju 
-	    # alociranu na steku 
-	    a = 10
-	    b = []
-            c = "abc"
-\end{minted}
-
-Kao što smo prethodno rekli, varijable (ili reference generalno) skladište samo memorijske adrese objekata. Dakle, postavlja se pitanje gdje se skladište sami objekti? Oni se nalaze u drugoj memoriji koja se zove \textit{hip} (eng. \textit{Heap memory}). Napomenimo da riječ hip nema veze sa istoimenom strukturom podataka  već  zbog dostupnosti gomile memorijskog prostora u svrhu pohranjivanja i brisanja objekata.   Za pohranjivanje objekata potrebna nam je memorija sa dinamičkom alokacijom  -- veličina memorije i objekata se mogu mijenjati. Pajtonov interpreter je zadužen za aktivno dodjeljivanje memorije hipu (Primijetimo da u jeziku $C/C$++ to  se izvršava od strane programera!). Varijable koje su pohranjene u memoriji hipa su: ($i$)   izvan poziva metoda ili funkcija ili ($ii$) dijele se unutar više funkcija, dakle globalnog svojstva.
-
-\begin{minted}{python}
-     # Memorija za 10 brojeva
-     # je alocirana na hipu
-     a = [0]*10     
-\end{minted}
-
-
-Napomenimo još jednom da Pajton koristi algoritam za sakupljanje otpadaka (eng. \textit{garbage collector}) koji održava memoriju hipa čistom, periodično uklanjajući  objekte koji se više ne koriste.
-
-
-
-\subsection{Kompajliranje i izvršavanje}
-
-Proces kompilacije   i izvršavanja k\^oda u programskom jeziku Pajton je kompleskan proces kojeg nećemo izlagati u svim detljima nego ćemo ukratko navesti osnovne principe na kojima je baziran ovaj proces. On uključuje četiri osnovna koraka.
-\begin{itemize}
-	\item \textit{Leksička analiza} -- Izvorni k\^od se prvo prosljeđuje leksičkom analizatoru,  koji razlaže k\^od na pojedinačne tokene kao što su ključne riječi, identifikatori, operatori, itd.
-	\item \textit{Parisiranje} -- Tokeni se zatim prosleđuju parseru, koji koristi gramatiku bez konteksta za izgradnju \emph{apstraktnog sintaksnog stabla} (AST) koje predstavlja strukturu k\^oda. U detalje ovog procesa nećemo ulaziti jer izlazi iz domena ove knjige.
-	\item \textit{Kompilacija} -- AST se kompajlira u bajtkod, koji je jezik nižeg nivoa,   nezavisan od platforme.  Ovaj bajtkod se čuva u .\textit{pyc} fajlovima kojeg izvršava   Pajtonova \textit{virtuelna mašina} (VM).
-	\item \textit{Izvođenje} -- Pajtonova VM izvršava dobijeni bajtkod tako što ga interpretira generišući \textit{mašinske instrukcije} u hodu. Bajtkod se izvršava u zaštićenom okruženju virtuelne mašine (obezbjeđuje sigurnost i izolaciju od osnovnog OS-a).  
-	
-\end{itemize}
-Napomenimo da tokom procesa izvršavanja, interpreter izvodi nekoliko optimizacija u k\^odu (npr. eliminaciju repne rekurzije), što može poboljšati performanse k\^oda.
-%https://www.geeksforgeeks.org/what-makes-python-a-slow-language/
-\begin{figure}[H]	
-	\centering
-	
-	\includegraphics[width=350pt,height=170pt]{slike/python-code-copiler-machine-code.png}%compile_python.png}
-\caption{Vizuelizacija procesa izvršavanja k\^oda u Pajtonu.\protect\footnotemark}
-\label{fig:comp_interpreting}
-\end{figure}
-
-\footnotetext{Slika sa linka: {https://www.astateofdata.com/python-programming/can-python-be-compiled/}}
-%%https://www.astateofdata.com/python-programming/can-python-be-compiled/
-% Na osnovu prethodnog, pajton je i kompajliran i interpretiran jezik. 
-%https://www.astateofdata.com/python-programming/can-python-be-compiled/ ==> procitati ovdje...
-
-Recimo sada malo više o Pajtonovoj virtuelnoj mašini (PVM), bazičnoj komponenti ovog programskog jezika. Kako smo naveli, PVM je odgovorna za interpretiranje bajtkoda i izvršavanje k\^oda. Bajtkod se generiše od strane pajtonovog kompajlera (npr. CPython, Brython) pri kompajliranju izvornog k\^oda.
-
-Ključne uloge PVM su navedene u nastavku. 
-\begin{itemize}
-\item \textit{Kompatibilnost između platformi}: PVM omogućava izvršavanje pajtonovog k\^oda na više različitih platformi bez ponovne kompilacije. Ovo olakšava pisanje i distribuciju aplikacija.
-\item \textit{Poboljšane performanse izvršavanja}: PVM koristi bajtkod  interpreter, koji je brži od direktnog interpretera izvornog k\^oda. PVM može koristiti \textit{Just-In-Time} (JIT) kompilaciju za dalje poboljšanje performansi.
-\item \textit{Dinamičko tipiziranje}: Pajton je dinamički tipiziran jezik, što znači da se tip varijable dodjeljuje u vremenu izvođenja programa. PVM je dizajnirana da efikasno upravlja ovim procesom.
-\item  \textit{Upravljanje memorijom}: PVM automatski upravlja memorijom, što može olakšati pisanje sigurnog memorijskog k\^oda. PVM  automatski oslobađa memoriju koja se više ne koristi.
-\item \textit{Lak pristup eksternim bibliotekama}: PVM se intenzivno koristi u pajton ekosistemu, koji uključuje veliki broj otvorenih biblioteka. Ove biblioteke pružaju širok spektar funkcionalnosti vezano za  veb programiranje, mašinsko učenje, itd. Importovanje biblioteka se vrši pomoću naredbe \texttt{import}. 
-\end{itemize}
-
-
-Na osnovu izloženog, Pajton je i kompajlabilan (prevodi se u bajtni k\^od) i interpretiran jezik. 
-Vizuelizaciju procesa prevođenja programa možete da vidite na Slici~\ref{fig:comp_interpreting}.
 
 
 \section{O nekim programskim konceptima i ugrađenim funkcijama} \label{sec:concepts-pyhton}
@@ -1628,6 +1553,84 @@ Nakon  objave  modula na PyPI, možemo ga instalirati pomoću   naredbe:
 \begin{minted}{python}
 	pip install modul1
 \end{minted}
+
+\section{Kompajliranje i izvršavanje programa}
+
+Na kraju ove sekcije opisujemo proces vezan za kompajliranje i izršavanje k\^oda napisanog u jeziku Pajton. %Napomenimo da je ovo mogo da se izloži i na početku ovog glave ali ga nismo 
+\subsection{Stek vs. Hip} 
+
+
+Prilikom izvođenja programa, računarska memorija se dijeli na različite dijelove. Dva važna memorijska dijela su \textit{stek} i \textit{hip} memorija. 
+
+%K\^od sekcija pohranjuje instrukcije koda u obliku koji mašina razumije. Mašina slijedi upute u sekciji koda. Shodno instrukcijama, 
+Pajtonov interpreter učitava funkcije i lokalne varijable (reference) u memoriju steka. 
+Stek memorija je statična i privremena. Statična znači da se veličina objekata pohranjenih u steku ne može da bude promijenjena. Riječ privremeno znači da čim pozvana funkcija vrati svoju vrijednost, funkcija i   varijable vezane za funkciju se uklanjaju sa steka. Pristup memoriji steka nije direktno obezbjeđen programeru, već  briga o ovom dijelu memorije je dodijeljena Pajtonovom interpreteru i OS-u.  Količina memorije koja  se dodijeljuje je poznata interpreteru i kad god se pozove funkcija, njene varijable zauzimaju memoriju koja se rezerviše na steku.
+% Pratimo: https://towardsdatascience.com/python-memory-and-objects-e7bec4a2845ž
+% O steku i hipu: https://www.geeksforgeeks.org/how-are-variables-stored-in-python-stack-or-heap/
+
+\begin{minted}{python}
+	def func():
+	
+	# Ove varijable dobijaju memoriju 
+	# alociranu na steku 
+	a = 10
+	b = []
+	c = "abc"
+\end{minted}
+
+Kao što smo prethodno rekli, varijable (ili reference generalno) skladište samo memorijske adrese objekata. Dakle, postavlja se pitanje gdje se skladište sami objekti? Oni se nalaze u drugoj memoriji koja se zove \textit{hip} (eng. \textit{Heap memory}). Napomenimo da riječ hip nema veze sa istoimenom strukturom podataka  već  zbog dostupnosti gomile memorijskog prostora u svrhu pohranjivanja i brisanja objekata.   Za pohranjivanje objekata potrebna nam je memorija sa dinamičkom alokacijom  -- veličina memorije i objekata se mogu mijenjati. Pajtonov interpreter je zadužen za aktivno dodjeljivanje memorije hipu (Primijetimo da u jeziku $C/C$++ to  se izvršava od strane programera!). Varijable koje su pohranjene u memoriji hipa su: ($i$)   izvan poziva metoda ili funkcija ili ($ii$) dijele se unutar više funkcija, dakle globalnog svojstva.
+
+\begin{minted}{python}
+	# Memorija za 10 brojeva
+	# je alocirana na hipu
+	a = [0]*10     
+\end{minted}
+
+
+Napomenimo još jednom da Pajton koristi algoritam za sakupljanje otpadaka (eng. \textit{garbage collector}) koji održava memoriju hipa čistom, periodično uklanjajući  objekte koji se više ne koriste.
+
+
+
+
+\subsection{Proces kompajliranja i izvršavanja}
+
+Proces kompilacije   i izvršavanja k\^oda u programskom jeziku Pajton je kompleskan proces kojeg nećemo izlagati u svim detljima nego ćemo ukratko navesti osnovne principe na kojima je baziran ovaj proces. On uključuje četiri osnovna koraka.
+\begin{itemize}
+	\item \textit{Leksička analiza} -- Izvorni k\^od se prvo prosljeđuje leksičkom analizatoru,  koji razlaže k\^od na pojedinačne tokene kao što su ključne riječi, identifikatori, operatori, itd.
+	\item \textit{Parisiranje} -- Tokeni se zatim prosleđuju parseru, koji koristi gramatiku bez konteksta za izgradnju \emph{apstraktnog sintaksnog stabla} (AST) koje predstavlja strukturu k\^oda. U detalje ovog procesa nećemo ulaziti jer izlazi iz domena ove knjige.
+	\item \textit{Kompilacija} -- AST se kompajlira u bajtkod, koji je jezik nižeg nivoa,   nezavisan od platforme.  Ovaj bajtkod se čuva u .\textit{pyc} fajlovima kojeg izvršava   Pajtonova \textit{virtuelna mašina} (VM).
+	\item \textit{Izvođenje} -- Pajtonova VM izvršava dobijeni bajtkod tako što ga interpretira generišući \textit{mašinske instrukcije} u hodu. Bajtkod se izvršava u zaštićenom okruženju virtuelne mašine (obezbjeđuje sigurnost i izolaciju od osnovnog OS-a).  
+	
+\end{itemize}
+Napomenimo da tokom procesa izvršavanja, interpreter izvodi nekoliko optimizacija u k\^odu (npr. eliminaciju repne rekurzije), što može poboljšati performanse k\^oda.
+%https://www.geeksforgeeks.org/what-makes-python-a-slow-language/
+\begin{figure}[H]	
+	\centering
+	
+	\includegraphics[width=350pt,height=170pt]{slike/python-code-copiler-machine-code.png}%compile_python.png}
+\caption{Vizuelizacija procesa izvršavanja k\^oda u Pajtonu.\protect\footnotemark}
+\label{fig:comp_interpreting}
+\end{figure}
+
+\footnotetext{Slika sa linka: {https://www.astateofdata.com/python-programming/can-python-be-compiled/}}
+%%https://www.astateofdata.com/python-programming/can-python-be-compiled/
+% Na osnovu prethodnog, pajton je i kompajliran i interpretiran jezik. 
+%https://www.astateofdata.com/python-programming/can-python-be-compiled/ ==> procitati ovdje...
+
+Recimo sada malo više o Pajtonovoj virtuelnoj mašini (PVM), bazičnoj komponenti ovog programskog jezika. Kako smo naveli, PVM je odgovorna za interpretiranje bajtkoda i izvršavanje k\^oda. Bajtkod se generiše od strane pajtonovog kompajlera (npr. CPython, Brython) pri kompajliranju izvornog k\^oda.
+
+Ključne uloge PVM su navedene u nastavku. 
+\begin{itemize}
+\item \textit{Kompatibilnost između platformi}: PVM omogućava izvršavanje pajtonovog k\^oda na više različitih platformi bez ponovne kompilacije. Ovo olakšava pisanje i distribuciju aplikacija.
+\item \textit{Poboljšane performanse izvršavanja}: PVM koristi bajtkod  interpreter, koji je brži od direktnog interpretera izvornog k\^oda. PVM može koristiti \textit{Just-In-Time} (JIT) kompilaciju za dalje poboljšanje performansi.
+\item \textit{Dinamičko tipiziranje}: Pajton je dinamički tipiziran jezik, što znači da se tip varijable dodjeljuje u vremenu izvođenja programa. PVM je dizajnirana da efikasno upravlja ovim procesom.
+\item  \textit{Upravljanje memorijom}: PVM automatski upravlja memorijom, što može olakšati pisanje sigurnog memorijskog k\^oda. PVM  automatski oslobađa memoriju koja se više ne koristi.
+\item \textit{Lak pristup eksternim bibliotekama}: PVM se intenzivno koristi u pajton ekosistemu, koji uključuje veliki broj otvorenih biblioteka. Ove biblioteke pružaju širok spektar funkcionalnosti vezano za  veb programiranje, mašinsko učenje, itd. Importovanje biblioteka se vrši pomoću naredbe \texttt{import}. 
+\end{itemize}
+
+
+Na osnovu izloženog, Pajton je i kompajlabilan (prevodi se u bajtni k\^od) i interpretiran jezik. 
+Vizuelizaciju procesa prevođenja programa možete da vidite na Slici~\ref{fig:comp_interpreting}.
 
 
 \section*{Zadaci}
