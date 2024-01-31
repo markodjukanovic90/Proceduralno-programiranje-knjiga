@@ -916,7 +916,7 @@ Postoji i niz drugih pomoćnih opštekorišćenih funkcija, koje ćemo pobrojati
 	\item \textit{max}(iter): vraća broj maksimalne vrijednosti među proslijeđenim brojevima;
 	\item \textit{abs}(num): vraća apsolutni vrijednost broja. 
 \end{itemize}
-\section{Uopšteno o modulima}
+\section{Neki opštekorišćeni moduli}
 
 \textit{Modul} je datoteka koja sadrži Pajtonove definicije i naredbe. Naziv datoteke je naziv modula sa sufiksom .\textit{py}.
 
@@ -949,24 +949,24 @@ Pajton dolazi s velikim brojem ugrađenih modula, među kojima izdvajamo \texttt
  
 %Napomenimo da se mogu kreirati i vlastite module koji prvenstveno služe da bolje organizovanje i reiskorištavanje vlastitog koda.
 
-\subsection{Instaliranje eksternih modula} 
+%\subsection{Instaliranje eksternih modula} 
 
 
-Da bismo instalirali eksterne module u Pajtonu,   koristi se menadžer paketa \textit{pip}, koji dolazi direktno sa instalacijom Pajtona. 
+Da bismo instalirali eksterne module u Pajtonu,   koristi se menadžer paketa \textit{pip}, koji dolazi direktno sa instalacijom Pajtona. Koraci za instaliranje eksternih modula pomoću \emph{pip}-a su dati u nastavku. 
 
-Koraci za instaliranje eksternih modula pomoću \emph{pip}-a su dati u nastavku. Otvorimo terminalnu konzolu i upišimo naredbu \textit{pip install naziv\_modula}, gdje je \textit{naziv\_modula} (obično) odgovara nazivu  modula kojeg želimo instalirati. Npr. da bismo instalirali modul \textit{requests}, pišemo:
+Otvorimo terminalnu konzolu i upišimo naredbu \textit{pip install naziv\_modula}, gdje  \textit{naziv\_modula} (obično) odgovara nazivu  modula kojeg želimo instalirati. Npr. da bismo instalirali modul \textit{requests}, pišemo:
 \begin{minted}{python}
     pip install requests
 \end{minted}
 
-Pritiskom tastera Enter, instalacija se pokreće; pip automatski preuzima modul sa PyPI (eng. \textit{Python Package Index}) i instalirati ga u trenutno pajton okruženje. PyPI je repozitorij softverskih paketa koji su napisani u Pajtonu, a besplatno su dostupni za korištenje. Sadrži više od 300,000 paketa koje možemo instalirati pomoću \textit{pip} menadžera.
+Pritiskom tastera Enter, instalacija se pokreće; pip automatski preuzima modul sa PyPI (eng. \textit{Python Package Index}) i instalira ga u trenutno pajton okruženje. PyPI je repozitorij softverskih paketa koji su napisani u Pajtonu, a besplatno su dostupni za korištenje. Sadrži više od 300,000 paketa koji se mogu instalirati pomoću \textit{pip} menadžera.
 
 
 Kada proces instalacije modula uspješno završi, modul se može uključiti u naš program pomoću naredbe \textit{import}. Npr. da bismo koristili modul \textit{requests}, pišemo sljedeće:
 \begin{minted}{python}
     import requests
 \end{minted}
-Takođe se možete navesti određena verziju modula za instalaciju dodavanjem  ``==''  iza kojeg slijedi broj verzije modula kojeg želimo da instaliramo. Npr. da bismo instalirali verziju 2.2.1 modula \textit{requests},  pisali bismo:
+Takođe se možete navesti određena verziju modula za instalaciju dodavanjem  ``==''  iza kojeg slijedi broj verzije modula koju želimo da instaliramo. Npr. da bismo instalirali verziju 2.2.1 modula \textit{requests},  pišemo:
 \begin{minted}{python}
 pip install requests==2.2.1
 \end{minted}
@@ -1058,13 +1058,47 @@ Nekih od najčešće korištenih funkcija koje pruža ovaj modul su:
   
 \end{itemize}
 
+\subsection{Modul Copy}
+
+  Modul \texttt{copy} pruža funkcionalnosti za kopiranje objekata. Osnovni principi ovog modula uključuju kopiranje objekata kako bi se izbjegli problemi sa referencama, što u principu znači da se stvaraju potpuno nezavisne kopije podataka. Nekoliko osnovnih funkcija koje pruža modul copy su 
+  \begin{itemize}
+  	\item \emph{copy}($obj$): vrši ``površinsko''  kopiranje objekta \emph{obj}. Dakle, kopira se samo referenca na objekte unutar originalnog objekta, ali ne i sami objekti. Ako objekat ima druge ugniježdene objekte u svojoj strukturi (npr. listu unutar liste), originalni i kopirani objekat će dijeliti iste reference nakon kopiranja. 
+  	\begin{minted}{python}
+  	   import copy
+  	   
+  	   originalna_lista = [1, [2, 3], 4]
+  	   kopirana_lista = copy.copy(originalna_lista)
+  	   # Izmjena unutar kopije utiče i na original
+  	   kopirana_lista[1][0] = 99
+  	  
+  	   print(originalna_lista) #Output: [1, [99, 3], 4]
+  	\end{minted}
+  
+  
+  	\item \emph{deepcopy}($obj$): vrši ``dubinsko'' kopiranje objekta. Dakle, kopiraju se svi objekti unutar originalnog objekta, stvarajući potpuno nezavisne kopije.
+  	
+ \begin{minted}{python}
+ 	 import copy
+ 	 
+ 	 originalna_lista = [1, [2, 3], 4]
+ 	 kopirana_lista = copy.deepcopy(originalna_lista)
+ 	 # Izmjena unutar kopije ne utiče na original
+ 	 kopirana_lista[1][0] = 99
+ 	 
+ 	 print(originalna_lista)  # Output: [1, [2, 3], 4]
+ \end{minted}
+  \end{itemize}
+  
+  Da zaključimo, površinsko kopiranje dijeli reference, dok dubinsko kopiranje stvara potpuno nezavisne kopije objekata unutar objekta.
+  
+
 \section{Izuzeci}
 
 Izuzetak predstavlja (nesintaksnu) grešku koja se javlja tokom izvršavanja programa, kada se nešto neočekivano dogodi kao npr. dijeljenje sa nulom, datoteka nije pronađena, ili greška u tipu podatka.
 
 Rad sa izuzecima u programskom jeziku Pajton uključuje identifikovanje i rukovanje sa ovim greškama kako bi se spriječilo da one uzrokuju pad izvršavanja programa. Osnovni  načini za rad sa izuzecima su dati u nastavku.
 
-\textit{Try-except }blok: koristi se za hvatanje i obradu izuzetaka. Kôd unutar bloka \textit{try} se izvršava, a u slučaju se dogodi izuzetak, izvršava se k\^od unutar bloka \textit{except}. Evo primjera:
+\textit{Try-except }blok: koristi se za hvatanje i obradu izuzetaka. K\^od unutar bloka \textit{try} se izvršava, a u slučaju se dogodi izuzetak, izvršava se k\^od unutar bloka \textit{except}. Evo primjera:
 \begin{minted}{python}
 	try:
 	    # kod koji moze "baciti" izuzetak
@@ -1189,7 +1223,7 @@ U ovoj sekciji izlažemo uoptšteno o regularnim izrazima. Potom, će biti rije�
 
 \subsection{Uopšteno o regularnim izrazima}
 
-˘Regularni izraz ili \textit{regex} (šablon ili patern) je niz znakova koji opisuju skupove nizova znakova, na osnovu određenih sintaksnih pravila. U prevodu to je šablon koji opisuje neki skup stringova.  Svrha regirarnih izraza je opisivanje uzorka za pretraživanje nizova znakova konciznim opisom bez nabrajanja svih elemenata (stringova) skupa. Npr. kako koncizno opisati sve binarne nizove
+Regularni izraz ili \textit{regex} (šablon ili patern) je niz znakova koji opisuju skupove nizova znakova, na osnovu određenih sintaksnih pravila. U prevodu to je šablon koji opisuje neki skup stringova.  Svrha regirarnih izraza je opisivanje uzorka za pretraživanje nizova znakova konciznim opisom bez nabrajanja svih elemenata (stringova) skupa. Npr. kako koncizno opisati sve binarne nizove
 pomocu šablona ili kako koncizno opisati skup \{\texttt{gray}, \texttt{grey}\} (engleski i
 americki engleski za istu riječ)? Regularne izraze koriste razni uređivači teksta, kao što je filter \textit{grep} u Unix-u, itd. 
 
