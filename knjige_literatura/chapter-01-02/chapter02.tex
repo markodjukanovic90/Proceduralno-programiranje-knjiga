@@ -43,10 +43,10 @@ Za kraj ovog poglavlja, formalno definišimo računski problem.
 
 Računarski program je (konačan) niz instrukcija napisanih u nekom programskom jeziku koje računar  može da izvrši. Ove instrukcije govore računaru šta da radi i kako da to uradi u eksplicitno definisanom nizu.
 
-Računarski programi mogu biti dizajnirani za obavljanje specifičnih zadataka ili funkcija,  npr. obrada teksta, analiza podataka,  ili pregledavanje veba.  Razvijaju se za različite platforme i operativne sisteme, uključujući desktop računare, mobilne uređaje, ugrađene sisteme itd.  Kompjuterski programi se mogu kreirati korišćenjem raznih programskih jezika, kao što su Pajton, Java, C++  i mnogi drugi. Kada je program napisan, potrebno ga je kompajlirati ili interpretirati u mašinski k\^od koji je razumljiv procesoru računara. Rezultirajući izvršni k\^od korisnici mogu pokrenuti kako bi izvršili željene zadatke ili funkcije.
+Računarski programi mogu biti dizajnirani za obavljanje specifičnih zadataka ili funkcija,  npr. obrada teksta, analiza podataka,  ili pretraživanje informacija na iternetu.  Razvijaju se za različite platforme i operativne sisteme, uključujući desktop računare, mobilne uređaje, ugrađene sisteme itd.  Kompjuterski programi se mogu kreirati pomoću raznih programskih jezika, kao što su Pajton, Java, $C$++  i mnogi drugi. Kada je program napisan, potrebno ga je kompajlirati ili interpretirati u mašinski k\^od koji je razumljiv procesoru računara. Rezultirajući izvršni k\^od korisnici mogu pokrenuti kako bi izvršili željene zadatke ili funkcije.
 %https://www.geeksforgeeks.org/introduction-to-algorithms/
 
-Algoritam predstavlja  korak-po-korak postupak za rješavanje problema ili postizanja određenog   cilja. U informatici, algoritmi se su predstavljeni konačnim  niza instrukcija koje kompjuterski program slijedi da bi riješio određeni problem ili izvršio određeni zadatak. Algoritam najčešće počinje sa inicijalnim ulazom, koji zatim nizom logičkih koraka ili operacija dovodi do očekivanog izlaza ili rezultata.  Analogija algoritma u stvarnom svijetu se može predstaviti primjerom kuhanja po receptu. Da biste skuhali po receptu, neophodno je čitati uputstva i korake te ih izvršavati jedno po jedno, u datom redoslijedu. Dobijeni (očekivani) rezultat je jelo koje je kuhano.  
+Algoritam predstavlja  korak po korak postupak za rješavanje problema ili postizanja određenog   cilja. U informatici, algoritmi su predstavljeni konačnim  niza instrukcija koje računarski program slijedi da bi riješio određeni problem ili izvršio određeni zadatak. Algoritam će inicijalni ulaz nizom logičkih koraka ili operacija dovesti do očekivanog izlaza ili rezultata.  Analogija algoritma u stvarnom svijetu se može predstaviti primjerom kuhanja po receptu. Da biste skuhali po receptu, neophodno je čitati uputstva i korake te ih izvršavati jedno po jedno, u datom redoslijedu. Dobijeni (očekivani) rezultat je jelo koje je kuhano.  
 
  Primjeri dobro poznatih algoritama uključuju algoritme za sortiranje koji se koriste za uređivanje podataka u odnosu na relaciju  uređenja, algoritme pretraživanja koji služe za pronalaženje određenih informacija na velikom skupu podataka, zatim algoritme dešifrovanja i druge.  %koji se koriste za zaštitu osjetljivih informacija od neovlaštenog pristupa.
 
@@ -60,51 +60,51 @@ Algoritmi su korisni iz više razloga:
 	
 	%\item korisi u raznim oblastima kao što su matematika, računarstvo, inženjering, finansije itd. za optimizaciju procesa, analizu podataka, predviđanje i pružanje rješenja za probleme.
 \end{itemize}
-Ne određuje svaki niz instrukcija jedan algoritam. Da bi neke instrukcije činile algoritam, sljedeće karakteristike treba da budu ispoštovane:
+Nije svaki algoritam određen nizom instrukcija. Da bi neke instrukcije činile algoritam, sljedeće karakteristike treba da budu ispoštovane:
 
 \begin{itemize}
     \item    \textit{Dobro definisani ulazi}: Ako algoritam zahtjeva podatke u ulazu, podaci bi trebali biti dobro definisani. 
     \item \textit{Dobro definisani rezultati}: Algoritam mora jasno definisati koji će se rezultat dobiti (kao izlaz) u zavisnosti od svakog ulaza. %Trebalo bi da vrati najmanje jedan izlaz.
     \item    \textit{Konačnost}: Algoritam mora biti konačan, tj. trebao bi se prekinuti nakon konačnog vremena za sve testne slučajeve. Beskonačne petlje ili rekurzivne funkcije bez baznih uslova ne posjeduju svojstvo konačnosti; o ovome ćemo govoriti u nastavku.  
-    \item  \textit{Dopustivost}: Algoritam mora biti generički i praktičan, u smislu da se može izvršiti u okviru dostupnih resursa.  %Ne smije sadržavati neku buduću tehnologiju ili bilo šta drugo.
+    \item  \textit{Dopustivost}: Algoritam  se može izvršiti u okviru dostupnih resursa.  %Ne smije sadržavati neku buduću tehnologiju ili bilo šta drugo.
       \item \textit{Nezavisnost od jezika:} Algoritam koji je dizajniran mora biti nezavisan o jeziku u kojem se implementira; dakle, izlaz invarijantan od jezika imlementacije.
-      \item   \textit{Definisanost}: Sve instrukcije u algoritmu moraju biti nedvosmislene, precizne i lake za interpretaciju. Pozivanjem  bilo koje  instrukcije algoritma,   jasno se može razumjeti šta ona radi. Svaki osnovni operator u instrukciji mora biti definisan bez   nejasnoća.  
+      \item   \textit{Definisanost}: Sve instrukcije u algoritmu moraju biti nedvosmislene. Svaki osnovni operator u instrukciji mora biti definisan bez   nejasnoća.    % precizne i lake za interpretaciju. Pozivanjem  bilo koje  instrukcije algoritma,   jasno se može razumjeti šta ona radi. Svaki osnovni operator u instrukciji mora biti definisan bez   nejasnoća.  
       %\item \textit{Učinkovitost}: Algoritam se mora razviti korištenjem vrlo osnovnih, jednostavnih i izvodljivih operacija tako da se može rekonstruisati (čak i na papiru).  %koristeći samo papir i olovku.
 \end{itemize}
 Koncizno rečeno, svaki algoritam posjeduje sljedeće karakteristike:  
 \begin{itemize}
-	\item Završava se nakon određenog vremena.
+	\item Završava se nakon određenog, konačnog vremena.
     \item Vraća barem jedan izlaz.
-    \item Ima ulaz domenzije nula ili više.
+    %\item Ima ulaz domenzije nula ili više.
     \item Posjeduje determinizam, tj. svaki put daje isti izlaz za isti ulazni slučaj.
     \item Svaki korak u algoritmu je efikasan, tj. svaki korak bi trebao obaviti određeni posao.
 \end{itemize}
 
-\textit{Veličina ulaza} algoritma je defisana kao ukupan broj elemenata prisutnih u ulazu. Za dva problema, veličina ulaza $n$ može biti okarakterisana na drugačiji način.  Npr.  u problemu sortiranja to  je ukupan broj stavki za sortiranje, dok je to  u problemima sa grafovima  ukupan broj čvorova i grana, a  u numeričkim problemima je to ukupan broj bitova potrebnih za predstavljanje broja. 
+\textit{Veličina ulaza} algoritma je defisana kao ukupan broj elemenata prisutnih u ulazu. Za dva problema, veličina ulaza $n$ može biti okarakterisana na drugačiji način.  Npr.  u problemu sortiranja to  je ukupan broj elemenata za sortiranje, dok je to  u problemima sa grafovima  ukupan broj čvorova i grana, a  u numeričkim problemima je to ukupan broj bitova potrebnih za predstavljanje broja. 
 
  %https://www.geeksforgeeks.org/introduction-to-algorithms/ ==> Types of algorithms...
  \subsection{Vrste algoritama}
-Na raspolaganju je nekoliko tipova (paradigmi) algoritama. Neke važnije paradigme nabrajamo u nastavku. 
+Na raspolaganju je nekoliko tipova (paradigmi) algoritama. Neke važnije paradigme nabrajamo u nastavku bez ulaženja u detalje. 
 \begin{enumerate}
-	\item Algoritmi \textit{brutalne sile} (eng. \textit{brute force}): jedan od najjednostavnijih pristupa rješaanja problema. Ujedno je i prvi pristup koji se konstruiše za  rješavanje problema jer je ideja rješenja u pozadini često vrlo naivna te se razmatraju svi mogući slučajevi koji  potencijalno mogu predstaviti rješenje problema.
-	\item \textit{Rekurzivni algoritmi}: Ovi algoritmi su zasnovani na rekurziji. U ovom slučaju, problem se dijeli na nekoliko podproblema te  se ista funkcija poziva iznova za rješavanje tih podproblemima, dok god se ne dođe do nekih trivijano rješivih slučajeva.
+	\item Algoritmi \textit{brutalne sile} (eng. \textit{brute force}): jedan od najjednostavnijih pristupa rješavanja problema. Često je prvi pristup koji se primjenjuje za  rješavanje problema jer je ideja rješavanja u pozadini često vrlo naivna -- razmatraju se svi slučajevi koji  potencijalno mogu biti rješenje problema.
+	\item \textit{Rekurzivni algoritmi}: Ovi algoritmi su zasnovani na rekurziji. U ovom slučaju, problem se dijeli na nekoliko podproblema manje dimenzije te  se ista funkcija poziva iznova za rješavanje tih podproblemima, dok god se ne dođe do nekih trivijano rješivih slučajeva.
 	\item \textit{Algoritam vraćanja unazad}: Ovo je algoritamska tehnika rekurzivnog rješavanja problema koja pokušava postepeno izgraditi rješenje, dio po dio, isključujući momentalno ona rješenja koja ne uspijevaju zadovoljiti ograničenja problema. 
-	\item  \textit{Algoritmi pretraživanja}:  Oi algoritmi se koriste za pretraživanje elemenata ili grupa elemenata iz određene strukture podataka. Mogu biti različitih tipova na osnovu njihovog pristupa ili strukture podataka u kojoj se element nalazi.
+	\item  \textit{Algoritmi pretraživanja}:  Ovi algoritmi se koriste za pretraživanje elemenata ili grupa elemenata iz određene strukture podataka. Mogu biti različitih tipova na osnovu njihovog pristupa ili strukture podataka u kojoj se element nalazi.
 	\item \textit{Algoritmi sortiranja}: Sortiranje je uređivnanje grupe podataka  shodno nekom kriterijumu. Algoritmi koji pomažu u obavljanju ove funkcije nazivaju se algoritmi sortiranja. %Sortiranje grupa podataka na rastući ili opadajući način.
 	\item \textit{Algoritam podijeli i vladaj}: Ovaj algoritam razbija problem na podpro\-bleme, rješava podprobleme i spaja njihova rješenja kako bi se dobilo konačno rješenje. Sastoji se od sljedeće tri procedure:
     podijeli, riješi, kombinuj. Ovo je, inače, algoritamska paradigma koja se koristi u rješavanju raznih tipova problema poput sortiranja.
   
-    \item \textit{Pohlepni algoritmi}: U ovom tipu algoritma rješenje se gradi konstruktivno, komponentu po komponentu.   Komopnenta koja daje najveću korist pri dodavanju na trenutno rješenje, biće i uzeta kao komponenta koja  proširuje trenutno  rješenje. Odabir  narednog rješenja u nizu donosi se na osnovu nekog (pohlepnog) kriteijuma.
+    \item \textit{Pohlepni algoritmi}: U ovom tipu algoritma rješenje se gradi konstruktivno, komponentu po komponentu.   Komopnenta koja procijenjeno daje najveću korist pri proširivanju trenutnog rješenja, se uzima kao komponenta koja  proširuje trenutno  rješenje. Odabir  narednog rješenja u nizu donosi se na osnovu nekog (pohlepnog) kriteijuma.
     \item \textit{Dinamičko programiranje}: Ovaj tip algoritma koristi koncept korištenja već pronađenog rješenja (koje se čuva u memoriji) kako bi se izbjeglo ponavljanje izračunavanja istog dijela problema. Ova paradigma dijeli problem na manje podprobleme, koji se preklapaju, a potom ih rekurzivno rješava.
 \end{enumerate}
    
    Većina ovih tipova algoritama predstavljaju generičke sheme (paradigme) koje se mogu primijeniti na  rješavanje većeg opsega različitih problema. Tu pripadaju algoritmi brutalne sile, rekurzivni algoritmi, podijeli i zavladaj, algoritam vraćanja unazad, pohlepni algoritmi, dinamičko programiranje isl. U glavi 3 biće detaljno obrađene  neke od pomenutih paradigmi. \\
   
-Dizajniranje efikasnog algoritma je obično dugotrajan proces koji nije direktan, te zahtijeva veliko domensko znanje o problemu te domišljatost onoga koji rješava vezano za način rješavanja samog  problema.  Međutim, postoje neka pravila kojima se vodimo kada konstruišemo algoritam, kao što su korištenje paradigmi za koje znamo da su dovoljno efikasne u rješavaju određenog tipa problema. 
+Dizajniranje efikasnog algoritma je obično dugotrajan proces koji nije direktan, te zahtijeva veliko domensko znanje o problemu te domišljatost vezana za način rješavanja samog  problema.  Međutim, postoje neka pravila kojima se vodimo kada konstruišemo algoritam kao što su korištenje paradigmi za koje znamo da su dovoljno efikasne u rješavaju određenog tipa problema. 
  \\ 
  
- U nastavku govorimo malo o istorijskoj pozadini nastanka riječi \textit{algoritam}. Riječ ``Algoritam'' je iskrivljena transliteracija imena ``al-Khwarizmi''. Al-Khwarizmi bio je persijski matematičar iz IX veka, rođen na prostorima današnjeg Uzbekistana, studirao i radio u Bagdadu za vrijeme Abasidskog kalifata; oko 820. godine nove ere imenovan je za
-  šefa biblioteke ``Kuće mudrosti'' u Bagdadu. Napisao je nekoliko
+ U nastavku govorimo malo o istorijskoj pozadini nastanka riječi \textit{algoritam}. Riječ ``algoritam'' je iskrivljena transliteracija imena ``al-Khwarizmi''. Al-Khwarizmi bio je persijski matematičar iz IX veka, rođen na prostorima današnjeg Uzbekistana, studirao i radio u Bagdadu za vrijeme Abasidskog kalifata; oko 820. godine nove ere radio je kao 
+  direktor biblioteke ``Kuće mudrosti'' u Bagdadu. Napisao je nekoliko
  uticajnih knjiga, uključujući i jednu sa naslovom ``O kalkulaciji sa hinduistanskim brojevima'', koja opisuje kako se izvodi aritmetika koristeći arapske brojeve (aka arapsko-hindu, a kraće hinduistički brojevi). Originalni rukopis je izgubljen, ali latinski prevod iz 
  1100. godine uveo je ovaj brojevni sistem u Evropu te se smatra odgovornim  za današnje korišćenje  arapskih brojeva.   Stara francuska riječ \textit{algorisme} značila je
  ``arapski numerički sistem'', a tek kasnije je postao opšti recept za rješavanje računskih problema.
