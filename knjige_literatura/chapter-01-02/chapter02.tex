@@ -6,10 +6,10 @@
 
 \textit{Računarski (kompjuterski) problem} (eng. \textit{computational problem}) u računarskim naukama se jednostavno i slobodno može definisati kao zadatak koji je potrebno riješiti uz pomoć računara. 
 
-Formalna definicija ovog pojma zahtjeva uvođenje mnogih kompleksnih pojmova poput definicije jezika.  U računskom problemu, dat nam je ulaz za koji, bez gubitka opštosti, pretpostavljamo da je kodiran  binarno kao niz iz skupa binarnih nizova proizvoljne dužine $L=\{0, 1\}^*$, a  izlaz je 
-rješenje koje zadovoljava neko svojstvo; računarski problem  opisujemo  pomoću svojstava koje izlaz mora zadovoljiti s obzirom na (svaki validan) zadani ulaz. Ulaz se često naziva \textit{instanca} problema, dok je izlaz \textit{rješenje} problema s obzirom na ulaz. Primjer računskog programa u računarskim naukama je sortiranje numeričkih nizova. Kao ulaz dat je niz brojeva dužine $n$. Kao izlaz problema sortiranja dobijamo uređen niz (po nekom zadanom kriterijumu sortiranja). Međutim, ne moraju samo numerički nizovi da se sortiraju, već uopšteno, bilo koji objekti nad kojima možemo definisati relaciju totalnog uređenja. Zbog toga ima smisla govoriti o rješavanju računskog problema kao 
+Formalna definicija ovog pojma zahtjeva uvođenje mnogih kompleksnih pojmova poput definicije jezika.  U računarskom problemu, dat nam je ulaz za koji, bez gubitka opštosti, pretpostavljamo da je kodiran  binarno kao niz iz skupa binarnih nizova proizvoljne dužine $L=\{0, 1\}^*$, a  izlaz je 
+rješenje koje zadovoljava neko svojstvo; računarski problem  opisujemo  pomoću svojstava koje izlaz mora zadovoljiti s obzirom na (svaki validan) zadani ulaz. Ulaz se često naziva \textit{instanca} problema, dok je izlaz \textit{rješenje} problema nekog ulaza. Primjer ovakvog zadatka u računarskim naukama je sortiranje numeričkih nizova. Ulaz je dat nizom brojeva (ili uopšteno objekata) dužine $n$. Kao izlaz problema sortiranja dobijamo uređen niz (po nekom zadanom kriterijumu sortiranja). Međutim, ne moraju samo numerički nizovi da se sortiraju, već uopšteno, bilo koji objekti nad kojima možemo definisati relaciju totalnog uređenja. Zbog toga ima smisla govoriti o rješavanju ovakvih problema kao 
  uparivanju ulazno-izlaznih parametara. Ulazni i izlazni parametri mogu se predstaviti nekim matematičkim objektima kao što su brojevi, skupovi, nizovi itd. Ulazni dio problema tada nazivamo \textit{generička instanca} problema, dok izlazni nazivamo  \textit{generičko rješenje} generičke instance problema.      
- Prije nego kažemo nešto više o tipovima različitih problema, uvedimo neformalno definiciju jednog apstraktnog matematičkog objekta, koji će se pominjati u ovoj knjizi, a to je graf. Graf se jednostavno rečeno može posmatrati kao skup indeksiranih tačaka (tzv. \textit{čvorova}) koje međusobno mogu biti povezane linijama (tzv. \textit{granama}). U ovoj knjizi graf je uvijek prost što znači da ne sadrži petlje -- ne postoji grana koja povezuje čvor sa samim sobom -- niti postoje dva čvora povezana sa dvije ili više grana. Graf je usmjeren ako postoji orjentacija (smjer) na linijama koje spajaju dva čvora a inače je neumjeren. Primjer jednog usmjerenog i neusmjerenog grafa je dato na Slici~\ref{fig:graphs}. 
+ Prije nego kažemo nešto više o tipovima različitih problema, uvedimo neformalno definiciju jednog apstraktnog matematičkog objekta, koji će se često pominjati u ovoj knjizi, a to je graf. Graf se jednostavno rečeno može posmatrati kao skup indeksiranih tačaka (tzv. \textit{čvorova}) koje međusobno mogu biti povezane linijama (tzv. \textit{granama}). U ovoj knjizi graf je uvijek prost što znači da ne sadrži petlje -- ne postoji grana koja povezuje čvor sa samim sobom -- niti postoje dva čvora povezana sa dvije ili više grana. Graf je usmjeren ako postoji orjentacija (smjer) na linijama koje spajaju dva čvora a inače je neumjeren. Primjer jednog usmjerenog i neusmjerenog grafa je dat na Slici~\ref{fig:graphs}. 
  
  
   \begin{figure}
@@ -33,12 +33,10 @@ rješenje koje zadovoljava neko svojstvo; računarski problem  opisujemo  pomoć
  
  Postoji nekoliko tipova problema u računarskim naukama; ovdje izdvajamo četiri frekventno prisutna u literaturi: problemi odlučivanja, problemi pretraživanja, problemi optimizacije i problemi prebrojavanja. 
  
- U problemu \textit{odlučivanja}, s obzirom na ulaz $x \in \{0, 1\}^*$, traži se izlaz DA/NE (\emph{True}/\emph{False}). Dakle, u problemu odlučivanja se traži da provjerimo da li instanca problema zadovoljava određeno svojstvo ili ne. Primjer problema odlučivanja je problem \textit{3--bojenja} (3--COL):
- U ulazu problema imamo neusmjereni graf. Potrebno je odrediti da li postoji dodjela   ``boje''  iz skupa $\{1, 2, 3\}$ svakom čvoru grafa tako da niti jedan susjedni čvor nemaju istu dodjeljenu boju.
+ U problemu \textit{odlučivanja}, s obzirom na ulaz $x \in \{0, 1\}^*$, traži se izlaz DA/NE (\emph{True}/\emph{False}). Dakle, ovakav tip problema traži da provjerimo da li instanca problema zadovoljava određeno svojstvo ili ne. Primjer problema odlučivanja je problem \textit{3--bojenja} (3--COL):
+ U ulazu problema je dat neusmjereni graf. Potrebno je odrediti da li postoji dodjela   ``boje''  iz skupa $\{1, 2, 3\}$ svakom čvoru grafa tako da ne postoje niti koja dva susjedna čvora sa istom dodjeljenom bojom.
  
-~ Prikladan način za specificiranje problema odlučivanja je detektovanje skupa $L \subseteq \{0, 1\}^*$ ulaza za koje je odgovor DA. Podskup skupa $\{0, 1\}^*$ se takođe naziva jezikom, tako da, uz prethodnu konvenciju, svaki problem odlučivanja može biti specificiran pomoću jezika (a svaki jezik specificira problem odlučivanja). Na primjer, ako sa   3--COL imenujemo podskup skupa $\{0, 1\}^*$ koji sadrži (opise) 3-obojive grafove, tada 3--COL predstavlja jezik koji specificira problem 3-bojenja. %Od sada ćemo govoriti o problemima odlučivanja i jezicima naizmjenično.
-
-U problemu pretraživanja, obzirom na ulaz $x \in \{0, 1\}^*$, potrebno je izračunati neki odgovor
+~ Prikladan način za specificiranje problema odlučivanja je pronalaženje skupa $L \subseteq \{0, 1\}^*$ ulaza za koje je odgovor DA. Podskup skupa $\{0, 1\}^*$ se takođe naziva jezikom, tako da, uz prethodnu konvenciju, svaki problem odlučivanja može biti specificiran pomoću jezika (a svaki jezik specificira problem odlučivanja). Na primjer, ako sa   3--COL imenujemo podskup skupa $\{0, 1\}^*$ koji sadrži (opise) 3-obojive grafove, tada 3--COL predstavlja jezik koji specificira problem 3-bojenja. U problemu pretraživanja, obzirom na ulaz $x \in \{0, 1\}^*$, potrebno je izračunati 
 $y \in  \{0, 1\}^*$ koji je u nekom odnosu sa $x$, ako takav  postoji. Dakle, problem pretraživanja je
 definisan relacijom $R \subseteq \{0, 1\}^* \times \{0, 1\}^*$, gdje $(x, y) \in R$ ako i samo ako je $y$ dopustiv odgovor  za dati $x$. 
 
@@ -49,29 +47,28 @@ utvrđivanja postoji li takav $c$, traži se da ga konstruišemo, pod uslovom da
 Formalno, problem 3-bojenja specificiran je relacijom $R_{3-COL}$ koja sadrži sve
 parovi $(G, c)$ gdje je $G$ predstavlja 3-obojljivi graf, a $c$ je valjano 3-bojanje grafa $G$.
 
-Problemi optimizacije predstavljaju matematičke probleme koji uključuju pronalazak najboljeg rješenja iz skupa mogućih rješenja. Cilj je maksimizovati / minimizovati   ciljnu funkciju, u odnosu na skup  ograničenja dati definicijom problema. Drugim riječima, cilj je pronaći optimalnu vrijednost određene varijable ili skupa varijabli unutar zadanog skupa ograničenja. Primjer problema optimizacije je klasični ``problem trgovačkog putnika''. U ovom problemu, osoba mora posjetiti skup gradova i vratiti se u   početni grad, sa ciljem da minimizuje ukupnu pređenu udaljenost. Problem se sastoji u pronalasku optimalne rute kojom osoba može posjetiti sve gradove (tačno jednom) uz minimaliziranje ukupne pređene udaljenosti.
+Problemi optimizacije predstavljaju matematičke probleme koji uključuju pronalazak najboljeg rješenja iz skupa mogućih rješenja. Cilj je maksimizovati / minimizovati   ciljnu funkciju, u odnosu na skup  ograničenja dati definicijom problema. Drugim riječima, cilj je pronaći optimalnu vrijednost određene varijable ili skupa varijabli unutar zadanog skupa ograničenja. Primjer problema optimizacije je klasični problem trgovačkog putnika. U ovom problemu, osoba mora posjetiti skup gradova i vratiti se u   početni grad, sa ciljem da minimizuje ukupnu pređenu udaljenost. Problem se sastoji u pronalasku optimalne rute kojom osoba može posjetiti sve gradove (tačno jednom) uz minimaliziranje ukupne pređene udaljenosti.
 
-Pod problemima prebrojavanja podrazumijevamo matematičke probleme koji uključuju prebrojavanje načina na koje se određeni događaj može dogoditi. Ovi problemi variraju od relativno jednostavnih zadataka kao što je prebrojavanje ljudi u prostoriji do mnogo složenijih scenarija kao što je prebrojavanje    mogućih kombinacija slova u riječi. Pretpostavimo da imamo četiri košulje različitih boja i troje pantalona različitih boja. Na koliko različitih načina se osoba može obući, ako nosimo jednu košulju i jedne hlače?  Za rješavanje ovog problema možemo upotrijebiti princip množenja, koje kaže da ako imamo $ n$ izbora za prvi zadatak i $m$ izbora za drugi zadatak, tada je ukupan broj različitih oblačenja koji se može izvesti jednak  $n \times m$.
+Pod problemima prebrojavanja podrazumijevamo matematičke probleme koji uključuju prebrojavanje načina na koje se određeni događaj može dogoditi. Ovi problemi variraju od relativno jednostavnih zadataka kao što je prebrojavanje ljudi u prostoriji do mnogo složenijih scenarija kao što je prebrojavanje    mogućih kombinacija slova u riječi. Pretpostavimo da imamo četiri košulje različitih boja i troje pantalona različitih boja. Na koliko različitih načina se osoba može obući, ako nosimo jednu košulju i jedne hlače?  Za rješavanje ovog problema možemo upotrijebiti princip množenja, koje kaže da ako imamo $ n$ izbora za prvi zadatak i $m$ izbora za drugi zadatak, tada je ukupan broj različitih oblačenja koji se može izvesti jednak  $n \cdot m$.
 
-Za kraj ovog poglavlja, formalno definišimo računski problem.
+Za kraj ovog poglavlja, definišimo računarski problem.
 
 \begin{definition}
-	Računski problem je funkcija $f \colon \mathbb{N}^* \rightarrow 2^{\mathbb{N}^*}$. $f (x)$ predstavlja skup tačnih odgovora  za ulaz $x$.
+	Računarski problem je funkcija $f \colon \mathbb{N}^* \rightarrow 2^{\mathbb{N}^*}$. $f (x)$ predstavlja skup tačnih odgovora  za ulaz $x$.
 \end{definition} 
  
 \section{Računarski program i pojam algoritma}
 %https://stanford-cs161.github.io/winter2023/lectures/ ==> pratimo lekcije 
 
-Računarski program je (konačan) niz instrukcija napisanih u nekom programskom jeziku koje računar  može da izvrši. Ove instrukcije govore računaru šta da radi i kako da to uradi u eksplicitno definisanom nizu.
 
-Računarski programi mogu biti dizajnirani za obavljanje specifičnih zadataka ili funkcija,  npr. obrada teksta, analiza podataka,  ili pretraživanje informacija na iternetu.  Razvijaju se za različite platforme i operativne sisteme, uključujući desktop računare, mobilne uređaje, ugrađene sisteme itd.  Kompjuterski programi se mogu kreirati pomoću raznih programskih jezika, kao što su Pajton, Java, $C$++  i mnogi drugi. Kada je program napisan, potrebno ga je kompajlirati ili interpretirati u mašinski k\^od koji je razumljiv procesoru računara. Rezultirajući izvršni k\^od korisnici mogu pokrenuti kako bi izvršili željene zadatke ili funkcije.
+Računarski program je (konačan) niz instrukcija napisanih u nekom programskom jeziku koje računar  može da izvrši. Ove instrukcije govore računaru šta da radi i kako da to uradi u eksplicitno definisanom nizu. Računarski programi mogu biti dizajnirani za obavljanje specifičnih zadataka ili funkcija,  npr. obrada teksta, analiza podataka,  ili pretraživanje informacija na iternetu. Različite platforme su se razvile i operativni sistemi, uključujući desktop računare, mobilne uređaje, ugrađene sisteme koji mogu da pokrenu različite programe.  Kompjuterski programi se mogu kreirati pomoću raznih programskih jezika, kao što su Pajton, Java, $C$++  i dr. Kada je program napisan, potrebno ga je kompajlirati ili interpretirati u mašinski k\^od koji je razumljiv procesoru računara. Rezultirajući izvršni k\^od korisnici mogu pokrenuti kako bi izvršili željene zadatke ili funkcije.
 %https://www.geeksforgeeks.org/introduction-to-algorithms/
 
-Algoritam predstavlja  korak po korak postupak za rješavanje problema ili postizanja određenog   cilja. U informatici, algoritmi su predstavljeni konačnim  niza instrukcija koje računarski program slijedi da bi riješio određeni problem ili izvršio određeni zadatak. Algoritam će inicijalni ulaz nizom logičkih koraka ili operacija dovesti do očekivanog izlaza ili rezultata.  Analogija algoritma u stvarnom svijetu se može predstaviti primjerom kuhanja po receptu. Da biste skuhali po receptu, neophodno je čitati uputstva i korake te ih izvršavati jedno po jedno, u datom redoslijedu. Dobijeni (očekivani) rezultat je jelo koje je kuhano.  
+Algoritam predstavlja  korak po korak postupak za rješavanje problema ili postizanja određenog cilja. U informatici, algoritmi su predstavljeni \textit{konačnim}  nizom instrukcija koje računarski program slijedi da bi riješio određeni problem ili izvršio određeni zadatak. Algoritam će inicijalni ulaz nizom logičkih koraka ili operacija dovesti do očekivanog izlaza ili rezultata.  Analogija algoritma u stvarnom svijetu se može predstaviti primjerom kuhanja po receptu. Da biste skuhali jelo po nekom receptu, neophodno je čitati uputstva i korake te ih izvršavati jedan po jedan, u datom redoslijedu. Dobijeni (očekivani) rezultat je jelo koje je skuhano.  
 
- Primjeri dobro poznatih algoritama uključuju algoritme za sortiranje koji se koriste za uređivanje podataka u odnosu na relaciju  uređenja, algoritme pretraživanja koji služe za pronalaženje određenih informacija na velikom skupu podataka, zatim algoritme dešifrovanja i druge.  %koji se koriste za zaštitu osjetljivih informacija od neovlaštenog pristupa.
+ Primjeri dobro poznatih algoritama uključuju algoritme za sortiranje koji se koriste za uređivanje podataka u odnosu na relaciju  uređenja, algoritme pretraživanja koji služe za pronalaženje određenih informacija na velikom skupu podataka, zatim algoritme dešifrovanja i druge.  \\
 
-Algoritmi su korisni iz više razloga:
+Uloga algoritama je višestruka:
 \begin{itemize}
 	\item   Neophodni su za efikasno i efektivno rješavanje složenih problema.
 	
@@ -81,16 +78,15 @@ Algoritmi su korisni iz više razloga:
 	
 	%\item korisi u raznim oblastima kao što su matematika, računarstvo, inženjering, finansije itd. za optimizaciju procesa, analizu podataka, predviđanje i pružanje rješenja za probleme.
 \end{itemize}
-Nije svaki algoritam određen nizom instrukcija. Da bi neke instrukcije činile algoritam, sljedeće karakteristike treba da budu ispoštovane:
+ Svaki niz instrukcija ne mora da predstavlja algoritam. Da bi neke instrukcije činile algoritam, sljedeće karakteristike treba da budu ispoštovane:
 
 \begin{itemize}
     \item    \textit{Dobro definisani ulazi}: Ako algoritam zahtjeva podatke u ulazu, podaci bi trebali biti dobro definisani. 
-    \item \textit{Dobro definisani rezultati}: Algoritam mora jasno definisati koji će se rezultat dobiti (kao izlaz) u zavisnosti od svakog ulaza. %Trebalo bi da vrati najmanje jedan izlaz.
+    \item \textit{Dobro definisani rezultati}: Algoritam na jasan način definiše koji će se rezultat dobiti (kao izlaz) u zavisnosti od svakog ulaza. %Trebalo bi da vrati najmanje jedan izlaz.
     \item    \textit{Konačnost}: Algoritam mora biti konačan, tj. trebao bi se prekinuti nakon konačnog vremena za sve testne slučajeve. Beskonačne petlje ili rekurzivne funkcije bez baznih uslova ne posjeduju svojstvo konačnosti; o ovome ćemo govoriti u nastavku.  
     \item  \textit{Dopustivost}: Algoritam  se može izvršiti u okviru dostupnih resursa.  %Ne smije sadržavati neku buduću tehnologiju ili bilo šta drugo.
-      \item \textit{Nezavisnost od jezika:} Algoritam koji je dizajniran mora biti nezavisan o jeziku u kojem se implementira; dakle, izlaz invarijantan od jezika imlementacije.
-      \item   \textit{Definisanost}: Sve instrukcije u algoritmu moraju biti nedvosmislene. Svaki osnovni operator u instrukciji mora biti definisan bez   nejasnoća.    % precizne i lake za interpretaciju. Pozivanjem  bilo koje  instrukcije algoritma,   jasno se može razumjeti šta ona radi. Svaki osnovni operator u instrukciji mora biti definisan bez   nejasnoća.  
-      %\item \textit{Učinkovitost}: Algoritam se mora razviti korištenjem vrlo osnovnih, jednostavnih i izvodljivih operacija tako da se može rekonstruisati (čak i na papiru).  %koristeći samo papir i olovku.
+      \item \textit{Nezavisnost od jezika:} Algoritam koji je dizajniran mora biti invarijanta jezika u kojem se implementira.
+      \item   \textit{Definisanost}: Sve instrukcije u algoritmu moraju biti nedvosmislene. Svaki osnovni operator u instrukciji mora biti definisan bez   nejasnoća.        
 \end{itemize}
 Koncizno rečeno, svaki algoritam posjeduje sljedeće karakteristike:  
 \begin{itemize}
@@ -98,28 +94,28 @@ Koncizno rečeno, svaki algoritam posjeduje sljedeće karakteristike:
     \item Vraća barem jedan izlaz.
     %\item Ima ulaz domenzije nula ili više.
     \item Posjeduje determinizam, tj. svaki put daje isti izlaz za isti ulazni slučaj.
-    \item Svaki korak u algoritmu je efikasan, tj. svaki korak bi trebao obaviti određeni posao.
+    \item Svaki korak u algoritmu je efektivan, tj. svaki korak bi trebao izvršavati konkretan posao.
 \end{itemize}
 
-\textit{Veličina ulaza} algoritma je defisana kao ukupan broj elemenata prisutnih u ulazu. Za dva problema, veličina ulaza $n$ može biti okarakterisana na drugačiji način.  Npr.  u problemu sortiranja to  je ukupan broj elemenata za sortiranje, dok je to  u problemima sa grafovima  ukupan broj čvorova i grana, a  u numeričkim problemima je to ukupan broj bitova potrebnih za predstavljanje broja. 
+\textit{Veličina ulaza} algoritma je defisana kao ukupan broj elemenata prisutnih u ulazu. Za dva problema, veličina ulaza $n$ može biti okarakterisana na drugačiji način.  Npr.  u problemu sortiranja to  je ukupan broj elemenata za sortiranje, dok ža problemime nad grafovima to može biti  ukupan broj čvorova i grana. Sa druge strane,  u numeričkim problemima je to ukupan broj bitova potrebnih za predstavljanje broja. 
 
  %https://www.geeksforgeeks.org/introduction-to-algorithms/ ==> Types of algorithms...
  \subsection{Vrste algoritama}
-Na raspolaganju je nekoliko tipova (paradigmi) algoritama. Neke važnije paradigme nabrajamo u nastavku bez ulaženja u detalje. 
+Na raspolaganju je nekoliko tipova (paradigmi) algoritama za rješavanje raznih tipov problema. Neke važnije paradigme nabrajamo u nastavku bez ulaženja u detalje koji će biti izloženi u nastavku ove knige. 
 \begin{enumerate}
 	\item Algoritmi \textit{brutalne sile} (eng. \textit{brute force}): jedan od najjednostavnijih pristupa rješavanja problema. Često je prvi pristup koji se primjenjuje za  rješavanje problema jer je ideja rješavanja u pozadini često vrlo naivna -- razmatraju se svi slučajevi koji  potencijalno mogu biti rješenje problema.
-	\item \textit{Rekurzivni algoritmi}: Ovi algoritmi su zasnovani na rekurziji. U ovom slučaju, problem se dijeli na nekoliko podproblema manje dimenzije te  se ista funkcija poziva iznova za rješavanje tih podproblemima, dok god se ne dođe do nekih trivijano rješivih slučajeva.
+	\item \textit{Rekurzivni algoritmi}: Ovi algoritmi su zasnovani na rekurziji. U ovom slučaju, problem se dijeli na niz podproblema manje dimenzije te  se ista funkcija poziva iznova za rješavanje tih podproblemima, dok god se ne dođe do nekih trivijano rješivih slučajeva.
 	\item \textit{Algoritam vraćanja unazad}: Ovo je algoritamska tehnika rekurzivnog rješavanja problema koja pokušava postepeno izgraditi rješenje, dio po dio, isključujući momentalno ona rješenja koja ne uspijevaju zadovoljiti ograničenja problema. 
 	\item  \textit{Algoritmi pretraživanja}:  Ovi algoritmi se koriste za pretraživanje elemenata ili grupa elemenata iz određene strukture podataka. Mogu biti različitih tipova na osnovu njihovog pristupa ili strukture podataka u kojoj se element nalazi.
 	\item \textit{Algoritmi sortiranja}: Sortiranje je uređivnanje grupe podataka  shodno nekom kriterijumu. Algoritmi koji pomažu u obavljanju ove funkcije nazivaju se algoritmi sortiranja. %Sortiranje grupa podataka na rastući ili opadajući način.
 	\item \textit{Algoritam podijeli i vladaj}: Ovaj algoritam razbija problem na podpro\-bleme, rješava podprobleme i spaja njihova rješenja kako bi se dobilo konačno rješenje. Sastoji se od sljedeće tri procedure:
-    podijeli, riješi, kombinuj. Ovo je, inače, algoritamska paradigma koja se koristi u rješavanju raznih tipova problema poput sortiranja.
+    podijeli, riješi i kombinuj. Ovo je, inače, algoritamska paradigma koja se koristi u rješavanju raznih tipova problema poput sortiranja.
   
-    \item \textit{Pohlepni algoritmi}: U ovom tipu algoritma rješenje se gradi konstruktivno, komponentu po komponentu.   Komopnenta koja procijenjeno daje najveću korist pri proširivanju trenutnog rješenja, se uzima kao komponenta koja  proširuje trenutno  rješenje. Odabir  narednog rješenja u nizu donosi se na osnovu nekog (pohlepnog) kriteijuma.
-    \item \textit{Dinamičko programiranje}: Ovaj tip algoritma koristi koncept korištenja već pronađenog rješenja (koje se čuva u memoriji) kako bi se izbjeglo ponavljanje izračunavanja istog dijela problema. Ova paradigma dijeli problem na manje podprobleme, koji se preklapaju, a potom ih rekurzivno rješava.
+    \item \textit{Pohlepni algoritmi}: U ovom tipu algoritma rješenje se gradi konstruktivno, komponentu po komponentu.   Komopnenta koja procijenjeno daje najveću korist pri proširivanju trenutnog rješenja, se uzima kao ona koja  proširuje trenutno  rješenje. Odabir  narednog rješenja u nizu donosi se na osnovu nekog (pohlepnog) kriteijuma.
+    \item \textit{Dinamičko programiranje}: Ovaj tip algoritma koristi koncept korištenja već pronađenog rješenja (koje se čuva u memoriji) kako bi se izbjeglo ponavljanje izračunavanja istog dijela (pod)problema. Ova paradigma dijeli problem na manje podprobleme, koji se preklapaju, a potom ih rekurzivno rješava.
 \end{enumerate}
    
-   Većina ovih tipova algoritama predstavljaju generičke sheme (paradigme) koje se mogu primijeniti na  rješavanje većeg opsega različitih problema. Tu pripadaju algoritmi brutalne sile, rekurzivni algoritmi, podijeli i zavladaj, algoritam vraćanja unazad, pohlepni algoritmi, dinamičko programiranje isl. U glavi 3 biće detaljno obrađene  neke od pomenutih paradigmi. \\
+ Većina ovih tipova algoritama predstavljaju generičke sheme (paradigme) koje se mogu primijeniti na  rješavanje većeg opsega različitih problema. Tu pripadaju algoritmi brutalne sile, rekurzivni algoritmi, podijeli i zavladaj, algoritam vraćanja unazad, pohlepni algoritmi, dinamičko programiranje isl. U glavi 3 biće detaljno obrađene  neke od pomenutih paradigmi.
   
 Dizajniranje efikasnog algoritma je obično dugotrajan proces koji nije direktan, te zahtijeva veliko domensko znanje o problemu te domišljatost vezana za način rješavanja samog  problema.  Međutim, postoje neka pravila kojima se vodimo kada konstruišemo algoritam kao što su korištenje paradigmi za koje znamo da su dovoljno efikasne u rješavaju određenog tipa problema. 
  \\ 
@@ -130,7 +126,7 @@ Dizajniranje efikasnog algoritma je obično dugotrajan proces koji nije direktan
  1100. godine uveo je ovaj brojevni sistem u Evropu te se smatra odgovornim  za današnje korišćenje  arapskih brojeva.   Stara francuska riječ \textit{algorisme} značila je
  ``arapski numerički sistem'', a tek kasnije je postao opšti recept za rješavanje računskih problema.
 
-\section{Teorijski RAM model}
+\section{Teorijski RAM model} \fxnote{Stigao dovde!}
 
 Pri razvoju algoritama, postavljaju se nekoliko ključnih pitanja: 
 \begin{enumerate}
