@@ -126,48 +126,47 @@ Dizajniranje efikasnog algoritma je obično dugotrajan proces koji nije direktan
  1100. godine uveo je ovaj brojevni sistem u Evropu te se smatra odgovornim  za današnje korišćenje  arapskih brojeva.   Stara francuska riječ \textit{algorisme} značila je
  ``arapski numerički sistem'', a tek kasnije je postao opšti recept za rješavanje računskih problema.
 
-\section{Teorijski RAM model} \fxnote{Stigao dovde!}
+\section{Teorijski RAM model}
 
-Pri razvoju algoritama, postavljaju se nekoliko ključnih pitanja: 
+Pri dizajniranju  algoritama, postavlja se nekoliko ključnih pitanja: 
 \begin{enumerate}
 	\item Da li je algoritam efikasan? 
 	\item Da li je jedan algoritam brži od drugog? 
-	\item Koliko je najlošije očekivano vrijeme izvršavanja algoritma za ulaze velikih dimenzija? 
+	\item Koje je najlošije (očekivano) vrijeme izvršavanja algoritma za ulaze velikih dimenzija? 
 \end{enumerate}
  
 
 Odgovor na ova pitanja nije trivijalan, i zahtjeva uvođenje stroge matematičke notacije i modela izračunljivosti. 
 
-Najprije uvedimo pojam \textit{mašine sa slučajnim pristupom} (eng. \textit{random access machine}), teorijskog modela računara.  Mašina sa slučajnim pristupom može da izvršava instrukcije i manipuliše podacima. Ova mašina pretpostavlja da je memorija  %koja se može zamisliti kao beskonačna traka,  
+Najprije uvedimo pojam \textit{mašine sa slučajnim pristupom} (eng. \textit{random access machine} -- RAM), teorijskog modela računara.  Mašina sa slučajnim pristupom može da izvršava instrukcije i manipuliše podacima. Ova mašina pretpostavlja da je unutrašnja memorija, koja se može zamisliti kao beskonačna traka,   
 podijeljena na diskretne ćelije, od kojih se svakoj može pristupiti i direktno modifikovati njen sadržaj, te da mašina izvršava instrukcije na sekvencijalni način (ne postoji paralelizam).
 
-Mašina sa slučajnim pristupom predstavlja varijaciju RAM modela koji uključuje randomizaciju u svojim operacijama. Gledajući fizički RAM model, redoslijed instrukcija je fiksan, ali u RAM-u se neke operacije mogu nasumično rasporediti. Npr. RAM može imati ``slučajnu''  instrukciju koja nasumično odabira ćeliju u memoriji i izvodi odgovarajuću operaciju u odabranoj ćeliji.
-
-Ova mašina predstavlja model (apstrakciju) koja se koristi u analizi algoritama i njihove složenosti jer omogućava \textit{precizno} izračunavanje broja instrukcija potrebnih za obavljanje određenog zadatka. Ovaj model pretpostavlja da su vremena pristupa memoriji konstantna, što ne odgovara  realnim računarima. U praksi, pristup memoriji može uzimati različito vrijeme ovisno o faktorima kao što su keširanje, brzina pristupa disku i kašnjenje mreže.
+%Mašina sa slučajnim pristupom predstavlja varijaciju realnog RAM modela koji uključuje randomizaciju u svojim operacijama. 
+Gledajući fizički RAM model i memoriju, redoslijed instrukcija je fiksan, ali u teorijskom RAM modelu se neke operacije mogu nasumično rasporediti. Npr. RAM može imati ``slučajnu''  instrukciju koja nasumično odabira ćeliju u memoriji i izvodi odgovarajuću operaciju u odabranoj ćeliji. Ovakva mašina predstavlja model (apstrakciju) koja se koristi u analizi algoritama i njihove složenosti jer omogućava \textit{precizno} izračunavanje broja instrukcija potrebnih za obavljanje određenog zadatka. Ovaj model pretpostavlja da su vremena pristupa memoriji konstantna, što ne odgovara  realnim računarima. U praksi, pristup memoriji može uzimati različito vrijeme ovisno o faktorima kao što su keširanje, brzina pristupa disku i kašnjenje mreže.
 
 %http://people.seas.harvard.edu/~cs125/fall14/lec6.pdf ==> follow
 \subsection{Instrukcije u RAM modelu}
 Krenimo sa formalizovanjem teorijskog modela koji 
-se standardno koristi za analizu algoritma.  Posmatrajući viši nivo,   karakteristike modela su sljedeće:
+se standardno koristi za analizu algoritma.  Posmatrajući viši nivo,   karakteristike modela su date sljedećim rezonovanjem. 
 
 \begin{itemize}
-	\item Glavna memorija je niz $M = (M[0], \ldots, M[S-1])$  $w$-bitnih riječi, koje se takođe mogu prikazati kao brojevi u intervalu
+	\item Glavna memorija je data nizom $M = (M[0], \ldots, M[S-1])$  $w$-bitnih riječi, koje se takođe mogu prikazati kao brojevi u intervalu
  $\{0,\ldots , 2^w - 1\}$.
- 	\item Niz $R = (R[0], \ldots , R[r - 1])$,  gdje je $r$ broj registara, koji su takođe $w$-bitne riječi. Registri se koriste za privremeno pohranjivanje podataka tokom izvođenja programa, te za pohranjivanje adresa za dohvaćanje podataka iz RAM-a. %Registar $R[0]$ ima specijalan status i uključen je gotovo u svakoj operaciji. %, kao i za čuvanje privremenih rezultata izračunavanja. 
+ 	\item Niz $R = (R[0], \ldots , R[r - 1])$,  gdje je $r$ broj registara, koji su takođe $w$-bitne riječi. Registri se koriste za privremeno pohranjivanje podataka tokom izvođenja programa, te za pohranjivanje adresa za dohvaćanje podataka iz RAM-a. %Registar $R[0]$ ima specijalan status i uključen je gotovo u svakoj operaciji. %, kao i za čuvanje privremenih rezultata izračunavanja. -(Sistem ili CPU, pokazivaci) 
  	
  	\item Algoritmima je dozvoljen samo direktan pristup registrima. Preostalim memorijskim lokacijama može se pristupiti samo
- 	indirektnim adresiranjem -- intepretirajući riječi (u registru) kao pokazivač na drugu memorijsku lokaciju. Dakle, zahtjevamo
+ 	indirektnim adresiranjem -- intepretirajući riječi (u registru) kao pokazivač na drugu memorijsku lokaciju. Dakle, zahtijevamo
  	$S \leq  2^w$.
  	\item Program je konačan niz instrukcija.
  	\item Skup instrukcija se sastoji od osnovnih aritmetičkih i bitskih operacija nad riječima (u registrima), kondicionalima
- 	(\texttt{if}--\texttt{else}), \texttt{goto}, kopiranja riječi između registara i glavne memorije, zaustavljanja.
+ 	(\texttt{if}--\texttt{else}), \texttt{goto}, kopiranja riječi između registara i glavne memorije, zaustavljanja (HALT).
  	\item Dopuštamo \texttt{\textit{malloc}} operaciju, tj. dodavanje dodatne memorijske ćelije, povećavajući $S$ eksplicitno (i $w$ ako je potrebno da osiguramo $S \leq 2^w$).
  	\item Početna konfiguracija memorije je sljedeća:
  	($i$) Ulaz veličine $n$ se smješta  u glavnu memorijsku lokaciju $(M[0],\ldots , M[n - 1])$; ($ii$) Veličina riječi postavljena je na $w = \lfloor \log_2 \max\{n + 1, k + 1\} \rfloor $, gdje je $k$ gornja granica za brojeve koji se
  	pojavljuju ili u ulazu ili kao konstanta u programu; ($iii$) Registar 0 se inicijalizira sa $w$, a registar 1 sa $n$.
  \end{itemize}
 
-Formalno, sljedeće instrukcije (u RAM modelu) su podržane za indekse $i, j, k, m \in \mathbb{N} $:
+Formalno, sljedeće instrukcije (u RAM modelu) su podržane za proizvoljne indekse $i, j, k, m \in \mathbb{N} $:
 
 %\begin{figure}[H]
 %	\centering
@@ -207,7 +206,7 @@ niz registara, i $M = (M[0], \ldots, M[|S| - 1]) \in  \{0, \ldots, 2^w - 1\}^{|S
 \end{definition}
 %%https://medium.com/@_SD10_/the-ram-model-of-computation-and-big-o-notation-a1b3cc50ec2c
 \begin{definition}
- Za konfiguraciju $K = (l, S, w, R, M)$ \textit{w}-RAM programa $(P_1, \ldots, P_q)$ definišemo sljedeću konfiguraciju $K' = (l', S', w', R', M')$, u zapisu $K$ $\Rightarrow_P K'$, na sljedeći način:
+ Za konfiguraciju $K = (l, S, w, R, M)$ \textit{w}-RAM programa $(P_1, \ldots, P_q)$ definišemo sljedeću konfiguraciju $K' = (l', S', w', R', M')$, u zapisu $K$ $\Rightarrow_P K'$, sa:
  
  \begin{itemize}
  	\item Ako je $P_l$ = ``IF $R[i] = 0$, GOTO $m$'' za neke $i < r$ i $m \in  \{1, \ldots , q\}$, onda  $K' = (l', S, w, R, M)$ gdje je  $l'= m$ ako je $R[i] = 0$, a $l' = l + 1$ inače. 
@@ -244,8 +243,7 @@ Definišimo sada formalno pojam računarskog problema shodno prethodno definisan
 	\item  \textit{Ujednačenost}: zahtijevamo da postoji konačan program koji bi trebao raditi za proizvoljne ulaze neograničene veličine
 (kad $n, k \rightarrow \infty$).
     \item Računanje se odvija nizom “baznih” operacija.
-    \item Ne namećemo a priori ograničenje za vrijeme (broj koraka) ili prostor   (memorija). Ove resurse 
-      želimo minimizirati, ali i dalje teorijski RAM model  smatra  algoritmom čak i ako on koristi ogromne količine vremena i prostora, što se, vidjećemo, razlikuje od praktičnog aspekta algoritama. 
+    \item Ne namećemo a priori ograničenje za vrijeme (broj koraka) ili prostor   (memorija). Bez obzira što ove resurse želimo minimizirati, teorijski RAM model  smatra  za algoritam čak i ako koristi ogromne količine vremena i prostora, što se, vidjećemo, razlikuje od praktičnog aspekta algoritama. 
 \end{itemize}
 
 Pri računanju broja instrukcija izvršavanja programa $P$, u obzir uzimamo sljedeće operacije: aritmetičke i bitske operacije (+, -, *, /, \&, $\mid,\ldots $), logičke ($\wedge$,$\vee$, $\Rightarrow$, $\Leftrightarrow$), operacija dodjele, te ulazno/izlazne operacije. Ove operacije nazivamo \textit{jediničnim instrukcijama}.  Pretpostavka je da se sve jednične instrukcija izvršavaju u jediničnom vremenu.  Vremenska složenost programa se upravo mjeri na osnovu ukupnog broja jediničnih instrukcija, o čemu ćemo više reći u narednoj sekciji. 
@@ -257,7 +255,7 @@ Napomenimo da je jediničnim modelom složenosti definisan (teorijski) RAM model
 Definišimo sada vremensku složenost izvršavanja programa $P$ na RAM modelu.
 
 \begin{definition}
-	Vrijeme rada $P$ za ulaz  $x \in \mathbb{N}^*$ je broj $t$ koraka prije nego $P$ dostigne zaustavnu
+	Vrijeme rada programa $P$ za ulaz  $x \in \mathbb{N}^*$ je broj $t$ koraka prije nego $P$ dostigne zaustavnu
 	konfiguracija (operacija ``HALT'') za $x$. Dakle, najmanji $t$ za koji postoji niz $K_0 \Rightarrow_P  K_1 \Rightarrow_P \cdots \Rightarrow_P K_t$ takav da je $K_0$
 	početna konfiguracija od $P$ za ulaz $x$, a $K_t$ je konfiguracija zaustavljanja (gdje se programski brojač  ažurira na $q + 1$, a $q$
 	označava broj instrukcija u programu $P$).  
@@ -278,7 +276,7 @@ Definišimo sada vremensku složenost izvršavanja programa $P$ na RAM modelu.
 
 %\end{example}
 
-Izračunajmo tačan broj instrukcija programa konkretnog ulaza $a = [1\ 5\ 2\ 10\ 7]$ i $n = 5$. Imamo: prva linija sadrži jednu instrukciju (dodjela). Unutar petlje (koja se izvršava $n-1$ puta, za koju se dodjeljuje nova  vrijednost iteratoru \texttt{i}, te se potom provjerava da li je ona veća od $n$), broj instrukcija koji je uvjetovan prolazom elementima niza  $\texttt{a}$ je $5, 3, 5$ i $3$, što je ukupno $1+5+3+5+3=17$ izvršenih instrukcija.  U kombinaciji sa instrukcijama za varijable \texttt{i} u \emph{for} petlji, ovaj program izvršava ukupno $17+ 4 \cdot 2 + 1 = 26$ instrukcija.
+Izračunajmo tačan broj instrukcija programa konkretnog ulaza $a = [1\ 5\ 2\ 10\ 7]$ i $n = 5$. Imamo: prva linija sadrži jednu instrukciju (dodjela). Unutar petlje (koja se izvršava $n-1$ puta, za koju se dodjeljuje nova  vrijednost iteratoru \texttt{i}, te se potom provjerava da li je ona veća od $n$), broj instrukcija koji je uvjetovan prolazom elementima niza  $\texttt{a}$ je $5, 3, 5$ i $3$, što je ukupno $1+5+3+5+3=17$ izvršenih instrukcija.  U kombinaciji sa instrukcijama za varijablu \texttt{i} u \emph{for} petlji, ovaj program izvršava ukupno $17+ 4 \cdot 2 + 1 = 26$ instrukcija.
 
 
 
@@ -292,9 +290,8 @@ jediničnih instrukcija. Tačan broj instrukcija za svaki ulaz u kompleksnim pro
 
 \begin{example} 
 	
-	Pogledajmo sljedeći program  \\  \vspace{0.3cm} 
+	Pogledajmo sljedeći program  \\  %\vspace{0.3cm} 
 \begin{minted}{Python}
-
 algoritam sort(a, n)
   for i in 1  to n-1 do
      for j in 0 to  i-1 do
@@ -304,35 +301,38 @@ algoritam sort(a, n)
            	\end{minted}
 \end{example}
 
-Najgori slučaj za ulazne podatke je kada se instrukcije pod \emph{if}--petljom stalno izvršavaju; to je slučaj kada je na ulazu niz \texttt{a} kojem su elementi poredani u obrnutom  poretku u odnosu na traženi poredak. Prema tome \texttt{swap} operacija se tada izvršava u svakoj iteraciji, i ona sadrži 3 instrukcije (dodjela). Unutrašnja petlja se izvršava $i$ puta  za svaki $i=1, \ldots, n-1$.  Tada imamo da je  
-$$ \sum_{i=1}^{n-1} \sum_{j=0}^{i-1} 2 \cdot 3 = 6 \sum_{i=1}^{n-1} i = 3 \cdot {(n-1) \cdot n}$$ najveći (najgori) broj instrukcija koji algoritam izvršava za svaki ulaz dužine $n$. 
+\fxnote{Dosao dovde!}
+
+Najgori slučaj za ulazne podatke je kada se instrukcije pod \emph{if}--petljom stalno izvršavaju; to je slučaj kada je na ulazu niz \texttt{a} kojem su elementi poredani u obrnutom  poretku u odnosu na traženi. Prema tome \texttt{swap} operacija se tada izvršava u svakoj iteraciji, i ona sadrži 3 instrukcije (pred instrukcije pod \emph{if} komandom). Unutrašnja petlja se izvršava $i$ puta  za svaki $i=1, \ldots, n-1$.  Tada imamo da je  
+$$ \sum_{i=1}^{n-1} \sum_{j=0}^{i-1} 2 \cdot 4 = 8 \sum_{i=1}^{n-1} i = 4 \cdot {(n-1) \cdot n}$$ najveći broj instrukcija koji algoritam izvršava za svaki ulaz dužine $n$. 
 \\
 
 
-Za najgore vrijeme izvršavanja  uzimamo najgori slučaj ulaznih podataka određene dimenzije za koji će se izvršiti maksimalan broj instrukcija. Motivacija za računanje najgoreg vremena izvršavanje programa (algoritama) je sljedeća. Najgori slučaj izvršavanja algoritma je obično lakši za detektovanje i izračunavanje nego je to slučaj sa   tačnim brojem koraka (instrukcija) za konkretnu instancu, koji ne govori mnogo o broju instrukcija programa za ulaze drugačijih distribucija. Prepoznavanje najgoreg slučaja za ulazne podatke određene dimenzije za koje program radi najduže nam omogućuje da utvrdimo gornju granicu za broj instrukcija svakog mogućeg izvršenja programa. Ovakvo vrijeme izvršavanja ne  zavisi od konkretne (distribucije) ulazne instance, čime se dobija bolji osjećaj o efikasnosti programa u odnosu na veličinu ulaza.
+Za najgore vrijeme izvršavanja  uzimamo slučaj ulaznih podataka određene dimenzije za koji će se izvršiti maksimalan broj instrukcija. Motivacija za računanje najgoreg vremena izvršavanje programa (algoritama) je sljedeća. Najgori slučaj izvršavanja algoritma je obično lakši za detektovanje i izračunavanje nego je to slučaj sa   tačnim brojem koraka (instrukcija) za konkretnu instancu, koji ne govori mnogo o broju instrukcija programa za ulaze drugačijih distribucija. Prepoznavanje najgoreg slučaja za ulazne podatke određene dimenzije za koje program radi najduže nam omogućuje da utvrdimo gornju granicu za broj instrukcija svakog mogućeg izvršenja programa instanci fiksne veličine. Ovakvo vrijeme izvršavanja ne  zavisi od konkretne (distribucije) ulazne instance, čime se dobija bolji osjećaj o efikasnosti programa u odnosu na veličinu ulaza.
  
 Bez obzira na ovakva pojednostavljenja, i dalje je egzaktno računanje najgoreg vremena izvršavanja težak posao u većini kompleksnih programa. Stoga, u nastavku govorimo o pojmu \textit{asimptotskog} vremena izvršavanja programa.  Gotovo uvijek se broj koraka izvršavanja u algoritmu povećava shodno povećavanju dimenzije ulaza. Prema tome, ima smisla posmatrati ponašanje algoritma na  
 ulazima velike dimenzije jer se često programi čiji su ulazi  malih dimenzija ionako efikasno izvršavaju (imaju kratko vrijeme izvršavanja)  nezavisno od algoritamske tehnike rješavanja. U sljedećoj podsekciji, formalno uvedimo pojam $O$--notacije. 
  
  
-\subsection{$O$--notacija} 
+\subsection{$O$--notacija}  \fxnote{Dovde stigao!}
 $O$-notacija   dodatno pojednostavljuje ocjenjivanje broja izvršenih instrukcija  programa, fokusirajući se na ponašanje algoritma na ulazima velikih dimenzija.  Pretpostavimo da imamo sljedeću situaciju o ocjeni najgoreg scenarija izvršavanja dva algoritma (na istom posmatranom problemu): 
 \begin{itemize}
 	\item $T_1(n) = 2 n^{\frac{3}{2}} + 3n + 10$
-	\item $T_2(n) = 4 n \cdot \log n + \lceil \sqrt{n} \rceil + 22 $
+	\item $T_2(n) = 4 n \cdot \log^3 n + \lceil \sqrt{n} \rceil + 11 $
 \end{itemize}
 
-Upoređivanje ovakvih funkcija zahtjeva analitičku analizu obje funkcije, pri čemu se može utvrditi da je prvi algoritam (koji se izvršava u $T_1$ vremenu u odnosu na ulaz veličine $n$)  brži -- zahtjeva izvođenje manjeg broja instrukcija -- za manje $n$, dok je za veće $n$ očigledno u prednosti algoritam sa vremenom izvršavanja $T_2$ ($n \log n$ dosta sporije raste od funkcije $n^{\frac{3}{2}}$). 
+Upoređivanje ovakvih funkcija zahtjeva analitičku analizu obje funkcije, pri čemu se može utvrditi da je prvi algoritam (koji se izvršava u $T_1$ vremenu u odnosu na ulaz veličine $n$)  brži -- zahtjeva izvođenje manjeg broja instrukcija -- za manje $n$, dok je za veće $n$ očigledno u prednosti algoritam sa vremenom izvršavanja $T_2$ ($n \log^3 n$ sporije raste od funkcije $n^{\frac{3}{2}}$) porastom vrijednosti $n$. 
 
 Dakle, cilj je je pojednostaviti računanje izvršenog broja instrukcija, koje se postiže uvođenjem sljedećih konvencija u svrhu ocijenjivanja ponašanja algoritma na instancama velikih dimenzija.
 \begin{enumerate}
 	\item Konstante uz svaki od termova se ignorišu.
-	\item Dominantni termovi se uzimaju, dok se ostali (nedominirajući) ignorišu. Dominantan je onaj term koji najbrže raste sa porastom dimenzije ulaza. Dakle, procjenjuje se asimptotsko ponašanje broja instrukcija u zavisnosti od veličine ulaza programa. 
+	\item Uzimaju se dominantni termovi (nose veću težinu za većom vrijednosti $n$), dok se ostali (nedominirajući) ignorišu. %Dominantan je onaj term koji najbrže raste sa porastom dimenzije ulaza. 
+	Drugim riječima, procjenjuje se asimptotsko ponašanje broja instrukcija u zavisnosti od veličine ulaza programa. 
 \end{enumerate}
 
-Za $T_1(n)$  je dominantni term funkcija $n^{\frac{3}{2}}$, dok je to za $T_2(n)$ funkcija $n \cdot \log n$. 
+Za $T_1(n)$  je dominantni term funkcija $n^{\frac{3}{2}}$, dok je to za $T_2(n)$ funkcija $n \cdot \log^3 n$. 
  
- Nadalje pretpostavimo da radimo sa pozitivnim funkcijama, sa pozitivnim vrijednostima argumenata. 
+ Nadalje, u nastavku pretpostavljamo da radimo sa pozitivnim funkcijama, sa pozitivnim vrijednostima argumenata. 
 
 %%https://www.khanacademy.org/computing/computer-science/algorithms/asymptotic-notation/a/big-o-notation
 
@@ -351,7 +351,7 @@ Neka su date dvije funkcije $f$ i $g$. Kažemo da $f = O(g)$ akko postoji konsta
 %https://afteracademy.com/blog/time-and-space-complexity-analysis-of-algorithm/
 
 \begin{example}
-	Jasno je da $T_1 = O(n^2)$, ali i $T_1 = O(n^{\frac{3}{2}})$. Takođe, $T_2 = O(n \log n)$. 
+	Jasno je da $T_1 = O(n^2)$, ali i $T_1 = O(n^{\frac{3}{2}})$. Takođe, $T_2 = O(n \log^3 n)$. 
 \end{example}
 
 U osnovi, dominirajući term nam govori o asimptotskoj granici čitavog izraza (dobijen računanjem (najgoreg mogućeg) broja instrukcija izvršenog u programu), jer kad je $n$ dovoljno veliko, vrijednost izraza dominantno zavisi od dominirajućeg terma, dok se ostali termi doprinose u ne tako značajnoj mjeri da bi se promijenio zaključak o asimptotskom ponašalju porasta broja instrukacija programa sa porastom dimenzije ulaza. 
@@ -448,10 +448,10 @@ Prethodna sekcija nam daje na uvid neke od osnovnih notacija za ocjenjivanje slo
  \end{figure}
 
 
-U praksi, neželjena složenost algoritma je eksponencijalna, dok su logaritamska, linearna i log-linearna složenost poželjne i takvi algoritmi su obično veoma efikasni u rješavanju problema, tj. instanci velikih dimenzija. U zavisnosti od tipa problema, kvadratna složenost može ali i ne mora biti garant za rješavanje realnih instanci većih dimenzija razmatranog  problema. %U najvećem broju slučajeva, klasa funkcija koja  koja prelazi kvadratnu je nedovoljno dobra. 
+U praksi, neželjena složenost algoritma je eksponencijalna, dok su logaritamska, linearna i log-linearna složenost poželjne i takvi algoritmi su obično veoma efikasni u rješavanju problema na instancama velikih dimenzija. U zavisnosti od tipa problema, kvadratna složenost može ali i ne mora biti garant za rješavanje instanci većih dimenzija razmatranog  problema. %U najvećem broju slučajeva, klasa funkcija koja  koja prelazi kvadratnu je nedovoljno dobra. 
 
 
-U nastavku izlažemo neka uputstva koja olakšavaju računanje složenosti algoritma. Za (pod)program $P$, označimo njegovu složenost izvođenja sa funkcijom $T(P)$ koja (direktno ili indirektno) zavisi od dimenzije ulaza ($n$). 
+U nastavku izlažemo neka uputstva koja olakšavaju računanje složenosti algoritma. Za (pod)program $P$, označimo njegovu složenost izvođenja sa funkcijom $T(P)$ koja   zavisi od dimenzije ulaza ($n$). 
  
 \begin{table}[H]
 		\caption{Uputstva za računanje složenosti algoritma.}  \label{tab:uputstva_racunanje}
@@ -469,12 +469,13 @@ U nastavku izlažemo neka uputstva koja olakšavaju računanje složenosti algor
 	\end{tabular}
 \end{table}
 
-Odgovorimo sada na pitanja da li je jedan algoritam efikasniji od drugoga?
+Odgovorimo sada na pitanje kada je jedan algoritam efikasniji od drugoga. \\ 
+
 Upravo, odgovor nam daju notacije za složenost koje smo naučili u ovoj glavi, i to dvije najznačajnije: $O$ i $\Theta$--notacije. Kažemo da je jedan algoritam $X$ \textit{asimptotski efikasniji} od drugog algoritma  $Y$ akko sa porastom veličine ulaza u oba algoritma, vrijeme rada algoritma $X$ postaje kraće od vremena rada $Y$. To znači da $X$ pripada nižoj $O$--klasi složenosti od $Y$. %https://www.geeksforgeeks.org/algorithms-analysis-of-algorithms-question-16/ 
 Prema tome, za velike ulaze, algoritam $X$ je uvijek biti bolji izbor od  algoritma $Y$ u smislu efikasnosti (vremena izvođenja). Međutim, za male ulaze moguće je da je $Y$ i dalje brži od $X$. Stoga se ne može reći da je $X$ uvijek bolji izbor za sve ulazne vrijednosti, već da će $X$ biti bolji izbor za sve ulaze osim eventualno malih ulaza.
 
 
-U narednom primjeru dajemo jedan zadatak, rješavamo ga na dva načina, te izvodimo složenost oba programa.
+U narednom primjeru navodimo jedan zadatak, rješavamo ga na dva načina, te izvodimo složenost oba pristupa.
 
 \begin{example}
  \textit{{Problem nalaska (neprekidnog) podniza  maksimalne sume}}.  Od svih neprekidnih podnizova datog
@@ -482,14 +483,14 @@ U narednom primjeru dajemo jedan zadatak, rješavamo ga na dva načina, te izvod
 \end{example}
 \begin{solution}
  
- Neka je dat ulaz $\texttt{a} = [1, 4, -2, 2, 10, -7, 1]$.  Jedan neprekidan podniz ovog niza je $[ -2, 2, 10 ]$ (početne pozicije 2, te završne pozicije 4), ali $[-2, -7, 10]$ nije neprekidan podniz. 
+ Neka je dat ulaz $\texttt{a} = [1, 4, -2, 2, 10, -7, 1]$.  Jedan neprekidan podniz ovog niza je $[ -2, 2, 10 ]$ (početne pozicije 2, te završne pozicije 4), ali $[-2, -7, 1]$ nije neprekidan podniz. 
  
 Koristimo se naivnim pristupom rješavanja problema. Definišimo $$S(i, j) := \max  \{ a[i], \ldots, a[j] \},$$
 
 gdje je $S(i, i ) = a[i]$. 
 Funkcija $S(i,j)$ računa sumu elemenata neprekidnog podniza niza \texttt{a}, sa početnom pozicijom  $i$, te završnom pozicijom $j$.
-Za izračunavanje funkcije $S(i, j)$, potrebno je $j-i+1$ instrukcija, što definitivno pripada klasi $O(n)$. Da bismo riješili problem na ovaj način, 
-treba da pozovemo funkciju $S(i,j)$ za svaki par $(i,j),  {i, j \in \{0, \ldots , n-1\},  i \leq j}$, a to je ukupno $\binom{n}{2} + n$ puta, što odgovara klasi složenosti $O(n^2)$. Dakle, složenost ovakvog algoritma je $O(n)\cdot O(n^2) = O(n^3)$ što je kubna složenost. 
+Za izračunavanje funkcije $S(i, j)$, potrebno je $j-i \leq n$ instrukcija, što definitivno pripada klasi $O(n)$. Da bismo riješili problem na ovaj način, 
+treba da pozovemo funkciju $S(i,j)$ za svaki par $(i,j),  {i, j \in \{0, \ldots , n-1\},  i \leq j}$, a to je ukupno $\binom{n}{2} + n$ puta, što odgovara klasi složenosti $O(n^2)$. Dakle, složenost ovakvog algoritma je $O(n)\cdot O(n^2) = O(n^3)$ što odgovara kubnoj složenosti. 
 
 Pokušajmo konstruisati ``pametniji'' algoritam. Iskoristimo činjenicu da postoji jasna rekurzivna zavisnost između vrijednosti dva susjedna $S(i,j)$ i $S(i, j+1)$, tj. da je $S(i, j+1) = a[j+1] + S(i, j)$, za $j \in \{i, \ldots, n-2\}$. Definišimo sada:
 $$ S(i):= \max \{ S(i, i), S(i, i+1), \ldots, S(i, n-1)\}.$$
@@ -499,9 +500,6 @@ Izvršavanje funkcije $S(i)$ se odvija u linearnoj složenosti, tj. $O(n)$. Kako
 
 \end{solution}
 
-
-
- 
  
  \section{Prostorna složenost}
  
@@ -515,11 +513,11 @@ Izvršavanje funkcije $S(i)$ se odvija u linearnoj složenosti, tj. $O(n)$. Kako
  Napomenimo da prostorna složenost zavisi i od programskog jezika, kompajlera, pa  čak i mašine koja pokreće algoritam.
  
  
- Efikasnost algoritma uglavnom je definisana u odnosu na  dva faktora, korišteni prostor i vrijeme. ``Dobar'' algoritam je onaj koji koristi manje vremena i prostora; međutim, to nije moguće stalno postići. Zbog toga postoji kompromis između vremena i prostora. Ako želimo skratiti vrijeme izvršavanja algoritma, korišteni prostor se obično povećava. Slično tome, ako želimo smanjiti prostor, vrijeme izvršenja algoritma se obično povećava. %Dakle, treba napraviti kompromis između prostora i vremena.  
+ Efikasnost algoritma uglavnom je definisana u odnosu na  dva faktora, korišteni prostor i vrijeme. ``Dobar'' algoritam je onaj koji koristi manje vremena i prostora; međutim, to nije uvijek moguće postići. Zbog toga postoji kompromis između vremena i prostora. Ako želimo skratiti vrijeme izvršavanja algoritma, korišteni prostor se obično povećava. Slično tome, ako želimo smanjiti prostor, vrijeme izvršenja algoritma se obično povećava. %Dakle, treba napraviti kompromis između prostora i vremena.  
  
  
  \begin{example}
- 	Posmatrajmo sljedeći pseudokod, te odredimo prostornu složenost datog 
+ 	Posmatrajmo sljedeći pseudokod (objašnjenje ovog pojma slijedi u narednom poglavlju), te odredimo prostornu složenost datog 
  	programa. 
  	
  	
@@ -539,7 +537,7 @@ Izvršavanje funkcije $S(i)$ se odvija u linearnoj složenosti, tj. $O(n)$. Kako
  			
  			\State $sum \gets 0$
  			\For{$i = 0 \text{ to } n-1$}
- 			\State $sum \gets sum + \texttt{pairSum}(i, i+1)$
+ 			\State $sum \gets sum + \textsc{pairSum}(i, i+1)$
  			\EndFor
  			\State \textbf{return} \textit{sum}~
  			\EndProcedure
@@ -553,11 +551,11 @@ Izvršavanje funkcije $S(i)$ se odvija u linearnoj složenosti, tj. $O(n)$. Kako
  \end{example}
  
  
-  \textbf{\textit{Napomena}}. U standardnom programiranju, podrazumijeva se korištenje 256MB prostora za određeni program. Dakle, kreiranje   niza veličine veće od $10^8$ nije dozvoljeno, jer je na raspolaganju data gornja granica za količinu memorije na  raspolaganju. Takođe, kreiranje  niza veličine veće od $10^6$ u tijelu funkcije nije moguće, jer je maksimalni prostor dodijeljen funkciji (u lokalnom steku) 4MB. Dakle, da bismo koristili niz veće veličine, potrebno je kreirati globalni niz.
+  \textbf{\textit{Napomena}}. U standardnom programiranju, podrazumijevano je korišćenje 256MB prostora za jedan program. Dakle, kreiranje   niza veličine veće od $10^8$ nije moguće, jer je na raspolaganju data gornja granica za količinu memorije. Takođe, kreiranje  niza veličine veće od $10^6$ u tijelu funkcije nije moguće, jer je maksimalni podražumijevani prostor dodijeljen funkciji (u lokalnom steku) 4MB. Dakle, da bismo koristili niz veće veličine, potrebno je kreirati globalni niz.  
 
 \section{Pseudokod}
 
-\textit{Pseudokod} je jednostavan prikaz implementacije algoritma u obliku anotacija i informativnog teksta napisanog na običnom jeziku. On nema sintaksu kao bilo koji programski jezik i stoga ga računar ne može kompajlirati ili interpretirati. % Često su algoritmi  predstavljeni pomoću pseudo kodova jer se mogu protumačiti bez obzira na znanje onog koji ga nasoji razumjeti. 
+\textit{Pseudokod} je jednostavan prikaz implementacije algoritma u obliku anotacija i informativnog teksta napisanog na običnom jeziku. Nema sintaksu kao bilo koji programski jezik i stoga ga računar ne može kompajlirati ili interpretirati. % Često su algoritmi  predstavljeni pomoću pseudo kodova jer se mogu protumačiti bez obzira na znanje onog koji ga nasoji razumjeti. 
  Pseudokod, kao što sam naziv sugeriše, je reprezentacija k\^oda koja je prilagođena da ga razumiju i osobe bez velikog znanja o programiranju i algoritmima. Za razliku od pseudokoda, algoritam je organizirani   niz instrukcija koji rješava određen problem pri implementiranju u nekom programskom jeziku, te se kompajliranjem  ili interpretiranjem prevodi u mašinski k\^od kojeg mašina može da izvrši.
 
 Prednosti korištenja pseudokoda su sljedeće. 
@@ -573,12 +571,12 @@ Glavni cilj pseudokoda je da nedvosmisleno objasni suštinu svakog dijela progra
 
 Pisanje pseudokoda počinje razumijevanjem problema koji se rešava. Nakon  jasnog definisanja problema, slijedi razmatranje koraka koje treba preduzeti kako bi se došlo do rešenja. Te korake zatim zapisujemo uz pomoć  pseudokoda.
 
-Nekoliko saveta u vezi prakse pisanja ``dobrog''  pseudokoda su:
+U nastavku slijedi nekoliko saveta u vezi prakse pisanja ``dobrog''  pseudokoda.
 \begin{itemize}
 	\item Koristiti jasne i precizne nazive za promenljive i funkcije.
 	\item Koristiti opise koji jasno ukazuju na to šta se dešava u svakom koraku algoritma. 
 	\item Razmisliti o slučajevima u kojima algoritam može da se zaustavi i načinima na koje  se to može desiti.
-	\item Koristiti odgovarajuće sintakse za kontrolne strukture kao što su petlje i uslovi: \texttt{if-else}, \texttt{for}, \texttt{while} petlje. Koristiti mehanizam uvlačenja naredbi koje se izvršavaju u okviru istog bloka, jer pomaže lakšem shvatanju kontrolnog mehanizma i izvršavanja odluka. Ovakva praksa u velikoj mjeri poboljšava čitljivost k\^oda. Pogledajmo u nastavku primjer jednog jednostavnog pseudokoda.
+	\item Koristiti odgovarajuću sintaksu za kontrolne strukture kao što su petlje i uslovi: \texttt{if-else}, \texttt{for}, \texttt{while} petlje. Koristiti mehanizam uvlačenja naredbi koje se izvršavaju u okviru istog bloka, jer pomaže lakšem shvatanju kontrolnog mehanizma i izvršavanja odluka. Ovakva praksa u velikoj mjeri poboljšava čitljivost k\^oda. Pogledajmo u nastavku primjer jednog jednostavnog pseudokoda.
 	
 	\begin{minted}{C}
         
@@ -645,11 +643,11 @@ U nastavku navodimo (koncizniji) pseudokod, koji rješava problema nalaska podni
 
 \section{O valjanosti algoritma}
 
-Postoji nekoliko načina da se formalno provjeri valjanost algoritama; tri  su osnovna načina:
+Postoji nekoliko načina da se formalno provjeri valjanost algoritama. Tri  su osnovna načina:
 
 \begin{itemize}
 	\item \textit{Matematički dokaz}. Predstavlja jedan od najrigoroznijih načina za provjeru valjanosti algoritma.  %je matematički pokazati da algoritam uvijek daje ispravan izlaz. 
-	Ovdje se koriste matematičke tehnike za analizu logike algoritma i za utvrđivanje da algoritam radi ispravno za sve moguće ulaze. Jedana od metoda je \textit{metoda invarijantne petlje}, kojom ćemo se pozabaviti u nastavku ove sekcije. 
+	Ovdje se koriste matematičke tehnike za analizu logike algoritma i za utvrđivanje da algoritam radi ispravno za sve moguće ulaze. Jedana od metoda je \textit{metoda invarijantne petlje}, kojom ćemo se pozabaviti u nastavku ove glave. 
 	
     \item \textit{Formalna verifikacija}. Formalna verifikacija je proces upotrebe matematičkih tehnika i alata za provjeru da li algoritam ispunjava određene specifikacije. Ovo uključuje modelovanje algoritma korištenjem formalnog jezika, a zatim korištenje automatiziranih alata za provjeru da li model zadovoljava određena svojstva. U osnovi, ovi metodi su iz domena vještaške inteligencije specijalno namijenjeni za verifikaciju softvera.
     \item \textit{Testiranje}.  Iako testiranje nije formalna metoda već \textit{empirijska}, ona predstavlja važan način za provjeru valjanosti algoritma. Pokretanjem algoritma sa raznim ulaznim vrijednostima i provjeravanjem izlaza u odnosu na očekivane rezultate, može se steći povjerenje o tome da li je algoritam ispravan.
@@ -679,7 +677,7 @@ Demonstrirajmo   pokazivanje ispravnosti programa za nalazak \textit{najvećeg z
 	\begin{algorithmic}[1]
 		\Procedure{NZD}{$n, m$}
 		\State $nzd \gets \min(n, m)$
-		\While{!($n \% nzd == 0 \  \& \ m \% nzd == 0$)}
+		\While{!($n \% nzd = 0 \  \& \ m \% nzd = 0$)}
 		    \State $nzd \gets nzd - 1$
 		\EndWhile
 		\State \Return $nzd$
@@ -688,14 +686,14 @@ Demonstrirajmo   pokazivanje ispravnosti programa za nalazak \textit{najvećeg z
    \caption{NZD dva broja.} \label{alg:nzd}
 \end{algorithm}
 
-Ovaj program je konačan, jer je broj iteracija u glavnoj \emph{while}-petlji najviše $nzd$, dok je broj instrukcija u svakoj iteraciji takođe konačan (jednak 5+2=7). Dalje, odredimo uslov invarijantne petlje. Neka je ${nzd}^*$ konačan rezultat koji program vraća (koji je zasigurno zajednički djelilac, po uslovu prekida petlje). Tada  invarijantnu petlju definišemo sa 
+Ovaj program je konačan, jer je broj iteracija u glavnoj \emph{while}-petlji najviše $nzd$, dok je broj instrukcija u svakoj iteraciji takođe konačan (jednak 6+2=8{\tiny }). Dalje, odredimo uslov invarijantne petlje. Neka je ${nzd}^*$ konačan rezultat koji program vraća (koji je zasigurno zajednički djelilac, po uslovu prekida petlje). Tada  invarijantnu petlju definišemo sa 
 $$ nzd^* \leq nzd.$$
 
 Prije ulaska u prvu iteraciju petlje imamo $nzd^* \leq nzd = d_0 = \min(n, m)$. 
 Neka je prije ulaska u $k$-tu iteraciju petlje $d_{k-1} = nzd$. Tada je  $nzd^* < d_{k-1}$ jer se  ulaskom u $k$-tu iteraciju petlje uvjeravamo da $d_{k-1}$ ne može biti NZD ulaznih brojeva (jer tada zadovoljava uslov \textit{while}-petlje). Tada imamo $d_{k} = d_{k-1} -1 \geq nzd^*$ nakon završetka $k$-te iteracije, čime je uslov invarijantne petlje i tada zadovoljen.   Pretpostavimo da se u iteraciji $k^*$ program prekida. To znači da je $d_{k^*-1}$ zasigurno zajednički djelilac. Kako tražimo najveći takav, onda je i $d_{k^*-1} \leq nzd^*$. S obzirom da je  $d_{k^*-1} \geq nzd^*$ zbog uslova invarijantne petlje, slijedi da je 
 $d_{k^*-1} = nzd^*$, čine smo pokazali valjanost algoritma.
 \end{example}
-Pokazivanje valjanosti kompleksnih algoritama pomoću metoda invarnijantne petlje je rijetko  praktično. Jedan od razloga je taj što definisanje samog uslova invarijantnosti nije trivijalan zadatak, kao  i to da instrukcije koje se izvršavaju u svakoj iteraciji nisu trivijalne  (kao što je to slučaj sa prethodnim programom), te mogu uključivati  pozivanje složenijih pomoćnih funkcija. U takvim slučajevima, valjanost algoritma provjeravamo empirijski, izvršavajući ga nad instancama različitih veličina i distribucija te provjeravajući  validnost vraćenih rezultata (za instance za koje znamo tačan rezultat, dok za one za koje ne znamo, provjeravamo ispunjivost uslova zadatka). 
+Pokazivanje valjanosti kompleksnih algoritama pomoću metoda invarnijantne petlje je rijetko  praktično. Jedan od razloga je taj što definisanje samog uslova invarijantnosti nije trivijalan zadatak, a instrukcije koje se izvršavaju u svakoj iteraciji obično su daleko od trivijalnih  (kao što je to slučaj sa prethodnim programom), te mogu uključivati  pozivanje složenijih pomoćnih funkcija. U takvim slučajevima, valjanost algoritma provjeravamo empirijski, izvršavajući ga nad instancama različitih veličina i distribucija te provjeravajući  validnost vraćenih rezultata (za instance za koje znamo tačan rezultat, dok za one za koje ne znamo, provjeravamo ispunjivost uslova zadatka). 
 
 \section{Euklidov algoritam: složenost}
 Klasični algoritam za nalazak NZD je Euklidov algoritam, dat Algoritmom~\ref{alg:nzd-euclid}. On predstavlja jedan od najpoznatijih algoritama u polju aritmetike. Izvedimo njegovu vremensku složenost. 
@@ -717,7 +715,7 @@ Klasični algoritam za nalazak NZD je Euklidov algoritam, dat Algoritmom~\ref{al
 \begin{example}
 	Prvo izvedimo korake algoritma na konkretnoj instanci. Neka je $p=400$, a $q=24$. Tada imamo korake:
 	$$(400, 24) \rightarrow (24, 16) \rightarrow (16, 8) \rightarrow (8, 0),$$
-	odakle slijedi da je NZD$(400, 24)=8$. Za razliku od naivnog algoritma za nalazak NZD iz prethodnog poglavlja, koji bi za ovu instancu izveo 17 iteracija do nalaska rješenja, vidimo da za Euklidov algoritam treba svega 4 iteracije da nađe tačno rješenje. 
+	odakle slijedi da je NZD$(400, 24)=8$. Za razliku od naivnog algoritma za nalazak NZD iz prethodnog poglavlja, koji bi za ovu instancu izveo 17 iteracija do nalaska rješenja, vidimo da za Euklidov algoritam treba svega 3 iteracije da nađe tačno rješenje. 
 	
 	Prvo, Euklidov algoritam je konačan, jer je broj iteracija ograničen sa $\min(p, q)$. Drugo, algoritam ne zavisi direktno od veličine ulaza (koji je konstantan, tj. veličine $2=|\{p, q\}|$), već od veličine brojeva, ili dužine binarne reprezentacije (dekadnih) brojeva u ulazu. Ako je $p$ broj u dekadnom zapisu, dužina njegovog binarnog zapisa jednaka je $\lfloor \log_2(p) \rfloor+1$. Dalje, označimo sa $n_1$   broj bitova u zapisu broja $p$, a sa $n_2$  broj bitova u zapisu broja $q$. 
 	Tada je
@@ -770,8 +768,8 @@ Primijetimo da je prostorna složenost Euklidovog algoritma konstanta, tj. jedna
 
 Napomenimo da valjanost Euklidovog algoritma slijedi iz algebarskog svojstva da je skup djelilaca brojeva $p$ i $q$, jednak skupu djelilaca brojeva $q$ i $p\%q$, pa su stoga transformacije parova brojeva za koje se razmatra NZD u svakom koraku validne, dok se ne dođe od trivijanog slučaja, tj. dok drugi broj ne bude jednak nuli, čime se vraća vrijednost prvog broja kao krajnji rezultat. 
 
-Kako smo vidjeli, iako je Euklidov algoritam relativno jednostavnog k\^oda, njegovu složenost nije bilo trivijalno odrediti. Napomenimo da Euklidov algoritam predstavlja jedan vid rekurzivnog algoritma.  %, gdje rekurzija u tijelu funkcije poziva samu sebe, ali sa ulazom manje veličine. 
- U osnovi, za računanje složenosti ovakvih algoritama, o kojima će biti više riječi u Glavi 3, koristi se poznata Master teorema. Ovu teoremu navodimo bez dokaza, uz napomenu da se ona navodi i formalno dokazuje na nekim od kurseva algoritmike na višim godinama studija. Mi ćemo je koristiti isključivo samo kao pomoćni alat u već pomenutoj Glavi 3, kod određivanja složenosti algoritama nekih problema koje budemo rješavali. 
+Kako smo vidjeli, iako je Euklidov algoritam predstavljen relativno jednostavnim k\^odom, njegovu složenost nije trivijalno odrediti. Napomenimo da Euklidov algoritam predstavlja jedan vid rekurzivnog algoritma.  %, gdje rekurzija u tijelu funkcije poziva samu sebe, ali sa ulazom manje veličine. 
+ U osnovi, za računanje složenosti ovakvog tipa algoritama, o kojima će biti više riječi u Glavi 3, koristi se poznata Master teorema. Ovu teoremu navodimo bez dokaza, uz napomenu da se ona navodi i formalno dokazuje na nekim od kurseva algoritmike na višim godinama studija. Mi ćemo je koristiti isključivo samo kao pomoćni alat u već pomenutoj Glavi 3, kod određivanja složenosti algoritama nekih problema koje budemo rješavali. 
 
 \begin{theorem}[Master teorema]
 	Neka je data jednačina 
