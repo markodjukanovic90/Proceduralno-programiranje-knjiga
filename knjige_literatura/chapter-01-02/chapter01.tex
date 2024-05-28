@@ -526,11 +526,11 @@ U slučaju da dati ključ ne postoji u mapi, par  (``godine'', 31) se dodaje u m
 \end{itemize}
 \textit{Memorijska organizacija rječnika}.  U Pajtonu, rječnici su implementirani preko heš tabela, koje su predstavljene nizom parova ključ--vrijednost, gdje su ključevi jedinstveni na nivou objekta i koriste se za vraćanje odgovarajućih vrijednosti. Proces unosa, brisanja i traženja elemenata u heš tabeli je obično veoma brz, sa očekivanim konstantnim vremenom za svaku od operacija.
 	
-	Kada se rječnik kreira u Pajtonu, prvo se heš tabela određene veličine  inicijalizuje u memoriji koja skladišti parove ključ--vrednost. Veličina heš tabele je obično veća od broja inicijalno unesenih elemenata, kako bi se spriječilo često (dinamičko) menjanje veličine heš mape.
+	Kada se rječnik kreira u Pajtonu, prvo se inicijalizuje heš tabela određene veličine  u memoriji, koja skladišti parove ključ--vrednost. Veličina heš tabele je obično veća od broja inicijalno unesenih elemenata, kako bi se spriječilo često (dinamičko) mijenjanje veličine heš mape.
 	
-	Svaki ključ u rječniku se preslikava u cjelobrojnu vrijednost koristeći heš funkciju, a potom se dobijeni broj koristi kao indeks u heš tabeli. Ako se dva ključa heširaju istom heš vrijednosti, dolazi do pojave heš kolizija. Heš tabela tu situaciju rješava tako što oba para ključ---vrijednost čuva u istom indeksu, stvarajući povezanu listu parova ključ--vrijednost, pogledati Sliku~\ref{fig: dict_mem_organization}. Da bi se dohvatila vrijednost pridružena ključu, Pajton prvo izračunava heš vrijednost ključa pa ga potom koristi za lociranje indeksa u heš tabeli u kojoj je pohranjen odgovarajući par ključ-vrijednost. Ako je ključ pronađen, vraća se odgovarajuća vrijednost; u suprotnom se javlja greška.  Kada se novi par ključ-vrijednost treba dodati u rečnik, pajton izračunava heš vrijednost ključa kojeg koristi za pronalazak  indeksa u heš tabeli na čiju poziciju treba da bude pohranjen novi par ključ-vrednost. Ako je indeks već zauzet drugim parom ključ/vrijednost, novi par ključ--vrijednost se dodaje u   listu povezanu sa tim indeksom. Ako broj parova ključ--vrijednost u rječniku premašuje određenu granicu, heš tabela može promijeniti svoju dužinu kako bi se smanjila vjerovatnoća pojavljivanja heš kolizija u svrhu poboljšavanja performansi.
+	Svaki ključ u rječniku se preslikava u cjelobrojnu vrijednost koristeći heš funkciju, a potom se dobijeni broj koristi kao indeks u heš tabeli. Ako se dva ključa heširaju istom heš vrijednosti, dolazi do pojave heš kolizija. Heš tabela tu situaciju rješava tako što oba para ključ---vrijednost čuva u istom indeksu, stvarajući povezanu listu parova ključ--vrijednost, pogledati Sliku~\ref{fig: dict_mem_organization}. Da bi se dohvatila vrijednost pridružena ključu, pajtonov mehanizam prvo izračunava heš vrijednost ključa kojeg potom koristi za lociranje indeksa u heš tabeli u kojoj je pohranjen odgovarajući par ključ-vrijednost. Ako je ključ pronađen, vraća se odgovarajuća vrijednost; u suprotnom se javlja greška.  Kada se novi par ključ-vrijednost dodaje u rječnik, izračunava se heš vrijednost ključa koji se koristi za pronalazak  indeksa u heš tabeli na čiju poziciju treba da bude pohranjen novi par ključ-vrednost. Ako je indeks već zauzet drugim parom ključ/vrijednost, novi par ključ--vrijednost se dodaje u   listu povezanu sa tim indeksom. Ako broj parova ključ--vrijednost u rječniku premašuje određenu granicu, heš tabela može promijeniti svoju dužinu kako bi se smanjila vjerova\-tnoća pojavljivanja heš kolizija u svrhu poboljšavanja performansi.
 	
-	Što se tiče heš funkcija, Pajton koristi heš funkciju zvanu \textbf{hash()} za ugrađene tipove kao što su stringovi (\texttt{str}), cijeli brojevi (\texttt{int}) i torke (\texttt{tuple}). Međutim, za prilagođene objekte, može se definisati vlastita heš funkcija implementacijom metode \_\_\textbf{hash}\_\_(). Funkcija \textbf{hash()}  vraća cjelobrojnu vrijednost koja predstavlja heš vrijednost objekta. Objekti koji se upoređuju kao jednaki treba da imaju istu heš vrijednost, radi ispravnog funkcioniranja rječnika. Napomenimo da za stringove i bajtove, Pajton koristi algoritam \textit{MurmurHash3} za hešovanje vrijednosti. Ovaj algoritam je konstruisan tako da uniformno raspoređuje heš vrijednosti minimizirajući broj kolizija. Za korisnički definisane klase, Pajton koristi zadanu \textbf{hash()} funkciju, koja generiše jedinstvenu heš vrijednost za svaku instancu klase na osnovu memorijske adrese pridružena instanci. Međutim, kao što je ranije rečeno, ovo ponašanje se može nadjačati definisanjem vlastite heš metode. 
+	Što se tiče heš funkcija, Pajton koristi heš funkciju zvanu \textbf{hash()} za ugrađene tipove kao što su stringovi (\texttt{str}), cijeli brojevi (\texttt{int}) i torke (\texttt{tuple}). Međutim, za prilagođene objekte, može se definisati vlastita heš funkcija implementacijom metode \_\_\textbf{hash}\_\_(). Funkcija \textbf{hash()}  vraća cjelobrojnu vrijednost koja predstavlja heš vrijednost objekta. Objekti koji se upoređuju kao jednaki treba da imaju istu heš vrijednost, radi ispravnog funkcioniranja rječnika. Napomenimo da za stringove i bajtove, Pajton koristi algoritam \textit{MurmurHash3} za hešovanje vrijednosti. Ovaj algoritam je konstruisan tako da uniformno raspoređuje heš vrijednosti minimizirajući broj kolizija. Za korisnički definisane klase, po defaultu se koristi funkcija \textbf{hash()}, koja generiše jedinstvenu heš vrijednost za svaku instancu klase na osnovu memorijske adrese pridružena instancama. Međutim, kao što je ranije rečeno, ovo ponašanje se može nadjačati definisanjem vlastite heš metode. 
 	
 	
 	\begin{figure}
@@ -570,18 +570,18 @@ Skupovi  predstavljaju neindeksirane, neuređene, promjenjive strukture podataka
  
 
 
-\textit{Memorijska organizacija}. U Pajtonu se skupovna struktura podataka implementira kao neuređena kolekcija jedinstvenih elemenata. Za implementaciju se koristi heš tabela ili rječnik; elementi skupa su ključevi rječnika dok odgovarajuće vrijednosti njima pridružene nisu od važnosti (mogu se pridružiti \textit{None} vrijednosti, koje se za definisanje nula vrijednosti ili vrijednost koja u suštini  označava ``ništa''. Napomenimo da je \emph{None} vlastiti tip podatka (\texttt{NoneType}).).  
+\textit{Memorijska organizacija}. U Pajtonu se skupovna struktura podataka implementira kao neuređena kolekcija jedinstvenih elemenata. Za implementa\-ciju se koristi heš tabela ili rječnik; elementi skupa su ključevi rječnika dok odgovarajuće vrijednosti njima pridružene nisu od važnosti (mogu se pridružiti \textit{None} vrijednosti, koje se za definisanje nula vrijednosti ili vrijednost koja u suštini  označava ``ništa''. Napomenimo da je \emph{None} zaseban tip podatka (\texttt{NoneType}).).  
 
-Kada se skupu doda novi element, Pajton uz pomoć odgovarajuće heš funkcije izračunava   heš vrijednost koja odgovara  njegovoj  poziciji u heš tabeli. Ako na dobijenoj poziciji nema elementa, novi element se jednostavno dodaje u skup. U slučaju da već postoji element na toj poziciji, provjerava se da li je novi element jednak postojećem (koristeći metodu \_\_eq\_\_()). Ako su dva elementa jednaka, odbija se dodavanje elementa skupu. Inače, po defaultnom principu se element dodaje u linkovanu listu priduržena datom indeksu. Takođe, određeni kompajleri  
+Kada se skupu doda novi element, Pajton uz pomoć odgovarajuće heš funkcije izračunava   heš vrijednost koja odgovara  njegovoj  poziciji u heš tabeli. Ako na dobijenoj poziciji nema elementa, novi element se jednostavno dodaje u skup. U slučaju da već postoji element na toj poziciji, provjerava se da li je novi element jednak postojećem (koristeći metodu \_\_eq\_\_()). Ako su dva elementa jednaka,  dodavanje elementa tom skupu se odbija. Inače, po defaultnom principu element se dodaje u linkovanu listu priduržena datom indeksu. Takođe, određeni kompajleri  
 koriste algoritam  otvorenog adresiranja da se pronađe pogodna prazna pozicija u heš tabeli gdje bi se potom dodao novi element. 
-Otvoreno adresiranje koristi sekvencijalno ispitivanje pozicija da bi se pronašla prazna pozicija u tabeli. Pozicije se provjeravaju sekvencijalno po nekom pravilu dok se ne pronađe prva prazna. Postoji nekoliko pravila  definisanja sekvence probavanja pozicija, kao što je linearno, kvadratno ispitivanje ili dvostruko heširanje. Npr. ako heš pozicija nije prazna, izračunamo sljedeću poziciju u nizu dodavanjem neke konstantne vrijednosti (recimo 1) trenutnoj heš poziciji kretajući se ciklično po pozicijama heš tabele. Ako je trenutna pozicija 4, a konstantna vrijednost 1, sljedeća pozicija koja se ispituje je 5. Ako je sljedeća pozicija prazna,  element se umeće na tu poziciju. Inače, ponovimo prethodni korak dok god se ne pronađe prazna pozicija ili dok se ne pretraži cijela heš tabela. 
+Otvoreno adresiranje koristi sekvencijalno ispitivanje pozicija da bi se pronašla prazna pozicija u tabeli. Pozicije se provjeravaju sekvencijalno po nekom pravilu dok se ne pronađe prva prazna. Postoji nekoliko pravila  definisanja sekvence probavanja pozicija, kao što je linearno, kvadratno ispitiva\-nje ili dvostruko heširanje. Npr. ako heš pozicija nije prazna, izračunamo sljedeću poziciju u nizu dodavanjem neke konstantne vrijednosti (recimo 1) trenutnoj heš poziciji kretajući se ciklično po pozicijama heš tabele. Ako je trenutna pozicija 4, a konstantna vrijednost 1, sljedeća pozicija koja se ispituje je 5. Ako je sljedeća pozicija prazna,  element se umeće na tu poziciju. Inače, ponovimo prethodni korak dok god se ne pronađe prazna pozicija ili dok se ne pretraži cijela heš tabela. 
  
 
-Slično, u slučaju kada se element uklanja iz skupa, Pajton prvo izračunava njegovu heš vrijednost pri čemu  pronalazi njegovu poziciju u heš tabeli. Ako postoji element na toj poziciji,  provjerava se da li je jednak elementu koji se želi ukloniti. U slučaju da jeste, element se uklanja iz skupa. %Inače,  koristi se otvoreno adresiranje da traži element u ostatku heš tabele.
+Slično, u slučaju kada se element uklanja iz skupa, prvo se izračunava njegova heš vrijednost, zatim se pronalazi odgovarajuća poziciju u heš tabeli. Ako postoji element na toj poziciji,  provjerava se da li je jednak elementu koji se želi ukloniti. U slučaju da jeste, element se uklanja iz skupa. %Inače,  koristi se otvoreno adresiranje da traži element u ostatku heš tabele.
 
 Pošto su skupovi implementirani kao heš tabele, prosječna vremenska složenost   skupovnih operacija  dodavanja, uklanjanja i provjere pripadnosti je konstanta, dakle $O(1)$. Međutim, u najgorem slučaju, kada postoji mnogo kolizija u heš tabeli, vremenska složenost može da bude i $O(n)$.
 
-Sljedeći kod pokazuje tip strukture podataka u Pajtonu koja predstavlja skup, a to je upravo ugrađeni tip podataka `set'.
+Sljedeći k\^od pokazuje tip strukture podataka   koja predstavlja skup, tj. ugrađeni tip podataka \emph{set}.
 
 \begin{minted}{python}
 		s = {1, 2, 3}
@@ -597,7 +597,7 @@ Sljedeći kod pokazuje tip strukture podataka u Pajtonu koja predstavlja skup, a
 
 \subsection{Torke}
  
- U pajtonu, torka (\texttt{tuple}) je uređena, indeksirana, nepromjenjiva (eng. \textit{immutable}) sekvencijalna kolekcija elemenata, predstavljena jednim objektom u memoriji (na koga pokazuje), dok se ostali objekti određuju implicitnim mehanizmom Pajtona.  Ova struktura dopušta unos duplikata. 
+ U programskom jeziku Pajton, torka (\texttt{tuple}) je uređena, indeksirana, nepromjenljiva (eng. \textit{immutable}) sekvencijalna kolekcija elemenata, predstavljena jednim objektom u memoriji (na koga pokazuje), dok se ostali objekti određuju implicitnim mehanizmom Pajtona.  Ova struktura dopušta unos duplikata. 
  
  
  \textit{Inicijalizacija}.  
@@ -652,7 +652,7 @@ Pošto su objekti tipa \texttt{tuple} nepromjenljive strukture, elementi se ne m
 
 \section{Funkcije}
 
-Programski jezik Pajton svaku funkciju predstavlja kao jedan objekat. Prema tome, funkcije se mogu dodijeliti varijablama, proslijediti kao argument  drugim funkcijama, a takođe vratiti kao vrijednost    drugih funkcija.  Preciznije, funkcije su implementirane korištenjem Pajtonove interne klase  \texttt{function}. Ova klasa je dio ugrađenih tipova ovog jezika koja pruža osnovnu funkcionalnost za kreiranje i izvršavanje funkcija. Kada se funkcija definiše, interpreter inicijalizuje novi objekat klase \texttt{function} koji predstavlja tu funkciju -- sadrži informacije o nazivu funkcije, argumentima, k\^odu i drugim metapodacima.
+Programski jezik Pajton svaku funkciju predstavlja kao jedan objekat. Prema tome, funkcije se mogu dodijeliti varijablama, proslijediti kao argument  drugim funkcijama, a takođe vratiti kao vrijednost    drugih funkcija.  Preciznije, funkcije su implementirane korišćenjem Pajtonove interne klase  \texttt{function}. Ova klasa je dio ugrađenih tipova ovog jezika koja pruža osnovnu funkcionalnost za kreiranje i izvršavanje funkcija. Kada se funkcija definiše, interpreter inicijalizu\-je novi objekat klase \texttt{function} koji predstavlja tu funkciju -- sadrži informacije o nazivu funkcije, argumentima, k\^odu i drugim metapodacima.
 
 Funkcija je predstavljena blokom k\^oda (nazvan još i definicija tijela funkcije) koji obavlja određeni zadatak a može se pozivati i izvršavati više puta kroz program. Uloga funkcija je da se k\^od učini modularnijim, efikasnijim i čitljivijim, jer omogućavaju  podijelu složenih programa na manje dijelove kojima je lakše upravljati.
 
@@ -722,7 +722,7 @@ print(lista)  # Output: [1, 2, 3, 5]
 Kada se pozove funkcija \texttt{dodaj\_elem\_u\_listu} sa vrijednostima 5 i lista, funkciji prosljeđujemo referencu na objekat lista. Izvršavanjem funkcije, mijenja  se lista dodavanjem novog elementa 5.  U slučaju da ne želimo da funkcija modifikuje (promjenljivi) objekt, treba da se napraviti kopija objekta prije njegovog proslijeđivanja funkciji. Više o kopiranju objekata liste će biti riječi u narednim sekcijama.
 
 
-Nepromjenjivi objekti kao što su cijeli brojevi, decimalni, stringovi i torke se isto prosljeđuju referencom objekta. Međutim, kako su nepromjenjivi, dakle ne mogu se mijenjati, to znači da sve promjene koje radimo na njima unutar funkcije automatski stvaraju novi objekat (na lokalnom steku).
+Nepromjenljivi objekti kao što su cijeli brojevi, decimalni, stringovi i torke se isto prosljeđuju referencom objekta. Međutim, kako su to nepromjenjive strukture, to znači da sve promjene koje radimo na njima unutar funkcije automatski stvaraju novi objekat (na lokalnom steku).
 
 \begin{minted}{python}
 def inkrementiraj(x):
@@ -733,7 +733,7 @@ y = 5
 inkrementiraj(y) # Output: 6
 print(y) # Output: 5
   \end{minted}
-Dakle, varijabla $x$ unutar metoda referiše na novi objekat (i nema veze sa proslijeđenim objektom, osim što su istog naziva). Prema tome, iako se nepromjenljivi objekti takođe prenose  putem reference na objekat, bilo kakvo djelovanje funkcije  neće izmijeniti originalni objekat.  Napomenimo da pomoću ključne riječi \textit{global} ispred naziva varijable možemo preinačiti lokalno ponašanje varijable (koja dozvoljava pristup čitanju sadržaja u funkciji) u globalno (gdje je dozvoljeno i pisanje -- mijenjanje sadržaja na koji varaijabla referencira).  
+Dakle, varijabla $x$ unutar metoda referiše na novi objekat (i nema veze sa proslijeđenim objektom, osim što su istog naziva). Prema tome, iako se nepromjenljivi objekti takođe prenose  putem reference na objekat, bilo kakvo djelovanje funkcije  neće izmijeniti originalni objekat.  Napomenimo da pomoću ključne riječi \textit{global} ispred naziva varijable možemo preinačiti lokalno ponašanje varijable (koja dozvoljava pristup čitanju sadržaja u funkciji) u globalno (gdje je dozvoljeno i pisanje -- mijenjanje sadržaja na koji varijabla referencira).  
 
 \begin{minted}{python}
 def my_func():
@@ -745,7 +745,7 @@ my_func()
 print(x) # Output: 10
 \end{minted}
 
-Kao što smo napomenuli, funkcija je jedan objekat te se ona može proslijediti kao vrijednost argumentu druge funkcije, kako je to prikazano sljedećim primjerom
+Kao što smo napomenuli, funkcija je u suštini jedan objekat, pa se može proslijediti kao vrijednost argumentu druge funkcije, kako je to prikazano sljedećim primjerom
 \begin{minted}{python}
 
 def dodaj(a, b):
@@ -770,9 +770,9 @@ suma = lambda x, y: x + y
 print(suma(4, 3)) # Output: 7
 \end{minted}
 
-Ovdje je lambda funkcija pridružena varijabli \textit{suma}, što je moguće jer je svaka funkcija u programskom jeziku Pajton objekat. Potom su ovoj funkciji proslijeđene reference (na vrijednosti 4 i 3). 
+Ovdje je lambda funkcija pridružena varijabli \textit{suma}, što je moguće jer je svaka funkcija u suštini jedan objekat. Potom su ovoj funkciji proslijeđene reference (na vrijednosti 4 i 3). 
 
-Lambda funkcije su često korisne u situaciji kada je potrebno definisati jednostavne (i sadržinski male) funkcije ukoje se koriste u kraćem periodu pa nema smisla da se definišu kao funkcije punog imena. Pored toga, lambda funkcije su često korištene u kombinaciji sa funkcijama, koje su opštepoznate iz funkcijskih jezika, kao što su: \textit{map}(), \textit{filter}(), \textit{reduce}(), o kojima će biti više riječi u nastavku ove knjige, konkretno u Sekciji~\ref{sec:concepts-pyhton}. 
+Lambda funkcije su često korisne u situaciji kada je potrebno definisati jednostavne (i sadržinski male) funkcije pa  se ne definišu kao funkcije punog imena, već užimaju funkcijsku notaciju.  Lambda funkcije su često korištene u kombinaciji sa funkcijama koje su opštepoznate iz funkcijskih jezika, kao što su: \textit{map}(), \textit{filter}(), \textit{reduce}(), o kojima će biti više riječi u nastavku ove knjige, konkretno u Sekciji~\ref{sec:concepts-pyhton}. 
 
 
 
