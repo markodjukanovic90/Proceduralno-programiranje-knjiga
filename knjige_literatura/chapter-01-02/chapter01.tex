@@ -783,17 +783,17 @@ U ovoj sekciji ćemo demonstrirati rad sa nekoliko bitnih i često korištenih u
 
 \subsection{Komprehenzija liste}
 
-Komplehenzija liste predstavlja koncizan način za kreiranje liste. To je konstrukcija koja omogućava kreiranje liste u jednoj liniji k\^oda, umjesto da se koriste petlje (i odgovarajuće metode) za iterativnu konstrukciju liste.
+Komplehenzija liste predstavlja koncizan način za kreiranje (neprazne) liste objekata. To je konstrukcija koja omogućava kreiranje i popunjavanje liste u jednoj liniji k\^oda, umjesto da se koriste petlje (i odgovarajuće metode) za njenu iterativnu konstrukciju.
 
 Osnovna sintaksa ovog koncepta je sljedeća:
 
 \begin{minted}{python}
 	lista = [expr  for item in iterable]
 \end{minted}
-Ovdje \textit{expr} označava izraz koji se izračunava do vrijednosti koja se smiješta u listu.
-Dalje, \textit{item} je varijabla koja  uzima vrijednosti iz (iterabilnog) objekta \textit{iterable}.  Rezultat primjene je nova lista sastavljena od  vrijednosti dobivenih primjenom izraza  \textit{expr} na svaki elemenat objekta \textit{iterable}.
+Ovdje \textit{expr} označava izraz koji se izračunava u zavisnosti of \textit{item}, a izračunata vrijednost se smiješta u listu.
+Dalje, \textit{item} je varijabla koja  uzima vrijednosti iz (iterabilnog) objekta \textit{iterable}.  Dakle, rezultat izvršavanja je nova lista sastavljena od  vrijednosti dobivenih primjenom izraza  \textit{expr} na svaki elemenat objekta \textit{iterable}.
 
-Npr.\ recimo da želimo kreirati listu prvih 10 parnih brojeva. K\^od bi mogao da ide ovako:
+Npr.\ recimo da želimo kreirati listu prvih 10 parnih brojeva. K\^od bi mogao da izgleda ovako:
 
 \begin{minted}{python}
 	parni = []
@@ -801,7 +801,7 @@ Npr.\ recimo da želimo kreirati listu prvih 10 parnih brojeva. K\^od bi mogao d
 	    parni.append(2*i)
 \end{minted}
 
-Kraći zapis koda, pomoću komprehenzije liste, izgleda ovako:
+Kraći zapis k\^oda, pomoću komprehenzije liste, izgleda ovako:
 
 
 \begin{minted}{python}
@@ -839,7 +839,7 @@ Funkcija  \textit{reduce}(): Sintaksa ove funkcije je
 	reduce(func, iterable[, initial ])
 \end{minted}
 
-Ona uzima dva (obavezna) argumenta,  funkciju i iterabilni objekat, te opciono \textit{initial}. Inicijalno, funkcija \textit{func} se primjenjuje na element \emph{initial} i prvi elemenat iterabilnog objekta, te vraća rezultat. Potom,    primjenjuje istu funkciju na vraćeni rezultat i sljedeći element, i tako dalje, sve dok se svi elementi \emph{iterable} objekta ne obrade. 
+Ona uzima dva (obavezna) argumenta,  funkciju i iterabilni objekat, te opciono \textit{initial}. Inicijalno, funkcija \textit{func} se primjenjuje na element \emph{initial} i prvi elemenat iterabilnog objekta, te vraća rezultat. Potom,    primjenjuje istu funkciju na prethodno vraćeni rezultat i sljedeći element, i tako dalje, sve dok se svi elementi \emph{iterable} objekta ne obrade. 
 
 Pogledajmo sljedeći primjer: 
 \begin{minted}{python}
@@ -849,7 +849,7 @@ numbers = [1, 2, 3, 4, 5]
 product = reduce(lambda x, y: x * y, numbers, 1)
 \end{minted}
 
-Ovo će primijeniti funkciju množenja na prva dva elementa liste, zatim na rezultat i sljedeći element, i tako dalje, sve dok se svi elementi ne obrade, što rezultira proizvodom svih brojeva liste. Pirmijetimo da funkcija \textit{reduce}() nije dio standardnog Pajtonovog modula, već se mora uključiti direktno pozivom \texttt{functools} modula. Više o modulima i radu sa njima ćemo govoriti u narednim sekcijama.
+Ovo će primijeniti funkciju množenja na prva dva elementa liste, zatim na rezultat i sljedeći element, i tako dalje, sve dok se svi elementi ne obrade, što rezultira proizvodom svih brojeva liste. Pirmijetimo da funkcija \textit{reduce}() nije dio standardnih ugrađenih modula, već se mora uključiti direktno pozivom \texttt{functools} modula. Više o modulima i radu sa njima ćemo govoriti u narednim sekcijama.
 
 
 
@@ -882,7 +882,7 @@ for i, vocka in enumerate(voce):
     # (2, 'kruska'), (3, 'breskva')
 \end{minted}
 
-Funkcija \textit{sort}() je ugrađena funkcija koja se koristi za sortiranje elemenata   liste po nekom kriterijumu. Ona je metoda liste koja ne vraća ništa već je njen zadatak sortirati listu (u memoriji koja joj je već dodijeljena).
+Funkcija \textit{sort}() je ugrađena funkcija koja se koristi za sortiranje elemenata   liste po nekom kriterijumu. Ona je metoda liste čiji je zadatak sortirati listu u memoriji koja joj je već dodijeljena.
 
 Sintaksa ove funkcije data je u nastavku 
 \begin{minted}{python}
@@ -920,7 +920,7 @@ Postoji i niz drugih pomoćnih opštekorišćenih funkcija, koje ćemo pobrojati
 
 \textit{Modul} je datoteka koja sadrži Pajtonove definicije i naredbe. Naziv datoteke je naziv modula sa sufiksom .\textit{py}.
 
-Modul može sadržati različite definicije kao što su funkcije, klase i varijable, koje se mogu uvesti i koristiti u drugim Python skriptama ili modulima. To olakšava organiziranje i ponovnu upotrebu k\^oda (eng. \emph{re-usability}) u različitim projektima.
+Modul može sadržati različite definicije kao što su funkcije, klase i varijable, koje se mogu uvesti i koristiti u drugim Python skriptama ili modulima. Ovo olakšava organiziranje i ponovnu upotrebu k\^oda (eng.\ \emph{re-usability}) u različitim projektima.
 
 Da bismo koristili modul u Pajtonu, prvo ga trebamo uvesti pomoću naredbe \texttt{import}. Npr. ako postoji modul pod nazivom \textit{mojmodul}.py, uvodimo  ga na sljedeći način:
 \begin{minted}{python}
@@ -942,7 +942,6 @@ Ovo će omogućiti direktno korištenje funkcije bez potrebe za tačaka notacijo
 
 \begin{minted}{python}
 mojafunkcija()
-
 \end{minted}
 
 Pajton dolazi s velikim brojem ugrađenih modula, među kojima izdvajamo \texttt{math}, \texttt{random}, \texttt{datetime}, \texttt{os} i \texttt{numpy} o kojima će biti riječi u nastavku ove sekcije. Ovi moduli se uključuju direktno sa instalacijom jezika Pajton.
@@ -959,7 +958,7 @@ Otvorimo terminalnu konzolu i upišimo naredbu \textit{pip install naziv\_modula
     pip install requests
 \end{minted}
 
-Pritiskom tastera Enter, instalacija se pokreće; pip automatski preuzima modul sa PyPI (eng. \textit{Python Package Index}) i instalira ga u trenutno pajton okruženje. PyPI je repozitorij softverskih paketa koji su napisani u Pajtonu, a besplatno su dostupni za korištenje. Sadrži više od 300,000 paketa koji se mogu instalirati pomoću \textit{pip} menadžera.
+Pritiskom tastera Enter, instalacija se pokreće; pip automatski preuzima modul sa zvaničnog PyPI (eng. \textit{Python Package Index}) i instalira ga u trenutno pajton okruženje. PyPI je repozitorij softverskih paketa koji su napisani u Pajtonu, a besplatno su dostupni za korištenje. Sadrži više od 300,000 paketa koji se mogu instalirati pomoću \textit{pip} menadžera.
 
 
 Kada proces instalacije modula uspješno završi, modul se može uključiti u naš program pomoću naredbe \textit{import}. Npr. da bismo koristili modul \textit{requests}, pišemo sljedeće:
