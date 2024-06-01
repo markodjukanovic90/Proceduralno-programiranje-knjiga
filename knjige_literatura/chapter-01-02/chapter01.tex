@@ -1018,7 +1018,7 @@ Navedimo neke osnovne funkcije ovog modula.
 
 Implementacija funkcije \textit{random}() u Pajtonu koristi algoritam generatora pseudo-slučajnih brojeva, koji je deterministički a generiše niz brojeva koji se čini slučajnim. Algoritam koji se koristi u funkciji \textit{random}() je algoritam \textit{Mersenne Twister},  široko korišten   za generiranje pseudo-slučajnih brojeva.
 
-Algoritam \textit{Mersenne Twister} generiše niz 32-bitnih cijelih brojeva koristeći specijalni linearni pomaknuti (eng. \textit{shift})  registar povratne sprege,  koji koristi operacije isključivanja ili (XOR) za generiranje izlaza. Algoritam koristi veliki prost broj koji se zove \textit{Mersenov} prost ($2^{19937}-1$) kao modul, koji osigurava da generisani niz ima dug period   i dobra statistička svojstva. Inače, algoritam su razvili Makoto Matsumoto i Takuji Nishimura 1997. godine. Drugi generator  koji se može koristi je prosti \textit{linerarni kongruentni generator} 
+Algoritam \textit{Mersenne Twister} generiše niz 32-bitnih cijelih brojeva koristeći specijalni linearni pomaknuti (eng. \textit{shift})  registar povratne sprege,  koji koristi operacije isključivanja (XOR) za generiranje izlaza. Algoritam koristi veliki prost broj koji se zove \textit{Mersenov} prost ($2^{19937}-1$) kao modul, koji osigurava da generisani niz ima dug period   i dobra statistička svojstva. Inače, algoritam su razvili Makoto Matsumoto i Takuji Nishimura 1997. godine. Drugi generator  koji se može koristi je prosti \textit{linerarni kongruentni generator} 
 koji generiše  slučajne brojeve po rekurziji
 $$ x_{n+1} = (a x_n + b)\ \%\ m $$
 gdje je $x_0$ početni sid vrijednosti između 0 i $m-1$. 
@@ -1030,19 +1030,19 @@ Modul  \texttt{time} je ugrađeni modul koji pruža razne funkcije povezane sa r
 U nastavku navodimo najčešće korištene funkcije koje pruža ovaj modul:
 \begin{itemize}
 	\item  \textit{time}(): Vraća trenutno vrijeme u sekundama od epohe (eng. epoch) (računa se kao datum 01.01.1970) kao float tip. 
-	\item time.\textit{sleep}(\textit{secs}): obustavlja izvršenje trenutne n\^iti na zadani broj sekundi \textit{secs}. 
-	\item time.\textit{localtime}([\textit{secs}]): Pretvara vrijeme u sekundama \textit{secs} od epohe u torku koja predstavlja lokalno vrijeme u obliku:  godina, mjesec, dan, sat, minuta, sekunda, radni dan, Julijanski dan, DST.
+	\item \textit{sleep}(\textit{secs}): obustavlja izvršenje trenutne n\^iti na zadani broj sekundi \textit{secs}. 
+	\item time.\textit{localtime}([\textit{secs}]): pretvara vrijeme dato u sekundama  \textit{secs} u vrijeme proteklo od epohe u torku koja predstavlja lokalno vrijeme u obliku:  godina, mjesec, dan, sat, minuta, sekunda, radni dan, Julijanski dan, DST.
 \end{itemize}
 
 
 \subsection{Modul Os}
 
-\texttt{Os} modul je ugrađeni  modul koji pruža mogućnost korištenja funkcionalnosti zavisne od operativnog sistema kao što je čitanje ili pisanje u sistem datoteka, upravljanje procesima, varijablama okruženja i mnogi drugim sistemskim zadacima.
+\texttt{Os} modul   pruža mogućnost korištenja funkcionalnosti zavisne od operativnog sistema kao što je čitanje ili pisanje u sistem datoteka, upravljanje procesima, varijablama okruženja i mnogi drugim sistemskim zadacima.
 
 Nekih od najčešće korištenih funkcija koje pruža ovaj modul su:
 
 \begin{itemize}
-	\item os.name: Vraća naziv operativnog sistema (npr. `posix' za Linux i macOS, `nt' za Windows).
+	\item name: Vraća naziv operativnog sistema (npr. `posix' za Linux i macOS, `nt' za Windows).
 	\item  \textit{getcwd}(): Vraća trenutni radni direktorij kao u obliku stringa.
 	\item  \textit{chdir}(\emph{path}): Mijenja trenutni radni direktorij na specificiranu stazu \emph{path}.
 	\item \textit{listdir}(\emph{path}): Vraća listu datoteka i direktorija u navedenom direktoriju.
@@ -1059,9 +1059,9 @@ Nekih od najčešće korištenih funkcija koje pruža ovaj modul su:
 
 \subsection{Modul Copy}
 
-  Modul \texttt{copy} pruža funkcionalnosti za kopiranje objekata. Osnovni principi ovog modula uključuju kopiranje objekata kako bi se izbjegli problemi sa referencama, što u principu znači da se stvaraju potpuno nezavisne kopije podataka. Nekoliko osnovnih funkcija koje pruža modul copy su 
+  Modul \texttt{copy} pruža funkcionalnosti za pravljenje kopiranje objekata po vrijednosti. Osnovni principi ovog modula uključuju kopiranje objekata kako bi se izbjegli problemi sa referencama, što u principu znači da se stvaraju potpuno nezavisne kopije podataka. Nekoliko osnovnih funkcija koje pruža modul \texttt{cooy} su 
   \begin{itemize}
-  	\item \emph{copy}($obj$): vrši ``površinsko''  kopiranje objekta \emph{obj}. Dakle, kopira se samo referenca na objekte unutar originalnog objekta, ali ne i sami objekti. Ako objekat ima druge ugniježdene objekte u svojoj strukturi (npr. listu unutar liste), originalni i kopirani objekat će dijeliti iste reference nakon kopiranja. 
+  	\item \emph{copy}($obj$): vrši ``površinsko'' (eng. \emph{shallow})  kopiranje objekta \emph{obj}. Dakle, kopira se samo referenca na objekte unutar originalnog objekta, ali ne i sami objekti. Ako objekat ima druge ugniježdene objekte u svojoj strukturi (npr. listu unutar liste), originalni i kopirani objekat će dijeliti iste reference nakon kopiranja. 
   	\begin{minted}{python}
   	   import copy
   	   
@@ -1093,11 +1093,12 @@ Nekih od najčešće korištenih funkcija koje pruža ovaj modul su:
 
 \section{Izuzeci}
 
-Izuzetak predstavlja (nesintaksnu) grešku koja se javlja tokom izvršavanja programa, kada se nešto neočekivano dogodi kao npr. dijeljenje sa nulom, datoteka nije pronađena, ili greška u tipu podatka.
+Izuzeci predstavljaju (nesintaksne) greške koje se javljaju tokom izvršavanja programa, kao npr. dijeljenje sa nulom, referenciranje ka datoteci koja nije pronađena, ili greška u tipu podatka.
 
-Rad sa izuzecima u programskom jeziku Pajton uključuje identifikovanje i rukovanje sa ovim greškama kako bi se spriječilo da one uzrokuju pad izvršavanja programa. Osnovni  načini za rad sa izuzecima su dati u nastavku.
+Rad sa izuzecima u programskom jeziku Pajton uključuje identifikovanje i rukovanje sa ovim greškama kako bi se spriječilo da one uzrokuju pad izvršavanja programa. Osnovni  načini za rad sa izuzecima su dati u nastavku.\\  
 
-\textit{Try-except }blok: koristi se za hvatanje i obradu izuzetaka. K\^od unutar bloka \textit{try} se izvršava, a u slučaju se dogodi izuzetak, izvršava se k\^od unutar bloka \textit{except}. Evo primjera:
+
+\textit{Try-except }blok: koristi se za hvatanje i obradu izuzetaka. K\^od unutar bloka \textit{try} se regularno izvršava, a u slučaju se dogodi izuzetak,  k\^od unutar bloka \textit{except} se  izvršava. Evo primjera šablona konstrukcije izuzetaka.
 \begin{minted}{python}
 	try:
 	    # kod koji moze "baciti" izuzetak
@@ -1119,7 +1120,7 @@ Izbacivanje izuzetaka bez   navođenja bloka: Izuzeci se mogu aktivirati i pomo�
 \begin{minted}{python}
 raise ValueError("Invalid input")
 \end{minted}
-\textit{Finally} blok: Za izvršavanje koda bez obzira na to da li je izuzetak aktiviran ili ne koristi se finally kao u narednom primjeru:
+\textit{Finally} blok: Za izvršavanje koda bez obzira na to da li je izuzetak aktiviran ili ne koristi se \textit{finally} kao u narednom primjeru:
 \begin{minted}{python}
 try:
    # kod koji može da aktivira izuzetak
@@ -1222,8 +1223,8 @@ U ovoj sekciji izlažemo uoptšteno o regularnim izrazima. Potom, će biti rije�
 
 \subsection{Uopšteno o regularnim izrazima}
 
-Regularni izraz ili \textit{regex} (šablon ili patern) je niz znakova koji opisuju skupove nizova znakova, na osnovu određenih sintaksnih pravila. U prevodu to je šablon koji opisuje neki skup stringova.  Svrha regirarnih izraza je opisivanje uzorka za pretraživanje nizova znakova konciznim opisom bez nabrajanja svih elemenata (stringova) skupa. Npr. kako bismo koncizno opisali sve binarne nizove
-pomocu šablona ili koncizno opisali skup \{\texttt{gray}, \texttt{grey}\} (engleski i
+Regularni izraz ili \textit{regex} (šablon ili patern) je niz znakova koji opisuju skupove nizova znakova, na osnovu određenih sintaksnih pravila. U prevodu, to je šablon koji opisuje neki skup stringova.  Svrha regirarnih izraza je opisivanje uzorka za pretraživanje nizova znakova konciznim opisom bez nabrajanja svih elemenata (stringova) skupa. Npr. kako bismo koncizno opisali sve binarne nizove
+pomoću (kratkog) šablona ili koncizno opisali skup \{\texttt{gray}, \texttt{grey}\} (engleski i
 americki engleski za istu riječ)? Regularne izraze koriste razni uređivači teksta, kao što je filter \textit{grep} u Unix-u, itd. 
 
 Osnovni koncepti regularnih izraza su:
@@ -1253,8 +1254,8 @@ pojavljivanja izraza koji prethodi kvantifikatoru:
 \end{itemize}
 \end{itemize}
 
-Reguaran izraz za registarske tablice automobila su date u formatu tri broja, potom povlaka, pa jedno (veliko) slovo, pa potom tri broja, što odgovara regularnom izrazu:
-$$ \backslash d \{3\}-[A-Z]-\backslash d\{3\}$$
+Reguaran izraz za registarske tablice automobila su date u formatu slova nakon čega slijede dva broja, potom povlaka, pa jedno (veliko) slovo, pa potom tri broja, što odgovara regularnom izrazu:
+$$ [A-Z]\backslash d \{2\}-[A-Z]-\backslash d\{3\}$$
 
 Regularni izraz za definisanje datum rođenja (sa vodećim nulama za jednocifreni dan i mjesec rođenja; npr. 1 se označava sa 01) izgleda ovako:
 $$(\backslash d \{2\})\backslash.(\backslash d \{2\})\backslash.(\backslash d \{4\})\backslash. $$ 
