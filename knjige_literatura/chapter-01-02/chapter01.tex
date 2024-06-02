@@ -1291,7 +1291,7 @@ Neke od metoda modula \texttt{re} su date u nastavku.
  
 \section{Moduli Sys i Getopt}
 
-\textit{Pokretanje programa preko terminala}. Pokretanje pajton skripte preko terminala se izvršava na sljedeći način:
+\textit{Pokretanje programa preko terminala}. Pokretanje skripte napisana u programskom jeziku Pajton preko terminala se izvršava na sljedeći način:
 
 \begin{minted}{python}
  python myscript.py arg1 arg2
@@ -1303,8 +1303,8 @@ gdje se komanda \emph{python} (ili \textit{python3},  ako je instalirana pajtono
 Neke od često korištenih funkcija i atributa \texttt{sys} modula su:
 
 \begin{itemize}
-	\item \textit{argv}: Lista argumenata komandne linije proslijeđenih pajtonovoj skripti. Na indeksu 0 se čuva naziv same skripte, dok se na ostalim indeksima čuvaju vrijednosti proslijeđenih parametara. 
-     \item \textit{path}: Vraća listu stringova koji specificiraju stazu do pojedinih modula. Inicijalizuje se iz varijable okruženja PYTHONPATH i zadate vrijednosti koja zavisi o instalaciji pajtona.
+	\item \textit{argv}: Lista argumenata komandne linije proslijeđenih pajtonovoj skripti. Na indeksu 0 se čuva naziv same skripte, dok se na ostalim indeksima čuvaju vrijednosti proslijeđenih parametara (\texttt{arg1}, \texttt{arg2},...). 
+     \item \textit{path}: Vraća listu stringova koji specificiraju stazu do pojedinih modula. Inicijalizuje se iz varijable okruženja \texttt{PYTHONPATH} i zadate vrijednosti koja zavisi o instalaciji pajtona.
      \item \textit{exit}([arg]): Izlazak iz pajtonovog inetrpretera sa opcionim izlaznim k\^odom. Ako je dat \textit{arg}, on se koristi kao izlazni k\^od; inače je zadani izlazni kod nula.
      \item \textit{version}: Niz koji sadrži verziju pajtonovog interpretera.
      \item \textit{platform}: Niz koji identikuje platformu operativnog sustava.
@@ -1329,7 +1329,7 @@ arg1
 arg2
 \end{minted}
 
-Modul \texttt{getopt} predstavlja parser argumenata komandne linije. Omogućuje  pisanje skripti koje mogu uzimati argumente i opcije iz komandne linije pri izvršavanju programa. Modul \textit{getopt} ima dvije bitne funkcije, \textit{getopt}() i \textit{getopt\_long}(), koje se koriste za analiziranje argumenata komandne linije. 
+Modul \texttt{getopt} predstavlja parser argumenata komandne linije. Omogućuje  pisanje skripti koje mogu uzimati argumente i opcije iz komandne linije pri izvršavanju programa. Modul \textit{getopt} ima dvije bitne funkcije, \textit{getopt}() i \textit{getopt\_long}(), koje se koriste za analiziranje/parsiranje argumenata komandne linije. 
 
 Funkcija \textit{getopt}() analizira kratke opcije (opcije od jednog slova) i vraća torku od dva elementa:
 
@@ -1380,7 +1380,7 @@ if __name__ == "__main__":
 U prethodnom primjeru, skripta uzima dva argumenta, -$i$ (ili duže - -\emph{ifile}) za ulazni fajl, te -$o$ (ili duže - -\emph{ofile}) 
 za izlazni fajl. U slučaju da korisnik ne proslijedi (obavezne) argumente, skripta će ispisati poruku o greški -- aktiviraće se izuzetak \texttt{GetoptError} koji pripada modulu \texttt{getopt}. 
 
- Da bi pokrenuli skriptu (naziva test.py), na komandnoj liniji unosimo sljedeći kod:
+ Da bi pokrenuli skriptu (naziva test.py), na komandnoj liniji unosimo sljedeći k\^od:
  \begin{minted}{python}
 python3 test.py -i ulaz.txt -o izlaz.txt
  \end{minted}
