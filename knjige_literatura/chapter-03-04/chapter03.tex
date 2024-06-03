@@ -560,9 +560,9 @@ Rekurzivna implementacija pretage preskakanjem  je data sljedećim kodom.  % u j
 
 % https://www.geeksforgeeks.org/interpolation-search/  
 
- Interpolacijska pretraga je poboljšanje  binarnog pretraživanja   gdje pretpostavljamo da su vrijednosti u sortiranom nizu uniformno (ravnomjerno) raspoređene. Interpolacija konstruiše nove tačke   unutar opsega diskretnog skupa strukutre podataka. Kao što znamo, binarno pretraživanje uvijek polazi sa provjerom srednjeg elementa niza. Sa druge strane, interpolacijska pretraga može tražiti na različitim mjestima u strukturi. Npr. ako je vrijednost traženog elementa  bliža posljednjem elementu, interpolacijska pretraga će vjerovatno započeti pretragu više prema krajnjoj strani strukture.
+ Interpolacijska pretraga je poboljšanje  binarnog pretraživanja   gdje pretposta\-vljamo da su vrijednosti u sortiranom nizu uniformno (ravnomjerno) raspo\-ređene. Interpolacija konstruiše nove tačke   unutar opsega diskretnog skupa strukture podataka. Kao što znamo, binarno pretraživanje uvijek polazi sa provjerom središnjeg elementa niza. Sa druge strane, interpolacijska pretraga  pretražuje na različitim mjestima u strukturi. Npr. ako je vrijednost traženog elementa  bliža posljednjem elementu, interpolacijska pretraga će vjerovatno započeti pretragu više prema krajnjoj strani strukture.
   
-  Za pronalazak pozicije  \emph{pos} u nizu \emph{niz}, koristi se sljedeća ideja: vraćamo višu vrijednost \emph{pos} ako je element koji se traži bliži kraju niza, tj. $niz[n-1]$. Manja vrijednost za \emph{pos} se vraća kada je vrijednost bliže početku niza, tj. elementu $niz[0]$. 
+  Za pronalazak pozicije  \emph{pos} u nizu \emph{niz}, koristi se sljedeća ideja: pretražićemo više pozicije \emph{pos} ako je vrijednost elementa koji se traži bliži kraju niza, tj. $niz[n-1]$. Manja pozicija \emph{pos} se vraća kada je tražena vrijednost bliže početku niza, tj. elementu $niz[0]$. 
   
   Poziciju \emph{pos} računamo po sljedećoj formuli:
   \begin{equation}\label{eq_interpolation-search-formula}
@@ -573,15 +573,15 @@ Rekurzivna implementacija pretage preskakanjem  je data sljedećim kodom.  % u j
   	\item  Izračunamo vrijednost \emph{pos} koristeći formulu (\ref{eq_interpolation-search-formula}).
   	\item Ako se vrijednost podudara sa traženom, vraćamo indeks/vrijednost \textit{True} i izlazimo iz rekurzije.
   	\item Ako je traženi element manji od $niz[pos]$, interpoliramo poziciju \emph{pos} lijevog podniza. U suprotnom, interpoliramo poziciju \emph{pos} desnog podniza.
-  	\item Ponavljati korake 1-3, sve dok se ne pronađe podudaranje ili dok podniz ne postane prazan.
+  	\item Ponavljati korake 1-3, sve dok se ne pronađe podudaranje ili dok podniz ne postane prazan, vraćajući \textit{False}. 
   \end{enumerate}
 
 Implementacija rekurzivnog pristupa interpolacijske pretrage je data narednim k\^odom. 
 \begin{minted}[fontsize=\footnotesize,scale=0.7]{python}
 	def interpolation_search(niz, l, r, x):
 
-		if (lo <= hi and x >= niz[l] and x <= niz[r]):
-			pos = l + ((r - l) // (niz[r] - niz[lo]) * \ 
+		if (l <= r and x >= niz[l] and x <= niz[r]):
+			pos = l + ((r - l) // (niz[r] - niz[l]) * \ 
 			(x - niz[l]))
 	
 			if niz[pos] == x:
@@ -601,10 +601,7 @@ Implementacija rekurzivnog pristupa interpolacijske pretrage je data narednim k\
 
 \subsection{Eksponencijalna pretraga}
 
-Naziv ovog algoritma potiče iz načina biranja sljedećeg elementa u pretrazi. 
-
-
-Eksponencijalna pretraga uključuje dva koraka. Prvo, pronađimo interval u kojem se element potencijalno nalazi (ako se nalazi) koristeći eksponencijalne korake. Potom, na datom intervalu primijenimo binarnu pretragu. Za  poziciju \emph{pos} uzimamo $0, 2, 4, \ldots$ dok ne nađemo indeks  $i$ tako da je traženi element $x$ veći ili jednak od elementa  na poziciji $2^{i-1}$ a manji ili jednak od elementa na poziciji $2^i$ niza koji se pretražuje. 
+Naziv ovog algoritma proističe iz načina biranja sljedećeg elementa u pretrazi. Naime, eksponencijalna pretraga uključuje dva koraka. Prvo, pronađimo interval u kojem se element potencijalno nalazi (ako se nalazi) koristeći eksponencijalne korake. Potom, na datom intervalu primijenimo binarnu pretragu. Za  poziciju \emph{pos} uzimamo $0, 2, 4, \ldots$ dok ne nađemo indeks  $i$ tako da je traženi element $x$ veći ili jednak od elementa  na poziciji $2^{i-1}$ a manji ili jednak od elementa na poziciji $2^i$ niza koji se pretražuje. 
 
 
    Implementacija ove pretrage je data narednim k\^odom. 
@@ -642,18 +639,18 @@ Eksponencijalna pretraga uključuje dva koraka. Prvo, pronađimo interval u koje
    print(exponential_search(niz, x, 0))
    \end{minted}
 
-\textit{Kompleksnost algoritma}.  Ovaj algoritam pripada klasi $O(\log n)$. 
+\textit{Kompleksnost algoritma}.  Ovaj algoritam se izvršava u $O(\log n)$ vremenu. 
  
 
 Eksponencijalna pretraga je posebno korisna za pretraživanja u kojima je  veličina niza ogromna.  Ova pretraga se pokazala efikasnijom   od binarnog pretraživanja za ograničene nizove (maksimalni element je unaprijed ograničen nekom konstantom), a takođe i kada je element koji se traži bliži prvom elementu.
 
 \section{Algoritamska paradigma Podijeli pa zavladaj}
 %https://textbooks.cs.ksu.edu/cc310/4-data-structures-and-algorithms/13-divide-and-conquer/
-Ideja ovog (rekurzivnog) prostupa je sljedeća:
+Koraci ovog (rekurzivnog) pristupa su sljedeći:
 \begin{itemize}
-	\item  Podijelimo efikasno problem   na nezavisne podprobleme;
-	\item Riješimo podprobleme rekurzivno;
-	\item  Kombinujmo rješenja podproblema na efikasan način, tako da rezultat ostane validan i za veći podproblem.
+	\item  Podijeliti efikasno problem   na nezavisne podprobleme;
+	\item Riješiti podprobleme rekurzivno;
+	\item  Kombinovati rješenja podproblema efektivno tako da rezultat ostane validan i za veći podproblem.
 \end{itemize}
 
 Pseudokod date paradigme je dat  Algoritmom~\ref{alg:d-n-c}. 
@@ -666,7 +663,7 @@ Pseudokod date paradigme je dat  Algoritmom~\ref{alg:d-n-c}.
 \begin{algorithmic}[1]
 \Procedure{D\&C}{$n$: veličina ulaza}
  
-  \If{ $n < = n_0$}
+  \If{ $n \leq n_0$}
   \State Riješiti problem bez dodatnog dijeljenja 
   \Else
  
@@ -690,7 +687,7 @@ Ideja sortiranja niza je sljedeća:
     \item Spojiti dva sortirana niza u linearnom vremenu.
 \end{itemize}
 
-Izvorni kod za sortiranje spajanjem u programskom jeziku Pajton je dat u nastavku.
+Implementacija algoritma  sortiranja spajanjem  je data u nastavku.
 \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
  def mergeSort(niz):  
 
@@ -722,7 +719,7 @@ Izvorni kod za sortiranje spajanjem u programskom jeziku Pajton je dat u nastavk
 
 \end{minted}
 
-Glavna \texttt{while}-petlja u rekurziji radi spajanje dva sorirtrana dijela niza (lijevi i desni). Nezavisna dva (pod)niza \textit{nizLeftSort} i \textit{nizRightSort} se rekurzivno sortiraju, a potom spajaju (u linearnom vremenu).
+Spoljašnja \texttt{while}-petlja u rekurziji izvršava spajanje dva sortirana dijela niza (lijevi i desni). Nezavisna dva (pod)niza \textit{nizLeftSort} i \textit{nizRightSort} se rekurzivno sortiraju, a potom spajaju (u linearnom vremenu).
 
  \begin{figure}
  	\centering
@@ -733,12 +730,12 @@ Glavna \texttt{while}-petlja u rekurziji radi spajanje dva sorirtrana dijela niz
 
 \begin{example}
 
-\textbf{\textit{Množenje cijelih brojeva}}. Za  množenje dva $n$-cifrena broja, metodom koji se uči u nižim razredima osnovne škole, množeći cifru po cifru, zahtijeva se vrijeme izvršavanja od $O(n^2)$.  Konstruisati algoritam zasnovan na paradigmi podijeli pa zavladaj za problem množenja dva broja. 
+(\textbf{\textit{Množenje cijelih brojeva}}). Za  množenje dva $n$-cifrena broja, metodom koji se uči u nižim razredima osnovne škole, množeći cifru po cifru, zahtijeva se vrijeme izvršavanja od $O(n^2)$.  Konstruisati algoritam zasnovan na paradigmi podijeli pa zavladaj za problem množenja dva broja. 
 \end{example}
 \begin{solution}
  
  
- Jednostavnosti radi, smatramo da su u ulazu binarni brojevi sa istim brojem cifara.
+ Jednostavnosti radi, bez smanjenja opštosti, smatrajmo da su u ulazu binarni brojevi sa istim brojem cifara.
 Pokušajmo sa alternativnom metodom koja će voditi paradigmi podijeli pa vladaj.  Napišimo svaki od brojeva u obliku: $x= x_1 2^{n/2} + x_2, y= y_1 2^{n/2} + y_2$.
 Tada je 
 $$ xy = (x_1 2^{n/2} + x_2) \cdot (y_1 2^{n/2} + y_2) = x_1 y_1 2^n + (x_1 y_2 + y_1 x_2)2^{n/2} + x_2y_2.$$
@@ -753,14 +750,12 @@ Iz Master teoreme, slijedi da je sada kompleksnost algoritma jednaka $O(n^{\log_
 
 \section{Algoritamska paradigma vraćanja unazad }
 
-  \textit{Vraćanje unazad} (\textit{backtracking}) je algoritamska tehnika za rekurzivno rješavanje problema postepenom izgradnjom  rješenja, dio-po-dio, uklanjajući ona (parcijalna) rješenja koja ne zadovoljavaju ograničenja problema, momentalno nakon dodavanja nove komponente koja narušava uslove dopustivosti (odnosi se na vrijeme koje je proteklo do dostizanja bilo kojeg nivoa stabla pretraživanja). Za ovu paradigmu se može reći da je ona  poboljšanje pristupa grube sile.
+  \textit{Vraćanje unazad} (\textit{backtracking}) je algoritamska tehnika za rekurzivno rješavanje problema postepenom izgradnjom  rješenja, dio-po-dio, uklanjajući ona (parcija\-lna) rješenja koja ne zadovoljavaju ograničenja problema, momentalno nakon dodavanja nove komponente koja narušava uslove dopustivosti (odnosi se na vrijeme koje je proteklo do dostizanja bilo kojeg nivoa stabla pretraživanja). Za ovu paradigmu se može reći da je ona  poboljšanje pristupa grube sile.
   
-  U osnovi,   traži  se  rješenje problema među svim dostupnim opcijama. U početku krećemo od jedne moguće opcije i ako se problem može riješiti tom opcijom, vraćamo dato rješenje. U suprotnom vraćamo se unazad, birajući drugu opciju među preostalim   opcijama. Slučaj u kojem  niti jedna od opcija ne daje rješenje rezultira scenarijem da se neće naći nikakvo rješenje za  određeni problem.  Vraćanje unazad predstavlja rekurzivni pristup jer se proces pronalaska rješenja iz različitih dostupnih opcija rekurzivno ponavlja, sve dok se ne nađe rješenje problema ili dok se dođe do konačnog stanja.
+  U osnovi,   traži  se  rješenje problema među svim dostupnim opcijama. U početku krećemo od jedne moguće opcije i ako se problem može riješiti tom opcijom, vraćamo dato rješenje. U suprotnom vraćamo se unazad, birajući drugu opciju među preostalim   opcijama. Slučaj u kojem  niti jedna od opcija ne daje rješenje rezultira scenarijem da se neće naći nikakvo rješenje za  određeni problem.  Vraćanje unazad predstavlja rekurzivni pristup jer se proces pronalaska rješenja na osnovu različitih dostupnih opcija rekurzivno ponavlja, sve dok se ne nađe rješenje problema ili dok se dođe do konačnog stanja.
   
   
-   Tehnika vraćanja unazad u svakom koraku eliminiše one izbore koji ne mogu dati rješenje i nastavlja   sa onim izborima koji imaju potencijal da odvedu do rješenja. Algoritmi vraćanja unatrag su generalno eksponencijalni i  vremenski i prostorno te se ne preporučuju za rješavanje teških problema.  
-    
-    Postavlja se pitanje kako prepoznati da se neki problem može riješiti pomoću ove algoritamske paradigme. Dakle, osnovna ideja je da se rješenja problema mogu konstruisati inkrementalno, dodavanjem jedne kompomente za drugom u svakom koraku u postojeće (parcijalno) rješenje, dok se ne dobije rješenje problema ili ne utvrdi da se tim izborom komponenete, nikada neće dobiti validno rješenje (nakon čega se pretraga vraća nazad, pretražujući druge opcije). Prevedeno na jezik rješavanja podproblema, algoritamska paradigma vraćanja unazad rješava sve podprobleme jedan za drugim, kako bi  došla do najboljeg mogućeg rješenja. 
+   Tehnika vraćanja unazad u svakom koraku eliminiše one izbore koji ne mogu dati rješenje i nastavlja   sa onim izborima koji imaju potencijal da odvedu do rješenja. Algoritmi vraćanja unatrag su generalno eksponencijalni i  vremenski i prostorno te se ne preporučuju za rješavanje teških problema.   Postavlja se pitanje kako prepoznati da se neki problem može riješiti pomoću ove algoritamske paradigme. Dakle, osnovna ideja je da se rješenja problema mogu konstruisati inkrementalno, dodavanjem jedne komponente za drugom u svakom koraku u postojeće (parcijalno) rješenje, dok se ne dobije rješenje problema ili ne utvrdi da se datim izborom komponenete, nikada neće dobiti validno rješenje (nakon čega se pretraga vraća nazad, pretražujući druge opcije). Prevedeno na jezik rješavanja podproblema, algoritamska paradigma vraćanja unazad rješava sve podprobleme jedan za drugim, kako bi  došla do najboljeg mogućeg rješenja. 
     
     Pseudokod paradigme varaćanja unazad je dat Algoritmom~\ref{alg:backtrack}. 
     
@@ -782,12 +777,12 @@ Iz Master teoreme, slijedi da je sada kompleksnost algoritma jednaka $O(n^{\log_
         \caption{Paradigma vraćanja unazad. }        \label{alg:backtrack}
     \end{algorithm}
     
-    Napomenimo da je implementacija ovog algoritma vezana za konstruisanje stabla odluke, koje se češće naziva \textit{stablo stanja} (eng. \textit{state-space tree}). U okviru ovog kursa ne ulazimo u ovu notaciju, nego bez previše formalizma pokušavamo objasniti rad osnovnih algoritamskih paradigmi i način rješavanja problema pomoću svake od njih.    
+    Napomenimo da je implementacija ovog algoritma vezana za konstruisanje stabla odluke, koje se češće naziva \textit{stablo stanja} (eng. \textit{state-space tree}). U okviru ovog kursa ne ulazimo u tu notaciju, nego bez previše formalizma pokušavamo objasniti rad osnovnih algoritamskih paradigmi i način rješavanja problema pomoću svake od njih.    
     
     %https://www.programiz.com/dsa/backtracking-algorithm ==> primjer 1...
     
     \begin{example}
-    	\textbf{\emph{Problem N kraljica}}.  Neka je data šahovska ploča dimenzije $N\times N$. Smjestiti $N $ kraljica na šahovsku ploču tako da se nikoje dvije kraljice međusobno ne napadaju.  Korisiti algoritam vraćanja unazad. 
+    	(\textbf{\emph{Problem N kraljica}}).  Neka je data šahovska ploča dimenzije $N\times N$. Smjestiti $N $ kraljica na šahovsku ploču tako da se nikoje dvije kraljice međusobno ne napadaju.  Korisiti algoritam vraćanja unazad. 
     \end{example}
 
 \begin{solution}
@@ -799,12 +794,12 @@ Iz Master teoreme, slijedi da je sada kompleksnost algoritma jednaka $O(n^{\log_
        \caption{Primjer jednog rješenja problema 8-kraljica.}\label{fig:8-queen-sol-example}
   \end{figure}
 
-Jasno je da se po jedna kraljica smiješta u svakom redu šahovske ploče. Pozicija kraljice u $i$-tom redu je određena brojem kolone u kojoj je ta kraljica postavljena. U prevodu, svako rješenje koje odgovara poziciji kraljica na ploči možemo kodirati nizom \emph{niz} dužine $N$, gdje se na poziciji $i$ nalazi broj kolone u $i$-tom redu u kojoj je smještena kraljica. Konkretno, rješenje (pozicije kraljica)  na prethodnoj slici kodirano je nizom $[5, 7, 1, 4, 2, 8, 6, 3]$. 
+Jasno je da se po jedna kraljica smiješta u svakom redu šahovske ploče. Pozicija kraljice u $i$-tom redu je određena brojem kolone u kojoj je ta kraljica postavljena. U prevodu, svako rješenje koje odgovara poziciji kraljica na ploči možemo kodirati nizom \emph{niz} dužine $N$, gdje se na poziciji $i$ nalazi broj kolone u $i$-tom redu u kojoj je smještena kraljica. Konkretno, rješenje (pozicije kraljica)  na prethodnoj slici kodirano je nizom $[5, 7, 1, 4, 2, 8, 6, 3]$.  \\ 
 
-Algoritam vraćanja unazad kreće od inicijalno prazne ploče i u svakom koraku nastoji dodati kraljicu u sljedeći (prazni) red. Dakle, kreće se od praznog rješenja, u koji se dodaje novi element   koji odgovara poziciji kraljice sljedećeg (nepopunjenog) reda. Stoga, pri dodavanju nove kraljice u rješenje \emph{niz}, ispitujemo da li pozicije kraljica u (produženom) rješenju  zadovoljavaju uslove zadatka (ne  postoje dvije kraljice koje napadaju jedna drugu). U slučaju da postoji konflikt između nekih kraljica, algoritam se vraća unazad na rješenje \emph{niz} prije dodavanja posljednje dodane kraljice, i razmatra nove pozicije za dodavanje kraljice u tom redu -- tj. za proširivanje trenutnog rješenja.  Ovaj proces se ponavlja sve dok se ne nađe prvo rješenje dužine $N$ koje zadovoljava uslove zadatka (tj. popune se svi redovi na ploči sa kraljicama koje se međusobno ne napadaju), ili se ustanovi da takvo rješenje ne postoji. 
+Algoritam vraćanja unazad kreće od inicijalno prazne ploče i u svakom koraku nastoji dodati kraljicu u sljedeći (prazni) red. Dakle, kreće se od praznog rješenja, u koji se dodaje novi element   koji odgovara poziciji kraljice sljedećeg (nepopunjenog) reda. Stoga, pri dodavanju nove kraljice u rješenje \emph{niz}, ispitujemo da li pozicije kraljica u (produženom) rješenju  zadovoljavaju uslove zadatka (ne  postoje dvije kraljice koje napadaju jedna drugu). U slučaju da postoji konflikt između nekih kraljica, algoritam se vraća unazad na rješenje \emph{niz} prije dodavanja posljednje dodane kraljice, i razmatra nove pozicije za dodavanje kraljice u tom redu, tj. za proširivanje trenutnog rješenja.  Ovaj proces se ponavlja sve dok se ne nađe prvo rješenje dužine $N$ koje zadovoljava uslove zadatka (tj. popune se svi redovi na ploči sa kraljicama koje se međusobno ne napadaju), ili se ustanovi da takvo rješenje ne postoji. 
 
    
-Implementacija u Pajtonu koja rješava ovaj problem je data narednim k\^odom. 
+Implementacija koja rješava ovaj problem je data narednim k\^odom. 
 
 \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
 	
@@ -851,12 +846,12 @@ Napomenimo da ovdje nismo prikazali implementaciju funkcije \textit{valid}(), ko
 %https://codeahoy.com/learn/recursion/ch11/: THE SUM OF 4 SQUARES:
 
 \begin{example}
-	\textit{Problem sume 4 kvadrata}. Lagranžova teorema o 4 kvadrata kaže da se svaki prirodni broj može napisati kao zbir četiri broja koji su kvadrati nekih brojeva. Neka je dat broj $n$. Naći četiri kvadratna broja koji u zbiru daju broj $n$ pomoću algoritma vraćanja unazad. \\
+	(\textbf{Problem sume 4 kvadrata}). Lagranžova teorema o 4 kvadrata kaže da se svaki prirodni broj može napisati kao zbir četiri broja koji su kvadrati nekih brojeva. Neka je dat broj $n$. Naći četiri kvadratna broja koji u zbiru daju broj $n$ pomoću algoritma vraćanja unazad. \\
 	Npr. za $n=2000$, vrijedi $1764 + 196 + 36 + 4 = 2000. $
 \end{example}
 
 \begin{solution}
-	Rješenje problema predstavlja četvorka $sol = (a, b, c, d)$ prirodnih brojeva, tako da je $a^2 + b^2 + c^2 + d^2 = n$. Ideja rekurzije je odabrati svaki  od brojeva jedan po jedan, dok ne dobijemo četvorku koja odgovara uslovima zadatka. Svaki put kada dodamo novi broj $x$ u rješenje \emph{sol}, naredni rekurivni poziv ispituje trenutno zbir kvadrata brojeva u proširenom rješenju \emph{sol}. Ako ono prelazi $n$, algoritam vrši vraćanje unazad i bira novog kandidata za proširivanje rješenja. 
+	Rješenje problema predstavlja četvorka $sol = (a, b, c, d)$ prirodnih brojeva, tako da je $a^2 + b^2 + c^2 + d^2 = n$. Ideja rekurzije je odabrati svaki  od brojeva jedan po jedan, dok ne dobijemo četvorku koja odgovara uslovima zadatka. Svaki put kada dodamo novi broj $x$ u rješenje \emph{sol}, naredni rekurzivni poziv ispituje trenutno zbir kvadrata brojeva u proširenom rješenju \emph{sol}. Ako ono prelazi $n$, algoritam vrši vraćanje unazad i bira novog kandidata za proširivanje rješenja. 
 	
  Implementacija algoritma vraćanja unazad za ovaj problem je dat narednim k\^odom.
  
