@@ -1402,8 +1402,8 @@ matrice, 3D matrice, proizvoljne matrice,  velikih dimenzija. Riječ \texttt{num
 	\caption{Struktura podataka numpy niza (sa tipom podataka $int$).\protect \footnotemark}	 \label{fig:numpy_array}
  
 \end{figure} 
-\footnotetext{https://www.geeksforgeeks.org/python-lists-vs-numpy-arrays/}
-
+\footnotetext{https://www.geeksforgeeks.org/python-lists-vs-numpy-arrays/} 
+\\
 \textit{Inicijalizacija objekta}. 
 \begin{minted}{python}
 import numpy as np
@@ -1413,7 +1413,7 @@ matrica3D = np.array( [[[2, 5 ], [1, 7] ], [[2, 3], [5, 5]]], \
 dytpe="int32") # 3D matrica
 \end{minted}
  
-Što se tiče eksplicitno definisanog tipa elemenata objekta numpy (argument \emph{dtype}) mogući su sljedeći tipovi:  $i$: integer (i4, i2, itd.),  $b$: boolean, $u$: unsigned integer, $f$: float,  $M$: datetime, $O$: object, $S$: string. 
+Što se tiče eksplicitno definisanog tipa elemenata objekta numpy (argument \emph{dtype}) mogući su sljedeći tipovi:  $i$: integer ($i32, i4, i2,$ itd.),  $b$: boolean, $u$: unsigned integer, $f$: float,  $M$: datetime, $O$: object, $S$: string. 
 
 \textit{Osnovne metode}.
 \begin{itemize}
@@ -1454,14 +1454,14 @@ newarr = arr[filter_arr]
 
 \section{Modul Ctypes}
 
-Modul \textit{ctypes} pruža način za pozivanje funkcija i korištenje tipova podataka u dijeljenim  bibliotekama ili bibliotekama dinamičkog povezivanja (DLL) napisanim u jeziku \textit{C} ili drugim jezicima nižeg nivoa unutar pajtonovog koda. Osnovni  koraci za korištenje \textit{ctypes} modula za uključivanje \textit{C} programa u pajtonov k\^od su dati u nastavku.
+Modul \textit{ctypes} pruža način za pozivanje funkcija i korištenje tipova podataka u dijeljenim  bibliotekama ili bibliotekama dinamičkog povezivanja (DLL) napisanim u jeziku \textit{C} ili drugim jezicima nižeg nivoa unutar pajtonovog k\^oda. Osnovni  koraci za korištenje \textit{ctypes} modula za uključivanje \textit{C} programa u pajtonov k\^od su dati u nastavku.
 
 \begin{enumerate}
-	\item Prvo  napisati \textit{C} program koji želimo ugraditi u pajtonov   k\^od. Ovaj program može da sadrži jednu ili više funkcija koje želimo pozvati unutar k\^oda pisanog u Pajtonu.
+	\item Napisati \textit{C} program koji želimo ugraditi u pajtonov   k\^od. Ovaj program može da sadrži jednu ili više funkcija koje želimo pozvati unutar k\^oda pisanog u Pajtonu.
 	\item Prevesti (kompajlirati) \textit{C} program u dijeljenu biblioteku.    Na Linuks ili macOS  sistemima u tu svrhu koristimo \textit{gcc} kompajler. Na sistemu Windows možete koristiti Visual Studio ili MinGW za kompajliranje programa u DLL fajl.
-	\item Učitati dijeljenu biblioteku u pajtonov k\^od. Ovaj proces vršimo uz  pomoć modula \texttt{ctypes}. Učitavamo .dll fajl pozivanjem \textit{cdll.LoadLibrary(path)} gdje je \textit{path} proslijeđena staza do dijeljene (dll) biblioteke.
-	\item Definišimo tipove argumenata i ono što vraćaju funkcije napisane u \textit{C} programu. Prije nego što   pozovemo \textit{C} funkciju iz pajton programa pomoću modula \texttt{ctypes}, trebaju se navesti tipovi argumenata i tipovi koje funkcije vraćaju. To možemo učiniti postavljanjem \textit{argtypes} i \textit{restype} atributa funkcijskog objekta.
-	\item Pozivanje \textit{C} funkcije u pajtonovom programu: Na kraju, pozivamo \textit{C} funkciju iz pajtona pomoću funkcijskog objekta koji je kreiran u koraku 4. Vrijednosti argumenata proslijeđujemo kao pajtonove objekte, a modul \texttt{ctypes} će ih automatski pretvoriti u odgovarajuće \textit{C} tipove podataka. 
+	\item Učitati dijeljenu biblioteku u pajtonov k\^od. Ovaj proces vršimo uz  pomoć modula \texttt{ctypes}. Učitavamo .dll fajl pozivanjem \textit{cdll.LoadLibrary(path)} gdje je \textit{path} proslijeđena staza do dijeljene biblioteke.
+	\item Definišimo tipove argumenata i tipove koje vraćaju funkcije napisane u \textit{C} programu. Prije nego što   pozovemo \textit{C} funkciju iz programa napisanog u pajtonu pomoću modula \texttt{ctypes}, trebaju se navesti tipovi argumenata i tipovi koje funkcije vraćaju. To možemo učiniti postavljanjem \textit{argtypes} i \textit{restype} atributa funkcijskog objekta.
+	\item Pozivanje \textit{C} funkcije preko programa napisanog u Pajtonu. Na kraju, pozivamo funkciju izvorno napisanu u \textit{C}-u koristeći pajton pomoću funkcijskog objekta koji je kreiran u koraku 4. Vrijednosti argumenata proslijeđujemo kao pajtonovi objekti, a modul \texttt{ctypes} će ih automatski pretvoriti u odgovarajuće \textit{C} tipove podataka. 
 \end{enumerate}
 
 U nastavku navodimo čitav proces   poziva \textit{C} programa izvršavanjem pajtonovog koda.
@@ -1498,7 +1498,7 @@ Konačno, pozovemo odabranu \textit{C} funkciju uz pomoć k\^oda:
  
 \section{Pisanje prilagodjenih modula}
 
-Pretpostavimo da želimo kreirati modul koji služi za različite matematičke operacije, kao što su sabiranje, oduzimanje, množenje i dijeljenje. Kako smo pomenuli, modul je skup objekata koji se  čuva u datoteku ekstenzije .\textit{py}. Pretpostavimo da želimo kreirati modul pod nazivom \textit{mathOps}. Dakle, kreirajmo  datoteku pod nazivom ``\textit{mathOps}.py" u kojem definišemo funkcije ovog prilagodjenog modula. Evo primjera kako bi ta datoteka mogla izgledati:
+Pretpostavimo da želimo kreirati modul koji služi za rad sa različitim matematičkim operacijama, kao što su sabiranje, oduzimanje, množenje i dijeljenje. Kako smo pomenuli, modul je skup objekata koji se  čuva u datoteku ekstenzije .\textit{py}. Pretpostavimo da želimo kreirati modul pod nazivom \textit{mathOps}. Dakle, kreirajmo  datoteku pod nazivom ``\textit{mathOps}.py" u kojem definišemo funkcije ovog prilagođenog modula. Evo primjera kako bi ta datoteka mogla izgledati:
 
 \begin{minted}{python}
 def add(x, y):
@@ -1515,7 +1515,7 @@ def divide(x, y):
         raise ValueError("Ne možemo dijeliti sa 0")
     return x / y
 \end{minted}
-Ovaj  primjer definiše četiri različite funkcije, od kojih svaka izvodi različite matematičke operacije. Funkcija \textit{add} uzima vrijednost dva argumenta, $x$ i $y$, i vraća njihov zbir. Funkcija \textit{subtract}   vraća razliku dva broja koji se prenose kao argumenti funkcije. Funkcija \textit{multiply} vraća proizvod dva broja. Konačno, funkcija \textit{divide} uzima dva argumenta, i vraća rezultat njihovog dijeljenja, ali takođe  javlja  grešku ako je nazivnik (vrijednost argumenta $y$) nula.
+Ovaj  primjer definiše četiri različite funkcije, od kojih svaka izvodi različite matematičke operacije. Funkcija \textit{add} uzima vrijednost dva argumenta, $x$ i $y$, i vraća njihov zbir. Funkcija \textit{subtract}   vraća razliku dva broja koji se prenose kao argumenti funkcije. Funkcija \textit{multiply} vraća proizvod dva broja. Konačno, funkcija \textit{divide} sadrži dva argumenta, i vraća rezultat njihovog dijeljenja, ali takođe  javlja  grešku ako je nazivnik (vrijednost argumenta $y$) nula.
 
 Korištenje ovog prilagodjenog modula u drugoj pajtonovoj datoteci se vrši importovanjem modula \textit{mathOps} na sljedeći način:
 
@@ -1537,19 +1537,14 @@ U ovom primjeru uvozimo modul ``\textit{mathOps}" i koristimo njegove funkcije z
 
 \section{Postavljanje korisnički kreiranih modula  na PyPI repozitorij}
 
-PyPI (\textit{Python Package Index}) je centralni repozitorij paketa   koji su pisani u programskom jeziku Pajton. PyPI omogućuje programerima lako distribuiranje korisnički napisanih modula,  omogućavajući da dati paket bude korišten široj zajednici korisnika.
+PyPI (\textit{Python Package Index}) je centralni repozitorij paketa   koji su napisani u programskom jeziku Pajton. PyPI omogućuje programerima lako distribuiranje korisnički napisanih modula,  omogućavajući kako korišćenje paketa široj zajednici korisnika.
  
-Nekoliko   koraka   treba izvršiti ukoliko želimo postaviti   korisnički kreirani modul na PyPI repozitorij. Na zvaničnoj PyPI veb stranici, na linku  \url{https://pypi.org/account/register/},  potrebno je kreirati račun. Nakon što se prijavimo, potrebno je  generisati token za prijavu na PyPI. Token je sigurnosni ključ koji omogućuje da se prijavimo i objavimo/podignemo  paket (modul). 
- 
- 
- Na lokalnom računaru instalirajmo module  \texttt{setuptools} i \texttt{wheel}, u slučaju da nisu instalirani. To se možete učiniti pomoću \textit{pip} naredbe:
+Nekoliko   se koraka izvršava ukoliko želimo postaviti   korisnički kreirani modul na PyPI. Na zvaničnoj PyPI veb stranici \footnote{https://pypi.org/account/register/},  potrebno je kreirati račun. Nakon što se prijavimo, potrebno je  generisati token za prijavu na PyPI. Token je sigurnosni ključ koji omogućuje da se prijavimo i objavimo/podignemo  paket (modul).  Na lokalnom računaru instalirajmo module  \texttt{setuptools} i \texttt{wheel}, u slučaju da nisu instalirani. To se možete učiniti pomoću \textit{pip} naredbe:
  \begin{minted}{python}
       pip install setuptools wheel
  \end{minted}
 
-Modul \texttt{setuptools} omogućuje da upravljamo i distribuiramo naš modul, a modul \texttt{wheel}   omogućuje generisanje datoteka sa ekstenzijom .\textit{whl} koje se mogu lako instalirati.
-
-Potom,  u korjenom direktorijumu našeg modula  kreiramo fajl \textit{setup.py}. Fajl \textit{setup.py}  definiše metapodatke o našem modulu kao što su naziv, verzija, autor, opis i druge metapodatke koji će biti prikazani na PyPI stranici   modula. Primjer takvog fajla je dat u nastavku.
+Modul \texttt{setuptools} omogućuje upravljanje i distribuiranje našeg modula, a modul \texttt{wheel}   omogućuje generisanje datoteka sa ekstenzijom .\textit{whl} koje se mogu lako instalirati. Potom,  u korjenom direktorijumu našeg modula  kreiramo fajl \textit{setup.py}. Fajl \textit{setup.py}  definiše metapodatke o našem modulu kao što su naziv, verzija, autor, opis i druge metapodatke koji će biti prikazani na PyPI stranici   modula. Primjer takvog fajla je dat u nastavku.
 
 \begin{minted}{python}
    from setuptools import setup
@@ -1568,12 +1563,12 @@ Potom,  u korjenom direktorijumu našeg modula  kreiramo fajl \textit{setup.py}.
 \end{minted}
 Ovaj \textit{ setup.py}   definiše paket modul1 sa verzijom 0.0.1, datim autorom  i opisom, a zavisi od modula \textit{numpy} i \textit{pandas}.
 
-Naredni korak je kreiranje distribucijske datoteke (source distribution i wheel distribution) pomoću \texttt{setuptools}, izvršavajući naredbu:
+U narednom koraku se kreiraju distribucijske datoteke (source distribution i wheel distribution) pomoću \texttt{setuptools}, izvršavajući naredbu:
 \begin{minted}{python}
         python setup.py sdist bdist_wheel
 \end{minted}
  
-Dalje instaliramo \texttt{twine} paket, koji će pomoći da postavimo naš distribucijski modul na PyPI repozitorijum. Instaliramo ga pomoću   naredbe:
+Dalje instaliramo \texttt{twine} paket, koji služi za postavljanje distribucijskog modula na PyPI repozitorijum. Instaliramo ga pomoću   naredbe:
 \begin{minted}{python}
 	pip install twine
 \end{minted}
@@ -1581,7 +1576,7 @@ Potom postavimo korisnički   modul na PyPI pomoću twine naredbe:
 \begin{minted}{python}
 	twine upload dist/*
 \end{minted}
-Izvršavanje prethodne naredba će tražiti da se unese PyPI korisničko ime i lozinka, a zatim će prenijeti      paket na PyPI (direktorijum dist).
+Izvršavanje prethodne naredba zahtjeva da se unese PyPI korisničko ime i lozinka, a zatim će prenijeti      paket na PyPI (direktorijum dist).
 
 Nakon  objave  modula na PyPI, možemo ga instalirati pomoću   naredbe:
 \begin{minted}{python}
@@ -1598,21 +1593,21 @@ Prilikom izvođenja programa, računarska memorija se dijeli na različite dijel
 
 %K\^od sekcija pohranjuje instrukcije koda u obliku koji mašina razumije. Mašina slijedi upute u sekciji koda. Shodno instrukcijama, 
 Pajtonov interpreter učitava funkcije i lokalne varijable (reference) u memoriju steka. 
-Stek memorija je statična i privremena. Statična znači da se veličina objekata pohranjenih u steku ne može da bude promijenjena. Riječ privremeno znači da čim pozvana funkcija vrati svoju vrijednost, funkcija i   varijable vezane za funkciju se uklanjaju sa steka. Pristup memoriji steka nije direktno obezbjeđen programeru, već  briga o ovom dijelu memorije je dodijeljena Pajtonovom interpreteru i OS-u.  Količina memorije koja  se dodijeljuje je poznata interpreteru i kad god se pozove funkcija, njene varijable zauzimaju memoriju koja se rezerviše na steku.
+Stek memorija je statična i privremena. Statična znači da veličina objekata pohranjenih u steku ne može da bude promijenjena. Riječ privremeno znači da čim pozvana funkcija vrati svoju vrijednost, funkcija i   varijable vezane za funkciju se uklanjaju sa steka. Pristup memoriji steka nije direktno obezbjeđen programeru, već  briga o ovom dijelu memorije je dodijeljena Pajtonovom interpreteru i OS-u.  Količina memorije koja  se dodijeljuje je poznata interpreteru i kad god se pozove funkcija, njene varijable zauzimaju memoriju koja se rezerviše na steku.
 % Pratimo: https://towardsdatascience.com/python-memory-and-objects-e7bec4a2845ž
 % O steku i hipu: https://www.geeksforgeeks.org/how-are-variables-stored-in-python-stack-or-heap/
 
 \begin{minted}{python}
 	def func():
 	
-	# Ove varijable dobijaju memoriju 
-	# alociranu na steku 
-	a = 10
-	b = []
-	c = "abc"
+		# Ove varijable dobijaju memoriju 
+		# alociranu na steku 
+		a = 10
+		b = []
+		c = "abc"
 \end{minted}
 
-Kao što smo prethodno rekli, varijable (ili reference generalno) skladište samo memorijske adrese objekata. Dakle, postavlja se pitanje gdje se skladište sami objekti? Oni se nalaze u drugoj memoriji koja se zove \textit{hip} (eng. \textit{Heap memory}). Napomenimo da riječ hip nema veze sa istoimenom strukturom podataka  već  zbog dostupnosti gomile memorijskog prostora u svrhu pohranjivanja i brisanja objekata.   Za pohranjivanje objekata potrebna nam je memorija sa dinamičkom alokacijom  -- veličina memorije i objekata se mogu mijenjati. Pajtonov interpreter je zadužen za aktivno dodjeljivanje memorije hipu (Primijetimo da u jeziku $C/C$++ to  se izvršava od strane programera!). Varijable koje su pohranjene u memoriji hipa su: ($i$)   izvan poziva metoda ili funkcija ili ($ii$) dijele se unutar više funkcija, dakle globalnog svojstva.
+Kao što smo prethodno rekli, varijable (ili reference generalno) skladište samo memorijske adrese objekata. Dakle, postavlja se pitanje gdje se skladišti vrijednost samih objekata? Oni se nalaze u drugoj memoriji koja se zove \textit{hip} (eng. \textit{Heap memory}). Napomenimo da riječ hip nema veze sa istoimenom strukturom podataka  već  zbog dostupnosti gomile memorijskog prostora u svrhu pohranjivanja i brisanja objekata.   Za pohranjivanje objekata potrebna nam je memorija sa dinamičkom alokacijom  -- veličina memorije i objekata se mogu mijenjati. Pajtonov interpreter je zadužen za aktivno dodjeljivanje memorije hipu (Primijetimo da u jeziku $C/C$++ to  se izvršava od strane programera!). Varijable koje su pohranjene u memoriji hipa se nalaze: ($i$)   izvan poziva metoda ili funkcija ili ($ii$) dijele se unutar više funkcija, dakle globalnog svojstva.
 
 \begin{minted}{python}
 	# Memorija za 10 brojeva
@@ -1655,11 +1650,11 @@ Recimo sada malo više o Pajtonovoj virtuelnoj mašini (PVM), bazičnoj komponen
 
 Ključne uloge PVM su navedene u nastavku. 
 \begin{itemize}
-\item \textit{Kompatibilnost između platformi}: PVM omogućava izvršavanje pajtonovog k\^oda na više različitih platformi bez ponovne kompilacije. Ovo olakšava pisanje i distribuciju aplikacija.
-\item \textit{Poboljšane performanse izvršavanja}: PVM koristi bajtkod  interpreter, koji je brži od direktnog interpretera izvornog k\^oda. PVM može koristiti \textit{Just-In-Time} (JIT) kompilaciju za dalje poboljšanje performansi.
-\item \textit{Dinamičko tipiziranje}: Pajton je dinamički tipiziran jezik, što znači da se tip varijable dodjeljuje u vremenu izvođenja programa. PVM je dizajnirana da efikasno upravlja ovim procesom.
-\item  \textit{Upravljanje memorijom}: PVM automatski upravlja memorijom, što može olakšati pisanje sigurnog memorijskog k\^oda. PVM  automatski oslobađa memoriju koja se više ne koristi.
-\item \textit{Lak pristup eksternim bibliotekama}: PVM se intenzivno koristi u pajton ekosistemu, koji uključuje veliki broj otvorenih biblioteka. Ove biblioteke pružaju širok spektar funkcionalnosti vezano za  veb programiranje, mašinsko učenje, itd. Importovanje biblioteka se vrši pomoću naredbe \texttt{import}. 
+\item \textit{Kompatibilnost između platformi}.  PVM omogućava izvršavanje pajtonovog k\^oda na više različitih platformi bez ponovne kompilacije. Ovo olakšava pisanje i distribuciju aplikacija.
+\item \textit{Poboljšane performanse izvršavanja}.  PVM koristi bajtkod  interpreter, koji je brži od direktnog interpretera izvornog k\^oda. PVM može da koristi \textit{Just-In-Time} (JIT) kompilaciju za dalje poboljšanje performansi.
+\item \textit{Dinamičko tipiziranje}.  Pajton je dinamički tipiziran jezik, što znači da se tip varijable dodjeljuje u vremenu izvođenja programa. PVM je dizajnirana da efikasno upravlja ovim procesom.
+\item  \textit{Upravljanje memorijom}. PVM automatski upravlja memorijom jer  automatski oslobađa memoriju koja se više ne koristi.
+\item \textit{Lak pristup eksternim bibliotekama}. PVM se intenzivno koristi u  ekosistemu koji uključuje veliki broj otvorenih biblioteka. Ove biblioteke pružaju širok spektar funkcionalnosti vezano za  veb programiranje, mašinsko učenje, itd. Importovanje biblioteka se vrši pomoću naredbe \texttt{import}. 
 \end{itemize}
 
 
@@ -1672,26 +1667,26 @@ Vizuelizaciju procesa prevođenja programa možete da vidite na Slici~\ref{fig:c
 \begin{enumerate}
     %%https://adriann.github.io/programming_problems.html
     
-    \item Implementirajte igru pogađanja u kojoj korisnik treba da pogodi skriveni broj. Nakon pogađanja, program izvještava korisnika da li je njegov broj velik ili mali (ili je pogođen). Na kraju ispisati broj  pokušaja iz kojeg je korisnik pogodio skriveni broj. Računa se jedan pokušaj ukoliko se unese isti broj više puta uzastopno.
+    \item Implementi igru pogađanja u kojoj korisnik treba da pogodi skriveni broj. Nakon pogađanja, program izvještava korisnika da li je njegov broj velik ili mali (ili je pogođen). Na kraju ispisati broj  pokušaja iz kojeg je korisnik pogodio skriveni broj. Računa se jedan pokušaj ukoliko se unese isti broj više puta uzastopno.
     
     
 	\item Napisati program koji računa sljedeću sumu  
 	
 	$$ 4 \cdot \sum_{k=1}^{10^6}(-1)^{k-1} \frac{1}{2k-1}= 4 \cdot (1-1/3 + 1/5-1/7+1/9-1/11 \ldots).$$
 	
-	\item Napisati funkciju koja kombinira dvije liste naizmjenično uzimajući naizmjenično elemente jedne pa druge liste, Npr. za $[a,b,c], [5, 6, 7]$ generišemo listu $[a,5,b,6,c,7]$.
+	\item Napisati funkciju koja kombinira dvije liste naizmjenično uzimajući elemente jedne pa druge liste, Npr. za $[a,b,c], [5, 6, 7]$ generišemo listu $[a,5,b,6,c,7]$.
 	
-	\item Napisati funkciju koja pomijera listu za $k$ elemenata. Npr. lista  $[1,2,3,4,5,6]$ rotirano za $k=2$ je data sa $[3,4,5,6,1,2]$. Riješiti zadatak bez kreiranja kopije liste. 
+	\item Napisati funkciju koja pomijera elemente liste za $k$ elemenata. Npr. lista  $[1,2,3,4,5,6]$ rotirana za $k=2$ je data sa $[3,4,5,6,1,2]$. Riješiti zadatak bez kreiranja kopije liste. 
 	
 	\item Napisati funkciju koja uzima broj i vraća listu njegovih brojeva. Npr. za broj $2342$ treba vratiti listu $[2,3,4,2]$.
 	
-	\item Napisati funkciju koja uzima listu brojeva,   bazu $b_1$ u kojoj se brojevi liste interpretiraju, te ciljnu bazu $b_2$.  Kao rezultat vratiti listu brojeva konvertujući svaki od brojeva početne liste u bazu $b_2$. Npr. za listu $[21,10,01]$ u bazi $b_1 = 3$ pretvaramo u listu brojeva po bazi $b_2=10$, dobijajući $[7,3, 1]$.
+	\item Napisati funkciju koja uzima listu brojeva,   bazu $b_1$ u kojoj se brojevi liste interpretiraju, te ciljnu bazu $b_2$.  Kao rezultat vratiti listu brojeva konvertujući svaki od brojeva početne liste u bazu $b_2$. Npr. za listu $[21,10,01]$ u bazi $b_1 = 3$ pretvaramo u listu brojeva po bazi $b_2=10$, pri čemu vraćamo listu $[7,3, 1]$.
 	
 	\item Napišite funkciju koja množi dvije matrice. Vratiti grešku (koristiti izuzetke) ukoliko su dimenzije matrica nekompatibilne.  
 	 
-	\item Napisati regularni izraz koji prepoznaje registarske tablice. Testirati primjenu uz pomoć modula \texttt{re}.
+	\item Napisati regularni izraz koji prepoznaje registarske tablice. Testirati primjenu tog paterna uz pomoć modula \texttt{re}.
 	
-	\item Napisati regularni izraz koji prepoznaje imejlove. Testirati primjenu uz pomoć modula \texttt{re}.
+	\item Napisati regularni izraz koji prepoznaje imejlove. Testirati primjenu tog paterna uz pomoć modula \texttt{re}.
 	
 	\item Napisati regularni izraz koji prepoznaje realne brojeve (u decimalnom ili eksponencijalnom zapisu). Testirati primjenu uz pomoć modula \texttt{re}.
 	
@@ -1702,32 +1697,32 @@ Vizuelizaciju procesa prevođenja programa možete da vidite na Slici~\ref{fig:c
 	
 	Datum se zadaje u formi $<$broj$>$.$<$broj$>$.$<$broj$>$. Napisati skriptu koja se pokreće sa terminala čiji su argumenti komandne linije:
 	\begin{itemize}
-		\item  	\textit{i}: koja zadaje ulazni datoteku (sve zajedno sa putanjom) koja treba da bude učitana u
+		\item  	\textit{i}: koja zadaje ulaznu datoteku (apsolutna putanja) koja treba da bude učitana u
 	program;
-	     \item \textit{o}: koja zadaje izlaznu datoteku (sve zajedno sa putanjom) u kojoj se čuvaju rezultati	izvršavanja programa;
+	     \item \textit{o}: koja zadaje izlaznu datoteku (apsolutna putanja) u kojoj se čuvaju rezultati	izvršavanja programa;
 	     \item  \textit{z}: koji zadaje zadatak koji treba da bude izvršen i obuhvata sljedeći opseg vrijednosti: 
 	     \begin{itemize}
 	     	\item  1: U izlaznoj datoteci treba da se ispišu svi apsolventi stariji od 25 godina.
              \item 2: U izlaznoj datoteci treba da se ispišu svi apsolventi koji su upisali fakultet u periodu od 01.01.2014. do 01.01.2015. godine.
-	         \item 3: U izlaznoj datoteci treba da se ispiše sortiran niz (koristiti merge sort) studenata po godini života.
+	         \item 3: U izlaznoj datoteci treba da se ispiše sortiran niz (koristiti merge sort) studenata po godini starosti.
 	         \item 4: U izlaznoj datoteci treba da se ispiše za svakog studenta koliko godina studira/je studirao.
 	        \item Za ostale inpute javiti poruku o neispravnoj opciji (unosu). Koristiti izuzetke.
 	         \end{itemize}
        \end{itemize}
 	\textit{Napomena}. Studenta učitati uz pomoć regularnih izraza. Dakle, prazni karakter je
-	invarijantna vrijednost što se postiže konstrukcijom odgovarajućeg regularnog izraza pri čitanju redova iz datoteke.
+	invarijantna vrijednost što se postiže konstrukcijom odgovarajućeg regularnog izraza koji parsira  sadržaj svakog reda iz datoteke.
 	
    \item Kreirati datoteku \emph{pretplatnik.txt} i popuniti je podacima gdje je u svakom redu
-   data informacija o studentu u formi
+   data informacija o pretplatniku u formi
    
    $$<Ime\_prezime>, <datum\_ugovora>, <cijena\_usluge>$$
    
    Datum se zadaje u formi $<$broj$>$.$<$broj$>$.$<$broj$>$, a cijena je decimalni broj. Napisati 
    skriptu koja se pokreće sa terminala sa sljedećim argumentima komandne linije:
    \begin{itemize}
-   	\item \textit{i}: koja zadaje ulaznu datoteku (sve zajedno sa putanjom) koja treba da bude učitana
+   	\item \textit{i}: koja zadaje ulaznu datoteku (apsolutna putanja) koja treba da bude učitana
    u program;
-   \item \textit{o}: koja zadaje izlaznu datoteku (sve zajedno sa putanjom) koja treba da sačuva
+   \item \textit{o}: koja zadaje izlaznu datoteku (apsolutna putanja) koja treba da sačuva
    rezultate izvršavanja programa;
     \item \textit{z}: koji zadaje zadatak koji treba da bude izvršen i obuhvata sljedeće vrijednosti:
     \begin{itemize}
@@ -1739,7 +1734,6 @@ Vizuelizaciju procesa prevođenja programa možete da vidite na Slici~\ref{fig:c
          \end{itemize}
    \end{itemize}
    \textit{Napomena}. Pretplatnika učitati uz pomoć regularnih izraza. Npr., smatra se da je unos Marko
-   Markovic, $20.2.2022, 8,4$ isti kao Marko Markovic, $20.\ \ 2.2022, 8,\ \ 4$, itd. Dakle, prazni
-   karakter je invarijantna vrijednost što se postiže konstrukcijom odgovarajućeg regularnog izraza
-   pri čitanju redova u datoteci.
+   Markovic, $20.2.2022, 8,4$ isti kao Marko Markovic, $20.\ \ 2.2022, 8,\ \ 4$, itd.  Dakle, prazan karakter je
+   invarijantna vrijednost što se postiže konstrukcijom odgovarajućeg regularnog izraza koji parsiraju  sadržaj svakog reda iz datoteke.
 \end{enumerate}
