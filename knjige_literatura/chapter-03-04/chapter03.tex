@@ -5,34 +5,37 @@
 Neke od najčešćih programskih paradigmi su date u nastavku. 
 
 \begin{itemize}
-	\item \textit{Imperativno programiranje}: Ova paradigma uključuje %upotrebu naredbi koji mijenjaju stanje programa, a sastoji se od
+	\item \textit{Imperativno programiranje} uključuje %upotrebu naredbi koji mijenjaju stanje programa, a sastoji se od
 	 eksplicitni slijed naredbi koje računar izvršava određenim redoslijedom.
-	\item \textit{Funkcijsko programiranje}: Ova paradigma se fokusira na korištenje funkcija za rješavanje problema.  %, sa naglaskom na nepromjenjivosti i izbjegavanju nuspojava.
-	\item \textit{Logičko programiranje}: Ova paradigma uključuje programiranje zasnovano na logici i zaključivanju. Posebno je koristan za probleme koji uključuju pravila i ograničenja.
-	\item \textit{Objektno orijentirano programiranje}: Ova paradigma uključuje kreiranje objekata koji sadrže  podatke i metode/funkcije koje rade na tim podacima (mijenjajući stanje objekta).
+	\item \textit{Funkcijsko programiranje} se fokusira na korištenje funkcija za rješavanje problema.  %, sa naglaskom na nepromjenjivosti i izbjegavanju nuspojava.
+	\item \textit{Logičko programiranje} uključuje programiranje zasnovano na logici i zaključivanju. Posebno je koristan za probleme koji uključuju pravila i ograničenja.
+	\item \textit{Objektno orijentisano programiranje} je paradigma koja uključuje kreiranje objekata koji sadrže  podatke i metode/funkcije koje rade na tim podacima (mijenjajući stanje objekta).
 \end{itemize}
 
 
 Različiti programski jezici često podržavaju jednu ili više paradigmi, a neki jezici dozvoljavaju programerima da po potrebi kombinuju  više različitih  paradigmi. Izbor paradigme programiranja često zavisi od domena problema, složenosti problema i ličnih preferencija i iskustva programera.
 
-Kada je riječ o \textit{algoritamskim paradigmama}, one predstavljaju  pristupe ili metode za dizajniranje algoritama koji rješavaju   računske probleme. Postoji nekoliko algoritamskih paradigmi; svaka  ima svoje prednosti i slabosti. 
+Kada je riječ o \textit{algoritamskim paradigmama}, one predstavljaju  pristupe ili metode za dizajniranje algoritama koji rješavaju   računske probleme. Postoji nekoliko algoritamskih paradigmi; svaka  ima svoje prednosti i slabosti. \\ 
 
-Neke od najčešćih algoritamskih paradigmi su date u nastavku pomoću kratkog opisa. 
+
+Neke od najčešćih algoritamskih paradigmi su date u nastavku opisujući osnovnu ideju, dok su detalji nekih od njih dati u nastavku knjige. 
 
 \begin{itemize}
-	\item \textit{Rekurzivni algoritmi} --  uključuje rješavanje problema dijeljenjem na manje (pod)probleme, koji se potom rekurzivno rješavaju. Prekid rekurzije se dešava dolaskom do baznih slučajeva koji rješavaju trivijalne (ili skoro trivijalne) podprobleme. 
-	\item \textit{Algoritmi grube sile} (eng.\textit{ brute force}) -- uključuje isprobavanje svakog mogućeg rješenja problema dok se ne pronađe ispravno. Obično se upotrebljava samo za male probleme zbog svoje (ne)efikasnosti.
-    \item \textit{ Podijeli i vladaj} (eng. \textit{divide-and-conquer}) --  uključuje podjelu problema na manje podprobleme, rješavanje svakog podproblema nezavisno, a zatim se rezultati  kombinuju da bi se riješio originalni problem. Dakle,  koristi se za efikasno rješavanje problema koji se mogu podijeliti na manje, nezavisne dijelove.
+	\item \textit{Rekurzivni algoritmi}  uključuju rješavanje problema dijeljenjem na manje (pod)probleme, koji se potom rekurzivno rješavaju. Prekid rekurzije se dešava dolaskom do baznih slučajeva koji rješavaju trivijalne (ili skoro trivijalne) podprobleme. 
+	\item \textit{Algoritmi grube sile} (eng.\textit{ brute force}) uključuju isprobavanje svakog mogućeg rješenja problema dok se ne pronađe ispravno. Obično se upotrebljava samo za male probleme zbog svoje (ne)efikasnosti.
+    \item \textit{ Podijeli i vladaj} (eng. \textit{divide-and-conquer}) pristup uključuje podjelu problema na manje podprobleme, rješavanje svakog podproblema nezavisno, a zatim se rezultati  kombinuju da bi se riješio originalni problem. Dakle,  koristi se za efikasno rješavanje problema koji se mogu podijeliti na manje, nezavisne dijelove.
     \item \textit{Pohlepni algoritmi} (eng. \textit{greedy}) --  uključuje donošenje lokalno optimalnog izbora u svakom koraku algoritma u nadi da će to dovesti do globalno optimalnog rješenja. Ova paradigma je često korištena za rješavanje problema optimizacije kao prva opcija zbog soje jednostavnosti ali i toga da ne traži intezivne memorijske niti vremenske resurse. 
-    \item \textit{Algoritmi dinamičkog programiranja} (eng. \textit{dynamic programming}) --  uključuje razbijanje problema na manje podprobleme i rješavanje svakog podproblema samo jednom. Kada se podproblem riješi, rezultati podproblema se pohranjuju u odgovarajuću (memorijsku) strukturu.    Često se koristi za probleme sa podproblemima koji se preklapaju.
-    \item \textit{Algoritmi vraćanja unazad} (eng. \textit{backtracking}) --  uključuje istraživanje svih mogućih rješenja problema postepenom izgradnjom   i napuštanjem parcijalnog rješenja ako se utvrdi da je netačno (nedopustivo). Često se koristi za probleme koji se mogu predstaviti putem grafa (stanja).
-    \item \textit{Randomizirani algoritmi} (eng. \textit{randomized}) --  uključuje uvođenje slučajnosti u algoritam radi poboljšanja performansi ili smanjenja složenosti. Često se koristi za probleme optimizacije ili probleme koji imaju mnogo mogućih rješenja.
+    \item \textit{Algoritmi dinamičkog programiranja} (eng. \textit{dynamic programming})  uključuju razbijanje problema na manje podprobleme i rješavanje svakog podproblema ali samo jednom. Kada se podproblem riješi, rezultati podproblema se pohranjuju u odgovarajuću (memorijsku) strukturu.    Često se koristi za probleme sa podproblemima koji se preklapaju.
+    \item \textit{Algoritmi vraćanja unazad} (eng. \textit{backtracking}) uključuju  istraživanje svih mogućih rješenja problema postepenom izgradnjom   i napuštanjem parcijalnog rješenja ako se utvrdi da je netačno (nedopustivo). Često se koristi za probleme koji se mogu predstaviti putem grafa (stanja).
+    \item \textit{Randomizirani algoritmi} (eng. \textit{randomized})  uključuju uvođenje slučajnosti u algoritam radi poboljšanja performansi ili smanjenja složenosti. Često se koristi za probleme optimizacije ili probleme koji imaju mnogo mogućih rješenja.
 \end{itemize}
 
 Različite algoritamske paradigme mogu se   prilagoditi ili međusobno kombinovati za efikasnije rješavanje složenih problema. 
 
 \section{Rekurzivni algoritmi}
     %https://www.geeksforgeeks.org/introduction-to-recursion-data-structure-and-algorithm-tutorials/
+    
+    \fxnote{Dosao dovde!}
     
  Riječ rekurzija potiče od latinske riječi \textit{recurrere}, što doslovno znači vraćanje. U programiranju, funkcija koja u tijelu poziva samu sebe se naziva rekurzivna. Pozivanje iste funkcije unutar same funkcije podrazumijeva sistematično smanjivanje veličine ulaza funkcije koja se poziva,  shodno problemu koji se rješava. Smanjivanje dimenzije ulaza odgovara  rješavanju odgovarajućih podproblema početnog problema rekurzivnim putem. %Potom se kombiniraju rješenja podproblema,   da bi se riješio izvorni problem. 
    Da bi se rekurzija izvršavala u konačnom broju koraka, neophodno je definisati prekidne, tzv. \textit{bazne}, slučajeve rekurzije. Bazni slučajevi su bitni iz razloga što su oni okidač prekida rada rekurzije. 
