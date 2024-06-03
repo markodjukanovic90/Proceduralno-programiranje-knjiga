@@ -37,10 +37,10 @@ Različite algoritamske paradigme mogu se   prilagoditi ili međusobno kombinova
     
     \fxnote{Dosao dovde!}
     
- Riječ rekurzija potiče od latinske riječi \textit{recurrere}, što doslovno znači vraćanje. U programiranju, funkcija koja u tijelu poziva samu sebe se naziva rekurzivna. Pozivanje iste funkcije unutar same funkcije podrazumijeva sistematično smanjivanje veličine ulaza funkcije koja se poziva,  shodno problemu koji se rješava. Smanjivanje dimenzije ulaza odgovara  rješavanju odgovarajućih podproblema početnog problema rekurzivnim putem. %Potom se kombiniraju rješenja podproblema,   da bi se riješio izvorni problem. 
-   Da bi se rekurzija izvršavala u konačnom broju koraka, neophodno je definisati prekidne, tzv. \textit{bazne}, slučajeve rekurzije. Bazni slučajevi su bitni iz razloga što su oni okidač prekida rada rekurzije. 
+ Riječ rekurzija potiče od latinske riječi \textit{recurrere}, što doslovno znači vraćanje. U programiranju, funkcija koja u tijelu poziva samu sebe se naziva rekurzivna. Pozivanje iste funkcije unutar same funkcije podrazumijeva siste\-matično sma\-njivanje veličine ulaza funkcije koja se poziva,  shodno problemu koji se rješava. Smanjivanje dimenzije ulaza odgovara  rješavanju odgovarajućih podproblema početnog problema rekurzivnim putem. %Potom se kombiniraju rješenja podproblema,   da bi se riješio izvorni problem. 
+   Da bi se rekurzija izvršavala u konačnom broju koraka, neophodno je definisati prekidne, tzv. \textit{bazne}, slučajeve rekurzije. Bazni slučajevi su bitni iz razloga što predstavljaju okidač prekida rada rekurzije. 
  
- Prepoznavanje pogodne rekurzije igra bitnu ulogu u rješavanju problema rekurzivnim načinom. Demonstrirajmo sada rekurziju i rekurzivni način rješavajnja problema na jednostavnom problemu računanja $n$-tog parnog prirodnog broja. Neka $f(n)$ predstavlja $n$-ti po redoslijedu parni broj u skupu $\mathbb{N}$. Prvi broj u ovom skupu je 0, pa definišimo $f(0)= 0$. Svaki sljedeći je za dva veći od prethodnog, %(relacija ``biti sljedbenik''), 
+ Prepoznavanje pogodne rekurzije igra bitnu ulogu u rješavanju problema rekurzivnim načinom. Demonstrirajmo sada rekurziju i rekurzivni način rješavajnja problema na jednostavnom problemu računanja $n$-tog parnog prirodnog broja. Neka $f(n)$ predstavlja $n$-ti po redoslijedu parni broj u skupu $\mathbb{N}_0$. Prvi broj u ovom skupu je 0, pa definišimo $f(0)= 0$. Svaki sljedeći je za dva veći od prethodnog, %(relacija ``biti sljedbenik''), 
  što je definisano rekurzijom: 
  $$f(n) = f(n-1) + 2, n \geq 1, f(0) = 0.$$
   
@@ -49,7 +49,7 @@ Različite algoritamske paradigme mogu se   prilagoditi ili međusobno kombinova
  
  Dakle, poziv $f(3)$ zahtjeva poziv funkcije $f$ sa vrijednosti 2, koja potom zahtjeva poziv fukcije sa vrijednosti (argumenta) 1, i tako sve do trivijalnog koraka, računanja $f(0)$.  Potom se, vraćanjem unazad, računa vrijednost $f(1)$, pa se pomoću nje računa vrijednost za $f(2)$, dok ne dobijemo rješenje za $f(3)$. Napomenimo da se u programskom jeziku Pajton, za svaki poziv funkcije $f$ formira (lokalni) stek, koji nakon izlaza iz funkcije (vraćanjem rezultata) biva obrisan.  
  
-Napomenimo da se rekurzivne funkcije (tzv. linearne, homogene) kao u prethodnom primjeru mogu izraziti preko eksplicitne funkcije u odnosu na veličinu ulaza problema, pa rekurzivni pozivi za njihovo  računanje i nisu potrebni. Jasno se vidi da je gore $f(n)=2n$. 
+Napomenimo da se rekurzivne funkcije (tzv. linearne, homogene) kao u prethodnom primjeru mogu izraziti preko eksplicitne funkcije u odnosu na veličinu ulaza problema, pa rekurzivni pozivi za njihovo  računanje i nisu potrebni. Jasno se vidi da je ovdje $f(n)=2n$. 
  
 Rekurzija u jeziku Pajton  prethodnog    problema je data u nastavku.
 
@@ -66,7 +66,7 @@ Rekurzija u jeziku Pajton  prethodnog    problema je data u nastavku.
 
 \textit{Kompleksnost rekurzije}. Jasno se vidi da se program izvršava u linearnom $O(n)$ vremenu. \\ \vspace{0.2cm}
 
-Napišimo sada rekurziju za računanje faktorijela broja $n$. Označimo $f(n) = n!$. Iz definicije faktorijela, imamo: 
+Napišimo sada rekurziju za računanje faktorijela broja $n$. Označimo $f(n) := n!$. Iz definicije faktorijela, imamo: 
 $$f(n) = n! = n \cdot (n-1) \cdots 2 \cdot 1  = n \cdot (n-1)! = n \cdot f(n-1).$$
 
 Bazni korak rekurzije je $f(1)= 1$. Prema tome, rekurzivna implementacija faktorijel funkcije izgleda ovako:
@@ -82,8 +82,7 @@ Na Slici~\ref{fig:rec_tree}, dato je drvo rekurzije prethodnog programa za konkr
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=220pt,height=160pt]{slike/factorial_recursion_tree.png} 
-	\label{fig:rec_tree}
-	\caption{Drvo rekurzije.}
+	\caption{Drvo rekurzije.}	\label{fig:rec_tree}
 \end{figure}
 
  
@@ -103,11 +102,11 @@ Ako bazni slučaj nije dostignut ili nije definisan, može doći do problema  pr
 	    return n*fact(n-1);
 \end{minted}
 
-Ovaj program će izazvati prekoračenje steka u slučaju kada je ulaz $n<100$;  tada bazni slučan nikada neće biti ispunjen i rekurzija će se pozivati dok god se ne iscrpi memorija steka rezervisana za program.
+Ovaj program će izazvati prekoračenje memorije rezervisane za stek u slučaju kada je ulaz $n<100$;  tada bazni slučan nikada neće biti ispunjen i rekurzija će se pozivati dok god se ne iscrpi memorija steka rezervisana za program. Napoemnimo da se defaultna memorija rezervisana za stek može i podešavati uz pomoć naredbe \textit{setrecursionlimit}() u okviru modula \texttt{sys}.
 
 \section{Vrste rekurzija}
 
-Funkciju  nazivamo \textit{direktnom} rekurzivnom ako ona poziva istu funkciju. Funkcija \texttt{fun} se naziva \textit{indirektnom} rekurzivna ako poziva drugu funkciju koja potom poziva direktno ili indirektno funkciju \texttt{fun}. Razlika između direktne i indirektne rekurzije ilustrovana je data u narednom programu.
+Funkciju  nazivamo \textit{direktnom} rekurzivnom ako ona poziva istu funkciju. Funkcija  se naziva \textit{indirektnom} rekurzivnom ako poziva drugu funkciju koja potom poziva direktno ili indirektno funkciju \texttt{fun}. Razlika između direktne i indirektne rekurzije ilustrovana je data u narednom programu.
 
 \begin{minted}{python}
 	# Direktna rekurzija
@@ -137,12 +136,12 @@ Funkciju  nazivamo \textit{direktnom} rekurzivnom ako ona poziva istu funkciju. 
 
 
 
-Rekurzivna funkcija se naziva \textit{repnom} rekurzijom ako je rekurzivni poziv posljednji dio koda koju funkcija izvršava. Inače, rekurzivna funkcija se naziva \textit{nerepnom}.
+Rekurzivna funkcija se naziva \textit{repnom} rekurzijom ako je rekurzivni poziv posljednji dio k\^oda koju funkcija izvršava. Inače, rekurzivna funkcija se naziva \textit{nerepnom}.
  
 \subsection{Rekurzivni nad iterativni pristup: poređenje}
 
 Svaka rekurzija se može napisati na ekvivalentan, iterativni pristup. 
-Iako rekurzija i iteracija u ugnježdenim petljama na prvi pogled djeluju dosta slično postoje značajne, suštinske razlike:
+Iako rekurzija i iteracija u ugnježdenim petljama na prvi pogled djeluju dosta slično, postoje značajne, suštinske razlike:
 \begin{itemize}
 	\item Rekurzija se prekida kada se dostigne bazni slučaj; iteracija se prekida kada uslov postane netačan.
 	\item Rekurzija se veže za funkcije, dok se iteracija veže za petlje.
@@ -154,7 +153,7 @@ Iako rekurzija i iteracija u ugnježdenim petljama na prvi pogled djeluju dosta 
 
 %Iz ranijih kurseva osnova programiranja je poznato da rekurzivni i iterativni programi imaju istu moć rješavanja problema, tj. svaki rekurzivni program može se napisati u  iterativnom obliku i obrnuto. 
 
-Rekurzivni program ima veće zahtjeve za prostorom od (ekvivalentnog) iterativnog programa, jer će sve funkcije ostati na steku dok se ne dostigne bazni slučaj. Takođe,  zahtjevi za vremenom su veći zbog poziva funkcija i   troškova vraćanja rezultata. Dodatno, zbog manje dužine k\^oda, kodovi znaju biti teški za razumevanje i stoga je potrebno uložiti  dodatnu pažnju prilikom pisanja k\^oda zbog mogućih previda. %Računar može ostati bez memorije ako rekurzivni pozivi nisu ispravno provjereni.
+Rekurzivni program ima veće zahtjeve za prostorom od (ekvivalentnog) iterativnog programa, jer će sve funkcije ostati zapisane na steku dok se ne dostigne bazni slučaj. Takođe,  zahtjevi za vremenom su veći zbog poziva funkcija i   troškova vraćanja rezultata. Dodatno, zbog manje dužine k\^oda, kodovi znaju biti teški za razumevanje i stoga je potrebno uložiti  dodatnu pažnju prilikom pisanja k\^oda zbog mogućih previda. %Računar može ostati bez memorije ako rekurzivni pozivi nisu ispravno provjereni.
 
 Prednost korištenja rekurzija je u čistom i jednostavnijem načinu pisanja k\^oda. Neki problemi su inherentno rekurzivni, npr. obilazak stabala, problem hanojskih kula, itd. Za takve probleme, poželjno je, a i intuitivnije,  pisati rekurzivni k\^od. Kako smo već naveli, takve kodove možemo pisati i iterativno uz pomoć strukture podataka steka.
 
@@ -164,7 +163,7 @@ Rekurzija je moćna tehnika sa raznim primjenama u informatici i programiranju. 
 
 \begin{itemize}
 	\item  \textit{Prelazak stabla i grafa}. Rekurzija se često primjenjuje za prelazak i pretraživanje značajnih struktura podataka kao što su stabla i grafovi. Rekurzivni algoritmi se mogu koristiti za istraživanje svih čvorova ili vrhova stabla ili grafa na sistematičan način.
-	\item \textit{Algoritmi za sortiranje}. Rekurzivni algoritmi se koriste u algoritmima za sortiranje kao što su \textit{quick sort} (brzo sortiranje) i  \textit{merge sort} (sortiranje spajanjem). Ovi algoritmi koriste rekurziju da podijele podatke u manje podliste, sortiraju ih, a zatim ponovo spajaju.
+	\item \textit{Algoritmi za sortiranje}. Rekurzivni algoritmi se koriste u algoritmima za sortiranje kao što su \textit{quick sort} (brzo sortiranje) i  \textit{merge sort} (sorti\-ranje spajanjem). Ovi algoritmi koriste rekurziju da podijele podatke u manje podliste, sortiraju ih, a zatim ponovo spajaju.
 	%\item \textit{Algoritmi zavadi pa  vladaj}: Mnogi algoritmi koji koriste pristup zavadi pa vladaj, kao što je algoritam binarnog pretraživanja, koriste rekurziju da razbiju problem na manje podprobleme.
 	\item \textit{Generisanje fraktala}.  Fraktalni oblici i obrasci mogu se generirati korištenjem rekurzivnih algoritama. Npr. Mandelbrotov skup se generiše uzastopnom primjenom rekurzivne formule na kompleksne brojeve.
 	
@@ -175,7 +174,7 @@ Rekurzija je moćna tehnika sa raznim primjenama u informatici i programiranju. 
 	\end{figure}
 
 
-	\item \textit{Algoritmi vraćanja unazad}. Algoritmi vraćanja unazad se koriste za rješavanje problema koji uključuju donošenje niza odluka, gdje svaka odluka zavisi od prethodnih. Ovi algoritmi se mogu implementirati korištenjem rekurzije za istraživanje svih mogućih staza i vraćanje unatrag kada se rješenje ne pronađe.
+	\item \textit{Algoritmi vraćanja unazad}. Algoritmi vraćanja unazad se koriste za rješavanje problema koji uključuju donošenje niza odluka, gdje svaka odluka zavisi od prethodnih. Ovi algoritmi se mogu implementirati korištenjem rekurzije za probavanje svih mogućih staza i vraćanja una\-zad onog trenutka kada se rješenje ne pronađe ili uspostavi da narušava uslove problema.
 	\item \textit{Memoizacija}.  Ovo je tehnika koja uključuje pohranjivanje rezultata skupih poziva funkcija i vraćanje keširanih rezultata kada se naiđe na pozive funkcija istih ulaza. Memoizacija se može implementirati korištenjem rekurzivnih funkcija koje izračunavaju i keširaju rješenja podproblema.
 \end{itemize}
 
@@ -184,20 +183,20 @@ U natavku ove sekcije primijenimo rekurzivni pristup na nekoliko konkretnih prob
 %Pogledajmo naredni zadatak (o rastu populacije zečeva kroz vrijeme). 
 \begin{example}
   
-	Pretpostavimo da se zečevi reprodukuju na sljedeći način: par zečeva se na kraju prvog mjeseca života ne razmnožava. Međutim, na kraju drugog i svakog sljedećeg mjeseca oni reprodukuju novi par zečeva. Postavlja se pitanje koliko će novorođenih parova zečeva biti poslije godinu dana (tj. na kraju 12-og mjeseca)?
+	Pretpostavimo da se zečevi reprodukuju na sljedeći način: par zečeva se na kraju prvog mjeseca života ne razmnožava. Međutim, na kraju drugog i svakog sljedećeg mjeseca svaki par reprodukuje novi par zečeva. Postavlja se pitanje koliko će novorođenih parova zečeva biti poslije godinu dana (tj. na kraju 12-og mjeseca)?
 \end{example}
 
 \begin{solution}
 	 
 	
-	Brojevi parova zečeva čine niz: $0, 1,1, 2,3,5,8,13, 21, \ldots$ 
+	Brojevi parova novih zečeva čine niz: $0, 1,1, 2,3,5,8,13, 21, \ldots$ 
 	
 	Lako zaključavamo da je svaki sljedeći broj u nizu jednak zbiru prethodna dva broja, tj. ako je $f(n)$ broj  novorođenih zečeva na kraju $n$-tog mjeseca, onda je 
 	$$f(n) = f(n-1) + f(n-2), n \geq 2$$
 	gdje je bazni slučaj dat sa $f(0)= 0, f(1) = 1$.
 \end{solution}
 
-Ova rekurzija je implementirana sljedećim (Pajton) kodom.
+Ova rekurzija je implementirana sljedećim  k\^odom u Pajtonu.
 
 \begin{minted}{python}
 	def fib(n):
@@ -225,12 +224,12 @@ Dakle, u svakom koraku, ako se ne dođe do trivijalnog koraka, rekurzivni poziv 
 
  %https://www.geeksforgeeks.org/c-program-for-tower-of-hanoi/
  \begin{example}
- 	\textbf{\emph{Problem Hanojskih kula}}. Neka su data tri štapa i $n$ diskova. Zadatak ovog problema je u što manje poteza
+ 	(\textbf{\emph{Problem Hanojskih kula}}). Neka su data tri štapa i $n$ diskova. Zadatak ovog problema je u što manje poteza
  	premjestiti diskove sa jednog štapa na drugi štap. Sljedeća pravila vrijede pri prebacivanju diskova. 
  	\begin{itemize}
- 		\item Inicijalno, diskovi stoje poredani na jednom štapu ($A$) jedan na drugi gdje  manji diskovi stoje na većim diskovima (pretpostavka je da su diskovi različitih dimenzija). 
+ 		\item Inicijalno, diskovi stoje poredani na jednom štapu ($A$) jedan na drugom gdje manji diskovi stoje na većim diskovima (pretpostavka je da su diskovi različitih dimenzija). 
  		\item Potez se sastoji od premiještanja jednog diska sa vrha jednog štapa na vrh drugog štapa.   
- 		\item Veći disk ne može nikada da bude stavljen na manji disk u bilo kojoj iteraciji premiještanja.
+ 		\item Veći disk ne može da bude stavljen na manji disk u bilo kojoj iteraciji premiještanja.
  	\end{itemize}
   \end{example}    
 
