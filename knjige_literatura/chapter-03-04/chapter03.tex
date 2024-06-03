@@ -886,17 +886,17 @@ FourSumSquares([], 20)
  
 \section{Pohlepni algoritmi}
  % https://www.programiz.com/dsa/greedy-algorithm
-\textit{Pohlepni algoritam} je pristup rješavanju problema odabirom najbolje dostupne opcije u datom trenutku za trenutno rješenje u koristeći neki (pohlepni, intuitivni) kriterijum. Pristup ne brine da li će lokalno najbolji odabir uticati ili ne na optimalni rezultat. Algoritam nikada ne poništava raniju odluku čak i u slučaju da je izbor pogrešan. Upravo zbog toga se ovom algoritamskom paradigmom generalno ne može  garantovati nalazak optimalnog rješenja. Dakle, uvijek se traži najbolji lokalni izbor u nadi da će ta odluka voditi   najboljem globalnom rezultatu. U principu, ova paradigma pripada   pristupu \textit{odozgo prema dolje} (eng. \textit{top-down approach}). 
+\textit{Pohlepni algoritam} je pristup rješavanju problema koji bira od svih dostupnih opcija  onu najbolju na osnovu nekog pohlepnog (intuitivnog) kriterijum. Pristup ne brine da li će lokalno najbolji odabir uticati ili ne na optimalni rezultat. Algoritam nikada ne poništava raniju odluku čak i u slučaju da je izbor pogrešan. Upravo zbog toga se ovom algoritamskom paradigmom generalno ne može  garantovati nalazak optimalnog rješenja. Dakle, uvijek se traži najbolji lokalni izbor u nadi da će ta odluka voditi   najboljem globalnom rezultatu. U principu, ova paradigma pripada   pristupu \textit{odozgo prema dolje} (eng. \textit{top-down approach}). 
 
-U neformalnom smislu, pohlepni algoritam je algoritam koji počinje jednostavnim, nekompletnim, tj. parcijalnim rješenjem (teškog) problema, a zatim iterativno traži najbolji način za poboljšanje rješenja proširujući ga iterativno, dok ono ne postane kompletno (neproširivo). Pseudokod ove algoritamske paradigme je dat Algoritmom~\ref{alg:greedy-algorithm}. 
+U neformalnom smislu, pohlepni algoritam je algoritam koji počinje jedno\-stavnim, nekompletnim, tj. parcijalnim rješenjem problema, a zatim iterativno traži najbolji način za poboljšanje rješenja proširujući ga iterativno, dok ono ne postane kompletno (neproširivo). Pseudokod ove algoritamske paradigme je dat Algoritmom~\ref{alg:greedy-algorithm}. 
 
-Ulaz u algoritam su problem $\mathcal{P}$, instanca problema, te pohlepna funkcija $g$.  Algoritam kreće od nekog, obično praznog, parcijalnog rješenja koje se kroz iteracije nastoji proširiti najboljim mogućim odlukama (komponentama). U svakoj iteraciji izvršava se sljedeće:
+Ulaz u algoritam su problem $\mathcal{P}$, instanca problema, te pohlepna funkcija $g$.  Algoritam počinje od nekog, obično praznog, parcijalnog rješenja koje se kroz iteracije nastoji proširiti najboljim mogućom odlukom (komponentom rješenja). U svakoj iteraciji izvršava se sljedeće:
  \begin{itemize}
  	\item Za trenutno rješenje $x$, izračunava se skup komponenti koje na dopustiv način (u odnosu na ograničenja problema $\mathcal{P}$) proširuju $x$;
  	\item Među svim takvim komponentama, bira se ono koje (naizgled) najviše doprinosi kvalitetu krajnjeg rješenja; ova odluka se donosi na osnovu pohepne funkcije $g$, koja se još naziva i \textit{heuristička} funkcija. 
  	\item Proširimo rješenje sa najboljom komponentom rješenja.
  \end{itemize}
-Ovaj proces se izvršava sve dok je skup komponenti koje dopustivo proširuju trenutno rješenje neprazan. Nakon prekida, vraćamo dobijeno rješenje.
+Ovaj proces se izvršava sve dok je skup komponenti koje dopustivo proširuju trenutno rješenje neprazan. Nakon prekida, vraćamo dobijeno rješenje. \\ 
 
  %%Proces se ponavlja sve do nekog uslova zaustavljanja.
 
@@ -921,34 +921,34 @@ Ovaj proces se izvršava sve dok je skup komponenti koje dopustivo proširuju tr
     \caption{Shema paradigme pohlepnih algoritama.}    \label{alg:greedy-algorithm}
 \end{algorithm}
 
-Dakle, da bimo primijenili pohlepni pristup u rješavanju problema, potrebno je definisati: ($i$) skup komponenti rješenja; ($ii$) strukturu parcijalnog rješenja; ($ii$) pohlepnu funkciju koja računa kvalitet komponente koja može proširiti postojeće parcijalno rješenje. 
+Dakle, da bimo primijenili pohlepni pristup u rješavanju problema, potrebno je definisati: ($i$) skup komponenti rješenja; ($ii$) strukturu parcijalnog rješenja; ($ii$) pohlepnu funkciju koja računa kvalitet komponente koja može proširiti postojeće parcijalno rješenje.
 
 
 
-Ovu paradigmu koristimo kada je potrebno dobiti rješenje razumnog kvaliteta   u relativno kratkom vremenskom intervalu, na jeftin način (kodirajući relativno brzo). Ovo je često jedna od prvih tehnika koja se primijenjuje u rješavanju teških 
+Ovu paradigmu koristimo kada je potrebno dobiti rješenje razumnog kvaliteta   u relativno kratkom vremenskom intervalu, na jeftin način (kodira\-jući relativno brzo). Ovo je često jedna od prvih tehnika koja se primijenjuje u rješavanju teških 
 problema.  Ovi algoritmi se takođe koriste u svrhu dobijanja početnog rješenja koje se zatim  poboljšava naprednijim tehnikama. U osnovi, ova paradigma nam nudi dobru polaznu osnovu da ``opipamo'' problem, da se osjeti  koliko je on težak, te da se dobije na uvid koliko heurističke, konstruktibilne (aproksimativne) metode mogu biti efikasne za rješavanje takvih problema.
 
 U nastavku navodimo nekoliko primjena pohelpnih algoritama u rješavanju raznih tipova (kombinatornih) problema. 
 
 
 
-\begin{example}\textbf{Problem razmjenjivanja novca}. 
- Imamo  $X$ KM-ova. Na rapolaganju su apoeni od $x_1, x_2, \ldots , x_k$ KM-ova, negoraničene količine. Pretpostavimo da su $X, x_i, i=1,\ldots, n$ prirodni brojevi.
+\begin{example}(\textbf{Problem razmjenjivanja novca}). 
+ Neka je na raspolaganju  $X$ KM-ova. Na rapolaganju su apoeni od $x_1, x_2, \ldots , x_k$ KM-ova, negoraničene količine. Pretpostavimo da su $X, x_i, i=1,\ldots, n$ prirodni brojevi.
 
 Na koji način razmijeniti $X$ KM-ova tako da se dobije što manji broj
-novčanica? Rješiti zadatak pomoću paradigme pohlepnih algoritama.
+novčanica/kovanica? Rješiti zadatak pomoću paradigme pohlepnih algoritama.
 \end{example}
 
 \begin{solution}
 	 Definišimo rješenje problema i njegovu strukturu. Bilo koja $k$-torka $(p_1, p_2, \ldots , p_k )$, gdje je $p_i$ broj
 	 apoena novčanice od $x_i$ KM-ova tako da je $\sum_i p_i = X$
 	 (razmjenjena je količina od $X$ KM-ova) prestavlja (dopustivo) rješenje. 
-	 Parcijalno rješenje problema je bilo koja $s$-torka $(p_1, p_2, \ldots , p_s )$ za koju je $\sum_i^s p_i \leq X, s \leq k$.  Ovakvo rješenje se može nadopuniti do dopustovog. \\ 
+	 Parcijalno rješenje problema je predstavljeno bilo kojom $s$-torkom $(p_1, p_2, \ldots , p_s )$ za koju je $\sum_i^s p_i \leq X, s \leq k$.  Ovakvo rješenje se može nadopuniti do dopustivog. \\ 
 	 
-	 Konstruišimo sada pohlepnu funkciju. Ideja je da prvo razmatramo novčanice najvećeg mogućeg apoena koji je manji od $X$. Uzmimo  koliko možemo takvih novčanica, ali da se ne premaši ukupna vrijednost od $X$. Od preostalog iznosa $X'$ koji treba da bude razmijenjen, uzmemo onoliko novčanica maksimalne vrijednosti apoena, koja je manji od $X'$, u količini koliko god je to  moguće. Ovaj proces nastavimo, dok ne dobijemo dopustivo rješenje. 
+	 Konstruišimo sada pohlepnu funkciju. Ideja je da prvo razmatramo novča\-nice najvećeg mogućeg apoena manje od $X$. Uzmimo  koliko možemo takvih novčanica, ali da se ne premaši ukupna vrijednost od $X$. Od preostalog iznosa $X'$ koji treba da bude razmijenjen, uzmemo onoliko novčanica maksimalne vrijednosti apoena, u zbiru iznosa manjeg od $X'$, koliko god je to  moguće. Ovaj proces nastavimo, dok ne dobijemo dopustivo rješenje. 
 	 
-	 Prema tome, prvo sortiramo vrijednosti apoena od najvećeg do najmanjeg. Pretpostavimo bez smanjenja opštosti da je  početni redoslijed apoena $x_1, \ldots, x_k$ dat u sortiranom poretku. Pohlepna funkcija od trenutnog parcijalnog rješenja $s_{partial}=(p_1, \ldots, p_s), s \leq k$ nalazi najmanji indeks apoena $i$ koji je veći od $s$, a da je pri tome $x_i \leq X'= X - \sum_i^s p_i x_i$. Tada je novo prošireno parcijalno rješenje jednako 
-	 $$s'_{partial}=(p_1, \ldots, p_s,\underbrace{0,\ldots, 0}_{*}, \underbrace{\lfloor X'/x_i \rfloor}_{p_i} ).$$ 
+	 Prvo sortirajmo vrijednosti apoena od najvećeg do najmanjeg. Pretpostavimo bez smanjenja opštosti da je  početni redoslijed apoena $x_1, \ldots, x_k$ dat u sortiranom poretku. Pohlepna funkcija od trenutnog parcijalnog rješenja $s_{p}=(p_1, \ldots, p_s), s \leq k$ nalazi najmanji indeks apoena $i$ koji je veći od $s$, a da je pri tome $x_i \leq X'= X - \sum_i^s p_i x_i$. Tada je novo prošireno parcijalno rješenje jednako 
+	 $$s'_{p}=(p_1, \ldots, p_s,\underbrace{0,\ldots, 0}_{*}, \underbrace{\lfloor X'/x_i \rfloor}_{p_i} ).$$ 
 	 Algoritam se zaustavlja ili kada razmotrimo sve apoene, ili prije toga, kada algoritam nađe (odgovarajuće) rješenje. Implementacija algoritma ovog problema  je data u nastavku.
 	 \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
 	 def razmijeni(P, X):
@@ -970,32 +970,32 @@ novčanica? Rješiti zadatak pomoću paradigme pohlepnih algoritama.
 	 \end{minted} 
 \end{solution}
 
-\textit{Kompleksnost algoritma}. Sortiranje algoritma zahtjeva vrijeme od $O(n \log n)$. Dalje, glavna petlja se izvršava u $O(n)$ vremenu, odakle slijedi da je ukupno vrijeme izvršavanja algoritma jednako $O(n \log n)$, što je, svakako, polinomijalno.  Naopmenimo da ovakvom strategijom garantujemo nalazak optimalnog rješenja problema (ili utvrđujemo da rješenje ne postoji). 
+\textit{Kompleksnost algoritma}. Sortiranje algoritma zahtjeva vrijeme od $O(n \log n)$. Dalje, glavna petlja se izvršava u $O(n)$ vremenu, odakle slijedi da je ukupno vrijeme izvršavanja algoritma jednako $O(n \log n)$, što je, svakako, polinomijalno.  Napomenimo da ovakvom strategijom garantujemo nalazak optimalnog rješenja problema (ili utvrđujemo da rješenje ne postoji). 
 
 
-\begin{example} \textbf{Razlomljeni problem ruksaka}. 
-  Ovaj problem predstavlja relaksiranu verziju problema ruksaka, obrađen u prethodnim sekcijama. Odluka da li uzeti (cio)  proizvod ili ne i staviti u ruksak se relaksira na to da se bilo koji (razlomljeni) dio tog proizoda može uzeti i staviti u ruksak. Zamislimo da je u pitanju proizvod kao što je šećer ili ulje koji (teorijski) može da se dijeli na bilo koji razlomljeni  (realni) dio.  \\
+\begin{example} (\textbf{Razlomljeni problem ruksaka}). 
+  Ovaj problem predstavlja relaksiranu verziju problema ruksaka, obrađen u prethodnim sekcijama. Odluka da li se uzima (cio)  proizvod ili ne i stavlja u ruksak se relaksira na slučaj da se bilo koji (razlomljeni) dio tog proizoda može uzeti i staviti u ruksak. Zamislimo da je u pitanju proizvod kao što je šećer ili ulje koji (teorijski) mogu da se dijele na bilo koji razlomljeni  (realni) dio.  \\
   
-   Zadatak je odabrati proizvode (dijelove proizvoda) i staviti u ruksak, tako da je profit maksimalan, ali da se poštuje ograničenje za kapacitet  ruksaka. Koristiti paradigmu pohlepnih algoritama. 
+   Zadatak je odabrati proizvode (dijelove proizvoda) i staviti u ruksak, tako da je profit maksimalan, uz poštivanje ograničenja  kapaciteta ruksaka. Koristiti paradigmu pohlepnih algoritama. 
 \end{example}
 
 \begin{solution}
 	Posmatrajmo primjer instance: $$n = 3, w = [10, 20, 30], p = [60, 100, 120],$$  a 
-	kapacitet $C = 50$.  Rješenje ove konkretne instance je uzeti prvi i drugi proizvod u potpunosti (svih 10 i
-	20(kg)), dok uzimamo 2/3 trećeg proizvoda (20). Kapacitet ruksaka je zadovoljen,
+	kapacitet $C = 50$.  Rješenje ove konkretne instance je dato biranjem prvog i drugog proizvoda u potpunosti (svih 10 i
+	20(kg)), dok se uzima 2/3 trećeg proizvoda (20). Kapacitet ruksaka je zadovoljen,
 	a vrijednost proizvoda u ruksaku je jednaka $60 + 100 + 2/3 \cdot  120
 	= 240$. \\
 	
     \textit{Rješenje i struktura problema}.  Rješenje $c = \{c_1,\ldots, c_n\}$, gdje je $0 \leq c_i \leq 1$ dio uzetog
     proizvoda $i$ koji je stavljen u ruksak, a pri tome je zadovoljen  uslov o poštovanju kapaciteta ruksaka u vrijednosti   $C$.
     
-    \textit{Parcijalno rješenje i komponente rješenja}. Parcijalno rješenje je datu o obliku $c = \{ c_{i_1}, \ldots, c_{i_k}  \}$, pri čemu je $i_s \in [n],  i_s \neq i_r, s\neq r,   k \leq n$, a kapacitet ruksaka je zadovoljen. 
+    \textit{Parcijalno rješenje i komponente rješenja}. Parcijalno rješenje je dato u obliku $c = \{ c_{i_1}, \ldots, c_{i_k}  \}$, pri čemu je $i_s \in [n],  i_s \neq i_r, s\neq r,   k \leq n$, a kapacitet ruksaka je zadovoljen. 
     Komponente rješenje u odnosu na parcijalno rješenje $s$ su svi oni proizvodi $C_s = [n] \setminus \{  {i_1}, \ldots, {i_k} \}$ koji se trenutno ne nalaze   u ruksaku. Proširenje parcijalnog rješenja podrazumijeva operaciju dodavanja  količine $c_r>0$ onog proizvoda $r \in C_s$, tako da proširivanjem rješenja $c$ ovom komponentom ne narušavamo kapacitet ruksaka. 
     
-    \textit{Pohlepna funkcija}.  Razmotrimo sljedeću razumnu strategiju. Favorizujmo proizvode koji imaju veću cijenu po (jednici) težine, tj. kojima je količnik  $\frac{p_i}{w_i}$ veći u odnosu na ostale. Sortirajmo proizvode po ovom kriterijumu. Neka je, bez smanjenja opštosti, sortirani redosljed proizvoda po ovom kriterijumu dat sa (indeksima) $1,2, \ldots, n$.   \\
+    \textit{Pohlepna funkcija}.  Razmotrimo sljedeću razumnu strategiju. Favorizujmo proizvode koji imaju veću cijenu po (jednici) težine, tj. kojima je količnik  $\frac{p_i}{w_i}$ veći u odnosu na ostale. Sortirajmo proizvode po ovom kriterijumu. Neka je, bez smanjenja opštosti, sortirani redosljed proizvoda   dat sa (indeksima) $1,2, \ldots, n$.   \\
     
     
-    Dodajmo dio $c_1$ proizvoda indekiranim sa $1$ koliko god je to moguće (maksimalno 1) u odnosu na kapacitet ruksaka. Ako je  $c_1 = 0$, to znači da je kapacitet ruksaka zadovoljen, pretraga se završava. Inače, nastavimo istom strategijom, ažurirajući preostalo stanje ruksaka koji treba da se popuni, a zatim posmatrajući naredni proizvod (sa indeksom 2). Potom određujemo maksimalni udio proizvoda $c_2\geq 0$ koji   (dopustivo) proširuje trenutno  parcijalno rješenje, itd. Petpostavimo da smo istom strategijom generisali rješenje $c = \{ c_{1}, \ldots, c_{k}\}$. %, i_1< \ldots < i_k$.
+    Dodajmo dio $c_1$ proizvoda sa indeksom $1$ koliko god je to moguće (maksi\-malno 1) u odnosu na kapacitet ruksaka. Ako je  $c_1 = 0$, to znači da je kapacitet ruksaka zadovoljen, pretraga se završava. Inače, nastavimo istom strategijom, ažurirajući preostalo stanje ruksaka koji može da se popuni, a zatim posmatrajući naredni proizvod (sa indeksom 2). Dalje, odredimo maksimalni udio proizvoda $c_2\geq 0$ koji  (dopustivo) proširuje trenutno  parcija\-lno rješenje, itd. Petpostavimo da smo istom strategijom generisali rješenje $c = \{ c_{1}, \ldots, c_{k}\}$. %, i_1< \ldots < i_k$.
      Slično, posmatramo naredni proizvod sa indeksom $i =  k+1$, te izračunamo udio tog proizvoda $c_{i}$ kojeg ćemo ubaciti u ruksak, tj. proširiti rješenje $s$. Ako je $c_i = 0$, pretraga se završava. U protivnom, dodajemo komponentu u trenutno parcijalno rješenje, uz ažuriranje stanja o kapacitetu ruksaka koji je preostao za popunjavanje. Pretraga traje sve dok ne popunimo ruksak ili ne razmotrimo sve proizvode.  
       
    Implementacija algoritma je data naredim k\^odom. 
@@ -1033,13 +1033,13 @@ novčanica? Rješiti zadatak pomoću paradigme pohlepnih algoritama.
   
    \end{minted}
 
-\textit{Kompleksnost algoritma}.  Najviše vremena je utrošeno na sortiranje proizvoda, što iznosi $O(n \log n)$ vremena. Dalje, u glavnoj petlji, koja se vrti najviše $n$ puta,  svaka iteracija se izvršava u konstantnom vremenu. Dakle, vrijeme izvršavanja petlje je $O(n)$. Prema tome, algoritam se izvršava u $O(n \log n)$ vremenu.
+\textit{Kompleksnost algoritma}.  Najviše vremena je utrošeno na sortiranje proi\-zvoda, što iznosi $O(n \log n)$ vremena. Dalje, u glavnoj petlji, koja se vrti najviše $n$ puta,  svaka iteracija se izvršava u konstantnom vremenu. Dakle, vrijeme izvršavanja petlje je $O(n)$. Prema tome, algoritam se izvršava u $O(n \log n)$ vremenu.
 
 Napomenimo da ovaj algoritam takođe garantuje nalazak optimalnog rješenja. 
 \end{solution}
 
 
-\begin{example} \textbf{Problem pokrivanja skupa}. Neka je dat skup $X$ i podskup njegove familije podskupova $\mathcal{F} \subseteq P(x)$, pri čemu je
+\begin{example} (\textbf{Problem pokrivanja skupa}). Neka je dat skup $X$ i podskup njegove familije podskupova $\mathcal{F} \subseteq P(x)$, pri čemu je
 	$\cup_{f \in F} f = X$.
 	
 	Naći podskup $S \subseteq F$ minimalne kardinalnosti $|S|$, tako da je 
@@ -1053,12 +1053,13 @@ Napomenimo da ovaj algoritam takođe garantuje nalazak optimalnog rješenja.
 	\mathcal{F} = \{\{1, 2, 3\}, \{1, 4\}, \{2, 4, 5\}, \{2, 3\}, \{4, 5\}, \{1, 5\}\}$. 
 	Rješenje problema je dato sa $S =$ $ \{\{1, 2, 3\}, \{2, 4, 5\}\}$. Njegova kardinalnost je $|S| = 2$.
 	
-	Ovaj problem ima konkretnu praktičnu primjenu u odabiru minimalnog broja ljudi u komisiju, a da komisija bude kompetentna u svakoj od (traženih) oblasti. Konstruišimo sada algoritam. \\
+	Ovaj problem ima konkretnu praktičnu primjenu u odabiru minimalnog broja ljudi u komisiju, a da komisija bude kompetentna u svakoj od (traženih) oblasti. Konstruišimo sada pohlepni algoritam. \\
+	
 \textit{Rješenje i struktura rješenja.} Skup (skupova) $S \subseteq \mathcal{F}$ je rješenje problema ako unijom elemenata svih skupova iz $S$ dobijamo skup $X$. 
 
-\textit{Parcijalno rješenje i komponenta rješenja}. Pod parcijalnim rješenjem ovog problema podrazumijevamo bilo koji (pod)skup $S \subseteq \mathcal{F}$ koji ne mora obavezno zadovoljavati uslov o pokrivanju skupa $X$.  Komponenta rješenja $S$ je bilo koji skup iz $C \in \mathcal{F} \setminus S $, dok proširenje rješenja $S$ komponentom rješenja $C$ podrazumijeva operaciju unije, tj. $S' = S \cup \{ C \} $.
+\textit{Parcijalno rješenje i komponenta rješenja}. Pod parcijalnim rješenjem ovog problema podrazumijevamo bilo koji (pod)skup $S \subseteq \mathcal{F}$ koji ne mora obavezno zadovoljavati uslov o pokrivanju skupa $X$.  Skup komponenti koji proširuju rješenje $S$ sadrži bilo koji skup iz $C \in \mathcal{F} \setminus S $, dok proširenje rješenja $S$ komponentom $C$ podrazumijeva operaciju unije, tj. $S' = S \cup \{ C \} $.
 
-\textit{Pohlepna funkcija}. Neka je $S$ parcijalno rješenje i neka ono pokriva $X_S \subseteq X$ elemenata. Intuitivno, bolja opcija podrazumijeva biranje kompomente rješenja $C$ koja u presjeku sa skupom $X \setminus X_S$ ima više elemanta  nego neki drugi sa manjim takvim brojem. Razlog je taj što nastojimo pokriti što više skupa $X$ u što manjem broju koraka pohlepnog algoritma. U simboličkom zapisu, pohlepna funkcija ima sljedeći oblik
+\textit{Pohlepna funkcija}. Neka je $S$ parcijalno rješenje i neka ono pokriva $X_S \subseteq X$ elemenata. Intuitivno, bolja opcija podrazumijeva biranje kompomente rješenja $C$ koja u presjeku sa skupom $X \setminus X_S$ ima više elemanta  nego neki druga sa manjim takvim brojem. Razlog je taj što nastojimo pokriti što više skupa $X$ u što manjem broju koraka pohlepnog algoritma. U simboličkom zapisu, pohlepna funkcija ima sljedeći oblik
 $$ g(S, C) = | C \cap ( X \setminus X_S) |,$$
 dok biramo element $C^*$ tako da 
 $$ C^* \gets argmax \{ g(s, C') \mid C'\in \mathcal{F} \setminus S\} $$
@@ -1101,19 +1102,19 @@ Implementacija algoritma  je data u nastavku sljedećim k\^odom.
 	
 \end{minted}
 
-\textit{Kompleksnost algoritma}. Glavna \texttt{while}-petlja se izvršava u najviše $n$ iteracija. Dalje, U unutrašnjoj \texttt{for}-petlji, koja se izvršava  $ |\mathcal{F}|$ puta, najskuplja operacija je pozivanje pohlepne \textit{g} funkcije, koja se izvršava u   najviše linearnom vremenu, tj. pripada $O(n)$. Dakle, kompleksnost čitave \texttt{for} petlje je $O(n \cdot  |\mathcal{F} |)$. Dakle, kompleksnost algoritma je $O(n^2 \cdot  |\mathcal{F} |)$. Prema tome, efikasnost algoritma najviše zavisi od veličine skupa $\mathcal{F}$. 
+\textit{Kompleksnost algoritma}. Glavna \texttt{while}-petlja izvršava najviše $n$ iteracija. Dalje, U unutrašnjoj \texttt{for}-petlji, koja se izvršava  $ |\mathcal{F}|$ puta, najskuplja operacija je pozivanje pohlepne \textit{g} funkcije, koja se izvršava u   najviše linearnom vremenu, tj. pripada $O(n)$. Dakle, kompleksnost čitave \texttt{for} petlje je $O(n \cdot  |\mathcal{F} |)$. Dakle, kompleksnost algoritma je $O(n^2 \cdot  |\mathcal{F} |)$. Prema tome, efikasnost algoritma najviše zavisi od veličine skupa $\mathcal{F}$. 
 
 Napomenimo da ovako dizajniran algoritam ne garantuje nalazak optimalnog rješenja  kao u prethodna dva problema. 
 
 
   Uzmimo npr. instancu $X= \{1, 2, 3, 4, 5, 6\}$, te $$\mathcal{F}= \{\{1,2\}, \{3, 4\}, \{4, 5\}, \{3, 6\}, \{5\}, \{6\} \}.$$   
-  Prva iteracija u algoritmu će uzeti, recimo, prvi skup $\{1, 2\}$ u parcijalno rješenje. Dalje, naredna iteracija uzima skup $\{3, 4\}$. Nakon toga, bira se $\{4, 5\}$, pa $\{6\}$. Dakle, konačno rješenje je kardinalnosti 4. Međutim, to očigledno nije optimalno rječenje. 
+  Prva iteracija u algoritmu će odabrati, recimo, prvi skup $\{1, 2\}$ i dodati ga u parcijalno rješenje. Naredna iteracija odabire skup $\{3, 4\}$. Nakon toga, bira se $\{4, 5\}$, pa $\{6\}$. Dakle, konačno rješenje je kardinalnosti 4. Međutim, to očigledno nije optimalno rječenje. 
   
   Optimalno rješenje   je veličine 3 i dato je sa $\{ \{1, 2\}, \{3, 6\}, \{4,5\}\}$.  
 	 
 \end{solution}
 
-\begin{example}  \textbf{\textit{Problem sekvencijalnog raspoređivanja poslova}}. Dat je skup  poslova, gdje svaki posao ima dozvoljeno krajnje
+\begin{example} (\textbf{\textit{Problem sekvencijalnog raspoređivanja poslova}}). Dat je skup  poslova, gdje svaki posao ima dozvoljeno krajnje
 	vrijeme završetka (eng. \textit{deadline}) i odgovarajući profit, ako  posao bude završen 
 	prije tog vremena. Pretpostavimo da je za izvršavanje svakog posla  potrebno identično (jedinično)
 	vrijeme. Startno vrijeme za izvršavanje svih poslova je isto za sve poslove (pretpostavljamo da kreće od 0). \\
@@ -1156,24 +1157,24 @@ Posmatrajmo narednu instancu problema.
 	
 \end{solution}
 
-Rješenje za ovu instancu je odabir poslova iz skupa $\{3, 1,5 \}$ redom kako su i navedeni. Profit ovog rješenja je 142. 
+Rješenje za ovu instancu je odabir poslova iz skupa $\{3, 1,5 \}$ redom kako su i navedeni. Profit ovog rješenja je jednak 142. 
 
 
 Prva ideja za rješavanje ovog problema je koristiti potpunu enumeraciju: generisati sve podskupove
-skupa poslova te za svaki od njih provjeriti dopustivost i na taj način pratiti  
+skupa poslova te za svaki od njih provjeriti dopusti\-vost i na taj način pratiti  
 maksimalni profit. Međutim, razmotrimo  tehniku pohlepnih algoritama.   \\ \vspace{0.2cm}
 
-\textit{Rješenje i struktura rješenja}. Svaki podskup $I_s$ skupa svih poslova $I=\{1,\ldots, n\}$ koji zadovoljava uslove zadatka (da se svi mogu izvršiti u okviru njihovog krajnjeg vremena izvršavanja, te nijedan se ne izvršava paralelno sa drugim),  predstavlja rješenje problema. Dalje, struktura rješenja može da bude predstavljena strukturom podataka koja odgovara skupu. 
+\textit{Rješenje i struktura rješenja}. Svaki podskup $I_s$ skupa svih poslova $I=\{1,\ldots, n\}$ predstavlja rješenje  problema ukoliko zadovoljava uslove zadatka: ($i$) svi poslovi se mogu izvršiti u okviru datog krajnjeg vremena izvršavanja; ($ii$) nijedan od poslova se ne izvršava paralelno sa drugim. Dakle, svako rješenje se može predstaviti strukturom podataka koja odgovara skupu. 
 
 \textit{Parcijalno rješenje i njegovo proširenje}.  Parcijalno rješenje je bilo koji podskup skupa poslova koji zadovoljava uslove zadatka. Ostatak poslova, koji može da se doda postojećem skupu poslova, a pri tome da ne naruši uslove zadatka, pripada skupu komponenti rješenja koje proširuju dato (parcijalno) rješenje. 
 
-\textit{Pohlepna funkcija}. Za parcijalno rješenje $I_s$, odabrati komponentu rješenja (posao) $i \in I\setminus I_s$ sa maksimalnim profitom koji proširuje $I_s$ na dopustiv način (uslovi zadatka su ispunjeni). Taj posao se, pri tome, smiješta u prvi slobodan (jedinični) interval u kojem se izvršava. 
+\textit{Pohlepna funkcija}. Za parcijalno rješenje $I_s$, odabrati komponentu rješenja (posao) $i \in I\setminus I_s$ sa maksimalnim profitom koji proširuje $I_s$ na dopustiv način (uslovi zadatka su ispunjeni). Taj posao se, pri tome, smiješta u prvi slobodan (jedinični) interval koji odgovar vremenu njegovog izvršavanja. \\
 
 
-\textit{Algoritam}. Sortirajmo poslove u odnosu na njihov profit (opadajuće). Bez smanjenja opštosti, pretpostavimo da su oni dati u poretku $\{1, 2, \ldots, n\}$. U provoj iteraciji dodajemo posao 1 maksimalnog profita u parcijalno rješenje $I_s$, koje je inicijalno prazno.  Dalje, pretpostavimo da smo u $i$-toj iteraciji generisali parcijalno rješenje $I_s$. Tada, u narednoj iteraciji razmatramo posao indeksiran sa $i+1$. Moguća su dva scenarija.
+  Sortirajmo poslove u odnosu na njihov profit (opadajuće). Bez smanjenja opštosti, pretpostavimo da su indeksi sortiranih poslova dati sa $\{1, 2, \ldots, n\}$. U prvoj iteraciji dodajemo posao sa indeksom 1 u parcijalno rješenje $I_s$, koje je inicijalno prazno.  Dalje, pretpostavimo da je u $i$-toj iteraciji generisano rješenje $I_s$. Tada, u narednoj iteraciji razmatramo posao indeksiran sa $i+1$. Moguća su dva scenarija.
 
 \begin{itemize}
-	\item Posao sa indeksom $i+1$ ne može da proširi trenutno parcijalno rješenje $I_s$; u tom slučaju idemo na naredni posao ($i+2$);
+	\item Posao sa indeksom $i+1$ ne može da proširi trenutno parcijalno rješenje $I_s$ po uslovima zadatka; u tom slučaju razmatra se naredni posao ($i+2$);
 	\item Posao sa indeksom $i+1$ može da bude dodan u $I_s$. U tom slučaju, nalazimo prvi slobodan jedinični interval u kojem taj posao može da bude izvršen, u odnosu na već raspoređene poslove u trenutnom rješenju $I_s$.  
 \end{itemize} 
 
