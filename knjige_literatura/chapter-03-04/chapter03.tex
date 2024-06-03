@@ -289,21 +289,21 @@ Rekurzija se izvrašava u $O(2^n)$ vremenu.  %Prema tome, $T(n) = O(2^n)$, što 
 
 % https://textbooks.cs.ksu.edu/cc310/4-data-structures-and-algorithms/12-brute-force/
 
-Jedna od prvih algoritamska tehnika koja se koristiti u rješavanju  računarskih problema je tehnika grube sile. Ovo je algoritamska paradigma sa kojom se većina čitalaca susretala do sada, mada možda nesvjesno da je riječ o baš toj tehnici rješavanja problema.
+Jedna od prvih algoritamska tehnika koja se može primijeniti u rješavanju  računarskih problema je tehnika grube sile. Ovo je algoritamska paradigma sa kojom se većina čitalaca susretala do sada, mada ne znajući da je riječ o baš toj tehnici rješavanja problema.
 
-Prosto rečeno, paradigma grube sile pokušava sva moguća rješenja problema, vraćajući ono koje je najbolje (ili prvo koje zadovoljava uslove zadatka, ako je riječ o problemima zadoovljenja -- tzv. SAT problemi). U stvarnom životu,  primjer algoritma brutalne sile je uključivanje USB kabela. Prvo pokušamo  na jedan način, a ako to ne uspije, isprobamo drugi port.  Slično, ako imamo veliki broj ključeva, a nismo sigurni koji od njih otključava vrata, možemo jednostavno isprobati svaki ključ za datu bravu dok jedan ne proradi. Upravo je ovo suština algoritamskog dizajna ove paradigme.
+Prosto rečeno, paradigma grube sile pokušava sva moguća rješenja problema, vraćajući ono koje je najbolje (ili prvo koje zadovoljava uslove zadatka, ako je riječ o problemima zadovljenja -- tzv. SAT problemi). U stvarnom životu,  primjer algoritma brutalne sile je uključivanje USB kabela. Prvo pokušamo  na jedan način, a ako to ne uspije, isprobamo drugi port.  Slično, ako imamo veliki broj ključeva, a nismo sigurni koji od njih otključava vrata, jednostavno isprobavamo svaki ključ za datu bravu dok jedan ne proradi. Upravo je ovo suština algoritamskog dizajna ove paradigme.
 
 \begin{example}
-	Odličan primjer algoritma grube sile je pronalaženje najbližeg para tačaka u višedimenzionalnom (realnom) prostoru. Neka su date $n$ tačaka u $\mathbb{R}^m$, tj. $S=\{ \textbf{x}_i \mid \textbf{x}_i \in  \mathbb{R}^m, i=1, \ldots, n\}$. Naći dvije tačke $x_i, x_j \in S$ koje su međusobno najbliže gledajući sve parove tačaka skupa $S$.
+	Odličan primjer algoritma grube sile je pronalaženje najbližeg para tačaka u višedimenzionalnom (realnom) prostoru. Neka su date $n$ tačaka u $\mathbb{R}^m$, tj. $S=\{ \textbf{x}_i \mid \textbf{x}_i \in  \mathbb{R}^m, i=1, \ldots, n\}$. Naći dvije tačke $\textbf{x}_i, \textbf{x}_j \in S$ koje su međusobno najbliže gledajući sve parove tačaka skupa $S$.
 \end{example}
 \begin{solution}
-    Da bismo pronašli odgovor grubom silom,  izračunamo udaljenost između svakog pojedinačnog para tačaka, a zatim pratimo minimalnu pronađenu udaljenost. Verzija ovog algoritma je data narednim k\^odom.
+    Da bismo pronašli odgovor grubom silom,  izračunamo udaljenost između svakog  para tačaka skupa $S$, a zatim pratimo minimalnu pronađenu udaljenost. Verzija ovog algoritma je data narednim k\^odom.
    
 \footnotesize{
 \begin{minted}{python}
 	import math 
 	def min_dist_par(S):
-		min_dist = float('-inf')
+		min_dist = float('inf')
 		point1 = None	
 		point2 = None
 		for p1 in S:
@@ -417,17 +417,17 @@ rekurzivnih poziva, kojih je tačno $2^n$, poziva funkciju \textit{objective}. P
 
 \section{Algoritmi pretraživanja}
 % https://www.geeksforgeeks.org/searching-algorithms/
-\textit{Algoritmi pretraživanja} su dizajnirani sa zadatkom provjeravanja da li se element nalazi (ili da se vrati) u strukturi podataka u kojoj je on pohranjen; takođe,  da se vrati poruka ako takav element ne postoji.
+\textit{Algoritmi pretraživanja} su dizajnirani sa zadatkom provjeravanja da li se objekat nalazi (ili da se vrati) u strukturi podataka u kojoj su  pohranjeni objekti; takođe,  da se vrati poruka ako takav element ne postoji.
 
-Ovi algoritmi se generalno dijele u dvije kategorije na osnovu načina pretraživanja:
+Ovi algoritmi se generalno dijele u dvije kategorije na osnovu načina pretraživanja.
 
 \begin{itemize}
-	\item \textit{Sekvencijalna pretraga}: U ovom slučaju se lista ili niz prelazi uzastopno i svaki element se provjerava; primjer ovakve pretrage je \textit{linearna pretraga}.
-	\item \textit{Intervalna pretraga}: Ovi algoritmi su   dizajnirani za pretraživanje u sortiranim strukturama podataka; mnogo su efikasniji od linearne pretrage jer dijele prostor pretraživanja na dijelove,  pokušavajući na taj način eliminisati veliki dio prostora za pretragu svakom iteracijom. Primjer takve pretrage je \textit{binarna pretraga}.
+	\item \textit{Sekvencijalna pretraga}  pretražuje listu ili niz element po element; primjer ovakve pretrage je \textit{linearna pretraga}.
+	\item \textit{Intervalna pretraga} je   dizajnirana za pretraživanje u sortiranim strukturama podataka; mnogo su efikasniji od linearne pretrage jer dijele prostor pretraživanja na dijelove,  pokušavajući na taj način eliminisati veliki dio prostora za pretragu svakom iteracijom. Primjer takve pretrage je \textit{binarna pretraga}.
 \end{itemize}
 
 \subsection{Linearna pretraga}
-Ovo je sekvencijalna pretraga, koja pretražuje (nizovne) strukture tako što prolazi kroz svaki njeni element dok se ne pronađe željeni element,  ili se ne dođe do kraja skupa podataka strukture (tj. svi elementi strukture su posjećeni pretragom).  Iterativna implementacija linearne pretage je data sljedećim k\^odom.
+Ovo je sekvencijalna pretraga, koja pretražuje (nizovne) strukture tako što prolazi kroz svaki njeni element dok se ne pronađe željeni element,  ili se ne dođe do kraja skupa podataka strukture (pri čemu su svi elementi strukture posjećeni pretragom).  Iterativna implementacija linearne pretage je data sljedećim k\^odom.
 
 \begin{minted}{python}
 	def search(arr, x):
@@ -449,7 +449,7 @@ Ovo je sekvencijalna pretraga, koja pretražuje (nizovne) strukture tako što pr
 %https://www.geeksforgeeks.org/linear-search/: LINEARNA PRETRAGA
 \textit{Kompleksnost algoritma}. Lako se vidi da je kompleksnost linearne pretrage upravo linearna, $O(n)$, gdje je $n$ veličina (nizovne) strukture. 
 
-Implementacija rekurzivnog pristupa za linearnu pretragu je data narednim k\^odom.
+Implementacija rekurzivnog pristupa za algoritam linearne pretrage je data narednim k\^odom.
 
 \begin{minted}{python}
 	def linear_search(arr, x, n):
@@ -469,14 +469,14 @@ Implementacija rekurzivnog pristupa za linearnu pretragu je data narednim k\^odo
 Vremenska složenost je $O(n)$ dok se za rekurzivni pristup izdvaja i pomoćni prostor kompleksnosti $O(n)$, za alokaciju prostora steka tokom izvođenja rekurzivnih poziva.
 
 
-Linearna pretraga nije efikasna za nizove velikih dimenzija i koristi se samo kada radimo sa malim skupom podataka, te kada želimo da algoritam držimo što jednostavnijim.
+Linearna pretraga nije efikasna za nizove velikih dimenzija i koristi se samo kada radimo sa malim skupom podataka, te kada želimo da algoritam bude  što jednostavniji.
 \subsection{Binarna pretraga}
 % https://www.geeksforgeeks.org/binary-search/: BINARNA PRETRAGA
 
 Za upotrebu binarnog pretraživanja u bilo kojoj strukturi podataka, struktura podataka mora imati sljedeća svojstva: ($i$) treba biti sortirana; 
 ($ii$) pristup bilo kojem elementu strukture podataka se odvija u konstantnom vremenu.
 
-Ideja binarne pretrage se sastoji u eksploatisanju svojstva da je niz sortiran. Pretpostavimo bez smanjenja opštosti da je niz sortiran u rastućem poretku. To znači da u slučaju da se na indeksu $i$ nalazi element veći od traženog elementa $x$, $x$ se (potencijalno) nalazi lijevo od indeksa $i$, te indekse $i+1, \ldots$ isključujemo dalje iz razmatranja. U svakoj iteraciji, biramo indeks $i$ kao središnji element niza, koji se potom poredi sa $x$. U zavisnosti od rezultata, imamo tri mogućnosti: ($i$) element na poziciji $i$ je upravo $x$, čime prekidamo pretragu vraćajući dati indeks; ($ii$)  element na poziciji $i$ je veći od $x$, čime pretragu usmjeravamo na elemente niza lijevo od pozicije $i$; ($iii$) inače, pretraga se seli na desni dio niza, tj. elemente čiji je indeks veći od $i$. Za bazne slučajeve uzimamo kada je niz veličine 0 ili 1. U provom slučaju vraćamo \textit{False}, dok u drugom slučaju vraćamo rezultat poređenja elementa niza sa $x$.  
+Ideja binarne pretrage se sastoji u eksploatisanju svojstva sortiranog niza.  Bez smanjenja opštosti pretpostavimo da je niz sortiran u rastućem poretku. To znači da u slučaju da se na poziciji (indeksu) $i$ nalazi element veći od traženog elementa $x$, $x$ se (potencijalno) nalazi lijevo od indeksa $i$, te indekse $i+1, \ldots$ isključujemo dalje iz razmatranja. U svakoj iteraciji, biramo indeks $i$ kao središnji element niza, koji se potom poredi sa $x$. U zavisnosti od rezultata, imamo tri mogućnosti: ($i$) element na poziciji $i$ je upravo $x$, čime prekidamo pretragu vraćajući dati indeks; ($ii$)  element na poziciji $i$ je veći od $x$, čime pretragu usmjeravamo na elemente niza lijevo od pozicije $i$; ($iii$) inače, pretraga se seli na desni dio niza, tj. elemente čiji je indeks veći od $i$. Za bazne slučajeve uzimamo  niz veličine 0 ili 1. U prvoom slučaju vraćamo \textit{False}, dok u drugom slučaju vraćamo rezultat poređenja elementa niza sa $x$.  
 
 Implementacija rekurzivnog pristupa binarne pretrage je data sljedećim k\^odom.
 
@@ -522,14 +522,14 @@ Pretpostavimo da imamo niz \emph{niz} veličine $n$ i dužinu bloka (elemenata) 
  	\item  Skok sa indeksa 0 na indeks 4;
  	\item   Skok sa indeksa 4 na indeks 8;
  	\item   Skok sa indeksa 8 na indeks 12;
- 	\item  Pošto je element na indeksu 12 veći od 55, skočit ćemo korak unazad da bismo došli do indeksa 8;
+ 	\item  Pošto je element na indeksu 12 veći od 55, ``skočit'' ćemo korak unazad da bismo došli do indeksa 8;
  	\item  Izvršite linearnu pretragu iz indeksa 8 da bismo našli element 55.
  \end{itemize}
  
  \textit{Kompleksnost algoritma}. U najgorem slučaju, moramo uraditi $n/m$ skokova, a ako je posljednja provjerena vrijednost veća od elementa koji se traži, vršimo $m-1$ poređenja više za linearnu pretragu. Stoga je ukupan broj poređenja u najgorem slučaju jednak $((n/m) + m-1)$. Vrijednost ove funkcije  je minimalna kada je $m = \sqrt{n}$, što i predstavlja najbolju vrijednost za peskakanje. Dakle, u najboljem slučaju, kompleksnost algoritma je $O(\sqrt{n})$. 
  
  
-Relurzivna implementacija pretage preskakanjem  je data sljedećim kodom   u jeziku Pajton. 
+Rekurzivna implementacija pretage preskakanjem  je data sljedećim kodom.  % u jeziku Pajton. 
  
  \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
  def jump_search(niz, x, jump, k):
