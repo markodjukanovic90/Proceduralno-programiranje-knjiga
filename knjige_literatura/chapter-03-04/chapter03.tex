@@ -1228,10 +1228,10 @@ Napomenimo da se može pokazati da ovaj pohlepni algoritam garantuje nalazak opt
 \section{Dinamičko programiranje} 
 %https://www.programiz.com/dsa/dynamic-programming
 
-\textit{Dinamičko programiranje} je algoritamska tehnika koja pomaže u efikasnom rješavanju klase problema koji se mogu podijeliti na podprobleme koji se preklapaju (eng. \textit{overlapping subproblems}) i za koje se može definisati \emph{svojstvo optimalne podstrukture} (eng. \textit{optimal substructure property}). Pod preklapajućim podproblemima podrazumijevamo 
-one podprobleme čija se rješenja  potrebna više puta da bi se dobilo rješenje početnog problema. Pod optimalnim svojstvom podstrukture   podrazumijevamo da kombinovanjem optimalnih rješenja podproblema dobijamo  optimalno  rješenja datog problema. 
+\textit{Dinamičko programiranje} je algoritamska tehnika koja pomaže u efikasnom rješavanju klase problema koji se mogu podijeliti na podprobleme koji se preklapaju (eng. \textit{overlapping subproblems}) i za koje se može definisati \emph{svojstvo optimalne podstrukture} (eng. \textit{optimal substructure property}). Pod preklapaju\-ćim podproblemima podrazumijevamo 
+one podprobleme čija se rješenja koriste vi\-še puta da bi se dobilo rješenje početnog problema. Pod optimalnim svojstvom podstrukture   podrazumijevamo proceduru kombinovanja optimalnih rješe\-nja podproblema u svrhu dobijanja  optimalnog  rješenja datog problema. 
 
-Ako se bilo koji problem može podijeliti na podprobleme, koji su zatim rekurzivno dijele na manje podprobleme, te ako postoji preklapanje među   njima, rješenja podproblema ima smisla  čuvati (u memoriji) za buduću upotrebu. Ovaj proces se naziva \textit{memoizacija}. Memoizacija poboljšava efikasnost rekurzivnog pristupa na taj način da onemogućuje ponovna  evaluacija  istog podproblema već se to rješenje  jednostavno pročita iz određene strukture podataka (poznata još kao heš struktura).   Međutim, ovaj pristup zahtjeva dodatnu memoriju  koja čuva rješenja podproblema.
+Ako se bilo koji problem može podijeliti na podprobleme, koji su zatim rekurzivno dijele na manje podprobleme, te ako postoji preklapanje među   njima, rješenja podproblema ima smisla  čuvati (u memoriji) za ponovnu upotrebu. Ovaj proces se naziva \textit{memoizacija}. Memoizacija poboljšava efikasnost rekurzivnog pristupa na taj način da sprečava ponovnu evaluaciju istog podproblema već se to rješenje  jednostavno pročita iz određene strukture podataka (poznata još kao heš struktura).   Međutim, ovaj pristup zahtjeva dodatnu memoriju  koja čuva rješenja podproblema.
 
 Da bismo primijenili dinamičko programiranje u rješavanju određenog problema, potrebno je voditi brigu o sljedećim stvarima.
 \begin{itemize}
@@ -1240,12 +1240,12 @@ Da bismo primijenili dinamičko programiranje u rješavanju određenog problema,
 \end{itemize}
 %https://www.geeksforgeeks.org/in
 %troduction-to-dynamic-programming-data-structures-and-algorithm-tutorials/
-Princip dinamičkog programiranja može se implementirati i pristupom odozdo prema gore (eng. \textit{bottom-up approach}), i tada se naziva \textit{tabuliranje} (eng. \textit{tabulation}). Tabuliranjem čuvamo rezultate podproblema u tabelu, potom koristimo te rezultate za rješavanje većih podproblema dok se ne riješi cijeli problem. Dakle, za razliku od pristupa odozgo prema dole, gdje  rekurzivno formulišemo rješenje problema  u smislu njegovih podproblema,  treba da  preformulišemo problem na način da se prvo riješe podproblemi, a potom koriste izračunata rješenja za nadogradnju i dolazak do rješenja većih podproblema.
+Princip dinamičkog programiranja može se implementirati i pristupom odozdo prema gore (eng. \textit{bottom-up approach}), i tada se naziva \textit{tabuliranje} (eng. \textit{tabulation}). Tabuliranjem čuvamo rezultate podproblema u tabelu, potom koristimo te rezultate za rješavanje većih podproblema dok se ne riješi cijeli problem. Dakle, za razliku od pristupa odozgo prema dole, gdje  rekurzivno formulišemo rješenje problema  u smislu njegovih podproblema,  treba da  preformulišemo problem na način da se prvo riješe podproblemi, a potom koriste izračunata rješenja za nadogradnju i dolazak do rješenja većih podpro\-blema.
 
 %Koristi se najčešće kada problem možemo definisati nizom podproblema u kojem se podproblemi ne preklapaju. 
-Tabuliranje se obično implementira iterativno i pogodno je za probleme za koje je skup ulaza velik.
+Tabuliranje se obično implementira iterativno i pogodno je za probleme kod kojih je skup ulaza velik.
 
-Pogledajmo sljedeće primjere izračunavanja $n$-tog fibonačijevog broja u svrhu razumijevanja razlike između memoizacije i tabuliranja.   
+Pogledajmo sljedeće primjere izračunavanja $n$-tog Fibonačijevog broja u svrhu razumijevanja razlike između memoizacije i tabuliranja.   
 
 \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
 def fib(n, cache={}):# memoizacija
@@ -1274,18 +1274,16 @@ def fib(n):#tabuliranje
 			tab[i] = tab[i-1] + tab[i-2]
 		return tab[n]
 \end{minted}
-U implementaciji memoizacije koristimo objekat rječnika \textit{cache} za čuvanje rezultata poziva funkcija, a rekurzija se koristi za izračunavanje rezultata.
+U implementaciji memoizacije koristimo objekat klase \texttt{dict} naziva \textit{cache} za čuvanje rezultata poziva funkcija, a rekurzija se koristi za izračunavanje rezultata. U implementaciji tabele koristimo niz nazvan \texttt{tab} za čuvanje rezultata podproblema, a koristimo iterativnu implementaciju za izračunavanje rezultata. Obje implementacije vraćaju isti rezultat, ali su zasnovane na drugačijoj implementaciji. %Memoizacija je pristup odozgo prema dolje zasnovana na  rekurziji, dok je tabeliranje pristup odozdo prema gore koji koristi iteraciju. 
 
-U implementaciji tabele koristimo niz nazvan \texttt{tab} za čuvanje rezultata podproblema, a koristimo iterativnu implementaciju za izračunavanje rezultata. Obje implementacije vraćaju isti rezultat, ali su zasnovane na drugačijoj implementaciji. %Memoizacija je pristup odozgo prema dolje zasnovana na  rekurziji, dok je tabeliranje pristup odozdo prema gore koji koristi iteraciju. 
-
-Da zaključimo, princip dinamičkog programiranja ima smisla koristiti gdje god prepoznamo da rekurzivni pristup ima ponovljive pozive za iste ulaze, koji se optimizuju uz pomoć ove algoritamske paradigme.
+Da zaključimo, princip dinamičkog programiranja ima smisla koristiti gdje god se prepozna da rekurzivni pristup ima ponovljive pozive za iste ulaze, koji se optimizuju uz pomoć ove algoritamske paradigme.
 
 \subsection{Rekurzija vs. Dinamičko programiranje}
 
 
 Dinamičko programiranje se uglavnom primjenjuje na rekurzivne algoritme.  U  osnovi, velika većina problema optimizacije u rješavanju zahtijeva definisanje rekurzije, dok se za njenu  optimizaciju koristi dinamičko programiranje.
 
-Ne mogu se svi problemi koji koriste rekurziju koristiti i dinamičko programiranje. Osim ako ne postoji prisustvo podproblema koji se preklapaju,  kao u problemu računanja fibonačijevog broja, rekurzija može doći do (jednako efikasnog) rješenja problema pomoću pristupa zavadi pa vladaj. U ovome nalazimo  razlog zašto rekurzivni algoritam koji realizuje  sortiranje spajanjem ne može koristiti dinamičko programiranje, jer se podproblemi ni na koji način ne preklapaju (dijeljenje niza na dva disjunktna podniza).
+Ne mogu se svi problemi koji koriste rekurziju koristiti i dinamičko programiranje. Osim ako ne postoji prisustvo podproblema koji se preklapaju,  kao u problemu računanja Fibonačijevog broja, rekurzija može doći do (jednako efikasnog) rješenja problema pomoću pristupa zavadi pa vladaj. U ovome nalazimo  razlog zašto rekurzivni algoritam koji realizuje  sortiranje spajanjem ne može koristiti dinamičko programiranje, jer se podproblemi ni na koji način ne preklapaju (dijeljenje niza na dva disjunktna podniza).
 
 
 \subsection{Primjene dinamičkog programiranja}
@@ -1331,17 +1329,18 @@ Implementacija ovog rješenje je data sljedećim k\^odom (pristup odozgo prema d
             A = [ [-1] * n for _ in range(n)  ]
             A[0][0] = M[0][0] #bazni slučaj
 	
-	def solve():#tabuliranje
-	
-	    for i in range(1, len(M)):
-	        for j in range(0, i):
+	def solve(k, l):# best path from (0.0) to (k, l)
+	    
+	    
+	    for i in range(1, k):
+	        for j in range(0, l):
 	            best = A[i-1][j]  
-	            if j>0 and A[i-1][j-1] != -1:
+	            if j>0:
 	                best = max(best,  A[i-1][j-1])
 	        A[i][j] = best + A[i][j]
-	 
+	   
  
-		return A
+	    return A[k][l]
 
 	#instanca
 	M=[[4, 5, 7, 0],
@@ -1349,16 +1348,17 @@ Implementacija ovog rješenje je data sljedećim k\^odom (pristup odozgo prema d
     	[1, 1, 3, 1],
     	[2, 3, 3, 3]
         ]	
-	init(len(A))
-	A = solve()
+
 	max_sum_path = 0
 	for j in range(len(M)):
+		init(len(A))
+	        A = solve(len(A)-1, j)
 		max_sum_path = max(max_sum_path, A[len(A)-1, j])
 		
 	print(max_sum_path)
 \end{minted}
 
-\textit{Kompleksnost algoritma}. Funkcija \textit{solve} se izvršava u $O(n^2)$ vremenskoj kompleksnosti kao najzahtjevniji dio implementacije. Prema tome, ukupna kompleksnost algoritma je $O(n^2)$.
+\textit{Kompleksnost algoritma}. Funkcija \textit{solve} se izvršava u $O(n^2)$ vremenskoj kompleksnosti kao najzahtjevniji dio implementacije. Spoljašnja petlja se izvršava $n$ puta.  Prema tome, ukupna kompleksnost algoritma je $O(n^2 \cdot n)=O(n^3)$.
 
 \end{solution}
 
@@ -1370,21 +1370,21 @@ Implementacija ovog rješenje je data sljedećim k\^odom (pristup odozgo prema d
 
 \begin{solution}
 	\\
-	\textit{Podproblemi}. Riješimo problem ruksaka kapaciteta $j\leq C$ birajući prvih $i\leq n$ proizvoda, tj. one proizvode indekirane sa indeksima $1, \ldots , i$.  Memorišimo rješenje matricom $DP$, konkretno sa $DP[i ][j]$. Dakle, podproblem je definisan parom brojeva $(i,j), i\in \{0, 1, \ldots, n\}, j \in \{0, \ldots, C \}$. 
+	Definišimo prvo podprobleme datog problema. Neka je ruksak kapaciteta $j\leq C$ gdje su opcije za proizvode date sa prvih $i\leq n$ proizvoda, tj. dozvoljeno je birati samo proizvode indekirane sa indeksima $1, \ldots , i$.  Memorišimo rješenje matricom $DP$, konkretno sa $DP[i ][j]$. Dakle, podproblem je definisan parom brojeva $(i,j), i\in \{0, 1, \ldots, n\}, j \in \{0, \ldots, C \}$. 
 	
-	\textit{Rekurzija}. Posmatrajmo fiksirani podproblem dat parom indeksa $(i, j)$ i nađimo  (manje) podprobleme koji su relevantni za rješavanje njega samog. Vrijedi:
+	\textit{Rekurzija}. Posmatrajmo fiksirani podproblem dat parom indeksa $(i, j)$ i nađimo  (manje) podprobleme koji su relevantni za rješavanje tog konkretnog podproblema. Vrijedi:
 	
 	\begin{itemize}
 		\item Ako $i$-ti proizvod ne učestvuje u (optimalnom) rješenju podproblema $(i, j)$, tada je jednostavno $DP[i][j] = DP[i-1][j]  $
-		\item     Inače, posmatrajmo podprobleme koji uzimaju u razmatranje prvih $k\in \{1, \ldots, i-1\}$ proizvoda. Prvo, podproblemi kojima je kapacitet veći od $C$ nisu relevantni za rješavanje podproblema $(i,j)$. Posmatrajmo neki podproblem $(k,l), k < i, 0 \leq l < j$. Ako možemo dopustivo dodati $i$-ti proizvod u rješenje ovog podproblema, dobijamo potencijalo rješenje većeg podproblema $(i,j)$. Dakle, ako je $l + w_i \leq j$, potencijalno rješenje podproblema je dato sa vrijednošću $D[k][l] + p_i$.  Prema tome, imamo rekurziju:
+		\item     Inače, posmatrajmo podprobleme koji uzimaju u razmatranje prvih $k\in \{1, \ldots, i-1\}$ proizvoda. Prvo, podproblemi kojima je kapacitet veći od $C$ nisu relevantni za rješavanje podproblema $(i,j)$. Posmatrajmo podproblem $(k,l), k < i, 0 \leq l < j$. Ako se  $i$-ti proizvod može dodati u rješenje ovog podproblema bez narušavanja kapaciteta, dobijamo potencijalo rješenje većeg podproblema $(i,j)$. Dakle, ako je $l + w_i \leq j$, potencijalno rješenje podproblema je dato sa vrijednošću $D[k][l] + p_i$.  Prema tome, vrijedi rekurziju:
 	   \begin{align*}
 		      DP[i ][j ]& = \max\{ D[i-1][j], \max\{DP[k][j - w_i ] + p_i \mid   \\   & j - w_i \geq  0 \ \wedge\  k=1, \ldots, i-1, j \leq C\}\}.
 		\end{align*}
 	\end{itemize}
 	
-	 \textit{ Bazni slučajevi}. Ako je kapacitet ruksaka $C=0$, onda je i cijena takvog rješenja jednaka 0, za sve razmatrane proizvode (u ruksak koji ne može da stane ništa, pa ne  stavljamo proizvode). Dakle, $DP[i][0] = 0.$ Takođe, u ruksak bilo kog kapaciteta $j \leq C$, ukoliko ne postoje proizvodi koji se razmatraju za stavljanje u ruksak, pa je trivijalno $DP[0][j] = 0, 0 \leq j \leq C$.
+	 \textit{ Bazni slučajevi}. Ako je kapacitet ruksaka $C=0$, onda je i cijena takvog rješenja jednaka 0, za sve razmatrane proizvode (u ruksak koji ne može da stane ništa ne  stavljamo proizvode). Dakle, $DP[i][0] = 0.$ Takođe, u ruksak bilo kog kapaciteta $j \leq C$, ukoliko ne postoje proizvodi koji se razmatraju za stavljanje u ruksak, pa je trivijalno $DP[0][j] = 0, 0 \leq j \leq C$.
 	 
-	 Rješenje proizvoda se memoriše u strukturi $DP$ na poziciji indeksa $(n, C)$.
+	 Rješenje problema se memoriše u strukturi $DP$ na poziciji indeksa $(n, C)$.
 	 
 	 Implementacija paradigme dinamičkog programiranja za rješavanje problema ruksaka je data narednim k\^odom.
 	 
@@ -1422,7 +1422,7 @@ Navedimo primjer jedne instance i $DP$ tabelu koja se kreira rekurzivno.
 
 Neka je $n = 4$, te neka je kapacitet ruksaka $C= 5$, dok je  $W = (2, 3, 4, 5)$, a $P = (3, 4, 5, 6)$. 
  %https://codecrucks.com/knapsack-problem-using-dynamic-programming/
- U prvom koraku ($i=0$ i $j =0$) se popunjavaju nule u prvoj vrsti i prvoj koloni matrice $DP$, kako je prikazano u sljedećoj tabeli:
+ U prvom koraku ($i=0$ i $j =0$) popunjavaju se nule u prvoj vrsti i prvoj koloni matrice $DP$, kako je prikazano u sljedećoj tabeli:
   \begin{table}[H]
  	\centering
  	\begin{tabular}{|c|cc|cccccc|}\hline
@@ -1521,19 +1521,19 @@ Diskutujmo slučaj $DP[2][4]=4$. Ako rješenje podproblema ne uzima proizvod 2, 
  \end{definition}
  
  \begin{example}
- 	\textit{Problem najdužeg zajedničkog podniza} (eng. \textit{the longest common subsequence problem}-- LCSP).  Neka su u ulazu data dva stringa $s_1$ i $s_2$. Naći najduži mogući string $s$ koji je podniz oba ulazna stringa.  \\
+ 	(\textit{Problem najdužeg zajedničkog podniza} (eng. \textit{the longest common subsequence problem}-- LCSP)).  Neka su u ulazu data dva stringa $s_1$ i $s_2$. Naći najduži mogući string $s$ koji je podniz oba ulazna stringa.  \\
  	
  	Za instancu $s_1=$\texttt{aatdccddc} i $s_2=$\texttt{agccddta}, rješenje je string $s=$\texttt{accdd}. 
  	
  \end{example}
 
 \begin{solution}
-	    Definišimo podproblem indukovan parom cijelih brojeva $(i,j), 0 \leq i \leq |s_1|, 0 \leq j \leq |s_2|$  za dva stringa: prvi predstavlja  prefiksni string dužine $i$ stringa $s_1$,  a drugi predstavlja prefiks string dužine $j$ stringa $s_2$.  Čuvajmo rješenje ovakog para prefiksnih stringova indukovanog sa $(i,j)$ u matrici $DP$ na poziciji $(i, j)$, tj. $DP[i][j]$.
+	    Definišimo podproblem indukovan parom cijelih brojeva $(i,j), 0 \leq i \leq |s_1|, 0 \leq j \leq |s_2|$  za dva stringa: prvi predstavlja  prefiksni string stringa $s_1$ sa dužinom $i$ ,  a drugi predstavlja prefiksni string dužine $j$ stringa $s_2$.  Čuvajmo rješenje ovakog para prefiksnih stringova indukovanog sa $(i,j)$ u matrici $DP$ na poziciji $(i, j)$, tj. $DP[i][j]$.
 	    
 	    \textit{Rekurzija}. Neka je dat podproblem $(i, j)$. Nađimo strategiju razbijanja problema na manje podprobleme kao i sve podprobleme relevantni za konstrukciju rješenja podproblema $(i, j)$. Posmatrajmo karaktere na pozicijama $i$ i $j$, prvog i drugog ulaznog stringa, redom.  Moguća su dva slučaja.
 	    \begin{itemize}
-	    	\item $s_1[i-1] = s_2[j-1]$: U ovom slučaju, vrijedi rekurzija $DP[i][j] = 1 + DP[i-1][j-1]$, jer  se optimalno rješenje podproblema $(i-1, j-1)$ tada može proširiti za 1 (karakter $s_1[i-1]$) tako da je novonastalo rješenje optimalno za podproblem $(i,j)$.
-	    	\item  $s_1[i-1] \neq s_2[j-1]$: U ovom slučaju, sigurno karakter predstavljen komponentnim parom  $(s_1[i-1]$, $s_2[j-1])$ ne doprinosi optimalnom rješenju podproblema $(i,j)$. Dakle,  za određivanje optimuma podproblema $(i,j)$ relevantna su dva podproblema: $(i-1, j)$ i $(i, j-1)$, nastala izbacivanjem krajnjih karaktera prvo u prvom, pa onda u drugom prefiksu. Duže (optimalno) rješenje ta dva podproblema će činiti i optimalno rješenje za podproblem $(i,j)$. Dakle, u ovom slučaju vrijedi rekurzija:
+	    	\item $s_1[i-1] = s_2[j-1]$: U ovom slučaju, vrijedi rekurzija $DP[i][j] = 1 + DP[i-1][j-1]$, jer  se optimalno rješenje podproblema $(i-1, j-1)$ tada može proširiti za 1 (karakter $s_1[i-1]$) čime se dobija optimalno rješenje podproblema $(i,j)$.
+	    	\item  $s_1[i-1] \neq s_2[j-1]$: U ovom slučaju, sigurno karakter predstavljen komponentnim parom  $(s_1[i-1]$, $s_2[j-1])$ ne doprinosi optimalnom rješenju podproblema $(i,j)$. Dakle,  za određivanje optimuma podproble\-ma $(i,j)$ relevantna su dva podproblema: $(i-1, j)$ i $(i, j-1)$, nastala izbacivanjem krajnjih karaktera prvo u prvom, pa onda u drugom prefiksu. Duže (optimalno) rješenje ta dva podproblema će činiti i optimalno rješenje podproblema $(i,j)$. Dakle, u ovom slučaju vrijedi rekurzija:
 	    	$$DP[i][j] = \max \{ DP[i-1][j], DP[i][j-1] \} $$ 
 	    	
 	    \end{itemize}
@@ -1544,7 +1544,7 @@ Diskutujmo slučaj $DP[2][4]=4$. Ako rješenje podproblema ne uzima proizvod 2, 
 	 Implementacija paradigme dinamičkog programiranja za rješavanje LCSP je data narednim k\^odom. 
  \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
 	    	
-	    	def LCS(s1, s2): #tabuliranje^
+	     def LCS(s1, s2): #tabuliranje
 	    	      
 	    	  if len(s1)==0 or len(s2)==0:
 	    	     return 0
@@ -1560,16 +1560,16 @@ Diskutujmo slučaj $DP[2][4]=4$. Ako rješenje podproblema ne uzima proizvod 2, 
 	    	return DP[len(s1)][len(s2)]        
 	    		           
 	    	      
-	    	#instanca:
-	    	s1 = "abcdcdcdaa"
-	    	s2 = "abbaabcccddd"
-	    	#poziv DP metoda
-	    	lcs = LCS(s1, s2)
-	    	print("Duzina LCS-a je: ", lcs)     
+	     #instanca:
+	     s1 = "abcdcdcdaa"
+	     s2 = "abbaabcccddd"
+	     #poziv DP metoda
+	     lcs = LCS(s1, s2)
+	     print("Duzina LCS-a je: ", lcs)     
  \end{minted}
 	     Primijetimo da implementacija koristi princip odozdo-nagore.
 	     
-	     \textit{Kompleksnost algoritma}. Dvije \texttt{for}-petlje  izvršavaju ukupno $O(|s_1|\cdot |s_2|)$ iteracija. Svaka od iteracija se izvršava u konstantnom vremenu, pa je shodno tome ukupno vrijeme izvršavanja algoritma jednako $O(|s_1| \cdot |s_2|)$. Ako je $n = \max\{|s1|, |s2|\}$, dobijamo (kvadratnu) $O(n^2)$ kompleksnost. 
+	     \textit{Kompleksnost algoritma}. Dvije \texttt{for}-petlje  izvršavaju ukupno $O(|s_1|\cdot |s_2|)$ iteracija. Svaka od iteracija se izvršava u konstantnom vremenu, pa je shodno tome ukupno vrijeme izvršavanja algoritma jednako $O(|s_1| \cdot |s_2|)$. Ako je $n = \max\{|s_1|, |s_2|\}$, dobija se (kvadratna) $O(n^2)$ kompleksnost. 
 	     
 	     %\begin{figure}[H]
 	     %	\centering
@@ -1600,14 +1600,15 @@ Diskutujmo slučaj $DP[2][4]=4$. Ako rješenje podproblema ne uzima proizvod 2, 
 %https://www.programiz.com/dsa/longest-common-subsequence ==> primjer tabele sa rješenjem...
 
 \begin{example}
-	\textbf{\textit{Problem sume podskupa}}. Neka je u ulazu dat niz \emph{niz} (od $n$) nenegativnih cijelih brojeva i broj \textit{sum}. 
-	
-	Da li postoji podniz datog niza \emph{niz} čija je suma elemenata
+	({\textit{Problem sume podskupa}}). Neka je u ulazu dat  niz od $n$ nenegativnih cijelih brojeva i broj \textit{sum}. 	Da li postoji podniz datog niza  čija je suma elemenata
 	  jednaka vrijednosti  \textit{sum}.
 \end{example}
 
 \begin{solution}
-   Definišimo podproblem indukovan parom $(i, j)$, $0 \leq i \leq n, 0 \leq j \leq sum$ koji razmatra prvih $i$ brojeva niza \emph{niz} i za njih vraća odgovor ($True$ ili $False$) da li se među njima nalaze brojevi čiji je zbir jednak \emph{j}. Čuvajmo rješenje ovakvog podproblema u matrici $DP$, na poziciji $(i,j)$, tj. $DP[i][j]$.  \\ \vspace{0.15cm}
+	
+	Primjera radi, neka je dat $niz=[1, 7, 8, 2, 6]$ i $sum=9$. Očigledno je da je ovdje odgovor pozitivan jer $9=1+2+6$.  
+	
+   Definišimo podproblem indukovan parom $(i, j)$, $0 \leq i \leq n, 0 \leq j \leq sum$ koji razmatra prvih $i$ brojeva niza \emph{niz} i za njih vraća odgovor ($True$ ili $False$) da li se među njima nalaze brojevi čiji je zbir jednak \emph{j}. Čuvajmo rješenje ovakvog podproblema u matrici $DP$ na poziciji $(i,j)$, tj. $DP[i][j]$.  \\ \vspace{0.15cm}
    
    \textit{Rekurzija}. Analizirajmo podprobleme koji su relevantni za rješavanje podproblema $(i,j)$. Razlikujemo dva slučaja:
    \begin{itemize}
@@ -1617,9 +1618,9 @@ Diskutujmo slučaj $DP[2][4]=4$. Ako rješenje podproblema ne uzima proizvod 2, 
    	$$ DP[i][j] = DP[i-1][j]. $$
 
    \end{itemize}
-   Kombinovanjem ova dva slučaja dobijamo da je
+   Kombinovanjem ova dva slučaja slijedi
    $$DP[i, j] =   DP[i-1][ j- niz[i-1] ] \vee DP[i-1][j] $$ ako je  $j- niz[i-1]\geq 0$ ili  
-     $$DP[i, j] =   DP[i-1][ j- niz[i-1] ] \vee DP[i-1][j],$$ inače. \\
+     $$DP[i, j] =  DP[i-1][j],$$ inače. \\  
    \textit{Bazni slučajevi}. $DP[i][0] = True, i \geq 0,$ i $DP[0][j] = False,$ za $ j \geq 1$. 
    
     Implementacija paradigme dinamičkog programiranja za rješavanje problema \emph{sume podskupa} je data narednim k\^odom. 
@@ -1646,7 +1647,7 @@ Diskutujmo slučaj $DP[2][4]=4$. Ako rješenje podproblema ne uzima proizvod 2, 
    	        "Ne postoji podniz sa sumom")
    \end{minted}
 \end{solution}
-Primijetimo da smo dinamičko programiranje implementirali pomoću pristupa \textit{odozdo prema gore}. 
+Primijetimo da smo dinamičko programiranje implementirali pomoću pristupa \textit{odozdo prema gore} (tabuliranje). 
 
 Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo prema dolje.
 
@@ -1682,10 +1683,9 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 
 
 \begin{example}
-	\textbf{\textit{Problem rezanja štapa}}. Dat je štap dužine $n$ i lista cijena štapa dužine $i$, za sve $1 \leq i \leq n$.
+	({\textit{Problem rezanja štapa}}). Dat je štap dužine $n$ i lista cijena štapa dužine $i$, za sve $1 \leq i \leq n$.
 	
-	Pronaći optimalan način da se isiječe  štap na manje
-	štapove da bi se maksimizovao ukupan profit.
+	Pronaći optimalan način isijecanja  štapa na manje	štapove da bi se maksimizovao ukupan profit.
 \end{example}
 
 
@@ -1693,18 +1693,18 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 	Posmatrajmo primjer jedne instance problema: 
 	$$ price = [1, 5, 8, 9, 10,
 	17, 17, 20].$$  Neka je štap dužine $d=4$.
-	Rješenje konkretne instance je rezati štap na dva dijela dužine od po 2. Zarada je u tom slučaju jednaka $5 + 5 = 10$.  \\ \vspace{0.2cm}
+	Rješenje konkretne instance je da se reze štap na dva dijela dužine od po 2. Zarada je u tom slučaju jednaka $5 + 5 = 10$.  \\ \vspace{0.2cm}
 	
 	 Podprobleme datog problema indukujemo indeksima $i$, $0 \leq i \leq n$, gdje vrijednost indeksa $i$ označava instancu problem rezanja štapa dužine $i$. Pretpostavimo da vrijednost optimalnog rezanja (tj. optimalno rješenje)  instance dužine $i$ čuvamo u nizovnoj strukturi $DP$ na poziciji $i$, tj. $DP[i]$.
 	 
-	 \textit{Rekurzija}. Podproblem indukovan vrijednošću $i$ možemo  riješiti rješavajući podprobleme koji su indukovani sa $k$, $0 \leq k < i$. To znači da štap dužine $i$ dijelimo na dva dijela, dužine $k$ (sa cijenom $price[k-1]$) $i$ štap dužine $(i-k)$, koji opet razmatramo rekurzivno.  
+	 \textit{Rekurzija}. Podproblem indukovan vrijednošću $i$ možemo  riješiti rješavajući podprobleme koji su indukovani sa $k$, $0 \leq k < i$. To znači da štap dužine $i$ dijelimo na dva dijela, dužine $k$ (sa cijenom $price[k-1]$) $i$ štap dužine $(i-k)$, koji opet rješavamo rekurzivno.  
 	 
 	 Rekurzija u ovom slučaju izgleda ovako:
 	 
 	 $$ DP[i] = \max \{ DP[i-k] + price[k-1] \mid 1 \leq k \leq i\}.$$
 	 
 	 Za bazne slučajeve je $DP[0] = 0$, dok je $DP[1] = price[0]$.
-	 Rješenje inicijalnog problema se nalazi u $DP[n]$.
+	 Rješenje kompletnog problema se nalazi u $DP[n]$.
 \end{solution}
 
  Implementacija paradigme dinamičkog programiranja za rješavanje problema  rezanja štapa je data narednim k\^odom. 
@@ -1731,7 +1731,7 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 
 \textit{Kompleksnost algoritma}. Dvije \texttt{for} petlje izvršavaju ukupno najviše $O(d^2)$. Kako se svaka iteracija izvršava u konstantnom vremenu, zaključujemo da je kompleksnost algoritma jednaka $O(d^2)$.
 
-\textit{Napomena}. Pogledajmo drvo koje se kreira algoritmom grube sile na Slici~\ref{fig:brute-force-stick-cut}  pri rješavanju problema rezanja štapa za $d=4$. Ovaj pristup enumeriše sva moguća rješenja za rezanje štapa dužine $d=4$. Prvo uzima cio štap u razmatranje (i njegovu cijenu), zatim otkida dio štapa dužine 1, dok se ostatak štapa (dužine 3) rješava (dijeli) rekurzivno itd. Kompletno rješenje dobijamo sa listovima stabla (označeni sa 0). 
+\textit{Napomena}. Pogledajmo drvo koje se kreira algoritmom grube sile na Slici~\ref{fig:brute-force-stick-cut}  pri rješavanju problema rezanja štapa za $d=4$. Ovaj pristup enumeriše sva moguća rješenja za rezanje štapa dužine $d=4$. Prvo uzima cio štap u razmatranje (i njegovu cijenu), zatim otkida dio štapa dužine 1, dok se ostatak štapa (dužine 3) rješava (dijeli) rekurzivno itd. Kompletno rješenje dobijamo u listovima stabla (označeni sa 0). 
 \begin{center}
 	\begin{figure}[H]
 		\centering
@@ -1768,26 +1768,26 @@ Sva moguća rješenja su:
 $(1\ 1\ 1\ 1\ 0), (1\ 0\ 1\ 1\ 1), (0\ 1\ 1\ 1\ 1), \ldots ,$ $(2\ 1\ 0\ 0\ 1), \ldots , (2\ 2\ 0\ 0\ 0)$ itd.
 	%pohlepni algoritmi (dva zadatka) 
 	%https://www.geeksforgeeks.org/minimum-product-subset-array/
-	\item Pronaći podskup elemenata niza tako da je proizvod elemenata u podskupu minimalan. Koristiti paradigmu pohlepnih algoritama.\\
+	\item Pronaći podskup elemenata niza tako da  proizvod elemenata u podskupu bude minimalan. Koristiti paradigmu pohlepnih algoritama.\\
 	 \textit{Instanca}. $niz = [ -1, -1, -2, 4, 3]$; \textit{Rješenje}.  -24 ($=(-2 )\cdot (-1) \cdot (-1) \cdot 4 \cdot 3$). 
 	
 	%https://www.geeksforgeeks.org/greedy-algorithm-egyptian-fraction/
-	\item Svaki pozitivan razlomak možemo predstaviti predstaviti kao zbir jedinstvenih jediničnih razlomaka. Razlomak je jedinični razlomak ako je brojnik 1, a nazivnik pozitivan cijeli broj; npr. $1/3$ je jedinični razlomak. Npr. $2/3= 1/2 + 1/6, 3/7=1/3 + 1/11 + 1/231.$   Uz pomoć paradigme pohlepnih algoritama, za proizvoljan razlomak, naći jedinične razlomke koje u zbiru daju taj razlomak.  
+	\item Svaki pozitivan razlomak možemo predstaviti predstaviti kao zbir jedi\-nstvenih jediničnih razlomaka. Razlomak je jedinični ako je brojnik 1, a nazivnik pozitivan cijeli broj; npr. $1/3$ je jedinični razlomak. Npr. $2/3= 1/2 + 1/6, 3/7=1/3 + 1/11 + 1/231.$   Uz pomoć paradigme pohlepnih algoritama, za proizvoljan razlomak, naći jedinične razlomke koje u zbiru daju taj razlomak.  
 	
 	
 	\item Riješiti problem nalaska najdužeg zajedničkog podniza dva stringa pomoću dinamičkog programiranja pristupom odozgo prema dolje. 
 	
-	\item Neka je dat niz brojeva u ulazu. Konstruisati algoritam dinamičkog programiranja koji daje odgovor na pitanje li postoji particionisanje niza na dva (disjunktna) skupa tako da je zbir u obje particije jednak.
+	\item U ulizu je dat niz brojeva u.  Konstruisati algoritam dinamičkog programi\-ranja koji daje odgovor na pitanje li postoji particionisanje niza na dva (disjunktna) skupa tako da je zbir elemenata u obje particije jednak.
 	\item Implementirati metod dinamičkog progrmairanja  za problem rezanja štapa koristeći pristup odozgo prema dolje.
 	
-	\item Neka su u ulazu data dva striga $s_1$ i $s_2$. Uz pomoć dinamičkog programiranja, pronaći najkraći string $s$ tako da
+	\item Neka su u ulazu data dva striga $s_1$ i $s_2$. Uz pomoć dinamičkog programi\-ranja, pronaći najkraći string $s$ tako da
 	su stringovi $s_1$ i $s_2$ podnizovi stringa $s$.
 	\item  Data  je riječ i riječnik (skup riječi). Ispitati da li se riječ može podijeliti na segmente (podstringove) tako da oni pripadaju riječniku. \\
 	
 	\textit{Instanca}. $$dict = \{\texttt{this}, \texttt{th}, \texttt{is}, \texttt{famous}, \texttt{Word}, \texttt{break}, \texttt{b}, \texttt{r}, \texttt{e}, \texttt{a}, \texttt{k},	\texttt{br}, \texttt{bre}, \texttt{brea}, \texttt{ak}, \texttt{problem} \} $$ te   $$word = \texttt{Wordbreakproblem}.$$  
 	\textit{Rješenje}. \texttt{Word break problem},  kao jedno od rješenja.
 	
-	\item Neka je dat pravougaonik dimenzija $N\times M$. Pretpostavimo da imamo na raspolaganju beskonačan broj pločica
+	\item Neka je dat pravougaonik dimenzija $N\times M$. Pretpostavimo da je na raspolaganju beskonačan broj pločica
 	formata $2^i \times 2^i$, $i = 0, 1, 2, 3, \ldots $. 
 	
 	Napisati program koji rekurzivno pronalazi minimalan broj pločica koji je potreban da bi se
@@ -1802,7 +1802,7 @@ $(1\ 1\ 1\ 1\ 0), (1\ 0\ 1\ 1\ 1), (0\ 1\ 1\ 1\ 1), \ldots ,$ $(2\ 1\ 0\ 0\ 1), 
 		\caption{Optimalno pokrivanje ploče 6 $\times$ 5}
 	\end{figure}
 
-\item Napisati program koji generiše sve mogućnosti da se stavi $+$ ili $-$ ili ništa između brojeva $1,2,\ldots,9$ (ovim redom) tako da se kao rezultat izvršenja operacija dobije vrijednost 100. Npr. jedno takvo rješenje je $1 + 2 + 3 - 4 + 5 + 6 + 78 + 9 = 100$.
+\item Napisati program koji generiše sve mogućnosti da se stavi $+$ ili $-$ ili niti jedna od ove dvije opcije između brojeva $1,2,\ldots,9$ (ovim redom) tako da se kao rezultat izvršenja operacija dobije vrijednost 100. Npr. jedno takvo rješenje je $1 + 2 + 3 - 4 + 5 + 6 + 78 + 9 = 100$.
  
  \item Za dva stringa, napisati program koji ispisuje najkraći niz umetanja i brisanja karaktera u prvi string čijom se primjenom  dobija drugi string.
 \end{enumerate}
