@@ -13,7 +13,7 @@ aritmetike primijenjujući algoritamske paradigme koje smo obradili u prethodnoj
 
 Npr. lista prvih 5 prostih brojeva se: 2, 3, 5, 7, i 11. Broj 6 nije prost, jer je djeljiv (pored 1 i 6) sa 2 i sa 3. 
 
-Postavimo sljedeći zadatak. \emph{
+Zadajmo sljedeći zadatak. \emph{
 Ispitati koliko se prostih brojeva može pronaći,
 u nekom razumnom vremenu, među prvih ${N}$ prirodnih brojeva.} \\ 
 
@@ -24,7 +24,7 @@ Paradigmom brutalne sile, ovo bi se moglo riješiti sljedećim rezonovanjem: isp
      
      def prost(n):
        
-       for i in range(2, n):
+       for i in range(2, n//2+1):
            if n % i == 0:
               return false
        return True
@@ -46,7 +46,7 @@ Implementacija algoritma je data narednim k\^odom.
 	       
 	       if  sieve[p]:
 	        
-	           index = 2 * p
+	           index = p * p
 	           while index <= N:
 	               sieve[index] = False
 	               index += p
@@ -143,17 +143,15 @@ U narednoj iteraciji prelazimo na poziciji 4. Kako to nije prost broj (dakle fil
 
 \section{Faktorizacija broja}
 
-Fundamentalna teorema aritmetike nam kaže da se svaki broj $n \in \mathbb{N}$ može na jedinstven način faktorisati na proizvod prostih činilaca, do na redoslijed faktora. Dakle, svaki $n$ se može zapisati u formi
+Fundamentalna teorema aritmetike kaže da se svaki broj $n \in \mathbb{N}$ može na jedinstven način faktorisati na proizvod prostih činilaca, do na redoslijed faktora. Dakle, svaki $n$ se može zapisati u formi
  $$n = \prod_{i=1}^k p_i^{n_i}$$
  za neke $k, n_1,\ldots, n_i, \ldots, n_k \in \mathbb{N}$.
  
  Npr. broj 120 se može faktorisati kao $2^3 \cdot 3^1 \cdot 5^1$.
  
- Sa stanovišta izračunavanja, postavlja se pitanje kako problem izračunavanja faktorizacije broja izvršiti efikasno.  U tu svrhu, iskoristićemo znanje o Eratostenovom situ. 
+ Sa stanovišta izračunavanja, postavlja se pitanje na koji način efikasno izvršiti problem izračunavanja faktorizacije broja.  U tu svrhu, iskoristićemo znanje o Eratostenovom situ. 
  
- Prvo primijenimo paradigmu podijeli pa zavladaj. Dake, za broj $n$, nađimo najmanji prost broj $p$ koji dijeli $n$. Tada vrijedi $n = p \cdot n/p$. Dalje, rekurzivno primijenjujemo istu akciju za broj $n/p$ sve dok je $n>1$. Bazni slučaj je kada je broj $n$ prost, i pri tome se kao takav i vraća, prekidajući momentalno rad rekurzije. 
- 
- Dakle, potrebno je generisati strukturu podataka  tako da na poziciji $i$ čuva najmanji prost faktor broja $i$; ako je broj prost, čuvamo vrijednost 0.
+ Prvo primijenimo paradigmu podijeli pa zavladaj. Dake, za broj $n$, nađimo najmanji prost broj $p$ koji dijeli $n$. Tada vrijedi $n = p \cdot n/p$. Dalje, rekurzivno primijenjujemo istu akciju za broj $n/p$ sve dok je $n>1$. Bazni slučaj je kada je broj $n$ prost, i pri tome se kao takav i vraća, prekidajući momentalno rad rekurzije. Dakle, potrebno je konstruisati strukturu podataka  koja na poziciji $i$ čuva najmanji prost faktor broja $i$; u slučaju da je broj prost, po konvenciji se čuva vrijednost 0.
  
  Implementacija ovakve (nizovne) strukture je data narednim k\^odom. 
  
@@ -166,7 +164,7 @@ Fundamentalna teorema aritmetike nam kaže da se svaki broj $n \in \mathbb{N}$ m
        p = 2
        while p <= n:
            if sieve_fact[p] == 0:
-       		  index = 2 * p
+       		  index = p * p
        		  while index <= n:
        			 sieve_fact[index] = p
        			 index += p
@@ -199,14 +197,14 @@ Fundamentalna teorema aritmetike nam kaže da se svaki broj $n \in \mathbb{N}$ m
  
   \section{Izračunavanje binomnih koeficijenata} 
   
-  Binomni koeficijenti igraju bitnu ulogu u kombinatorici. Npr. broj načina na koji se $k$ ljudi može izabrati iz skupa od $n$ ljudi je predstavljen binomnim koeficijentom $\binom{n}{k}$. 
+  Binomni koeficijenti igraju bitnu ulogu u kombinatorici. Npr. broj različitih grupa od $k$ ljudi može izabrati iz skupa od $n$ ljudi je predstavljen binomnim koeficijentom $\binom{n}{k}$. 
   
   \begin{definition}
   	 Binomni koeficijent $\binom{n}{k}$ gdje je $n, k \in \mathbb{N}, k > 0$  je dat sa 
   	 $$\binom{n}{k} = \frac{n(n-1) \cdots (n-k+1)}{k!}$$
   \end{definition}
   
-~ Definišemo $\binom{n}{0} := 1$. Binomni koeficijent $\binom{n}{1} = n,$ dok je $\binom{n}{n} = 1$ za sve $n \in \mathbb{N}.$ Takođe, ako je $n <k$, vrijedi $\binom{n}{k}=0$.
+~ pri čemu je $\binom{n}{0} := 1$. Binomni koeficijent $\binom{n}{1} = n,$ dok je $\binom{n}{n} = 1$ za sve $n \in \mathbb{N}.$ Takođe, ako je $n <k$, vrijedi $\binom{n}{k}=0$.
  
   Lako se može pokazati da vrijedi Paskalova jednakost:
   $$ \binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k},$$
@@ -223,9 +221,11 @@ Fundamentalna teorema aritmetike nam kaže da se svaki broj $n \in \mathbb{N}$ m
             return 0
          return binom(n-1, k-1) + binom(n-1, k)
    \end{minted}
-  \textit{Kompleksnost algoritma}. Faktor grananja rekurzije je 2. To znači da na svakoj narednoj dubini rekurzije imamo (najviše) duplo više rekurzivnih poziva nego je to slučaj na dubini prije.  Kako je dubina rekurzije maksimalno $n$ (vrijednost prvog ili drugog atributa se smanjuje za 1 u narednom pozivu rekurzije), zaključujemo da je maksimalni broj poziva rekurzije reda veličine $O(2^n)$, što nam daje eksponencijalnu kompleksnost. \\
+  \textit{Kompleksnost algoritma}. Faktor grananja rekurzije je 2. To znači da na svakoj narednoj dubini rekurzije imamo (najviše) duplo više rekurzivnih poziva nego je to slučaj na dubini prije.  Kako je dubina rekurzije maksimalno $n$ (vrijednost prvog ili drugog atributa se smanjuje za 1 u narednom pozivu rekurzije), zaključujemo da je maksimalni broj poziva rekurzije eksponencijalan i reda veličine $O(2^n)$. \\
   
-  Pokušajmo optimizovati ovu naivnu implementaciju rekurzije za računanje binomnih koeficijenata.  Jasno se vidi da se većina podproblema rješava više puta iz nule. Zbog toga upotrebimo princip memoizacije. Struktura u koju čuvamo rješenja je matrica $B[i][j]= \binom{i}{j}$. Bazni slučaj je  dat sa $B(n, 0) = 1 = B(n,n)$. Takođe, ako je $i < j$, imamo $B[i][j] = 0$. Implementacija memoizacije za izračunavanje binomnog koeficijenta $\binom{n}{k}$ je data narednim k\^odom. 
+  Optimizujmo ovu naivnu implementaciju rekurzije za računanje binomnih koeficijenata.  Jasno se vidi da se većina podproblema rješava više puta u rekurzivnim pozivima. Zbog toga ima smisla upotrebiti princip memoizacije. Označimo strukturu u kojoj čuvamo rješenja matricom $B[i][j]= \binom{i}{j}$. Bazni slučaj je  dat sa $B(n, 0) = 1 = B(n,n)$. Ako je $i < j$, tada je $B[i][j] = 0$. 
+  
+  Implementacija principa memoizacije za izračunavanje binomnog koeficijenta $\binom{n}{k}$ je data narednim k\^odom. 
   
   \begin{minted}{python}
   	
@@ -243,6 +243,7 @@ Fundamentalna teorema aritmetike nam kaže da se svaki broj $n \in \mathbb{N}$ m
   	    if i < j: 
   	       Binom[i][j] = 0 
   	       return Binom[i][j]
+  	       
   	    Binom[i][j] = binom_memoization(i-1, j-1, Binom) 
   	                + binom_memoization(i-1, j, Binom) 
   	    return Binom[i][j]
@@ -264,10 +265,10 @@ Fundamentalna teorema aritmetike nam kaže da se svaki broj $n \in \mathbb{N}$ m
  \section{Izračunavanje Katalanovih brojeva}
  
  Katalanovi brojevi se pojavljuju u mnogim interesantnim (kombinatornim)
- problemima. Neki od tih problema su sljedeći. 
+ problemima. Neki od tih problema su dati u nastavku. 
  
  \begin{itemize}
- 	\item Broj različitih puteva sa $2n$ koraka na pravougaonoj mreži $n \times n$ koji polaze od 	donjeg lijevog ugla mreže, tj. koordinate $(n - 1, 0)$, pa do gornjeg desnog ugla $(0, n -1)$ uz dodatan uslov da put ne presijeca glavnu dijagonalu (već je može samo eventualno dodirivati) je predstavljen ovim brojevima.
+ 	\item Broj različitih puteva sa $2n$ koraka na pravougaonoj mreži $n \times n$ koji polaze od 	donjeg lijevog ugla mreže, pa do gornjeg desnog ugla uz dodatan uslov da put ne presijeca glavnu dijagonalu (već je može samo eventualno dodirivati) je predstavljen ovim brojevima.
  	
  	\begin{figure}[H]
  		\centering
@@ -299,9 +300,9 @@ Fundamentalna teorema aritmetike nam kaže da se svaki broj $n \in \mathbb{N}$ m
         
  \end{minted}
   
-  \emph{Kompleksnost algoritma}. Faktor grananja rekurzije je (najviše) $n$. Dubina rekurzije je $n+1$. Dakle, kompleksnost ovog algoritma je ogromna (eksponencijalna) i iznosi $O(n^n)$. 
+  \emph{Kompleksnost algoritma}. Faktor grananja rekurzije je (najviše) $n$. Dubina rekurzije je $n+1$. Dakle, kompleksnost ovog algoritma je eksponencijalna i iznosi $O(n^n)$. 
 
-Pokušajmo optimizovati ovaj (direktni) rekurzivni pristup. Iskoristimo princip memoizacije, zbog toga što se svaki podproblem izražunava iznova više puta. U nizovnoj strukturi $Cat(i)$ čuvajmo vrijednost $i$-tog Katalanovog broja prvi put kada se izračuna.  Vrijedi svojstvo optimalne podstrukture: $Cat(n+1) = \sum_{i=0}^{n} Cat(i) \cdot Cat(n-i).$ Bazni slučaj je dat sa $Cat(0) =1$.
+Optimizujmo ovaj naivni rekurzivni pristup za računanje Katalanovih brojeva. Kako je primijetno svaki podproblem izražunava iznova više puta, ponovo iskoristimo princip memoizacije. Čuvajmo vrijednost $i$-tog Katalano\-vog broja u nizovnoj strukturi $Cat(i)$.  Svojstvo optimalne podstrukture je dato rekurzijom $Cat(n+1) = \sum_{i=0}^{n} Cat(i) \cdot Cat(n-i).$ Bazni slučaj je dat sa $Cat(0) =1$.
 
 Implementacija memoizacije je data sljedećim k\^odom.
 
@@ -346,13 +347,13 @@ Implementacija memoizacije je data sljedećim k\^odom.
  \begin{itemize}
  	\item Neka je dat niz brojeva:
  	$$1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,\ldots $$
- 	\item Izbrišemo svaki drugi broj iz skupa, čime dobijamo niz brojeva:
+ 	\item Izbrišimo svaki drugi broj iz skupa, čime se dobija niz:
  	$$1, 3, 5, 7, 9, 11, 13, 15, 17, 19,\ldots$$
- 	\item Iz prethodnog niza potom izbrišemo svaki treći broj, čime dobijamo novi niz brojeva: $1, 3, 7, 9, 13, 15, 19,\ldots$
- 	\item Nastavljamo proceduru brisanja brojeva iz prethodnog niza tako što brišemo svaki četvrti broj u nizu itd.
+ 	\item Iz prethodnog niza se briše svaki treći broj, čime se dobija novi niz brojeva: $1, 3, 7, 9, 13, 15, 19,\ldots$
+ 	\item Nastavljamo proceduru brisanja brojeva iz prethodnog niza tako što se briše svaki četvrti broj u nizu itd.
  \end{itemize} 
  
- U ulazu se zadaje broj $n$. Ispitati da li je on \emph{srećan}, tj. da li neće biti obrisan prethodnom (iterativnom) konstrukcijom. 
+ U ulazu se zadaje broj $n$. Ispitati da li je on \emph{srećan}, tj. da li neće biti obrisan prethodno opisanom (iterativnom) konstrukcijom. 
  
  \begin{solution}
 U prvoj iteraciji ($i=1$) će biti obrisani svi brojevi na parnoj poziciji u nizu, tj. oni koji su djeljivi sa $i+1=2$. Ako $n$ nije djeljiv sa $2$, preživjeće u ovoj iteraciji, te će se u novom (filtriranom) nizu pojaviti na poziciji $\lceil n/2 \rceil$. Dalje, u narednoj iteraciji ($i=2$) provjerimo da li je $\lceil n/2 \rceil < i+1=3$. Ako je to slučaj, broj $n$ nikad neće biti obrisan u narednim iteracijima, pa prekidamo pretragu, vraćajući rezultat \emph{True}. Inače, brišemo sve elemente novog niza čija je pozicija djeljiva sa $3=i+1$. Ako je $\lceil n/2 \rceil$ djeljiv sa 3, $n$ će biti obrisan (prekidamo pretragu, vraćajući rezultat \emph{False}). Inače, broj $n$ preživljava u ovoj iteraciji, te će se nakon operacije brisanja, pojaviti na poziciji $\lceil n/2 \rceil - \lceil n/2 /(i+1)\rceil = \lceil n/(i+1) \rceil = \lceil n/3 \rceil$ novonastalog niza. U narednoj iteraciji ($i=3$), sličnim rezonovanjem prvo provjeravamo da li je $\lceil n/3 \rceil < i+1=4$, pa vraćamo rezultat \emph{True}, ukoliko je to slučaj. Potom, provjeravamo da li je
