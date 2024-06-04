@@ -385,24 +385,24 @@ U prvoj iteraciji ($i=1$) će biti obrisani svi brojevi na parnoj poziciji u niz
  %https://www.geeksforgeeks.org/mathematical-algorithms/
  %https://www.geeksforgeeks.org/horners-method-polynomial-evaluation/
 \begin{definition}
-	\textbf{\textit{Hornerov metod za računanje vrijednosti polinoma}}. Neka je dat polinom $P(x)=c_n x^n + c_{n-1}x^{n-1} + \cdots + c_1 x + c_0$ kao i tačka $x \in \mathbb{R}$. Naći vrijednost polinoma $P$ u tački $x$. Napomenimo da je ulaz vezan za polinom dat u obliku niza $ coef$ gdje   $coef[i]$ p˙redstavlja koeficijent uz monom  $x^{n-i}$, $i \in \{0, \ldots, n\}$. 
+	\textbf{\textit{Hornerov metod za računanje vrijednosti polinoma}}. Neka je dat polinom $P(x)=c_n x^n + c_{n-1}x^{n-1} + \cdots + c_1 x + c_0$ kao i tačka $x \in \mathbb{R}$. Naći vrijednost polinoma $P$ u tački $x$. Napomenimo da je ulaz vezan za polinom dat u obliku niza $ coef$ gdje   $coef[i]$ predstavlja koeficijent uz monom  $x^{n-i}$, $i \in \{0, \ldots, n\}$. 
 
 \end{definition}
 
 \begin{solution}
 	Pogledajmo primjer sljedeće instance: $coef = [1, -3, 2, -1], x = 3$. U ovom slučaju, riječ je o polinomu $P(x) =  x^3 - 3 x^2 + 2 x -1$. Izlaz    je $ P(3) = 5$.  \\
 	
-	Naivnim metodom, dakle računanjem vrijednosti $x^n$ običnom petljom se izvršava se u linearnoj $O(n)$ kompleksnosti. Kako imamo $n$ takvih vrijednosti za računanje (koji se potom sabiraju), ukupna kompleksnost ovakvog (naivnog) pristupa je $O(n^2)$.
+	Naivnim metodom se računanje vrijednosti $x^n$ običnom petljom izvršava se u linearnom vremenu. Kako je potrebno izračunati $n$ takvih vrijednosti  (koji se potom sabiraju), ukupna kompleksnost ovakvog (naivnog) pristupa ižnosi $O(n^2)$.
 	
 	 Hornerovim metodom, računanje vrijednosti polinoma se može izvršiti u linearnoj $O(n)$ kompleksnosti. Ideju algoritma demonstrirajmo na primjeru polinoma iz prethodnog primjera, koji se može napisati kao:  $$((x - 3)x + 2)x -1.$$ 
-	 Dakle, u tom slučaju, evaluacija ovako napisanog polinoma bi išla: prvo krećemo od koeficijenta $c_3=1$ kojeg množimo sa $x=3$ -- pri tome dobijamo (kumulativnu) vrijednost 3. Dalje, trenutnoj vrijednosti   dodajemo vrijednost narednog koeficijenta $c_2 = -3$, te dobijamo vrijednost 0, koju množimo sa $x=3$, dobijajući opet 0. Ponavljamo korak sa narednim koeficijentom $c_1 = 2$, čime dobijamo vrijednost 2, koju množimo sa $x=3$, dobijajući 6. Nadalje, posljednji koeficijent $c_0=-1$ jednostavno dodamo kumulativnoj vrijednosti, odakle dobijamo konačan rezultat, a to je 5. 
+	 Dakle, u tom slučaju, evaluacija ovako napisanog polinoma bi išla ovako: krećemo od koeficijenta $c_3=1$ kojeg množimo sa $x=3$ -- pri tome dobijamo (kumulativnu) vrijednost 3. Dalje, trenutnoj vrijednosti   dodajemo vrijednost narednog koeficijenta $c_2 = -3$, te dobijamo vrijednost 0, koju množimo sa $x=3$, dobijajući opet 0. Ponavljamo korak sa narednim koeficijentom $c_1 = 2$, čime dobijamo vrijednost 2, koju množimo sa $x=3$, dobijajući 6. Nadalje, posljednji koeficijent $c_0=-1$ jednostavno dodamo kumulativnoj vrijednosti, odakle dobijamo konačan rezultat, a to je 5. 
 	 
 	 Gledajući uopšteno, vrijedi: 
 	 $$ c_n x^n + c_{n-1}x^{n-1} + \cdots + c_1 x + c_0 = ((\cdots ((c_n x + c_{n-1})x + c_{n-2})x + \cdots c_1) x + c_0  )$$
-	 Trivijalni slučaj je  $n=0$, kada je $P(x) = c_0$. U tom slučaju, jednostavno vratimo vrijednost $ c_0$.
+	 Trivijalni slučaj je  $n=0$, kada je $P(x) = c_0$. U tom slučaju, vraća se vrijednost $ c_0$.
 	 
 	  
-	 Implementacija algoritma Hornerovog metoda je data narednim k\^odom. 
+	 Implementacija Hornerovog metoda je data narednim k\^odom. 
 	 
 	 \begin{minted}{python}
 	 	 def horner_metod(coef, n, x):
