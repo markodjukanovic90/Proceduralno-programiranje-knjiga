@@ -196,7 +196,7 @@ Formalno, sljedeće instrukcije (u RAM modelu) su podržane za proizvoljne indek
 
 \fxnote{Stigao dovde sa revizijama!}
 
-Pojam konfiguracije ima za cilj da obuhvati cjelokupno stanje računanja u određenom trenutku, tj. svga što je neophodno za određivanje budućeg ponašanja.
+Pojam konfiguracije ima za cilj da obuhvati cjelokupno stanje računanja u određenom trenutku, tj. sve što je neophodno za određivanje budućeg ponašanja.
 \begin{definition}
 Konfiguracija  {w}--RAM programa $P$ je torka $K = (l, S, w, R, M)$, gdje je $l \in  \{1, \ldots, q + 1\}$ 
 programski brojač, $S \in  \mathbb{N}$ je korišteni prostor, $w \in  \mathbb{N}$ je veličina riječi, $R = (R[0], \ldots , R[r - 1]) \in  \{0, \ldots , 2^w - 1\}^r$ je
@@ -238,10 +238,10 @@ Definišimo sada formalno pojam računarskog problema shodno prethodno definisan
 
 \textit{Komentar}.  Ključne tačke u vezi teorijskog RAM modela su:
 \begin{itemize}
-	\item  \textit{Ujednačenost}: zahtijevamo da postoji konačan program koji bi trebao raditi za proizvoljne ulaze neograničene veličine
+	\item  \textit{Ujednačenost}: zahtijevamo da postoji konačan program koji u teoriji raditi za proizvoljne ulaze neograničene veličine
 (kad $n, k \rightarrow \infty$).
     \item Računanje se odvija nizom “baznih” operacija.
-    \item Ne namećemo a priori ograničenje za vrijeme (broj koraka) ili prostor   (memorija). Bez obzira što ove resurse želimo minimizirati, teorijski RAM model  smatra  za algoritam čak i ako koristi ogromne količine vremena i prostora, što se, vidjećemo, razlikuje od praktičnog aspekta algoritama. 
+    \item Ne namećemo apriori ograničenje za vrijeme (broj koraka) ili prostor   (memorija). Bez obzira što ove resurse želimo minimizirati, teorijski RAM model  smatra algoritmom čak i ako koristi ogromne količine vremena i prostora, što se, vidjećemo, razlikuje od praktičnog aspekta algoritama. 
 \end{itemize}
 
 Pri računanju broja instrukcija izvršavanja programa $P$, u obzir uzimamo sljedeće operacije: aritmetičke i bitske operacije (+, -, *, /, \&, $\mid,\ldots $), logičke ($\wedge$,$\vee$, $\Rightarrow$, $\Leftrightarrow$), operacija dodjele, te ulazno/izlazne operacije. Ove operacije nazivamo \textit{jediničnim instrukcijama}.  Pretpostavka je da se sve jednične instrukcija izvršavaju u jediničnom vremenu.  Vremenska složenost programa se upravo mjeri na osnovu ukupnog broja jediničnih instrukcija, o čemu ćemo više reći u narednoj sekciji. 
@@ -255,26 +255,25 @@ Definišimo sada vremensku složenost izvršavanja programa $P$ na RAM modelu.
 \begin{definition}
 	Vrijeme rada programa $P$ za ulaz  $x \in \mathbb{N}^*$ je broj $t$ koraka prije nego $P$ dostigne zaustavnu
 	konfiguracija (operacija ``HALT'') za $x$. Dakle, najmanji $t$ za koji postoji niz $K_0 \Rightarrow_P  K_1 \Rightarrow_P \cdots \Rightarrow_P K_t$ takav da je $K_0$
-	početna konfiguracija od $P$ za ulaz $x$, a $K_t$ je konfiguracija zaustavljanja (gdje se programski brojač  ažurira na $q + 1$, a $q$
-	označava broj instrukcija u programu $P$).  
-	Pogledajmo sljedeći primjer. 
-	
+	početna konfiguracija programa $P$ za ulaz $x$, a $K_t$ je zaustavnu konfiguracija (gdje se programski brojač  ažurira na $q + 1$, a $q$
+	označava broj instrukcija u programu $P$).  	
 \end{definition}
  
+ 	Pogledajmo sljedeći primjer. 
 %\begin{example} \\
 	
 \begin{minted}{C}
-	algoritam max(a, n)
-	  maximum = a[0]
+algoritam max(a, n)
+	   maximum = a[0]
  	  for i in 1 to n-1 do
 	      if a[i] > maximum then
                   maximum = a[i]
-          return maximum    
+           return maximum    
 \end{minted}
 
 %\end{example}
 
-Izračunajmo tačan broj instrukcija programa konkretnog ulaza $a = [1\ 5\ 2\ 10\ 7]$ i $n = 5$. Imamo: prva linija sadrži jednu instrukciju (dodjela). Unutar petlje (koja se izvršava $n-1$ puta, za koju se dodjeljuje nova  vrijednost iteratoru \texttt{i}, te se potom provjerava da li je ona veća od $n$), broj instrukcija koji je uvjetovan prolazom elementima niza  $\texttt{a}$ je $5, 3, 5$ i $3$, što je ukupno $1+5+3+5+3=17$ izvršenih instrukcija.  U kombinaciji sa instrukcijama za varijablu \texttt{i} u \emph{for} petlji, ovaj program izvršava ukupno $17+ 4 \cdot 2 + 1 = 26$ instrukcija.
+Izračunajmo tačan broj instrukcija programa konkretnog ulaza $a = [1\ 5\ 2\ 10\ 7]$ i $n = 5$. Prva linija  sadrži jednu instrukciju (dodjela). Unutar petlje (koja se izvršava $n-1$ puta, za koju se dodjeljuje nova  vrijednost iteratoru \texttt{i}, te se potom provjerava da li je ona veća od $n$), broj instrukcija koji je uvjetovan prolazom elementima niza  $\texttt{a}$ je $5, 3, 5$ i $3$, što ukupno daje $1+5+3+5+3=17$ instrukcija.  U kombinaciji sa instrukcijama za varijablu \texttt{i} u \emph{for} petlji, ovaj program izvršava ukupno $17+ 4 \cdot 2 + 1 = 26$ instrukcija.
 
 
 
@@ -282,8 +281,8 @@ Vremenska složenost izvršavanja programa se mjeri u odnosu na ukupan broj
 jediničnih instrukcija. Tačan broj instrukcija za svaki ulaz u kompleksnim programima je     teško precizno izračunati. Zbog toga uvodimo pojam \textit{najgoreg vremena izvršavanja} programa (eng. \textit{worst-case running time}) koji nam pruža   lakši način računanja broja instrukcija programa, ali opet dovoljno reprezentativan da ukaže na to koliko je algoritam efikasan. 
 
 \begin{definition}
-	  Najgore vrijeme izvršavanja programa $P$ je funkcija $T \colon \mathbb{N} \times \mathbb{N} \rightarrow \mathbb{N}$ gdje je $T (n, k)$ maksimalno
-	vrijeme rada programa $P$ u odnosu na sve moguće ulaze $x \in  \{0, \ldots , k\}^n$.
+	  Najgore vrijeme izvršavanja programa je funkcija $T \colon \mathbb{N} \times \mathbb{N} \rightarrow \mathbb{N}$ gdje je $T (n, k)$ maksimalno
+	vrijeme rada programa u odnosu na sve moguće ulaze $x \in  \{0, \ldots , k\}^n$.
 \end{definition}
 
 \begin{example} 
@@ -299,14 +298,12 @@ algoritam sort(a, n)
            	\end{minted}
 \end{example}
 
-\fxnote{Dosao dovde!}
-
-Najgori slučaj za ulazne podatke je kada se instrukcije pod \emph{if}--petljom stalno izvršavaju; to je slučaj kada je na ulazu niz \texttt{a} kojem su elementi poredani u obrnutom  poretku u odnosu na traženi. Prema tome \texttt{swap} operacija se tada izvršava u svakoj iteraciji, i ona sadrži 3 instrukcije (pred instrukcije pod \emph{if} komandom). Unutrašnja petlja se izvršava $i$ puta  za svaki $i=1, \ldots, n-1$.  Tada imamo da je  
+Najgori slučaj za ulazne podatke je kada se instrukcije pod \emph{if}--petljom stalno izvršavaju; to je slučaj kada je na ulazu niz \texttt{a} kojem su elementi poredani u obrnutom  poretku u odnosu na traženi. Prema tome \texttt{swap} operacija se tada izvršava u svakoj iteraciji, i ona sadrži 3 instrukcije (pored instrukcije pod \emph{if} komandom). Unutrašnja petlja se izvršava $i$ puta  za svaki $i=1, \ldots, n-1$.  Tada imamo da je  
 $$ \sum_{i=1}^{n-1} \sum_{j=0}^{i-1} 2 \cdot 4 = 8 \sum_{i=1}^{n-1} i = 4 \cdot {(n-1) \cdot n}$$ najveći broj instrukcija koji algoritam izvršava za svaki ulaz dužine $n$. 
 \\
 
 
-Za najgore vrijeme izvršavanja  uzimamo slučaj ulaznih podataka određene dimenzije za koji će se izvršiti maksimalan broj instrukcija. Motivacija za računanje najgoreg vremena izvršavanje programa (algoritama) je sljedeća. Najgori slučaj izvršavanja algoritma je obično lakši za detektovanje i izračunavanje nego je to slučaj sa   tačnim brojem koraka (instrukcija) za konkretnu instancu, koji ne govori mnogo o broju instrukcija programa za ulaze drugačijih distribucija. Prepoznavanje najgoreg slučaja za ulazne podatke određene dimenzije za koje program radi najduže nam omogućuje da utvrdimo gornju granicu za broj instrukcija svakog mogućeg izvršenja programa instanci fiksne veličine. Ovakvo vrijeme izvršavanja ne  zavisi od konkretne (distribucije) ulazne instance, čime se dobija bolji osjećaj o efikasnosti programa u odnosu na veličinu ulaza.
+Za najgore vrijeme izvršavanja  uzimamo slučaj ulaznih podataka određene dimenzije za koji će se izvršiti maksimalan broj instrukcija. Motivacija za računanje najgoreg vremena izvršavanje programa (algoritama) je sljedeća. Najgori slučaj izvršavanja algoritma je obično lakši za detekciju i izračunavanje nego je to slučaj sa   tačnim brojem koraka (instrukcija) za konkretnu instancu, koji ne govori mnogo o broju instrukcija programa za ulaze drugačijih distribucija. Prepoznavanje najgoreg slučaja za ulazne podatke određene dimenzije za koje program radi najduže nam omogućuje da utvrdimo gornju granicu za broj instrukcija svakog mogućeg izvršenja programa instanci fiksne veličine. Ovakvo vrijeme izvršavanja ne  zavisi od konkretne (distribucije) ulazne instance, čime se dobija bolji osjećaj o efikasnosti programa u odnosu na veličinu ulaza.
  
 Bez obzira na ovakva pojednostavljenja, i dalje je egzaktno računanje najgoreg vremena izvršavanja težak posao u većini kompleksnih programa. Stoga, u nastavku govorimo o pojmu \textit{asimptotskog} vremena izvršavanja programa.  Gotovo uvijek se broj koraka izvršavanja u algoritmu povećava shodno povećavanju dimenzije ulaza. Prema tome, ima smisla posmatrati ponašanje algoritma na  
 ulazima velike dimenzije jer se često programi čiji su ulazi  malih dimenzija ionako efikasno izvršavaju (imaju kratko vrijeme izvršavanja)  nezavisno od algoritamske tehnike rješavanja. U sljedećoj podsekciji, formalno uvedimo pojam $O$--notacije. 
