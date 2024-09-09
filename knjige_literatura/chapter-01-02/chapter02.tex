@@ -303,10 +303,10 @@ $$ \sum_{i=1}^{n-1} \sum_{j=0}^{i-1} 2 \cdot 4 = 8 \sum_{i=1}^{n-1} i = 4 \cdot 
 \\
 
 
-Za najgore vrijeme izvršavanja  uzimamo slučaj ulaznih podataka određene dimenzije za koji će se izvršiti maksimalan broj instrukcija. Motivacija za računanje najgoreg vremena izvršavanje programa (algoritama) je sljedeća. Najgori slučaj izvršavanja algoritma je obično lakši za detekciju i izračunavanje nego je to slučaj sa   tačnim brojem koraka (instrukcija) za konkretnu instancu, koji ne govori mnogo o broju instrukcija programa za ulaze drugačijih distribucija. Prepoznavanje najgoreg slučaja za ulazne podatke određene dimenzije za koje program radi najduže nam omogućuje da utvrdimo gornju granicu za broj instrukcija svakog mogućeg izvršenja programa instanci fiksne veličine. Ovakvo vrijeme izvršavanja ne  zavisi od konkretne (distribucije) ulazne instance, čime se dobija bolji osjećaj o efikasnosti programa u odnosu na veličinu ulaza.
+Za najgore vrijeme izvršavanja  uzimamo slučaj ulaznih podataka određene dimenzije za koji će se izvršiti maksimalan broj instrukcija. Motivacija za računanje najgoreg vremena izvršavanje programa (algoritama) je sljedeća. Najgori slučaj izvršavanja algoritma je obično lakši za detekciju i izračunavanje nego je to slučaj sa   egzaktnim brojem koraka (instrukcija) za konkretnu instancu, koji ne govori mnogo o broju instrukcija programa za ulaze drugačijih distribucija. Prepoznavanje najgoreg slučaja za ulazne podatke određene dimenzije za koje program radi najduže nam omogućuje da utvrdimo gornju granicu za broj instrukcija svakog mogućeg izvršenja programa instanci fiksne veličine. Ovakvo vrijeme izvršavanja ne  zavisi od konkretne (distribucije) ulazne instance, čime se dobija bolji osjećaj o efikasnosti programa u odnosu na veličinu ulaza.
  
-Bez obzira na ovakva pojednostavljenja, i dalje je egzaktno računanje najgoreg vremena izvršavanja težak posao u većini kompleksnih programa. Stoga, u nastavku govorimo o pojmu \textit{asimptotskog} vremena izvršavanja programa.  Gotovo uvijek se broj koraka izvršavanja u algoritmu povećava shodno povećavanju dimenzije ulaza. Prema tome, ima smisla posmatrati ponašanje algoritma na  
-ulazima velike dimenzije jer se često programi čiji su ulazi  malih dimenzija ionako efikasno izvršavaju (imaju kratko vrijeme izvršavanja)  nezavisno od algoritamske tehnike rješavanja. U sljedećoj podsekciji, formalno uvedimo pojam $O$--notacije. 
+Bez obzira na ovakva pojednostavljenja, i dalje je egzaktno računanje najgoreg vremena izvršavanja težak posao u većini kompleksnih programa. Stoga, u nastavku govorimo o pojmu \textit{asimptotskog} vremena izvršavanja programa.  Gotovo uvijek se broj koraka izvršavanja algoritma povećava shodno povećavanju dimenzije ulaza. Prema tome, ima smisla posmatrati ponašanje algoritma na  
+ulazima velike dimenzije jer se često programi čiji su ulazi  malih dimenzija svakako efikasno izvršavaju (imaju kratko vrijeme izvršavanja)  nezavisno od algoritamske tehnike rješavanja. U sljedećoj podsekciji, formalno uvedimo pojam $O$--notacije. 
  
  
 \subsection{$O$--notacija}  \fxnote{Dovde stigao!}
@@ -325,7 +325,7 @@ Dakle, cilj je je pojednostaviti računanje izvršenog broja instrukcija, koje s
 	Drugim riječima, procjenjuje se asimptotsko ponašanje broja instrukcija u zavisnosti od veličine ulaza programa. 
 \end{enumerate}
 
-Za $T_1(n)$  je dominantni term funkcija $n^{\frac{3}{2}}$, dok je to za $T_2(n)$ funkcija $n \cdot \log^3 n$. 
+Za $T_1(n)$  dominantni term je dat funkcijom $n^{\frac{3}{2}}$, dok je to za $T_2(n)$ funkcija $n \cdot \log^3 n$. 
  
  Nadalje, u nastavku pretpostavljamo da radimo sa pozitivnim funkcijama, sa pozitivnim vrijednostima argumenata. 
 
@@ -349,12 +349,12 @@ Neka su date dvije funkcije $f$ i $g$. Kažemo da $f = O(g)$ akko postoji konsta
 	Jasno je da $T_1 = O(n^2)$, ali i $T_1 = O(n^{\frac{3}{2}})$. Takođe, $T_2 = O(n \log^3 n)$. 
 \end{example}
 
-U osnovi, dominirajući term nam govori o asimptotskoj granici čitavog izraza (dobijen računanjem (najgoreg mogućeg) broja instrukcija izvršenog u programu), jer kad je $n$ dovoljno veliko, vrijednost izraza dominantno zavisi od dominirajućeg terma, dok se ostali termi doprinose u ne tako značajnoj mjeri da bi se promijenio zaključak o asimptotskom ponašalju porasta broja instrukacija programa sa porastom dimenzije ulaza. 
+U osnovi, dominirajući term nam govori o asimptotskoj granici čitavog izraza (dobijen računanjem (najgoreg mogućeg) broja instrukcija izvršenog u programu), jer kada je $n$ dovoljno veliko, vrijednost izraza dominantno zavisi od dominirajućeg terma, dok ostali članovi ne doprinose u značajnoj mjeri da bi se promijenio zaključak o asimptotskom ponašalju porasta broja instrukacija programa sa porastom dimenzije ulaza. 
 
 $O$--notacija, bez obzira na praktičnost i jednostavnost, dovodi i do određenih  dvosmislenosti. Npr.\  $n^2 + n = O(n^2)$, ali vrijedi i $n^2 + n = O(n^3)$. U svakom slučaju, korisniji zaključak dobijamo uzimajući prvi od ova dva.  Ovo nas dovodi do definisanja $\Theta$--notacije (eng. Big-Theta).
 
 \begin{definition}
-Neka su date dvije funkcije $f$ i $g$.  Ako $f = \Theta(g)$, onda postoje konstante $c_1, c_2 >0$ tako da $c_1 g(n) \leq f(n) \leq c_2 g(n)$, počevši od nekog dovoljno velikog $n$. 
+Neka su date dvije funkcije $f$ i $g$.  Ako $f = \Theta(g)$, onda postoje konstante $c_1, c_2 >0$ tako da $c_1 g(n) \leq f(n) \leq c_2 g(n)$, počevši od nekog dovoljno velikog $n \geq N$. 
 \end{definition}
 
 U prevodu, funkcije $f$ i $g$ imaju isto asimptotsko ponašanje (dakle, za velike vrijednosti ulaza $n$), vidjeti Sliku~\ref{fig:theta_notation}. 
@@ -391,7 +391,7 @@ $\Omega$-notacija govori o funkcijama za koje je $g$ asimptotska donja granica, 
 Neformalno, ako $f(n) = o(g(n))$, to znači da  $f$ postaje beznačajno mala u odnosu na $g$ kako se $n$ približava beskonačnosti.
 
 \begin{example}
-    Vrijedi $n = o(n^2)$, kao i $n = o(n^3)$, ali ne vrijedi $n = o(n)$. 
+    Vrijedsei $n = o(n^2)$, kao i $n = o(n^3)$, ali ne vrijedi $n = o(n)$. 
 \end{example}
 
 \subsection{Neka svojstva $O$--notacije}
@@ -443,7 +443,7 @@ Prethodna sekcija nam daje na uvid neke od osnovnih notacija za ocjenjivanje slo
  \end{figure}
 
 
-U praksi, neželjena složenost algoritma je eksponencijalna, dok su logaritamska, linearna i log-linearna složenost poželjne i takvi algoritmi su obično veoma efikasni u rješavanju problema na instancama velikih dimenzija. U zavisnosti od tipa problema, kvadratna složenost može ali i ne mora biti garant za rješavanje instanci većih dimenzija razmatranog  problema. %U najvećem broju slučajeva, klasa funkcija koja  koja prelazi kvadratnu je nedovoljno dobra. 
+U praksi, neželjena složenost algoritma je eksponencijalna (i faktorijel), dok su logaritamska, linearna i log-linearna složenost poželjne i takvi algoritmi su obično veoma efikasni u rješavanju problema na instancama velikih dimenzija. U zavisnosti od tipa problema, kvadratna složenost može ali i ne mora biti garant za rješavanje instanci većih dimenzija razmatranog  problema. %U najvećem broju slučajeva, klasa funkcija koja  koja prelazi kvadratnu je nedovoljno dobra. 
 
 
 U nastavku izlažemo neka uputstva koja olakšavaju računanje složenosti algoritma. Za (pod)program $P$, označimo njegovu složenost izvođenja sa funkcijom $T(P)$ koja   zavisi od dimenzije ulaza ($n$). 
@@ -456,7 +456,7 @@ U nastavku izlažemo neka uputstva koja olakšavaju računanje složenosti algor
 		Jedinične instrukcije         & 1 \\
         Serija naredbi $S$: $N_1$; $N_2$; &  $T(S) = T(N_1) + T(N_2)$  \\ \hline
         Naredba grananja $S$:           &                                \\
-        \textbf{IF}  $C$ then $N_1$ \textbf{ELSE} $N_2$  & $T(S) = T(C) + \max\{ T(N_1), C(N_2)\}$  \\          \hline                 
+        \textbf{IF}  $C$ then $N_1$ \textbf{ELSE} $N_2$  & $T(S) = T(C) + \max\{ T(N_1), T(N_2)\}$  \\          \hline                 
          Naredba petlje $S$:            &   $n$ -- maksimalan broj iteracija          \\
          1) \textbf{WHILE} $U$ \textbf{DO} $N_1$                 &     $T(S)= n \cdot (T(U) + T(N_1))$         \\ 
          2) \textbf{FOR} $i=j$ \textbf{to} $p$ \textbf{DO} $N_1$  &    $T(S)= n\cdot T(N_1)$     \\  \hline
@@ -466,7 +466,7 @@ U nastavku izlažemo neka uputstva koja olakšavaju računanje složenosti algor
 
 Odgovorimo sada na pitanje kada je jedan algoritam efikasniji od drugoga. \\ 
 
-Upravo, odgovor nam daju notacije za složenost koje smo naučili u ovoj glavi, i to dvije najznačajnije: $O$ i $\Theta$--notacije. Kažemo da je jedan algoritam $X$ \textit{asimptotski efikasniji} od drugog algoritma  $Y$ akko sa porastom veličine ulaza u oba algoritma, vrijeme rada algoritma $X$ postaje kraće od vremena rada $Y$. To znači da $X$ pripada nižoj $O$--klasi složenosti od $Y$. %https://www.geeksforgeeks.org/algorithms-analysis-of-algorithms-question-16/ 
+Upravo, odgovor na ovo pitanje nam daju uvedede notacije za složenost koje smo naučili u ovoj glavi, i to dvije najznačajnije: $O$ i $\Theta$--notacije. Kažemo da je jedan algoritam $X$ \textit{asimptotski efikasniji} od drugog algoritma  $Y$ akko sa porastom veličine ulaza u oba algoritma, vrijeme rada algoritma $X$ postaje kraće od vremena rada $Y$. To znači da $X$ pripada nižoj $O$--klasi složenosti od $Y$. %https://www.geeksforgeeks.org/algorithms-analysis-of-algorithms-question-16/ 
 Prema tome, za velike ulaze, algoritam $X$ je uvijek biti bolji izbor od  algoritma $Y$ u smislu efikasnosti (vremena izvođenja). Međutim, za male ulaze moguće je da je $Y$ i dalje brži od $X$. Stoga se ne može reći da je $X$ uvijek bolji izbor za sve ulazne vrijednosti, već da će $X$ biti bolji izbor za sve ulaze osim eventualno malih ulaza.
 
 
@@ -502,9 +502,7 @@ Izvršavanje funkcije $S(i)$ se odvija u linearnoj složenosti, tj. $O(n)$. Kako
  
  Termin prostorna složenost se na mnogim mjestima pogrešno koristi asocirajući na pomoćni prostor.  \textit{Pomoćni prostor} je dodatni ili privremeni prostor koji koristi algoritam.
  
- \textit{Prostorna složenost} algoritma je ukupan prostor koji algoritam zauzima u odnosu na veličinu ulaza. Prostorna složenost   uključuje i pomoćni prostor i prostor koji koristi ulaz.
- 
- Prostorna složenost se može posmatrati kao pandan koncepta vremenske složenosti. Za kreiranje niza veličine $n$, zahtijeva se dodatan prostor od $O(n)$. Za kreiranje dvodimenzionalnog niza veličine $n \times n$,  zahtijeva se $O(n^2)$ prostora.
+ \textit{Prostorna složenost} algoritma je ukupan prostor koji algoritam zauzima u odnosu na veličinu ulaza. Prostorna složenost   uključuje i pomoćni prostor i prostor koji koristi ulaz.  Prostorna složenost se može posmatrati kao pandan koncepta vremenske složenosti. Za kreiranje niza veličine $n$, zahtijeva se dodatan prostor od $O(n)$. Za kreiranje dvodimenzionalnog niza veličine $n \times n$,  zahtijeva se $O(n^2)$ prostora.
  Napomenimo da prostorna složenost zavisi i od programskog jezika, kompajlera, pa  čak i mašine koja pokreće algoritam.
  
  
