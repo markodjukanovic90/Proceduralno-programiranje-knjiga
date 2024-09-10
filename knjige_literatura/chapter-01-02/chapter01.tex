@@ -1,7 +1,7 @@
 \chapter{Uvod u programski jezik Pajton} 
  
 
-Pajton je objektno-orjentisani programski jezik visokog nivoa,  opšte   namjene,   pušten u upotrebu u februaru 1991. godine. Kreiran je od strane Guido van Rossum-a. Naziv Pajton potiče od britanske komičarske grupe \textit{Monty Python}. Od svog nastanka, Pajton je imao nekoliko  izdanja; danas je jedan od najpopularnijih programskih jezika uopšte, pogledajte Sliku~\ref{fig: popular_program_lang}\footnote{Podaci preuzeti sa https://statisticsanddata.org/data/the-most-popular-programming-languages-1965-2022-new-update/.}.
+Pajton je objektno-orjentisani programski jezik visokog nivoa,  opšte   namjene,   pušten u upotrebu u februaru 1991. godine. Kreiran je od strane Guido van Rossum-a, a naziv Pajton potiče od britanske komičarske grupe \textit{Monty Python}. Od svog nastanka, Pajton je imao nekoliko  izdanja; danas je jedan od najpopularnijih programskih jezika uopšte, pogledajte Sliku~\ref{fig: popular_program_lang}\footnote{Podaci preuzeti sa https://statisticsanddata.org/data/the-most-popular-programming-languages-1965-2022-new-update/.}.
 
 \begin{figure}[H]
 	\centering
@@ -17,15 +17,13 @@ Godine 1989. Guido van Rossum je samoinicijativno započeo rad na kreiranju novo
  Prva verzija Pajtona, verzija 0.9.0, je objavljena  u februaru 1991. godine.
 Pajton 1.0 je objavljen u januaru 1994. godine.  Uključio je nekoliko novih funkcionalnosti, preuzimajući uglavnom dobre koncepte funkcionalnih jezika, kao što su lambda, mapa, filter i funkcije redukcije.
 Pajton 2.0 je objavljen 2000. godine i uveo je komprehenziju liste, sakupljač otpadaka i mnoga druga poboljšanja.
-Pajton 3.0 je izašao 2008. godine kao veliko ažuriranje koje je uključilo nekoliko izmjena koje nisu bile kompatibilne sa prethodnim verzijama. \\ 
-
-Glavna odlika verzije Pajton 3.0 bio je pročišćavanje jezika i uklanjanje redudantnih funkcija.
-Od pojavljivanja Pajton 3, tim zadužen za razvoj ovog jezika pušta glavne verzije jezika svakih 18-24 mjeseca. Svaka nova verzija uključuje nove funkcije i poboljšanja, čuvajući kompatibilnosti sa prethodnim verzijama.
+Pajton 3.0 je izašao 2008. godine predstavljajući veliko ažuriranje koje je uključilo nekoliko izmjena koje nisu bile kompatibilne sa prethodnim verzijama.  Glavna odlika verzije Pajton 3.0 bio je pročišćavanje jezika i uklanjanje redundantnih funkcija.
+Od pojavljivanja verzije 3, nove podverzije ovog jezika su puštane  svakih 18-24 mjeseca. Svaka nova verzija uključuje nove funkcije i poboljšanja, čuvajući kompatibilnosti sa prethodnim verzijama.
 Danas se Pajton koristi u gotovo svemu, od razvoja veb aplikacija, do naučnog računarstva, analize podataka, vještačke inteligencije, mašinskog učenja itd. Prednost 
 Pajtona je velika i aktivna zajednicu programera koja   svakodnevno doprinose  jeziku kreiranjem biblioteka, frejmvorka i drugih alata. Neke od popularnih biblioteka i frejmvorka za Pajton uključuju NumPy, Pandas, Matplotlib, Django, TensorFlow.
 
 
-Razvoj Pajtona karakteriše njegova sintaksna jednostavnost, čitljivost i fleksibilnost. Ovi aspekti su pomogli  da Pajton postane popularan jezik među početnicima ali i iskusnijim  programerima.
+ Pajton karakteriše njegova sintaksna jednostavnost, čitljivost i fleksibilnost. Ovi aspekti su pomogli  da Pajton postane popularan jezik među početnicima ali i iskusnijim  programerima.
 
 \section{Osnovne karakteristike}
 U nastavku navodimo osnovne karakteristika programskog jezika Pajton. 
@@ -34,13 +32,13 @@ U nastavku navodimo osnovne karakteristika programskog jezika Pajton.
 	\item Pajton je \textit{jezik visokog nivoa} (eng. \textit{high-level language}):  programski jezik koji je dizajniran tako da ga ljudi lako čitaju, pišu i razumiju. U prevodu,  obezbjeđuje koncepte koje omogućavaju pisanje k\^oda na višem nivou apstrakcije, čime ga približava sintaksi prirodnog jezika, za razliku od jezika niskog nivoa, kao što su asemblerski ili mašinski k\^od.
 	\item Pajton je \textit{dinamički tipizirani jezik}. To znači da  se tip varijable određuje u vrijeme izvođenja programa, a ne u vrijeme kompajliranja ili kodiranja. Drugim riječima, tip varijable se može promijeniti tokom izvršavanja programa. Nasuprot ovome, statički tipiziranim jezicima,  tip varijable je fiksiran u vrijeme kompajliranja i nepromjenljiv je tokom vremena izvršavanja. U statički tipiziranim jezicima,  tip svake varijable se mora deklarisati prije upotrebe, a potom kompajler provjerava da li se tip varijable dosljedno upotrebljava u cijelom programu.
 	\item Pajton je \textit{objektno-orijentisani jezik}.  Objektno orijentisani programski (OOP) jezik  je tip programskog jezika koji koristi objekte kao svoje osnovne gradivne blokove. Objekti su instance klasa koje enkapsuliraju podatke i operacije (metode) koje se mogu izvršiti na tim podacima. U osnovi,  OOP koncept potiče prirodniji način razmišljanja o problemima tako što ih modeluje u smislu objekata i njihovih interakcija.
-	\item Pajton je \textit{skriptni jezik}. Programski jezik koji je dizajniran dijelom za  skriptiranje,   pisanja tipa programa koji se koristi za automatizaciju zadataka, kao što je izvođenje niza naredbi ili manipulaciju podacima. Skriptni jezici se obično interpretiraju, a ne kompajliraju, što znači da se izvorni kod može izvršiti direktno, bez prethodnog prevođenja u mašinski k\^od.  	Jezici za skriptiranje se često koriste za   automatizacija zadataka koji se ponavljaju, pisanje malih potpornih programa ili ugrađivanje funkcionalnosti u drugim aplikacijama. Jedna od glavnih prednosti skriptnih jezika je njihova jednostavnost upotrebe i fleksibilnost.
-	\item Pajton posjeduje \textit{aitomatsko čišćenje memorije} (eng. \textit{garbage--collected} language).  Pajton automatski upravlja   identifikovanjem i oslobađanjem memorije koju program više ne koristi.  Oslobađena memorija  stavljanja se na raspolaganje drugim dijelovima programa za korištenje.   Ovaj mehanizam omogućuje  programerima  da se usredotoče na pisanje k\^oda bez vođenja brige o ručnom dodeljivanju i oslobađanju memorije (dok to nije slučaj, recimo, u programskom jeziku $C$).
+	\item Pajton je \textit{skriptni jezik}. Programski jezik koji je dizajniran dijelom za  skriptiranje,   pisanja tipa programa koji se koristi za automatizaciju zadataka, kao što je izvođenje niza naredbi ili manipulaciju podacima. Skriptni jezici se obično interpretiraju, a ne kompajliraju, što znači da se izvorni k\^od može izvršiti direktno, bez prethodnog prevođenja u mašinski k\^od.  	Jezici za skriptiranje se često koriste za   automatizacija zadataka koji se ponavljaju, pisanje malih potpornih programa ili ugra\-đivanje funkcionalnosti u drugim aplikacijama. Jedna od glavnih pre\-dnosti skriptnih jezika je njihova jednostavnost upotrebe i fleksibilnost.
+	\item Pajton posjeduje \textit{automatsko čišćenje memorije} (eng. \textit{garbage--collected} language).  Pajton automatski upravlja   identifikovanjem i oslobađanjem memorije koju program više ne koristi.  Oslobađena memorija  stavljanja se na raspolaganje drugim dijelovima programa za korištenje.   Ovaj mehanizam omogućuje  programerima  da se usredotoče na pisanje k\^oda bez vođenja brige o ručnom dodeljivanju i oslobađanju memorije (dok to nije slučaj, recimo, u programskom jeziku $C$).
 \end{itemize}
 
 \section{Pregled ugrađenih tipova podataka}
 
-Pajton nudi nekoliko \textit{ugrađenih} (eng. \textit{built-in}) tipova podataka koji su dio osnovnog jezika. Oni su dostupni bez potrebe za dodatnom instalacijom ili bibliotekama. Među ugrađeni tipovima podataka (koji predstavljaju klase), od naročite važnosti su sljedeći tipovi:
+Pajton nudi nekoliko \textit{ugrađenih} (eng. \textit{built-in}) tipova podataka koji su dio osnovnog jezičkog paketa. Oni su dostupni bez potrebe za dodatnom instalacijom ili bibliotekama. Među ugrađenim tipovima podataka (koji predstavljaju klase), od naročite važnosti su naredni tipovi. 
 
 \begin{itemize}
 	\item  numerički tipovi: \texttt{int}, \texttt{float}, \texttt{complex};
@@ -73,7 +71,7 @@ Više o cjelobrojnim i stringovnim tipovima podataka biće riječi u nastavku. \
 Pajton je objektno-orjentisani jezik, gdje se svaka varijabla tretira kao objekat neke klase.  
 Objekti koji su varijable sa cjelobrojnom vrijednošću se tretiraju kao objekat tipa \texttt{int}. Dalje, varijabla koja je referencirana na string se tretira kao objekat tipa \texttt{str}.  Inače, gledajući memorijsku organizaciju, prosto govoreći, varijable pretstavljaju reference na memorijsko mjesto gdje je upisan sadržaj na koji referenciraju.  
 %https://www.analyticsvidhya.com/blog/2021/05/why-you-should-avoid-using-python-lists/
-Detaljnije, pajtonov interpreter (o kome će biti više riječi u nastavku) je   napisan u \textit{C}-u, pa su svi pajtonovi objekti prikrivena verzija \textit{C} struktura, stoga  sadrže ne samo svoju vrijednost, već i druge informacije. Objekat ne predstavlja samo sirovi cijeli broj (ili string ili drugi tip podatka), već pokazivač na složenu \textit{C} strukturu (npr. \texttt{PyLongObject}) koja sadrži nekoliko vrijednosti. Ako istražimo dublje, možemo vidjeti kako ova \textit{C} struktura izgleda.
+Detaljnije, pajtonov interpreter (o kome će biti više riječi u nastavku) je   napisan u \textit{C}-u, pa su svi pajtonovi objekti prikrivena verzija \textit{C} struktura, stoga  sadrže ne samo svoju vrijednost, već i druge informacije. Objekat ne predstavlja samo sirovi cijeli broj (ili string ili drugi tip podatka), već pokazivač na složenu \textit{C} strukturu (npr. \texttt{PyLongObject}) koja sadrži nekoliko vrijednosti (atributa). Ako istražimo dublje, možemo vidjeti kako ova \textit{C} struktura izgleda.
 
 \begin{minted}{C}
 	struct _longobject {
@@ -91,7 +89,7 @@ gdje je
     \item  \textit{ob\_digit} -- čuva stvarnu vrijednost koju varijabla predstavlja.
 \end{enumerate}
 
-Sve ove dodatne informacije iziskuju   dodatne troškove u smislu memorijskih i računarskih resursa. Stoga je pajtonov  objekat (nekog tipa podatka)  ništa drugo nego pokazivač na poziciju u memoriji koja sadrži sve informacije o toj varijabli, uključujući količinu memorije sa stvarnom vrijednošću   tog tipa.  Dakle, sve ove dodatne informacije su ono što omogućuje da slobodno kodiramo u pajtonu, bez vođenja brige o tipovima podataka varijabli. Ipak, navedimo da se tip varijable može eksplicitno dodijeliti, kao u narednom primjeru
+Sve ove informacije iziskuju   dodatne troškove u smislu memorijskih i računarskih resursa. Stoga pajtonov  objekat (nekog tipa podatka) predstavlja  ništa drugo nego pokazivač na poziciju u memoriji koja sadrži sve informacije o toj varijabli, uključujući količinu memorije sa stvarnom vrijednošću   tog tipa.  Dakle, sve ove dodatne informacije su ono što omogućuje da slobodno kodiramo u pajtonu, bez vođenja brige o tipovima podataka varijabli. Ipak, navedimo da se tip varijable može eksplicitno dodijeliti, kao u narednom primjeru
 \begin{minted}{python}
 	 x: str = "abc" 
 	 y: int = 23
@@ -127,7 +125,7 @@ dobijamo sljedeći prikaz
 	\centering
 	\includegraphics[width=140pt,height=100pt]{slike/vars_different_assigned.png}
 \end{figure}
-Konačno, ako postavimo y na novu vrijednost, tj.
+Konačno, ako postavimo $y$ na novu vrijednost, tj.
 \begin{minted}{python}
 	x = "Text" 
 \end{minted}
@@ -138,7 +136,7 @@ imamo odgovarajuću sliku
 	\includegraphics[width=140pt,height=100pt]{slike/varX_different_assigned.png}
 \end{figure}
 
-Primijetimo da na memorijsko mjesto gdje je broj 42 bio upisan ne pokazuje niti jedan pokazivač.  Pajton koristi tehniku zvanu \textit{brojač referenci} (atribut \textit{ob\_refcnt}) za upravljanje memorijom. Za svaki objekt, uključujući i složenije strukture kao što su kolekcije, vezuje se jedan broj referenci koji prati broj referenci na objekt. Kada referentni broj postene nula, objekt se briše iz memorije uz pomoć sakupljača otpadaka (eng. \textit{garbage collector}).
+Primijetimo da na memorijsko mjesto gdje je broj 42 bio upisan ne pokazuje niti jedan pokazivač.  Pajton koristi tehniku zvanu \textit{brojač referenci} (atribut \textit{ob\_refcnt}) za upravljanje memorijom. Za svaki objekt, uključujući i složenije strukture kao što su kolekcije, vezuje se jedan brojač referenci koji prati broj referenci na objekt. Kada referentni broj postene nula, objekt se briše iz memorije uz pomoć sakupljača otpadaka (eng. \textit{garbage collector}).
 
 Sakupljač otpadaka   povremeno skenira hip u potrazi za objektima sa referentnim brojem nula te ih briše   iz memorije. Na ovaj način se osigurava brisanje i u slučaju  ako postoje kružne reference, gdje dva ili više objekata referenciraju jedan na drugog.
 
@@ -150,7 +148,7 @@ Očitavanje broja memorijske ćelije te heksadekadnog broja na koju pokazuje var
 %https://insideaiml.com/blog/Python-Memory-Management-1176 ==> procitati: BITNO 
  Napomenimo da se ispisivanje rezultata na ekranu vrši pomoću naredbe \emph{print}(). Poruka može biti string ali i bilo koji drugi objekat. Svaki objekat će biti konvertovan u string prije nego što se ispiše na ekran. Ukoliko konverzija nije moguća, javiće se poruka o greški. 
  
- Pisanje komentara u jeziku Pajton je realizovano na više načina: jednolinijski i multilinijski. Jednolinijski komentari počinju sa simbolom tab (\#), nakon čega slijedi opis komentara. U slučaju višelinijskog komentara, početak komentara počinje i završava sa tri uzastopna apostrofa, koji se moraju pravilno uravnati (sa ostatkom k\^oda), da ne bi došlo do pojave sintaksne greške.  
+ Pisanje komentara u jeziku Pajton je realizovano na više načina, preko jednolinijskih i multilinijskih komentara. Jednolinijski komentari počinju sa simbolom tab (\#), nakon čega slijedi opis komentara. U slučaju višelinijskog komentara, početak komentara počinje i završava sa tri uzastopna apostrofa, koji se moraju pravilno uravnati (sa ostatkom k\^oda), da ne bi došlo do sintaksne greške.  
  
 
 
@@ -167,7 +165,7 @@ Slijede primjeri inicijalizacije ovakvih tipova.
 	w = -0.325   # float-point number
 \end{minted}
 
-Nad ovim numeričkim tipovima  je moguće primjenjivati razne aritmetičke operacije, koje su manje-više sintaksno i semantnički iste kao i kod većine ostalih programskih jezika. Napomenimo jednu suštinsku razliku, a to je operator '/' koji podrazumijeva realno dijeljenje, dok '//' označava cjelobrojno dijeljenje. Npr. 5/2 vraća rezultat 2.5, dok 5//2 vraća 2.  
+Nad ovim numeričkim tipovima  je moguće primjenjivati razne aritmetičke operacije, koje su manje-više sintaksno i semantnički iste kao i kod većine ostalih programskih jezika. Napomenimo jednu suštinsku razliku, a to je operator '/' koji podrazumijeva realno dijeljenje, dok '//' označava cjelobrojno dijeljenje u jeziku Pajton. Npr. 5/2 vraća rezultat 2.5, dok 5//2 vraća 2.  
 
 Pored ovih osnovnih aritmetičkih operacija, postoje i druge ugrađene funkcije i metode koje se mogu koristiti sa \texttt{int} i \texttt{float} vrijednostima, kao što su \textit{abs}(), \textit{round}(), \textit{min}(), \textit{max}(), itd.
 
@@ -199,6 +197,7 @@ Prije toga, u Tabeli~\ref{fig: operatori_poredjenja} navodimo osnovne operatore 
 \begin{table}
 		\caption{Osnovni operatori poređenja u Pajtonu.}	\label{fig: operatori_poredjenja}
 	\hline
+	\centering
 	\begin{tabular}{lll}
 		Matematička notacija & Pajtonova notacija & Značenje \\ \hline
 		$a < b$              &  $a < b$           & $a$ je manje od $b$ \\
@@ -220,7 +219,7 @@ Sintaksa bazne naredbe \texttt{if} (sa neobaveznom alternativom) je data sa:
         naredba_2
 \end{minted}
 
-Tok naredbe je sljedeći: ako je \emph{uslov} ispunjen, izvršava se \textit{naredba\_1} (koja može da bude i blok naredbi), inače se izvršava blok \textit{naredba\_2}. Primijetimo pravila uvlačenja ili indentacije (eng. \textit{indentation}) k\^oda pod \texttt{if} blokom koja se moraju poštovati kao sintaksno pravilo. Nakon izvršavanja jedne od naredbi, program izlazi iz ugnježdenog bloka \texttt{if} naredbe, te prelazi na izvršavanje sljedeće naredbe po redu u programu. Kao i u svakom programskom jeziku, t\^ok izvršavanja naredbi ide  odozgo prema dolje. Primijetimo da prethodna sintaksa za \texttt{if} ima samo dvije alternative. \texttt{If} komande koje dozvoljavaju više alternativa su date sljedećim k\^odom. 
+Tok naredbe je sljedeći: ako je \emph{uslov} ispunjen, izvršava se \textit{naredba\_1} (koja može da bude i blok naredbi), inače se izvršava blok \textit{naredba\_2}. Primijetimo pravila uvlačenja ili indentacije (eng. \textit{indentation}) k\^oda pod \texttt{if} blokom koja se moraju poštovati kao sintaksno pravilo. Nakon izvršavanja jedne od naredbi, program izlazi iz ugnježdenog bloka \texttt{if} naredbe, te prelazi na izvršavanje sljedeće naredbe po redu u programu. Kao i u svakom programskom jeziku, t\^ok izvršavanja naredbi ide  odozgo prema dolje. Primijetimo da prethodna sintaksa za \texttt{if} ima samo dvije alternative. \texttt{If} komande sa više alternativa su date sljedećim k\^odom. 
 
  \begin{minted}{python}
  	if uslov_1:
@@ -234,11 +233,11 @@ Tok naredbe je sljedeći: ako je \emph{uslov} ispunjen, izvršava se \textit{nar
  	    naredba_n
  \end{minted}
 
-Program provjerava redom uslove krenuvši od prvog. U slučaju da se naiđe na  uslov koji je tačan, izvršavaju se odgovarajuće naredbe (u sklopu ugnježdenog  bloka), te program  nastavlja sa izvršavanjem prve naredne naredbe poslije \texttt{if} naredbe pod istim bloku. U slučaju da niti jedan od uslova nije tačan, izvršava se \emph{naredba\_n} (ulazi u ugniježdeni blok pod \textit{else} komandom). Nakon toga, izlazi se iz \texttt{if} bloka te program nastavlja sa prvom narednom naredbom pod istim blokom (uravnanjem).  
+Program provjerava redom uslove krenuvši od prvog. U slučaju da se naiđe na  uslov koji je tačan, izvršavaju se odgovarajuće naredbe (u sklopu ugnježdenog  bloka), te program  nastavlja sa izvršavanjem prve naredne naredbe pod istim uravnanjem kao i \texttt{if} naredba. U slučaju da niti jedan od uslova nije tačan, izvršava se \emph{naredba\_n} (ulazi se u ugniježdeni blok pod \textit{else} komandom). Nakon toga, izlazi se iz \texttt{if} bloka te program nastavlja sa prvom narednom naredbom pod istim blokom (uravnanjem).  
 
 \subsection{For i While petlje }
 
-Petlje se koriste za iterativno izvršavanje bloka k\^oda, sve dok se ne ispuni određeni uslov (prekida). Pajton sadrži dvije vrste petlji: \texttt{for} i \texttt{while} petlja.
+Petlje se koriste za iterativno izvršavanje bloka k\^oda, sve dok se ne ispuni određeni uslov (prekida). Pajton sadrži dvije vrste petlji, \texttt{for} i \texttt{while} petlje.\\ 
 
 Petlja \texttt{for} se može koristiti  za iterisanje kroz nizovne objekte (kao što je lista, torka, ili string) ili duge iterabilne objekte (rječnici i skupovi).
 
@@ -255,7 +254,7 @@ Sintaksa za petlju \texttt{while} je data sa:
     while uslov:
 	  naredba # blok koda koji se izvršava
 \end{minted}
-\emph{Uslov} podrazumijeva bulov izraz, koji se provjerava prije svakog izvršavanja blok koda \emph{naredba}, koja se potom izvršava ukoliko izraz \emph{uslov} vraća vrijednost  \emph{True}, inače se izlazi iz petlje i tok izvršavanja programa seli na prvu narednu naredbu u programu na istom nivou ugnježdnja kao i \texttt{while} petlja. 
+\emph{Uslov} podrazumijeva bulov izraz, koji se provjerava prije svakog izvršavanja blok koda \emph{naredba}, koja se potom izvršava ukoliko izraz \emph{uslov} vraća vrijednost  \emph{True}, inače se izlazi iz petlje i tok izvršavanja programa seli na prvu narednu naredbu u programu sa istim nivoom ugnježdnja kao i \texttt{while} petlja. 
 
 Npr. ispisivanje prvih 10 parnih cijelih brojeva pomoću \textit{while} petlje se dobija izvršavanjem sljedećeg k\^oda.
 
@@ -290,7 +289,7 @@ Višelinijski stringovi se kreiraju koristeći trostruke navodnike.
 
 \textit{Metode}.
 \begin{itemize}
-	\item Konkatenacija stringova se realizuje pomoću operatora '+'. 
+	\item Konkatenacija (spajanje) stringova se realizuje pomoću operatora '+'. 
 	\item Pristupanje karakterima stringa je obezbjeđeno operatorom '[]'. Karakteri stringova su indeksirani brojevima $0, 1,\ldots$ idući od početka stringa ka njegovom kraju, ili sa $-1, -2,\ldots$ idući sa kraja stringa ka početku  (reverzno). 
 	\item Rezanje stringa (eng. \textit{slicing}) se realizuje sa `[:]' na sljedeći način:
 	\begin{minted}{python}
@@ -305,7 +304,7 @@ Višelinijski stringovi se kreiraju koristeći trostruke navodnike.
     \item Postoji mnogo pomoćnih funkcija koje nabrajamo ovdje bez detalja: \textit{lower}(), \textit{upper}(), \textit{strip}(), \textit{replace}(), \textit{find}(), itd. 
 \end{itemize}
 
-\textit{Memorijska organizacija}. Objekat tipa \texttt{str} je predstavljen nizom Unicode karaktera koji je smješten u neprekidnom bloku memorije. Svaki karakter u tom nizu je predstavljen brojem (kodom) tog karaktera u Unicode standardu. Svaki takav k\^od je predstavljen fiksnim brojem bajtova, u zavisnosti od platforme, što je obično ili 2 ili 4 bajta. %Stringovi se često prosljeđuju kao reference na originalni stringovni objekat. %U prevodu,   ako dvije varijable referenciraju na isti string, promjene koje su napravljene putem jedne varijable vidljive su takođe putem druge varijable.
+\textit{Memorijska organizacija}. Objekat tipa \texttt{str} je predstavljen nizom Unicode karaktera koji je smješten u neprekidnom bloku memorije. Svaki karakter u tom nizu je predstavljen brojem (k\^odom) tog karaktera u Unicode standardu. Svaki takav k\^od je predstavljen fiksnim brojem bajtova, u zavisnosti od platforme, što je obično ili 2 ili 4 bajta. %Stringovi se često prosljeđuju kao reference na originalni stringovni objekat. %U prevodu,   ako dvije varijable referenciraju na isti string, promjene koje su napravljene putem jedne varijable vidljive su takođe putem druge varijable.
 
 	\begin{figure}
 	\centering
@@ -327,13 +326,8 @@ Definicija odgovarajuće \textit{C} strukture za pajtonov \texttt{str} objekt iz
 	} PyUnicodeObject;
 \end{minted}
 
-Polje ob\_shash se koristi za pohranjivanje keširane vrijednosti niza, a tip Py\_UNICODE se koristi za predstavljanje Unicode znakova u procesu interpretacije programa. %U Pajtonu 3.x, Py\_UNICODE je ekvivalentan ugrađenom tipu \texttt{str} i definisan je kao 2-bajtni ili 4-bajtni neoznačeni cijeli broj.  %u zavinosti od toga kako je Python izgrađen.
- 
-Jednostavno rečeno, string  pohranjuje  podatke kao neprekidni niz Unicode znakova. %, sa null-terminatorom na kraju. 
-Struktura PyUnicodeObject sadrži pokazivač na ove podatke.
-
-
-Kada se objekt tipa \texttt{str} kreira, prvo se memorija dodjeljuje nizu, a potom se inicijalizuju i metapodaci. Pri nizovnoj manipulaciji, interni bafer se eventualno mijenja kako bi se prilagodio novim podacima.  %Objekt \texttt{str} je   optimiziran za dijeljenje, kako je već napomenuto. %Preciznije, ako više \texttt{str} objekata sadrži iste znakovne podatke, oni mogu dijeliti isti interni bafer podataka radi uštede memorije. 
+Polje ob\_shash se koristi za pohranjivanje keširane vrijednosti niza, a tip Py\_UNICODE se koristi za predstavljanje Unicode znakova u procesu interpretacije programa.   Jednostavno rečeno, string  pohranjuje  podatke kao neprekidni niz Unicode znakova. %, sa null-terminatorom na kraju. 
+Struktura PyUnicodeObject sadrži pokazivač na ove podatke. Pri kreiranju objekta tipa \texttt{str}, prvo se memorija dodjeljuje nizu, a potom se inicijalizuju i metapodaci. Pri nizovnoj manipula\-ciji, interni bafer se eventualno mijenja kako bi se prilagodio novim podacima.  %Objekt \texttt{str} je   optimiziran za dijeljenje, kako je već napomenuto. %Preciznije, ako više \texttt{str} objekata sadrži iste znakovne podatke, oni mogu dijeliti isti interni bafer podataka radi uštede memorije. 
  Za stringove je vezan i proces   \textit{interniranja stringova} što označava ponovnu upotrebu postojećih stringovnih objekata umjesto stvaranja novih sa istom vrijednošću. Ovaj proces se izvodi   globalnim keširanjem string objekata i provjerom    keš memorije prije kreiranja novog string objekta. Ako string objekt sa istom vrijednošću već postoji u kešu, taj string (pokazivač ka istom) se vraća umjesto kreiranja novog objekta. Ovaj proces štedi memoriju i poboljšava performanse programa, posebno kada se radi sa većim brojem manjih stringovnih objekata.
 
 
@@ -343,7 +337,7 @@ Potoji nekoliko opcija za ispisivanje rezultata na ekranu koristeći ugrađene s
 print("Moje ime je {0} a prezime {1}".format("Marko", "Marković")) 
 # metoda ugradjivanja
 \end{minted}
-Na mjesto $\{0\}$ dolazi prva vrijednost u fukciji \textit{format}, dok na mjesto $\{1\}$ dolazi druga  vrijednost prosljeđena toj funkciji.  
+Na mjesto $\{0\}$ dolazi prva vrijednost u fukciji \textit{format}, dok na mjesto $\{1\}$ dolazi druga  vrijednost proslijeđena toj funkciji.  
 
 Još jedan metod ispisa se realizuje pomoću formatiranih stringova (tzv. $f$-strings) kao u sljedećem primjeru:
 \begin{minted}{python}
@@ -363,12 +357,12 @@ Lista je nehomogena, uređena, indeksirana i promjenljiva kolekcija elemenata. U
 	 lista2 = list(("abc", "sef", 2))
 \end{minted}
 
-\textit{Osnovne metode}.   
+\textit{Osnovne metode} su date u nastavku.   
 
 \begin{itemize}
 	\item Operator [$index$]: vraća element liste na poziciji \textit{index} (prvi element liste indeksiran sa 0); 
 	\item Operator otkidanja \textit{[indeks1 : indeks2 : k]}: vraća (novu) listu uzimajući svaki \textit{k}-ti  element date liste  krenuvši sa elementom na poziciji \textit{indeks1} (0 ako nije naveden),  pa sve do elementa sa indeksom \textit{indeks2} (dužina liste, ako nije naveden) isključno; 
-	\item Operator \textit{in}: ispituje da li je element u listi -- vraća \emph{True} ili \emph{False};
+	\item Operator \textit{in}: ispituje da li se element nalazi u listi -- vraća \emph{True} ili \emph{False};
 	\item \texttt{for} $x$ in \emph{lista}: iterisanje kroz listu prema indeksu; 
 	\item \textit{append(elem)}: dodaje se element na kraj liste;
 	\item  \textit{remove(elem)}: briše element \textit{elem} iz liste;
@@ -385,8 +379,8 @@ Lista je nehomogena, uređena, indeksirana i promjenljiva kolekcija elemenata. U
 	\centering
 	\includegraphics[width=300pt,height=160pt]{slike/img-list-tuple.png}   %list_mem_org.png}
 
-	\caption{Liste u pajtonu: memorijska organizacija i poređenje sa organizacijom torki.} 	\label{fig: mem_list_org}
-\end{figure}
+	\caption{Liste u pajtonu: memorijska organizacija.} 	\label{fig: mem_list_org}
+\end{figure}%i poređenje sa organizacijom torki.
 
 
 %\begin{figure}[!ht]
@@ -404,7 +398,7 @@ Lista je nehomogena, uređena, indeksirana i promjenljiva kolekcija elemenata. U
 Da bi se elementi liste automatski obrisali od strane pajtonovog sakupljača otpadaka, listi je potrebno dodijeliti \texttt{None} vrijednost.  U tom slučaju, svi elementi liste koji nemaju drugih (aktivnih) pokazivača koji pokazuju na date elemente se automatski brišu iz memorije. 
 
 %https://www.analyticsvidhya.com/blog/2021/05/why-you-should-avoid-using-python-lists/
-\textit{Dodatne napomene}. Kao što smo napomenuli, za razliku od nizova u programskom jeziku $C$, liste mogu biti heterogene. Međutim, ova fleksibilnost je prilično skupa. Da bi lista bila heterogena, svaki od elemenata liste mora sadržavati informaciju o vlastitom tipu, broju referenci, stvarnu vrijednost na koju pokazuje itd. Drugim riječima, svaka stavka je kompletan pajtonov objekat. Dakle, ako   dalje raščlanimo, lista u pajtonu sadrži pokazivač koji   pokazuje na   blok pokazivača, a unutar svakog bloka,  pokazivači redom pokazuju na odvojeni (puni) pajtonov objekat.  Ako su sve varijable istog tipa, većina ovih informacija postaje suvišna. Alternativa u takvom slučaju je korištenje \textit{array} ugrađenog tipa, o kojem više govorimo u sljedećem odjeljku.   %poput onog koji smo vidjeli ranije. %% Ovo je kao jedna velika lutka!
+\textit{Dodatne napomene}. Kao što smo napomenuli, za razliku od nizova u programskom jeziku $C$, liste mogu biti heterogene. Međutim, ova fleksibilnost je prilično skupa. Da bi lista bila heterogena, svaki od elemenata liste mora sadržavati informaciju o vlastitom tipu, broju referenci, stvarnu vrijednost na koju pokazuje itd. Drugim riječima, svaka stavka je kompletan pajtonov objekat. Dakle, ako   dalje raščlanimo, lista sadrži pokazivač koji   pokazuje na   blok pokazivača, a unutar svakog bloka,  pokazivači redom pokazuju na odvojeni (puni) pajtonov objekat.  Ako su sve varijable istog tipa, većina ovih informacija postaje suvišna. Alternativa u takvom slučaju je korištenje \textit{array} ugrađenog tipa, o kojem više govorimo u sljedećem odjeljku.   %poput onog koji smo vidjeli ranije. %% Ovo je kao jedna velika lutka!
 
 \subsection{Nizovi: modul Array}
 
@@ -455,8 +449,7 @@ print(my_array[2])  # Output: 3
 \item Funkcije \textit{append}(), \textit{extend}(),  \textit{insert}(), \textit{remove}() i \textit{pop}():  imaju istu ulogu kao i odgovarajuće funkcije u listi. Pogledajmo primjer sa \textit{extend}(): 
 \begin{minted}{python}
 floats = array('f', [2.0, 3.2, 1.4 ])
-
-tuple_floats = (1.1, 4.1, 5.2, 9.0)
+list_floats = [1.1, 4.1, 5.2, 9.0]
 
 floats.extend(tuple_floats) # dodavanje (kolekcije) elemenata
 \end{minted} 
