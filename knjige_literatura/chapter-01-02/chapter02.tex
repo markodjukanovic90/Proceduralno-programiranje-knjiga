@@ -587,9 +587,9 @@ U nastavku slijedi nekoliko saveta u vezi prakse pisanja ``dobrog''  pseudokoda.
 \begin{example} Napisati pseudokod za nalazak najvećeg elementa u nizu. \\
  \begin{minted}{C}
  Inicijalizuj najveći broj na prvi element niza.
- Proći sve preostale elemente niza: 
+ Proći elemente niza jedan po jedan: 
     Ako je trenutni element veći od trenutno najvećeg broja,
-    postavi trenutni element kao novi najveći broj.
+    postavi trenutni element za novi najveći.
  Kraj petlje.
  Ispiši najveći broj.
  \end{minted}
@@ -636,7 +636,7 @@ U nastavku navodimo (koncizniji) pseudokod, koji rješava problema nalaska podni
 
 \section{O valjanosti algoritma}
 
-Postoji nekoliko načina da se formalno provjeri valjanost algoritama. Izdvajau se tri osnovna načina:
+Postoji nekoliko načina da se formalno provjeri valjanost algoritama. Izdvajaju se tri osnovna načina:
 
 \begin{itemize}
 	\item \textit{Matematički dokaz}. Predstavlja jedan od najrigoroznijih načina za provjeru valjanosti algoritma.  %je matematički pokazati da algoritam uvijek daje ispravan izlaz. 
@@ -679,11 +679,10 @@ Demonstrirajmo   pokazivanje ispravnosti programa za nalazak \textit{najvećeg z
    \caption{NZD dva broja.} \label{alg:nzd}
 \end{algorithm}
 
-Ovaj program je konačan, jer je broj iteracija u glavnoj \emph{while}-petlji najviše $nzd$, dok je broj instrukcija u svakoj iteraciji takođe konačan (jednak 6+2=8{\tiny }). Dalje, odredimo uslov invarijantne petlje. Neka je ${nzd}^*$ konačan rezultat koji program vraća (koji je zasigurno zajednički djelilac, po uslovu prekida petlje). Tada  invarijantnu petlju definišemo sa 
-$$ nzd^* \leq nzd.$$
+Ovaj program je konačan, jer je broj iteracija u glavnoj \emph{while} petlji najviše jednak $nzd$, dok je broj instrukcija u svakoj iteraciji takođe konačan (iznosi 6+2=8{\tiny }). Odredimo uslov invarijantne petlje. Neka je ${nzd}^*$ rezultat izvršavanja  programa, dakle rješenje za date ulaze (koji je zasigurno zajednički djelilac, po uslovu prekida petlje). Tada  invarijantnu petlju definišemo sa uslovom $$ nzd^* \leq nzd.$$
 
 Prije ulaska u prvu iteraciju petlje vrijedi $nzd^* \leq nzd = d_0 = \min(n, m)$. 
-Pretpostavimo da prije izvršavanja $k$-te iteracije petlje vrijedi $d_{k-1} = nzd$. Tada je  $nzd^* < d_{k-1}$ jer  ulaskom u $k$-tu iteraciju petlje znamo da $d_{k-1}$ ne može biti NZD ulaznih brojeva. Tada imamo $d_{k} = d_{k-1} -1 \geq nzd^*$ nakon završetka $k$-te iteracije, čime je uslov invarijantne petlje i tada zadovoljen.   Pretpostavimo da se u iteraciji $k^*$ program prekida. To znači da je $d_{k^*-1}$ zasigurno zajednički djelilac. Kako tražimo najveći takav, onda je i $d_{k^*-1} \leq nzd^*$. S obzirom da je  $d_{k^*-1} \geq nzd^*$ zbog uslova invarijantne petlje, slijedi da je 
+Definišimo sa $d_{k-1} = nzd$  prije izvršavanja $k$-te iteracije. Tada je  $nzd^* < d_{k-1}$ jer  ulaskom u $k$-tu iteraciju petlje znamo da $d_{k-1}$ ne može biti NZD ulaznih brojeva. Imamo $d_{k} = d_{k-1} -1 \geq nzd^*$ nakon završetka $k$-te iteracije, čime je uslov invarijantne petlje i tada zadovoljen.   Pretpostavimo da se u iteraciji $k^*$ program prekida. To znači da je $d_{k^*-1}$ zasigurno zajednički djelilac. Kako tražimo najveći takav, onda je i $d_{k^*-1} \leq nzd^*$. S obzirom da je  $d_{k^*-1} \geq nzd^*$ zbog uslova invarijantne petlje, slijedi da je 
 $d_{k^*-1} = nzd^*$, čine smo pokazali valjanost algoritma.
 \end{example}
 Pokazivanje valjanosti kompleksnih algoritama pomoću metoda invarnijantne petlje je rijetko  praktično. Jedan od razloga je taj što definisanje samog uslova invarijantnosti nije trivijalan zadatak, a instrukcije koje se izvršavaju u svakoj iteraciji obično su daleko od trivijalnih  (kao što je to slučaj sa prethodnim programom), te mogu uključivati  pozivanje složenijih pomoćnih funkcija. U takvim slučajevima, valjanost algoritma provjeravamo empirijski, izvršavajući ga nad instancama različitih veličina i distribucija te provjeravajući  validnost vraćenih rezultata (za instance za koje znamo tačan rezultat, dok za one za koje ne znamo, provjeravamo ispunjivost uslova zadatka). 
@@ -708,9 +707,9 @@ Klasični algoritam za nalazak NZD je Euklidov algoritam, dat Algoritmom~\ref{al
 \begin{example}
 	Prvo izvedimo korake algoritma na konkretnoj instanci. Neka je $p=400$, a $q=24$. Tada imamo korake:
 	$$(400, 24) \rightarrow (24, 16) \rightarrow (16, 8) \rightarrow (8, 0),$$
-	odakle slijedi da je NZD$(400, 24)=8$. Za razliku od naivnog algoritma za nalazak NZD iz prethodnog poglavlja, koji bi za ovu instancu izveo 17 iteracija do nalaska rješenja, vidimo da za Euklidov algoritam treba svega 3 iteracije da nađe tačno rješenje. 
+	odakle slijedi da je NZD$(400, 24)=8$. Za razliku od naivnog algoritma za nalazak NZD iz prethodnog poglavlja, koji bi za ovu instancu izveo 17 iteracija do nalaska rješenja, vidimo da za Euklidov algoritam treba svega 3 iteracije da bi našao tačno rješenje. 
 	
-	Prvo, Euklidov algoritam je konačan, jer je broj iteracija ograničen sa $\min(p, q)$. Drugo, algoritam ne zavisi direktno od veličine ulaza (koji je konstantan, tj. veličine $2=|\{p, q\}|$), već od veličine brojeva, ili dužine binarne reprezentacije (dekadnih) brojeva u ulazu. Ako je $p$ broj u dekadnom zapisu, dužina njegovog binarnog zapisa jednaka je $\lfloor \log_2(p) \rfloor+1$. Dalje, označimo sa $n_1$   broj bitova u zapisu broja $p$, a sa $n_2$  broj bitova u zapisu broja $q$. 
+	Prvo, Euklidov algoritam je se izvršava u konačnom broju itetracija, jer je ograničen sa $\min(p, q)$. Drugo, algoritam ne zavisi direktno od veličine ulaza (koji je konstantan, tj. veličine $2=|\{p, q\}|$), već od veličine brojeva, ili dužine binarne reprezentacije (dekadnih) brojeva u ulazu. Ako je $p$ broj u dekadnom zapisu, dužina njegovog binarnog zapisa jednaka je $\lfloor \log_2(p) \rfloor+1$. Dalje, označimo sa $n_1$   broj bitova u zapisu broja $p$, a sa $n_2$  broj bitova u zapisu broja $q$. 
 	Tada je
 	$$n_1 \approx \log_2(p), n_2 \approx \log_2(q),  n = n_1 + n_2 = \log_2(p \cdot q ).$$
 	
@@ -718,7 +717,7 @@ Klasični algoritam za nalazak NZD je Euklidov algoritam, dat Algoritmom~\ref{al
 	ta dva broja.  
 	Dakle, imamo $T(n)  = \Omega(q) = \Omega(2^{n_2}) =  \Omega(2^{n/2})$.
 	
-	U svrhu pokazivanja složenosti, iskoristimo sljedeću teoremu, koju i formalno dokazujemo. 
+	U svrhu pokazivanja složenosti, iskoristimo sljedeću teoremu, koju formalno dokazujemo. 
 	\begin{theorem}
 		 Za svaka dva broja $p$ i $q$ vrijedi
 		 $$ x \% y \leq x / 2.$$
@@ -759,10 +758,10 @@ Primijetimo da je prostorna složenost Euklidovog algoritma konstanta, tj. jedna
 \end{example}
 
 
-Napomenimo da valjanost Euklidovog algoritma slijedi iz algebarskog svojstva da je skup djelilaca brojeva $p$ i $q$, jednak skupu djelilaca brojeva $q$ i $p\%q$, pa su stoga transformacije parova brojeva za koje se razmatra NZD u svakom koraku validne, dok se ne dođe od trivijanog slučaja, tj. dok drugi broj ne bude jednak nuli, čime se vraća vrijednost prvog broja kao krajnji rezultat. 
+Napomenimo da se valjanost Euklidovog algoritma direktno izvodi  koristeći algebarsko svojstvo da je skup djelilaca brojeva $p$ i $q$, jednak skupu djelilaca brojeva $q$ i $p\%q$, pa su stoga transformacije parova brojeva u svakom koraku algoritma validne, dok se ne dođe do trivijanog slučaja, tj. dok drugi broj ne bude jednak nuli, čime se vraća vrijednost prvog kao krajnji rezultat. 
 
-Kako smo vidjeli, iako je Euklidov algoritam predstavljen relativno jednostavnim k\^odom, njegovu složenost nije trivijalno odrediti. Napomenimo da Euklidov algoritam predstavlja jedan vid rekurzivnog algoritma.  %, gdje rekurzija u tijelu funkcije poziva samu sebe, ali sa ulazom manje veličine. 
- U osnovi, za računanje složenosti ovakvog tipa algoritama, o kojima će biti više riječi u Glavi 3, koristi se poznata Master teorema. Ovu teoremu navodimo bez dokaza, uz napomenu da se ona navodi i formalno dokazuje na nekim od kurseva algoritmike na višim godinama studija. Mi ćemo je koristiti isključivo samo kao pomoćni alat u već pomenutoj Glavi 3, kod određivanja složenosti algoritama nekih problema koje budemo rješavali. 
+Kako smo vidjeli, iako je Euklidov algoritam relativno jednostavan, odrediti njegovu složenost nije trivijalno. Napomenimo da Euklidov algoritam predstavlja jedan vid rekurzivnog algoritma.  %, gdje rekurzija u tijelu funkcije poziva samu sebe, ali sa ulazom manje veličine. 
+ U osnovi, za računanje složenosti ovakvog tipa algoritama, o kojima će biti više riječi u Glavi 3, koristi se poznata Master teorema. Ovu teoremu navodimo bez dokaza, uz napomenu da se ona  formalno dokazuje na nekim od kurseva algoritmike na višim godinama studija. Mi ćemo je koristiti isključivo samo kao pomoćni alat u već pomenutoj Glavi 3, kod određivanja složenosti algoritama nekih problema koje budemo rješavali. 
 
 \begin{theorem}[Master teorema]
 	Neka je data jednačina 
@@ -796,10 +795,10 @@ Na sljedećim primjerima pokazujemo kako funkcioniše primjena Master teoreme. %
 
 \begin{example}
 	Neka je data sljedeća rekurzija:
-	$$T(n) = T(\frac{n}{2}) + cn, c >0.$$
+	$$T(n) = T\left(\frac{n}{2}\right) + c\cdot n, c >0.$$
 	
-	Imamo $a = 1, b = 2, f(n) = cn$, pa je 
-	$$f(n) = cn = n^{\log_b (a)} = n^{\log_2 (1) + \varepsilon} = n^{\varepsilon} \text{ za neki } \varepsilon \leq 1.$$
+	Imamo $a = 1, b = 2, f(n) = c \cdot n$, pa je 
+	$$f(n) = c \cdot n = n^{\log_b (a)} = n^{\log_2 1 + \varepsilon} = n^{\varepsilon} \text{ za neki } \varepsilon \leq 1.$$
 	
 	Na osnovu Master teoreme, slučaj 3, imamo % $$ah(\frac{n}{b}) = \frac{cn}{2} = \frac{1}{2}h(n)$$ 
 	%pa je 
