@@ -912,7 +912,7 @@ Postoji i niz drugih pomoćnih opštekorišćenih funkcija, koje ćemo pobrojati
 
 \textit{Modul} je datoteka koja sadrži Pajtonove definicije i naredbe. Naziv datoteke je naziv modula sa sufiksom .\textit{py}.
 
-Modul može sadržati različite definicije kao što su funkcije, klase i varijable, koje se mogu uvesti i koristiti u drugim Python skriptama ili modulima. Ovo olakšava organiziranje i ponovnu upotrebu k\^oda (eng.\ \emph{re-usability}) u različitim projektima.
+Modul može sadržati različite definicije kao što su funkcije, klase i varijable, koje se mogu uvesti i koristiti u drugim skriptama ili modulima. Ovo olakšava organiziranje i ponovnu upotrebu k\^oda (eng.\ \emph{re-usability}) u različitim projektima.\\
 
 Da bismo koristili modul u Pajtonu, prvo ga trebamo uvesti pomoću naredbe \texttt{import}. Npr. ako postoji modul pod nazivom \textit{mojmodul}.py, uvodimo  ga na sljedeći način:
 \begin{minted}{python}
@@ -936,14 +936,7 @@ Ovo će omogućiti direktno korištenje funkcije bez potrebe za tačaka notacijo
 mojafunkcija()
 \end{minted}
 
-Pajton dolazi s velikim brojem ugrađenih modula, među kojima izdvajamo \texttt{math}, \texttt{random}, \texttt{datetime}, \texttt{os} i \texttt{numpy} o kojima će biti riječi u nastavku ove sekcije. Ovi moduli se uključuju direktno sa instalacijom jezika Pajton.
- 
-%Napomenimo da se mogu kreirati i vlastite module koji prvenstveno služe da bolje organizovanje i reiskorištavanje vlastitog koda.
-
-%\subsection{Instaliranje eksternih modula} 
-
-
-Da bismo instalirali eksterne module u Pajtonu,   koristi se menadžer paketa \textit{pip}, koji dolazi direktno sa instalacijom Pajtona. Koraci za instaliranje eksternih modula pomoću \emph{pip}-a su dati u nastavku. 
+Pajton dolazi s velikim brojem ugrađenih modula, među kojima izdvajamo \texttt{math}, \texttt{random}, \texttt{datetime}, \texttt{os} i \texttt{numpy} o kojima će biti riječi u nastavku ove sekcije. Ovi moduli se uključuju direktno sa instalacijom jezika Pajton.  Da bismo instalirali eksterne module u Pajtonu,   koristi se menadžer paketa \textit{pip}, koji dolazi direktno sa instalacijom Pajtona. Koraci za instaliranje eksternih modula pomoću \emph{pip}-a su dati u nastavku. 
 
 Otvorimo terminalnu konzolu i upišimo naredbu \textit{pip install naziv\_modula}, gdje  \textit{naziv\_modula} (obično) odgovara nazivu  modula kojeg želimo instalirati. Npr. da bismo instalirali modul \textit{requests}, pišemo:
 \begin{minted}{python}
@@ -965,7 +958,7 @@ pip install requests==2.2.1
 
 \subsection{Modul Math}
 
-\texttt{Math} je modul koji služi za rad sa različitim matematičkim funkcijama i konstantama. Da bismo koristili matematički modul u svom programu, prvo morate uvesti pomoću naredbe \textit{import math}.
+\texttt{Math} je modul koji služi za rad sa različitim matematičkim funkcijama i konstantama. Da bismo koristili matematički modul u svom programu, prvo ga moramo uključiti pomoću naredbe \textit{import math}.
 
 Nakon što se uveze ovaj modul, omogućeno je korištenje njegovih funkcija i konstanti u k\^odu. Navedimo nekoliko konkretnih primjera. 
 
@@ -985,7 +978,7 @@ sin_angle = math.sin(45)
 print(sin_angle)  # Output: 0.7071067811865475
 \end{minted}
 
-Neke od češće korištenih metoda ovog modula su:   \textit{sqrt}(), \textit{pow}(), \textit{log}(), \textit{exp}(), \textit{log10}(), \textit{floor}(), \textit{ceil}(), \textit{fabs}(), \textit{gcd}(), \textit{dist}() – Euklidova udaljenost između dvije tacake (predstavljene kao torke, ili liste), \textit{isnan}(), \textit{sin}(), \textit{cos}(), \textit{tan}(), \textit{sinh}(), \textit{asin}(), među ostalim metodama.
+Neke od češće korištenih metoda ovog modula su:   \textit{sqrt}(), \textit{pow}(), \textit{log}(), \textit{exp}(), \textit{log10}(), \textit{floor}(), \textit{ceil}(), \textit{fabs}(), \textit{gcd}(), \textit{dist}() – Euklidova udaljenost između dvije tacake (predstavljene kao torke, ili liste), \textit{isnan}(), \textit{sin}(), \textit{cos}(), \textit{tan}(), \textit{sinh}(), \textit{asin}(), među ostalim metodama. \\
 
 U nastavku navodimo jednu od internih implementacija korjene funkcije \textit{sqrt}() broja $x\geq 0$. Ona je implementirana  korištenjem algoritma koji se zove \textit{Babilonova metoda}, poznata i pod nazivom Heronova metoda. Algoritam je numerička iterativna metoda koja aproksimira kvadratni korijen broja \textit{x} uzimajući prosjek prethodne aproksimacije i vrijednosti količnika broja $x$ i vrijednosti dobijene u prethodnoj aproksimaciji. Proces se nastavlja sve dok aproksimacija nije dovoljno precizna. Preciznije, primjeljuje se naredna rekurzija:
 \begin{center}
@@ -1010,16 +1003,16 @@ Navedimo neke osnovne funkcije ovog modula.
 
 Implementacija funkcije \textit{random}() u Pajtonu koristi algoritam generatora pseudo-slučajnih brojeva, koji je deterministički a generiše niz brojeva koji se čini slučajnim. Algoritam koji se koristi u funkciji \textit{random}() je algoritam \textit{Mersenne Twister},  široko korišten   za generiranje pseudo-slučajnih brojeva.
 
-Algoritam \textit{Mersenne Twister} generiše niz 32-bitnih cijelih brojeva koristeći specijalni linearni pomaknuti (eng. \textit{shift})  registar povratne sprege,  koji koristi operacije isključivanja (XOR) za generiranje izlaza. Algoritam koristi veliki prost broj koji se zove \textit{Mersenov} prost ($2^{19937}-1$) kao modul, koji osigurava da generisani niz ima dug period   i dobra statistička svojstva. Inače, algoritam su razvili Makoto Matsumoto i Takuji Nishimura 1997. godine. Drugi generator  koji se može koristi je prosti \textit{linerarni kongruentni generator} 
+Algoritam \textit{Mersenne Twister} generiše niz 32-bitnih cijelih brojeva koristeći specijalni linearni pomaknuti (eng.\ \textit{shift})  registar povratne sprege,  koji koristi operacije isključivanja (XOR) za generiranje izlaza. Algoritam koristi veliki prost broj koji se zove \textit{Mersenov} prost ($2^{19937}-1$) kao modul, koji osigurava da generisani niz ima dug period   i dobra statistička svojstva. Inače, algoritam su razvili Makoto Matsumoto i Takuji Nishimura 1997. godine. Drugi generator  koji se može koristi je prosti \textit{linerarni kongruentni generator} 
 koji generiše  slučajne brojeve po rekurziji
 $$ x_{n+1} = (a x_n + b)\ \%\ m $$
 gdje je $x_0$ početni sid vrijednosti između 0 i $m-1$. 
 
 \subsection{Modul Time}
 
-Modul  \texttt{time} je ugrađeni modul koji pruža razne funkcije povezane sa radom sa vremenom. Omogućuje   izvođenje raznih operacija, kao što su vraćanje trenutnog vremena, uspavljivanje procesa na određeno vrijeme,  pretvaranje formata vremena i još mnogo toga.
+Modul  \texttt{time} je ugrađeni modul koji pruža razne funkcije povezane sa radom sa vremenom. Omogućuje   izvođenje raznih operacija, kao što su vraćanje trenutnog vremena, zamrzavanje izvršenja procesa na određeno vrijeme,  pre\-tvaranje formata vremena i još mnogo toga.
 
-U nastavku navodimo najčešće korištene funkcije koje pruža ovaj modul:
+U nastavku navodimo najčešće korištene funkcije koje pruža ovaj modul. 
 \begin{itemize}
 	\item  \textit{time}(): Vraća trenutno vrijeme u sekundama od epohe (eng. epoch) (računa se kao datum 01.01.1970) kao float tip. 
 	\item \textit{sleep}(\textit{secs}): obustavlja izvršenje trenutne n\^iti na zadani broj sekundi \textit{secs}. 
@@ -1031,10 +1024,10 @@ U nastavku navodimo najčešće korištene funkcije koje pruža ovaj modul:
 
 \texttt{Os} modul   pruža mogućnost korištenja funkcionalnosti zavisne od operativnog sistema kao što je čitanje ili pisanje u sistem datoteka, upravljanje procesima, varijablama okruženja i mnogi drugim sistemskim zadacima.
 
-Nekih od najčešće korištenih funkcija koje pruža ovaj modul su:
+Nekih od najčešće korištenih funkcija koje pruža ovaj modul su date u nastavku.
 
 \begin{itemize}
-	\item name: Vraća naziv operativnog sistema (npr. `posix' za Linux i macOS, `nt' za Windows).
+	\item \textit{name}: Vraća naziv operativnog sistema (npr. `posix' za Linux i macOS, `nt' za Windows).
 	\item  \textit{getcwd}(): Vraća trenutni radni direktorij kao u obliku stringa.
 	\item  \textit{chdir}(\emph{path}): Mijenja trenutni radni direktorij na specificiranu stazu \emph{path}.
 	\item \textit{listdir}(\emph{path}): Vraća listu datoteka i direktorija u navedenom direktoriju.
@@ -1055,14 +1048,14 @@ Nekih od najčešće korištenih funkcija koje pruža ovaj modul su:
   \begin{itemize}
   	\item \emph{copy}($obj$): vrši ``površinsko'' (eng. \emph{shallow})  kopiranje objekta \emph{obj}. Dakle, kopira se samo referenca na objekte unutar originalnog objekta, ali ne i sami objekti. Ako objekat ima druge ugniježdene objekte u svojoj strukturi (npr. listu unutar liste), originalni i kopirani objekat će dijeliti iste reference nakon kopiranja. 
   	\begin{minted}{python}
-  	   import copy
+  	 import copy
   	   
-  	   originalna_lista = [1, [2, 3], 4]
-  	   kopirana_lista = copy.copy(originalna_lista)
-  	   # Izmjena unutar kopije utiče i na original
-  	   kopirana_lista[1][0] = 99
+  	 originalna_lista = [1, [2, 3], 4]
+  	 kopirana_lista = copy.copy(originalna_lista)
+  	 # Izmjena unutar kopije utiče i na original
+  	 kopirana_lista[1][0] = 99
   	  
-  	   print(originalna_lista) #Output: [1, [99, 3], 4]
+  	 print(originalna_lista) #Output: [1, [99, 3], 4]
   	\end{minted}
   
   
@@ -1112,7 +1105,7 @@ Izbacivanje izuzetaka bez   navođenja bloka: Izuzeci se mogu aktivirati i pomo�
 \begin{minted}{python}
 raise ValueError("Invalid input")
 \end{minted}
-\textit{Finally} blok: Za izvršavanje koda bez obzira na to da li je izuzetak aktiviran ili ne koristi se \textit{finally} kao u narednom primjeru:
+\textit{Finally} blok: Za izvršavanje koda bez obzira na to da li je izuzetak aktiviran ili ne koristi se naredba \textit{finally} kao u narednom primjeru:
 \begin{minted}{python}
 try:
    # kod koji može da aktivira izuzetak
@@ -1178,7 +1171,7 @@ Napomenimo da je dobra praksa zatvoriti datoteku nakon što završite rad sa njo
 
 \subsection{Modul Json}
 
-Modul \texttt{json} se koristi  za enkodiranje i dekodiranje podataka sa i u JSON format (eng. \textit{Java Script Object Notation}) formatu. JSON je  široko rasprostranjen format za razmjenu podataka, ljudima jednostavan za čitanje i pisanje, a mašinama za raščlanjivanje i generisanje.
+Modul \texttt{json} se koristi  za enkodiranje i dekodiranje podataka sa i u JSON format (eng. \textit{Java Script Object Notation}) formatu. JSON je  široko rasprostranjen format za razmjenu podataka, ljudima jednostavan za čitanje i pisanje, a mašinama za raščlanjivanje i generisanje.\\
 
 Modul \texttt{json} nudi dvije glavne metode za rad sa JSON podacima:
 
