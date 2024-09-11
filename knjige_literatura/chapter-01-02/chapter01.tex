@@ -1210,17 +1210,17 @@ U ovoj sekciji izlažemo uoptšteno o regularnim izrazima. Potom, će biti rije�
 
 Regularni izraz ili \textit{regex} (šablon ili patern) je niz znakova koji opisuju skupove nizova znakova, na osnovu određenih sintaksnih pravila. U prevodu, to je šablon koji opisuje neki skup stringova.  Svrha regirarnih izraza je opisivanje uzorka za pretraživanje nizova znakova konciznim opisom bez nabrajanja svih elemenata (stringova) skupa. Npr. kako bismo koncizno opisali sve binarne nizove
 pomoću (kratkog) šablona ili koncizno opisali skup \{\texttt{gray}, \texttt{grey}\} (engleski i
-americki engleski za istu riječ)? Regularne izraze koriste razni uređivači teksta, kao što je filter \textit{grep} u Unix-u, itd. 
+americki engleski za istu riječ)? Regularne izraze koriste razni uređivači teksta, kao što je filter \textit{grep} u Unix-u, itd. \\
 
 Osnovni koncepti regularnih izraza su:
 \begin{itemize}
-	\item \textit{Alternacija} -- izražava se pomoću znaka $\mid$, te označava sve alternativne mogućnosti koje se mogu uzeti; npr. regluarni izraz $a\mid b\mid c$ označava skup riječi $\{a, b, c\}$.  
+	\item \textit{Alternacija} -- izražava se pomoću znaka $\mid$, te označava sve alternativne mogućnosti koje se mogu uzeti; npr. regluarni izraz $a\mid b\mid c$ označava skup riječi (slova) $\{a, b, c\}$.  
 	\item \textit{Zagrada} -- označava grupisanje, tj. područje djelovanja. Npr. \texttt{gr}(a$\mid$e)\texttt{y} označava patern kojim u obuhvaćeni riječi \texttt{gray} i \texttt{grey}.
     \item \textit{Specijalni karakteri i skup karaktera}:
     \begin{itemize}
     	\item ``$.$'': sparuje bilo koji karakter samo jednom; 
     	\item $[]$: sparuje bilo koji karakter pod (uglastim) zagradama samo jednom. Npr. ako želimo da označimo skup sva malih slova, odgovarajući patern bi bio [$a-z$], dok bismo velika označili sa [$A-Z$], a jedna i druga sa [$a-zA-Z$]
-    	\item $\backslash d$: sparuje bilo koju cifru samo jednom. Drugi način je koristiti patern sa zagradama: [$0-9$];
+    	\item $\backslash d$: sparuje bilo koju cifru samo jednom. Drugi način je koristiti patern sa zagradama [$0-9$];
     	\item $[\^ \   ]$: sparuje bilo koji karakter tačno jednom koji pripada komplementu skupa karaktera pod
     	uglastim zagradama; 
     	\item $\backslash w$: sparuje bilo koji karakter riječi (slova, brojevi ili povlaka); 
@@ -1229,7 +1229,7 @@ Osnovni koncepti regularnih izraza su:
     	\item $\backslash b$: sparuje granicu riječi -- položaj između znaka riječi i znaka koji nije riječ, kao što je razmak, interpunkcija oznaka ili početak/kraj reda;
     	\item $\backslash t$, $\backslash .$, $\ldots$.
     \end{itemize}
-	\item  \textit{Kvantifikatori} -- navode se nakon znaka ili grupe, i oni određuju  učestalost
+	\item  \textit{Kvantifikatori} se navode nakon znaka ili grupe, i oni određuju  učestalost
 pojavljivanja izraza koji prethodi kvantifikatoru:
 \begin{itemize}
 	\item ``?'': izraz prije pojavljivanja kvantifikatora se pojavljuje 0 ili 1 puta; % -- colou?r
@@ -1251,7 +1251,7 @@ Modul \texttt{re}  je ugrađeni modul koji je namijenjen za rad sa regularnim iz
 Neke od metoda modula \texttt{re} su date u nastavku.
 \begin{itemize}
 	\item Metod \textit{search}(pattern, str): pretraživanje niza znakova za određen \textit{pattern} u tekstu \textit{str}.
-	\item Metod \textit{match}(pattern, str): pronalaženje  uzoraka na osnovu obrasca \textit{pattern} iz niza znakova \emph{str}; vraćanje po redoslijedu pojavljivanja   uzorka se vrši primjenom funkcije \emph{group}() na objekat vraćen prethodnom funkcijom, (Vrijednost argumenta koji se prosljećuje označava redni broj uzorka koji se izdvaja.)
+	\item Metod \textit{match}(pattern, str): pronalaženje  uzoraka na osnovu obrasca \textit{pattern} iz niza znakova \emph{str}; vraćanje po redoslijedu pojavljivanja   uzorka se vrši primjenom funkcije \emph{group}() na objekat vraćen prethodnom fu\-nkcijom. (Vrijednost argumenta koji se prosljećuje označava redni broj uzorka koji se izdvaja.)
 	
 	\item Metod \textit{sub}(pattern, strChange, str): mijenja sva podudaranja obasca \textit{pattern} sa drugim nizom znakova (\textit{strChange}) u stringu {str}.
 	%\item Provjera je li je niz znakova u skladu s određenim regularnim izrazom.
@@ -1283,14 +1283,12 @@ Neke od metoda modula \texttt{re} su date u nastavku.
 \end{minted}
 gdje se komanda \emph{python} (ili \textit{python3},  ako je instalirana pajtonova verzija 3.0 ili viša) postavlja preko  varijable okruženja \texttt{PYTHONPATH}. 
 
- Modul \texttt{sys} omogućuje pristup nekim parametrima i funkcijama specifičnim za sistem. 
-
-Neke od često korištenih funkcija i atributa \texttt{sys} modula su:
+ Modul \texttt{sys} omogućuje pristup nekim parametrima i funkcijama specifičnim za sistem. Neke od često korištenih funkcija i atributa \texttt{sys} modula su:
 
 \begin{itemize}
 	\item \textit{argv}: Lista argumenata komandne linije proslijeđenih pajtonovoj skripti. Na indeksu 0 se čuva naziv same skripte, dok se na ostalim indeksima čuvaju vrijednosti proslijeđenih parametara (\texttt{arg1}, \texttt{arg2},...). 
      \item \textit{path}: Vraća listu stringova koji specificiraju stazu do pojedinih modula. Inicijalizuje se iz varijable okruženja \texttt{PYTHONPATH} i zadate vrijednosti koja zavisi o instalaciji pajtona.
-     \item \textit{exit}([arg]): Izlazak iz pajtonovog inetrpretera sa opcionim izlaznim k\^odom. Ako je dat \textit{arg}, on se koristi kao izlazni k\^od; inače je zadani izlazni kod nula.
+     \item \textit{exit}([arg]): Izlazak iz pajtonovog inetrpretera sa opcionim izlaznim k\^odom. Ako je dat \textit{arg}, on se koristi kao izlazni k\^od; inače je zadani izlazni k\^od jednak nuli.
      \item \textit{version}: Niz koji sadrži verziju pajtonovog interpretera.
      \item \textit{platform}: Niz koji identikuje platformu operativnog sustava.
 \end{itemize}
@@ -1314,9 +1312,7 @@ arg1
 arg2
 \end{minted}
 
-Modul \texttt{getopt} predstavlja parser argumenata komandne linije. Omogućuje  pisanje skripti koje mogu uzimati argumente i opcije iz komandne linije pri izvršavanju programa. Modul \textit{getopt} ima dvije bitne funkcije, \textit{getopt}() i \textit{getopt\_long}(), koje se koriste za analiziranje/parsiranje argumenata komandne linije. 
-
-Funkcija \textit{getopt}() analizira kratke opcije (opcije od jednog slova) i vraća torku od dva elementa:
+Modul \texttt{getopt} predstavlja parser argumenata komandne linije. Omogućuje  pisanje skripti koje mogu uzimati argumente i opcije iz komandne linije pri izvršavanju programa. Modul \textit{getopt} ima dvije bitne funkcije, \textit{getopt}() i \textit{getopt\_long}(), koje se koriste za analiziranje/parsiranje argumenata komandne linije. Funkcija \textit{getopt}() analizira kratke opcije (opcije od jednog slova) i vraća torku od dva elementa:
 
 \begin{itemize}
 	\item prvi element je lista parova (opcija, vrijednost); 
