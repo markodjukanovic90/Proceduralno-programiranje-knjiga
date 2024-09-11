@@ -644,9 +644,9 @@ Pošto su objekti tipa \texttt{tuple} nepromjenljive strukture, elementi se ne m
 
 \section{Funkcije}
 
-Programski jezik Pajton svaku funkciju predstavlja kao jedan objekat. Prema tome, funkcije se mogu dodijeliti varijablama, proslijediti kao argument  drugim funkcijama, a takođe vratiti kao vrijednost    drugih funkcija.  Preciznije, funkcije su implementirane korišćenjem Pajtonove interne klase  \texttt{function}. Ova klasa je dio ugrađenih tipova ovog jezika koja pruža osnovnu funkcionalnost za kreiranje i izvršavanje funkcija. Kada se funkcija definiše, interpreter inicijalizu\-je novi objekat klase \texttt{function} koji predstavlja tu funkciju -- sadrži informacije o nazivu funkcije, argumentima, k\^odu i drugim metapodacima.
+Programski jezik Pajton svaku funkciju predstavlja jednim objektom. Prema tome, funkcije se mogu dodijeliti varijablama, proslijediti kao argument  drugim funkcijama, a takođe vratiti kao vrijednost    drugih funkcija.  Preciznije, funkcije su implementirane korišćenjem Pajtonove interne klase  \texttt{function}. Ova klasa je dio ugrađenih tipova ovog jezika koja pruža osnovnu funkcionalnost za kreiranje i izvršavanje funkcija. Kada se funkcija definiše, interpreter inicijalizu\-je novi objekat klase \texttt{function} koji predstavlja tu funkciju -- sadrži informacije o nazivu funkcije, argumentima, k\^odu i drugim metapodacima.
 
-Funkcija je predstavljena blokom k\^oda (nazvan još i definicija tijela funkcije) koji obavlja određeni zadatak a može se pozivati i izvršavati više puta kroz program. Uloga funkcija je da se k\^od učini modularnijim, efikasnijim i čitljivijim, jer omogućavaju  podijelu složenih programa na manje dijelove kojima je lakše upravljati.
+Definicija funkcije je predstavljena blokom k\^oda (nazvan još i tijelo funkcije) koji obavlja određeni zadatak a može se pozivati i izvršavati više puta kroz program. Uloga funkcija je da se k\^od učini modularnijim, efikasnijim i čitljivijim, jer omogućavaju  podijelu složenih programa na manje dijelove kojima je lakše upravljati.
 
 Sintaksno, funkcije se definišu pomoću ključne riječi \texttt{def} nakon čega slijedi naziv funkcije, zagrade (u kojima se opciono navode argumenti) pa dvotočka. Tijelo funkcije se uvlači ispod zaglavlja. Naredba \texttt{return} vraća rezultat date funkcije, nakon čega se izlazi iz tijela funkcije. Evo primjera jednostavne funkcije koja računa proizvod dva broja:
 
@@ -663,7 +663,7 @@ res = proizvod_brojeva(4, 3)
 print(res) # Output: 12
 \end{minted}
 
-Funkcije mogu imati defaultne vrijednosti dodijeljene parametarima, koje se koriste ako se funkcija pozove bez specificiranja vrijednosti tim parametrima.  Pogledajmo sljedeći primjer 
+Funkcije mogu imati defaultne vrijednosti dodijeljene parametarima, koje se koriste ako se funkcija pozove bez specificiranja vrijednosti tim parametrima.  Pogledajmo sljedeći primjer:
 \begin{minted}{python}
 def umnozi(ime="Mirko", umnozi_puta = 1):
     umnozeno = ime * umnozi_puta
@@ -676,6 +676,7 @@ Dodatno, funkcije mogu imati i opcione parametre, koji su specificirani pomoću 
 def print_brojevi(*nums):
     for num in nums:
     print(num)
+    
 def print_vrijednosti_dict(**key_vals):
     for key, vals in key_vals.items():
          print("Ključevi: ", key, " vrijednosti: ", vals)    
@@ -687,7 +688,7 @@ Funkcije takođe mogu da vraćaju nekoliko vrijednosti koristeći torke:
 
 \begin{minted}{python}
 def visestruko_vracanje(x, y):
-    dio = x / y
+    dio = x // y
     ostatak = x % y
     return dio, ostatak
 
@@ -699,7 +700,7 @@ print(d, " ", o) # Output: 3 1
 
 U jeziku Pajton, vrijednosti argumenata funkcije se prosljeđuju referencom objekta. Dakle, kada se funkcija pozove sa svojim argumentom, referenca na objekt se prosljeđuje funkciji, a ne kopija samog objekta. %Jedino objekti koji su nepomjenljivi (kao što su torke) se proslijeđuju funkciji po vrijednosti (kao ``prava'' kopija a ne originalan objekat). 
 
-Ovo može dovesti do   neočekivanog ponašanja u odnosu na neke druge programske jezike, posebno u radu promjenjivim objektima kao što su liste, rječnici i skupovi. Pogledajmo sljedeći primjer:
+Ovo može dovesti do   neočekivanog ponašanja u odnosu na neke druge programske jezike, posebno u radu sa promjenjivim objektima kao što su liste, rječnici i skupovi. Pogledajmo sljedeći primjer:
 
 \begin{minted}{python}
 def dodaj_elem_u_listu(elem, lista):
@@ -714,7 +715,7 @@ print(lista)  # Output: [1, 2, 3, 5]
 Kada se pozove funkcija \texttt{dodaj\_elem\_u\_listu} sa vrijednostima 5 i lista, funkciji prosljeđujemo referencu na objekat lista. Izvršavanjem funkcije, mijenja  se lista dodavanjem novog elementa 5.  U slučaju da ne želimo da funkcija modifikuje (promjenljivi) objekt, treba da se napraviti kopija objekta prije njegovog proslijeđivanja funkciji. Više o kopiranju objekata liste će biti riječi u narednim sekcijama.
 
 
-Nepromjenljivi objekti kao što su cijeli brojevi, decimalni, stringovi i torke se isto prosljeđuju referencom objekta. Međutim, kako su to nepromjenjive strukture, to znači da sve promjene koje radimo na njima unutar funkcije automatski stvaraju novi objekat (na lokalnom steku).
+Nepromjenljivi objekti kao što su cijeli brojevi, decimalni, stringovi i torke se isto prosljeđuju referencom objekta. Međutim, kako su to nepromjenjive strukture, to znači da sve promjene  u vezi njih unutar same funkcije su u suštini realizovani preko novih objekata (koji se čuvaju na lokalnom steku).
 
 \begin{minted}{python}
 def inkrementiraj(x):
@@ -737,7 +738,7 @@ my_func()
 print(x) # Output: 10
 \end{minted}
 
-Kao što smo napomenuli, funkcija je u suštini jedan objekat, pa se može proslijediti kao vrijednost argumentu druge funkcije, kako je to prikazano sljedećim primjerom
+Kao što smo napomenuli, funkcija u suštini predstavlja jedan objekat, pa se može proslijediti kao vrijednost argumentu druge funkcije, kako je to prikazano sljedećim primjerom
 \begin{minted}{python}
 
 def dodaj(a, b):
@@ -749,7 +750,7 @@ result = primjena(dodaj, 2, 3)
 print(result)  # Output: 5
   \end{minted}
 
-\textit{Anonimne funkcije.}  Anonimne funkcije su definirane pomoću ključne riječi \texttt{lambda}, tako da se ponekad nazivaju i lambda funkcije.  Naziv anonimne funkcije su dobile jer ne zahtjevaju eksplicitnu dodjelu naziva kao u regularnoj funkciji. Sintaksa lambda funkcije je data sa:
+\textit{Anonimne funkcije.}  Anonimne funkcije su definirane pomoću ključne riječi \texttt{lambda}, tako da se ponekad nazivaju i \textit{lambda} funkcije.  Naziv anonimne funkcije su dobile jer ne zahtjevaju eksplicitnu dodjelu naziva kao u regularnoj funkciji. Sintaksa lambda funkcije je data sa:
 
 \begin{minted}{python}
 lambda argumenti: izraz
@@ -771,21 +772,21 @@ Lambda funkcije su često korisne u situaciji kada je potrebno definisati jednos
 
 \section{O nekim programskim konceptima i ugrađenim funkcijama} \label{sec:concepts-pyhton}
 
-U ovoj sekciji ćemo demonstrirati rad sa nekoliko bitnih i često korištenih ugrađenih funkcija koje su dio standardne pajtonove biblioteke. Dodatno, biće objašnjen i koncept komprehenzije liste (eng. \textit{list comprehension}) koji  doprinosi većoj modularnosti k\^oda i približava ga konceptima funkcijskih programskih jezika (kao što je Haskel). 
+U ovoj sekciji ćemo demonstrirati rad sa nekoliko bitnih i često korištenih ugrađenih funkcija koje su dio standardnog pajtonovog paketa ili dio ugrađenih, poznatih paketa. Dodatno, biće objašnjen i koncept komprehenzije liste (eng. \textit{list comprehension}) koji  doprinosi većoj modularnosti k\^oda i približava ga konceptima funkcijskih programskih jezika (kao što je to npr. Haskel). 
 
 \subsection{Komprehenzija liste}
 
-Komplehenzija liste predstavlja koncizan način za kreiranje (neprazne) liste objekata. To je konstrukcija koja omogućava kreiranje i popunjavanje liste u jednoj liniji k\^oda, umjesto da se koriste petlje (i odgovarajuće metode) za njenu iterativnu konstrukciju.
+Komplehenzija liste predstavlja koncizan način kreiranja (neprazne) liste objekata. To je konstrukcija koja omogućava kreiranje i popunjavanje liste u jednoj liniji k\^oda, bez korištenja petlji (i odgovarajućih metoda) za njenu iterativnu konstrukciju.
 
 Osnovna sintaksa ovog koncepta je sljedeća:
 
 \begin{minted}{python}
 	lista = [expr  for item in iterable]
 \end{minted}
-Ovdje \textit{expr} označava izraz koji se izračunava u zavisnosti of \textit{item}, a izračunata vrijednost se smiješta u listu.
-Dalje, \textit{item} je varijabla koja  uzima vrijednosti iz (iterabilnog) objekta \textit{iterable}.  Dakle, rezultat izvršavanja je nova lista sastavljena od  vrijednosti dobivenih primjenom izraza  \textit{expr} na svaki elemenat objekta \textit{iterable}.
+Ovdje \textit{expr} označava izraz koji se izračunava u zavisnosti od varijable  \textit{item}, a izračunata vrijednost se smiješta u listu.
+Dalje, \textit{item} je varijabla koja  uzima vrijednosti iz (iterabilnog) objekta \textit{iterable}.  Dakle, rezultat izvršavanja je nova lista sastavljena od  vrijednosti dobijenih primjenom izraza  \textit{expr} na svaki elemenat objekta \textit{iterable}.
 
-Npr.\ recimo da želimo kreirati listu prvih 10 parnih brojeva. K\^od bi mogao da izgleda ovako:
+Npr. ako želimo kreirati listu prvih 10 parnih brojeva, k\^od bi mogao da izgleda ovako:
 
 \begin{minted}{python}
 	parni = []
@@ -808,7 +809,7 @@ U ovom slučaju, uslovna komanda se odnosi na elemente koje uzima varijabla \tex
 
 \subsection{Funkcije map, filter, reduce}
 
-Funckije \textit{map}(), \textit{filter}() i \textit{reduce}() su ugrađene funkcije koje se opšteprisutne u funkcijskom programiranju. One su korisne kao alati za obradu podataka, posebno kada se radi o velikim skupovima podataka.
+Funckije \textit{map}(), \textit{filter}() i \textit{reduce}() su ugrađene funkcije koje se opšteprisutne u \textit{funkcijskom} programiranju. One su korisne kao alati za obradu podataka, posebno kada se radi o velikim skupovima podataka.\\
 
 Funkcija \textit{map}() uzima dva argumenta: funkciju i iterabilni objekat. Primjenjuje funkciju  na svaki element iterabilnog objekta i vraća iterator na naredni element kao rezultat. 
 
@@ -825,28 +826,27 @@ Funkcija \textit{filter}() uzima dva argumenta: funkciju koja vraća logičku vr
 	parni = filter(lambda x: x % 2 == 0, brojevi)
 \end{minted}
 
-Funkcija  \textit{reduce}(): Sintaksa ove funkcije je
-
+Funkcija  \textit{reduce}() je data sljedećom sintaksom
 \begin{minted}{python}
 	reduce(func, iterable[, initial ])
 \end{minted}
 
-Ona uzima dva (obavezna) argumenta,  funkciju i iterabilni objekat, te opciono \textit{initial}. Inicijalno, funkcija \textit{func} se primjenjuje na element \emph{initial} i prvi elemenat iterabilnog objekta, te vraća rezultat. Potom,    primjenjuje istu funkciju na prethodno vraćeni rezultat i sljedeći element, i tako dalje, sve dok se svi elementi \emph{iterable} objekta ne obrade. 
+Ona uzima dva (obavezna) argumenta,  funkciju i iterabilni objekat, te opciono \textit{initial}. Inicijalno, funkcija \textit{func} se primjenjuje na element \emph{initial} i prvi elemenat iterabilnog objekta, te vraća rezultat. Potom,    primjenjuje istu funkciju na prethodno vraćeni rezultat i sljedeći element, sve dok se svi elementi \emph{iterable} objekta ne obrade. 
 
 Pogledajmo sljedeći primjer: 
 \begin{minted}{python}
-from functools import reduce #uključianje konkretne metode iz modula 
+from functools import reduce #uključianje  metode iz modula 
 
 numbers = [1, 2, 3, 4, 5]
 product = reduce(lambda x, y: x * y, numbers, 1)
 \end{minted}
 
-Ovo će primijeniti funkciju množenja na prva dva elementa liste, zatim na rezultat i sljedeći element, i tako dalje, sve dok se svi elementi ne obrade, što rezultira proizvodom svih brojeva liste. Pirmijetimo da funkcija \textit{reduce}() nije dio standardnih ugrađenih modula, već se mora uključiti direktno pozivom \texttt{functools} modula. Više o modulima i radu sa njima ćemo govoriti u narednim sekcijama.
+Ovo će primijeniti funkciju množenja na prva dva elementa liste, zatim na rezultat i sljedeći element, i tako dalje, sve dok se svi elementi ne obrade, što rezultira proizvodom svih brojeva liste. Pirmijetimo da funkcija \textit{reduce}() nije dio standardnog pajtonovog modula, već se mora uključiti direktno pozivom modula \texttt{functools}. Više o modulima i radu sa njima ćemo govoriti u narednim sekcijama.
 
 
 
 \subsection{Funkcije zip, enumerate i sort}
-Funkcije  \textit{zip}() i \textit{enumerate}() su ugrađene funkcije korisne za obradu i iterisanje preko lista ili drugih iterabilnih objekata.
+Funkcije  \textit{zip}() i \textit{enumerate}() su ugrađene funkcije korisne za obradu i iterisanje preko listi ili drugih iterabilnih objekata.
 
 Funckija \textit{zip}() uzima jedan ili više iterable objekata i vraća iterator koji generiše torke koje sadrže uparene elemente svakog iterabilnog objekta (prvi elementi svih listi u jednu torku, drugi elementi svih listi u novu torku, itd.). Sintaksa funkcije je:
 \begin{minted}{python}
@@ -854,18 +854,18 @@ zip(iterable1, iterable2, ...)
 \end{minted}
 gdje su \emph{iterable1}, \emph{iterable2},... iterablini objekti. 
 
-Npr. ako imamo dvije liste brojeva i želite da uparite odgovarajuće elemente, imamo sljedeći kod:
+Npr. neka su date dvije liste brojeva za koje  želimo da uparimo odgovarajuće elemente. To uradimo uz pomoć sljedećeg k\^oda:
 \begin{minted}{python}
 list1 = [1, 2, 3, 4]
 list2 = [5, 6, 7, 8]
 parovi = zip(list1, list2) 
 print(list(parovi)) # Output: (1, 5), (2, 6), (3, 7),  (4, 8).
 \end{minted}
-Funkcija \textit{enumerate}() uzima iterativni objekat i vraća iterator koji generiše parove koji sadrže indeks elementa i sami element. Sintaksa funkcije je:
+Funkcija \textit{enumerate}() uzima iterativni objekat i vraća iterator koji sadrži parove sa generisanim indeksom elementa i odgovarajućeg elementa iterabilnog objekta. Sintaksa funkcije je:
 \begin{minted}{python}
 	enumerate(iterable, start=0)
 \end{minted}
-gdje je \textit{iterable} jedan iterabilni objekat, a \textit{start} je početna vrijednost indeksa (podrazumijeva se 0). Pogledajmo sljedeći primjer. 
+gdje je \textit{iterable} jedan iterabilni objekat, a \textit{start} je početna vrijednost pridruženog indeksa (podrazumijeva se 0). Pogledajmo sljedeći primjer. 
 
 \begin{minted}{python}
 voce = ['jabuka', 'banana', 'kruska', 'breskva']
@@ -881,7 +881,7 @@ Sintaksa ove funkcije data je u nastavku
 	sort(reverse=False, key=None)
 \end{minted}
 
-Argument \textit{reverse} prosljećuje poredak sortiranja u listi na način da ukoliko mu je dodijeljena vrijednost \emph{True}, lista će biti sortirana u opadajućem, a inače (po defaultu) redoslijed sortiranja je rastući. Kriterijum sortiranja (kao funkcija) se proslijeđuje argumentu funkcije \textit{key}. Primijetimo da ukoliko se kriterijum sortiranja ne proslijedi eksplicitno, Pajton koristi interne relacije poretka za tip objekata, ukoliko su oni uporedivi (predefinisanom relacijom totalnog uređenja, kao kod osnovnih tipova podataka). U slučaju da objekti nisu uporedivi, vraća se poruka o greški.  Jedna od mogućih grešaka koja se može javiti je sljedeća:
+Argument \textit{reverse} prosljećuje poredak sortiranja u listi na način da ukoliko mu je dodijeljena vrijednost \emph{True}, lista će biti sortirana u opadajućem, a inače (po defaultu) redoslijed sortiranja je rastući. Kriterijum sortiranja (funkcija) se proslijeđuje argumentu \textit{key}. Primijetimo da ukoliko se kriterijum sortiranja ne proslijedi eksplicitno, Pajton koristi interne relacije poretka za tip objekata, ukoliko su oni uporedivi (predefinisanom relacijom totalnog uređenja, kao kod osnovnih tipova podataka). U slučaju da objekti nisu uporedivi, vraća se poruka o greški.  Jedna od mogućih grešaka koja se može javiti je sljedeća:
 \begin{minted}{python}
 TypeError: '<' not supported between instances of 'str' and 'int'
 \end{minted}
