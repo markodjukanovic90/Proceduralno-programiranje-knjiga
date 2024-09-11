@@ -379,8 +379,8 @@ Lista je nehomogena, uređena, indeksirana i promjenljiva kolekcija elemenata. U
 	\centering
 	\includegraphics[width=300pt,height=160pt]{slike/img-list-tuple.png}   %list_mem_org.png}
 
-	\caption{Liste u pajtonu: memorijska organizacija.} 	\label{fig: mem_list_org}
-\end{figure}%i poređenje sa organizacijom torki.
+	\caption{Liste u pajtonu: memorijska organizacija (poređenje sa organizacijom torki).} 	\label{fig: mem_list_org}
+\end{figure}%i .
 
 
 %\begin{figure}[!ht]
@@ -459,7 +459,7 @@ floats.extend(tuple_floats) # dodavanje (kolekcije) elemenata
 %\textit{Memorijska organizacija}. 
 
 \subsection{Rječnici}
-Rječnici su neuređene, promjenljive, i indeksirane kolekcije elemenata koji su dati u obliku para ključ--vrijednost. Za indeksiranje elemenata upravo služi par ključ--vrijednost koji je jedinstven na nivou objekta ove strukture. Često ime za rječnik je heš mapa. Klasa koja podržava kreiranje objekata koji predstavljaju rječnike je \texttt{dict}. 
+Rječnici su neuređene, promjenljive i indeksirane kolekcije elemenata koji su dati u obliku para ključ--vrijednost. Za indeksiranje elemenata upravo služi par ključ--vrijednost koji je jedinstven na nivou objekta ove strukture. Često drugo ime za rječnik je heš mapa. Klasa koja podržava kreiranje objekata koji predstavljaju rječnike je \texttt{dict}. 
 
 \textit{Inicijalizacija}.  
 
@@ -490,14 +490,13 @@ my_dict["godine"] = 31
 U slučaju da dati ključ ne postoji u mapi, par  (``godine'', 31) se dodaje u mapu.  Ako ne želimo posljednji scenario dodavanja, koristi se metoda \textit{update()}.
 \item Brisanje elementa: koristi se metod pop(\textit{key}) ili ključna riječ \textit{del}:
  \begin{minted}{python}
-	dct = {"ime": "Mirko", "godine": 30, "grad": "Banja Luka"}
-	del dct["grad"]
-	print(dct)  # Output: {"ime": "Mirko", "godine": 30}
+dct = {"ime": "Mirko", "godine": 30, "grad": "Banja Luka"}
+del dct["grad"]
+print(dct)  # Output: {"ime": "Mirko", "godine": 30}
 	
-	dct = {"ime": "Mirko", "godine": 30, "grad": "Banja Luka"}
-	dct.pop("grad")
-	print(dct)  #  Output: {"ime": "Mirko", "godine": 30}
- 
+dct = {"ime": "Mirko", "godine": 30, "grad": "Banja Luka"}
+dct.pop("grad")
+print(dct)  #  Output: {"ime": "Mirko", "godine": 30} 
 \end{minted}
 
 \item Provjera da li ključ postoji u heš--mapi: koristimo operator \textit{in}:
@@ -519,11 +518,11 @@ U slučaju da dati ključ ne postoji u mapi, par  (``godine'', 31) se dodaje u m
 \end{itemize}
 \textit{Memorijska organizacija rječnika}.  U Pajtonu, rječnici su implementirani preko heš tabela, koje su predstavljene nizom parova ključ--vrijednost, gdje su ključevi jedinstveni na nivou objekta i koriste se za vraćanje odgovarajućih vrijednosti. Proces unosa, brisanja i traženja elemenata u heš tabeli je obično veoma brz, sa očekivanim konstantnim vremenom za svaku od operacija.
 	
-	Kada se rječnik kreira u Pajtonu, prvo se inicijalizuje heš tabela određene veličine  u memoriji, koja skladišti parove ključ--vrednost. Veličina heš tabele je obično veća od broja inicijalno unesenih elemenata, kako bi se spriječilo često (dinamičko) mijenjanje veličine heš mape.
+Pri kreiranju rječnika u Pajtonu, prvo se inicijalizuje heš tabela određene veličine  u memoriji, koja skladišti parove ključ--vrednost. Veličina heš tabele je obično veća od broja inicijalno unesenih elemenata, kako bi se spriječilo često (dinamičko) mijenjanje veličine heš mape.
 	
 	Svaki ključ u rječniku se preslikava u cjelobrojnu vrijednost koristeći heš funkciju, a potom se dobijeni broj koristi kao indeks u heš tabeli. Ako se dva ključa heširaju istom heš vrijednosti, dolazi do pojave heš kolizija. Heš tabela tu situaciju rješava tako što oba para ključ---vrijednost čuva u istom indeksu, stvarajući povezanu listu parova ključ--vrijednost, pogledati Sliku~\ref{fig: dict_mem_organization}. Da bi se dohvatila vrijednost pridružena ključu, pajtonov mehanizam prvo izračunava heš vrijednost ključa kojeg potom koristi za lociranje indeksa u heš tabeli u kojoj je pohranjen odgovarajući par ključ-vrijednost. Ako je ključ pronađen, vraća se odgovarajuća vrijednost; u suprotnom se javlja greška.  Kada se novi par ključ-vrijednost dodaje u rječnik, izračunava se heš vrijednost ključa koji se koristi za pronalazak  indeksa u heš tabeli na čiju poziciju treba da bude pohranjen novi par ključ-vrednost. Ako je indeks već zauzet drugim parom ključ/vrijednost, novi par ključ--vrijednost se dodaje u   listu povezanu sa tim indeksom. Ako broj parova ključ--vrijednost u rječniku premašuje određenu granicu, heš tabela može promijeniti svoju dužinu kako bi se smanjila vjerova\-tnoća pojavljivanja heš kolizija u svrhu poboljšavanja performansi.
 	
-	Što se tiče heš funkcija, Pajton koristi heš funkciju zvanu \textbf{hash()} za ugrađene tipove kao što su stringovi (\texttt{str}), cijeli brojevi (\texttt{int}) i torke (\texttt{tuple}). Međutim, za prilagođene objekte, može se definisati vlastita heš funkcija implementacijom metode \_\_\textbf{hash}\_\_(). Funkcija \textbf{hash()}  vraća cjelobrojnu vrijednost koja predstavlja heš vrijednost objekta. Objekti koji se upoređuju kao jednaki treba da imaju istu heš vrijednost, radi ispravnog funkcioniranja rječnika. Napomenimo da za stringove i bajtove, Pajton koristi algoritam \textit{MurmurHash3} za hešovanje vrijednosti. Ovaj algoritam je konstruisan tako da uniformno raspoređuje heš vrijednosti minimizirajući broj kolizija. Za korisnički definisane klase, po defaultu se koristi funkcija \textbf{hash()}, koja generiše jedinstvenu heš vrijednost za svaku instancu klase na osnovu memorijske adrese pridružena instancama. Međutim, kao što je ranije rečeno, ovo ponašanje se može nadjačati definisanjem vlastite heš metode. 
+	Što se tiče heš funkcija, Pajton koristi heš funkciju zvanu \textbf{hash()} za ugrađene tipove kao što su stringovi (\texttt{str}), cijeli brojevi (\texttt{int}) i torke (\texttt{tuple}). Međutim, za prilagođene objekte, može se definisati vlastita heš funkcija implementacijom metode \_\_\textbf{hash}\_\_(). Funkcija \textbf{hash()}  vraća cjelobrojnu vrijednost koja predstavlja heš vrijednost objekta. Objekti koji se upoređuju kao jednaki treba da imaju istu heš vrijednost, radi ispravnog funkcioniranja rječnika. Napomenimo da za stringove i bajtove, Pajton koristi algoritam \textit{MurmurHash3} za hešovanje vrijednosti. Ovaj algoritam je konstruisan tako da uniformno raspoređuje heš vrijednosti minimizirajući broj kolizija. Za korisnički definisane klase, po defaultu se koristi funkcija \textbf{hash()}, koja generiše jedinstvenu heš vrijednost za svaku instancu klase na osnovu memorijske adrese pridružena instancama. Međutim, kao što je ranije rečeno, ovo pona\-šanje se može nadjačati definisanjem vlastite heš metode. 
 	
 	
 	\begin{figure}
@@ -535,7 +534,7 @@ U slučaju da dati ključ ne postoji u mapi, par  (``godine'', 31) se dodaje u m
 	\footnotetext{Slika posuđena sa https://www.geeksforgeeks.org/internal-structure-of-python-dictionary}
 \subsection{Skupovi}
 
-Skupovi  predstavljaju neindeksirane, neuređene, promjenjive strukture podataka čija je osnovna namjena da se na efikasan način izvrši operacija provjere pripadnosti elementa. Ova struktura odgovara matematičkom pojmu skupa, što znači da duplikati u njoj nisu dozvoljeni. Skup može sadržati bilo koju vrstu elementa kao što je \texttt{int}, \texttt{float}, \texttt{tuple}, \texttt{complex}, itd. ali promjenjive kolekcije kao što su iste, rječnici, skupovi ne mogu biti elementi skupa. 
+Skupovi  predstavljaju neindeksirane, neuređene, promjenljive strukture poda\-taka čija je osnovna namjena da se na efikasan način izvrši operacija provjere pripadnosti elementa. Ova struktura odgovara matematičkom pojmu skupa, što znači da duplikati u njoj nisu dozvoljeni. Skup može sadržati bilo koju vrstu elementa kao što je \texttt{int}, \texttt{float}, \texttt{tuple}, \texttt{complex}, itd. ali promjenjive kolekcije kao što su liste, rječnici, skupovi ne mogu biti elementi skupa. \\
 
 
 \textit{Inicijalizacija. }
@@ -563,9 +562,9 @@ Skupovi  predstavljaju neindeksirane, neuređene, promjenjive strukture podataka
  
 
 
-\textit{Memorijska organizacija}. U Pajtonu se skupovna struktura podataka implementira kao neuređena kolekcija jedinstvenih elemenata. Za implementa\-ciju se koristi heš tabela ili rječnik; elementi skupa su ključevi rječnika dok odgovarajuće vrijednosti njima pridružene nisu od važnosti (mogu se pridružiti \textit{None} vrijednosti, koje se za definisanje nula vrijednosti ili vrijednost koja u suštini  označava ``ništa''. Napomenimo da je \emph{None} zaseban tip podatka (\texttt{NoneType}).).  
+\textit{Memorijska organizacija}. U Pajtonu se skupovna struktura podataka implementira kao neuređena kolekcija jedinstvenih elemenata. Za implementa\-ciju se koristi heš tabela ili rječnik; elementi skupa su ključevi rječnika dok odgovarajuće vrijednosti njima pridružene nisu od važnosti (mogu se pridružiti \textit{None} vrijednosti, koje se za definisanje nula vrijednosti ili vrijednost koja u suštini  označava ``ništa''. Napomenimo da je \emph{None} zaseban tip podatka (\texttt{NoneType}).  
 
-Kada se skupu doda novi element, Pajton uz pomoć odgovarajuće heš funkcije izračunava   heš vrijednost koja odgovara  njegovoj  poziciji u heš tabeli. Ako na dobijenoj poziciji nema elementa, novi element se jednostavno dodaje u skup. U slučaju da već postoji element na toj poziciji, provjerava se da li je novi element jednak postojećem (koristeći metodu \_\_eq\_\_()). Ako su dva elementa jednaka,  dodavanje elementa tom skupu se odbija. Inače, po defaultnom principu element se dodaje u linkovanu listu priduržena datom indeksu. Takođe, određeni kompajleri  
+Kada se skupu doda novi element, Pajton uz pomoć odgovarajuće heš funkcije izračunava   heš vrijednost koja odgovara  njegovoj  poziciji u heš tabeli. Ako na dobijenoj poziciji nema elementa, novi element se jednostavno dodaje u skup. U slučaju da takav element postoji, provjerava se da li je novi element jednak postojećem (koristeći metodu \_\_\texttt{eq}\_\_()). Ako su dva elementa jednaka,  dodavanje elementa u tom skupu se odbija. Inače, po defaultnom principu element se dodaje u linkovanu listu pridružena datom indeksu. Takođe, određeni kompajleri  
 koriste algoritam  otvorenog adresiranja da se pronađe pogodna prazna pozicija u heš tabeli gdje bi se potom dodao novi element. 
 Otvoreno adresiranje koristi sekvencijalno ispitivanje pozicija da bi se pronašla prazna pozicija u tabeli. Pozicije se provjeravaju sekvencijalno po nekom pravilu dok se ne pronađe prva prazna. Postoji nekoliko pravila  definisanja sekvence probavanja pozicija, kao što je linearno, kvadratno ispitiva\-nje ili dvostruko heširanje. Npr. ako heš pozicija nije prazna, izračunamo sljedeću poziciju u nizu dodavanjem neke konstantne vrijednosti (recimo 1) trenutnoj heš poziciji kretajući se ciklično po pozicijama heš tabele. Ako je trenutna pozicija 4, a konstantna vrijednost 1, sljedeća pozicija koja se ispituje je 5. Ako je sljedeća pozicija prazna,  element se umeće na tu poziciju. Inače, ponovimo prethodni korak dok god se ne pronađe prazna pozicija ili dok se ne pretraži cijela heš tabela. 
  
@@ -590,7 +589,7 @@ Sljedeći k\^od pokazuje tip strukture podataka   koja predstavlja skup, tj. ugr
 
 \subsection{Torke}
  
- U programskom jeziku Pajton, torka (\texttt{tuple}) je uređena, indeksirana, nepromjenljiva (eng. \textit{immutable}) sekvencijalna kolekcija elemenata, predstavljena jednim objektom u memoriji (na koga pokazuje), dok se ostali objekti određuju implicitnim mehanizmom Pajtona.  Ova struktura dopušta unos duplikata. 
+ U programskom jeziku Pajton, torka (\texttt{tuple}) je uređena, indeksirana, nepro\-mjenljiva (eng. \textit{immutable}) sekvencijalna kolekcija elemenata, predstavljena jednim objektom u memoriji (na koga pokazuje), dok se ostali objekti određuju implicitnim mehanizmom Pajtona.  Ova struktura dopušta unos duplikata. 
  
  
  \textit{Inicijalizacija}.  
@@ -633,9 +632,9 @@ Sljedeći k\^od pokazuje tip strukture podataka   koja predstavlja skup, tj. ugr
  \end{itemize}
  
 \textit{Memorijska organizacija}.  Pri kreiranju torke, u memoriji se rezerviše fiksna količina memorije za čuvanje svih njenih elemenata. Svaki njen element je pohranjen u kontinualnom  (neprekidnom) bloku memorije,  određen na osnovu tipova podataka sadržani u torci.  Memorijska adresa prvog elementa torke se koristi kao referenca na cijeli objekat. %Pristup pojedinačnom elementu torke zahtijeva izračunavanje memorijske adrese željenog elementa na osnovu njegovog indeksa i veličine   elemenata u torci. Za posljedicu, 
-Pristup pojedinačnim elementima torke se izvršava mnogo efikasnije od pristupa elementima liste jer se indeks svakog elementa torke može  izračunati direktno na osnovu njegove pozicije u memoriji. 
+Pristup pojedinačnim eleme\-ntima torke se izvršava mnogo efikasnije od pristupa elementima liste jer se indeks svakog elementa torke može  izračunati direktno na osnovu njegove pozicije u memoriji. 
 
-Pošto su objekti tipa \texttt{tuple} nepromjenljive strukture, elementi se ne mijenjaju  nakon što su kreirani. Ako je  potrebno izmijeniti određene elemente, treba da se kreira novi objekat torka sa željenim promjenama. Strukture torki su  efikasnije u smislu upotrebe memorije u poređenju sa promjenjivim strukturama podataka (liste, rječnici), jer ne postoji potreba za dodijelom dodatnih memorijskih lokacija da bismo prilagodili promjene u podacima.
+Pošto su objekti tipa \texttt{tuple} nepromjenljive strukture, elementi se ne mijenjaju  nakon što su kreirani. Ako je  potrebno izmijeniti određene elemente, treba da se kreira novi objekat torka sa željenim promjenama. Strukture torki su  efikasnije u smislu upotrebe memorije u poređenju sa promjenjivim strukturama podataka (liste, rječnici), jer ne postoji potreba za dodijelom dodatnih memorijskih lokacija da bismo prilagodili podatke, vidjeti Sliku~\ref{fig: mem_list_org}.
  
  %\begin{figure}
  %	\centering
