@@ -1374,7 +1374,7 @@ Izlazni fajl je izlaz.txt
 \section{Modul Numpy}
 
 Ovaj modul je specijalizovan za rad sa nizovima i nizovnim strukturama kao što su
-matrice, 3D matrice, proizvoljne matrice,  velikih dimenzija. Riječ \texttt{numpy} predstavlja skraćenicu  engleske fraze \emph{numerical python}.  Kreirana je 2005. od strane Travisa Oliphanta, a napisana je u jezicima C/C++. Jedan numpy  objekat predstavlja neprekidan (statičan) dio u memoriji, a za razliku od liste, ovaj objekat je homogene strukture, vidjeti Sliku 	\ref{fig:numpy_array}. Zbog svega toga, pogodan je   za rad  sa velikim tipovima podataka, i brži je što je tiče osnovnih operacija za red velicine (oko 50 puta) od tradicionalne liste.
+matrice, 3D matrice, proizvoljne matrice velikih dimenzija itd. Riječ \texttt{numpy} predstavlja skraćenicu  engleske fraze \emph{numerical python}.  Kreiran je 2005. od strane Travisa Oliphanta, a napisana je u jezicima C/C++. Jedan numpy  objekat predstavlja neprekidan (statičan) dio u memoriji, a za razliku od liste, ovaj objekat je homogene strukture, vidjeti Sliku 	\ref{fig:numpy_array}. Zbog svega toga, pogodan je   za rad  sa velikom količinom  podataka, i brži je što je tiče osnovnih operacija za red veličine (oko 50 puta) od tradicionalne liste.\\
 
 \begin{figure}%https://stackoverflow.com/questions/57262885/how-is-the-memory-allocated-for-numpy-arrays-in-python
 	\centering
@@ -1440,9 +1440,9 @@ Modul \textit{ctypes} pruža način za pozivanje funkcija i korištenje tipova p
 \begin{enumerate}
 	\item Napisati \textit{C} program koji želimo ugraditi u pajtonov   k\^od. Ovaj program može da sadrži jednu ili više funkcija koje želimo pozvati unutar k\^oda pisanog u Pajtonu.
 	\item Prevesti (kompajlirati) \textit{C} program u dijeljenu biblioteku.    Na Linuks ili macOS  sistemima u tu svrhu koristimo \textit{gcc} kompajler. Na sistemu Windows možete koristiti Visual Studio ili MinGW za kompajliranje programa u DLL fajl.
-	\item Učitati dijeljenu biblioteku u pajtonov k\^od. Ovaj proces vršimo uz  pomoć modula \texttt{ctypes}. Učitavamo .dll fajl pozivanjem \textit{cdll.LoadLibrary(path)} gdje je \textit{path} proslijeđena staza do dijeljene biblioteke.
-	\item Definišimo tipove argumenata i tipove koje vraćaju funkcije napisane u \textit{C} programu. Prije nego što   pozovemo \textit{C} funkciju iz programa napisanog u pajtonu pomoću modula \texttt{ctypes}, trebaju se navesti tipovi argumenata i tipovi koje funkcije vraćaju. To možemo učiniti postavljanjem \textit{argtypes} i \textit{restype} atributa funkcijskog objekta.
-	\item Pozivanje \textit{C} funkcije preko programa napisanog u Pajtonu. Na kraju, pozivamo funkciju izvorno napisanu u \textit{C}-u koristeći pajton pomoću funkcijskog objekta koji je kreiran u koraku 4. Vrijednosti argumenata proslijeđujemo kao pajtonovi objekti, a modul \texttt{ctypes} će ih automatski pretvoriti u odgovarajuće \textit{C} tipove podataka. 
+	\item Učitati dijeljenu biblioteku u pajtonov k\^od uz  pomoć modula \texttt{ctypes}. Učitavamo .dll fajl poyivom \texttt{cdll.LoadLibrary(path)} gdje je \textit{path} proslijeđena staza do dijeljene biblioteke.
+	\item Definišimo tipove argumenata i tipove koje vraćaju funkcije napisane u \textit{C} programu. Prije nego što   pozovemo \textit{C} funkciju iz programa napisanog u Pajtonu, trebaju se navesti tipovi argumenata i tipovi koje funkcije vraćaju. To možemo učiniti postavljanjem \textit{argtypes} i \textit{restype} atributa funkcijskog objekta.
+	\item Pozivanje \textit{C} funkcije preko programa napisanog u Pajtonu. Na kraju, pozivamo funkciju izvorno napisanu u \textit{C}-u koristeći pajton pomoću funkcijskog objekta koji je kreiran u koraku 4. Vrijednosti argumenata proslijeđujemo kao pajtonove objekte, a modul \texttt{ctypes} će ih automatski pretvoriti u odgovarajuće \textit{C} tipove podataka. 
 \end{enumerate}
 
 U nastavku navodimo čitav proces   poziva \textit{C} programa izvršavanjem pajtonovog koda.
@@ -1479,7 +1479,7 @@ Konačno, pozovemo odabranu \textit{C} funkciju uz pomoć k\^oda:
  
 \section{Pisanje prilagodjenih modula}
 
-Pretpostavimo da želimo kreirati modul koji služi za rad sa različitim matematičkim operacijama, kao što su sabiranje, oduzimanje, množenje i dijeljenje. Kako smo pomenuli, modul je skup objekata koji se  čuva u datoteku ekstenzije .\textit{py}. Pretpostavimo da želimo kreirati modul pod nazivom \textit{mathOps}. Dakle, kreirajmo  datoteku pod nazivom ``\textit{mathOps}.py" u kojem definišemo funkcije ovog prilagođenog modula. Evo primjera kako bi ta datoteka mogla izgledati:
+Pretpostavimo da želimo kreirati modul koji služi za rad sa različitim mate\-matičkim operacijama, kao što su sabiranje, oduzimanje, množenje i dijeljenje. Kako smo pomenuli, modul je skup objekata koji se  čuva u datoteku ekstenzije .\textit{py}. Pretpostavimo da želimo kreirati modul pod nazivom \textit{mathOps}. Dakle, kreirajmo  datoteku pod nazivom ``\textit{mathOps}.py" u kojem definišemo funkcije ovog prilagođenog modula. Evo primjera kako bi ta datoteka mogla izgledati:
 
 \begin{minted}{python}
 def add(x, y):
@@ -1518,9 +1518,9 @@ U ovom primjeru uvozimo modul ``\textit{mathOps}" i koristimo njegove funkcije z
 
 \section{Postavljanje korisnički kreiranih modula  na PyPI repozitorij}
 
-PyPI (\textit{Python Package Index}) je centralni repozitorij paketa   koji su napisani u programskom jeziku Pajton. PyPI omogućuje programerima lako distribuiranje korisnički napisanih modula,  omogućavajući kako korišćenje paketa široj zajednici korisnika.
+PyPI (\textit{Python Package Index}) je centralni repozitorij paketa   koji su napisani u programskom jeziku Pajton. PyPI omogućuje programerima lako distribui\-ranje korisnički napisanih modula,  omogućavajući kako korišćenje paketa široj zajednici korisnika.
  
-Nekoliko   se koraka izvršava ukoliko želimo postaviti   korisnički kreirani modul na PyPI. Na zvaničnoj PyPI veb stranici \footnote{https://pypi.org/account/register/},  potrebno je kreirati račun. Nakon što se prijavimo, potrebno je  generisati token za prijavu na PyPI. Token je sigurnosni ključ koji omogućuje da se prijavimo i objavimo/podignemo  paket (modul).  Na lokalnom računaru instalirajmo module  \texttt{setuptools} i \texttt{wheel}, u slučaju da nisu instalirani. To se možete učiniti pomoću \textit{pip} naredbe:
+Nekoliko   se koraka izvršava ukoliko želimo postaviti   korisnički kreirani modul na PyPI. Na zvaničnoj PyPI veb stranici \footnote{https://pypi.org/account/register/},  potrebno je kreirati račun. Nakon što se prijavimo, potrebno je  generisati token za prijavu na PyPI. Token je sigurnosni ključ koji omogućuje da se prijavimo i objavimo/podi\-gnemo  paket (modul).  Na lokalnom računaru instalirajmo module  \texttt{setuptools} i \texttt{wheel}, u slučaju da nisu instalirani. To se možete učiniti pomoću \textit{pip} naredbe:
  \begin{minted}{python}
       pip install setuptools wheel
  \end{minted}
