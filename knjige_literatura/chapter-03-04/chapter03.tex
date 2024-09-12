@@ -288,7 +288,7 @@ Rekurzija se izvrašava u eksponencijalnom $O(2^n)$ vremenu.  %Prema tome, $T(n)
 
 Jedna od prvih algoritamska tehnika koja se može primijeniti u rješavanju  računarskih problema je tehnika grube sile. Ovo je algoritamska paradigma sa kojom se većina čitalaca susretala do sada, mada ne znajući da je riječ o baš toj tehnici rješavanja problema.
 
-Prosto rečeno, paradigma grube sile pokušava sva moguća rješenja problema, vraćajući ono koje je najbolje (ili prvo koje zadovoljava uslove zadatka, ako je riječ o problemima zadovljenja -- tzv. SAT problemi). U stvarnom životu,  primjer algoritma brutalne sile je uključivanje USB kabela. Prvo pokušamo  na jedan način, a ako to ne uspije, isprobamo drugi port.  Slično, ako imamo veliki broj ključeva, a nismo sigurni koji od njih otključava vrata, jednostavno isprobavamo svaki ključ za datu bravu dok jedan ne proradi. Upravo je ovo suština algoritamskog dizajna ove paradigme.
+Prosto rečeno, paradigma grube sile pokušava sva moguća rješenja proble\-ma, vraćajući ono koje je najbolje (ili prvo koje zadovoljava uslove zadatka, ako je riječ o problemima zadovljenja -- tzv. SAT problemi). U stvarnom životu,  primjer algoritma brutalne sile je uključivanje USB kabela. Prvo pokušamo  na jedan način, a ako to ne uspije, isprobamo drugi port.  Slično, ako imamo veliki broj ključeva, a nismo sigurni koji od njih otključava vrata, jednostavno isprobavamo svaki ključ za datu bravu dok jedan ne proradi. Upravo je ovo suština algoritamskog dizajna ove paradigme.
 
 \begin{example}
 	Odličan primjer algoritma grube sile je pronalaženje najbližeg para tačaka u višedimenzionalnom (realnom) prostoru. Neka su date $n$ tačaka u $\mathbb{R}^m$, tj. $S=\{ \textbf{x}_i \mid \textbf{x}_i \in  \mathbb{R}^m, i=1, \ldots, n\}$. Naći dvije tačke $\textbf{x}_i, \textbf{x}_j \in S$ koje su međusobno najbliže gledajući sve parove tačaka skupa $S$.
@@ -311,13 +311,17 @@ Prosto rečeno, paradigma grube sile pokušava sva moguća rješenja problema, v
 					     min_dist = distance
     			 		point1 = p1
     			 		point2 = p2
+    			 		
+    	    return point1, point2, min_dist
 \end{minted}}
 \end{solution}
 
 \textit{Kompleksnost algoritma}. Kako je $|S| = n$, lako se primijeti da je broj parova tačaka jednak $O(n^2)$. Dalje, računanje (euklidove) udaljenosti između dvije $m$-dimenzionalne tačke se izvršava u $O(m)$ vremenu. Prema tome, ukupno vrijeme izvršavanja je $O(n^2)\cdot O(m) = O(n^2\cdot m) = O(n^2)$, jer je $m$ konstantno.
 
 \begin{example}
-	Riješimo problem ruksaka uz pomoć algoritma brutalne sile. Ovaj problem je definisan na sljedeći način: Neka je dato $n$ proizvoda i svaki do njih ima svoju težinu $w_i$ i cijenu (vrijednost) $p_i, i=1,\ldots, n$. Ruksak ima kapacitet $C>0$. Koji od proizvoda staviti u ruksak, tako da cijena bude najveća, ali da   kapacitet ruksaka ne bude narušen. 
+	Riješimo problem ruksaka uz pomoć algoritma brutalne sile. Ovaj problem je definisan na sljedeći način: Neka je dato $n$ proizvoda i svaki do njih ima svoju težinu $w_i$ i cijenu (vrijednost) $p_i, i=1,\ldots, n$. Ruksak ima kapacitet $C>0$.
+	
+	 Koji od proizvoda staviti u ruksak, tako da cijena bude najveća, ali da   kapacitet ruksaka ne bude narušen. 
 \end{example}
 
 \begin{solution}
@@ -359,8 +363,7 @@ Enumeracijom prostora mogućih rješenja (kojih ima ukupno $2^4=16$), dobijamo s
 \end{center}
 Iz prethodne tabele, lako se vidi da je najbolje odabrati proizvod 2 i 3 i staviti ih u ruksak. Pri tome, njihova   cijena je 80. Primijetimo da  rješenje koje uzima proizvode 1, 2 i 3 u ruksak narušava njegov kapacitet (težina je 17, što je veće od 16). 
 
-Jasno je da je skup rješenja problema ruksaka poistovijećen sa pretraživanjem svih podskupova skupa $[n]$.  Prema tome, kompleksnost ovakvig pristupa je eksponencijalna, tj. $O(2^n)$. Pristup je dat sljedećim 
-kodom. 
+Jasno je da je skup rješenja predstavljen svim podskupovima skupa $[n]$.  Prema tome, kompleksnost ovakvig pristupa je eksponencijalna, tj. $O(2^n)$. Pristup je dat sljedećim  k\^odom. 
 
 %\footnotesize
 \begin{minted}[fontsize=\footnotesize, scale=0.8]{python}
@@ -388,7 +391,7 @@ kodom.
 	  	else:
 	  		return fitness
 	  
-	  # brute force recursion
+	  # brute force rekurzija
 	  def knapsack_brute_force(solution): 
 	  	global best_fitness
 	  
@@ -400,7 +403,7 @@ kodom.
 	  		  if i > max(solution) : # symmetry breaking 
 	  			knapsack_brute_force(solution + [i]) 
 	  		else:
-	  			knapsack_brute_force(solution + [i]) 
+	  			knapsack_brute_force([i]) 
 	  
 	  knapsack_brute_force([])
 	  print(best_fitness) # 80.0	
@@ -409,18 +412,18 @@ kodom.
 
 
 Kako primjećujemo na osnovu prethodne (rekurzivne) implementacije, svaki od  
-rekurzivnih poziva, kojih je tačno $2^n$, poziva funkciju \textit{objective}. Preciznije, kompleksnost pristupa brutalne sile je $O(2^n)$. Napomenimo da postoje dosta efikasniji pristupi za rješavanje problema ruksaka. Među njima, izdvajamo metod dinamičkog programiranja, o kojem će biti više riječi u nastavku.
+rekurzivnih poziva, kojih je tačno $2^n$, poziva funkciju \texttt{objective}(). Preciznije, kompleksnost pristupa brutalne sile je $O(2^n)$. Napomenimo da postoje efikasniji pristupi za rješavanje problema ruksaka. Među njima, izdvajamo metod dinamičkog programiranja, o kojem će biti više riječi u nastavku.
 
 
 \section{Algoritmi pretraživanja}
 % https://www.geeksforgeeks.org/searching-algorithms/
-\textit{Algoritmi pretraživanja} su dizajnirani sa zadatkom provjeravanja da li se objekat nalazi (ili da se vrati) u strukturi podataka u kojoj su  pohranjeni objekti; takođe,  da se vrati poruka ako takav element ne postoji.
+\textit{Algoritmi pretraživanja} su dizajnirani sa zadatkom provjeravanja da li se objekat nalazi   u strukturi podataka u kojoj su  pohranjeni objekti; takođe,  da se vrati poruka ako takav element ne postoji.
 
 Ovi algoritmi se generalno dijele u dvije kategorije na osnovu načina pretraživanja.
 
 \begin{itemize}
 	\item \textit{Sekvencijalna pretraga}  pretražuje listu ili niz element po element; primjer ovakve pretrage je \textit{linearna pretraga}.
-	\item \textit{Intervalna pretraga} je   dizajnirana za pretraživanje u sortiranim strukturama podataka; mnogo su efikasniji od linearne pretrage jer dijele prostor pretraživanja na dijelove,  pokušavajući na taj način eliminisati veliki dio prostora za pretragu svakom iteracijom. Primjer takve pretrage je \textit{binarna pretraga}.
+	\item \textit{Intervalna pretraga} je   dizajnirana za pretraživanje u sortira\-nim struktu\-rama podataka; mnogo su efikasniji od linearne pretrage jer dijele prostor pretraživanja na dijelove,  pokušavajući na taj način eliminisati veliki dio prostora za pretragu svakom iteracijom. Primjer takve pretrage je \textit{binarna pretraga}.
 \end{itemize}
 
 \subsection{Linearna pretraga}
@@ -467,13 +470,14 @@ Vremenska složenost je $O(n)$ dok se za rekurzivni pristup izdvaja i pomoćni p
 
 
 Linearna pretraga nije efikasna za nizove velikih dimenzija i koristi se samo kada radimo sa malim skupom podataka, te kada želimo da algoritam bude  što jednostavniji.
+
 \subsection{Binarna pretraga}
 % https://www.geeksforgeeks.org/binary-search/: BINARNA PRETRAGA
 
 Za upotrebu binarnog pretraživanja u bilo kojoj strukturi podataka, struktura podataka mora imati sljedeća svojstva: ($i$) treba biti sortirana; 
 ($ii$) pristup bilo kojem elementu strukture podataka se odvija u konstantnom vremenu.
 
-Ideja binarne pretrage se sastoji u eksploatisanju svojstva sortiranog niza.  Bez smanjenja opštosti pretpostavimo da je niz sortiran u rastućem poretku. To znači da u slučaju da se na poziciji (indeksu) $i$ nalazi element veći od traženog elementa $x$, $x$ se (potencijalno) nalazi lijevo od indeksa $i$, te indekse $i+1, \ldots$ isključujemo dalje iz razmatranja. U svakoj iteraciji, biramo indeks $i$ kao središnji element niza, koji se potom poredi sa $x$. U zavisnosti od rezultata, imamo tri mogućnosti: ($i$) element na poziciji $i$ je upravo $x$, čime prekidamo pretragu vraćajući dati indeks; ($ii$)  element na poziciji $i$ je veći od $x$, čime pretragu usmjeravamo na elemente niza lijevo od pozicije $i$; ($iii$) inače, pretraga se seli na desni dio niza, tj. elemente čiji je indeks veći od $i$. Za bazne slučajeve uzimamo  niz veličine 0 ili 1. U prvoom slučaju vraćamo \textit{False}, dok u drugom slučaju vraćamo rezultat poređenja elementa niza sa $x$.  
+Ideja binarne pretrage se sastoji u eksploatisanju svojstva sortiranog niza.  Bez smanjenja opštosti pretpostavimo da je niz sortiran u rastućem poretku. To znači da u slučaju da se na poziciji (indeksu) $i$ nalazi element veći od traženog elementa $x$, $x$ se (potencijalno) nalazi lijevo od indeksa $i$, te indekse $i+1, \ldots$ isključujemo dalje iz razmatranja. U svakoj iteraciji, za indeks $i$ biramo središnji element niza, koji se potom poredi sa $x$. U zavisnosti od rezultata, imamo tri mogućnosti: ($i$) element na poziciji $i$ je upravo $x$, čime prekidamo pretragu vraćajući dati indeks; ($ii$)  element na poziciji $i$ je veći od $x$, čime pretragu usmjeravamo na elemente niza lijevo od pozicije $i$; ($iii$) inače, pretraga se seli na desni dio niza, tj. elemente čiji je indeks veći od $i$. Za bazne slučajeve uzimamo  niz veličine 0 ili 1. U prvom slučaju vraćamo \textit{False}, dok u drugom slučaju vraćamo rezultat poređenja elementa niza sa $x$.  
 
 Implementacija rekurzivnog pristupa binarne pretrage je data sljedećim k\^odom.
 
@@ -484,8 +488,8 @@ Implementacija rekurzivnog pristupa binarne pretrage je data sljedećim k\^odom.
 	       return False
 	        
 	    if len(arr) == 1:
-	       return True if arr[0] == x else False
-
+	       return arr[0] == x  
+	       
 	    mid = len(arr) // 2
 	    if arr[mid] == x:
 	       return True
@@ -509,7 +513,7 @@ Bitno je i da podaci u nizu nemaju složenu strukturu ili odnose između sebe, j
 %https://www.geeksforgeeks.org/jump-search/: JUMP SEARCH
 \subsection{Pretraga preskakanjem}
 
-Kod ove pretrage se takođe podrazumijeva da je niz sortiran.  Osnovna ideja je sistematskom provjerom razumnog broja elemenata niza,  koristeći preskakanje nekih elemenata umjesto pretraživanja svih elementa  ustanoviti uži interval u kojem se dati element $x$ traži.
+Kod ove pretrage se takođe podrazumijeva da je niz sortiran.  Osnovna ideja je sistematskom provjerom razumnog broja elemenata niza,  koristeći preskakanje nekih elemenata umjesto pretraživanja svih elementa  ustanoviti uži interval u kojem se dati element $x$ traži. \\
 
 Pretpostavimo da imamo niz \emph{niz} veličine $n$ i dužinu bloka (elemenata) veličine $m$ koji koristimo kao korak preskakanja. Pretraga prvo pretražuje elemente $niz[0], niz[m]$, $niz[2m] \ldots niz[k \cdot m]$ i tako dalje. Kada pronađemo interval (indekse) sa svojstvom $niz[k\cdot m] < x < niz[(k+1) \cdot m]$, izvodimo operaciju linearne pretrage elementa $x$ na intervalu dužine $m$.  %, krenuvši sa indeksom $k\cdot m$ u svrhu  pronaska elementa $x$.
  
@@ -526,7 +530,7 @@ Pretpostavimo da imamo niz \emph{niz} veličine $n$ i dužinu bloka (elemenata) 
  \textit{Kompleksnost algoritma}. U najgorem slučaju, moramo uraditi $n/m$ skokova, a ako je posljednja provjerena vrijednost veća od elementa koji se traži, vršimo $m-1$ poređenja više za linearnu pretragu. Stoga je ukupan broj poređenja u najgorem slučaju jednak $((n/m) + m-1)$. Vrijednost ove funkcije  je minimalna kada je $m = \sqrt{n}$, što i predstavlja najbolju vrijednost za peskakanje. Dakle, u najboljem slučaju, kompleksnost algoritma je $O(\sqrt{n})$. 
  
  
-Rekurzivna implementacija pretage preskakanjem  je data sljedećim kodom.  % u jeziku Pajton. 
+Rekurzivna implementacija pretage preskakanjem  je data sljedećim k\^odom.  % u jeziku Pajton. 
  
  \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
  def jump_search(niz, x, jump, k):
@@ -598,10 +602,7 @@ Implementacija rekurzivnog pristupa interpolacijske pretrage je data narednim k\
 
 \subsection{Eksponencijalna pretraga}
 
-Naziv ovog algoritma proističe iz načina biranja sljedećeg elementa u pretrazi. Naime, eksponencijalna pretraga uključuje dva koraka. Prvo, pronađimo interval u kojem se element potencijalno nalazi (ako se nalazi) koristeći eksponencijalne korake. Potom, na datom intervalu primijenimo binarnu pretragu. Za  poziciju \emph{pos} uzimamo $0, 2, 4, \ldots$ dok ne nađemo indeks  $i$ tako da je traženi element $x$ veći ili jednak od elementa  na poziciji $2^{i-1}$ a manji ili jednak od elementa na poziciji $2^i$ niza koji se pretražuje. 
-
-
-   Implementacija ove pretrage je data narednim k\^odom. 
+Naziv ovog algoritma proističe iz načina biranja sljedećeg elementa u pretrazi. Naime, eksponencijalna pretraga uključuje dva koraka. Prvo, pronađimo interval u kojem se element potencijalno nalazi (ako se nalazi) koristeći eksponencijalne korake. Potom, na datom intervalu primijenimo binarnu pretragu. Za  poziciju \emph{pos} uzimamo $0, 2, 4, \ldots$ dok ne nađemo indeks  $i$ tako da je traženi element $x$ veći ili jednak od elementa  na poziciji $2^{i-1}$ a manji ili jednak od elementa na poziciji $2^i$ niza koji se pretražuje. Implementacija ove pretrage je data narednim k\^odom. 
    
    \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
    def exponential_search(niz, x, l):
