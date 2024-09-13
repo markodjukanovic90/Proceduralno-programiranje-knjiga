@@ -878,17 +878,15 @@ FourSumSquares([], 20)
  
 \section{Pohlepni algoritmi}
  % https://www.programiz.com/dsa/greedy-algorithm
-\textit{Pohlepni algoritam} je pristup rješavanju problema koji bira od svih dostupnih opcija  onu najbolju na osnovu nekog pohlepnog (intuitivnog) kriterijum. Pristup ne brine da li će lokalno najbolji odabir uticati ili ne na optimalni rezultat. Algoritam nikada ne poništava raniju odluku čak i u slučaju da je izbor pogrešan. Upravo zbog toga se ovom algoritamskom paradigmom generalno ne može  garantovati nalazak optimalnog rješenja. Dakle, uvijek se traži najbolji lokalni izbor u nadi da će ta odluka voditi   najboljem globalnom rezultatu. U principu, ova paradigma pripada   pristupu \textit{odozgo prema dolje} (eng. \textit{top-down approach}). 
+\textit{Pohlepni algoritam} je pristup rješavanju problema koji od svih dostupnih opcija u prostoru pretrage bira onu najbolju na osnovu nekog pohlepnog (intuitivnog) kriterijuma. Pristup ne brine da li će lokalno najbolji odabir uticati ili ne na optima\-lni rezultat. Algoritam nikada ne poništava raniju odluku čak i u slučaju da je izbor pogrešan. Upravo zbog toga se ovom algoritamskom paradigmom generalno ne može  garantovati nalazak optima\-lnog rješenja. Dakle, bira se najbolji lokalni izbor odluka u nadi da će ta odluka voditi   najboljem globalnom rezultatu. U principu, ova paradigma pripada   pristupu \textit{odozgo prema dolje} (eng. \textit{top-down approach}). \\
 
-U neformalnom smislu, pohlepni algoritam je algoritam koji počinje jedno\-stavnim, nekompletnim, tj. parcijalnim rješenjem problema, a zatim iterativno traži najbolji način za poboljšanje rješenja proširujući ga iterativno, dok ono ne postane kompletno (neproširivo). Pseudokod ove algoritamske paradigme je dat Algoritmom~\ref{alg:greedy-algorithm}. 
-
-Ulaz u algoritam su problem $\mathcal{P}$, instanca problema, te pohlepna funkcija $g$.  Algoritam počinje od nekog, obično praznog, parcijalnog rješenja koje se kroz iteracije nastoji proširiti najboljim mogućom odlukom (komponentom rješenja). U svakoj iteraciji izvršava se sljedeće:
+U neformalnom smislu, pohlepni algoritam je algoritam koji počinje jedno\-stavnim, nekompletnim, tj. parcijalnim rješenjem problema, a zatim iterativno traži najbolji način za poboljšanje rješenja proširujući ga iterativno, dok ono ne postane kompletno (neproširivo). Pseudokod ove algoritamske paradigme je dat Algoritmom~\ref{alg:greedy-algorithm}. Ulaz u algoritam su problem $\mathcal{P}$, instanca problema, te pohlepna funkcija $g$.  Algoritam počinje od nekog, obično praznog, parcijalnog rješenja koje se kroz iteracije nastoji proširiti najboljim mogućom odlukom (komponentom rješenja). U svakoj iteraciji izvršava se sljedeće:
  \begin{itemize}
  	\item Za trenutno rješenje $x$, izračunava se skup komponenti koje na dopustiv način (u odnosu na ograničenja problema $\mathcal{P}$) proširuju $x$;
- 	\item Među svim takvim komponentama, bira se ono koje (naizgled) najviše doprinosi kvalitetu krajnjeg rješenja; ova odluka se donosi na osnovu pohepne funkcije $g$, koja se još naziva i \textit{heuristička} funkcija. 
+ 	\item Među svim takvim komponentama, bira se ono koje (naizgled) najviše doprinosi kvalitetu krajnjeg rješenja shodno izračunatoj pohlepnoj vrije\-dnosti. %ova odluka se donosi na osnovu pohepne funkcije $g$, koja se još naziva i \textit{heuristička} funkcija. 
  	\item Proširimo rješenje sa najboljom komponentom rješenja.
  \end{itemize}
-Ovaj proces se izvršava sve dok je skup komponenti koje dopustivo proširuju trenutno rješenje neprazan. Nakon prekida, vraćamo dobijeno rješenje. \\ 
+Ovaj proces se izvršava sve dok je skup komponenti koje (dopustivo) proširuju trenutno rješenje neprazan. Nakon prekida, vraćamo dobijeno rješenje. \\ 
 
  %%Proces se ponavlja sve do nekog uslova zaustavljanja.
 
@@ -897,11 +895,11 @@ Ovaj proces se izvršava sve dok je skup komponenti koje dopustivo proširuju tr
 		\State \textbf{Ulaz:}   instanca nekog problema $\mathcal{P}$, pohlepna funkcija $g$
 		\State \textbf{Izlaz}: (aproksimativno) rješenje instance problema $\mathcal{P}$
 		\State $x\gets$ inicijalno parcijalno rješenje problema $\mathcal{P}$
-		\State $\mathcal{C}\gets$ odredi komponente rješenja koje dopustivo proširuju rješenje $x$
+		\State $\mathcal{C}\gets$ odredi komponente rješenja koje (dopustivo) proširuju rješenje $x$
 		\While{$\mathcal{C} \neq \emptyset$}
 		    \State $e \gets$ odaberi lokalno najbolju komponentu iz $\mathcal{C}$ u odnosu na pohlepnu funkciju $g$
-		    \State Proširi $x$ sa $e$
-		     \State $\mathcal{C}\gets$ odredi komponente rješenja u odnosu na prošireno rješenje $x$
+		    \State $\overline{x} \gets$ \textit{Proširi} $x$ sa $e$
+		     \State $\mathcal{C}\gets$ odredi komponente rješenja u odnosu na prošireno rješenje $ \overline{x} $
 		\EndWhile
 		%\If{$x$ je dopustivo}
 		   \State \textbf{return} $x$
@@ -913,12 +911,12 @@ Ovaj proces se izvršava sve dok je skup komponenti koje dopustivo proširuju tr
     \caption{Shema paradigme pohlepnih algoritama.}    \label{alg:greedy-algorithm}
 \end{algorithm}
 
-Dakle, da bimo primijenili pohlepni pristup u rješavanju problema, potrebno je definisati: ($i$) skup komponenti rješenja; ($ii$) strukturu parcijalnog rješenja; ($ii$) pohlepnu funkciju koja računa kvalitet komponente koja može proširiti postojeće parcijalno rješenje.
+Dakle, da bimo primijenili pohlepni pristup u rješavanju problema, potre\-bno je definisati: ($i$) skup komponenti rješenja; ($ii$) strukturu parcijalnog rješenja; ($iii$) pohlepnu funkciju koja računa kvalitet komponente koja može proširiti postojeće parcijalno rješenje.
 
 
 
-Ovu paradigmu koristimo kada je potrebno dobiti rješenje razumnog kvaliteta   u relativno kratkom vremenskom intervalu, na jeftin način (kodira\-jući relativno brzo). Ovo je često jedna od prvih tehnika koja se primijenjuje u rješavanju teških 
-problema.  Ovi algoritmi se takođe koriste u svrhu dobijanja početnog rješenja koje se zatim  poboljšava naprednijim tehnikama. U osnovi, ova paradigma nam nudi dobru polaznu osnovu da ``opipamo'' problem, da se osjeti  koliko je on težak, te da se dobije na uvid koliko heurističke, konstruktibilne (aproksimativne) metode mogu biti efikasne za rješavanje takvih problema.
+Ovu paradigmu možemo koristiti kada je potrebno vratiti rješenje razumnog kvaliteta   u relativno kratkom vremenskom intervalu, implementirajuči pristup relativno lako. Ovo je često jedna od prvih tehnika koja se primijenjuje u rješavanju teških 
+problema. Takođe koriste u svrhu dobijanja početnog rješenja koje se zatim  poboljšava naprednijim tehnikama. U osnovi, ova paradigma nam nudi dobru polaznu osnovu da ``opipamo'' problem, da se osjeti  koliko je on težak, te da se dobije na uvid koliko heurističke, konstrukti\-bilne (aproksimativne) metode mogu biti efikasne za rješavanje takvih proble\-ma.
 
 U nastavku navodimo nekoliko primjena pohelpnih algoritama u rješavanju raznih tipova (kombinatornih) problema. 
 
@@ -935,14 +933,12 @@ novčanica/kovanica? Rješiti zadatak pomoću paradigme pohlepnih algoritama.
 	 Definišimo rješenje problema i njegovu strukturu. Bilo koja $k$-torka $(p_1, p_2, \ldots , p_k )$, gdje je $p_i$ broj
 	 apoena novčanice od $x_i$ KM-ova tako da je $\sum_i p_i = X$
 	 (razmjenjena je količina od $X$ KM-ova) prestavlja (dopustivo) rješenje. 
-	 Parcijalno rješenje problema je predstavljeno bilo kojom $s$-torkom $(p_1, p_2, \ldots , p_s )$ za koju je $\sum_i^s p_i \leq X, s \leq k$.  Ovakvo rješenje se može nadopuniti do dopustivog. \\ 
+	 Parcijalno rješenje problema je predstavljeno bilo kojom $s$-torkom $(p_1, p_2, \ldots , p_s )$ za koju je $\sum_i^s p_i \leq X, s \leq k$.  Ovakvo rješenje se može nadopuniti do dopustivog prema uslovima zadatka. \\ 
 	 
-	 Konstruišimo sada pohlepnu funkciju. Ideja je da prvo razmatramo novča\-nice najvećeg mogućeg apoena manje od $X$. Uzmimo  koliko možemo takvih novčanica, ali da se ne premaši ukupna vrijednost od $X$. Od preostalog iznosa $X'$ koji treba da bude razmijenjen, uzmemo onoliko novčanica maksimalne vrijednosti apoena, u zbiru iznosa manjeg od $X'$, koliko god je to  moguće. Ovaj proces nastavimo, dok ne dobijemo dopustivo rješenje. 
-	 
-	 Prvo sortirajmo vrijednosti apoena od najvećeg do najmanjeg. Pretpostavimo bez smanjenja opštosti da je  početni redoslijed apoena $x_1, \ldots, x_k$ dat u sortiranom poretku. Pohlepna funkcija od trenutnog parcijalnog rješenja $s_{p}=(p_1, \ldots, p_s), s \leq k$ nalazi najmanji indeks apoena $i$ koji je veći od $s$, a da je pri tome $x_i \leq X'= X - \sum_i^s p_i x_i$. Tada je novo prošireno parcijalno rješenje jednako 
+	 Konstruišimo sada pohlepnu funkciju. Ideja je da prvo razmatramo novča\-nice najvećeg mogućeg apoena manjeg od $X$. Uzmimo  koliko možemo takvih novčanica, ali da se pri tome ne premaši ukupna vrijednost  $X$. Od preostalog iznosa $X'$ koji treba da bude razmijenjen, uzmemo onoliko novčanica maksimalne vrijednosti apoena, u zbiru iznosa manjeg od $X'$, koliko god je to  moguće. Ovaj proces nastavimo, dok ne dobijemo dopustivo rješenje. Da bismo efikasno izvršili prethodne instrukcije, prvo sortirajmo vrijednosti apoena od najvećeg do najmanjeg. Pretpostavimo, bez smanjenja opštosti, da je  sortirani redoslijed apoena dat sa nizom $x_1, \ldots, x_k$. Pohlepna funkcija od trenutnog parcijalnog rješenja $s_{p}=(p_1, \ldots, p_s), s \leq k$ nalazi najmanji indeks apoena $i$ koji je veći od $s$, a da je pri tome $x_i \leq X'= X - \sum_i^s p_i x_i$. Tada je novo prošireno parcijalno rješenje jednako 
 	 $$s'_{p}=(p_1, \ldots, p_s,\underbrace{0,\ldots, 0}_{*}, \underbrace{\lfloor X'/x_i \rfloor}_{p_i} ).$$ 
-	 Algoritam se zaustavlja ili kada razmotrimo sve apoene, ili prije toga, kada algoritam nađe (odgovarajuće) rješenje. Implementacija algoritma ovog problema  je data u nastavku.
-	 \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
+	 Algoritam se zaustavlja ili kada razmotrimo sve apoene ili prije toga, kada algoritam nađe (odgovarajuće) rješenje. Implementacija algoritma ovog problema  je data u nastavku.
+	 \begin{minted}[fontsize=\footnotesize,scale=0.75]{python}
 	 def razmijeni(P, X):
 	 	rjesenje = []
 	 	i = 0
@@ -962,7 +958,7 @@ novčanica/kovanica? Rješiti zadatak pomoću paradigme pohlepnih algoritama.
 	 \end{minted} 
 \end{solution}
 
-\textit{Kompleksnost algoritma}. Sortiranje algoritma zahtjeva vrijeme od $O(n \log n)$. Dalje, glavna petlja se izvršava u $O(n)$ vremenu, odakle slijedi da je ukupno vrijeme izvršavanja algoritma jednako $O(n \log n)$, što je, svakako, polinomijalno.  Napomenimo da ovakvom strategijom garantujemo nalazak optimalnog rješenja problema (ili utvrđujemo da rješenje ne postoji). 
+\textit{Kompleksnost algoritma}. Sortiranje algoritma zahtjeva vrijeme od $O(n \log n)$. Dalje, glavna petlja se izvršava u $O(n)$ vremenu, odakle slijedi da je ukupno vrijeme izvršavanja algoritma jednako $O(n \log n)$, što je, svakako, polinomijalno.  Napomenimo da ovakvom strategijom garantujemo nalazak optimalnog rješenja problema, (ili utvrđujemo da rješenje ne postoji) što se formalno može i pokazati. 
 
 
 \begin{example} (\textbf{Razlomljeni problem ruksaka}). 
