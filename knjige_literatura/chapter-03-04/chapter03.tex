@@ -1584,7 +1584,7 @@ Diskutujmo slučaj $DP[2][4]=4$. Ako rješenje podproblema ne uzima proizvod 2, 
    
    \textit{Rekurzija}. Analizirajmo podprobleme koji su relevantni za rješavanje podproblema $(i,j)$. Razlikujemo dva slučaja:
    \begin{itemize}
-   	\item $i$-ti element niza \emph{niz} može biti dio rješenja. Tada se podproblem $(i, j)$ redukuje na podprobleme $(i-1, j-niz[i-1])$ za sve $j$ za koje je  $j-niz[i-1]\geq  0$, dakle %--  i podproblem $(i-1, j)$
+   	\item $i$-ti element niza \emph{niz} je dio rješenja. Tada se podproblem $(i, j)$ redukuje na podprobleme $(i-1, j-niz[i-1])$ za sve $j$ za koje je  $j-niz[i-1]\geq  0$, dakle %--  i podproblem $(i-1, j)$
    	    $$ DP[i, j] =    DP[i-1][ j- niz[i-1] ]. $$ %DP[i-1, j]\ \vee\
    	\item $i$-ti element niza \emph{niz} nije dio rješenja. Tada se podproblem $(i, j)$ redukuje na podproblem $(i-1, j)$, a rekurzija data sa 
    	$$ DP[i][j] = DP[i-1][j]. $$
@@ -1657,7 +1657,7 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 \begin{example}
 	({\textit{Problem rezanja štapa}}). Dat je štap dužine $n$ i lista cijena štapa dužine $i$, za sve $1 \leq i \leq n$.
 	
-	Pronaći optimalan način isijecanja  štapa na manje	štapove da bi se maksimizovao ukupan profit.
+	Pronaći optimalan način rezanja  štapa na manje	štapove da bi se maksimizovao ukupan profit.
 \end{example}
 
 
@@ -1667,7 +1667,7 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 	17, 17, 20].$$  Neka je štap dužine $d=4$.
 	Rješenje konkretne instance je da se reze štap na dva dijela dužine od po 2. Zarada je u tom slučaju jednaka $5 + 5 = 10$.  \\ \vspace{0.2cm}
 	
-	 Podprobleme datog problema indukujemo indeksima $i$, $0 \leq i \leq n$, gdje vrijednost indeksa $i$ označava instancu problem rezanja štapa dužine $i$. Pretpostavimo da vrijednost optimalnog rezanja (tj. optimalno rješenje)  instance dužine $i$ čuvamo u nizovnoj strukturi $DP$ na poziciji $i$, tj. $DP[i]$.
+	 Podprobleme datog problema indukujemo indeksima $i$, $0 \leq i \leq n$, gdje vrijednost indeksa $i$ označava instancu problem rezanja štapa dužine $i$. Pretpo\-stavimo da vrijednost optimalnog rezanja (tj. optimalno rješenje)  instance dužine $i$ čuvamo u nizovnoj strukturi $DP$ na poziciji $i$, tj. $DP[i]$.
 	 
 	 \textit{Rekurzija}. Podproblem indukovan vrijednošću $i$ možemo  riješiti rješavajući podprobleme koji su indukovani sa $k$, $0 \leq k < i$. To znači da štap dužine $i$ dijelimo na dva dijela, dužine $k$ (sa cijenom $price[k-1]$) $i$ štap dužine $(i-k)$, koji opet rješavamo rekurzivno.  
 	 
@@ -1697,13 +1697,14 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
      #instanca
      d = 4
      price = [1, 5, 8, 9, 10, 17, 17, 20] 
-     max_profit = stick_cut(d, price)      #poziv:
+     max_profit = stick_cut(d, price)     
+     #poziv
      print(max_profit)
  \end{minted}
 
 \textit{Kompleksnost algoritma}. Dvije \texttt{for} petlje izvršavaju ukupno najviše $O(d^2)$. Kako se svaka iteracija izvršava u konstantnom vremenu, zaključujemo da je kompleksnost algoritma jednaka $O(d^2)$.
 
-\textit{Napomena}. Pogledajmo drvo koje se kreira algoritmom grube sile na Slici~\ref{fig:brute-force-stick-cut}  pri rješavanju problema rezanja štapa za $d=4$. Ovaj pristup enumeriše sva moguća rješenja za rezanje štapa dužine $d=4$. Prvo uzima cio štap u razmatranje (i njegovu cijenu), zatim otkida dio štapa dužine 1, dok se ostatak štapa (dužine 3) rješava (dijeli) rekurzivno itd. Kompletno rješenje dobijamo u listovima stabla (označeni sa 0). 
+\textit{Napomena}. Pogledajmo drvo rekurzije koje se kreira algoritmom grube sile na Slici~\ref{fig:brute-force-stick-cut}  pri rješavanju problema rezanja štapa za $d=4$. Ovaj pristup enumeriše sva moguća rješenja za rezanje štapa dužine $d=4$. Prvo uzima cio štap u razmatranje (i njegovu cijenu), zatim otkida dio štapa dužine 1, dok se ostatak štapa (dužine 3) rješava (dijeli) rekurzivno itd. Kompletno rješenje dobijamo u listovima stabla (označeni sa 0). 
 \begin{center}
 	\begin{figure}[H]
 		\centering
@@ -1717,7 +1718,7 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 
   Npr. put koji posjećuje čvorove sa oznakama 4 $\rightarrow$ 3 $\rightarrow$ 2 $\rightarrow$ 1 $\rightarrow$ 0, odgovara rješenju u kojem se štap sječe na 4 manja štapa dužine 1 (cijene $4 \times price[0]$). Slično, za put koji posjećuje čvorove sa oznakama 4 $\rightarrow$ 3 $\rightarrow$ 1 $\rightarrow$ 0, odgovara rješenju u kojem se štap sječe na dva manja štapa dužine 1, te jedan dužine 2 (cijene $2 \times price[0] + price[1]$).   
   
-   Jasno se vidi da se podproblemi isprepliću, tj. da se, npr. rješavanje problema štapa dužine dva računa više (dva) puta. U slučaju dinamičkog programiranja implementiran  pristupom odozgo prema dolje, stablo će biti značajno redukovano, jer neće postojati rekalkulacije istih podproblema (dakle, nema identičnih kopija podstabala u različitim regionima DP stabla). 
+   Jasno se vidi da se podproblemi isprepliću, tj. da se, npr. rješavanje problema štapa dužine dva računa više (dva) puta. U slučaju dinamičkog programiranja implementiran  pristupom odozgo prema dolje, stablo će biti značajno redukovano, jer neće postojati rekalkulacije istih podproblema (dakle, nema identičnih kopija podstabala u DP stablu). 
  
 
 \section{Zadaci}
@@ -1732,16 +1733,16 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 pomoć rekurzivnih algoritama napisati program koji pronalazi sva moguća rješenja
 za promjenljive  kojih ima $n$ i  čija   suma treba biti jednaka $ s$. 
 
-\textit{Instanca}. $n = 5, s = 4$;
-\textit{Rješenje}. 70. \\
-\textit{Napomena}:
-instanca predstavlja jednačinu $x_1 + x_2 + x_3 + x_4 + x_5 = 4, x_i \in \mathbb{N}$. 
+\textit{Instanca}: $n = 5, s = 4$;
+\textit{Rješenje}: 70. \\
+\textit{Napomena}.
+Instanca predstavlja jednačinu $x_1 + x_2 + x_3 + x_4 + x_5 = 4, x_i \in \mathbb{N}$. 
 Sva moguća rješenja su:
 $(1\ 1\ 1\ 1\ 0), (1\ 0\ 1\ 1\ 1), (0\ 1\ 1\ 1\ 1), \ldots ,$ $(2\ 1\ 0\ 0\ 1), \ldots , (2\ 2\ 0\ 0\ 0)$ itd.
 	%pohlepni algoritmi (dva zadatka) 
 	%https://www.geeksforgeeks.org/minimum-product-subset-array/
 	\item Pronaći podskup elemenata niza tako da  proizvod elemenata u podskupu bude minimalan. Koristiti paradigmu pohlepnih algoritama.\\
-	 \textit{Instanca}. $niz = [ -1, -1, -2, 4, 3]$; \textit{Rješenje}.  -24 ($=(-2 )\cdot (-1) \cdot (-1) \cdot 4 \cdot 3$). 
+	 \textit{Instanca}: $niz = [ -1, -1, -2, 4, 3]$; \textit{Rješenje}:  -24 ($=(-2 )\cdot (-1) \cdot (-1) \cdot 4 \cdot 3$). 
 	
 	%https://www.geeksforgeeks.org/greedy-algorithm-egyptian-fraction/
 	\item Svaki pozitivan razlomak možemo predstaviti predstaviti kao zbir jedi\-nstvenih jediničnih razlomaka. Razlomak je jedinični ako je brojnik 1, a nazivnik pozitivan cijeli broj; npr. $1/3$ je jedinični razlomak. Npr. $2/3= 1/2 + 1/6, 3/7=1/3 + 1/11 + 1/231.$   Uz pomoć paradigme pohlepnih algoritama, za proizvoljan razlomak, naći jedinične razlomke koje u zbiru daju taj razlomak.  
@@ -1749,15 +1750,15 @@ $(1\ 1\ 1\ 1\ 0), (1\ 0\ 1\ 1\ 1), (0\ 1\ 1\ 1\ 1), \ldots ,$ $(2\ 1\ 0\ 0\ 1), 
 	
 	\item Riješiti problem nalaska najdužeg zajedničkog podniza dva stringa pomoću dinamičkog programiranja pristupom odozgo prema dolje. 
 	
-	\item U ulizu je dat niz brojeva u.  Konstruisati algoritam dinamičkog programi\-ranja koji daje odgovor na pitanje li postoji particionisanje niza na dva (disjunktna) skupa tako da je zbir elemenata u obje particije jednak.
+	\item U ulizu je dat niz brojeva.  Konstruisati algoritam dinamičkog programi\-ranja koji daje odgovor na pitanje li postoji particionisanje niza na dva (disjunktna) skupa tako da je zbir elemenata u obje particije jednak.
 	\item Implementirati metod dinamičkog progrmairanja  za problem rezanja štapa koristeći pristup odozgo prema dolje.
 	
 	\item Neka su u ulazu data dva striga $s_1$ i $s_2$. Uz pomoć dinamičkog programi\-ranja, pronaći najkraći string $s$ tako da
 	su stringovi $s_1$ i $s_2$ podnizovi stringa $s$.
 	\item  Data  je riječ i riječnik (skup riječi). Ispitati da li se riječ može podijeliti na segmente (podstringove) tako da oni pripadaju riječniku. \\
 	
-	\textit{Instanca}. $$dict = \{\texttt{this}, \texttt{th}, \texttt{is}, \texttt{famous}, \texttt{Word}, \texttt{break}, \texttt{b}, \texttt{r}, \texttt{e}, \texttt{a}, \texttt{k},	\texttt{br}, \texttt{bre}, \texttt{brea}, \texttt{ak}, \texttt{problem} \} $$ te   $$word = \texttt{Wordbreakproblem}.$$  
-	\textit{Rješenje}. \texttt{Word break problem},  kao jedno od rješenja.
+	\textit{Instanca}: $$dict = \{\texttt{this}, \texttt{th}, \texttt{is}, \texttt{famous}, \texttt{Word}, \texttt{break}, \texttt{b}, \texttt{r}, \texttt{e}, \texttt{a}, \texttt{k},	\texttt{br}, \texttt{bre}, \texttt{brea}, \texttt{ak}, \texttt{problem} \} $$ te   $$word = \texttt{Wordbreakproblem}.$$  
+	\textit{Rješenje}: \texttt{Word break problem},  kao jedno od rješenja.
 	
 	\item Neka je dat pravougaonik dimenzija $N\times M$. Pretpostavimo da je na raspolaganju beskonačan broj pločica
 	formata $2^i \times 2^i$, $i = 0, 1, 2, 3, \ldots $. 
@@ -1765,7 +1766,7 @@ $(1\ 1\ 1\ 1\ 0), (1\ 0\ 1\ 1\ 1), (0\ 1\ 1\ 1\ 1), \ldots ,$ $(2\ 1\ 0\ 0\ 1), 
 	Napisati program koji rekurzivno pronalazi minimalan broj pločica koji je potreban da bi se
 	popločao pravougaonik datih dimenzija.
 	
-	\textit{Instanca}.  $N = 6, M=5$;	\textit{Rješenje}. 9 (pločica) -- vidjeti narednu sliku. %~\ref{fig:plocice}. 
+	\textit{Instanca}:  $N = 6, M=5$;	\textit{Rješenje}: 9 (pločica) -- vidjeti narednu sliku. %~\ref{fig:plocice}. 
 	
 	\begin{figure}[H]
 	    \centering
