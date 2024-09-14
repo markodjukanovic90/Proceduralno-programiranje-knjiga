@@ -1,4 +1,4 @@
-\chapter{Primjena algoritamskih paradigmi na probleme iz aritmetike}
+\chapter[Primjena algoritamskih paradigmi ...]{Primjena algoritamskih paradigmi na probleme iz aritmetike}
 
 % https://www.geeksforgeeks.org/dynamic-programming/
 
@@ -18,7 +18,7 @@ Ispitati koliko se prostih brojeva može pronaći,
 u nekom razumnom vremenu, među prvih ${N}$ prirodnih brojeva.} \\ 
 
 
-Paradigmom brutalne sile, ovo bi se moglo riješiti sljedećim rezonovanjem: ispitajmo svaki od (prirodnih) brojeva u intervalu od $2$ do ${N}$ da li je prost ili ne, sljedećom jednostavnom procedurom:
+Paradigmom brutalne sile, ovo bi se moglo riješiti sljedećim rezono\-vanjem: ispitajmo svaki od (prirodnih) brojeva u intervalu od $2$ do ${N}$ da li je prost ili ne, sljedećom jednostavnom procedurom:
 
 \begin{minted}{python}
      
@@ -58,7 +58,7 @@ Implementacija algoritma je data narednim k\^odom.
        N = 1000
        sieve(N)
 \end{minted}  
-\textit{Kompleksnost algoritma}.  Može se pokazati da je kompleksnost prethodnog algoritma jednaka $O(N \log\log N )$. 
+\textit{Kompleksnost algoritma}.  Može se pokazati da je kompleksnost pretho\-dnog algoritma jednaka $O(N \log\log N )$. 
 
 
 Demonstrirajmo   prvih nekoliko iteracija ovog algoritma u tabelarnom zapisu, za $N=50.$ 
@@ -145,7 +145,7 @@ Fundamentalna teorema aritmetike kaže da se svaki broj $n \in \mathbb{N}$ može
  $$n = \prod_{i=1}^k p_i^{n_i}$$
  za neke $k, n_1,\ldots, n_i, \ldots, n_k \in \mathbb{N}$.
  
- Npr. broj 120 se može faktorisati kao $2^3 \cdot 3^1 \cdot 5^1$. Sa stanovišta izračunavanja, postavlja se pitanje na koji način efikasno izvršiti problem izračunavanja faktorizacije broja.  U tu svrhu, iskoristićemo znanje o Eratostenovom situ. 
+ Npr. broj 120 se može faktorisati kao $2^3 \cdot 3^1 \cdot 5^1$. Sa stanovišta izračunavanja, postavlja se pitanje na koji način efikasno izvršiti pro\-blem izračunavanja faktorizacije broja.  U tu svrhu, iskoristićemo znanje o Eratostenovom situ. 
  
  Primijenićemo paradigmu podijeli pa zavladaj. Dakle, za broj $n$, nađimo najmanji prost broj $p$ koji dijeli $n$. Tada vrijedi $n = p \cdot n/p$. Dalje, rekurzivno primijenjujemo istu akciju za broj $n/p$ sve dok je $n>1$. Bazni slučaj je kada je broj $n$ prost, i pri tome se kao takav i vraća, prekidajući momentalno rad rekurzije. Potrebno je konstruisati strukturu podataka  koja na poziciji $i$ čuva najmanji prost faktor broja $i$; u slučaju da je broj prost, po konvenciji se čuva vrijednost 0.
  
@@ -188,7 +188,7 @@ Fundamentalna teorema aritmetike kaže da se svaki broj $n \in \mathbb{N}$ može
    print("Lista faktora je: ", F)
  \end{minted} 
  
-\textit{Kompleksnost algoritma}. Najskuplja operacija u algoritmu je adaptacija algoritma Eratostenovog sita (funkcija \texttt{sieve\_adaptation}) i ona se izvršava u $O(n \log \log n)$ vremenu. Glavna \texttt{while}-petlja se izvršava u linearnom $O(n)$ vremenu. Dakle, čitav algoritma se izvršava u 
+\textit{Kompleksnost algoritma}. Najskuplja operacija u algoritmu je ada\-ptacija algoritma Eratostenovog sita (funkcija \texttt{sieve\_adaptation}) i ona se izvršava u $O(n \log \log n)$ vremenu. Glavna \texttt{while}-petlja se izvršava u linearnom $O(n)$ vremenu. Dakle, čitav algoritma se izvršava u 
  $O(n \log \log n)$ vremenu.
  
   \section{Izračunavanje binomnih koeficijenata} 
@@ -433,7 +433,7 @@ U prvoj iteraciji ($i=1$) će biti obrisani svi brojevi na parnoj poziciji u niz
  	\item Broj je savršen akko je jednak zbiru svojih djelilaca (ne računajući njega samog). Npr. 6 i 28 su savršeni jer je $6 = 1 + 2 + 3; 28 = 1 + 2 + 4 + 7 + 14$. Napisati program koji ispituje da li je broj savršen korištenjem Eratostenovog sita. Kolika je vremenska složenost algoritma? Uporediti ovaj algoritam sa algoritamskom paradigmom brutalne sile.
  	\item Broj je ružan akko su mu jedini prosti faktori 2 ili 3 ili 5. Niz prvih ružnih brojeva je dat sa $1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, \ldots$ (1 je po
  	konvenciji uključen). U ulazu je  dat broj $n$. Izračunati $n$-ti ružni broj. Koristiti paradigmu dinamičkog programiranja.
- 	\item Sfenički brojevi su pozitivni cijeli brojevi koji se dobijaju kao proizvod tačno 3 različita prosta faktora. Npr. $30, 42, 66, 70, 78, 102, 105, 110, 114, \ldots$ su neki od takvih brojeva. U ulazu je dat broj $n$. Ispitati da li je on sfenički? 
+ 	\item Sfenički brojevi su pozitivni cijeli brojevi koji se dobijaju kao proizvod tačno 3 različita prosta faktora. Npr. $30, 42, 66, 70, 78,$ $102, 105, 110, 114, \ldots$ su neki od takvih brojeva. U ulazu je dat broj $n$. Ispitati da li je on sfenički? 
  	
  	\textit{Primjer}. $30=2 \cdot 3 \cdot 5$ jeste sfenički, dok $60 = 2^2 \cdot 3 \cdot 5 $ nije sfenički. 
  	\item Za broj se kaže da je slobodan od kvadrata ako ga nijedan

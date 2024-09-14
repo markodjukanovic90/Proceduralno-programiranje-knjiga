@@ -1312,7 +1312,7 @@ arg1
 arg2
 \end{minted}
 
-Modul \texttt{getopt} predstavlja parser argumenata komandne linije. Omogućuje  pisanje skripti koje mogu uzimati argumente i opcije iz komandne linije pri izvršavanju programa. Modul \textit{getopt} ima dvije bitne funkcije, \textit{getopt}() i \textit{getopt\_long}(), koje se koriste za analiziranje/parsiranje argumenata komandne linije. Funkcija \textit{getopt}() analizira kratke opcije (opcije od jednog slova) i vraća torku od dva elementa:
+Modul \texttt{getopt} predstavlja parser argumenata komandne linije. Omo\-gućuje  pisanje skripti koje mogu uzimati argumente i opcije iz komandne linije pri izvršavanju programa. Modul \textit{getopt} ima dvije bitne funkcije, \textit{getopt}() i \textit{getopt\_long}(), koje se koriste za analiziranje/parsiranje argu\-menata komandne linije. Funkcija \textit{getopt}() analizira kratke opcije (opcije od jednog slova) i vraća torku od dva elementa:
 
 \begin{itemize}
 	\item prvi element je lista parova (opcija, vrijednost); 
@@ -1441,7 +1441,7 @@ Modul \textit{ctypes} pruža način za pozivanje funkcija i korištenje tipova p
 	\item Napisati \textit{C} program koji želimo ugraditi u pajtonov   k\^od. Ovaj program može da sadrži jednu ili više funkcija koje želimo pozvati unutar k\^oda pisanog u Pajtonu.
 	\item Prevesti (kompajlirati) \textit{C} program u dijeljenu biblioteku.    Na Linuks ili macOS  sistemima u tu svrhu koristimo \textit{gcc} kompajler. Na sistemu Windows možete koristiti Visual Studio ili MinGW za kompajliranje programa u DLL fajl.
 	\item Učitati dijeljenu biblioteku u pajtonov k\^od uz  pomoć modula \texttt{ctypes}. Učitavamo .dll fajl poyivom \texttt{cdll.LoadLibrary(path)} gdje je \textit{path} proslijeđena staza do dijeljene biblioteke.
-	\item Definišimo tipove argumenata i tipove koje vraćaju funkcije napisane u \textit{C} programu. Prije nego što   pozovemo \textit{C} funkciju iz programa napisanog u Pajtonu, trebaju se navesti tipovi argumenata i tipovi koje funkcije vraćaju. To možemo učiniti postavljanjem \textit{argtypes} i \textit{restype} atributa funkcijskog objekta.
+	\item Definišimo tipove argumenata i tipove koje vraćaju funkcije napi\-sane u \textit{C} programu. Prije nego što   pozovemo \textit{C} funkciju iz programa napisanog u Pajtonu, trebaju se navesti tipovi argume\-nata i tipovi koje funkcije vraćaju. To možemo učiniti postavlja\-njem \textit{argtypes} i \textit{restype} atributa funkcijskog objekta.
 	\item Pozivanje \textit{C} funkcije preko programa napisanog u Pajtonu. Na kraju, pozivamo funkciju izvorno napisanu u \textit{C}-u koristeći pajton pomoću funkcijskog objekta koji je kreiran u koraku 4. Vrijednosti argumenata proslijeđujemo kao pajtonove objekte, a modul \texttt{ctypes} će ih automatski pretvoriti u odgovarajuće \textit{C} tipove podataka. 
 \end{enumerate}
 
@@ -1520,12 +1520,12 @@ U ovom primjeru uvozimo modul ``\textit{mathOps}" i koristimo njegove funkcije z
 
 PyPI (\textit{Python Package Index}) je centralni repozitorij paketa   koji su napisani u programskom jeziku Pajton. PyPI omogućuje programerima lako distribui\-ranje korisnički napisanih modula,  omogućavajući kako korišćenje paketa široj zajednici korisnika.
  
-Nekoliko   se koraka izvršava ukoliko želimo postaviti   korisnički kreirani modul na PyPI. Na zvaničnoj PyPI veb stranici \footnote{https://pypi.org/account/register/},  potrebno je kreirati račun. Nakon što se prijavimo, potrebno je  generisati token za prijavu na PyPI. Token je sigurnosni ključ koji omogućuje da se prijavimo i objavimo/podi\-gnemo  paket (modul).  Na lokalnom računaru instalirajmo module  \texttt{setuptools} i \texttt{wheel}, u slučaju da nisu instalirani. To se možete učiniti pomoću \textit{pip} naredbe:
+Nekoliko   se koraka izvršava ukoliko želimo postaviti   korisnički krei\-rani modul na PyPI. Na zvaničnoj PyPI veb stranici \footnote{https://pypi.org/account/register/},  potrebno je kreirati račun. Nakon što se prijavimo, potrebno je  generisati token za prijavu na PyPI. Token je sigurnosni ključ koji omogućuje da se prijavimo i objavimo/podi\-gnemo  paket (modul).  Na lokalnom računaru instalirajmo module  \texttt{setuptools} i \texttt{wheel}, u slučaju da nisu instalirani. To se možete učiniti pomoću \textit{pip} naredbe:
  \begin{minted}{python}
       pip install setuptools wheel
  \end{minted}
 
-Modul \texttt{setuptools} omogućuje upravljanje i distribuiranje našeg modula, a modul \texttt{wheel}   omogućuje generisanje datoteka sa ekstenzijom .\textit{whl} koje se mogu lako instalirati. Potom,  u korjenom direktorijumu našeg modula  kreiramo fajl \textit{setup.py}. Fajl \textit{setup.py}  definiše metapodatke o našem modulu kao što su naziv, verzija, autor, opis i druge metapodatke koji će biti prikazani na PyPI stranici   modula. Primjer takvog fajla je dat u nastavku.
+Modul \texttt{setuptools} omogućuje upravljanje i distribuiranje našeg modula, a modul \texttt{wheel}   omogućuje generisanje datoteka sa ekstenzijom .\textit{whl} koje se mogu lako instalirati. Potom,  u korjenom direktorijumu našeg modula  kreiramo fajl \textit{setup.py}. Fajl \textit{setup.py}  definiše metapoda\-tke o našem modulu kao što su naziv, verzija, autor, opis i druge metapodatke koji će biti prikazani na PyPI stranici   modula. Primjer takvog fajla je dat u nastavku.
 
 \begin{minted}{python}
    from setuptools import setup
@@ -1544,12 +1544,12 @@ Modul \texttt{setuptools} omogućuje upravljanje i distribuiranje našeg modula,
 \end{minted}
 Ovaj \textit{ setup.py}   definiše paket modul1 sa verzijom 0.0.1, datim autorom  i opisom, a zavisi od modula \textit{numpy} i \textit{pandas}.
 
-U narednom koraku se kreiraju distribucijske datoteke (source distribution i wheel distribution) pomoću \texttt{setuptools}, izvršavajući naredbu:
+U narednom koraku se kreiraju distribucijske datoteke (source distr\-ibution i wheel distribution) pomoću \texttt{setuptools}, izvršavajući naredbu:
 \begin{minted}{python}
         python setup.py sdist bdist_wheel
 \end{minted}
  
-Dalje instaliramo \texttt{twine} paket, koji služi za postavljanje distribucijskog modula na PyPI repozitorijum. Instaliramo ga pomoću   naredbe:
+Dalje instaliramo \texttt{twine} paket, koji služi za postavljanje distr\-ibucijskog modula na PyPI repozitorijum. Instaliramo ga pomoću   naredbe:
 \begin{minted}{python}
 	pip install twine
 \end{minted}
@@ -1574,7 +1574,7 @@ Prilikom izvođenja programa, računarska memorija se dijeli na različite dijel
 
 %K\^od sekcija pohranjuje instrukcije koda u obliku koji mašina razumije. Mašina slijedi upute u sekciji koda. Shodno instrukcijama, 
 Pajtonov interpreter učitava funkcije i lokalne varijable (reference) u me\-moriju steka. 
-Stek memorija je statična i privremena. Statična znači da veličina objekata pohranjenih u steku ne može da bude promijenjena. Riječ ``privremeno'' znači da čim pozvana funkcija vrati svoju vrijednost, funkcija i   varijable vezane za funkciju se uklanjaju sa steka. Pristup memoriji steka nije direktno obezbjeđen programeru, već  briga o ovom dijelu memorije je dodijeljena Pajtonovom interpreteru i OS-u.  Količina memorije koja  se dodijeljuje je poznata interpreteru i kad god se pozove funkcija, njene varijable zauzimaju memoriju koja se rezerviše na steku.
+Stek memorija je statična i privremena. Statična znači da veličina objekata pohranjenih u steku ne može da bude promije\-njena. Riječ ``privremeno'' znači da čim pozvana funkcija vrati svoju vrijednost, funkcija i   varijable vezane za funkciju se uklanjaju sa steka. Pristup memoriji steka nije direktno obezbjeđen programeru, već  briga o ovom dijelu memorije je dodijeljena Pajtonovom interpreteru i OS-u.  Količina memorije koja  se dodijeljuje je poznata interpreteru i kad god se pozove funkcija, njene varijable zauzimaju memoriju koja se rezerviše na steku.
 % Pratimo: https://towardsdatascience.com/python-memory-and-objects-e7bec4a2845ž
 % O steku i hipu: https://www.geeksforgeeks.org/how-are-variables-stored-in-python-stack-or-heap/
 
@@ -1588,7 +1588,7 @@ Stek memorija je statična i privremena. Statična znači da veličina objekata 
 		c = "abc"
 \end{minted}
 
-Kao što smo prethodno rekli, varijable (ili reference generalno) skladište samo memorijske adrese objekata. Dakle, postavlja se pitanje gdje se skladišti vrijednost samih objekata? Oni se nalaze u drugoj memoriji koja se zove \textit{hip} (eng. \textit{heap memory}). Napomenimo da riječ hip nema veze sa istoimenom strukturom podataka  već  zbog dostupnosti gomile memorijskog prostora u svrhu pohranjivanja i brisanja objekata.   Za pohranjivanje objekata potrebna nam je memorija sa dinamičkom alokacijom  -- veličina memorije i objekata se mogu mijenjati. Pajtonov interpreter je zadužen za aktivno dodjeljivanje memorije hipu (Primijetimo da u jeziku $C/C$++ to  se izvršava od strane programera!). Varijable koje su pohranjene u memoriji hipa se nalaze: ($i$)   izvan poziva metoda ili funkcija ili ($ii$) dijele se unutar više funkcija, dakle globalnog svojstva.
+Kao što smo prethodno rekli, varijable (ili reference generalno) skladište samo memorijske adrese objekata. Dakle, postavlja se pitanje gdje se skladišti vrijednost samih objekata? Oni se nalaze u drugoj memoriji koja se zove \textit{hip} (eng. \textit{heap memory}). Napomenimo da riječ hip nema veze sa istoimenom strukturom podataka  već  zbog dostupnosti gomile memorijskog prostora u svrhu pohranjivanja i brisanja objekata.   Za pohranjivanje objekata potrebna nam je memorija sa dinamičkom alokacijom  -- veličina memorije i objekata se mogu mijenjati. Pajtonov interpreter je zadužen za aktivno dodjeljivanje memorije hipu (Primijetimo da u jeziku $C/C$++ to  se izvršava od strane progra\-mera!). Varijable koje su pohranjene u memoriji hipa se nalaze: ($i$)   izvan poziva metoda ili funkcija ili ($ii$) dijele se unutar više funkcija, dakle globalnog svojstva.
 
 \begin{minted}{python}
 	# Memorija za 10 brojeva
@@ -1606,7 +1606,7 @@ Napomenimo još jednom da Pajton koristi algoritam za sakupljanje otpadaka (eng.
 
 Proces kompilacije   i izvršavanja k\^oda u programskom jeziku Pajton je komple\-skan proces kojeg nećemo izlagati u svim detljima nego ćemo ukratko navesti osnovne principe na kojima je baziran ovaj proces. Uključuje četiri osnovna koraka.
 \begin{itemize}
-	\item \textit{Leksička analiza} prvo  prosljeđuje izvorni k\^od   leksičkom analizatoru,  koji ga razlaže na pojedinačne tokene kao što su ključne riječi, identifi\-katori, operatori, itd.
+	\item \textit{Leksička analiza} prvo  prosljeđuje izvorni k\^od   leksičkom analiza\-toru,  koji ga razlaže na pojedinačne tokene kao što su ključne riječi, identifi\-katori, operatori, itd.
 	\item \textit{Parisiranje} prosleđuje tokene parseru, koji koristi gramatiku bez konteksta za izgradnju \emph{apstraktnog sintaksnog stabla} (AST) koje predstavlja strukturu k\^oda. U detalje ovog procesa nećemo ulaziti jer izlazi iz domena kojeg pokriva ova knjiga.
 	\item \textit{Kompilacija} AST u bajtkod, koji je jezik nižeg nivoa,   nezavisan od platforme.  Ovaj bajtkod se čuva u .\textit{pyc} fajlovima. %kojeg izvršava   Pajtonova \textit{virtuelna mašina} (VM).
 	\item \textit{Izvođenje} bajtkoda uz pomoć Pajtonovom virtuelnom mačinom (VM) tako što ga interpretira generišući \textit{mašinske instrukcije} u hodu. Bajtkod se izvršava u zaštićenom okruženju virtuelne mašine (obezbjeđuje sigu\-rnost i izolaciju od osnovnog OS-a).  
@@ -1629,8 +1629,8 @@ Napomenimo da tokom procesa izvršavanja, interpreter izvodi nekoliko optimizaci
 
 Recimo sada malo više o Pajtonovoj virtuelnoj mašini (PVM), bazičnoj komponenti ovog programskog jezika. Kako smo naveli, PVM je odgovorna za interpretiranje bajtkoda i izvršavanje k\^oda. Bajtkod se generiše od strane pajtonovog kompajlera (npr. CPython, Brython) pri kompajliranju izvornog k\^oda. Ključne uloge PVM su navedene u nastavku.  
 \begin{itemize}
-\item \textit{Kompatibilnost između platformi}.  PVM omogućava izvršavanje pajtonovog k\^oda na više različitih platformi bez ponovne kompilacije. Ovo olakšava pisanje i distribuciju aplikacija.
-\item \textit{Poboljšane performanse izvršavanja}.  PVM koristi bajtkod  interpreter, koji je brži od direktnog interpretera izvornog k\^oda. PVM može  koristiti \textit{Just-In-Time} (JIT) kompilaciju za dalju optimizaciju performansi.
+\item \textit{Kompatibilnost između platformi}.  PVM omogućava izvršavanje pajtonovog k\^oda na više različitih platformi bez ponovne kompi\-lacije. Ovo olakšava pisanje i distribuciju aplikacija.
+\item \textit{Poboljšane performanse izvršavanja}.  PVM koristi bajtkod  inter\-preter, koji je brži od direktnog interpretera izvornog k\^oda. PVM može  koristiti \textit{Just-In-Time} (JIT) kompilaciju za dalju optimizaciju performansi.
 \item \textit{Dinamičko tipiziranje}.  Pajton je dinamički tipiziran jezik, što znači da se tip varijable dodjeljuje u vremenu izvođenja programa. PVM je dizajnirana da efikasno upravlja ovim procesom.
 \item  \textit{Upravljanje memorijom}. PVM automatski upravlja memorijom jer  automatski oslobađa memoriju koja se više ne koristi.
 \item \textit{Lak pristup eksternim bibliotekama}. PVM se intenzivno koristi u  ekosistemu koji uključuje veliki broj otvorenih biblioteka. Ove biblioteke pružaju širok spektar funkcionalnosti vezano za  veb programiranje, mašinsko učenje, itd. Importovanje biblioteka se vrši pomoću naredbe \texttt{import}. 
@@ -1705,7 +1705,7 @@ Vizuelizaciju procesa prevođenja programa može da se vidi na Slici~\ref{fig:co
    rezultate izvršavanja programa;
     \item \textit{z}: koji zadaje zadatak koji treba da bude izvršen i obuhvata sljedeće vrijednosti:
     \begin{itemize}
-    	\item  1: U izlaznoj datoteci treba da se ispišu svi korisnici koji koriste usluge čija je  cijena veća od 15.4 KM. Eliminisati duplikate. 
+    	\item  1: U izlaznoj datoteci treba da se ispišu svi korisnici koji koriste usluge čija je  cijena veća od 15.4 KM. Elimini\-sati duplikate. 
         \item 2: U izlaznoj datoteci treba da se ispišu svi pretplatnici koji su potpisali ugovor u periodu od 01.01.2022.\ do 15.01.2023. godine.
         \item  3: U izlaznoj datoteci treba da se ispiše zbir svih cijena za usluge koje koristi svaki od pretplatnika. 
         \item 4: U izlaznoj datoteci treba da se ispišu sortirane cijene od najmanje do  najveće.

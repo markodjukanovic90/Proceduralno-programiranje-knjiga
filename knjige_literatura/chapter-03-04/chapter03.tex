@@ -1,6 +1,6 @@
 \chapter{Osnovne algoritamske paradigme}
 
-\textit{Programske paradigme} predstavljaju različite pristupe ili stilove  programiranja koji definišu način na koji programeri dizajniraju, strukturiraju i organizuju  svoj k\^od za rješavanje problema. Postoji nekoliko programskih paradigmi, a svaka od njih zahtjeva  drugačiji način razmišljanja o problemima i rješenjima programiranja.
+\textit{Programske paradigme} predstavljaju različite pristupe ili stilove  progra\-miranja koji definišu način na koji programeri dizajniraju, strukturiraju i organizuju  svoj k\^od za rješavanje problema. Postoji nekoliko progra\-mskih paradigmi, a svaka od njih zahtjeva  drugačiji način razmišljanja o problemima i rješenjima programiranja.
 
 Neke od najčešćih programskih paradigmi su date u nastavku. 
 
@@ -15,18 +15,18 @@ Neke od najčešćih programskih paradigmi su date u nastavku.
 
 Različiti programski jezici često podržavaju jednu ili više paradigmi, a neki jezici dozvoljavaju programerima da po potrebi kombinuju  više različitih  paradigmi. Izbor paradigme programiranja često zavisi od domena problema, složenosti problema i ličnih preferencija i iskustva programera.
 
-Kada je riječ o \textit{algoritamskim paradigmama}, one predstavljaju  pristupe ili metode za dizajniranje algoritama koji rješavaju   računske probleme. Postoji nekoliko algoritamskih paradigmi; svaka  dolazi sa svojim prednostima i slabostima. \\ 
+Kada je riječ o \textit{algoritamskim paradigmama}, one predstavljaju  pri\-stupe ili metode za dizajniranje algoritama koji rješavaju   računske probleme. Postoji nekoliko algoritamskih paradigmi; svaka  dolazi sa svojim prednostima i slabostima. \\ 
 
 
 Neke od najčešćih algoritamskih paradigmi su date u nastavku opisujući osnovnu ideju, dok su detalji nekih od njih dati u nastavku knjige. 
 
 \begin{itemize}
 	\item \textit{Rekurzivni algoritmi}  uključuju rješavanje problema dijeljenjem na manje (pod)probleme, koji se potom rekurzivno rješavaju. Prekid rekurzije se dešava dolaskom do baznih slučajeva koji rješavaju trivijalne (ili skoro trivijalne) podprobleme. 
-	\item \textit{Algoritmi grube sile} (eng.\textit{ brute force}) uključuju isprobavanje svakog mogućeg rješenja problema dok se ne pronađe ispravno. Obično se upotrebljava samo za male probleme zbog svoje (ne)efikasnosti.
-    \item \textit{ Podijeli i vladaj} (eng. \textit{divide-and-conquer}) pristup uključuje podjelu problema na manje podprobleme, rješavanje svakog podproblema nezavisno, a zatim se rezultati  kombinuju da bi se riješio originalni problem. Dakle,  koristi se za efikasno rješavanje problema koji se mogu podijeliti na manje, nezavisne dijelove.
+	\item \textit{Algoritmi grube sile} (eng.\textit{ brute force}) uključuju isprobavanje svakog mogućeg rješenja problema dok se ne pronađe ispravno. Obično se upotrebljava samo za male probleme zbog svoje (ne)efi\-kasnosti.
+    \item \textit{ Podijeli i vladaj} (eng. \textit{divide-and-conquer}) pristup uključuje podjelu problema na manje podprobleme, rješavanje svakog pod\-problema nezavisno, a zatim se rezultati  kombinuju da bi se riješio originalni problem. Dakle,  koristi se za efikasno rješavanje problema koji se mogu podijeliti na manje, nezavisne dijelove.
     \item \textit{Pohlepni algoritmi} (eng. \textit{greedy}) --  uključuje donošenje lokalno optima\-lnog izbora u svakom koraku algoritma u nadi da će to dovesti do globalno optimalnog rješenja. Ova paradigma se često koristi kao prva opcija za rješavanje problema optimizacije  zbog svoje jednostavnosti. Sa druge strane,  ne zahtijeva intezivne memorijske niti vremenske resurse. 
     \item \textit{Algoritmi dinamičkog programiranja} (eng. \textit{dynamic programming})  uklju\-čuju razbijanje problema na manje podpro\-bleme i rješavanje svakog podproblema samo jednom. Kada se podproblem riješi, rezultati se pohranjuju u odgovarajuću (memorijsku) strukturu.    Često se koristi za probleme čiji se podproblemi preklapaju.
-    \item \textit{Algoritmi vraćanja unazad} (eng. \textit{backtracking}) uključuju  istraživanje svih mogućih rješenja problema postepenom izgradnjom   i napuštanjem parcijalnog rješenja ako se utvrdi da je netačno (nedopustivo). Često se koristi za probleme koji se mogu predstaviti putem grafa (stanja).
+    \item \textit{Algoritmi vraćanja unazad} (eng. \textit{backtracking}) uključuju  istraži\-vanje svih mogućih rješenja problema postepenom izgradnjom i napu\-štanjem parcijalnog rješenja ako se utvrdi da je netačno (nedopu\-stivo). Često se koristi za probleme koji se mogu predsta\-viti putem grafa (stanja).
     \item \textit{Randomizirani algoritmi} (eng. \textit{randomized})  uključuju uvođenje slučajnosti u algoritam radi poboljšanja performansi ili smanjenja složenosti. Često se koristi za probleme optimizacije ili probleme koji imaju mnogo mogućih rješenja.
 \end{itemize}
 
@@ -39,7 +39,7 @@ Različite algoritamske paradigme mogu se   prilagoditi ili međusobno kombinova
  Riječ rekurzija potiče od latinske riječi \textit{recurrere}, što doslovno znači vraćanje. U programiranju, funkcija koja u tijelu poziva samu sebe se naziva rekurzivna. Pozivanje iste funkcije unutar same funkcije podrazumijeva siste\-matično sma\-njivanje veličine ulaza funkcije koja se poziva,  shodno problemu koji se rješava. Smanjivanje dimenzije ulaza odgovara  rješavanju odgovarajućih podproblema početnog problema rekurzivnim putem. %Potom se kombiniraju rješenja podproblema,   da bi se riješio izvorni problem. 
    Da bi se rekurzija izvršavala u konačnom broju koraka, neophodno je definisati prekidne, tzv. \textit{bazne} slučajeve rekurzije. Bazni slučajevi su bitni iz razloga što predstavljaju okidač prekida rada rekurzije. 
  
- Prepoznavanje pogodne rekurzije igra bitnu ulogu u rješavanju problema rekurzivnim načinom. Demonstrirajmo sada rekurziju i rekurzivni način rješavajnja problema na jednostavnom problemu računanja $n$-tog parnog prirodnog broja. Neka $f(n)$ predstavlja $n$-ti po redoslijedu parni broj u skupu $\mathbb{N}_0$. Prvi broj u ovom skupu je 0, pa definišimo $f(0)= 0$. Svaki sljedeći je za dva veći od prethodnog, %(relacija ``biti sljedbenik''), 
+ Prepoznavanje pogodne rekurzije igra bitnu ulogu u rješavanju problema rekurzivnim načinom. Demonstrirajmo sada rekurziju i reku\-rzivni način rješavajnja problema na jednostavnom problemu računanja $n$-tog parnog prirodnog broja. Neka $f(n)$ predstavlja $n$-ti po redoslijedu parni broj u skupu $\mathbb{N}_0$. Prvi broj u ovom skupu je 0, pa definišimo $f(0)= 0$. Svaki sljedeći je za dva veći od prethodnog, %(relacija ``biti sljedbenik''), 
  što je definisano rekurzijom: 
  $$f(n) = f(n-1) + 2, n \geq 1, f(0) = 0.$$
   
@@ -150,7 +150,7 @@ Iako rekurzija i iteracija u ugnježdenim petljama na prvi pogled djeluju dosta 
 
 %Iz ranijih kurseva osnova programiranja je poznato da rekurzivni i iterativni programi imaju istu moć rješavanja problema, tj. svaki rekurzivni program može se napisati u  iterativnom obliku i obrnuto. 
 
-Rekurzivni program ima veće zahtjeve za prostorom od (ekvivalentnog) iterativnog programa, jer će sve funkcije ostati zapisane na steku dok se ne dostigne bazni slučaj. Takođe,  zahtjevi za vremenom su veći zbog poziva funkcija i   troškova vraćanja rezultata. Dodatno, zbog manje dužine k\^oda,  znaju biti teški za razumevanje i stoga je potrebno uložiti  dodatnu pažnju prilikom pisanja k\^oda zbog mogućih previda. %Računar može ostati bez memorije ako rekurzivni pozivi nisu ispravno provjereni.
+Rekurzivni program ima veće zahtjeve za prostorom od (ekvivale\-ntnog) iterativnog programa, jer će sve funkcije ostati zapisane na steku dok se ne dostigne bazni slučaj. Takođe,  zahtjevi za vremenom su veći zbog poziva funkcija i   troškova vraćanja rezultata. Dodatno, zbog manje dužine k\^oda,  znaju biti teški za razumevanje i stoga je potrebno uložiti  dodatnu pažnju prilikom pisanja k\^oda zbog mogućih previda. %Računar može ostati bez memorije ako rekurzivni pozivi nisu ispravno provjereni.
 
 Prednost korištenja rekurzija je u čistom i jednostavnijem načinu pisanja k\^oda. Neki problemi su inherentno rekurzivni, npr. obilazak stabala, problem hanojskih kula, itd. Za takve probleme, poželjno je, a i intuitivnije,  pisati rekurzivni k\^od. Kako smo već naveli, takve kodove možemo pisati i iterativno uz pomoć strukture podataka steka.
 
@@ -160,7 +160,7 @@ Rekurzija je moćna tehnika sa raznim primjenama u informatici i programiranju. 
 
 \begin{enumerate}
 	\item  \textit{Pretraživanje stabla i grafa}. Rekurzija se često primjenjuje za   pretraživanje bitnih struktura podataka kao što su stabla i grafovi. Ovi  algoritmi se mogu koristiti za istraživanje svih čvorova stabla ili grafa na sistematičan način.
-	\item \textit{Algoritmi za sortiranje}. Rekurzivni algoritmi se koriste u algoritmima za sortiranje kao što su \textit{quick sort} (brzo sortiranje) i  \textit{merge sort} (sorti\-ranje spajanjem). Ovi algoritmi koriste rekurziju da podijele podatke u manje podliste, sortiraju ih, a zatim ponovo spajaju.
+	\item \textit{Algoritmi za sortiranje}. Rekurzivni algoritmi se koriste u algori\-tmima za sortiranje kao što su \textit{quick sort} (brzo sortiranje) i  \textit{merge sort} (sorti\-ranje spajanjem). Ovi algoritmi koriste rekurziju da podijele podatke u manje podliste, sortiraju ih, a zatim ponovo spajaju.
 	%\item \textit{Algoritmi zavadi pa  vladaj}: Mnogi algoritmi koji koriste pristup zavadi pa vladaj, kao što je algoritam binarnog pretraživanja, koriste rekurziju da razbiju problem na manje podprobleme.
 	\item \textit{Generisanje fraktala}.  Fraktalni oblici i obrasci mogu se generirati korištenjem rekurzivnih algoritama. Npr. Mandelbrotov skup se generiše uzastopnom primjenom rekurzivne formule na kompleksne brojeve.
 	
@@ -172,7 +172,7 @@ Rekurzija je moćna tehnika sa raznim primjenama u informatici i programiranju. 
 
 
 	\item \textit{Algoritmi vraćanja unazad}. Algoritmi vraćanja unazad se koriste za rješavanje problema koji uključuju donošenje niza odluka, gdje svaka odluka zavisi od prethodnih. Ovi algoritmi se mogu implementirati korištenjem rekurzije za enumeraciju svih mogućih opcija i vraćanja una\-zad onog trenutka kada se rješenje ne pronađe ili uspostavi da narušava uslove problema.
-	\item \textit{Memoizacija}.  Ovo je tehnika koja uključuje pohranjivanje rezultata skupih poziva funkcija i vraćanje keširanih rezultata kada se naiđe na pozive funkcija istih ulaza. Memoizacija se može implementirati korištenjem rekurzivnih funkcija koje izračunavaju i keširaju rješenja podproblema.
+	\item \textit{Memoizacija}.  Ovo je tehnika koja uključuje pohranjivanje rezultata skupih poziva funkcija i vraćanje keširanih rezultata kada se naiđe na pozive funkcija istih ulaza. Memoizacija se može impleme\-ntirati korištenjem rekurzivnih funkcija koje izračunavaju i keširaju rješenja podproblema.
 \end{enumerate}
 
 U natavku ove sekcije primijenimo rekurzivni pristup na nekoliko konkretnih problema. 
@@ -286,15 +286,15 @@ Rekurzija se izvrašava u eksponencijalnom $O(2^n)$ vremenu.  %Prema tome, $T(n)
 
 % https://textbooks.cs.ksu.edu/cc310/4-data-structures-and-algorithms/12-brute-force/
 
-Jedna od prvih algoritamska tehnika koja se može primijeniti u rješavanju  računarskih problema je tehnika grube sile. Ovo je algoritamska paradigma sa kojom se većina čitalaca susretala do sada, mada ne znajući da je riječ o baš toj tehnici rješavanja problema.
+Jedna od prvih algoritamska tehnika koja se može primijeniti u rješavanju  računarskih problema je tehnika grube sile. Ovo je algoritamska para\-digma sa kojom se većina čitalaca susretala do sada, mada ne znajući da je riječ o baš toj tehnici rješavanja problema.
 
 Prosto rečeno, paradigma grube sile pokušava sva moguća rješenja proble\-ma, vraćajući ono koje je najbolje (ili prvo koje zadovoljava uslove zadatka, ako je riječ o problemima zadovljenja -- tzv. SAT problemi). U stvarnom životu,  primjer algoritma brutalne sile je uključivanje USB kabela. Prvo pokušamo  na jedan način, a ako to ne uspije, isprobamo drugi port.  Slično, ako imamo veliki broj ključeva, a nismo sigurni koji od njih otključava vrata, jednostavno isprobavamo svaki ključ za datu bravu dok jedan ne proradi. Upravo je ovo suština algoritamskog dizajna ove paradigme.
 
 \begin{example}
-	Odličan primjer algoritma grube sile je pronalaženje najbližeg para tačaka u višedimenzionalnom (realnom) prostoru. Neka su date $n$ tačaka u $\mathbb{R}^m$, tj. $S=\{ \textbf{x}_i \mid \textbf{x}_i \in  \mathbb{R}^m, i=1, \ldots, n\}$. Naći dvije tačke $\textbf{x}_i, \textbf{x}_j \in S$ koje su međusobno najbliže gledajući sve parove tačaka skupa $S$.
+	Odličan primjer algoritma grube sile je pronalaženje naj\-bližeg para tačaka u višedimenzionalnom (realnom) prostoru. Neka su date $n$ tačaka u $\mathbb{R}^m$, tj. $S=\{ \textbf{x}_i \mid \textbf{x}_i \in  \mathbb{R}^m, i=1, \ldots, n\}$. Naći dvije tačke $\textbf{x}_i, \textbf{x}_j \in S$ koje su međusobno najbliže gledajući sve parove tačaka skupa $S$.
 \end{example}
 \begin{solution}
-    Da bismo pronašli odgovor grubom silom,  izračunamo udaljenost između svakog  para tačaka skupa $S$, a zatim pratimo minimalnu pronađenu udaljenost. Verzija ovog algoritma je data narednim k\^odom.
+    Da bismo pronašli odgovor grubom silom,  izračunamo uda\-ljenost između svakog  para tačaka skupa $S$, a zatim pratimo minimalnu pronađenu udaljenost. Verzija ovog algoritma je data narednim k\^odom.
    
 \footnotesize{
 \begin{minted}{python}
@@ -474,12 +474,12 @@ Linearna pretraga nije efikasna za nizove velikih dimenzija i koristi se samo ka
 \subsection{Binarna pretraga}
 % https://www.geeksforgeeks.org/binary-search/: BINARNA PRETRAGA
 
-Za upotrebu binarnog pretraživanja u bilo kojoj strukturi podataka, struktura podataka mora imati sljedeća svojstva: ($i$) treba biti sortirana; 
-($ii$) pristup bilo kojem elementu strukture podataka se odvija u konstantnom vremenu.
+Za upotrebu binarnog pretraživanja u bilo kojoj strukturi podataka, ona mora zadovoljavati sljedeća svojstva: ($i$) treba biti sortirana; 
+($ii$) pristup bilo kojem elementu strukture podataka se odvija u konsta\-ntnom vremenu.
 
 Ideja binarne pretrage se sastoji u eksploatisanju svojstva sortiranog niza.  Bez smanjenja opštosti pretpostavimo da je niz sortiran u rastućem poretku. To znači da u slučaju da se na poziciji (indeksu) $i$ nalazi element veći od traženog elementa $x$, $x$ se (potencijalno) nalazi lijevo od indeksa $i$, te indekse $i+1, \ldots$ isključujemo dalje iz razmatranja. U svakoj iteraciji, za indeks $i$ biramo središnji element niza, koji se potom poredi sa $x$. U zavisnosti od rezultata, imamo tri mogućnosti: ($i$) element na poziciji $i$ je upravo $x$, čime prekidamo pretragu vraćajući dati indeks; ($ii$)  element na poziciji $i$ je veći od $x$, čime pretragu usmjeravamo na elemente niza lijevo od pozicije $i$; ($iii$) inače, pretraga se seli na desni dio niza, tj. elemente čiji je indeks veći od $i$. Za bazne slučajeve uzimamo  niz veličine 0 ili 1. U prvom slučaju vraćamo \textit{False}, dok u drugom slučaju vraćamo rezultat poređenja elementa niza sa $x$.  
 
-Implementacija rekurzivnog pristupa binarne pretrage je data sljedećim k\^odom.
+Implementacija rekurzivnog pristupa binarne pretrage je data sljede\-ćim k\^odom.
 
 \begin{minted}{python}
 	def binary_search(arr, x):
@@ -515,10 +515,7 @@ Bitno je i da podaci u nizu nemaju složenu strukturu ili odnose između sebe, j
 
 Kod ove pretrage se takođe podrazumijeva da je niz sortiran.  Osnovna ideja je sistematskom provjerom razumnog broja elemenata niza,  koristeći preskakanje nekih elemenata umjesto pretraživanja svih elementa  ustanoviti uži interval u kojem se dati element $x$ traži. \\
 
-Pretpostavimo da imamo niz \emph{niz} veličine $n$ i dužinu bloka (elemenata) veličine $m$ koji koristimo kao korak preskakanja. Pretraga prvo pretražuje elemente $niz[0], niz[m]$, $niz[2m] \ldots niz[k \cdot m]$ i tako dalje. Kada pronađemo interval (indekse) sa svojstvom $niz[k\cdot m] < x < niz[(k+1) \cdot m]$, izvodimo operaciju linearne pretrage elementa $x$ na intervalu dužine $m$.  %, krenuvši sa indeksom $k\cdot m$ u svrhu  pronaska elementa $x$.
- 
- 
- Razmotrimo sljedeći \emph{niz}$=[0, 1, 1, 2, 3, 5, 8, 12, 24, 37, 55, 82, 140, 433, 567, 622]$. Preskakanjem pronalazimo vrijednost $x=55$, za veličinu koraka preskakanja $m=4$. Sljedeće iteracije se izršavaju. 
+Pretpostavimo da imamo niz \emph{niz} veličine $n$ i dužinu bloka (elemenata) veličine $m$ koji koristimo kao korak preskakanja. Pretraga prvo pretražuje elemente $niz[0], niz[m]$, $niz[2m] \ldots niz[k \cdot m]$ i tako dalje. Kada pronađemo interval (indekse) sa svojstvom $niz[k\cdot m] < x < niz[(k+1) \cdot m]$, izvodimo operaciju linearne pretrage elementa $x$ na intervalu dužine $m$.  Razmotrimo sljedeći \emph{niz}$=[0, 1, 1, 2, 3, 5, 8, 12, 24, 37, 55, 82, 140, 433, 567, 622]$. Preskakanjem pronalazimo vrijednost $x=55$, za veličinu koraka preskakanja $m=4$. Sljedeće iteracije se izršavaju. 
  \begin{itemize}
  	\item  Skok sa indeksa 0 na indeks 4;
  	\item   Skok sa indeksa 4 na indeks 8;
@@ -561,7 +558,7 @@ Rekurzivna implementacija pretage preskakanjem  je data sljedećim k\^odom.  % u
 
 % https://www.geeksforgeeks.org/interpolation-search/  
 
- Interpolacijska pretraga je poboljšanje  binarnog pretraživanja   gdje pretposta\-vljamo da su vrijednosti u sortiranom nizu uniformno (ravnomjerno) raspo\-ređene. Interpolacija konstruiše nove tačke   unutar opsega diskretnog skupa strukture podataka. Kao što znamo, binarno pretraživanje uvijek polazi sa provjerom središnjeg elementa niza. Sa druge strane, interpolacijska pretraga  pretražuje na različitim mjestima u strukturi. Npr. ako je vrijednost traženog elementa  bliža posljednjem elementu, interpolacijska pretraga će vjerovatno započeti pretragu više prema krajnjoj strani strukture.
+ Interpolacijska pretraga je poboljšanje  binarnog pretraživanja   gdje pretposta\-vljamo da su vrijednosti u sortiranom nizu uniformno  raspo\-ređene. Interpolacija konstruiše nove tačke   unutar opsega diskretnog skupa strukture podataka. Kao što znamo, binarno pretraživanje uvijek polazi sa provjerom središnjeg elementa niza. Sa druge strane, interpolacijska pretraga  pretražuje na različitim mjestima u strukturi. Npr. ako je vrijednost traženog elementa  bliža posljednjem elementu, interpolacijska pretraga će vjerovatno započeti pretragu više prema krajnjoj strani strukture.
   
   Za pronalazak pozicije  \emph{pos} u nizu \emph{niz}, koristi se sljedeća ideja: pretražićemo više pozicije \emph{pos} ako je vrijednost elementa koji se traži bliži kraju niza, tj. $niz[n-1]$. Manja pozicija \emph{pos} se vraća kada je tražena vrijednost bliže početku niza, tj. elementu $niz[0]$. 
   
@@ -816,7 +813,7 @@ else:
 %%https://codeahoy.com/learn/recursion/ch10/
 \begin{figure}
 	\centering
-	\includegraphics[width=450pt, height=300pt]{slike/n-queen-backtracking.png} %recursion-tree-backtracking-n-queens-1.png}
+	\includegraphics[width=350pt, height=280pt]{slike/n-queen-backtracking.png} %recursion-tree-backtracking-n-queens-1.png}
 	\caption{Primjer stabla stanja formiranog algoritmom vraćanja unazad za problem 4 kraljice.}
 \end{figure}
 %\protect\footnotemark\footnotetext{Slika sa linka \url{https://towardsdatascience.com/genetic-algorithm-vs-backtracking-n-queen-problem-cdf38e15d73f}}
@@ -911,11 +908,11 @@ Ovaj proces se izvršava sve dok je skup komponenti koje (dopustivo) proširuju 
     \caption{Shema paradigme pohlepnih algoritama.}    \label{alg:greedy-algorithm}
 \end{algorithm}
 
-Dakle, da bimo primijenili pohlepni pristup u rješavanju problema, potre\-bno je definisati: ($i$) skup komponenti rješenja; ($ii$) strukturu parcijalnog rješenja; ($iii$) pohlepnu funkciju koja računa kvalitet komponente koja može proširiti postojeće parcijalno rješenje.
+Dakle, da bimo primijenili pohlepni pristup u rješavanju problema, potre\-bno je definisati: ($i$) skup komponenti rješenja; ($ii$) strukturu parcijalnog rješenja; ($iii$) pohlepnu funkciju koja računa kvalitet kompo\-nente koja može proširiti postojeće parcijalno rješenje.
 
 
 
-Ovu paradigmu možemo koristiti kada je potrebno vratiti rješenje razumnog kvaliteta   u relativno kratkom vremenskom intervalu, implementirajuči pristup relativno lako. Ovo je često jedna od prvih tehnika koja se primijenjuje u rješavanju teških 
+Ovu paradigmu možemo koristiti kada je potrebno vratiti rješenje razumnog kvaliteta   u relativno kratkom vremenskom intervalu, imple\-mentirajuči pristup relativno lako. Ovo je često jedna od prvih tehnika koja se primijenjuje u rješavanju teških 
 problema. Takođe koriste u svrhu dobijanja početnog rješenja koje se zatim  poboljšava naprednijim tehnikama. U osnovi, ova paradigma nam nudi dobru polaznu osnovu da ``opipamo'' problem, da se osjeti  koliko je on težak, te da se dobije na uvid koliko heurističke, konstrukti\-bilne (aproksimativne) metode mogu biti efikasne za rješavanje takvih proble\-ma.
 
 U nastavku navodimo nekoliko primjena pohelpnih algoritama u rješavanju raznih tipova (kombinatornih) problema. 
@@ -923,7 +920,7 @@ U nastavku navodimo nekoliko primjena pohelpnih algoritama u rješavanju raznih 
 
 
 \begin{example}(\textbf{Problem razmjenjivanja novca}). 
- Neka je na raspolaganju  $X$ KM-ova. Na rapolaganju su apoeni od $x_1, x_2, \ldots , x_k$ KM-ova, negoraničene količine. Pretpostavimo da su $X, x_i, i=1,\ldots, n$ prirodni brojevi.
+ Neka je na ra\-spolaganju  $X$ KM-ova i apoeni od $x_1, x_2, \ldots , x_k$ KM-ova, negoraničene količine. Pretpostavimo da su $X, x_i, i=1,\ldots, n$ prirodni brojevi.
 
 Na koji način razmijeniti $X$ KM-ova tako da se dobije što manji broj
 novčanica/kovanica? Rješiti zadatak pomoću paradigme pohlepnih algoritama.
@@ -962,7 +959,7 @@ novčanica/kovanica? Rješiti zadatak pomoću paradigme pohlepnih algoritama.
 
 
 \begin{example} (\textbf{Razlomljeni problem ruksaka}). 
-  Ovaj problem predstavlja relaksiranu verziju problema ruksaka, uveden u prethodnim sekcijama. Odluka da li se uzima (cio)  proizvod ili ne i stavlja u ruksak se relaksira na slučaj da se bilo koji (razlomljeni) dio tog proizoda može uzeti i staviti u ruksak. Zamislimo da je u pitanju proizvod kao što je šećer ili ulje koji (teorijski) mogu da se dijele na (realne) dijelove.  \\
+  Ovaj problem pre\-dstavlja relaksiranu verziju problema ruksaka, uveden u prethodnim sekcijama. Odluka da li se uzima (cio)  proizvod ili ne i stavlja u ruksak se relaksira na slučaj da se bilo koji (razlomljeni) dio tog proizoda može uzeti i staviti u ruksak. Zamislimo da je u pitanju proizvod kao što je šećer ili ulje koji (teorijski) mogu da se dijele na (realne) dijelove.  \\
   
    Zadatak ovog problema je odabrati  (dijelove) proizvoda i staviti u ruksak tako da se profit maksimizira uz poštivanje ograničenja  kapaciteta ruksaka. Koristiti paradigmu pohlepnih algoritama. 
 \end{example}
@@ -980,7 +977,7 @@ novčanica/kovanica? Rješiti zadatak pomoću paradigme pohlepnih algoritama.
     \textit{Parcijalno rješenje i komponente rješenja}. Parcijalno rješenje je dato u obliku $c = \{ c_{i_1}, \ldots, c_{i_k}  \}$, pri čemu je $i_s \in [n],  i_s \neq i_r, s\neq r,   k \leq n$, a kapacitet ruksaka je zadovoljen. 
     Komponente rješenje u odnosu na parcijalno rješenje $s$ su date svim onim proizvodima $C_s = [n] \setminus \{  {i_1}, \ldots, {i_k} \}$ koji se trenutno ne nalaze   u ruksaku. Proširenje parcijalnog rješenja podrazumijeva operaciju dodavanja  količine $c_r>0$ onog proizvoda $r \in C_s$, tako da proširivanjem rješenja $c$ ovom komponentom ne narušava kapacitet ruksaka. 
     
-    \textit{Pohlepna funkcija}.  Razmotrimo sljedeću razumnu strategiju. Favorizujmo proizvode koji imaju veću cijenu po (jednici) težine, tj. kojima je količnik  $\frac{p_i}{w_i}$ veći u odnosu na ostale. Sortirajmo proizvode po ovom kriterijumu. Neka je, bez smanjenja opštosti, sortirani redosljed proizvoda   dat sa (indeksima) $1,2, \ldots, n$.   \\
+    \textit{Pohlepna funkcija}.  Razmotrimo sljedeću razumnu strategiju. Favori\-zujmo proizvode koji imaju veću cijenu po (jednici) težine, tj. kojima je količnik  $\frac{p_i}{w_i}$ veći u odnosu na ostale. Sortirajmo proizvode po ovom kriterijumu. Neka je, bez smanjenja opštosti, sortirani redosljed proizvo\-da   dat sa (indeksima) $1,2, \ldots, n$.   \\
     
     
     Dodajmo dio $c_1$ proizvoda sa indeksom $1$ koliko god je to moguće (maksi\-malno 1) u odnosu na kapacitet ruksaka. Ako je  $c_1 = 0$, to znači da je kapacitet ruksaka zadovoljen, pretraga se završava. Inače, nastavimo istom strategijom, ažurirajući preostalo stanje ruksaka koji može da se popuni, a zatim posmatrajući naredni proizvod (sa indeksom 2). Dalje, odredimo maksimalni udio proizvoda $c_2\geq 0$ koji  (dopustivo) proširuje trenutno  parcija\-lno rješenje, itd. Petpostavimo da smo istom strategijom generisali rješenje $c = \{ c_{1}, \ldots, c_{k}\}$. %, i_1< \ldots < i_k$.
@@ -1043,14 +1040,14 @@ novčanica/kovanica? Rješiti zadatak pomoću paradigme pohlepnih algoritama.
 
 \textit{Parcijalno rješenje i komponenta rješenja}. Pod parcijalnim rješenjem ovog problema podrazumijevamo bilo koji (pod)skup $S \subseteq \mathcal{F}$ koji ne mora obavezno zadovoljavati uslov o pokrivanju skupa $X$.  Skup komponenti koji proširuju rješenje $S$ sadrži bilo koji skup iz $C \in \mathcal{F} \setminus S $, dok proširenje rješenja $S$ komponentom $C$ podrazumijeva operaciju unije, tj. $S' = S \cup \{ C \} $.
 
-\textit{Pohlepna funkcija}. Neka je $S$ parcijalno rješenje i neka ono pokriva $X_S \subseteq X$ elemenata. Intuitivno, bolje opcije podrazumijevaju biranje kompomenti rješenja $C$ koje u presjeku sa skupom $X \setminus X_S$ imaju više elemenata. Razlog je taj što nastojimo pokriti što više elemenata skupa $X$ u što manjem broju koraka pohlepnog algoritma. U simboličkom zapisu, pohlepna funkcija ima sljedeći oblik
+\textit{Pohlepna funkcija}. Neka je $S$ parcijalno rješenje i neka ono pokriva $X_S \subseteq X$ elemenata. Intuitivno, bolje opcije podrazumijevaju biranje kompomenti rješenja $C$ koje u presjeku sa skupom $X \setminus X_S$ imaju više elemenata. Razlog je taj što nastojimo pokriti što više elemenata skupa $X$ u što manjem broju koraka pohlepnog algoritma. U simboli\-čkom zapisu, pohlepna funkcija ima sljedeći oblik
 $$ g(S, C) = | C \cap ( X \setminus X_S) |,$$
 dok biramo element $C^*$ tako da 
 $$ C^* \gets argmax \{ g(s, C') \mid C'\in \mathcal{F} \setminus S\} $$
 kao element koji će proširiti parcijalno rješenje $S$ u datoj iteraciji.
 
 
-Algoritam u svakom koraku bira skup $C^*\in \mathcal{F}$ u odnosu na pohlepnu funkciju $g$  i dodaje ga u parcijalno rješenje dok god se ne desi da rješenje ne pokrije čitav skup $X$, nakon čega se algoritam prekida. Napomenimo da se umjesto kompletnih skupova koji se čuvaju u rješenju $S$, mogu čuvati pozicije (indeksi) skupova iz $\mathcal{F}$ koji pripadaju rješenju $S$. 
+Algoritam u svakom koraku bira skup $C^*\in \mathcal{F}$ u odnosu na pohle\-pnu funkciju $g$  i dodaje ga u parcijalno rješenje dok god se ne desi da rješenje ne pokrije čitav skup $X$, nakon čega se algoritam prekida. Napomenimo da se umjesto kompletnih skupova koji se čuvaju u rješenju $S$, mogu čuvati pozicije (indeksi) skupova iz $\mathcal{F}$ koji pripadaju rješenju $S$. 
 
 Implementacija algoritma  je data u nastavku sljedećim k\^odom.
 
@@ -1144,9 +1141,9 @@ Posmatrajmo narednu instancu problema.
 Rješenje za ovu instancu je odabir poslova iz skupa $\{3, 1,5 \}$ redom kako su i navedeni. Profit ovog rješenja je jednak 142. 
 
 
-Prva ideja za rješavanje ovog problema je koristiti potpunu enumeraciju: generisati sve podskupove
+Prva ideja za rješavanje ovog problema je koristiti potpunu enumera\-ciju: generisati sve podskupove
 skupa poslova te za svaki od njih provjeriti dopusti\-vost i na taj način pratiti  
-maksimalni profit. (Šta predstavlja problem sa ovakvim pristupom?) Međutim, razmotrimo  tehniku pohlepnih algoritama.   \\ \vspace{0.2cm}
+maksimalni profit. (Šta predstavlja problem sa ovakvim pristupom?) Međutim, razmotrimo  tehniku pohle\-pnih algoritama.   \\ \vspace{0.2cm}
 
 \textit{Rješenje i struktura rješenja}. Svaki podskup $I_s$ skupa svih poslova $I=\{1,\ldots, n\}$ predstavlja rješenje  problema ukoliko zadovoljava uslove zadatka: ($i$) svi poslovi se mogu izvršiti u okviru datog krajnjeg vremena izvršavanja; ($ii$) nijedan od poslova se ne izvršava paralelno sa drugim. Dakle, svako rješenje se može predstaviti strukturom podataka koja odgovara skupu odabra\-nih poslova. 
 
@@ -1154,7 +1151,7 @@ maksimalni profit. (Šta predstavlja problem sa ovakvim pristupom?) Međutim, ra
 
 \textit{Pohlepna funkcija}. Za parcijalno rješenje $I_s$, odabrati komponentu rješenja (posao) $i \in I\setminus I_s$ sa maksimalnim profitom koji proširuje $I_s$ na dopustiv način (uslovi zadatka su ispunjeni). Taj posao se, pri tome, smiješta u prvi slobodan (jedinični) interval koji odgovara vremenu njegovog izvršavanja. \\
 
-Da bismo realizovali pomenute procedure efikasno, sortirajmo poslove u odnosu na njihov profit (opadajuće). Bez smanjenja opštosti, pretpostavimo da su indeksi sortiranih poslova dati sa $\{1, 2, \ldots, n\}$. U prvoj iteraciji dodaje\-mo posao sa indeksom 1 u parcijalno rješenje $I_s$, koje je inicijalno prazno.  Dalje, pretpostavimo da je u $i$-toj iteraciji generisano rješenje $I_s$. Tada, u narednoj iteraciji razmatramo posao indeksiran sa $i+1$. Moguća su dva scenarija.
+Da bismo realizovali pomenute procedure efikasno, sortirajmo poslove u odnosu na njihov profit (opadajuće). Bez smanjenja opštosti, pretpo\-stavimo da su indeksi sortiranih poslova dati sa $\{1, 2, \ldots, n\}$. U prvoj iteraciji dodaje\-mo posao sa indeksom 1 u parcijalno rješenje $I_s$, koje je inicijalno prazno.  Dalje, pretpo\-stavimo da je u $i$-toj iteraciji generisano rješenje $I_s$. Tada, u narednoj iteraciji razmatramo posao indeksiran sa $i+1$. Moguća su dva scenarija.
 
 \begin{itemize}
 	\item Posao sa indeksom $i+1$ ne može da proširi trenutno parcijalno rješenje $I_s$ po uslovima zadatka; u tom slučaju razmatra se naredni posao;
@@ -1211,8 +1208,8 @@ Napomenimo da se može pokazati da ovaj pohlepni algoritam garantuje nalazak opt
 \section{Dinamičko programiranje} 
 %https://www.programiz.com/dsa/dynamic-programming
 
-\textit{Dinamičko programiranje} je algoritamska tehnika koja pomaže u efikasnom rješavanju klase problema koji se mogu podijeliti na podprobleme koji se preklapaju (eng. \textit{overlapping subproblems}) i za koje se može definisati \emph{svojstvo optimalne podstrukture} (eng. \textit{optimal substructure property}). Pod preklapaju\-ćim podproblemima podrazumijevamo 
-one podprobleme čija se rješenja kori\-ste vi\-še puta da bi se dobilo rješenje početnog problema. Pod optimalnim svojstvom podstrukture   podrazumijevamo proceduru kombinovanja optima\-lnih rješe\-nja podproblema u svrhu dobijanja  optimalnog  rješenja datog proble\-ma.   Ako se bilo koji problem može podijeliti na podprobleme, koji su zatim rekurzivno dijele na manje podprobleme, te ako postoji preklapanje među   njima, rješenja podproblema ima smisla  čuvati (u memoriji) za ponovnu upotrebu. Ovaj proces se naziva \textit{memoizacija}. Memoizacija poboljšava efikasnost rekurzivnog pristupa na taj način da sprečava ponovnu evaluaciju istog podproblema već se to rješenje  jednostavno pročita iz određene strukture podataka (poznata još kao heš struktura).   Međutim, ovaj pristup zahtjeva dodatnu memoriju  koja čuva rješenja podproblema. \\  
+\textit{Dinamičko programiranje} je algoritamska tehnika koja pomaže u efika\-snom rješavanju klase problema koji se mogu podijeliti na podprobleme koji se preklapaju (eng. \textit{overlapping subproblems}) i za koje se može definisati \emph{svojstvo optimalne podstrukture} (eng. \textit{optimal substructure property}). Pod preklapaju\-ćim podproblemima podrazumijevamo 
+one podprobleme čija se rješenja kori\-ste vi\-še puta da bi se dobilo rješenje početnog problema. Pod optimalnim svojstvom podstrukture   podrazu\-mijevamo proceduru kombinovanja optima\-lnih rješe\-nja podproblema u svrhu dobijanja  optimalnog  rješenja datog proble\-ma.   Ako se bilo koji problem može podijeliti na podprobleme, koji su zatim rekurzivno dijele na manje podprobleme, te ako postoji preklapanje među   njima, rješenja podproblema ima smisla  čuvati (u memoriji) za ponovnu upo\-trebu. Ovaj proces se naziva \textit{memoizacija}. Memoizacija poboljšava efikasnost rekurzivnog pristupa na taj način da sprečava ponovnu evaluaciju istog podproblema već se to rješenje  jednostavno pročita iz određene strukture podataka (poznata još kao heš struktura).   Međutim, ovaj pristup zahtjeva dodatnu memoriju  koja čuva rješenja podproblema. \\  
 
 Da bismo primijenili dinamičko programiranje u rješavanju određenog problema, potrebno je voditi brigu o sljedećim stvarima.
 \begin{itemize}
@@ -1252,14 +1249,14 @@ def fib(n):#tabuliranje
 			tab[i] = tab[i-1] + tab[i-2]
 		return tab[n]
 \end{minted}
-U implementaciji memoizacije koristimo objekat klase \texttt{dict} naziva \textit{cache} za čuvanje rezultata poziva funkcija, a rekurzija se koristi za izračunavanje rezultata. U implementaciji tabele koristimo niz nazvan \textit{tab} za čuvanje rezultata podproblema, a koristimo iterativnu implementaciju za izračunava\-nje rezultata. Obje implementacije vraćaju isti rezultat, ali su zasnovane na drugačijoj implementaciji. %Memoizacija je pristup odozgo prema dolje zasnovana na  rekurziji, dok je tabeliranje pristup odozdo prema gore koji koristi iteraciju. 
+U implementaciji memoizacije koristimo objekat klase \texttt{dict} naziva \textit{cache} za čuvanje rezultata poziva funkcija, a rekurzija se koristi za izračunavanje rezultata. U implementaciji tabele koristimo niz nazvan \textit{tab} za čuvanje rezultata podproblema, a koristimo iterativnu impleme\-ntaciju za izračunava\-nje rezultata. Obje implementacije vraćaju isti rezultat, ali su zasnovane na drugačijoj implementaciji. %Memoizacija je pristup odozgo prema dolje zasnovana na  rekurziji, dok je tabeliranje pristup odozdo prema gore koji koristi iteraciju. 
 
 Da zaključimo, princip dinamičkog programiranja ima smisla koristiti gdje god se prepozna da rekurzivni pristup ima ponovljive pozive za iste ulaze, koji se optimizuju uz pomoć ove algoritamske paradigme.
 
 \subsection{Rekurzija vs. Dinamičko programiranje}
 
 
-Dinamičko programiranje se uglavnom primjenjuje na rekurzivne algoritme.  U  osnovi, velika većina problema optimizacije u rješavanju zahtijeva definisanje rekurzije, dok se za njenu  optimizaciju koristi dinamičko programiranje.
+Dinamičko programiranje se uglavnom primjenjuje na rekurzivne algori\-tme.  U  osnovi, velika većina problema optimizacije u rješavanju zahtijeva definisanje rekurzije, dok se za njenu  optimizaciju koristi dinamičko programiranje.
 
 Ne mogu se svi problemi koji koriste rekurziju upotrijebiti dinamičko programiranje za svoje rješavanje. Osim ako ne postoji prisustvo podproblema koji se preklapaju,  kao u problemu računanja Fibonačijevog broja, rekurzija može doći do (jednako efikasnog) rješenja problema pomoću pristupa zavadi pa vladaj. U ovome nalazimo  razlog zašto rekurzivni algoritam koji realizuje  sortiranje spajanjem ne treba da koristi dinamičko programiranje, jer se podproblemi ni na koji način ne preklapaju (dijeljenje niza na dva disjunktna podniza).
 
@@ -1281,7 +1278,7 @@ Ne mogu se svi problemi koji koriste rekurziju upotrijebiti dinamičko programir
 		\caption{Primjer putanje pijuna. Ukupna težina označenog puta je 25.} \label{fig:pijun-putanja}
 	\end{figure}
 Memoizaciju izvršavamo matricom $M$: na polju $(i , j)$ pamtimo
-vrijednost najboljeg puta od pozicije $(0, 0)$ (gornji lijevi ugao) do pozicije $(i , j)$. Pokušajmo   rekurzivno odrediti vrijednost $A(i,j)$ u zavisnosti od odgovarajućih podproblema. Moguća su dva scenarija, pijun je  došao iz pozicije $(i-1, j-1)$ u poziciju $(i,j)$ ili iz pozicije $(i-1, j)$ u poziciju $(i, j)$. Prema tome, vrijedi rekurzija: 
+vrijednost najboljeg puta od pozicije $(0, 0)$ (gornji lijevi ugao) do pozicije $(i , j)$. Pokušajmo   rekurzivno odrediti vrijednost $A(i,j)$ u zavisnosti od odgovara\-jućih podproblema. Moguća su dva scenarija, pijun je  došao iz pozicije $(i-1, j-1)$ u poziciju $(i,j)$ ili iz pozicije $(i-1, j)$ u poziciju $(i, j)$. Prema tome, vrijedi rekurzija: 
 
 \begin{equation}
 	A(i,j) = \max\{ A(i-1, j-1) + a_{ij}, A(i-1, j) + a_{ij}   \}.
