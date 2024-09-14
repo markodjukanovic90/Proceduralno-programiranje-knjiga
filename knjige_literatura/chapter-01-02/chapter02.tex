@@ -1,10 +1,10 @@
 \chapter{Uvod u osnove teorije algoritama}
-  U ovoj sekciji uvodimo pojam izračunavanja problema sa fokusom na rješavanja problema u računarskim naukama. Potom uvodimo pojam algoritma, navodimo neke vrste algoritama te računarskog problema preko uvedenog teorijskog modela računara. Nakon toga se uvode pojmovi složenosti algoritma. Na kraju izlažemo pojam valjanosti algoritma preko metoda invarijantne petlje.  
+  U ovoj sekciji uvodimo pojam izračunavanja problema sa fokusom na problema u računarskim naukama. Potom uvodimo pojam algoritma  preko teorijskog modela računara. Nakon toga se uvode pojmovi složenosti algoritma. Na kraju izlažemo pojam valjanosti algoritma preko metoda invarijantne petlje.  
    
 \section{Računarski problem}
 %https://www.cs.stanford.edu/~trevisan/cs254-10/lecture02.pdf ==> dijelom pratimo:
 
-\textit{Računarski (kompjuterski) problem} (eng. \textit{computational problem}) u računarskim naukama se jednostavno i slobodno može definisati kao zadatak koji je potrebno riješiti uz pomoć računara. 
+\textit{Računarski (kompjuterski) problem} (eng. \textit{computational problem}) u računa\-rskim naukama se jednostavno i slobodno može definisati kao zadatak koji je potrebno riješiti uz pomoć računara. 
 
 Formalna definicija ovog pojma zahtjeva uvođenje mnogih kompleksnih pojmova, a jedan od njih je definicija jezika.  U računarskom problemu, dat nam je ulaz za koji, bez gubitka opštosti, pretpostavljamo da je kodiran  binarno pomoću niza nad skupom binarnih nizova proizvoljne dužine $L=\{0, 1\}^*$, a  izlaz je 
 rješenje koje zadovoljava neko svojstvo; računarski problem  opisujemo  pomoću svojstava koje izlaz mora zadovoljiti s obzirom na (svaki validan) zadani ulaz. Ulaz se često naziva \textit{instanca} problema, dok je izlaz \textit{rješenje} problema nekog ulaza. Primjer ovakvog zadatka u računarskim naukama je sortiranje numeričkih nizova. Ulaz je dat nizom brojeva (ili uopšteno objekata) dužine $n$. Kao izlaz problema sortiranja dobijamo uređen niz (po nekom unaprijed zadanom kriterijumu sortiranja). Međutim, ne moraju samo numerički nizovi da se sortiraju, već uopšteno, bilo koji objekti nad kojima možemo definisati relaciju totalnog uređenja. Zbog toga ima smisla govoriti o rješavanju ovakvih problema kao 
@@ -31,7 +31,8 @@ rješenje koje zadovoljava neko svojstvo; računarski problem  opisujemo  pomoć
   		\label{fig:graphs}
   \end{figure}
  
- Postoji nekoliko tipova problema u računarskim naukama; ovdje izdvajamo četiri frekventno prisutna u literaturi: problemi odlučivanja, problemi pretraživanja, problemi optimizacije i problemi prebrojavanja. U problemu \textit{odlučivanja}, s obzirom na ulaz $x \in \{0, 1\}^*$, traži se izlaz DA/NE (\emph{True}/\emph{False}). Dakle, ovakav tip problema traži da provjerimo da li instanca problema zadovoljava određeno svojstvo ili ne. Primjer problema odlučivanja je problem \textit{3--bojenja} (3--COL):
+ Postoji nekoliko tipova problema u računarskim naukama; ovdje izdvaja\-mo četiri frekventno prisutna u literaturi: problemi odluči\-vanja, problemi pretra\-živanja, problemi optimizacije i problemi prebrojavanja. \\ 
+ Za problem \textit{odlučivanja}, s obzirom na ulaz $x \in \{0, 1\}^*$, traži se izlaz DA/NE (\emph{True}/\emph{False}). Dakle, ovakav tip problema traži da provjerimo da li instanca problema zadovoljava određeno svojstvo ili ne. Primjer problema odlučivanja je problem \textit{3--bojenja} (3--COL):
  U ulazu problema je dat neusmjereni graf. Potrebno je odrediti da li postoji dodjela   ``boje''  iz skupa $\{1, 2, 3\}$ svakom čvoru grafa tako da ne postoje dva susjedna čvora sa istom dodjeljenom bojom.
  
 ~ Prikladan način za specificiranje problema odlučivanja je pronalaženje skupa $L \subseteq \{0, 1\}^*$ ulaza za koje je odgovor DA. Podskup skupa $\{0, 1\}^*$ se takođe naziva jezikom, tako da, uz prethodnu konvenciju, svaki problem odlučivanja može biti specificiran pomoću jezika (a svaki jezik specificira problem odlučivanja). Na primjer, ako sa   3--COL imenujemo podskup skupa $\{0, 1\}^*$ koji sadrži (opise) 3-obojive grafove, tada 3--COL predstavlja jezik koji specificira problem 3-bojenja. 
@@ -45,7 +46,7 @@ utvrđivanja postoji li takav $c$, traži se da ga konstruišemo, pod uslovom da
 Formalno, problem 3-bojenja specificiran je relacijom $R_{3-COL}$ koja sadrži sve
 parovi $(G, c)$ gdje je $G$ predstavlja 3-obojljivi graf, a $c$ je valjano 3-bojanje grafa $G$.
 
-Problemi optimizacije predstavljaju matematičke probleme koji uključuju pronalazak najboljeg rješenja iz skupa mogućih rješenja. Cilj je maksimizovati / minimizovati   ciljnu funkciju, u odnosu na skup  ograničenja dati definicijom problema. Drugim riječima, cilj je pronaći optimalnu vrijednost određene varijable ili skupa varijabli unutar zadanog skupa ograničenja. Jedan primjer problema optimizacije je dat preko problema trgovačkog putnika. U ovom problemu, osoba mora posjetiti ponuđene gradove te se vratiti u   početni grad, sa ciljem da se minimizuje ukupna pređena udaljenost. Detaljnije, problem se sastoji u pronalasku optimalne rute kojom osoba može posjetiti sve gradove uz minimaliziranje ukupne pređene udaljenosti.
+Problemi optimizacije predstavljaju matematičke probleme koji uključu\-ju pronalazak najboljeg rješenja iz skupa mogućih rješenja. Cilj je maksimi\-zovati / minimizovati   ciljnu funkciju, u odnosu na skup  ograničenja dati definicijom problema. Drugim riječima, cilj je pronaći optimalnu vrijednost određene varijable ili skupa varijabli unutar zadanog skupa ograničenja. Jedan primjer problema optimizacije je dat preko problema trgovačkog putnika. U ovom problemu, osoba mora posjetiti ponuđene gradove te se vratiti u   početni grad, sa ciljem da se minimizuje ukupna pređena udaljenost. Detaljnije, problem se sastoji u pronalasku optimalne rute kojom osoba može posjetiti sve gradove uz minimaliziranje ukupne pređene udaljenosti.
 
 Pod problemima prebrojavanja podrazumijevamo matematičke probleme koji uključuju prebrojavanje načina na koje se određeni događaj može dogoditi. Ovi problemi variraju od relativno jednostavnih zadataka kao što je prebrojavanje ljudi u prostoriji do mnogo složenijih scenarija kao što je prebrojavanje mogućih kombinacija slova u riječi. Pretpostavimo da imamo četiri košulje različitih boja i troje pantalona različitih boja. Na koliko različitih načina se osoba može obući, ako nosimo jednu košulju i jedne hlače?  Za rješavanje ovog problema možemo upotrijebiti princip množenja, koje kaže da ako imamo $ n$ izbora za prvi zadatak i $m$ izbora za drugi zadatak, tada je ukupan broj različitih oblačenja koji se može izvesti jednak  $n \cdot m$.
 
@@ -64,7 +65,7 @@ Računarski program je predstavljen (konačnim) nizom instrukcija napisanih u ne
 
 Algoritam predstavlja  korak po korak postupak za rješavanje problema ili postizanja određenog cilja. U informatici, algoritmi su predstavljeni \textit{konačnim}  nizom instrukcija koje računarski program slijedi da bi riješio određeni problem ili izvršio određeni zadatak. Algoritam će inicijalni ulaz nizom logičkih koraka ili operacija dovesti do očekivanog izlaza ili rezultata.  Analogija algoritma u stvarnom svijetu je data npr.  primjerom kuhanja po receptu. Da biste skuhali jelo po nekom receptu, neophodno je čitati uputstva i korake te ih izvršavati jedan po jedan, u datom redoslijedu. Dobijeni (očekivani) rezultat je jelo koje je skuhano.  
 
- Primjeri dobro poznatih algoritama uključuju algoritme za sortiranje koji se koriste za uređivanje podataka u odnosu na predefinisanu relaciju  uređenja, algoritme pretraživanja koji služe za pronalaženje određenih informacija na velikom skupu podataka, zatim algoritme dešifrovanja i druge.  \\
+ Primjeri dobro poznatih algoritama uključuju algoritme za sortiranje koji se koriste za uređivanje podataka u odnosu na predefinisanu relaciju  uređenja, algoritme pretraživanja koji služe za pronalaženje određenih infor\-macija na velikom skupu podataka, zatim algoritme dešifrovanja i druge.  \\
 
 Uloga algoritama je višestruka:
 \begin{itemize}
@@ -83,7 +84,7 @@ Uloga algoritama je višestruka:
     \item \textit{Dobro definisani rezultati}: Algoritam na jasan način definiše koji će se rezultat dobiti (kao izlaz) u zavisnosti od svakog ulaza. %Trebalo bi da vrati najmanje jedan izlaz.
     \item    \textit{Konačnost}: Algoritam mora biti konačan, tj. trebao bi se prekinuti nakon konačnog vremena za sve testne slučajeve. Beskonačne petlje ili rekurzivne funkcije bez baznih uslova ne posjeduju svojstvo konačnosti; o ovome ćemo govoriti u nastavku.  
     \item  \textit{Dopustivost}: Algoritam  se može izvršiti u okviru dostupnih resursa.  %Ne smije sadržavati neku buduću tehnologiju ili bilo šta drugo.
-      \item \textit{Nezavisnost od jezika:} Algoritam koji je dizajniran mora biti invarijanta jezika u kojem se implementira.
+      \item \textit{Nezavisnost od jezika:} Algoritam koji je dizajniran mora biti invarija\-nta jezika u kojem se implementira.
       \item   \textit{Definisanost}: Sve instrukcije u algoritmu moraju biti nedvosmislene. Svaki osnovni operator u instrukciji mora biti definisan bez   nejasnoća.        
 \end{itemize}
 Koncizno rečeno, svaki algoritam posjeduje sljedeće karakteristike:  
@@ -102,23 +103,23 @@ Koncizno rečeno, svaki algoritam posjeduje sljedeće karakteristike:
 Na raspolaganju je nekoliko tipova (paradigmi) algoritama za rješavanje raznih tipov problema. Neke važnije paradigme nabrajamo u nastavku bez ulaženja u detalje koji će biti izloženi u nastavku ove knige. 
 \begin{enumerate}
 	\item Algoritmi \textit{brutalne sile} (eng. \textit{brute force}) je jedan od najjednostavnijih pristupa rješavanja problema. Često je prvi pristup koji se primjenjuje za  rješavanje problema jer je ideja rješavanja u pozadini često vrlo naivna -- razmatraju se svi slučajevi koji  potencijalno mogu biti rješenje problema.
-	\item \textit{Rekurzivni algoritmi}  su zasnovani na rekurziji. U ovom slučaju, problem se dijeli na niz podproblema manje dimenzije te  se ista funkcija poziva iznova za rješavanje tih podproblemima, dok god se ne dođe do nekih trivijalno rješivih slučajeva.
-	\item \textit{Algoritam vraćanja unazad} je algoritamska tehnika rekurzivnog rješavanja problema koja pokušava postepeno izgraditi rješenje, dio po dio, isključujući momentalno ona rješenja koja ne uspijevaju zadovoljiti ograničenja problema. 
+	\item \textit{Rekurzivni algoritmi}  su zasnovani na rekurziji. Ovdje se problem dijeli na niz podproblema manje dimenzije te  se ista funkcija poziva iznova za rješavanje tih podproblemima, dok god se ne dođe do nekih trivijalno rješivih slučajeva.
+	\item \textit{Algoritam vraćanja unazad} je algoritamska tehnika rekurzivnog rješa\-vanja problema koja pokušava postepeno izgraditi rješenje, dio po dio, isključu\-jući momentalno ona rješenja koja ne uspijevaju zadovoljiti ograničenja problema. 
 	\item  \textit{Algoritmi pretraživanja} se koriste za pretraživanje elemenata ili grupa elemenata iz određene strukture podataka. Mogu biti različitih tipova na osnovu njihovog pristupa ili strukture podataka u kojoj se element nalazi.
 	\item \textit{Algoritmi sortiranja}.  Sortiranje je uređivnanje grupe podataka  shodno nekom kriterijumu. % Algoritmi koji pomažu u obavljanju ove funkcije nazivaju se algoritmi sortiranja. %Sortiranje grupa podataka na rastući ili opadajući način.
 	\item \textit{Algoritam podijeli i vladaj}  razbija problem na podpro\-bleme, rješava podprobleme i spaja njihova rješenja kako bi se dobilo konačno rješenje. Sastoji se od sljedeće tri procedure:
     podijeli, riješi i kombinuj. Ovo je, inače, algoritamska paradigma koja se koristi u rješavanju raznih tipova problema poput sortiranja.
   
-    \item \textit{Pohlepni algoritmi}  rješenja grade konstruktivno, komponentu po komponentu.   Komopnenta koja procijenjeno daje najveću korist pri proširivanju trenutnog rješenja, se uzima kao ona koja  proširuje trenutno  rješenje. Odabir  narednog rješenja u nizu donosi se na osnovu nekog razumnog (pohlepnog) kriteijuma.
-    \item \textit{Dinamičko programiranje} koristi koncept korištenja već pronađenog rješenja (koje se čuva u memoriji) kako bi se izbjeglo ponavljanje izračunavanja istog dijela (pod)problema. Ova paradigma dijeli problem na manje podprobleme, koji se preklapaju, a potom ih rekurzivno rješava.
+    \item \textit{Pohlepni algoritmi}  rješenja grade konstruktivno, komponentu po ko\-mponentu.   Komopnenta koja procijenjeno daje najveću korist pri proširivanju trenutnog rješenja, se uzima kao ona koja  proširuje trenu\-tno  rješenje. Odabir  narednog rješenja u nizu donosi se na osnovu nekog razumnog (pohlepnog) kriteijuma.
+    \item \textit{Dinamičko programiranje} koristi koncept korištenja već pronađenog rješenja (koje se čuva u memoriji) kako bi se izbjeglo ponavljanje izračunavanja istog dijela (pod)problema. Pristup  dijeli problem na manje preklapajuće podprobleme,  a potom ih rekurzivno rješava.
 \end{enumerate}
    
- Većina ovih tipova algoritama predstavljaju generičke sheme (paradigme) koje se mogu primijeniti na  rješavanje većeg opsega različitih problema. Tu pripadaju algoritmi brutalne sile, rekurzivni algoritmi, podijeli i zavladaj, algoritam vraćanja unazad, pohlepni algoritmi, dinamičko programiranje isl. U glavi 3 biće detaljno obrađene  neke od pomenutih paradigmi.   Dizajniranje efikasnog algoritma je obično dugotrajan proces koji nije direktan, te zahtijeva veliko domensko znanje o problemu te domišljatost vezana za način rješavanja samog  problema.  Međutim, postoje neka pravila kojima se vodimo kada konstruišemo algoritam kao što su korištenje paradigmi za koje znamo da su dovoljno efikasne u rješavaju određenog tipa problema. 
+ Većina ovih tipova algoritama predstavljaju generičke sheme (paradigme) koje se mogu primijeniti na  rješavanje većeg opsega različitih problema. Tu pripadaju algoritmi brutalne sile, rekurzivni algoritmi, podijeli i zavladaj, algoritam vraćanja unazad, pohlepni algoritmi, dinamičko programiranje isl. U glavi 3 biće detaljno obrađene  neke od pomenutih paradigmi.   Dizajni\-ranje efikasnog algoritma je obično dugotrajan proces koji nije direktan, te zahtijeva veliko domensko znanje o problemu te domišljatost vezana za način rješavanja samog  problema.  Međutim, postoje neka pravila kojima se vodimo kada konstruišemo algoritam kao što su korištenje paradigmi za koje znamo da su dovoljno efikasne u rješavaju određenog tipa problema. 
  \\ 
  
- U nastavku govorimo malo o istorijskoj pozadini nastanka riječi \textit{algoritam}. Riječ ``algoritam'' je iskrivljena transliteracija imena ``al-Khwarizmi''. Al-Khwarizmi bio je persijski matematičar iz IX veka, rođen na prostorima današnjeg Uzbekistana, studirao je i radio u Bagdadu za vrijeme Abasidskog kalifata; oko 820. godine nove ere vršio je funkciju 
+ U nastavku govorimo o istorijskoj pozadini nastanka riječi \textit{algoritam}. Riječ ``algoritam'' je iskrivljena transliteracija imena ``al-Khwarizmi''. Al-Khwarizmi bio je persijski matematičar iz IX veka, rođen na prostorima današnjeg Uzbekistana, studirao je i radio u Bagdadu za vrijeme Abasidskog kalifata; oko 820. godine nove ere vršio je funkciju 
   direktora biblioteke ``Kuće mudrosti'' u Bagdadu. Napisao je nekoliko
- uticajnih knjiga, uključujući i jednu sa naslovom ``O kalkulacijama sa hinduistanskim brojevima'', koja opisuje kako se izvodi aritmetika koristeći arapske brojeve (aka arapsko-hindu, a kraće hinduistički brojevi). Originalni rukopis je izgubljen, ali latinski prevod iz 
+ uticajnih knjiga, uključuju\-ći i jednu sa naslovom ``O kalkulacijama sa hinduistanskim brojevima'', koja opisuje kako se izvodi aritmetika koristeći arapske brojeve (aka arapsko-hindu, a kraće hinduistički brojevi). Originalni rukopis je izgubljen, ali latinski prevod iz 
  1100. godine uveo je ovaj brojevni sistem u Evropu te se smatra odgovornim  za prohvaćenost korišćenja  arapskih brojeva.   Stara francuska riječ \textit{algorisme} značila je
  ``arapski numerički sistem'', a tek kasnije je postao opšti recept za rješavanje računskih problema.
 
@@ -132,9 +133,9 @@ Pri dizajniranju  algoritama, nekoliko ključnih pitanja su od značaja.
 \end{enumerate}
  
 
-Odgovor na ova pitanja nije trivijalan, i zahtjeva uvođenje stroge matematičke notacije i modela izračunljivosti. 
+Odgovor na ova pitanja nije trivijalan, i zahtjeva uvođenje stroge matema\-tičke notacije i modela izračunljivosti. 
 
-Najprije uvedimo pojam \textit{mašine sa slučajnim pristupom} (eng. \textit{random access machine} -- RAM), teorijskog modela računara.  Mašina sa slučajnim pristupom može da izvršava instrukcije i manipuliše podacima. Ova mašina pretpostavlja da je unutrašnja memorija, koja se može zamisliti kao beskonačna traka,   
+Najprije uvedimo pojam \textit{mašine sa slučajnim pristupom} (eng. \textit{random access machine} -- RAM), teorijskog modela računara.  Mašina sa slučajnim pristupom može da izvršava instrukcije i manipuliše podacima. Ova mašina pretpostavlja da je unutrašnja memorija, koja se može zamisliti kao beskona\-čna traka,   
 podijeljena na diskretne ćelije, od kojih se svakoj može pristupiti i direktno modifikovati njen sadržaj, te da mašina izvršava instrukcije na sekvencijalni način (ne postoji paralelizam).
 
 %Mašina sa slučajnim pristupom predstavlja varijaciju realnog RAM modela koji uključuje randomizaciju u svojim operacijama. 
@@ -151,7 +152,7 @@ se standardno koristi za analizu algoritma.  Posmatrajući viši nivo,   karakte
  	\item Niz $R = (R[0], \ldots , R[r - 1])$,  gdje je $r$ broj registara, takođe $w$-bitne riječi. Registri se koriste za privremeno pohranjivanje podataka tokom izvođenja programa, te za pohranjivanje adresa za dohvaćanje podataka iz RAM-a. %Registar $R[0]$ ima specijalan status i uključen je gotovo u svakoj operaciji. %, kao i za čuvanje privremenih rezultata izračunavanja. -(Sistem ili CPU, pokazivaci) 
  	
  	\item Algoritmima je dozvoljen samo direktan pristup registrima. Preostalim memorijskim lokacijama može se pristupiti samo
- 	indirektnim adresiranjem -- intepretirajući riječi (u registru) kao pokazivač na drugu memorijsku lokaciju. Dakle, zahtijevamo
+ 	indirektnim adresira\-njem -- intepretirajući riječi (u registru) kao pokazivač na drugu memo\-rijsku lokaciju. Dakle, zahtijevamo
  	$S \leq  2^w$.
  	\item Program je konačan niz instrukcija.
  	\item Skup instrukcija se sastoji od osnovnih aritmetičkih i bitskih operacija nad riječima (u registrima), kondicionalima
@@ -204,7 +205,7 @@ niz registara, i $M = (M[0], \ldots, M[|S| - 1]) \in  \{0, \ldots, 2^w - 1\}^{|S
 \end{definition}
 %%https://medium.com/@_SD10_/the-ram-model-of-computation-and-big-o-notation-a1b3cc50ec2c
 \begin{definition}
- Za konfiguraciju $K = (l, S, w, R, M)$ \textit{w}-RAM programa $(P_1, \ldots, P_q)$ definišemo sljedeću konfiguraciju $K' = (l', S', w', R', M')$, u zapisu $K$ $\Rightarrow_P K'$, sa:
+ Za konfiguraciju $K = (l, S, w, R, M)$   programa $(P_1, \ldots, P_q)$ definišemo sljedeću konfiguraciju $K' = (l', S', w', R', M')$, u zapisu $K$ $\Rightarrow_P K'$, sa:
  
  \begin{itemize}
  	\item Ako je $P_l$ = ``IF $R[i] = 0$, GOTO $m$'' za neke $i < r$ i $m \in  \{1, \ldots , q\}$, onda  $K' = (l', S, w, R, M)$ gdje je  $l'= m$ ako je $R[i] = 0$, a $l' = l + 1$ inače. 
@@ -278,7 +279,7 @@ Izračunajmo tačan broj instrukcija programa konkretnog ulaza $a = [1\ 5\ 2\ 10
 
 
 Vremenska složenost izvršavanja programa se mjeri u odnosu na ukupan broj
-jediničnih instrukcija. Tačan broj instrukcija za svaki ulaz u kompleksnim programima je     teško precizno izračunati. Zbog toga uvodimo pojam \textit{najgoreg vremena izvršavanja} programa (eng. \textit{worst-case running time}) koji nam pruža   lakši način računanja broja instrukcija programa, ali opet dovoljno reprezentativan da ukaže na to koliko je algoritam efikasan. 
+jediničnih instrukcija. Tačan broj instrukcija za svaki ulaz u kompleksnom programu je     teško  izračunati. Zbog toga uvodimo pojam \textit{najgoreg vremena izvršavanja} programa (eng. \textit{worst-case running time}) koji nam pruža   lakši način računanja broja instrukcija programa, ali opet dovoljno reprezentativan da ukaže na to koliko je algoritam efikasan. 
 
 \begin{definition}
 	  Najgore vrijeme izvršavanja programa je funkcija $T \colon \mathbb{N} \times \mathbb{N} \rightarrow \mathbb{N}$ gdje je $T (n, k)$ maksimalno
@@ -303,14 +304,14 @@ $$ \sum_{i=1}^{n-1} \sum_{j=0}^{i-1} 2 \cdot 4 = 8 \sum_{i=1}^{n-1} i = 4 \cdot 
 \\
 
 
-Za najgore vrijeme izvršavanja  uzimamo slučaj ulaznih podataka određene dimenzije za koji će se izvršiti maksimalan broj instrukcija. Motivacija za računanje najgoreg vremena izvršavanje programa (algoritama) je sljedeća. Najgori slučaj izvršavanja algoritma je obično lakši za detekciju i izračunavanje nego je to slučaj sa   egzaktnim brojem koraka (instrukcija) za konkretnu instancu, koji ne govori mnogo o broju instrukcija programa za ulaze drugačijih distribucija. Prepoznavanje najgoreg slučaja za ulazne podatke određene dimenzije za koje program radi najduže nam omogućuje da utvrdimo gornju granicu za broj instrukcija svakog mogućeg izvršenja programa instanci fiksne veličine. Ovakvo vrijeme izvršavanja ne  zavisi od konkretne (distribucije) ulazne instance, čime se dobija bolji osjećaj o efikasnosti programa u odnosu na veličinu ulaza.
+Za najgore vrijeme izvršavanja  uzimamo slučaj ulaznih podataka određe\-ne dimenzije za koji će se izvršiti maksimalan broj instrukcija. Motivacija za računanje najgoreg vremena izvršavanje programa (algoritama) je sljedeća. Najgori slučaj izvršavanja algoritma je obično lakši za detekciju i izračunava\-nje nego je to slučaj sa   egzaktnim brojem koraka (instrukcija) za konkretnu instancu, koji ne govori mnogo o broju instrukcija programa za ulaze drugači\-jih distribucija. Prepoznavanje najgoreg slučaja za ulazne podatke određene dimenzije za koje program radi najduže nam omogućuje da utvrdimo gornju granicu za broj instrukcija svakog mogućeg izvršenja programa instanci fiksne veličine. Ovakvo vrijeme izvršavanja ne  zavisi od konkretne (distribu\-cije) ulazne instance, čime se dobija bolji osjećaj o efikasnosti programa u odnosu na veličinu ulaza.
  
 Bez obzira na ovakva pojednostavljenja, i dalje je egzaktno računanje najgoreg vremena izvršavanja težak posao u većini kompleksnih programa. Stoga, u nastavku govorimo o pojmu \textit{asimptotskog} vremena izvršavanja programa.  Gotovo uvijek se broj koraka izvršavanja algoritma povećava shodno povećavanju dimenzije ulaza. Prema tome, ima smisla posmatrati ponašanje algoritma na  
 ulazima velike dimenzije jer se često programi čiji su ulazi  malih dimenzija svakako efikasno izvršavaju (imaju kratko vrijeme izvršavanja)  nezavisno od algoritamske tehnike rješavanja. U sljedećoj podsekciji, formalno uvedimo pojam $O$--notacije. 
  
  
 \subsection{$O$--notacija}  \fxnote{Dovde stigao!}
-$O$-notacija   dodatno pojednostavljuje ocjenjivanje broja izvršenih instrukcija  programa, fokusirajući se na ponašanje algoritma na ulazima velikih dimenzija.  Pretpostavimo da imamo sljedeću situaciju o ocjeni najgoreg scenarija izvršavanja dva algoritma (na istom posmatranom problemu): 
+$O$-notacija   dodatno pojednostavljuje ocjenjivanje broja izvršenih instrukcija  programa, fokusirajući se na ponašanje algoritma na ulazima velikih dimenzija.  Pretpostavimo da imamo sljedeću situaciju o ocjeni najgoreg scenarija izvrša\-vanja dva algoritma (na istom posmatranom problemu): 
 \begin{itemize}
 	\item $T_1(n) = 2 n^{\frac{3}{2}} + 3n + 10$
 	\item $T_2(n) = 4 n \cdot \log^3 n + \lceil \sqrt{n} \rceil + 11 $
@@ -318,7 +319,7 @@ $O$-notacija   dodatno pojednostavljuje ocjenjivanje broja izvršenih instrukcij
 
 Upoređivanje ovakvih funkcija zahtjeva analitičku analizu obje funkcije, pri čemu se može utvrditi da je prvi algoritam (koji se izvršava u $T_1$ vremenu u odnosu na ulaz veličine $n$)  brži -- zahtjeva izvođenje manjeg broja instrukcija -- za manje $n$, dok je za veće $n$ očigledno u prednosti algoritam sa vremenom izvršavanja $T_2$ ($n \log^3 n$ sporije raste od funkcije $n^{\frac{3}{2}}$) porastom vrijednosti $n$. 
 
-Dakle, cilj je je pojednostaviti računanje izvršenog broja instrukcija, koje se postiže uvođenjem sljedećih konvencija u svrhu ocijenjivanja ponašanja algoritma na instancama velikih dimenzija.
+Dakle, cilj je je pojednostaviti računanje izvršenog broja instrukcija, koje se postiže uvođenjem sljedećih konvencija u svrhu ocijenjivanja ponaša\-nja algoritma na instancama velikih dimenzija.
 \begin{enumerate}
 	\item Konstante uz svaki od termova se ignorišu.
 	\item Uzimaju se dominantni termovi (nose veću težinu za većom vrijednosti $n$), dok se ostali (nedominirajući) ignorišu. %Dominantan je onaj term koji najbrže raste sa porastom dimenzije ulaza. 
@@ -351,7 +352,7 @@ Neka su date dvije funkcije $f$ i $g$. Kažemo da $f = O(g)$ akko postoji konsta
 
 U osnovi, dominirajući term nam govori o asimptotskoj granici čitavog izraza (dobijen računanjem (najgoreg mogućeg) broja instrukcija izvršenog u programu), jer kada je $n$ dovoljno veliko, vrijednost izraza dominantno zavisi od dominirajućeg terma, dok ostali članovi ne doprinose u značajnoj mjeri da bi se promijenio zaključak o asimptotskom ponašalju porasta broja instrukacija programa sa porastom dimenzije ulaza. 
 
-$O$--notacija, bez obzira na praktičnost i jednostavnost, dovodi i do određenih  dvosmislenosti. Npr.\  $n^2 + n = O(n^2)$, ali vrijedi i $n^2 + n = O(n^3)$. U svakom slučaju, korisniji zaključak dobijamo uzimajući prvi od ova dva.  Ovo nas dovodi do definisanja $\Theta$--notacije (eng. Big-Theta).
+$O$--notacija, bez obzira na praktičnost i jednostavnost, dovodi i do odre\-đenih  dvosmislenosti. Npr.\  $n^2 + n = O(n^2)$, ali vrijedi i $n^2 + n = O(n^3)$. U svakom slučaju, korisniji zaključak dobijamo uzimajući prvi od ova dva.  Ovo nas dovodi do definisanja $\Theta$--notacije (eng. Big-Theta).
 
 \begin{definition}
 Neka su date dvije funkcije $f$ i $g$.  Ako $f = \Theta(g)$, onda postoje konstante $c_1, c_2 >0$ tako da $c_1 g(n) \leq f(n) \leq c_2 g(n)$, počevši od nekog dovoljno velikog $n \geq N$. 
@@ -416,7 +417,7 @@ Neformalno, ako $f(n) = o(g(n))$, to znači da  $f$ postaje beznačajno mala u o
 
 Prethodna sekcija nam daje na uvid neke od osnovnih notacija za ocjenjivanje složenosti   algoritma, tj. izvršenja broja instrukcija programa koja se obično razmatra u zavisnosti od veličine ulaza. 
 
- Najčešće funkcije koje se pominju u analizi složenosti izvršavanja algoritama su nabrojane u Tabeli~\ref{tab:slozenosti_funkcije-a}. 
+ Najčešće funkcije koje se pominju u analizi složenosti izvršavanja algori\-tama su nabrojane u Tabeli~\ref{tab:slozenosti_funkcije-a}. 
  
  \begin{table}[H]
  	   \caption{Česte klase $O$--složenosti. }  \label{tab:slozenosti_funkcije-a}
@@ -443,7 +444,7 @@ Prethodna sekcija nam daje na uvid neke od osnovnih notacija za ocjenjivanje slo
  \end{figure}
 
 
-U praksi, neželjena složenost algoritma je eksponencijalna (i faktorijel), dok su logaritamska, linearna i log-linearna složenost poželjne i takvi algoritmi su obično veoma efikasni u rješavanju problema na instancama velikih dimenzija. U zavisnosti od tipa problema, kvadratna složenost može ali i ne mora biti garant za rješavanje instanci većih dimenzija razmatranog  problema. %U najvećem broju slučajeva, klasa funkcija koja  koja prelazi kvadratnu je nedovoljno dobra. 
+U praksi, neželjena složenost algoritma je eksponencijalna (i faktorijel), dok su logaritamska, linearna i log-linearna složenost poželjne i takvi algori\-tmi su obično veoma efikasni u rješavanju problema na instancama velikih dimenzija. U zavisnosti od tipa problema, kvadratna složenost može ali i ne mora biti garant za rješavanje instanci većih dimenzija razmatranog  problema. %U najvećem broju slučajeva, klasa funkcija koja  koja prelazi kvadratnu je nedovoljno dobra. 
 
 
 U nastavku izlažemo neka uputstva koja olakšavaju računanje složenosti algoritma. Za (pod)program $P$, označimo njegovu složenost izvođenja sa funkcijom $T(P)$ koja   zavisi od dimenzije ulaza ($n$). 
@@ -500,7 +501,7 @@ Izvršavanje funkcije $S(i)$ se odvija u linearnoj složenosti, tj. $O(n)$. Kako
  
  %https://www.geeksforgeeks.org/g-fact-86
  
- Termin prostorna složenost se na mnogim mjestima pogrešno koristi asocirajući na pomoćni prostor.  \textit{Pomoćni prostor} je dodatni ili privremeni prostor koji koristi algoritam.
+ Termin prostorna složenost se na mnogim mjestima pogrešno koristi asocira\-jući na pomoćni prostor.  \textit{Pomoćni prostor} je dodatni ili privremeni prostor koji koristi algoritam.
  
  \textit{Prostorna složenost} algoritma je ukupan prostor koji algoritam zauzima u odnosu na veličinu ulaza. Prostorna složenost   uključuje i pomoćni prostor i prostor koji koristi ulaz.  Prostorna složenost se može posmatrati kao pandan koncepta vremenske složenosti. Za kreiranje niza veličine $n$, zahtijeva se dodatan prostor od $O(n)$. Za kreiranje dvodimenzionalnog niza veličine $n \times n$,  zahtijeva se $O(n^2)$ prostora.
  Napomenimo da prostorna složenost zavisi i od programskog jezika, kompajlera, pa  čak i mašine koja pokreće algoritam.
@@ -544,12 +545,12 @@ Izvršavanje funkcije $S(i)$ se odvija u linearnoj složenosti, tj. $O(n)$. Kako
  \end{example}
  
  
-  \textbf{\textit{Napomena}}. U standardnom programiranju, podrazumijevano je korišćenje 256MB prostora za jedan program. Dakle, kreiranje   niza veličine veće od $10^8$ nije moguće, jer je na raspolaganju data gornja granica za količinu memorije. Takođe, kreiranje  niza veličine veće od $10^6$ u tijelu funkcije nije moguće, jer je maksimalni podražumijevani prostor dodijeljen funkciji (u lokalnom steku) 4MB. Dakle, da bismo koristili niz veće veličine, potrebno je kreirati globalni niz.  
+  \textbf{\textit{Napomena}}. U standardnom programiranju, podrazumijevano je kori\-šćenje 256MB prostora za jedan program. Dakle, kreiranje   niza veličine veće od $10^8$ nije moguće, jer je na raspolaganju data gornja granica za količinu memorije. Takođe, kreiranje  niza veličine veće od $10^6$ u tijelu funkcije nije moguće, jer je maksimalni podražumijevani prostor dodijeljen funkciji (u lokalnom steku) 4MB. Dakle, da bismo koristili niz veće veličine, potrebno je kreirati globalni niz.  
 
 \section{Pseudokod}
 
-\textit{Pseudokod} je jednostavan prikaz implementacije algoritma u obliku anotacija i informativnog teksta napisanog na običnom jeziku. Nema sintaksu kao bilo koji programski jezik i stoga ga računar ne može kompajlirati ili interpretirati. % Često su algoritmi  predstavljeni pomoću pseudo kodova jer se mogu protumačiti bez obzira na znanje onog koji ga nasoji razumjeti. 
- Pseudokod, kao što sam naziv sugeriše, je reprezentacija k\^oda koja je prilagođena da ga razumiju i osobe bez velikog znanja o programiranju i algoritmima. Za razliku od pseudokoda, algoritam je organizirani   niz instrukcija koji rješava određen problem pri implementiranju u nekom programskom jeziku, te se kompajliranjem  ili interpretiranjem prevodi u mašinski k\^od kojeg mašina može da izvrši.
+\textit{Pseudokod} je jednostavan prikaz implementacije algoritma u obliku anotacija i informativnog teksta napisanog na običnom jeziku. Nema sintaksu kao bilo koji programski jezik i stoga ga računar ne može kompajlirati ili interpre\-tirati. % Često su algoritmi  predstavljeni pomoću pseudo kodova jer se mogu protumačiti bez obzira na znanje onog koji ga nasoji razumjeti. 
+ Pseudokod, kao što sam naziv sugeriše, je reprezentacija k\^oda koja je prilagođena da ga razumiju i osobe bez velikog znanja o programiranju i algoritmima. Za razliku od pseudokoda, algoritam je organizirani   niz instrukcija koji rješava određen problem pri implementiranju u nekom pro\-gramskom jeziku, te se kompajliranjem  ili interpretiranjem prevodi u mašinski k\^od kojeg mašina može da izvrši.
 
 Prednosti korištenja pseudokoda su sljedeće. 
 \begin{itemize}
@@ -564,12 +565,12 @@ Glavni cilj pseudokoda je da nedvosmisleno objasni suštinu svakog dijela progra
 
 Pisanje pseudokoda počinje razumijevanjem problema koji se rešava. Nakon  jasnog definisanja problema, slijedi razmatranje koraka koje treba preduzeti kako bi se došlo do rešenja. Te korake zatim zapisujemo uz pomoć  pseudokoda.
 
-U nastavku slijedi nekoliko saveta u vezi prakse pisanja ``dobrog''  pseudokoda.
+U nastavku slijedi nekoliko saveta u vezi prakse pisanja ``dobrog''  pseudo\-koda.
 \begin{itemize}
 	\item Koristiti jasne i precizne nazive za promenljive i funkcije.
 	\item Koristiti opise koji jasno ukazuju na to šta se dešava u svakom koraku algoritma. 
 	\item Razmisliti o slučajevima u kojima algoritam može da se zaustavi i načinima na koje  se to može desiti.
-	\item Koristiti odgovarajuću sintaksu za kontrolne strukture kao što su petlje i uslovi: \texttt{if-else}, \texttt{for}, \texttt{while} petlje. Koristiti mehanizam uvlačenja naredbi koje se izvršavaju u okviru istog bloka, jer pomaže lakšem shvatanju kontrolnog mehanizma i izvršavanja odluka. Ovakva praksa u velikoj mjeri poboljšava čitljivost k\^oda. Pogledajmo u nastavku primjer jednog jednostavnog pseudokoda.
+	\item Koristiti odgovarajuću sintaksu za kontrolne strukture kao što su petlje i uslovi: \texttt{if-else}, \texttt{for}, \texttt{while} petlje. Koristiti mehanizam uvlačenja naredbi koje se izvršavaju u okviru istog bloka, jer pomaže lakšem shvatanju kontrolnog mehanizma i izvršavanja odluka. Ovakva praksa u velikoj mjeri poboljšava čitljivost k\^oda. Pogledajmo u nasta\-vku primjer jednog jednostavnog pseudokoda.
 	
 	\begin{minted}{C}
         
@@ -642,8 +643,8 @@ Postoji nekoliko načina da se formalno provjeri valjanost algoritama. Izdvajaju
 	\item \textit{Matematički dokaz}. Predstavlja jedan od najrigoroznijih načina za provjeru valjanosti algoritma.  %je matematički pokazati da algoritam uvijek daje ispravan izlaz. 
 	Koristi matematičke tehnike za analizu logike algoritma i za utvrđivanje ispravnosti rada algoritma za sve moguće ulaze. Jedana od metoda je \textit{metoda invarijantne petlje}, kojom ćemo se pozabaviti u nastavku ove glave. 
 	
-    \item \textit{Formalna verifikacija}. Formalna verifikacija je proces upotrebe matematičkih tehnika i alata za provjeru da li algoritam ispunjava određene specifikacije. Ovo uključuje modelovanje algoritma korištenjem formalnog jezika, a zatim korištenje automatiziranih alata za provjeru da li model zadovoljava određena svojstva. U osnovi, ovi metodi su iz domena vještaške inteligencije specijalno namijenjeni za verifikaciju softvera.
-    \item \textit{Metod testiranja}.  Iako testiranje nije formalna metoda već \textit{empirijska}, ona predstavlja važan način za provjeru valjanosti algoritma. Pokretanjem algoritma sa raznim ulaznim vrijednostima i provjeravanjem izlaza u odnosu na očekivane rezultate, može se steći povjerenje o tome da li je algoritam ispravan.
+    \item \textit{Formalna verifikacija}. Formalna verifikacija je proces upotrebe mate\-matičkih tehnika i alata za provjeru da li algoritam ispunjava određene specifikacije. Ovo uključuje modelovanje algoritma korištenjem forma\-lnog jezika, a zatim korištenje automatiziranih alata za provjeru da li model zadovoljava određena svojstva. U osnovi, ovi metodi su iz domena vještaške inteligencije specijalno namijenjeni za verifikaciju softvera.
+    \item \textit{Metod testiranja}.  Iako testiranje nije formalna metoda već \textit{empirijska}, ona predstavlja važan način za provjeru valjanosti algoritma. Pokreta\-njem algoritma sa raznim ulaznim vrijednostima i provjeravanjem izlaza u odnosu na očekivane rezultate, može se steći povjerenje o tome da li je algoritam ispravan.
 
 \end{itemize}
 
@@ -685,7 +686,7 @@ Prije ulaska u prvu iteraciju petlje vrijedi $nzd^* \leq nzd = d_0 = \min(n, m)$
 Definišimo sa $d_{k-1} = nzd$  prije izvršavanja $k$-te iteracije. Tada je  $nzd^* < d_{k-1}$ jer  ulaskom u $k$-tu iteraciju petlje znamo da $d_{k-1}$ ne može biti NZD ulaznih brojeva. Imamo $d_{k} = d_{k-1} -1 \geq nzd^*$ nakon završetka $k$-te iteracije, čime je uslov invarijantne petlje i tada zadovoljen.   Pretpostavimo da se u iteraciji $k^*$ program prekida. To znači da je $d_{k^*-1}$ zasigurno zajednički djelilac. Kako tražimo najveći takav, onda je i $d_{k^*-1} \leq nzd^*$. S obzirom da je  $d_{k^*-1} \geq nzd^*$ zbog uslova invarijantne petlje, slijedi da je 
 $d_{k^*-1} = nzd^*$, čine smo pokazali valjanost algoritma.
 \end{example}
-Pokazivanje valjanosti kompleksnih algoritama pomoću metoda invarnijantne petlje je rijetko  praktično. Jedan od razloga je taj što definisanje samog uslova invarijantnosti nije trivijalan zadatak, a instrukcije koje se izvršavaju u svakoj iteraciji obično su daleko od trivijalnih  (kao što je to slučaj sa prethodnim programom), te mogu uključivati  pozivanje složenijih pomoćnih funkcija. U takvim slučajevima, valjanost algoritma provjeravamo empirijski, izvršavajući ga nad instancama različitih veličina i distribucija te provjeravajući  validnost vraćenih rezultata (za instance za koje znamo tačan rezultat, dok za one za koje ne znamo, provjeravamo ispunjivost uslova zadatka). 
+Pokazivanje valjanosti kompleksnih algoritama pomoću metoda invarnijantne petlje je rijetko  praktično. Jedan od razloga je taj što definisanje samog uslova invarijantnosti nije trivijalan zadatak, a instrukcije koje se izvršavaju u svakoj iteraciji obično su daleko od trivijalnih  (kao što je to slučaj sa prethodnim programom), te mogu uključivati  pozivanje složenijih pomoćnih funkcija. U takvim slučajevima, valjanost algoritma provjeravamo empirijski, izvršavajući ga nad instancama različitih veličina i distribucija te provjerava\-jući  validnost vraćenih rezultata (za instance za koje znamo tačan rezultat, dok za one za koje ne znamo, provjeravamo ispunjivost uslova zadatka). 
 
 \section{Euklidov algoritam: složenost}
 Klasični algoritam za nalazak NZD je Euklidov algoritam, dat Algoritmom~\ref{alg:nzd-euclid}. On predstavlja jedan od najpoznatijih algoritama u polju aritmetike. Izvedimo njegovu vremensku složenost. 
@@ -758,10 +759,10 @@ Primijetimo da je prostorna složenost Euklidovog algoritma konstanta, tj. jedna
 \end{example}
 
 
-Napomenimo da se valjanost Euklidovog algoritma direktno izvodi  koristeći algebarsko svojstvo da je skup djelilaca brojeva $p$ i $q$, jednak skupu djelilaca brojeva $q$ i $p\%q$, pa su stoga transformacije parova brojeva u svakom koraku algoritma validne, dok se ne dođe do trivijanog slučaja, tj. dok drugi broj ne bude jednak nuli, čime se vraća vrijednost prvog kao krajnji rezultat. 
+Napomenimo da se valjanost Euklidovog algoritma direktno izvodi  koriste\-ći algebarsko svojstvo da je skup djelilaca brojeva $p$ i $q$, jednak skupu djelilaca brojeva $q$ i $p\%q$, pa su stoga transformacije parova brojeva u svakom koraku algoritma validne, dok se ne dođe do trivijanog slučaja, tj. dok drugi broj ne bude jednak nuli, čime se vraća vrijednost prvog kao krajnji rezultat. 
 
-Kako smo vidjeli, iako je Euklidov algoritam relativno jednostavan, odrediti njegovu složenost nije trivijalno. Napomenimo da Euklidov algoritam predstavlja jedan vid rekurzivnog algoritma.  %, gdje rekurzija u tijelu funkcije poziva samu sebe, ali sa ulazom manje veličine. 
- U osnovi, za računanje složenosti ovakvog tipa algoritama, o kojima će biti više riječi u Glavi 3, koristi se poznata Master teorema. Ovu teoremu navodimo bez dokaza, uz napomenu da se ona  formalno dokazuje na nekim od kurseva algoritmike na višim godinama studija. Mi ćemo je koristiti isključivo samo kao pomoćni alat u već pomenutoj Glavi 3, kod određivanja složenosti algoritama nekih problema koje budemo rješavali. 
+Kako smo vidjeli, iako je Euklidov algori\-tam relativno jednostavan, odrediti njegovu složenost nije trivijalno. Napomenimo da taj algoritam predstavlja jedan vid rekurzivnog algoritma.  %, gdje rekurzija u tijelu funkcije poziva samu sebe, ali sa ulazom manje veličine. 
+ U osnovi, za računanje složeno\-sti ovakvog tipa algoritama, o kojima će biti više riječi u Glavi 3, koristi se poznata Master teorema. Ovu teoremu navodimo bez dokaza, uz napomenu da se ona  formalno dokazuje na nekim od kurseva algoritmike na višim godinama studija. Mi ćemo je koristiti isključivo samo kao pomoćni alat u već pomenutoj Glavi 3, kod određivanja složenosti algoritama nekih problema koje budemo rješavali. 
 
 \begin{theorem}[Master teorema]
 	Neka je data jednačina 
