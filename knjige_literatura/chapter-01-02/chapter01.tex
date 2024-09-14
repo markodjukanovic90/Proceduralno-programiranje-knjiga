@@ -23,16 +23,16 @@ Danas se Pajton koristi u gotovo svemu, od razvoja veb aplikacija, do naučnog r
 Pajtona je velika i aktivna zajednicu programera koja   svakodnevno doprinose  jeziku kreiranjem biblioteka, frejmvorka i drugih alata. Neke od popularnih biblioteka i frejmvorka za Pajton uključuju NumPy, Pandas, Matplotlib, Django, TensorFlow.
 
 
- Pajton karakteriše njegova sintaksna jednostavnost, čitljivost i fleksibilnost. Ovi aspekti su pomogli  da Pajton postane popularan jezik među početnicima ali i iskusnijim  programerima.
+ Pajton karakteriše njegova sintaksna jednostavnost, čitljivost i fleksibi\-lnost. Ovi aspekti su pomogli  da Pajton postane popularan jezik među početnicima ali i iskusnijim  programerima.
 
 \section{Osnovne karakteristike}
 U nastavku navodimo osnovne karakteristika programskog jezika Pajton. 
 
 \begin{itemize}
 	\item Pajton je \textit{jezik visokog nivoa} (eng. \textit{high-level language}):  programski jezik koji je dizajniran tako da ga ljudi lako čitaju, pišu i razumiju. U prevodu,  obezbjeđuje koncepte koje omogućavaju pisanje k\^oda na višem nivou apstrakcije, čime ga približava sintaksi prirodnog jezika, za razliku od jezika niskog nivoa, kao što su asemblerski ili mašinski k\^od.
-	\item Pajton je \textit{dinamički tipizirani jezik}. To znači da  se tip varijable određuje u vrijeme izvođenja programa, a ne u vrijeme kompajliranja ili kodiranja. Drugim riječima, tip varijable se može promijeniti tokom izvršavanja programa. Nasuprot ovome, statički tipiziranim jezicima,  tip varijable je fiksiran u vrijeme kompajliranja i nepromjenljiv je tokom vremena izvršavanja. U statički tipiziranim jezicima,  tip svake varijable se mora deklarisati prije upotrebe, a potom kompajler provjerava da li se tip varijable dosljedno upotrebljava u cijelom programu.
+	\item Pajton je \textit{dinamički tipizirani jezik}. To znači da  se tip varijable određuje u vrijeme izvođenja programa, a ne u vrijeme kompajliranja ili kodiranja. Drugim riječima, tip varijable se može promijeniti tokom izvršavanja programa. Nasuprot ovome, statički tipiziranim jezicima,  tip varijable je fiksiran u vrijeme kompajliranja i nepromjenljiv je tokom vremena izvršavanja. U statički tipiziranim jezicima,  tip svake varijable se mora deklarisati prije upotrebe, a potom kompajler provjerava da li se tip varijable dosljedno upotrebljava u cijelom progra\-mu.
 	\item Pajton je \textit{objektno-orijentisani jezik}.  Objektno orijentisani programski (OOP) jezik  je tip programskog jezika koji koristi objekte kao svoje osnovne gradivne blokove. Objekti su instance klasa koje enkapsuliraju podatke i operacije (metode) koje se mogu izvršiti na tim podacima. U osnovi,  OOP koncept potiče prirodniji način razmišljanja o problemima tako što ih modeluje u smislu objekata i njihovih interakcija.
-	\item Pajton je \textit{skriptni jezik}. Programski jezik koji je dizajniran dijelom za  skriptiranje,   pisanja tipa programa koji se koristi za automatizaciju zadataka, kao što je izvođenje niza naredbi ili manipulaciju podacima. Skriptni jezici se obično interpretiraju, a ne kompajliraju, što znači da se izvorni k\^od može izvršiti direktno, bez prethodnog prevođenja u mašinski k\^od.  	Jezici za skriptiranje se često koriste za   automatizacija zadataka koji se ponavljaju, pisanje malih potpornih programa ili ugra\-đivanje funkcionalnosti u drugim aplikacijama. Jedna od glavnih pre\-dnosti skriptnih jezika je njihova jednostavnost upotrebe i fleksibilnost.
+	\item Pajton je \textit{skriptni jezik}. Programski jezik koji je dizajniran dijelom za  skriptiranje,   pisanja tipa programa koji se koristi za automatizaciju zadataka, kao što je izvođenje niza naredbi ili manipulaciju podacima. Skriptni jezici se obično interpretiraju, a ne kompajliraju, što znači da se izvorni k\^od može izvršiti direktno, bez prethodnog prevođenja u mašinski k\^od.  	Jezici za skriptiranje se često koriste za   automatizacija zadataka koji se ponavljaju, pisanje malih potpornih programa ili ugra\-đivanje funkcionalnosti u drugim aplikacijama. Jedna od glavnih pre\-dnosti skriptnih jezika je njihova jednostavnost upotrebe i fleksibi\-lnost.
 	\item Pajton posjeduje \textit{automatsko čišćenje memorije} (eng. \textit{garbage--collected} language).  Pajton automatski upravlja   identifikovanjem i oslobađanjem memorije koju program više ne koristi.  Oslobađena memorija  stavljanja se na raspolaganje drugim dijelovima programa za korištenje.   Ovaj mehanizam omogućuje  programerima  da se usredotoče na pisanje k\^oda bez vođenja brige o ručnom dodeljivanju i oslobađanju memorije (dok to nije slučaj, recimo, u programskom jeziku $C$).
 \end{itemize}
 
@@ -219,7 +219,7 @@ Sintaksa bazne naredbe \texttt{if} (sa neobaveznom alternativom) je data sa:
         naredba_2
 \end{minted}
 
-Tok naredbe je sljedeći: ako je \emph{uslov} ispunjen, izvršava se \textit{naredba\_1} (koja može da bude i blok naredbi), inače se izvršava blok \textit{naredba\_2}. Primijetimo pravila uvlačenja ili indentacije (eng. \textit{indentation}) k\^oda pod \texttt{if} blokom koja se moraju poštovati kao sintaksno pravilo. Nakon izvršavanja jedne od naredbi, program izlazi iz ugnježdenog bloka \texttt{if} naredbe, te prelazi na izvršavanje sljedeće naredbe po redu u programu. Kao i u svakom programskom jeziku, t\^ok izvršavanja naredbi ide  odozgo prema dolje. Primijetimo da prethodna sintaksa za \texttt{if} ima samo dvije alternative. \texttt{If} komande sa više alternativa su date sljedećim k\^odom. 
+Tok naredbe je sljedeći: ako je \emph{uslov} ispunjen, izvršava se \textit{naredba\_1} (koja može da bude i blok naredbi), inače se izvršava blok \textit{naredba\_2}. Primijetimo pravila uvlačenja ili indentacije (eng. \textit{indentation}) k\^oda pod \texttt{if} blokom koja se moraju poštovati kao sintaksno pravilo. Nakon izvršavanja jedne od naredbi, program izlazi iz ugnježdenog bloka \texttt{if} naredbe, te prelazi na izvršavanje sljedeće naredbe po redu u programu. Kao i u svakom programskom jeziku, t\^ok izvršavanja naredbi ide  odozgo prema dolje. Primi\-jetimo da prethodna sintaksa za \texttt{if} ima samo dvije alternative. \texttt{If} komande sa više alternativa su date sljedećim k\^odom. 
 
  \begin{minted}{python}
  	if uslov_1:
@@ -290,7 +290,7 @@ Višelinijski stringovi se kreiraju koristeći trostruke navodnike.
 \textit{Metode}.
 \begin{itemize}
 	\item Konkatenacija (spajanje) stringova se realizuje pomoću operatora '+'. 
-	\item Pristupanje karakterima stringa je obezbjeđeno operatorom '[]'. Karakteri stringova su indeksirani brojevima $0, 1,\ldots$ idući od početka stringa ka njegovom kraju, ili sa $-1, -2,\ldots$ idući sa kraja stringa ka početku  (reverzno). 
+	\item Pristupanje karakterima stringa je obezbjeđeno operatorom '[]'. Kara\-kteri stringova su indeksirani brojevima $0, 1,\ldots$ idući od početka stringa ka njegovom kraju, ili sa $-1, -2,\ldots$ idući sa kraja stringa ka početku  (reverzno). 
 	\item Rezanje stringa (eng. \textit{slicing}) se realizuje sa `[:]' na sljedeći način:
 	\begin{minted}{python}
 	 string1 = 'world'
@@ -372,7 +372,7 @@ Lista je nehomogena, uređena, indeksirana i promjenljiva kolekcija elemenata. U
 	\item \textit{copy}(): pravi kopiju elemenata liste u drugu listu. 
  \end{itemize}
 
-\textit{Memorijska organizacija}.  U pajtonu su liste realizovake kao \textit{dinamički} nizovi. To znači da mogu povećavati ili smanjivati veličinu shodno dodavanjem ili brisanjem elemenata, respektivno. Upravljanje memori\-jom listi se obezbjeđuje interpreterom.  Pri inicijalizaciji liste, jedan blok memorije se određuje za skladištenje njenih elemenata, pogledati Sliku~\ref{fig: mem_list_org}.  Veličina ovog bloka memorije zavisi od broja elemenata u listi i korištenog pajtonovog  interpretera.  Npr. u interpreteru (CPython)  memorija je unaprijed dodijeljena u komadima (eng. \textit{chunk}).
+\textit{Memorijska organizacija}.  U pajtonu su liste realizovake kao \textit{dinamički} nizovi. To znači da mogu povećavati ili smanjivati veličinu shodno dodavanjem ili brisanjem elemenata, respektivno. Upravljanje memori\-jom listi se obezbje\-đuje interpreterom.  Pri inicijalizaciji liste, jedan blok memorije se određuje za skladištenje njenih elemenata, pogledati Sliku~\ref{fig: mem_list_org}.  Veličina ovog bloka memorije zavisi od broja elemenata u listi i korištenog pajtonovog  interprete\-ra.  Npr. u interpreteru (CPython)  memorija je unaprijed dodijeljena u komadima (eng. \textit{chunk}).
 %https://rushter.com/blog/python-memory-managment/ https://www.opensourceforu.com/2021/05/memory-management-in-lists-and-tuples/
 
  \begin{figure}[!ht]
@@ -390,12 +390,12 @@ Lista je nehomogena, uređena, indeksirana i promjenljiva kolekcija elemenata. U
 %\end{figure}%\footnote{Slika sa linka: \url{https://www.laurentluce.com/images/blog/list/list_insert.png}}
 
 
- Kada se lista promijeni, interpreter po potrebi dodijeljuje novi blok memorije veće veličine gdje se postojeći elementi liste kopiraju u novododijeljeni blok. Ovaj proces se naziva \textit{realokacija}.  U slučaju kada je potrebno osigurati čuvanje niza, a realokacija nema toliko prostora, stvoriće se nova memorija i kopija što će rezultirati veoma skupom operacijom. Da bismo se to izbjeglo, možemo unaprijed rezervi\-sati potrebnu memoriju. To se može uraditi sljedećim k\^odom:
+ Kada se lista promijeni, interpreter po potrebi dodijeljuje novi blok memorije veće veličine gdje se postojeći elementi liste kopiraju u novododije\-ljeni blok. Ovaj proces se naziva \textit{realokacija}.  U slučaju kada je potrebno osigurati čuvanje niza, a realokacija nema toliko prostora, stvoriće se nova memorija i kopija što će rezultirati veoma skupom operacijom. Da bismo se to izbjeglo, možemo unaprijed rezervi\-sati potrebnu memoriju. To se može uraditi sljedećim k\^odom:
  \begin{minted}{python}
     lista =  [None] * max_broj_elemenata
  \end{minted}
 
-Da bi se elementi liste automatski obrisali od strane pajtonovog sakupljača otpadaka, listi je potrebno dodijeliti \texttt{None} vrijednost.  U tom slučaju, svi elementi liste koji nemaju drugih (aktivnih) pokazivača koji pokazuju na date elemente se automatski brišu iz memorije. 
+Da bi se elementi liste automatski obrisali od strane pajtonovog sakuplja\-ča otpadaka, listi je potrebno dodijeliti \texttt{None} vrijednost.  U tom slučaju, svi elementi liste koji nemaju drugih (aktivnih) pokazivača koji pokazuju na date elemente se automatski brišu iz memorije. 
 
 %https://www.analyticsvidhya.com/blog/2021/05/why-you-should-avoid-using-python-lists/
 \textit{Dodatne napomene}. Kao što smo napomenuli, za razliku od nizova u programskom jeziku $C$, liste mogu biti heterogene. Međutim, ova fleksibilnost je prilično skupa. Da bi lista bila heterogena, svaki od elemenata liste mora sadržavati informaciju o vlastitom tipu, broju referenci, stvarnu vrijednost na koju pokazuje itd. Drugim riječima, svaka stavka je kompletan pajtonov objekat. Dakle, ako   dalje raščlani\-mo, lista sadrži pokazivač koji   pokazuje na   blok pokazivača, a unutar svakog bloka,  pokazivači redom pokazuju na odvojeni (puni) pajtonov objekat.  Ako su sve varijable istog tipa, većina ovih informacija postaje suvišna. Alternativa u takvom slučaju je korištenje \textit{array} ugrađenog tipa, o kojem više govorimo u sljedećem odjeljku.   %poput onog koji smo vidjeli ranije. %% Ovo je kao jedna velika lutka!
@@ -434,7 +434,7 @@ Da bismo koristili modul \texttt{array}, prvo ga uvedemo sa naredbom \texttt{imp
 
 \textit{Osnovne metode}. 
 \begin{itemize}
-	\item Pristup svakom elementu se postiže korištenjem uglaste zagrade; indeksiranje elemenata kreće od 0. 
+	\item Pristup svakom elementu se postiže korištenjem uglaste zagrade; inde\-ksiranje elemenata kreće od 0. 
 	\begin{minted}{python}
 print(my_array[0])  # Output: 1
 print(my_array[2])  # Output: 3
@@ -516,11 +516,9 @@ print(dct)  #  Output: {"ime": "Mirko", "godine": 30}
       print("Ključ=", x, " vrijednost=", y)
  \end{minted}
 \end{itemize}
-\textit{Memorijska organizacija rječnika}.  U Pajtonu, rječnici su implementi\-rani preko heš tabela, koje su predstavljene nizom parova ključ--vrije\-dnost, gdje su ključevi jedinstveni na nivou objekta i koriste se za vraćanje odgovarajućih vrijednosti. Proces unosa, brisanja i traženja elemenata u heš tabeli je obično veoma brz, sa očekivanim konstantnim vremenom za svaku od operacija.
+\textit{Memorijska organizacija rječnika}.  U Pajtonu, rječnici su implementi\-rani preko heš tabela, koje su predstavljene nizom parova ključ--vrije\-dnost, gdje su ključevi jedinstveni na nivou objekta i koriste se za vraćanje odgovarajućih vrijednosti. Proces unosa, brisanja i traženja elemenata u heš tabeli je obično veoma brz, sa očekivanim konstantnim vremenom za svaku od operaci\-ja. Pri kreiranju rječnika u Pajtonu, prvo se inicijalizuje heš tabela određene veličine  u memoriji, koja skladišti parove ključ--vrednost. Veličina heš tabele je obično veća od broja inicijalno unesenih elemenata, kako bi se spriječilo često (dinamičko) mijenjanje veličine heš mape.
 	
-Pri kreiranju rječnika u Pajtonu, prvo se inicijalizuje heš tabela određene veličine  u memoriji, koja skladišti parove ključ--vrednost. Veličina heš tabele je obično veća od broja inicijalno unesenih elemenata, kako bi se spriječilo često (dinamičko) mijenjanje veličine heš mape.
-	
-	Svaki ključ u rječniku se preslikava u cjelobrojnu vrijednost koristeći heš funkciju, a potom se dobijeni broj koristi kao indeks u heš tabeli. Ako se dva ključa heširaju istom heš vrijednosti, dolazi do pojave heš kolizija. Heš tabela tu situaciju rješava tako što oba para ključ---vrijednost čuva u istom indeksu, stvarajući povezanu listu parova ključ--vrijednost, pogledati Sliku~\ref{fig: dict_mem_organization}. Da bi se dohvatila vrijednost pridružena ključu, pajtonov mehanizam prvo izračunava heš vrijednost ključa kojeg potom koristi za lociranje indeksa u heš tabeli u kojoj je pohranjen odgovarajući par ključ-vrijednost. Ako je ključ pronađen, vraća se odgovarajuća vrijednost; u suprotnom se javlja greška.  Kada se novi par ključ-vrijednost dodaje u rječnik, izračunava se heš vrijednost ključa koji se koristi za pronalazak  indeksa u heš tabeli na čiju poziciju treba da bude pohranjen novi par ključ-vrednost. Ako je indeks već zauzet drugim parom ključ/vrijednost, novi par ključ--vrijednost se dodaje u   listu povezanu sa tim indeksom. Ako broj parova ključ--vrijednost u rječniku premašuje određenu granicu, heš tabela može promijeniti svoju dužinu kako bi se smanjila vjerova\-tnoća pojavljivanja heš kolizija u svrhu poboljšavanja performansi.
+	Svaki ključ u rječniku se preslikava u cjelobrojnu vrijednost koristeći heš funkciju, a potom se dobijeni broj koristi kao indeks u heš tabeli. Ako se dva ključa heširaju istom heš vrijednosti, dolazi do pojave heš kolizija. Heš tabela tu situaciju rješava tako što oba para ključ---vrijednost čuva u istom indeksu, stvarajući povezanu listu parova ključ--vrijednost, pogledati Sliku~\ref{fig: dict_mem_organization}. Da bi se dohvatila vrijednost pridružena ključu, pajtonov mehani\-zam prvo izračunava heš vrijednost ključa kojeg potom koristi za lociranje indeksa u heš tabeli u kojoj je pohranjen odgovarajući par ključ-vrijednost. Ako je ključ pronađen, vraća se odgovarajuća vrijednost; u suprotnom se javlja greška.  Kada se novi par ključ-vrijednost dodaje u rječnik, izračunava se heš vrijednost ključa koji se koristi za pronalazak  indeksa u heš tabeli na čiju poziciju treba da bude pohranjen novi par ključ-vrednost. Ako je indeks već zauzet drugim parom ključ/vrijednost, novi par ključ--vrijednost se dodaje u   listu povezanu sa tim indeksom. Ako broj parova ključ--vrijednost u rječniku premašuje određenu granicu, heš tabela može promijeniti svoju dužinu kako bi se smanjila vjerova\-tnoća pojavljivanja heš kolizija u svrhu poboljšavanja performansi.
 	
 	Što se tiče heš funkcija, Pajton koristi heš funkciju zvanu \textbf{hash()} za ugrađene tipove kao što su stringovi (\texttt{str}), cijeli brojevi (\texttt{int}) i torke (\texttt{tuple}). Međutim, za prilagođene objekte, može se definisati vlastita heš funkcija implementacijom metode \_\_\textbf{hash}\_\_(). Funkcija \textbf{hash()}  vraća cjelobrojnu vrijednost koja predstavlja heš vrijednost objekta. Objekti koji se upoređuju kao jednaki treba da imaju istu heš vrijednost, radi ispravnog funkcioniranja rječnika. Napomenimo da za stringove i bajtove, Pajton koristi algoritam \textit{MurmurHash3} za hešovanje vrijednosti. Ovaj algoritam je konstruisan tako da uniformno raspoređuje heš vrijednosti minimizirajući broj kolizija. Za korisnički definisane klase, po defaultu se koristi funkcija \textbf{hash()}, koja generiše jedinstvenu heš vrijednost za svaku instancu klase na osnovu memorijske adrese pridružena instancama. Međutim, kao što je ranije rečeno, ovo pona\-šanje se može nadjačati definisanjem vlastite heš metode. 
 	
@@ -632,7 +630,7 @@ Sljedeći k\^od pokazuje tip strukture podataka   koja predstavlja skup, tj. ugr
  \end{itemize}
  
 \textit{Memorijska organizacija}.  Pri kreiranju torke, u memoriji se rezerviše fiksna količina memorije za čuvanje svih njenih elemenata. Svaki njen element je pohranjen u kontinualnom  (neprekidnom) bloku memorije,  određen na osnovu tipova podataka sadržani u torci.  Memorijska adresa prvog elementa torke se koristi kao referenca na cijeli objekat. %Pristup pojedinačnom elementu torke zahtijeva izračunavanje memorijske adrese željenog elementa na osnovu njegovog indeksa i veličine   elemenata u torci. Za posljedicu, 
-Pristup pojedinačnim eleme\-ntima torke se izvršava mnogo efikasnije od pristupa elementima liste jer se indeks svakog elementa torke može  izračunati direktno na osnovu njegove pozicije u memoriji. 
+Pristup pojedina\-čnim eleme\-ntima torke se izvršava mnogo efikasnije od pristupa elementima liste jer se indeks svakog elementa torke može  izračunati direktno na osnovu njegove pozicije u memoriji. 
 
 Pošto su objekti tipa \texttt{tuple} nepromjenljive strukture, elementi se ne mijenjaju  nakon što su kreirani. Ako je  potrebno izmijeniti određene elemente, treba da se kreira novi objekat torka sa željenim promjenama. Strukture torki su  efikasnije u smislu upotrebe memorije u poređenju sa promjenjivim strukturama podataka (liste, rječnici), jer ne postoji potreba za dodijelom dodatnih memorijskih lokacija da bismo prilagodili podatke, vidjeti Sliku~\ref{fig: mem_list_org}.
  
@@ -644,11 +642,9 @@ Pošto su objekti tipa \texttt{tuple} nepromjenljive strukture, elementi se ne m
 
 \section{Funkcije}
 
-Programski jezik Pajton svaku funkciju predstavlja jednim objektom. Prema tome, funkcije se mogu dodijeliti varijablama, proslijediti kao argument  drugim funkcijama, a takođe vratiti kao vrijednost    drugih funkcija.  Preciznije, funkcije su implementirane korišćenjem Pajtonove interne klase  \texttt{function}. Ova klasa je dio ugrađenih tipova ovog jezika koja pruža osnovnu funkcionalnost za kreiranje i izvršavanje funkcija. Kada se funkcija definiše, interpreter inicijalizu\-je novi objekat klase \texttt{function} koji predstavlja tu funkciju -- sadrži informacije o nazivu funkcije, argumentima, k\^odu i drugim metapodacima.
+Programski jezik Pajton svaku funkciju predstavlja jednim objektom. Prema tome, funkcije se mogu dodijeliti varijablama, proslijediti kao argument  drugim funkcijama, a takođe vratiti kao vrijednost    drugih funkcija.  Preciznije, funkcije su implementirane korišćenjem Pajtonove interne klase  \texttt{function}. Ova klasa je dio ugrađenih tipova ovog jezika koja pruža osnovnu funkciona\-lnost za kreiranje i izvršavanje funkcija. Kada se funkcija definiše, interpreter inicijalizu\-je novi objekat klase \texttt{function} koji predstavlja tu funkciju -- sadrži informacije o nazivu funkcije, argumentima, k\^odu i drugim metapo\-dacima.
 
-Definicija funkcije je predstavljena blokom k\^oda (nazvan još i tijelo funkcije) koji obavlja određeni zadatak a može se pozivati i izvršavati više puta kroz program. Uloga funkcija je da se k\^od učini modularnijim, efikasnijim i čitljivijim, jer omogućavaju  podijelu složenih programa na manje dijelove kojima je lakše upravljati.
-
-Sintaksno, funkcije se definišu pomoću ključne riječi \texttt{def} nakon čega slijedi naziv funkcije, zagrade (u kojima se opciono navode argu\-menti) pa dvotočka. Tijelo funkcije se uvlači ispod zaglavlja. Naredba \texttt{return} vraća rezultat date funkcije, nakon čega se izlazi iz tijela funkcije. Evo primjera jednostavne funkcije koja računa proizvod dva broja:
+Definicija funkcije je predstavljena blokom k\^oda (nazvan još i tijelo funkcije) koji obavlja određeni zadatak a može se pozivati i izvršavati više puta kroz program. Uloga funkcija je da se k\^od učini modularnijim, efikasnijim i čitljivijim, jer omogućavaju  podijelu složenih programa na manje dijelove kojima je lakše upravljati.  Sintaksno, funkcije se definišu pomoću ključne riječi \texttt{def} nakon čega slijedi naziv funkcije, zagrade (u kojima se opciono navode argu\-menti) pa dvotočka. Tijelo funkcije se uvlači ispod zaglavlja. Naredba \texttt{return} vraća rezultat date funkcije, nakon čega se izlazi iz tijela funkcije. Evo primjera jednostavne funkcije koja računa proizvod dva broja:
 
 \begin{minted}{python}
 def proizvod_brojeva(x, y):
@@ -698,7 +694,7 @@ print(d, " ", o) # Output: 3 1
 
 %prenos vrijednosti argumenata:
 
-U jeziku Pajton, vrijednosti argumenata funkcije se prosljeđuju referencom objekta. Dakle, kada se funkcija pozove sa svojim argume\-ntom, referenca na objekt se prosljeđuje funkciji, a ne kopija samog objekta. %Jedino objekti koji su nepomjenljivi (kao što su torke) se proslijeđuju funkciji po vrijednosti (kao ``prava'' kopija a ne originalan objekat). 
+U jeziku Pajton, vrijednosti argumenata funkcije se prosljeđuju refere\-ncom objekta. Dakle, kada se funkcija pozove sa svojim argume\-ntom, referenca na objekt se prosljeđuje funkciji, a ne kopija samog objekta. %Jedino objekti koji su nepomjenljivi (kao što su torke) se proslijeđuju funkciji po vrijednosti (kao ``prava'' kopija a ne originalan objekat). 
 
 Ovo može dovesti do   neočekivanog ponašanja u odnosu na neke druge programske jezike, posebno u radu sa promjenjivim objektima kao što su liste, rječnici i skupovi. Pogledajmo sljedeći primjer:
 
@@ -755,7 +751,7 @@ print(result)  # Output: 5
 \begin{minted}{python}
 lambda argumenti: izraz
 \end{minted}
-Pod \textit{argumenti} se podrazumijevaju argumenti funkcije, a \textit{izraz} predsta\-vlja operaciju koja se izvršava nad ulaznim parametrima. Funkcija vraća rezultat koji se dobija izvršavanjem tog izraza uvrštavajući vrije\-dnosti proslijeđenih argumenata. 
+Pod \textit{argumenti} se podrazumijevaju argumenti funkcije, a \textit{izraz} predsta\-vlja operaciju koja se izvršava nad ulaznim parametrima. Funkcija vraća rezultat koji se dobija izvršavanjem tog izraza uvrštavajući vrije\-dnosti prosli\-jeđenih argumenata. 
 
 Sljedeći primjer daje lambda funkciju za operaciju sabiranja.
 \begin{minted}{python}
@@ -772,7 +768,7 @@ Lambda funkcije su često korisne u situaciji kada je potrebno defini\-sati jedn
 
 \section{O nekim programskim konceptima i ugrađenim funkcijama} \label{sec:concepts-pyhton}
 
-U ovoj sekciji ćemo demonstrirati rad sa nekoliko bitnih i često korištenih ugrađenih funkcija koje su dio standardnog pajtonovog paketa ili dio ugrađenih, poznatih paketa. Dodatno, biće objašnjen i koncept komprehe\-nzije liste (eng. \textit{list comprehension}) koji  doprinosi većoj modularnosti k\^oda i približava ga konceptima funkcijskih programskih jezika (kao što je to npr. Haskel). 
+U ovoj sekciji ćemo demonstrirati rad sa nekoliko bitnih i često korištenih ugrađenih funkcija koje su dio standardnog pajtonovog paketa ili dio ugrađe\-nih, poznatih paketa. Dodatno, biće objašnjen i koncept komprehe\-nzije liste (eng. \textit{list comprehension}) koji  doprinosi većoj modularnosti k\^oda i približava ga konceptima funkcijskih programskih jezika (kao što je to npr. Haskel). 
 
 \subsection{Komprehenzija liste}
 
@@ -820,7 +816,7 @@ Funkcija \textit{map}() uzima dva argumenta: funkciju i iterabilni objekat. Prim
 \end{minted}
 
 
-Funkcija \textit{filter}() uzima dva argumenta: funkciju koja vraća logičku vrijednost i iterabilni objekat. Primjenjuje funkciju na svaki element iterabilnog objekta i vraća iterator na one elemenate za koje je funkcija vratila \emph{True}. 
+Funkcija \textit{filter}() uzima dva argumenta: funkciju koja vraća logičku vrijednost i iterabi\-lni objekat. Primjenjuje funkciju na svaki element iterabilnog objekta i vraća iterator na one elemenate za koje je funkcija vratila \emph{True}. 
 \begin{minted}{python}
 	brojevi = [1, 2, 3, 4, 5]
 	parni = filter(lambda x: x % 2 == 0, brojevi)
@@ -854,7 +850,7 @@ zip(iterable1, iterable2, ...)
 \end{minted}
 gdje su \emph{iterable1}, \emph{iterable2},... iterablini objekti. 
 
-Npr. neka su date dvije liste brojeva za koje  želimo da uparimo odgovarajuće elemente. To uradimo uz pomoć sljedećeg k\^oda:
+Npr. neka su date dvije liste brojeva za koje  želimo da uparimo odgova\-rajuće elemente. To uradimo uz pomoć sljedećeg k\^oda:
 \begin{minted}{python}
 list1 = [1, 2, 3, 4]
 list2 = [5, 6, 7, 8]
@@ -865,7 +861,7 @@ Funkcija \textit{enumerate}() uzima iterativni objekat i vraća iterator koji sa
 \begin{minted}{python}
 	enumerate(iterable, start=0)
 \end{minted}
-gdje je \textit{iterable} jedan iterabilni objekat, a \textit{start} je početna vrijednost pridruženog indeksa (podrazumijeva se 0). Pogledajmo sljedeći primjer. 
+gdje je \textit{iterable} jedan iterabilni objekat, a \textit{start} je početna vrijednost pridru\-ženog indeksa (podrazumijeva se 0). Pogledajmo sljedeći primjer. 
 
 \begin{minted}{python}
 voce = ['jabuka', 'banana', 'kruska', 'breskva']
@@ -900,7 +896,7 @@ sort_brojevi = sorted(brojevi)
 print(sort_brojevi)
 \end{minted}
 
-Postoji i niz drugih pomoćnih opštekorišćenih funkcija, koje ćemo pobrojati u nastavku bez ulaska u detalje o njihovoj sintaksi i korišćenju:
+Postoji i niz drugih pomoćnih opštekorišćenih funkcija, koje ćemo pobro\-jati u nastavku bez ulaska u detalje o njihovoj sintaksi i korišćenju:
 \begin{itemize}
 	\item \textit{sum}(iterable): vraća sumu vrijednosti elemenata iterabilnog obje\-kta \emph{iterable};
 	\item \textit{eval}(expr): vraća vrijednost izraza \emph{expr} zapisan u stringovnom zapisu;
@@ -936,7 +932,7 @@ Ovo će omogućiti direktno korištenje funkcije bez potrebe za tačaka notacijo
 mojafunkcija()
 \end{minted}
 
-Pajton dolazi s velikim brojem ugrađenih modula, među kojima izdvajamo \texttt{math}, \texttt{random}, \texttt{datetime}, \texttt{os} i \texttt{numpy} o kojima će biti riječi u nastavku ove sekcije. Ovi moduli se uključuju direktno sa instalacijom jezika Pajton.  Da bismo instalirali eksterne module u Pajtonu,   koristi se menadžer paketa \textit{pip}, koji dolazi direktno sa instalacijom Pajtona. Koraci za instaliranje eksternih modula pomoću \emph{pip}-a su dati u nastavku. 
+Pajton dolazi s velikim brojem ugrađenih modula, među kojima izdva\-jamo \texttt{math}, \texttt{random}, \texttt{datetime}, \texttt{os} i \texttt{numpy} o kojima će biti riječi u nastavku ove sekcije. Ovi moduli se uključuju direktno sa instalacijom jezika Pajton.  Da bismo instalirali eksterne module u Pajtonu,   koristi se menadžer paketa \textit{pip}, koji dolazi direktno sa instalacijom Pajtona. Koraci za instaliranje eksternih modula pomoću \emph{pip}-a su dati u nastavku. 
 
 Na terminalnoj konzoli upišimo naredbu \textit{pip install naziv\_modula}, gdje  \textit{naziv\_modula} (obično) odgovara nazivu  modula kojeg želimo insta\-lirati. Npr. da bismo instalirali modul \textit{requests}, pišemo:
 \begin{minted}{python}
@@ -980,7 +976,7 @@ print(sin_angle)  # Output: 0.7071067811865475
 
 Neke od češće korištenih metoda ovog modula su:   \textit{sqrt}(), \textit{pow}(), \textit{log}(), \textit{exp}(), \textit{log10}(), \textit{floor}(), \textit{ceil}(), \textit{fabs}(), \textit{gcd}(), \textit{dist}() – Euklidova udaljenost između dvije tacake (predstavljene kao torke, ili liste), \textit{isnan}(), \textit{sin}(), \textit{cos}(), \textit{tan}(), \textit{sinh}(), \textit{asin}(), među ostalim metodama. \\
 
-U nastavku navodimo jednu od internih implementacija korjene funkcije \textit{sqrt}() broja $x\geq 0$. Ona je implementirana  korištenjem algoritma koji se zove \textit{Babilonova metoda}, poznata i pod nazivom Heronova metoda. Algoritam je numerička iterativna metoda koja aproksimira kvadratni korijen broja \textit{x} uzimajući prosjek prethodne aproksimacije i vrijednosti količnika broja $x$ i vrijednosti dobijene u prethodnoj aproksimaciji. Proces se nastavlja sve dok aproksimacija nije dovoljno precizna. Preciznije, primjeljuje se naredna rekurzija:
+U nastavku navodimo jednu od internih implementacija korjene funkcije \textit{sqrt}() broja $x\geq 0$. Ona je implementirana  korištenjem algoritma koji se zove \textit{Babilonova metoda}, poznata i pod nazivom Heronova metoda. Ovaj algori\-tam je numerička iterativna metoda koja aproksimira kvadratni korijen broja \textit{x} uzimajući prosjek prethodne aproksimacije i vrijednosti količnika broja $x$ i vrijednosti dobijene u prethodnoj aproksimaciji. Proces se nastavlja sve dok aproksimacija nije dovoljno precizna. Preciznije, primjeljuje se naredna rekurzija:
 \begin{center}
 	$y_{n+1}= \frac{1}{2}(y_n + \frac{x}{y_n})$
 \end{center}
@@ -1003,7 +999,7 @@ Navedimo neke osnovne funkcije ovog modula.
 
 Implementacija funkcije \textit{random}() u Pajtonu koristi algoritam gene\-ratora pseudo-slučajnih brojeva, koji je deterministički a generiše niz brojeva koji se čini slučajnim. Algoritam koji se koristi u funkciji \textit{random}() je algoritam \textit{Mersenne Twister},  široko korišten   za generiranje pseudo-slučajnih brojeva.
 
-Algoritam \textit{Mersenne Twister} generiše niz 32-bitnih cijelih brojeva koristeći specijalni linearni pomaknuti (eng.\ \textit{shift})  registar povratne sprege,  koji koristi operacije isključivanja (XOR) za generiranje izlaza. Algoritam koristi veliki prost broj koji se zove \textit{Mersenov} prost ($2^{19937}-1$) kao modul, koji osigurava da generisani niz ima dug period   i dobra statistička svojstva. Inače, algoritam su razvili Makoto Matsumoto i Takuji Nishimura 1997. godine. Drugi generator  koji se može koristi je prosti \textit{linerarni kongruentni generator} 
+Algoritam \textit{Mersenne Twister} generiše niz 32-bitnih cijelih brojeva koriste\-ći specijalni linearni pomaknuti (eng.\ \textit{shift})  registar povratne sprege,  koji koristi operacije isključivanja (XOR) za generiranje izlaza. Algoritam koristi veliki prost broj koji se zove \textit{Mersenov} prost ($2^{19937}-1$) kao modul, koji osigurava da generisani niz ima dug period   i dobra statistička svojstva. Inače, algoritam su razvili Makoto Matsumoto i Takuji Nishimura 1997. godine. Drugi generator  koji se može koristi je prosti \textit{linerarni kongruentni generator} 
 koji generiše  slučajne brojeve po rekurziji
 $$ x_{n+1} = (a x_n + b)\ \%\ m $$
 gdje je $x_0$ početni sid vrijednosti između 0 i $m-1$. 
@@ -1044,7 +1040,7 @@ Nekih od najčešće korištenih funkcija koje pruža ovaj modul su date u nasta
 
 \subsection{Modul Copy}
 
-  Modul \texttt{copy} pruža funkcionalnosti za pravljenje kopiranje objekata po vrijednosti. Osnovni principi ovog modula uključuju kopiranje objekata kako bi se izbjegli problemi sa referencama, što u principu znači da se stvaraju potpuno nezavisne kopije podataka. Nekoliko osnovnih funkcija koje pruža modul \texttt{copy} su 
+  Modul \texttt{copy} pruža funkcionalnosti za pravljenje kopiranje objekata po vrije\-dnosti. Osnovni principi ovog modula uključuju kopiranje objekata kako bi se izbjegli problemi sa referencama, što u principu znači da se stvaraju potpuno nezavisne kopije podataka. Nekoliko osnovnih funkcija koje pruža modul \texttt{copy} su 
   \begin{itemize}
   	\item \emph{copy}($obj$): vrši ``površinsko'' (eng. \emph{shallow})  kopiranje objekta \emph{obj}. Dakle, kopira se samo referenca na objekte unutar originalnog objekta, ali ne i sami objekti. Ako objekat ima druge ugniježdene objekte u svojoj strukturi (npr. listu unutar liste), originalni i kopirani objekat će dijeliti iste reference nakon kopiranja. 
   	\begin{minted}{python}
@@ -1118,7 +1114,7 @@ Sve vrste klasa izuzetaka, te njihova organizacija u Pajtonu se mogu vidjeti na 
 %python-exception-classes.jpg
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=400pt,height=260pt]{slike/class-exceptions.png}
+	\includegraphics[width=300pt,height=220pt]{slike/class-exceptions.png}
 	\caption{Klasna organizacija najvažnijih izuzetaka u programskom jeziku Pajton.}
 	\label{fig: exceptions}
 \end{figure}
@@ -1134,7 +1130,7 @@ Da zaključimo, rad sa izuzecima je važna praksa u pisanju robusnog koda koji j
 
 \section{Rad sa datotekama}
 
-Pomoću svojih ugrađenih funkcija, Pajton omogućuje jednostavan rad sa ulaznim i izlaznim datotekama. U nastavku dajemo pregled najčešće korištenih metoda.
+Pomoću svojih ugrađenih funkcija, Pajton omogućuje jednostavan rad sa ulaznim i izlaznim datotekama. U nastavku dajemo pregled najčešće korište\-nih metoda.
 
 \textit{Čitanje iz datoteke}. Koristimo funkciju \textit{open}(), koja ima dva argu\-menta -- naziv datoteke (ili putanja do datoteke) i način u kojem se otvara datoteka (npr. za čitanje, pisanje, dodavanje, itd.). Pogledajmo sljedeći primjer: 
 \begin{minted}{python}
@@ -1171,7 +1167,7 @@ Napomenimo da je dobra praksa zatvoriti datoteku nakon što zavr\-šite rad sa n
 
 \subsection{Modul Json}
 
-Modul \texttt{json} se koristi  za enkodiranje i dekodiranje podataka sa i u JSON format (eng. \textit{Java Script Object Notation}) formatu. JSON je  široko rasprostranjen format za razmjenu podataka, ljudima jednostavan za čitanje i pisanje, a mašinama za raščlanjivanje i generisanje.\\
+Modul \texttt{json} se koristi  za enkodiranje i dekodiranje podataka sa i u JSON format (eng. \textit{Java Script Object Notation}) formatu. JSON je  široko raspro\-stranjen format za razmjenu podataka, ljudima jednostavan za čitanje i pisanje, a mašinama za raščlanjivanje i generisanje.\\
 
 Modul \texttt{json} nudi dvije glavne metode za rad sa JSON podacima:
 
@@ -1221,7 +1217,7 @@ Osnovni koncepti regularnih izraza su:
     	\item ``$.$'': sparuje bilo koji karakter samo jednom; 
     	\item $[]$: sparuje bilo koji karakter pod (uglastim) zagradama samo jednom. Npr. ako želimo da označimo skup sva malih slova, odgovarajući patern bi bio [$a-z$], dok bismo velika označili sa [$A-Z$], a jedna i druga sa [$a-zA-Z$]
     	\item $\backslash d$: sparuje bilo koju cifru samo jednom. Drugi način je koristiti patern sa zagradama [$0-9$];
-    	\item $[\^ \   ]$: sparuje bilo koji karakter tačno jednom koji pripada komplementu skupa karaktera pod
+    	\item $[\^ \   ]$: sparuje bilo koji karakter tačno jednom koji pripada komple\-mentu skupa karaktera pod
     	uglastim zagradama; 
     	\item $\backslash w$: sparuje bilo koji karakter riječi (slova, brojevi ili povlaka); 
     	\item $\backslash n$: sparuje novi red;
@@ -1276,7 +1272,7 @@ Neke od metoda modula \texttt{re} su date u nastavku.
  
 \section{Moduli Sys i Getopt}
 
-\textit{Pokretanje programa preko terminala}. Pokretanje skripte napisana u programskom jeziku Pajton preko terminala se izvršava na sljedeći način:
+\textit{Pokretanje programa preko terminala}. Pokretanje skripte napisana u progra\-mskom jeziku Pajton preko terminala se izvršava na sljedeći način:
 
 \begin{minted}{python}
  python myscript.py arg1 arg2
@@ -1378,7 +1374,7 @@ matrice, 3D matrice, proizvoljne matrice velikih dimenzija itd. Riječ \texttt{n
 
 \begin{figure}%https://stackoverflow.com/questions/57262885/how-is-the-memory-allocated-for-numpy-arrays-in-python
 	\centering
-	\includegraphics[width=320pt,height=170pt]{slike/numpy-array-memory.png} %numpy_array.png}
+	\includegraphics[width=280pt,height=140pt]{slike/numpy-array-memory.png} %numpy_array.png}
 
 	\caption{Struktura podataka numpy niza (sa tipom podataka $int$).\protect \footnotemark}	 \label{fig:numpy_array}
  
@@ -1423,12 +1419,12 @@ newarr = arr[filter_arr]
     \item \textit{numy.zeros}(dim), \textit{numpy.ones}(dim): kreiranje matrice dimenzije dim sa svim nulama, odnosno jedinicama.
 \end{itemize}
 
- \textit{Memorijska organizacija}. Slika~\ref{fig:numpy_array} daje pojednostavljeni prikaz memorijske organizacije numpy objekta u jeziku Pajton.  Ovaj objekat pripada klasi \texttt{ndarray}, koja ima nekoliko bitnih atributa: 
+ \textit{Memorijska organizacija}. Slika~\ref{fig:numpy_array} daje pojednostavljeni prikaz memori\-jske organizacije numpy objekta u jeziku Pajton.  Ovaj objekat pripada klasi \texttt{ndarray}, koja ima nekoliko bitnih atributa: 
  \begin{itemize}
  	\item \textit{dtype}: definiše tip podataka elemenata koji se smještaju u stru\-kturi.
  	\item \textit{dim\_count}: definiše dimenzionalnost objekta (2D, 3D, isl.).  
  	\item \textit{dimensions}: definiše dimenzije po svakoj od koordinata.  
- 	\item \textit{strides}: torka koja definiše broj bajtova koje treba pomaknuti u memoriji da bi se pristupilo sljedećem elementu u nizu duž određene dimenzije. Npr. za 2D niz, \textit{stride} torka je definisana sa (pomicanje\_u\_smjeru\_reda, pomicanje\_u\_smjeru\_kolone). 
+ 	\item \textit{strides}: torka koja definiše broj bajtova koje treba pomaknuti u memoriji da bi se pristupilo sljedećem elementu u nizu duž određene dimenzije. %Za 2D niz, ovaj atribut se definisan sa (pomicanje\_u\_smjeru\_reda, pomicanje\_u\_smjeru\_kolone). 
  	\item \textit{data}: pokazivač na sadržaj niza. 
  \end{itemize} 
  
@@ -1520,7 +1516,7 @@ U ovom primjeru uvozimo modul ``\textit{mathOps}" i koristimo njegove funkcije z
 
 PyPI (\textit{Python Package Index}) je centralni repozitorij paketa   koji su napisani u programskom jeziku Pajton. PyPI omogućuje programerima lako distribui\-ranje korisnički napisanih modula,  omogućavajući kako korišćenje paketa široj zajednici korisnika.
  
-Nekoliko   se koraka izvršava ukoliko želimo postaviti   korisnički krei\-rani modul na PyPI. Na zvaničnoj PyPI veb stranici \footnote{https://pypi.org/account/register/},  potrebno je kreirati račun. Nakon što se prijavimo, potrebno je  generisati token za prijavu na PyPI. Token je sigurnosni ključ koji omogućuje da se prijavimo i objavimo/podi\-gnemo  paket (modul).  Na lokalnom računaru instalirajmo module  \texttt{setuptools} i \texttt{wheel}, u slučaju da nisu instalirani. To se možete učiniti pomoću \textit{pip} naredbe:
+Nekoliko   se koraka izvršava ukoliko želimo postaviti   korisnički krei\-rani modul na PyPI. Na zvaničnoj PyPI veb stranici \footnote{https://pypi.org/account/register/},  potrebno je kreirati račun. Nakon što se prijavimo, potrebno je  generisati token za prijavu na PyPI. Token je sigurnosni ključ koji omogućuje da se prijavimo i  podi\-gnemo  paket (modul) na zvanični repozitorijum.  Na lokalnom računaru instalirajmo module  \texttt{setuptools} i \texttt{wheel}, u slučaju da nisu instalirani. To se možete učiniti pomoću \textit{pip} naredbe:
  \begin{minted}{python}
       pip install setuptools wheel
  \end{minted}
@@ -1588,7 +1584,7 @@ Stek memorija je statična i privremena. Statična znači da veličina objekata 
 		c = "abc"
 \end{minted}
 
-Kao što smo prethodno rekli, varijable (ili reference generalno) skladište samo memorijske adrese objekata. Dakle, postavlja se pitanje gdje se skladišti vrijednost samih objekata? Oni se nalaze u drugoj memoriji koja se zove \textit{hip} (eng. \textit{heap memory}). Napomenimo da riječ hip nema veze sa istoimenom strukturom podataka  već  zbog dostupnosti gomile memorijskog prostora u svrhu pohranjivanja i brisanja objekata.   Za pohranjivanje objekata potrebna nam je memorija sa dinamičkom alokacijom  -- veličina memorije i objekata se mogu mijenjati. Pajtonov interpreter je zadužen za aktivno dodjeljivanje memorije hipu (Primijetimo da u jeziku $C/C$++ to  se izvršava od strane progra\-mera!). Varijable koje su pohranjene u memoriji hipa se nalaze: ($i$)   izvan poziva metoda ili funkcija ili ($ii$) dijele se unutar više funkcija, dakle globalnog svojstva.
+Kao što smo prethodno rekli, varijable (ili reference generalno) skladište samo memorijske adrese objekata. Dakle, postavlja se pitanje gdje se skladišti vrijednost samih objekata? Oni se nalaze u drugoj memoriji koja se zove \textit{hip} (eng. \textit{heap memory}). Napomenimo da riječ hip nema veze sa istoimenom strukturom podataka  već  zbog dostupnosti gomile memorijskog prostora u svrhu pohranjivanja i brisanja objekata.   Za pohranjivanje objekata potrebna nam je memorija sa dinamičkom alokacijom  -- veličina memorije i objeka\-ta se mogu mijenjati. Pajtonov interpreter je zadužen za aktivno dodjeljivanje memorije hipu (Primijetimo da u jeziku $C/C$++ to  se izvršava od strane progra\-mera!). Varijable koje su pohranjene u memoriji hipa se nalaze: ($i$)   izvan poziva metoda ili funkcija ili ($ii$) dijele se unutar više funkcija, dakle globalnog svojstva.
 
 \begin{minted}{python}
 	# Memorija za 10 brojeva
@@ -1607,7 +1603,7 @@ Napomenimo još jednom da Pajton koristi algoritam za sakupljanje otpadaka (eng.
 Proces kompilacije   i izvršavanja k\^oda u programskom jeziku Pajton je komple\-skan proces kojeg nećemo izlagati u svim detljima nego ćemo ukratko navesti osnovne principe na kojima je baziran ovaj proces. Uključuje četiri osnovna koraka.
 \begin{itemize}
 	\item \textit{Leksička analiza} prvo  prosljeđuje izvorni k\^od   leksičkom analiza\-toru,  koji ga razlaže na pojedinačne tokene kao što su ključne riječi, identifi\-katori, operatori, itd.
-	\item \textit{Parisiranje} prosleđuje tokene parseru, koji koristi gramatiku bez konteksta za izgradnju \emph{apstraktnog sintaksnog stabla} (AST) koje predstavlja strukturu k\^oda. U detalje ovog procesa nećemo ulaziti jer izlazi iz domena kojeg pokriva ova knjiga.
+	\item \textit{Parisiranje} prosleđuje tokene parseru, koji koristi gramatiku bez konte\-ksta za izgradnju \emph{apstraktnog sintaksnog stabla} (AST) koje predstavlja strukturu k\^oda. U detalje ovog procesa nećemo ulaziti jer izlazi iz domena kojeg pokriva ova knjiga.
 	\item \textit{Kompilacija} AST u bajtkod, koji je jezik nižeg nivoa,   nezavisan od platforme.  Ovaj bajtkod se čuva u .\textit{pyc} fajlovima. %kojeg izvršava   Pajtonova \textit{virtuelna mašina} (VM).
 	\item \textit{Izvođenje} bajtkoda uz pomoć Pajtonovom virtuelnom mačinom (VM) tako što ga interpretira generišući \textit{mašinske instrukcije} u hodu. Bajtkod se izvršava u zaštićenom okruženju virtuelne mašine (obezbjeđuje sigu\-rnost i izolaciju od osnovnog OS-a).  
 	
@@ -1629,11 +1625,11 @@ Napomenimo da tokom procesa izvršavanja, interpreter izvodi nekoliko optimizaci
 
 Recimo sada malo više o Pajtonovoj virtuelnoj mašini (PVM), bazičnoj komponenti ovog programskog jezika. Kako smo naveli, PVM je odgovorna za interpretiranje bajtkoda i izvršavanje k\^oda. Bajtkod se generiše od strane pajtonovog kompajlera (npr. CPython, Brython) pri kompajliranju izvornog k\^oda. Ključne uloge PVM su navedene u nastavku.  
 \begin{itemize}
-\item \textit{Kompatibilnost između platformi}.  PVM omogućava izvršavanje pajtonovog k\^oda na više različitih platformi bez ponovne kompi\-lacije. Ovo olakšava pisanje i distribuciju aplikacija.
-\item \textit{Poboljšane performanse izvršavanja}.  PVM koristi bajtkod  inter\-preter, koji je brži od direktnog interpretera izvornog k\^oda. PVM može  koristiti \textit{Just-In-Time} (JIT) kompilaciju za dalju optimizaciju performansi.
+\item \textit{Kompatibilnost između platformi}.  PVM omogućava izvršavanje pajto\-novog k\^oda na više različitih platformi bez ponovne kompi\-lacije. Ovo olakšava pisanje i distribuciju aplikacija.
+\item \textit{Poboljšane performanse izvršavanja}.  PVM koristi bajtkod  inter\-preter, koji je brži od direktnog interpretera izvornog k\^oda. PVM može  koristiti \textit{Just-In-Time} (JIT) kompilaciju za dalju optimizaciju perfor\-mansi.
 \item \textit{Dinamičko tipiziranje}.  Pajton je dinamički tipiziran jezik, što znači da se tip varijable dodjeljuje u vremenu izvođenja programa. PVM je dizajnirana da efikasno upravlja ovim procesom.
 \item  \textit{Upravljanje memorijom}. PVM automatski upravlja memorijom jer  automatski oslobađa memoriju koja se više ne koristi.
-\item \textit{Lak pristup eksternim bibliotekama}. PVM se intenzivno koristi u  ekosistemu koji uključuje veliki broj otvorenih biblioteka. Ove biblioteke pružaju širok spektar funkcionalnosti vezano za  veb programiranje, mašinsko učenje, itd. Importovanje biblioteka se vrši pomoću naredbe \texttt{import}. 
+\item \textit{Lak pristup eksternim bibliotekama}. PVM se intenzivno koristi u  ekosistemu koji uključuje veliki broj otvorenih biblioteka. Ove bibliote\-ke pružaju širok spektar funkcionalnosti vezano za  veb programiranje, mašinsko učenje, itd. Importovanje biblioteka se vrši pomoću naredbe \texttt{import}. 
 \end{itemize}
 
 
@@ -1689,7 +1685,7 @@ Vizuelizaciju procesa prevođenja programa može da se vidi na Slici~\ref{fig:co
 	         \end{itemize}
        \end{itemize}
 	\textit{Napomena}. Studenta učitati uz pomoć regularnih izraza. Dakle, prazan karakter predstavlja 
-	invarijantna vrijednost što se postiže konstrukcijom odgovarajućeg regularnog izraza koji parsira  sadržaj svakog reda  datoteke.
+	invarijantna vrijednost što se postiže konstru\-kcijom odgovarajućeg regularnog izraza koji parsira  sadržaj svakog reda  datoteke.
 	
    \item Kreirati datoteku \emph{pretplatnik.txt} i popuniti je podacima gdje je u svakom redu
    data informacija o pretplatniku u formi

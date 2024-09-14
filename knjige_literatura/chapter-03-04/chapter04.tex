@@ -134,7 +134,7 @@ U narednoj iteraciji prelazimo na poziciji 4. Kako to nije prost broj (dakle fil
 		11 &\cellcolor{red!30}  12 & 13 & \cellcolor{red!30} 14 & \cellcolor{red!30} 15 & \cellcolor{red!30} 16 & 17 & \cellcolor{red!30} \cellcolor{red!30} 18 & 19 & \cellcolor{red!30} \cellcolor{red!30} 20 \\ \hline
 		\cellcolor{red!30} 21 & \cellcolor{red!30} 22 & 23 & \cellcolor{red!30} 24 & \cellcolor{red!90} 25 & \cellcolor{red!30} 26 & \cellcolor{red!30}  27 &\cellcolor{red!30}  28 & 29 & \cellcolor{red!30} \cellcolor{red!30} 30 \\ \hline
 		31 & \cellcolor{red!30} 32 & \cellcolor{red!30} 33 & \cellcolor{red!30} 34 & \cellcolor{red!90} 35 & \cellcolor{red!30} 36 & 37 & \cellcolor{red!30} 38 & \cellcolor{red!30} 39 & \cellcolor{red!30} 40 \\ \hline
-		41 & \cellcolor{red!30} 42 & 43 & \cellcolor{red!30} 44 & \cellcolor{red!90} 45 & \cellcolor{red!30} 46 & 47 &\cellcolor{red!30}  48 & 49 &\cellcolor{red!30}  50 \\ \hline     
+		41 & \cellcolor{red!30} 42 & 43 & \cellcolor{red!30} 44 & \cellcolor{red!30} 45 & \cellcolor{red!30} 46 & 47 &\cellcolor{red!30}  48 & 49 &\cellcolor{red!30}  50 \\ \hline     
 	\end{tabular}
 	\caption{Eratostenovo sito: iteracija 3.} \label{eratosten-sieve-it-3}
 \end{table}
@@ -145,9 +145,7 @@ Fundamentalna teorema aritmetike kaže da se svaki broj $n \in \mathbb{N}$ može
  $$n = \prod_{i=1}^k p_i^{n_i}$$
  za neke $k, n_1,\ldots, n_i, \ldots, n_k \in \mathbb{N}$.
  
- Npr. broj 120 se može faktorisati kao $2^3 \cdot 3^1 \cdot 5^1$. Sa stanovišta izračunavanja, postavlja se pitanje na koji način efikasno izvršiti pro\-blem izračunavanja faktorizacije broja.  U tu svrhu, iskoristićemo znanje o Eratostenovom situ. 
- 
- Primijenićemo paradigmu podijeli pa zavladaj. Dakle, za broj $n$, nađimo najmanji prost broj $p$ koji dijeli $n$. Tada vrijedi $n = p \cdot n/p$. Dalje, rekurzivno primijenjujemo istu akciju za broj $n/p$ sve dok je $n>1$. Bazni slučaj je kada je broj $n$ prost, i pri tome se kao takav i vraća, prekidajući momentalno rad rekurzije. Potrebno je konstruisati strukturu podataka  koja na poziciji $i$ čuva najmanji prost faktor broja $i$; u slučaju da je broj prost, po konvenciji se čuva vrijednost 0.
+ Npr. broj 120 se može faktorisati kao $2^3 \cdot 3^1 \cdot 5^1$. Sa stanovišta izračuna\-vanja, postavlja se pitanje na koji način efikasno izvršiti pro\-blem izračunava\-nja faktorizacije broja.  U tu svrhu, iskoristićemo znanje o Eratostenovom situ. Primijenićemo paradigmu podijeli pa zavladaj. Dakle, za broj $n$, nađimo najmanji prost broj $p$ koji dijeli $n$. Tada vrijedi $n = p \cdot n/p$. Dalje, rekurzivno primijenjujemo istu akciju za broj $n/p$ sve dok je $n>1$. Bazni slučaj je kada je broj $n$ prost, i pri tome se kao takav i vraća, prekidajući momentalno rad rekurzije. Potrebno je konstruisati strukturu podataka  koja na poziciji $i$ čuva najmanji prost faktor broja $i$; u slučaju da je broj prost, po konvenciji se čuva vrijednost 0.
  
  Implementacija ovakve (nizovne) strukture je data narednim k\^odom. 
  
@@ -217,11 +215,11 @@ Fundamentalna teorema aritmetike kaže da se svaki broj $n \in \mathbb{N}$ može
             return 0
          return binom(n-1, k-1) + binom(n-1, k)
    \end{minted}
-  \textit{Kompleksnost algoritma}. Faktor grananja rekurzije je 2. To znači da na svakoj narednoj dubini rekurzije imamo (najviše) duplo više rekurzivnih poziva nego je to slučaj na dubini prije.  Kako je dubina rekurzije maksimalno $n$ (vrijednost prvog ili drugog atributa se smanjuje za 1 u narednom pozivu rekurzije), zaključujemo da je maksimalni broj poziva rekurzije eksponencijalan i reda veličine $O(2^n)$. \\
+  \textit{Kompleksnost algoritma}. Faktor grananja rekurzije je 2. To znači da na svakoj narednoj dubini rekurzije imamo (najviše) duplo više rekurzivnih poziva nego je to slučaj na dubini prije.  Kako je dubina rekurzije maksimalno $n$ (vrijednost prvog ili drugog atributa se smanjuje za 1 u narednom pozivu rekurzije), zaključujemo da je maksimalni broj poziva rekurzije eksponenci\-jalan i reda veličine $O(2^n)$. \\
   
   Optimizujmo ovu naivnu implementaciju rekurzije za računanje binomnih koeficijenata.  Jasno se vidi da se većina podproblema rješava više puta u rekurzivnim pozivima. Zbog toga ima smisla upotrebiti princip memoizacije. Označimo strukturu u kojoj čuvamo rješenja matricom $B[i][j]= \binom{i}{j}$. Bazni slučaj je  dat sa $B(n, 0) = 1 = B(n,n)$. Ako je $i < j$, tada je $B[i][j] = 0$. 
   
-  Implementacija principa memoizacije za izračunavanje binomnog koeficijenta $\binom{n}{k}$ je data narednim k\^odom. 
+  Implementacija principa memoizacije za izračunavanje binomnog koefici\-jenta $\binom{n}{k}$ je data narednim k\^odom. 
   
   \begin{minted}{python}
   	
@@ -283,7 +281,7 @@ Fundamentalna teorema aritmetike kaže da se svaki broj $n \in \mathbb{N}$ može
  
  $$C(0) = 1, C(n+1) = \sum_{i=0}^{n} C(i) \cdot C(n-i), n \geq  0.$$
  
- Primijenimo metod brutalne sile (rekurzivno) pri računanju $n$-tog Katalanovog broja. Implementacija ovog pristupa je data sljedećim k\^odom. 
+ Primijenimo metod brutalne sile (rekurzivno) pri računanju $n$-tog Kata\-lanovog broja. Implementacija ovog pristupa je data sljedećim k\^odom. 
  
  \begin{minted}{python}
    def catalan(n):
@@ -296,7 +294,7 @@ Fundamentalna teorema aritmetike kaže da se svaki broj $n \in \mathbb{N}$ može
         
  \end{minted}
   
-  \emph{Kompleksnost algoritma}. Faktor grananja rekurzije je (najviše) $n$. Dubina rekurzije je $n+1$. Dakle, kompleksnost ovog algoritma je eksponencijalna i iznosi $O(n^n)$. 
+  \emph{Kompleksnost algoritma}. Faktor grananja rekurzije je (najviše) $n$. Dubi\-na rekurzije je $n+1$. Dakle, kompleksnost ovog algoritma je eksponencijalna i iznosi $O(n^n)$. 
 
 Optimizujmo ovaj naivni rekurzivni pristup za računanje Katalanovih brojeva. Kako je primijetno svaki podproblem izražunava iznova više puta, ponovo iskoristimo princip memoizacije. Čuvajmo vrijednost $i$-tog Katalano\-vog broja u nizovnoj strukturi $Cat(i)$.  Svojstvo optimalne podstrukture je dato rekurzijom $Cat(n+1) = \sum_{i=0}^{n} Cat(i) \cdot Cat(n-i).$ Bazni slučaj je dat sa $Cat(0) =1$.
 
