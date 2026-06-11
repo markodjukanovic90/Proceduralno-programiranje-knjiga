@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k+kn}{import} \PYG{n+nn}{math}
+	
+	\PYG{c+c1}{\PYGZsh{} Kvadratni korijen}
+	
+	\PYG{n}{x} \PYG{o}{=} \PYG{n}{math}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{l+m+mi}{25}\PYG{p}{)}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}      \PYG{c+c1}{\PYGZsh{} 5.0}
+	
+	\PYG{c+c1}{\PYGZsh{} Konstanta pi}
+	
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{math}\PYG{o}{.}\PYG{n}{pi}\PYG{p}{)}
+	
+	\PYG{c+c1}{\PYGZsh{} Sinus ugla od 45 stepeni}
+	
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{math}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{math}\PYG{o}{.}\PYG{n}{radians}\PYG{p}{(}\PYG{l+m+mi}{45}\PYG{p}{)))}
+\end{Verbatim}

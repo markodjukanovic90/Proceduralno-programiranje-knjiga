@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{def} \PYG{n+nf}{ispisi\PYGZus{}brojeve}\PYG{p}{(}\PYG{o}{*}\PYG{n}{brojevi}\PYG{p}{):}
+	\PYG{k}{for} \PYG{n}{broj} \PYG{o+ow}{in} \PYG{n}{brojevi}\PYG{p}{:}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{broj}\PYG{p}{)}
+\end{Verbatim}

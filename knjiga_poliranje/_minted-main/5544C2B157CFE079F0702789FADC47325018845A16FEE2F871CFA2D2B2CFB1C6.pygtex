@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{brojevi} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{8}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{7}\PYG{p}{]}
+	\PYG{n}{sortirani} \PYG{o}{=} \PYG{n+nb}{sorted}\PYG{p}{(}\PYG{n}{brojevi}\PYG{p}{)}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{sortirani}\PYG{p}{)}
+	\PYG{c+c1}{\PYGZsh{} [1, 2, 3, 5, 7, 8]}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{brojevi}\PYG{p}{)}
+	\PYG{c+c1}{\PYGZsh{} [5, 2, 8, 3, 1, 7]}
+	
+\end{Verbatim}

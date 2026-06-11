@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{A} \PYG{o}{\PYGZhy{}} \PYG{n}{B}\PYG{p}{)}
+		
+		\PYG{c+c1}{\PYGZsh{} \PYGZob{}1, 2\PYGZcb{}}
+		
+\end{Verbatim}

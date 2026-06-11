@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{def} \PYG{n+nf}{saberi}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{):}
+	\PYG{k}{return} \PYG{n}{a} \PYG{o}{+} \PYG{n}{b}
+	
+	\PYG{k}{def} \PYG{n+nf}{primijeni}\PYG{p}{(}\PYG{n}{funkcija}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{):}
+	\PYG{k}{return} \PYG{n}{funkcija}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{)}
+	
+	\PYG{n}{rezultat} \PYG{o}{=} \PYG{n}{primijeni}\PYG{p}{(}\PYG{n}{saberi}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{)}
+	
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{rezultat}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} 5}
+\end{Verbatim}

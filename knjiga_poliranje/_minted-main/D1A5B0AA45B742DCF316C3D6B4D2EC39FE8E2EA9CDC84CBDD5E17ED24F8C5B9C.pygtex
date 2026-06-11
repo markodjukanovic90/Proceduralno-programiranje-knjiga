@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}twine\PYG{+w}{ }upload\PYG{+w}{ }dist/*
+\end{Verbatim}

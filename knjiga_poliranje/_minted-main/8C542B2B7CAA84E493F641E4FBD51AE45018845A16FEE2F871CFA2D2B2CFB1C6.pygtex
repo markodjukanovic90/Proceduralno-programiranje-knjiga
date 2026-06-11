@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{if} \PYG{n}{uslov\PYGZus{}1}\PYG{p}{:}
+	\PYG{n}{naredba\PYGZus{}1}
+	
+	\PYG{k}{elif} \PYG{n}{uslov\PYGZus{}2}\PYG{p}{:}
+	\PYG{n}{naredba\PYGZus{}2}
+	
+	\PYG{k}{elif} \PYG{n}{uslov\PYGZus{}3}\PYG{p}{:}
+	\PYG{n}{naredba\PYGZus{}3}
+	
+	\PYG{k}{else}\PYG{p}{:}
+	\PYG{n}{naredba\PYGZus{}n}
+\end{Verbatim}

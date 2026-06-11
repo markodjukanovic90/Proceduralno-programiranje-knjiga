@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{try}\PYG{p}{:}
+	\PYG{c+c1}{\PYGZsh{} kod koji može izazvati izuzetak}
+	
+	\PYG{k}{except} \PYG{n+ne}{ValueError}\PYG{p}{:}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Greška u vrijednosti.\PYGZdq{}}\PYG{p}{)}
+	
+	\PYG{k}{except} \PYG{n+ne}{TypeError}\PYG{p}{:}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Greška u tipu podatka.\PYGZdq{}}\PYG{p}{)}
+	
+	\PYG{k}{except} \PYG{n+ne}{Exception}\PYG{p}{:}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Dogodio se neočekivani izuzetak.\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

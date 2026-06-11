@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{string0} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}hello\PYGZsq{}}
+	\PYG{n}{string1} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}world\PYGZdq{}}
+\end{Verbatim}

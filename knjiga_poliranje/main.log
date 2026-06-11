@@ -1,0 +1,3941 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  12 JUN 2026 01:02
+entering extended mode
+ \write18 enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk11.clo
+File: bk11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@chapter=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks16
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2022/01/26 3.70 The Babel package
+\babel@savecnt=\count194
+\U@D=\dimen139
+\l@unhyphenated=\language16
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count195
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-serbian/serbian.ldf
+Language: serbian 2021/04/10 2.1 Serbian Latin support for the Babel system
+Package babel Info: Making " an active character on input line 46.
+\srbl@lettering=\count196
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen140
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen141
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count197
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count198
+\leftroot@=\count199
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count266
+\DOTSCASE@=\count267
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box50
+\strutbox@=\box51
+\big@size=\dimen142
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count268
+\c@MaxMatrixCols=\count269
+\dotsspace@=\muskip16
+\c@parentequation=\count270
+\dspbrk@lvl=\count271
+\tag@help=\toks20
+\row@=\count272
+\column@=\count273
+\maxfields@=\count274
+\andhelp@=\toks21
+\eqnshift@=\dimen143
+\alignsep@=\dimen144
+\tagshift@=\dimen145
+\tagwidth@=\dimen146
+\totwidth@=\dimen147
+\lineht@=\dimen148
+\@envbody=\toks22
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks24
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen149
+\Gin@req@width=\dimen150
+)
+(/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
+Package: minted 2021/12/24 v2.6 Yet another Pygments shim for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/fvextra/fvextra.sty
+Package: fvextra 2019/02/04 v1.4 fvextra - extensions and patches for fancyvrb
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count275
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2021/12/21 4.1b verbatim text (tvz,hv)
+\FV@CodeLineNo=\count276
+\FV@InFile=\read3
+\FV@TabBox=\box52
+\c@FancyVerbLine=\count277
+\FV@StepNumber=\count278
+\FV@OutFile=\write3
+)
+(/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count279
+\output=\toks25
+\linenoprevgraf=\count280
+\linenumbersep=\dimen151
+\linenumberwidth=\dimen152
+\c@linenumber=\count281
+\c@pagewiselinenumber=\count282
+\c@LN@truepage=\count283
+\c@internallinenumber=\count284
+\c@internallinenumbers=\count285
+\quotelinenumbersep=\dimen153
+\bframerule=\dimen154
+\bframesep=\dimen155
+\bframebox=\box53
+LaTeX Info: Redefining \\ on input line 3056.
+)
+\c@FV@TrueTabGroupLevel=\count286
+\c@FV@TrueTabCounter=\count287
+\FV@TabBox@Group=\box54
+\FV@TmpLength=\skip52
+\c@FV@HighlightLinesStart=\count288
+\c@FV@HighlightLinesStop=\count289
+\FV@LoopCount=\count290
+\FV@NCharsBox=\box55
+\FV@BreakIndent=\dimen156
+\FV@BreakIndentNChars=\count291
+\FV@BreakSymbolSepLeft=\dimen157
+\FV@BreakSymbolSepLeftNChars=\count292
+\FV@BreakSymbolSepRight=\dimen158
+\FV@BreakSymbolSepRightNChars=\count293
+\FV@BreakSymbolIndentLeft=\dimen159
+\FV@BreakSymbolIndentLeftNChars=\count294
+\FV@BreakSymbolIndentRight=\dimen160
+\FV@BreakSymbolIndentRightNChars=\count295
+\c@FancyVerbLineBreakLast=\count296
+\FV@LineBox=\box56
+\FV@LineIndentBox=\box57
+\FV@LineWidth=\dimen161
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count297
+\calc@Bcount=\count298
+\calc@Adimen=\dimen162
+\calc@Bdimen=\dimen163
+\calc@Askip=\skip53
+\calc@Bskip=\skip54
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count299
+\calc@Cskip=\skip55
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/catchfile/catchfile.sty
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
+runsystem(uname -s > "main.w18")...executed.
+
+ (./main.w18)
+runsystem(rm -- "main.w18")...executed.
+
+)
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count300
+\decimalpart=\count301
+)
+Package: xstring 2021/07/21 v1.84 String manipulations (CT)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip56
+\fb@frw=\dimen164
+\fb@frh=\dimen165
+\FrameRule=\dimen166
+\FrameSep=\dimen167
+)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count302
+\float@exts=\toks26
+\float@box=\box58
+\@float@everytoks=\toks27
+\@floatcapt=\box59
+)
+\minted@appexistsfile=\read4
+\minted@bgbox=\box60
+\minted@code=\write4
+\c@minted@FancyVerbLineTemp=\count303
+\c@minted@pygmentizecounter=\count304
+\@float@every@listing=\toks28
+\c@listing=\count305
+)
+runsystem(mkdir -p _minted-main)...executed.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/fixme/fixme.sty
+Package: fixme 2019/01/03 v4.5 Collaborative annotations for LaTeX2e
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks29
+\verbatim@line=\toks30
+\verbatim@in@stream=\read5
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks31
+\XKV@tempa@toks=\toks32
+)
+\XKV@depth=\count306
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\lox@file=\read6
+\c@fixmecount=\count307
+\c@fxnotecount=\count308
+\c@fxwarningcount=\count309
+\c@fxerrorcount=\count310
+\c@fxfatalcount=\count311
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/theorem.sty
+Package: theorem 2014/10/28 v2.2c Theorem extension package (FMi)
+\theorem@style=\toks33
+\theorem@bodyfont=\toks34
+\theorempreskipamount=\skip57
+\theorempostskipamount=\skip58
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/thp.sty
+File: thp.sty 2014/10/28 v2.2c Theorem extension package (FMi)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+\@float@every@algorithm=\toks35
+\c@algorithm=\count312
+)
+(/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+(/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count313
+\c@ALG@rem=\count314
+\c@ALG@nested=\count315
+\ALG@tlm=\skip59
+\ALG@thistlm=\skip60
+\c@ALG@Lnr=\count316
+\c@ALG@blocknr=\count317
+\c@ALG@storecount=\count318
+\c@ALG@tmpcounter=\count319
+\ALG@tmplength=\skip61
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen168
+\ar@mcellbox=\box61
+\extrarowheight=\dimen169
+\NC@list=\toks36
+\extratabsurround=\skip62
+\backup@length=\skip63
+\ar@cellbox=\box62
+)
+\everycr=\toks37
+\minrowclearance=\skip64
+)
+\rownum=\count320
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen170
+\captionmargin@=\dimen171
+\captionwidth=\dimen172
+\caption@tempdima=\dimen173
+\caption@indent=\dimen174
+\caption@parindent=\dimen175
+\caption@hangindent=\dimen176
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count321
+\c@continuedfloat=\count322
+Package caption Info: float package is loaded.
+)
+\c@subfigure=\count323
+\c@subtable=\count324
+)
+\c@theorem=\count325
+\c@definition=\count326
+\c@example=\count327
+runsystem(which pygmentize && touch main.aex)...executed.
+
+runsystem(rm main.aex)...executed.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count328
+\l__pdf_internal_box=\box63
+)
+
+LaTeX Warning: Unused global option(s):
+    [colorlinks].
+
+(./main.aux (./chapter-01-02/chapter02.aux) (./chapter-01-02/chapter01.aux)
+(./chapter-03-04/chapter03.aux) (./chapter-03-04/chapter04.aux)
+
+LaTeX Warning: Label `citekey' multiply defined.
+
+)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count329
+\scratchdimen=\dimen177
+\scratchbox=\box64
+\nofMPsegments=\count330
+\nofMParguments=\count331
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count332
+\MPscratchDim=\dimen178
+\MPnumerator=\count333
+\makeMPintoPDFobject=\count334
+\everyMPtoPDFconversion=\toks39
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
+
+] (./main.toc [3] [4] [5])
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
+ [6] [1
+
+
+]
+[2]
+\openout2 = `chapter-01-02/chapter02.aux'.
+
+ (./chapter-01-02/chapter02.tex
+Glava 1.
+
+Overfull \hbox (9.48297pt too wide) in paragraph at lines 3--4
+[]\OT1/cmr/m/n/10.95 U ovom po-gla-vlju uvo-de se osnov-ni poj-mo-vi te-o-ri-je
+ al-go-ri-ta-ma i ra^^Tcunanja.
+ []
+
+[3
+
+
+]
+
+LaTeX Warning: Reference `fig:graphs' on page 4 undefined on input line 15.
+
+[4]
+Overfull \hbox (12.86151pt too wide) in paragraph at lines 29--30
+[]\OT1/cmr/m/n/10.95 Problemi \OT1/cmr/m/it/10.95 op-ti-mi-za-ci-je \OT1/cmr/m/
+n/10.95 pred-sta-vlja-ju jed-nu od naj-va^^Tznijih kla-sa ra^^Tcunarskih
+ []
+
+
+Overfull \hbox (1.76129pt too wide) in paragraph at lines 47--48
+\OT1/cmr/m/n/10.95 do-sli-jed ope-ra-ci-ja po-treb-nih za rje^^Tsavanje odre[]d
+enog pro-ble-ma ili iz-vr^^Tsavanje
+ []
+
+[5]
+Overfull \hbox (1.00209pt too wide) in paragraph at lines 65--66
+\OT1/cmr/m/n/10.95 odre[]deni po-stu-pak bio al-go-ri-tam, po-treb-no je da za-
+do-vo-lja-va ne-ko-li-ko osnov-
+ []
+
+[6]
+Overfull \hbox (15.24512pt too wide) in paragraph at lines 85--86
+[]\OT1/cmr/m/it/10.95 Veli^^Tcina ula-za \OT1/cmr/m/n/10.95 pred-sta-vlja mje-r
+u ko-li^^Tcine po-da-ta-ka ko-je al-go-ri-tam obra[]duje.
+ []
+
+[7] [8]
+Overfull \hbox (7.27396pt too wide) in paragraph at lines 111--112
+\OT1/cmr/m/n/10.95 teh-ni-ka i spo-sob-nost pre-po-zna-va-nja od-go-va-ra-ju^^S
+cih obra-za-ca rje^^Tsavanja. Upra-
+ []
+
+[9]
+Overfull \hbox (8.54134pt too wide) in paragraph at lines 132--133
+[]\OT1/cmr/m/n/10.95 Naravno, RAM mo-del ne pred-sta-vlja pot-pu-no vje-ran opi
+s stvar-nih ra^^Tcuna-
+ []
+
+
+Overfull \hbox (5.26045pt too wide) in paragraph at lines 148--152
+\OT1/cmr/m/n/10.95 noj me-mo-ri-ji ostva-ru-je se in-di-rekt-nim adre-si-ra-nje
+m, pri ^^Tcemu se sadr^^Tzaj
+ []
+
+[10]
+Overfull \hbox (2.24762pt too wide) in paragraph at lines 157--158
+[]\OT1/cmr/m/n/10.95 Model do-pu^^Tsta di-na-mi^^Tcku alo-ka-ci-ju me-mo-ri-je 
+pu-tem ope-ra-ci-je \OT1/cmtt/m/n/10.95 MALLOC\OT1/cmr/m/n/10.95 . 
+ []
+
+[11]
+Overfull \hbox (22.09686pt too wide) in paragraph at lines 209--211
+[]\OT1/cmr/m/it/10.95 Konfiguracija $\OML/cmm/m/it/10.95 w$\OT1/cmr/m/it/10.95 
+--RAM pro-gra-ma $\OML/cmm/m/it/10.95 P$ \OT1/cmr/m/it/10.95 je tor-ka $\OML/cm
+m/m/it/10.95 K \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 l; S; w; R; M\OT1/cmr/
+m/n/10.95 )\OML/cmm/m/it/10.95 ;$
+ []
+
+[12]
+Overfull \hbox (20.95573pt too wide) in paragraph at lines 224--233
+[]\OT1/cmr/m/it/10.95 Za kon-fi-gu-ra-ci-ju $\OML/cmm/m/it/10.95 K \OT1/cmr/m/n
+/10.95 = (\OML/cmm/m/it/10.95 l; S; w; R; M\OT1/cmr/m/n/10.95 )$ \OT1/cmr/m/it/
+10.95 pro-gra-ma $\OML/cmm/m/it/10.95 P \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.
+95 P[]; [] ; P[]\OT1/cmr/m/n/10.95 )$
+ []
+
+
+Overfull \hbox (14.16846pt too wide) in paragraph at lines 266--267
+[]\OT1/cmr/m/it/10.95 posljednja kon-fi-gu-ra-ci-ja od-go-va-ra za-u-sta-vlje-n
+om pro-gra-mu i sadr^^Tzi isprav-
+ []
+
+[13] [14]
+\openout3 = `main.pyg'.
+
+ (./_minted-main/default.pygstyle)
+(./_minted-main/A0B68C749BB72F4AF4BB7E7FFE247037360E91D77B40F6AB2A9DE4914DF5D2A
+9.pygtex
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 5.
+) [15]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/5FA2E655E2F20FFB5E6BFD8417F92040360E91D77B40F6AB2A9DE4914DF5D2A
+9.pygtex
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 5.
+) [16]
+Overfull \hbox (1.43398pt too wide) in paragraph at lines 382--383
+\OT1/cmr/m/n/10.95 mo^^Tze iz-ra-zi-ti bro-jem ele-men-tar-nih in-struk-ci-ja k
+o-je pro-gram iz-vr^^Tsi. Me[]dutim,
+ []
+
+[17]
+<slike/O_notation.png, id=94, 723.70375pt x 753.81625pt>
+File: slike/O_notation.png Graphic file (type png)
+<use slike/O_notation.png>
+Package pdftex.def Info: slike/O_notation.png  used on input line 437.
+(pdftex.def)             Requested size: 169.9931pt x 169.99242pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18]
+[19 <./slike/O_notation.png>]
+<slike/theta-notation.png, id=104, 610.28pt x 498.86375pt>
+File: slike/theta-notation.png Graphic file (type png)
+<use slike/theta-notation.png>
+Package pdftex.def Info: slike/theta-notation.png  used on input line 488.
+(pdftex.def)             Requested size: 170.00189pt x 149.99521pt.
+ [20 <./slike/theta-notation.png>] [21]
+<slike/growth.png, id=112, 440.64626pt x 331.2375pt>
+File: slike/growth.png Graphic file (type png)
+<use slike/growth.png>
+Package pdftex.def Info: slike/growth.png  used on input line 611.
+(pdftex.def)             Requested size: 169.99559pt x 130.00089pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23 <./slike/growth.png>] [24]
+Underfull \vbox (badness 2393) has occurred while \output is active []
+
+ [25]
+Overfull \hbox (5.0344pt too wide) in paragraph at lines 713--714
+[]\OT1/cmr/m/n/10.95 Pri to-me tre-ba ra-zli-ko-va-ti poj-mo-ve \OT1/cmr/m/it/1
+0.95 po-mo^^Scni pro-stor \OT1/cmr/m/n/10.95 i \OT1/cmr/m/it/10.95 pro-stor-na 
+slo^^Tzenost\OT1/cmr/m/n/10.95 .
+ []
+
+[26]
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 753.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 755.
+
+
+Overfull \hbox (2.09093pt too wide) in paragraph at lines 762--764
+[]\OT1/cmr/bx/n/10.95 Napomena. \OT1/cmr/m/n/10.95 U prak-ti^^Tcnom pro-gra-mi-
+ra-nju ras-po-lo^^Tziva me-mo-ri-ja je ogra-
+ []
+
+
+Overfull \hbox (0.79523pt too wide) in paragraph at lines 762--764
+\OT1/cmr/m/n/10.95 ni^^Tcena. Na mno-gim si-ste-mi-ma ti-pi^^Tcna me-mo-rij-ska
+ ogra-ni^^Tcenja iz-no-se izme[]du
+ []
+
+[27]
+Overfull \hbox (36.2539pt too wide) in paragraph at lines 784--785
+[]\OT1/cmr/m/n/10.95 Slu^^Tzi kao oblik do-ku-men-ta-ci-je ko-ji olak^^Tsava ka
+-sni-je odr^^Tzavanje i unapre[]divanje
+ []
+
+
+Overfull \hbox (3.21832pt too wide) in paragraph at lines 792--793
+[]\OT1/cmr/m/n/10.95 Prilikom pi-sa-nja pse-u-do-ko-da pre-po-ru^^Tcuje se prid
+r^^Tzavanje slje-de^^Scih smjer-
+ []
+
+[28]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/1102F81201FC73300C00331DC9C3E458E48FAF1886BFF81AE3111843E944B2C
+0.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/2F6E2605775F9AF12D84954F19ADA122E48FAF1886BFF81AE3111843E944B2C
+0.pygtex) [29]
+Overfull \hbox (25.69637pt too wide) in paragraph at lines 887--888
+[]\OT1/cmr/m/n/10.95 Ovakav na^^Tcin za-pi-si-va-nja pse-u-do-ko-da pred-sta-vl
+ja stan-dard u ve^^Scini ud^^Tzbenika
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30]
+Overfull \hbox (15.54056pt too wide) in paragraph at lines 896--897
+[]\OT1/cmr/m/it/10.95 Matemati^^Tcki do-kaz\OT1/cmr/m/n/10.95 . Pred-sta-vlja n
+aj-ri-go-ro-zni-ji pri-stup do-ka-zi-va-nju isprav-
+ []
+
+[31] [32]
+Overfull \hbox (11.03967pt too wide) in paragraph at lines 978--981
+[]\OT1/cmr/m/n/10.95 Po^^Tsto al-go-ri-tam is-pi-tu-je kan-di-da-te si-la-znim 
+re-do-sli-je-dom, pr-vi prona[]deni
+ []
+
+[33]
+Overfull \hbox (6.32843pt too wide) in paragraph at lines 1017--1022
+[]\OT1/cmr/m/it/10.95 Odredimo naj-ve^^Sci za-jed-ni^^Tcki dje-li-lac bro-je-va
+ $\OML/cmm/m/it/10.95 a \OT1/cmr/m/n/10.95 = 400\OML/cmm/m/it/10.95 ;  b \OT1/c
+mr/m/n/10.95 =
+ []
+
+
+Overfull \hbox (19.7724pt too wide) in paragraph at lines 1023--1032
+[]\OT1/cmr/m/it/10.95 Algoritam iz-vr^^Tsava slje-de^^Sce trans-for-ma-ci-je: $
+\OT1/cmr/m/n/10.95 (400\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 24) \OMS/cmsy/m
+/n/10.95 ! \OT1/cmr/m/n/10.95 (24\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 16) \
+OMS/cmsy/m/n/10.95 ! \OT1/cmr/m/n/10.95 (16\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/1
+0.95 8) \OMS/cmsy/m/n/10.95 !
+ []
+
+
+Overfull \hbox (1.88126pt too wide) in paragraph at lines 1053--1054
+[]\OT1/cmr/m/n/10.95 Zahvaljuju^^Sci svo-joj jed-no-stav-no-sti i efi-ka-sno-st
+i, Eu-kli-dov al-go-ri-tam pred-
+ []
+
+[34] [35]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36]
+[37]) [38]
+\openout2 = `chapter-01-02/chapter01.aux'.
+
+ (./chapter-01-02/chapter01.tex
+Glava 2.
+<slike/most_popular_language.png, id=171, 1247.66125pt x 620.3175pt>
+File: slike/most_popular_language.png Graphic file (type png)
+<use slike/most_popular_language.png>
+Package pdftex.def Info: slike/most_popular_language.png  used on input line 9.
+
+(pdftex.def)             Requested size: 399.98318pt x 189.99637pt.
+
+Overfull \hbox (43.98318pt too wide) in paragraph at lines 9--10
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [39
+
+
+
+
+]
+[40 <./slike/most_popular_language.png>] [41] [42]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/053A681634FA92EBE9750C8AF180DCBB5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [43])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/49791559F37B4D73EBA7CD0CB48BA3245018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/BEA06121B78831674B675F8FAE94EA6E5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+<slike/variable_object.png, id=189, 692.5875pt x 457.71pt>
+File: slike/variable_object.png Graphic file (type png)
+<use slike/variable_object.png>
+Package pdftex.def Info: slike/variable_object.png  used on input line 122.
+(pdftex.def)             Requested size: 139.99457pt x 99.9981pt.
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/3689D300132D6639FB1D23FAD8364A015018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [44 <./slike/variable_object.png>])
+<slike/point_two_vars.png, id=195, 714.67pt x 385.44pt>
+File: slike/point_two_vars.png Graphic file (type png)
+<use slike/point_two_vars.png>
+Package pdftex.def Info: slike/point_two_vars.png  used on input line 137.
+(pdftex.def)             Requested size: 139.99802pt x 100.0003pt.
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/F241B8736E0CC706CEB5624DD384DC785018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+<slike/vars_different_assigned.png, id=196, 674.52pt x 409.53pt>
+File: slike/vars_different_assigned.png Graphic file (type png)
+<use slike/vars_different_assigned.png>
+Package pdftex.def Info: slike/vars_different_assigned.png  used on input line 
+152.
+(pdftex.def)             Requested size: 139.9963pt x 99.99515pt.
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/113633C7748F7940477B8A1DF8A1679A5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex
+Overfull \hbox (6.49348pt too wide) has occurred while \output is active
+   \OT1/cmr/m/sl/10.95 2.3.  DEKLARISANJE VARIJABLI I MEMORIJSKA ORGANIZACIJA \
+OT1/cmr/m/n/10.95 45
+ []
+
+[45 <./slike/point_two_vars.png> <./slike/vars_different_assigned.png>])
+<slike/varX_different_assigned.png, id=202, 707.64375pt x 424.58624pt>
+File: slike/varX_different_assigned.png Graphic file (type png)
+<use slike/varX_different_assigned.png>
+Package pdftex.def Info: slike/varX_different_assigned.png  used on input line 
+166.
+(pdftex.def)             Requested size: 139.99295pt x 99.99805pt.
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/25D1289641156F1086EC43066FD3E2275018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [46 <./slike/varX_different_assigned.png>]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/438971A1DD8B592601D780B16661128E5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/FC880AB2797843282D3C8D021A4100E85018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/B0000E2360C24270E9E254C36E1D3E6B5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/96F56911F71E676ED8A4DB5934FD359A5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex
+Overfull \hbox (6.49348pt too wide) has occurred while \output is active
+   \OT1/cmr/m/sl/10.95 2.3.  DEKLARISANJE VARIJABLI I MEMORIJSKA ORGANIZACIJA \
+OT1/cmr/m/n/10.95 47
+ []
+
+[47])
+Overfull \hbox (11.33957pt too wide) in paragraph at lines 229--230
+[]\OT1/cmr/m/n/10.95 Komentari po-ve^^Scavaju ^^Tcitljivost pro-gra-ma i olak^^
+Tsavaju nje-go-vo odr^^Tzavanje,
+ []
+
+
+Overfull \hbox (4.7088pt too wide) in paragraph at lines 234--235
+[]\OT1/cmr/m/n/10.95 Numeri^^Tcki ti-po-vi po-da-ta-ka ko-ri-ste se za pred-sta
+-vlja-nje bro-je-va i izvo[]denje
+ []
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/1A878D7CDEA382BD619DE77081CBB3FA5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/E973D2AA26519F2C22E64ED7F5EE54525018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [48])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/AEE6148DA03265A52E5232C6D776AC1E5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/E974B175B3C58E6040C63FE3887888675018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/F16034E45A9E04DA34569618E6F8C3235018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [49])
+Overfull \hbox (28.97786pt too wide) in paragraph at lines 330--356
+ [] 
+ []
+
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 359.
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/E286A218885F50D96E78D78E062F7B2C5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [50])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/8C542B2B7CAA84E493F641E4FBD51AE45018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [51]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/9666555A137D6AD5847B45FB576E65E15018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/F0DC36E7CA643418222A1E6AB1B3C04B5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/90786776FC59935009DFAD48366C9B525018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [52]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/E7AEDAF9E50D45E50D630FAF8E9B258E5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/FEC894530CC783E62AC5FF42E9E6EEC75018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/5B7250329F177A806A1737BF787ACA2F5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/71F4A4ADEF79A00B79CFE99DAD7CD98D5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+Overfull \hbox (2.79372pt too wide) in paragraph at lines 482--483
+[]\OT1/cmr/m/n/10.95 Pored osnov-nih nu-me-ri^^Tckih ti-po-va po-da-ta-ka, Paj-
+ton pru^^Tza i niz slo^^Tzenijih
+ []
+
+[53]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/A18CC6D4EFF91C2B1886E1EDAC97B6B65018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/7061B4006665B8275AFAA2605C18FF5B5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [54])
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.525 	\item \textbf
+                    {Konkatenacija}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.525 	\item \textbf
+                    {Konkatenacija}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.525 	\item \textbf
+                    {Konkatenacija}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/18771E4FEFDF12870E3911415CAE162C5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \begin{Verbatim}[commandchars=\\\{\}]
+                                         
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/56E9A0BAA6F7305855DBA703AB3C1E6D5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/B6C2E5BC05B9A4337BB4D0E095B8532E5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [55]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/C5FCE712B592238A3F6F2D2900009CFB5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/3396AD2CD1894CFC46CC72431EBAF6E5E48FAF1886BFF81AE3111843E944B2C
+0.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/CF6A3972E3243BC4E615216A1333CC115018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/7B499287B829F075B7B0E15704DE48BE5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [56]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.619 ...ku pridružen je odgovarajući Unicode k^
+                                                  od, što omogućava rad sa...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 619.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.619 ...družen je odgovarajući Unicode k^od, š
+                                                  to omogućava rad sa tekst...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 619.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.619 ... odgovarajući Unicode k^od, što omoguć
+                                                  ava rad sa tekstom na veli...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.620 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (9.63039pt too wide) in paragraph at lines 619--620
+[]\OT1/cmr/m/it/10.95 Memorijska or-ga-ni-za-ci-ja\OT1/cmr/m/n/10.95 . Strin-go
+-vi se u Paj-to-nu pred-sta-vlja-ju kao ure[]dene
+ []
+
+
+Overfull \hbox (175.671pt too wide) in paragraph at lines 619--620
+\OT1/cmr/m/n/10.95 kom zna-ku pri-dru^^Tzen je od-go-va-ra-ju^^Sci Uni-co-de k$
+[]\OML/cmm/m/it/10.95 d; []toomogu[]avaradsatekstomnavelikombrojusvjetskihjezik
+a:$ 
+ []
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/B2D7326E46AA6AB26694784D323DE3FE5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+<slike/str_mem_organization.png, id=240, 543.02875pt x 163.61125pt>
+File: slike/str_mem_organization.png Graphic file (type png)
+<use slike/str_mem_organization.png>
+Package pdftex.def Info: slike/str_mem_organization.png  used on input line 631
+.
+(pdftex.def)             Requested size: 199.99774pt x 59.99846pt.
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/A68E6AA02F3FDA7CB851D78EE2CA29F05018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [57 <./slike/str_mem_organization.png>]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/3793D7AD6A70C54D9EFF850D024AE7C45018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/2CDB03847707020B6151D7D3CCA9DE445018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/51D66F038958715E62D4504C5105235F5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [58])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/843A64BABBD3708791BEF805745C1F405018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/10718084D0345774D00C23D944B7FFFB5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/4F5B3CF23B10BCD481EAE2B7A7C0D7595018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/D2FCDD5010C74260CC25A2B25EBC92175018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [59])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/9B4E25D63DB857AA92115E78A04C2FA05018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/C3CF03852F6D78BDCD67242AB5E428165018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/40F79C77999A8338F8BF751D3AFA9CBF5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/04F6911C31FDB824F888BE39C186B47F5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/C37428B2717CF361DB9B04A5B79DF8245018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [60])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/721FF60B76DA0AEFF7DD069F7BF251365018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/2EEA256DBCBDBB1BC331D99F07759A655018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [61]
+<slike/img-list-tuple.png, id=258, 830.10126pt x 388.45125pt>
+File: slike/img-list-tuple.png Graphic file (type png)
+<use slike/img-list-tuple.png>
+Package pdftex.def Info: slike/img-list-tuple.png  used on input line 831.
+(pdftex.def)             Requested size: 300.00153pt x 160.00102pt.
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/76C7522CF9FC63677AE32AEB7A15E7F55018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [62 <./slike/img-list-tuple.png>]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/32083A644F1426ED7268168A18670DC45018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [63]
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.875 		\hline
+              
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! You can't use `\hrule' here except with leaders.
+\vline ->\vrule 
+                \@width \arrayrulewidth 
+l.875 		\hline
+              
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.875 		\hline
+              
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.875 		\hline
+              
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.876 		\texttt{'b'} / \texttt{'B'} &
+                                      signed / unsigned char & int & 1 \
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.877 ... \texttt{'H'} & signed / unsigned short &
+                                                   int & 2 \
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.878 ...xttt{'I'} & signed / unsigned int & int &
+                                                   4 \
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.880 		\texttt{'q'} / \texttt{'Q'} &
+                                      signed / unsigned long long & int & 8 \
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.881 		\texttt{'f'} & float &
+                               float & 4 \
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.882 		\texttt{'d'} & double & float &
+                                        8 \
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.883 		\hline
+              
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! You can't use `\hrule' here except with leaders.
+\vline ->\vrule 
+                \@width \arrayrulewidth 
+l.883 		\hline
+              
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.883 		\hline
+              
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.883 		\hline
+              
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (184.41493pt too wide) in paragraph at lines 872--885
+ [][] 
+ []
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/2079EC0124F9AC57CAEDC193A23B46295018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/5B677E141415B93C74FA870EB9F3385C5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/DCCC8ED85A56E0986602FFDFE86569625018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/C231F1565BACEC89CFC2CD4AA2857F5D5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [64])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/273B1DDE649C47C28F42CD0B3F3AD7805018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/62D5977BCC29C4176FBBDF97A3C01B835018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/1749856C4179841DE89FB5A0F13EFA275018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/322FA5AED2C06CE3AEECD2A826AE84805018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/84475A7C93ACEFECCFD3DB7C8AF02A6D5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [65]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/F10425A37A17954FA538AE096ED657E35018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [66])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/F5C9BE68EDEA039F9E7621547C8E97EF5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/821549CA8037ADA2D8FD0863BFEA6F3C5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/71CA842252807ACBC71F183C152A887A5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/6FFDE403C75D18EC5314357AF546AE425018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [67])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/27A93C269405CD3091F6FC845C4CA1245018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/318AD8FACF329C4BFA84CEB14B1757825018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [68]
+<slike/dict_mem_organization.png, id=282, 596.2275pt x 314.17375pt>
+File: slike/dict_mem_organization.png Graphic file (type png)
+<use slike/dict_mem_organization.png>
+Package pdftex.def Info: slike/dict_mem_organization.png  used on input line 10
+91.
+(pdftex.def)             Requested size: 299.99623pt x 159.99637pt.
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/A5584E5C681F878154C6EFAED4451C005018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [69 <./slike/dict_mem_organization.png>])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/7B71BA49130B71FCB46AE1C0E4F966ED5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/AE37E11DE6C476836C75CD1A185B903F5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [70]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/BE13394191B8364F59DB9EF4B0F798745018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/02ABE4415A6536023F9727819A9AEA215018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/8901D99EFFB5A14E1B43CE38E236EF945018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/FEEA30666643E329D010F053F6B6DF245018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.1180 ...{intersection()} ili operator \texttt{&}
+                                                   -- vraća presjek dva skupa;
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/F1CEC459D45FBC614C00ADC22C7C27EF5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [71])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/54DC7CBECADE595FBC9268090CDCD7C15018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/5C15DC69970D3AFD1086A93C5C5E04705018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/2677B1C40E8EAFC14B6938584C94A5415018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [72])
+<slike/set_mem_organization.png, id=296, 301.125pt x 279.0425pt>
+File: slike/set_mem_organization.png Graphic file (type png)
+<use slike/set_mem_organization.png>
+Package pdftex.def Info: slike/set_mem_organization.png  used on input line 123
+6.
+(pdftex.def)             Requested size: 220.0078pt x 150.0037pt.
+
+Overfull \hbox (3.54485pt too wide) in paragraph at lines 1255--1256
+\OT1/cmr/m/it/10.95 mu-ta-ble\OT1/cmr/m/n/10.95 ) ko-lek-ci-ju ele-me-na-ta. U 
+Paj-to-nu se im-ple-men-ti-ra po-mo^^Scu ugra[]denog
+ []
+
+[73 <./slike/set_mem_organization.png>]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/417E3E41D1163D41148BDBBECC9B5C425018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/3957124E8D550A8E4FDD3B0276A4B5925018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/BDC358257466C5A710737E3ED88D71955018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/4B01C52CD4DA977A25381DEFEF3E148B5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [74])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/731F370A9EBCC88FC3C1C93A990B4AA85018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/6D0C8003D235AF0CFEBCAE37FC9E67A95018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/0CEECD09AE4A2D0CDDA2669C63F59A185018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/D89806107F726334F5B911362EBB7FD85018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [75] [76]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/B4421134F2125DB2A08683C71966FF525018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/196B2F3F6649262AC8C029FE048D5E3B5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/BBBEB91C54556D0F8FA60C68605314005018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/8B344458BE125D4F11E9C2A2406C6D1BE48FAF1886BFF81AE3111843E944B2C
+0.pygtex [77])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/3D3D596965FA2C70CF621FD2644D9C215018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/71E4D7E287D7D1C17F3378174F6BAA225018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/D96D056F0EB9964F2DD5E0D37D7B5D925018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [78])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/26C7FC1BD79B7ECF602FC7BA69953F825018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/979678544A017C0E96E95C1A934C62C55018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [79]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/FCC11297D2000D6443230113BED77A095018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/02F1A1C6EEE0F85D99D46B4AFCC39D72E48FAF1886BFF81AE3111843E944B2C
+0.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/5AD5C2F95F7038243A5EDA895F7878CF5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [80]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/BF23047F8593E6A88DC8708E736FB44E5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/7174EE1909751C4383106C2ADFB20C245018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/2DD0B5FACE1E7AFA8BC133DA891575DA5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [81])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/B7802138791B61700472F2EFB97B3A845018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [82]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/94838BB6D8862EF4FA174FD51074DB415018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1597 	\item \textit{iterabilni_objekat}
+                                          može biti lista, torka, skup, str...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.1597 	\item \textit{iterabilni_objekat}
+                                          može biti lista, torka, skup, str...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 1597.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.1597 	\item \textit{iterabilni_objekat} mož
+                                              e biti lista, torka, skup, str...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+! LaTeX Error: Command \end{itemize} invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1598 \end{itemize}
+                    
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1598 \end{itemize}
+                    
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1598 \end{itemize}
+                    
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1598 \end{itemize}
+                    
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.1598 \end{itemize}
+                    
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (55.48116pt too wide) in paragraph at lines 1597--1599
+[]\OT1/cmr/m/it/10.95 iterabilni$[]\OML/cmm/m/it/10.95 bjekatmo[]ebitilista; to
+rka; skup; string; generatorilidrugiiterabilniobjekat:$ 
+ []
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/D9AF38F72198E5494CAA5F70452216DF5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/170D67124DF08A5D9F8D20B3A279BD335018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/D04DD36A18023EDE91BCC94E4F35C0195018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/8FE3CDD8B51F79BEFBD7706D817410FD5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [83]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/C939D7ED11E6B6795EF1578405201AC65018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/14DBD0452423CBF682B6753A5F5BF8915018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [84]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/A5D557D8916AB2CBBDFD9CA4CB3AB93B5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/F035283CF6C471D757597456FB6002405018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [85]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/6195CCA5A7FFD62A0D8DC065CAE5B8045018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/8B342136EC36908E2D381EC647EAFF4B5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+Overfull \hbox (4.31218pt too wide) in paragraph at lines 1728--1729
+[]\OT1/cmr/m/n/10.95 Funkcije \OT1/cmtt/m/n/10.95 zip() \OT1/cmr/m/n/10.95 i \O
+T1/cmtt/m/n/10.95 enumerate() \OT1/cmr/m/n/10.95 spa-da-ju me[]du naj^^Tce^^Ts^
+^Sce ko-ri^^Tstene ugra[]dene
+ []
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/D1F63B7FF7B5EA6A83FADBB7CBF516F05018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/DE9D61E759B2AD5FD165C36281F957BF5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [86])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/2F8A3BC0E460258C820F10350A85FF9C5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/E0D17BA70095C09AB95E57899ECE24F35018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/64F3649BAECCD2FD6742094916A0DFA9E48FAF1886BFF81AE3111843E944B2C
+0.pygtex)
+Overfull \hbox (11.82584pt too wide) in paragraph at lines 1797--1798
+[]\OT1/cmr/m/n/10.95 Pajton omo-gu^^Scava sor-ti-ra-nje ele-me-na-ta po-mo^^Scu
+ me-to-de \OT1/cmtt/m/n/10.95 sort() \OT1/cmr/m/n/10.95 i ugra[]dene
+ []
+
+[87]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/95EAE49B512CEC7F8DFAA9274F46299D5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/9D68A3F2A475B8DDA00480A8263DA4975018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/5F77E7E8179589D97D300D2BE9E7FA3A5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/5544C2B157CFE079F0702789FADC47325018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [88]) [89]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/A171D6898518A7713635F20218E45C2B5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/05CF7155757C35EE23A7ABDDDBDD4BAB5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/3212EF501AB7526F2DBA98AF2702DADD5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/66C566595EE298A274DEC242176666E35018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [90]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/566E85623E7C765465E836C3B6364CCC82CA0C42AFE0759A4F1491A6B69BC02
+A.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/53BC4198BF5FDE807A11802C5F4F6D8982CA0C42AFE0759A4F1491A6B69BC02
+A.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/D1D2DA879941E3F8D1D6E918789EAA035018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/4F553A4F6834C05F93A6DB5197AB73E082CA0C42AFE0759A4F1491A6B69BC02
+A.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/91494A86BD4E08037D522861BD62CEF482CA0C42AFE0759A4F1491A6B69BC02
+A.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/4A44882542632EDDD1044A0D7C45AF3182CA0C42AFE0759A4F1491A6B69BC02
+A.pygtex) [91]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/74BED94B70DE51D417E0D5E035543A6F5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/082414355CE91DAA08E0DDE4C97DB1E05018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [92]
+Overfull \hbox (5.74248pt too wide) in paragraph at lines 2002--2003
+[]\OT1/cmr/m/n/10.95 Modul \OT1/cmtt/m/n/10.95 random \OT1/cmr/m/n/10.95 omo-gu
+^^Scava ge-ne-ri-sa-nje pseudo-slu^^Tcajnih bro-je-va i slu^^Tcajan
+ []
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/7FD9DB9A88573216676ED17516F654865018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [93]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/E2735860E0214E7A6932BB22672F21855018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+Overfull \hbox (4.56686pt too wide) in paragraph at lines 2040--2041
+\OT1/cmr/m/n/10.95 rad sa vre-me-nom. Nje-go-ve funk-ci-je ko-ri-ste se za mje-
+re-nje tra-ja-nja iz-vr^^Tsavanja
+ []
+
+
+Overfull \hbox (10.25005pt too wide) in paragraph at lines 2040--2041
+\OT1/cmr/m/n/10.95 pro-gra-ma, do-bi-ja-nje tre-nut-nog vre-me-na, pri-vre-me-n
+o za-u-sta-vlja-nje iz-vr^^Tsavanja
+ []
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/3EA13B510344C71B5248BD2E71FF29BD5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [94])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/DEB4938C4047AC0CD558628EFBC8D1EB5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/50A467FFFDC6E6D9476910EDE13891315018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [95]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/60B3BB1098AD4B682F8D3BF265D853015018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [96]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/26309587586BB38D6A24A1C72AB699265018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/543452F6A6FE0854BC2D5E8CF5AD2FF15018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/80911CDC7A74BA101DAFB11351360EDA5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [97]) [98]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/C8A00E64FAE89342675712ABB1F4474F5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/42B1FB7927ABF76480DDD91182D200445018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/7C270ABBE3090566FFEA16EF6ED06CB95018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [99])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/74E36D7D7484170879B0DA9FC1707E745018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/A9B0CB0BBC8CB035F121667C9D141E525018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [100]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/B0CA752B6CA71F4AB5E06A6760ABD8D15018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/A9929BF06C656F96F16B5E2369CDBF0F5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+<slike/class-exceptions.png, id=388, 723.70375pt x 344.28625pt>
+File: slike/class-exceptions.png Graphic file (type png)
+<use slike/class-exceptions.png>
+Package pdftex.def Info: slike/class-exceptions.png  used on input line 2303.
+(pdftex.def)             Requested size: 300.00017pt x 220.00096pt.
+
+Underfull \vbox (badness 5787) has occurred while \output is active []
+
+ [101]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/95E7AD731743C06897B067F2467AB8005018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [102 <./slike/class-exceptions.png>])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/E8CF8185EF2AC98BEC90724ADB1185E85018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+Underfull \hbox (badness 10000) in paragraph at lines 2351--2352
+
+ []
+
+
+Underfull \vbox (badness 2503) has occurred while \output is active []
+
+ [103]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/A4309D6B539E0CB08186B3754E266BA45018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [104] [105]
+LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 
+2440.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 2440.
+
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbackslash' on input line 2440.
+
+
+Overfull \hbox (30.33186pt too wide) in paragraph at lines 2478--2480
+ \OT1/cmr/bx/n/10.95 Re-gi-star-ske ta-bli-ce[] \OT1/cmr/m/n/10.95 Pret-po-sta-
+vi-mo da re-gi-star-ska ozna-ka ima oblik:$[]$ 
+ []
+
+[106]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/4920331393131BAA3DD5A97FE887BC225018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+Overfull \hbox (11.34166pt too wide) in paragraph at lines 2513--2514
+[]\OT1/cmr/m/n/10.95 Pretra^^Tzuje string \OT1/cmtt/m/n/10.95 string \OT1/cmr/m
+/n/10.95 i pro-na-la-zi pr-vo po-ja-vlji-va-nje ob-ra-sca \OT1/cmtt/m/n/10.95 p
+attern\OT1/cmr/m/n/10.95 .
+ []
+
+
+Overfull \hbox (6.67767pt too wide) in paragraph at lines 2513--2514
+\OT1/cmr/m/n/10.95 Uko-li-ko se obra-zac prona[]de, funk-ci-ja vra^^Sca obje-ka
+t po-du-da-ra-nja (\OT1/cmr/m/it/10.95 match
+ []
+
+[107]
+Overfull \hbox (4.46371pt too wide) in paragraph at lines 2533--2534
+[]\OT1/cmr/m/n/10.95 U na-stav-ku je pri-ka-zan jed-no-sta-van pri-mjer ko-ri^^
+Tstenja funk-ci-je \OT1/cmtt/m/n/10.95 search()\OT1/cmr/m/n/10.95 . 
+ []
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/1D4E8879B8EB4130B85494F704C654FC5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/590D18650B7B733888866EFCA0B46E10E48FAF1886BFF81AE3111843E944B2C
+0.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/58453157F01BAE7C9564EB1DDCA52A245018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [108]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/46EC5D1547EB2E2E182E2C39632169725018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/937CEF5BC4987396917080C0B6535DCE82CA0C42AFE0759A4F1491A6B69BC02
+A.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/EC442C39235B3E075AFF0823C0872A8582CA0C42AFE0759A4F1491A6B69BC02
+A.pygtex) [109]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/F807BC1B0EC857FD28F05AE36C339A005018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [110])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/483FF35744BEDA0E0826D2C818FDD2EB82CA0C42AFE0759A4F1491A6B69BC02
+A.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/924CFD8418FB99D471AE7D8A01389461E48FAF1886BFF81AE3111843E944B2C
+0.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/DCEABB7E0056832655E5D452BD52632D5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/F20F996C94B70F9649D081AF32B725D65018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [111]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/1A5F0F8F4A1F6388EBCA40288466E3B75018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/F8025BF561949C2212972F8AE92B05285018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [112])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/42D1B2F2E5D82C80AEF8D15AC0D333C882CA0C42AFE0759A4F1491A6B69BC02
+A.pygtex)
+! Extra \endgroup.
+\FVE@VerbatimOut ...loseout \FV@OutFile \endgroup 
+                                                  \@esphack 
+l.2763 \end{minted}
+                   
+Things are pretty mixed up, but I think the worst is over.
+
+! Bad space factor (0).
+<recently read> \@savsf 
+                        
+l.2763 \end{minted}
+                   
+I allow only values in the range 1..32767 here.
+
+
+! LaTeX Error: \begin{document} ended by \end{VerbatimOut}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2763 \end{minted}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.2763 \end{minted}
+                   
+Things are pretty mixed up, but I think the worst is over.
+
+
+(./_minted-main/42D1B2F2E5D82C80AEF8D15AC0D333C8CC60C40291E51378BEE9269BE705DFD
+D.pygtex)
+
+! LaTeX Error: \begin{document} ended by \end{minted}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2763 \end{minted}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.2763 \end{minted}
+                   
+Things are pretty mixed up, but I think the worst is over.
+
+
+Overfull \hbox (0.96489pt too wide) in paragraph at lines 2767--2768
+[]\OT1/cmr/bx/n/10.95 Napomena. \OT1/cmr/m/n/10.95 U sa-vre-me-nim Paj-ton pro-
+gra-mi-ma mo-dul \OT1/cmtt/m/n/10.95 argparse \OT1/cmr/m/n/10.95 uglav-
+ []
+
+[113]
+<slike/numpy-array-memory.png, id=431, 501.875pt x 209.78375pt>
+File: slike/numpy-array-memory.png Graphic file (type png)
+<use slike/numpy-array-memory.png>
+Package pdftex.def Info: slike/numpy-array-memory.png  used on input line 2788.
+
+(pdftex.def)             Requested size: 280.01425pt x 140.00058pt.
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/8302722F01E30C5B19226E2883F5D61487861BC1428CAACD28FF96D03864734
+9.pygtex [114 <./slike/numpy-array-memory.png>])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/7127C85BC19206056DE646983F75468087861BC1428CAACD28FF96D03864734
+9.pygtex) [115]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/26BAC7B615CE9BA093A8F587ADA9D6AA87861BC1428CAACD28FF96D03864734
+9.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/777C65950606F78F63B7D923FD91137687861BC1428CAACD28FF96D03864734
+9.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/9D1C131A71F474BA8A4271721C800CA087861BC1428CAACD28FF96D03864734
+9.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/7B99157F8F56DBA143D87C9FC57D2E5B87861BC1428CAACD28FF96D03864734
+9.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/D1749FEC2326570EE7B0E8C1BE0BEEC387861BC1428CAACD28FF96D03864734
+9.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/0408501BB14911988E1572FCE80C388987861BC1428CAACD28FF96D03864734
+9.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/6286FD34A15D0D9CDADB9136F879FB8B87861BC1428CAACD28FF96D03864734
+9.pygtex [116])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/BE5BA79056646177722D1545F80C4F5A87861BC1428CAACD28FF96D03864734
+9.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/D325CD3555C47A8E4AE0185A3388033387861BC1428CAACD28FF96D03864734
+9.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/67BBBB182E793DF07C327C457CDE160087861BC1428CAACD28FF96D03864734
+9.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/28234AF11837FC82A531071B93A9A12587861BC1428CAACD28FF96D03864734
+9.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/B0DF4AE79801C851FC9343C77B11E48187861BC1428CAACD28FF96D03864734
+9.pygtex)
+Overfull \hbox (5.22586pt too wide) in paragraph at lines 2934--2935
+[]\OT1/cmr/m/n/10.95 Jedna od naj-ve^^Scih pred-no-sti bi-bli-o-te-ke Num-Py je
+-ste mo-gu^^Scnost izvo[]denja
+ []
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/D5AD7630EE0338559A6D70457736ABF787861BC1428CAACD28FF96D03864734
+9.pygtex [117])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/B47E4F60CA5CB1037D72578EA02B15A487861BC1428CAACD28FF96D03864734
+9.pygtex) [118]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/FC90E1A42DC47D3901624D1A4AFF056151F5E7EF912DE3F33E1C1608E01AF48
+D.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/88CABF5B5B6E6A246243CB2D5304F565FE8E2EA9CDC84CBDD5E17ED24F8C5B9
+C.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/2DBD24772C01A2D672049BBBFACA356187861BC1428CAACD28FF96D03864734
+9.pygtex [119])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/115B5DC07102D3719DA4C9CDB098E8FF87861BC1428CAACD28FF96D03864734
+9.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/54E66E317DEF54C517214C6255D2B1C087861BC1428CAACD28FF96D03864734
+9.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/C26B9A311598999A33F444FF6CF55C0187861BC1428CAACD28FF96D03864734
+9.pygtex [120])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/44669DC845E7C457EE83ECF97C4B8C7F87861BC1428CAACD28FF96D03864734
+9.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/D66F37A255B90D212C34EEA86E3B24AA87861BC1428CAACD28FF96D03864734
+9.pygtex [121])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/AA9ACE577C66FCE4EE53271C8257EECD87861BC1428CAACD28FF96D03864734
+9.pygtex)
+Overfull \hbox (1.57785pt too wide) in paragraph at lines 3107--3108
+\OT1/cmr/m/n/10.95 rek-to-ri-ju-mu pro-jek-ta kre-i-ra-mo da-to-te-ku \OT1/cmtt
+/m/n/10.95 pyproject.toml \OT1/cmr/m/n/10.95 ko-ja sadr^^Tzi osnov-
+ []
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/00266285BE95E89745DC0BA80357598D5354F444B845104899F0BFE00D05C82
+D.pygtex [122])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/E33C1D158956C45ABF36B3CF155B62DCFE8E2EA9CDC84CBDD5E17ED24F8C5B9
+C.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/554E643F40637D2289BD850AD5266CBBFE8E2EA9CDC84CBDD5E17ED24F8C5B9
+C.pygtex)
+Overfull \hbox (97.81721pt too wide) has occurred while \output is active
+   \OT1/cmr/m/sl/10.95 2.17.  POSTAVLJANJE KORISNI[]CKI KREIRANIH MODULA NA PYP
+I REPOZITORIJ \OT1/cmr/m/n/10.95 123
+ []
+
+[123]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/75BF74C94450870D28021846F90828F2FE8E2EA9CDC84CBDD5E17ED24F8C5B9
+C.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/D1A5B0AA45B742DCF316C3D6B4D2EC39FE8E2EA9CDC84CBDD5E17ED24F8C5B9
+C.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/D952FB92E458847653793A355F9E77F8FE8E2EA9CDC84CBDD5E17ED24F8C5B9
+C.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/66740F566905DC31305E34D42E04EF2087861BC1428CAACD28FF96D03864734
+9.pygtex) [124]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/239CE3DEF06AD8071F82155AF150DA4E87861BC1428CAACD28FF96D03864734
+9.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/072C6050F334F789519ABD320760342387861BC1428CAACD28FF96D03864734
+9.pygtex [125]) [126]
+<slike/python-code-copiler-machine-code.png, id=474, 963.6pt x 542.025pt>
+File: slike/python-code-copiler-machine-code.png Graphic file (type png)
+<use slike/python-code-copiler-machine-code.png>
+Package pdftex.def Info: slike/python-code-copiler-machine-code.png  used on in
+put line 3267.
+(pdftex.def)             Requested size: 349.99814pt x 169.99442pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [127]
+Overfull \hbox (66.8625pt too wide) in paragraph at lines 3272--3272
+[][]\OT1/cmr/m/n/9 Slika pre-u-ze-ta sa: \OT1/cmtt/m/n/9 https://www.astateofda
+ta.com/python-programming/can-python-be-compiled/| 
+ []
+
+[128 <./slike/python-code-copiler-machine-code.png>] [129]
+Overfull \hbox (12.10457pt too wide) detected at line 3340
+\OML/cmm/m/it/10.95 < Ime[]prezime >; < datum[]upisa[]na[]fakultet >; < godine[
+]starosti >
+ []
+
+[130]
+Overfull \hbox (0.42302pt too wide) in paragraph at lines 3356--3358
+\OT1/cmr/m/n/10.95 zan ka-rak-ter pred-sta-vlja in-va-ri-jant-na vri-jed-nost ^
+^Tsto se po-sti^^Tze konstru-
+ []
+
+[131]) [132]
+\openout2 = `chapter-03-04/chapter03.aux'.
+
+ (./chapter-03-04/chapter03.tex
+Glava 3.
+[133
+
+
+
+
+]
+Overfull \hbox (13.19797pt too wide) in paragraph at lines 30--31
+[]\OT1/cmr/m/n/10.95 Problem se di-je-li na vi^^Tse ma-njih ne-za-vi-snih pod-p
+ro-ble-ma ko-ji se rje^^Tsavaju
+ []
+
+[134] [135]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/BD05DD22E52C13EB70B776B11C48986787861BC1428CAACD28FF96D03864734
+9.pygtex) [136]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/30CC0AF65944959698ED2D81DC9DEE8787861BC1428CAACD28FF96D03864734
+9.pygtex)
+<slike/factorial_recursion_tree.png, id=509, 1049.9225pt x 933.4875pt>
+File: slike/factorial_recursion_tree.png Graphic file (type png)
+<use slike/factorial_recursion_tree.png>
+Package pdftex.def Info: slike/factorial_recursion_tree.png  used on input line
+ 127.
+(pdftex.def)             Requested size: 219.99359pt x 159.98697pt.
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/59CD8A8996E7FB4421C95585F498219587861BC1428CAACD28FF96D03864734
+9.pygtex [137 <./slike/factorial_recursion_tree.png>])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/843E39B893AF2132C0B0DDA2667921EA87861BC1428CAACD28FF96D03864734
+9.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/A8C5F3F532A358343F224B6E24350D0F87861BC1428CAACD28FF96D03864734
+9.pygtex [138])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/63BABD8514C65B08C11D0D78D78277F687861BC1428CAACD28FF96D03864734
+9.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/70E58B69BD7B94C8B78F260440BA1EE687861BC1428CAACD28FF96D03864734
+9.pygtex [139]) [140]
+<slike/mandelbrot.png, id=524, 1204.5pt x 1204.5pt>
+File: slike/mandelbrot.png Graphic file (type png)
+<use slike/mandelbrot.png>
+Package pdftex.def Info: slike/mandelbrot.png  used on input line 266.
+(pdftex.def)             Requested size: 99.98267pt x 79.98613pt.
+ [141 <./slike/mandelbrot.png>]
+Overfull \hbox (0.36223pt too wide) in paragraph at lines 276--277
+[]\OT1/cmr/m/n/10.95 Memoizacija pred-sta-vlja teh-ni-ku po-hra-nji-va-nja pret
+-hod-no iz-ra^^Tcunatih
+ []
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/E64E991D9456F669A5FDC81E2CA347A987861BC1428CAACD28FF96D03864734
+9.pygtex [142])
+Overfull \hbox (14.77792pt too wide) in paragraph at lines 311--313
+[]\OT1/cmr/m/n/10.95 Rje^^Tsenje ove re-ku-ren-ci-je ima ek-spo-nen-ci-jal-ni r
+ast, pa je vre-men-ska slo^^Tzenost
+ []
+
+<slike/fib_rec.jpeg, id=532, 604.2575pt x 321.2pt>
+File: slike/fib_rec.jpeg Graphic file (type jpg)
+<use slike/fib_rec.jpeg>
+Package pdftex.def Info: slike/fib_rec.jpeg  used on input line 320.
+(pdftex.def)             Requested size: 249.9969pt x 140.00023pt.
+[143 <./slike/fib_rec.jpeg>]
+<slike/tower.png, id=536, 466.74374pt x 211.79124pt>
+File: slike/tower.png Graphic file (type png)
+<use slike/tower.png>
+Package pdftex.def Info: slike/tower.png  used on input line 363.
+(pdftex.def)             Requested size: 270.01361pt x 150.00443pt.
+
+Underfull \vbox (badness 2285) has occurred while \output is active []
+
+ [144]
+[145 <./slike/tower.png>]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/91F6F959261509DBA0322E48DCEFB2F887861BC1428CAACD28FF96D03864734
+9.pygtex) [146]
+
+! LaTeX Error: \begin{document} ended by \end{trivlist}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.420 \end{solution}
+                    	
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.420 \end{solution}
+                    	
+Things are pretty mixed up, but I think the worst is over.
+
+
+! LaTeX Error: \begin{document} ended by \end{solution}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.420 \end{solution}
+                    	
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.420 \end{solution}
+                    	
+Things are pretty mixed up, but I think the worst is over.
+
+
+Overfull \hbox (5.01413pt too wide) in paragraph at lines 427--428
+[]\OT1/cmr/m/n/10.95 Iako je ri-je^^Tc o jed-no-stav-nom pri-stu-pu, al-go-rit-
+mi gru-be si-le ima-ju zna^^Tcajnu
+ []
+
+
+Overfull \hbox (13.54723pt too wide) in paragraph at lines 457--458
+[]\OT1/cmr/m/n/10.95 Pristup gru-be si-le pod-ra-zu-mi-je-va iz-ra^^Tcunavanje 
+uda-lje-no-sti izme[]du
+ []
+
+[147]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/8169FE9599741BFDFB8276890C521C5387861BC1428CAACD28FF96D03864734
+9.pygtex)
+Underfull \hbox (badness 10000) in paragraph at lines 492--494
+
+ []
+
+[148] [149]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/CE4351724346DACE0073E15CACA1664687861BC1428CAACD28FF96D03864734
+9.pygtex
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 11.
+ [150]) [151]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/D1E63DFA69833A43E1392A3CC8C43EB487861BC1428CAACD28FF96D03864734
+9.pygtex [152])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/6DB6E845082AF6A4DFAFEB7F136D3F2487861BC1428CAACD28FF96D03864734
+9.pygtex) [153]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/76DFFD7DB0D25DAFF79DED387608F13787861BC1428CAACD28FF96D03864734
+9.pygtex [154]) [155] [156]
+Overfull \hbox (12.37384pt too wide) in paragraph at lines 768--769
+[]\OT1/cmr/m/n/10.95 Rekurzivna im-ple-men-ta-ci-ja pre-ta-ge pre-ska-ka-njem j
+e da-ta slje-de^^Scim k^odom. 
+ []
+
+
+! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.770 ...fontsize=\footnotesize,scale=0.8]{python}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/8D2A1487FD5D5A0F5309FA495AB1DD8887861BC1428CAACD28FF96D03864734
+9.pygtex) [157]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/2B0FCFD278DC30E41D41D78414E4800287861BC1428CAACD28FF96D03864734
+9.pygtex [158])
+Overfull \hbox (13.62508pt too wide) in paragraph at lines 867--868
+\OT1/cmr/m/n/10.95 raspore[]dene, in-ter-po-la-cij-ska pre-tra-ga u pro-sje-ku 
+ostva-ru-je vre-men-sku slo^^Tzenost
+ []
+
+[159]
+Overfull \hbox (3.29724pt too wide) in paragraph at lines 874--875
+[]\OT1/cmr/m/n/10.95 Eksponencijalna pre-tra-ga (\OT1/cmr/m/it/10.95 expo-nen-t
+i-al se-arch\OT1/cmr/m/n/10.95 ) pred-sta-vlja al-go-ri-tam pre-
+ []
+
+
+Overfull \hbox (13.14445pt too wide) in paragraph at lines 874--875
+\OT1/cmr/m/n/10.95 tra^^Tzivanja na-mi-je-njen sor-ti-ra-nim ni-zo-vi-ma. Na-zi
+v al-go-rit-ma po-ti^^Tce od ^^Tcinjenice
+ []
+
+
+! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.893 ...fontsize=\footnotesize,scale=0.8]{python}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/75F927A3EEC04F6A1BFFFDD74CE6142887861BC1428CAACD28FF96D03864734
+9.pygtex [160]) [161]
+! Misplaced alignment tab character &.
+<argument> D&
+             C
+l.949 		\Procedure{D&C}{$n$: veličina ulaza}
+                                             
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+[162]
+
+! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.986 ...fontsize=\footnotesize,scale=0.8]{python}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/125E4EEC26158FC6A71FAC3CDB8D6D3D87861BC1428CAACD28FF96D03864734
+9.pygtex [163])
+<slike/mege.png, id=603, 655.44875pt x 635.37375pt>
+File: slike/mege.png Graphic file (type png)
+<use slike/mege.png>
+Package pdftex.def Info: slike/mege.png  used on input line 1021.
+(pdftex.def)             Requested size: 199.99658pt x 150.00119pt.
+
+Overfull \hbox (4.25435pt too wide) in paragraph at lines 1028--1029
+[]\OT1/cmr/m/it/10.95 (\OT1/cmr/bx/it/10.95 Mno^^Tzenje ci-je-lih bro-je-va\OT1
+/cmr/m/it/10.95 ). Po-zna-ti al-go-ri-tam za mno^^Tzenje
+ []
+
+[164 <./slike/mege.png>] [165]
+Overfull \hbox (3.31258pt too wide) in paragraph at lines 1091--1092
+[]\OT1/cmr/m/n/10.95 postoji ve-li-ki broj mo-gu^^Scih kom-bi-na-ci-ja ko-je tr
+e-ba si-ste-mat-ski istra^^Tziti. 
+ []
+
+
+Overfull \hbox (1.8185pt too wide) in paragraph at lines 1121--1122
+\OT1/cmr/m/it/10.95 nja \OT1/cmr/m/n/10.95 (\OT1/cmr/m/it/10.95 state-space tre
+e\OT1/cmr/m/n/10.95 ). Sva-ki ^^Tcvor sta-bla pred-sta-vlja jed-no par-ci-jal-n
+o rje^^Tsenje,
+ []
+
+[166]
+<slike/n-queen-problem.png, id=614, 185.69376pt x 168.63pt>
+File: slike/n-queen-problem.png Graphic file (type png)
+<use slike/n-queen-problem.png>
+Package pdftex.def Info: slike/n-queen-problem.png  used on input line 1137.
+(pdftex.def)             Requested size: 200.00507pt x 180.0026pt.
+ [167 <./slike/n-queen-problem.png>]
+
+! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1170 ...ontsize=\footnotesize,scale=0.8]{python}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/37E78C8BC32D4CEDD81EC741C02C14EF87861BC1428CAACD28FF96D03864734
+9.pygtex [168])
+<slike/n-queen-backtracking.png, id=622, 1159.33125pt x 877.2775pt>
+File: slike/n-queen-backtracking.png Graphic file (type png)
+<use slike/n-queen-backtracking.png>
+Package pdftex.def Info: slike/n-queen-backtracking.png  used on input line 119
+2.
+(pdftex.def)             Requested size: 349.9956pt x 279.99829pt.
+
+
+! LaTeX Error: \begin{document} ended by \end{trivlist}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1200 \end{solution}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.1200 \end{solution}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+
+! LaTeX Error: \begin{document} ended by \end{solution}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1200 \end{solution}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.1200 \end{solution}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+
+! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1223 ...ontsize=\footnotesize,scale=0.8]{python}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/3DA4769C84D02A211E0AE58D86918D8287861BC1428CAACD28FF96D03864734
+9.pygtex [169] [170 <./slike/n-queen-backtracking.png>]) [171]
+Overfull \hbox (5.74594pt too wide) in paragraph at lines 1267--1268
+[]\OT1/cmr/m/n/10.95 odre[]duje se skup svih kom-po-nen-ti ko-je na do-pu-stiv 
+na^^Tcin mo-gu pro^^Tsiriti
+ []
+
+[172] [173]
+Overfull \hbox (4.98248pt too wide) in paragraph at lines 1309--1310
+[]\OT1/cmr/m/n/10.95 Pohlepni al-go-rit-mi se tako[]de ^^Tcesto ko-ri-ste za ge
+-ne-ri-sa-nje po^^Tcetnih rje^^Tsenja
+ []
+
+[174]
+
+! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1340 ...ntsize=\footnotesize,scale=0.75]{python}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/FD94B4A5971923375D34A58EBCA90E8287861BC1428CAACD28FF96D03864734
+9.pygtex)
+
+! LaTeX Error: \begin{document} ended by \end{trivlist}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1358 \end{solution}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.1358 \end{solution}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+
+! LaTeX Error: \begin{document} ended by \end{solution}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1358 \end{solution}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.1358 \end{solution}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+
+Overfull \hbox (0.81165pt too wide) in paragraph at lines 1360--1361
+[]\OT1/cmr/bx/n/10.95 Vremenska slo^^Tzenost\OT1/cmr/m/n/10.95 . Sor-ti-ra-nje 
+al-go-rit-ma za-htje-va $\OML/cmm/m/it/10.95 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it
+/10.95 n [] n\OT1/cmr/m/n/10.95 )$ vreme-
+ []
+
+[175]
+Overfull \hbox (4.74945pt too wide) in paragraph at lines 1390--1393
+\OT1/cmr/m/n/10.95 ji ostva-ru-ju naj-ve^^Scu vri-jed-nost po je-di-ni-ci te^^T
+zine. Za sva-ki pro-i-zvod ra^^Tcunamo
+ []
+
+[176]
+Overfull \hbox (18.03133pt too wide) in paragraph at lines 1404--1405
+[]\OT1/cmr/m/n/10.95 Pohlepni al-go-ri-tam za raz-lo-mlje-ni pro-blem ruk-sa-ka
+ ima vre-men-sku slo^^Tzenost
+ []
+
+
+! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1410 ...ontsize=\footnotesize,scale=0.8]{python}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/0DA35B6E2E286E9913C4AF23D4DEF55D87861BC1428CAACD28FF96D03864734
+9.pygtex [177])
+
+! LaTeX Error: \begin{document} ended by \end{trivlist}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1444 \end{solution}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.1444 \end{solution}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+
+! LaTeX Error: \begin{document} ended by \end{solution}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1444 \end{solution}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.1444 \end{solution}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+[178]
+
+! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1510 ...ontsize=\footnotesize,scale=0.8]{python}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/F46706AEFC8D9B3BA6EB914142E5C95F87861BC1428CAACD28FF96D03864734
+9.pygtex [179])
+
+! LaTeX Error: \begin{document} ended by \end{trivlist}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1552 \end{solution}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.1552 \end{solution}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+
+! LaTeX Error: \begin{document} ended by \end{solution}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1552 \end{solution}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.1552 \end{solution}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+[180]
+Overfull \hbox (5.62436pt too wide) in paragraph at lines 1559--1560
+[]\OT1/cmr/m/it/10.95 Potrebno je oda-bra-ti pod-skup po-slo-va i odre-di-ti nj
+i-hov ra-spo-red iz-vr^^Tsavanja
+ []
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.1570 ...ph{Krajnji rok} & \emph{Profit} \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! You can't use `\hrule' here except with leaders.
+\vline ->\vrule 
+                \@width \arrayrulewidth 
+l.1570 ...ph{Krajnji rok} & \emph{Profit} \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.1570 ...ph{Krajnji rok} & \emph{Profit} \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.1570 ...ph{Krajnji rok} & \emph{Profit} \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.1571 			1 &
+              4 & 20 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.1578 ...{3,1\}$, čiji je ukupan profit jednak #
+                                                  
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.1579 	40 + 20 = 60.#
+                      
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.1585 ...ph{Krajnji rok} & \emph{Profit} \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! You can't use `\hrule' here except with leaders.
+\vline ->\vrule 
+                \@width \arrayrulewidth 
+l.1585 ...ph{Krajnji rok} & \emph{Profit} \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.1585 ...ph{Krajnji rok} & \emph{Profit} \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.1585 ...ph{Krajnji rok} & \emph{Profit} \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.1586 			1 &
+              2 & 100 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+[181] [182]
+
+! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1645 ...ontsize=\footnotesize,scale=0.8]{python}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/42C965A8C2CD57351240242D8F30B73F87861BC1428CAACD28FF96D03864734
+9.pygtex [183]) [184]
+Overfull \hbox (25.8788pt too wide) in paragraph at lines 1703--1704
+[]\OT1/cmr/m/n/10.95 Osnovna ide-ja di-na-mi^^Tckog pro-gra-mi-ra-nja sa-sto-ji
+ se u iz-bje-ga-va-nju vi^^Tsestrukog
+ []
+
+
+Overfull \hbox (7.8476pt too wide) in paragraph at lines 1719--1720
+[]\OT1/cmr/m/n/10.95 Memoizacija (\OT1/cmr/m/it/10.95 top-down ap-pro-ach\OT1/c
+mr/m/n/10.95 ) pred-sta-vlja im-ple-men-ta-ci-ju di-na-mi^^Tckog
+ []
+
+[185]
+
+! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1757 ...ontsize=\footnotesize,scale=0.8]{python}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/A4FEBFEACF3E147E31D9F1A4127CCDBB87861BC1428CAACD28FF96D03864734
+9.pygtex [186])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/11AB637D21E46C6FFC0A36D34C3C778387861BC1428CAACD28FF96D03864734
+9.pygtex) [187]
+<slike/dp-table-1.png, id=686, 272.01625pt x 263.98625pt>
+File: slike/dp-table-1.png Graphic file (type png)
+<use slike/dp-table-1.png>
+Package pdftex.def Info: slike/dp-table-1.png  used on input line 1825.
+(pdftex.def)             Requested size: 100.00108pt x 99.99759pt.
+ [188]
+Overfull \hbox (8.57896pt too wide) in paragraph at lines 1853--1854
+[]\OT1/cmr/m/n/10.95 Za po-zi-ci-je ko-je ni-su do-stup-ne pi-ju-nu (npr. iz-va
+n gra-ni-ca ma-tri-ce) mo^^Tzemo
+ []
+
+[189 <./slike/dp-table-1.png>]
+
+! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1868 ...ontsize=\footnotesize,scale=0.8]{python}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/4C1C69C05E6ED959B7184415195C336B87861BC1428CAACD28FF96D03864734
+9.pygtex [190])
+
+! LaTeX Error: \begin{document} ended by \end{trivlist}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1905 \end{solution}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.1905 \end{solution}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+
+! LaTeX Error: \begin{document} ended by \end{solution}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1905 \end{solution}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.1905 \end{solution}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+[191]
+! Extra alignment tab has been changed to \cr.
+<template> ...@ \unhbox \z@ $\relax $\endtemplate 
+                                                  
+l.1950 		&
+           \text{ako } w_i > j.
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Overfull \hbox (71.35506pt too wide) detected at line 1952
+\OML/cmm/m/it/10.95 DP\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 i\OT1/cmr/m/n/10.
+95 ][\OML/cmm/m/it/10.95 j\OT1/cmr/m/n/10.95 ] = []
+ []
+
+
+Overfull \hbox (9.05959pt too wide) in paragraph at lines 1967--1968
+[]\OT1/cmr/m/n/10.95 Drugim ri-je^^Tcima, ona pred-sta-vlja naj-ve^^Scu mo-gu^^
+Scu vri-jed-nost ko-ju mo^^Tzemo
+ []
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1975 	
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1978 ...ontsize=\footnotesize,scale=0.8]{python}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/002C83060FE54DE774E53BD110C904BC87861BC1428CAACD28FF96D03864734
+9.pygtex [192])
+
+! LaTeX Error: \begin{document} ended by \end{trivlist}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2006 \end{solution}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.2006 \end{solution}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+
+! LaTeX Error: \begin{document} ended by \end{solution}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2006 \end{solution}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.2006 \end{solution}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+[193] [194] [195]
+Overfull \hbox (0.54204pt too wide) in paragraph at lines 2145--2146
+[]\OT1/cmr/m/it/10.95 Rekurzivna re-la-ci-ja. \OT1/cmr/m/n/10.95 Po-sma-traj-mo
+ po-sljed-nje ka-rak-te-re raz-ma-tra-nih pre-
+ []
+
+
+Overfull \hbox (18.64923pt too wide) in paragraph at lines 2165--2172
+[]$\OML/cmm/m/it/10.95 DP\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 i\OT1/cmr/m/n/
+10.95 ][\OML/cmm/m/it/10.95 j\OT1/cmr/m/n/10.95 ] = []$ 
+ []
+
+[196]
+
+! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2190 ...ontsize=\footnotesize,scale=0.8]{python}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/A5C7E12D4867DFC3C4419A72BB60335387861BC1428CAACD28FF96D03864734
+9.pygtex
+Overfull \hbox (6.4425pt too wide) in paragraph at lines 2189--1
+[]\OT1/cmr/m/n/10.95 Implementacija pa-ra-dig-me di-na-mi^^Tckog pro-gra-mi-ra-
+nja za rje^^Tsavanje LCSP
+ []
+
+) [197]
+
+! LaTeX Error: \begin{document} ended by \end{trivlist}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2243 \end{solution}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.2243 \end{solution}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+
+! LaTeX Error: \begin{document} ended by \end{solution}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2243 \end{solution}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.2243 \end{solution}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+[198]
+
+! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2333 ...ontsize=\footnotesize,scale=0.8]{python}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/D44CB3D3E22E85E8DD42EC374DAB188987861BC1428CAACD28FF96D03864734
+9.pygtex [199])
+
+! LaTeX Error: \begin{document} ended by \end{trivlist}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2354 \end{solution}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.2354 \end{solution}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+
+! LaTeX Error: \begin{document} ended by \end{solution}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2354 \end{solution}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.2354 \end{solution}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+
+! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2359 ...ontsize=\footnotesize,scale=0.8]{python}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/276727138E710ACF97A412876FD58D0787861BC1428CAACD28FF96D03864734
+9.pygtex [200])
+Overfull \hbox (43.32793pt too wide) in paragraph at lines 2397--2403
+[]\OT1/cmr/m/n/10.95 Posmatrajmo pri-mjer in-stan-ce pro-ble-ma: $\OML/cmm/m/it
+/10.95 price \OT1/cmr/m/n/10.95 = [1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 5\
+OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 8\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.
+95 9\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 10\OML/cmm/m/it/10.95 ; \OT1/cmr/m
+/n/10.95 17\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 17\OML/cmm/m/it/10.95 ; \OT
+1/cmr/m/n/10.95 20]\OML/cmm/m/it/10.95 :$
+ []
+
+[201]
+! Missing delimiter (. inserted).
+<to be read again> 
+                   {
+l.2432 	  \left{
+                
+I was expecting to see something like `(' or `\{' or
+`\}' here. If you typed, e.g., `{' instead of `\{', you
+should probably delete the `{' by typing `1' now, so that
+braces don't get unbalanced. Otherwise just proceed.
+Acceptable delimiters are characters whose \delcode is
+nonnegative, or you can use `\delimiter <delimiter code>'.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.2434 		\right
+               }.
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing delimiter (. inserted).
+<to be read again> 
+                   }
+l.2434 		\right}
+                .
+I was expecting to see something like `(' or `\{' or
+`\}' here. If you typed, e.g., `{' instead of `\{', you
+should probably delete the `{' by typing `1' now, so that
+braces don't get unbalanced. Otherwise just proceed.
+Acceptable delimiters are characters whose \delcode is
+nonnegative, or you can use `\delimiter <delimiter code>'.
+
+! Extra }, or forgotten $.
+<recently read> }
+                 
+l.2434 		\right}
+                .
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2461 ...ontsize=\footnotesize,scale=0.8]{python}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/47B27E86131071F3B21AF9F05CB48DD687861BC1428CAACD28FF96D03864734
+9.pygtex [202])
+<slike/brute-force-cutting-stick.png, id=736, 648.4225pt x 533.995pt>
+File: slike/brute-force-cutting-stick.png Graphic file (type png)
+<use slike/brute-force-cutting-stick.png>
+Package pdftex.def Info: slike/brute-force-cutting-stick.png  used on input lin
+e 2488.
+(pdftex.def)             Requested size: 270.00058pt x 219.99861pt.
+ [203 <./slike/brute-force-cutting-stick.png>]
+
+! LaTeX Error: Unicode character − (U+2212)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2507 ...o traženi broj ne postoji, vratiti $−
+                                                  1$.
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Overfull \hbox (0.26112pt too wide) in paragraph at lines 2513--2521
+\OT1/cmr/m/n/10.95 4\OML/cmm/m/it/10.95 ; x[] \OMS/cmtt/m/n/10.95 2 \U/msb/m/n/
+10.95 N$\OT1/cmr/m/n/10.95 . Sva mo-gu^^Sca rje^^Tsenja su: $(1 1 1 1 0)\OML/cm
+m/m/it/10.95 ; \OT1/cmr/m/n/10.95 (1 0 1 1 1)\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n
+/10.95 (0 1 1 1 1)\OML/cmm/m/it/10.95 ; [] ;$
+ []
+
+[204]
+Overfull \hbox (6.847pt too wide) in paragraph at lines 2530--2531
+[]\OT1/cmr/m/n/10.95 U uli-zu je dat niz bro-je-va. Kon-stru-i-sa-ti al-go-ri-t
+am di-na-mi^^Tckog programi-
+ []
+
+
+Overfull \hbox (4.9572pt too wide) in paragraph at lines 2533--2535
+[]\OT1/cmr/m/n/10.95 Neka su u ula-zu da-ta dva stri-ga $\OML/cmm/m/it/10.95 s[
+]$ \OT1/cmr/m/n/10.95 i $\OML/cmm/m/it/10.95 s[]$\OT1/cmr/m/n/10.95 . Uz po-mo^
+^Sc di-na-mi^^Tckog programi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2535--2536
+
+ []
+
+
+Overfull \hbox (52.5288pt too wide) detected at line 2537
+\OML/cmm/m/it/10.95 dict \OT1/cmr/m/n/10.95 = \OMS/cmtt/m/n/10.95 f[]\OML/cmm/m
+/it/10.95 ; []; []; []; []; []; []; []; []; []; []; []; []; []; []; []\OMS/cmtt
+/m/n/10.95 g
+ []
+
+<slike/plococe-dp-zadatak.png, id=744, 194.7275pt x 180.675pt>
+File: slike/plococe-dp-zadatak.png Graphic file (type png)
+<use slike/plococe-dp-zadatak.png>
+Package pdftex.def Info: slike/plococe-dp-zadatak.png  used on input line 2550.
+
+(pdftex.def)             Requested size: 119.99884pt x 100.0001pt.
+[205]) [206 <./slike/plococe-dp-zadatak.png>]
+\openout2 = `chapter-03-04/chapter04.aux'.
+
+ (./chapter-03-04/chapter04.tex
+Glava 4.
+[207
+
+
+
+
+]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/98837C794381314E1ED59DA07FD450DE87861BC1428CAACD28FF96D03864734
+9.pygtex)
+Overfull \hbox (0.83469pt too wide) in paragraph at lines 44--46
+[]\OT1/cmr/m/n/10.95 Ako je broj $\OML/cmm/m/it/10.95 p$ \OT1/cmr/m/n/10.95 pro
+st, ta-da ni-je-dan nje-gov vi^^Tsekratnik $2\OML/cmm/m/it/10.95 p; \OT1/cmr/m/
+n/10.95 3\OML/cmm/m/it/10.95 p; \OT1/cmr/m/n/10.95 4\OML/cmm/m/it/10.95 p; []$
+ []
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/42A586317AD2E75D22C183DFE150749A87861BC1428CAACD28FF96D03864734
+9.pygtex
+Overfull \hbox (120.70576pt too wide) has occurred while \output is active
+\OT1/cmr/m/n/10.95 208    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
+PARADIGMI NA PROBLEME IZ ARITMETIKE
+ []
+
+[208])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/24ED544B1ED587BCA178EDCA29A7161C87861BC1428CAACD28FF96D03864734
+9.pygtex [209])
+Overfull \hbox (120.70576pt too wide) has occurred while \output is active
+\OT1/cmr/m/n/10.95 210    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
+PARADIGMI NA PROBLEME IZ ARITMETIKE
+ []
+
+[210] [211]
+Overfull \hbox (120.70576pt too wide) has occurred while \output is active
+\OT1/cmr/m/n/10.95 212    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
+PARADIGMI NA PROBLEME IZ ARITMETIKE
+ []
+
+[212]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/D86C6BC837B38501ECAA89CA023B3A3987861BC1428CAACD28FF96D03864734
+9.pygtex [213])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/D0D2C7E06FB96F5DBD475CE6B766F14387861BC1428CAACD28FF96D03864734
+9.pygtex
+Overfull \hbox (120.70576pt too wide) has occurred while \output is active
+\OT1/cmr/m/n/10.95 214    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
+PARADIGMI NA PROBLEME IZ ARITMETIKE
+ []
+
+[214])
+Underfull \hbox (badness 10000) in paragraph at lines 296--297
+
+ []
+
+
+Overfull \hbox (1.72789pt too wide) in paragraph at lines 300--301
+[]\OT1/cmr/m/n/10.95 Implementacija prin-ci-pa me-mo-i-za-ci-je za iz-ra^^Tcuna
+vanje bi-no-mnog koefici-
+ []
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/A8DAED73B0A060AD43BF7B90192A813287861BC1428CAACD28FF96D03864734
+9.pygtex [215])
+<slike/catalan-net.png, id=781, 729.72626pt x 345.29pt>
+File: slike/catalan-net.png Graphic file (type png)
+<use slike/catalan-net.png>
+Package pdftex.def Info: slike/catalan-net.png  used on input line 343.
+(pdftex.def)             Requested size: 279.99345pt x 159.9997pt.
+
+Underfull \vbox (badness 6396) has occurred while \output is active []
+
+
+Overfull \hbox (120.70576pt too wide) has occurred while \output is active
+\OT1/cmr/m/n/10.95 216    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
+PARADIGMI NA PROBLEME IZ ARITMETIKE
+ []
+
+[216]
+Overfull \hbox (92.34254pt too wide) in paragraph at lines 356--358
+[]\OT1/cmr/m/n/10.95 Prvih ne-ko-li-ko Ka-ta-la-no-vih bro-je-va su da-ti sa ni
+-zom: $1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; \OT1/cm
+r/m/n/10.95 2\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \O
+T1/cmr/m/n/10.95 14\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 42\OML/cmm/m/it/10.
+95 ; \OT1/cmr/m/n/10.95 132\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 429\OML/cmm
+/m/it/10.95 ; \OT1/cmr/m/n/10.95 1430\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 4
+862\OML/cmm/m/it/10.95 ; []$ 
+ []
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/BA2C11B7574868208BF659D86BE52F1D87861BC1428CAACD28FF96D03864734
+9.pygtex [217 <./slike/catalan-net.png>])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/C4420D8CFF725D849CA1BFF5C594A51287861BC1428CAACD28FF96D03864734
+9.pygtex)
+Overfull \hbox (120.70576pt too wide) has occurred while \output is active
+\OT1/cmr/m/n/10.95 218    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
+PARADIGMI NA PROBLEME IZ ARITMETIKE
+ []
+
+[218]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/B46E3130D963CD55C20B988C5717474E87861BC1428CAACD28FF96D03864734
+9.pygtex [219])
+Underfull \hbox (badness 10000) in paragraph at lines 434--435
+
+ []
+
+
+Overfull \hbox (31.75418pt too wide) in paragraph at lines 443--445
+[]\OT1/cmr/m/n/10.95 Po^^Tcinjemo od ni-za pri-rod-nih bro-je-va $1\OML/cmm/m/i
+t/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 3\OML/cm
+m/m/it/10.95 ; \OT1/cmr/m/n/10.95 4\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 5\O
+ML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 6\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.9
+5 7\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 8$, $9\OML/cmm/m/it/10.95 ; \OT1/cm
+r/m/n/10.95 10\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 11$, $12\OML/cmm/m/it/10
+.95 ; \OT1/cmr/m/n/10.95 13\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 14\OML/cmm/
+m/it/10.95 ; \OT1/cmr/m/n/10.95 15\OML/cmm/m/it/10.95 ;$
+ []
+
+
+Overfull \hbox (120.70576pt too wide) has occurred while \output is active
+\OT1/cmr/m/n/10.95 220    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
+PARADIGMI NA PROBLEME IZ ARITMETIKE
+ []
+
+[220]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/7C6925BB28A555DC78A4800687E5D54C87861BC1428CAACD28FF96D03864734
+9.pygtex [221])
+
+! LaTeX Error: \begin{document} ended by \end{trivlist}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.520  \end{solution}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.520  \end{solution}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+
+! LaTeX Error: \begin{document} ended by \end{solution}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.520  \end{solution}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.520  \end{solution}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+
+Overfull \hbox (120.70576pt too wide) has occurred while \output is active
+\OT1/cmr/m/n/10.95 222    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
+PARADIGMI NA PROBLEME IZ ARITMETIKE
+ []
+
+[222]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/C2D67C23E4DA8B569116E15DCF1001E687861BC1428CAACD28FF96D03864734
+9.pygtex [223])
+
+! LaTeX Error: \begin{document} ended by \end{trivlist}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.600 \end{solution}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.600 \end{solution}
+                    
+Things are pretty mixed up, but I think the worst is over.
+
+
+! LaTeX Error: \begin{document} ended by \end{solution}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.600 \end{solution}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.600 \end{solution}
+                    
+Things are pretty mixed up, but I think the worst is over.
+
+
+Overfull \hbox (22.27637pt too wide) in paragraph at lines 612--613
+\OT1/cmr/m/n/10.95 ta^^Tcno 3 raz-li^^Tcita pro-sta fak-to-ra. Npr. $30\OML/cmm
+/m/it/10.95 ; \OT1/cmr/m/n/10.95 42\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 66\
+OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 70\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10
+.95 78\OML/cmm/m/it/10.95 ;$ $\OT1/cmr/m/n/10.95 102\OML/cmm/m/it/10.95 ; \OT1/
+cmr/m/n/10.95 105\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 110\OML/cmm/m/it/10.9
+5 ; \OT1/cmr/m/n/10.95 114\OML/cmm/m/it/10.95 ; []$
+ []
+
+
+Overfull \hbox (120.70576pt too wide) has occurred while \output is active
+\OT1/cmr/m/n/10.95 224    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
+PARADIGMI NA PROBLEME IZ ARITMETIKE
+ []
+
+[224]) [225]
+Overfull \hbox (120.70576pt too wide) has occurred while \output is active
+\OT1/cmr/m/n/10.95 226    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
+PARADIGMI NA PROBLEME IZ ARITMETIKE
+ []
+
+[226
+
+
+
+]
+
+FiXme Summary: Number of notes: 0,
+(FiXme)        Number of warnings: 0,
+(FiXme)        Number of errors: 0,
+(FiXme)        Number of fatal errors: 0,
+(FiXme)        Total: 0.
+
+[227
+
+] (./main.aux (./chapter-01-02/chapter02.aux)
+(./chapter-01-02/chapter01.aux) (./chapter-03-04/chapter03.aux)
+(./chapter-03-04/chapter04.aux))
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+runsystem(rm main.pyg)...executed.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 12371 strings out of 479648
+ 325574 string characters out of 5886115
+ 626284 words of memory out of 5000000
+ 29333 multiletter control sequences out of 15000+600000
+ 485509 words of font info for 90 fonts, out of 8000000 for 9000
+ 475 hyphenation exceptions out of 8191
+ 83i,12n,131p,1002b,852s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/marko/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600
+pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+t9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
+0.pfb>
+Output written on main.pdf (233 pages, 2384180 bytes).
+PDF statistics:
+ 938 PDF objects out of 1000 (max. 8388607)
+ 596 compressed objects within 6 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+

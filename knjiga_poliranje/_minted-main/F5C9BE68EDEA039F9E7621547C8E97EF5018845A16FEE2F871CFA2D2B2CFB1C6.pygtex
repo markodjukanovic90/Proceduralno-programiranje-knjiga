@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		\PYG{n}{dct} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+			\PYG{l+s+s2}{\PYGZdq{}ime\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Mirko\PYGZdq{}}\PYG{p}{,}
+			\PYG{l+s+s2}{\PYGZdq{}godine\PYGZdq{}}\PYG{p}{:} \PYG{l+m+mi}{30}\PYG{p}{,}
+			\PYG{l+s+s2}{\PYGZdq{}grad\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Banja Luka\PYGZdq{}}
+		\PYG{p}{\PYGZcb{}}
+		
+		\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{dct}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}ime\PYGZdq{}}\PYG{p}{])}      \PYG{c+c1}{\PYGZsh{} Mirko}
+\end{Verbatim}

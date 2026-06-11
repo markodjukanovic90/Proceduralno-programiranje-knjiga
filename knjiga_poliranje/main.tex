@@ -1,0 +1,109 @@
+\documentclass[b5paper, utf8, 11pt, colorlinks]{book} 
+   
+\usepackage{amsfonts}
+\usepackage[serbian]{babel}
+ 
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{minted}
+\usepackage{fixme}
+\usepackage{theorem}
+\usepackage{algorithm} 
+\usepackage{algpseudocode}
+\usepackage[table]{xcolor}
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{definition}{Definicija}[chapter]
+%\newtheorem{example}{Primjer}[chapter]{\begin{trivlist}
+%		\item[\hskip \labelsep {\bfseries #1}]\end{trivlist}}
+\newtheorem{example}{Primjer}[chapter]
+
+\newenvironment{proof}[1][Dokaz]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+%\newenvironment{theorem}[1][Teorema]{\begin{trivlist}
+%			\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+ 
+%\newenvironment{example}[1][Primjer]{\begin{trivlist}
+%		\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+	
+\newenvironment{solution}[1][\emph{Rješenje}.]{\begin{trivlist}
+			\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+		
+		
+		\makeatletter
+		\renewcommand{\ALG@name}{Algoritam}
+		\makeatother
+ 
+%prevodi		
+	\renewcommand{\chaptername}{Glava}
+	
+\begin{document}
+
+\author{prof. Marko Đukanović, docent}
+\title{Osnovne algoritamske paradigme kroz programski jezik Pajton}
+\date{Januar 2024}
+
+%\frontmatter
+ 
+\maketitle
+ 
+\tableofcontents
+ \clearpage
+ \setcounter{page}{1}
+%\mainmatter
+
+\chapter*{Predgovor}
+
+Ova skripta namijenjena je prvenstveno studentima prve godine Studijskog programa Matematika i informatika (smjer Informatika) na Prirodno-matematičkom fakultetu Univerziteta u Banjoj Luci, gdje se koristi u okviru predmeta Proceduralno programiranje.
+
+Sadržaj skripte organizovan je u četiri cjeline. U prvom dijelu predstavljeni su osnovni pojmovi iz oblasti algoritama i računanja, uključujući programe, algoritme, modele izračunavanja i osnovne koncepte složenosti algoritama. Pri tome se naglasak stavlja na intuitivno razumijevanje navedenih pojmova, bez ulaženja u detalje koji se sistematski obrađuju na naprednijim kursevima iz algoritmike. Drugi dio posvećen je osnovama programskog jezika Pajton. Obrađuju se osnovni i složeni tipovi podataka, rad sa ugrađenim modulima, kao i razvoj korisničkih modula i njihovo objavljivanje na zvaničnom repozitorijumu \texttt{PyPI}.  Treći dio uvodi najvažnije algoritamske paradigme, uključujući iscrpnu pretragu (\emph{brute force}), paradigmu podijeli pa vladaj, pohlepne algoritme i dinamičko programiranje. Posebna pažnja posvećena je njihovoj primjeni na rješavanje različitih klasa problema i razvoju algoritamskog načina razmišljanja.
+
+Četvrti dio bavi se problemima iz elementarne aritmetike i teorije brojeva. Prikazani problemi rješavaju se primjenom prethodno predstavljenih algoritamskih paradigmi i tehnika, pri čemu se poseban naglasak stavlja na proceduralni pristup modelovanju i implementaciji rješenja.
+
+Na kraju svake glave nalaze se zadaci za samostalni rad i provjeru usvojenog znanja. Skripta sadrži više od četrdeset zadataka za vježbanje, kao i oko trideset detaljno riješenih primjera. Za većinu njih data je kompletna implementacija u programskom jeziku Pajton, uz objašnjenje ključnih koraka u procesu dizajniranja i razvoja algoritama.
+
+Ovaj udžbenik može koristiti širokom krugu čitalaca, uključujući studente nižih godina studija iz oblasti informatike, matematike i tehničkih nauka, kao i učenike srednjih škola zainteresovane za algoritmiku i takmičarsko programiranje.
+
+Iako su svi algoritmi implementirani u programskom jeziku Pajton, njihovi koncepti i struktura mogu se jednostavno prenijeti na druge programske jezike, naročito na jezike nižeg nivoa kao što su C i C++. Izbor Pajtona nije motivisan težnjom ka maksimalnim performansama izvršavanja, već njegovom preglednošću, jednostavnošću i izražajnošću. Na taj način studentima se omogućava da se usredsrede na razumijevanje algoritama i principa njihovog dizajniranja, umjesto na tehničke detalje implementacije.
+
+Cilj ove skripte nije samo upoznavanje čitalaca sa osnovama programiranja i algoritmike, već i razvijanje sposobnosti analitičkog razmišljanja, modelovanja problema i izbora odgovarajućih algoritamskih tehnika za njihovo efikasno rješavanje.
+
+
+\include{chapter-01-02/chapter02}
+\include{chapter-01-02/chapter01}
+ 
+\include{chapter-03-04/chapter03}
+\include{chapter-03-04/chapter04}
+\backmatter
+% bibliography, glossary and index would go here.
+\begin{thebibliography}{9}
+	\bibitem{comen}
+	T.Cormen, C. Leiserson, R. Rives, Introduction to algorithms, MIT Press, Cambridge, 2001.
+	\bibitem{citekey}
+	Ognjanovic, Zoran, and Nenad Krdzavac. "Uvod u teorijsko racunarstvo." Fakultet organizacionih nauka, Beograd (2004).
+	\bibitem{ziv}
+	Živković, Dejan. Uvod u algoritme i strukture podataka. Univerzitet Singidunum, 2010.
+    \bibitem{zivkovic-algoritmi}
+    Miodrag Živković. Algoritmi. Matematički fakultet, Beograd, 2000
+    \bibitem{alg-design}
+    Steven S. Skiena. The Algorithm Design Manual, Springer
+    \bibitem{alg-design-2} Jeff Erickson. Algorithms, 2023
+    
+    \bibitem{unizg-algoritmi} Robert Manger, Miljenko Marušić. Strukture podataka i algoritmi (skripta).
+    Prirodoslovno Matematiči Fakultet, Sveučilište u Zagrebu
+    	\bibitem{geeks}
+    https://www.geeksforgeeks.org
+    \bibitem{link-zadaci}  {https://adriann.github.io/programming\_problems.html}
+    \bibitem{ram-model}
+    http://people.seas.harvard.edu/~cs125/fall14/lec6.pdf
+    \bibitem{citekey} Horowitz E., Sahni S., Anderson-Freed S., Fundamentals of Data Structures in C. W.H. Freeman \& Co., New York, 1992.
+\end{thebibliography}
+
+\end{document}

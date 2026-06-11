@@ -1,0 +1,26 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{def} \PYG{n+nf}{init}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{,} \PYG{n+nb}{sum}\PYG{p}{):}
+		\PYG{k}{global} \PYG{n}{DP}
+		\PYG{n}{DP} \PYG{o}{=} \PYG{p}{[[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{*} \PYG{p}{(}\PYG{n+nb}{sum} \PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{k}{for} \PYG{n}{\PYGZus{}} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{)} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{p}{]}
+	
+	
+	\PYG{k}{def} \PYG{n+nf}{sum\PYGZus{}array\PYGZus{}top\PYGZus{}down}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{,} \PYG{n+nb}{sum}\PYG{p}{,} \PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{,} \PYG{n}{DP} \PYG{o}{=} \PYG{p}{[} \PYG{p}{]):}
+	
+		\PYG{k}{if} \PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{!=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{:}
+			\PYG{k}{return} \PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]}
+	
+		\PYG{k}{if} \PYG{n}{j} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+			\PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{k+kc}{True}
+			\PYG{k}{return} \PYG{k+kc}{True}
+		\PYG{k}{if} \PYG{n}{i} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+			\PYG{n}{DP}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{==} \PYG{k+kc}{False}
+			\PYG{k}{return} \PYG{k+kc}{False}
+		\PYG{c+c1}{\PYGZsh{}recursion:}
+		\PYG{k}{if} \PYG{n}{j} \PYG{o}{\PYGZgt{}=} \PYG{n}{niz}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]:}
+			\PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{sum\PYGZus{}array\PYGZus{}top\PYGZus{}down}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{,} \PYG{n+nb}{sum}\PYG{p}{,} \PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{j}\PYG{p}{,} \PYG{n}{DP}\PYG{p}{)}
+	                \PYG{o+ow}{or} \PYG{n}{sum\PYGZus{}array\PYGZus{}top\PYGZus{}down}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{,} \PYG{n+nb}{sum}\PYG{p}{,} \PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{o}{\PYGZhy{}}\PYG{n}{niz}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{DP}\PYG{p}{)}
+			\PYG{k}{return} \PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]}
+		\PYG{k}{else}\PYG{p}{:}
+			\PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{sum\PYGZus{}array\PYGZus{}top\PYGZus{}down}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{,} \PYG{n+nb}{sum}\PYG{p}{,} \PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{j}\PYG{p}{,} \PYG{n}{DP}\PYG{p}{)}
+			\PYG{k}{return} \PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]}
+\end{Verbatim}
