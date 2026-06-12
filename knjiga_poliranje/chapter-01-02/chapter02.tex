@@ -171,7 +171,7 @@ Krenimo sa formalizacijom teorijskog modela koji se standardno koristi za analiz
 		
 		\item Registar $R[0]$ inicijalizuje se vrijednošću $w$, dok se registar $R[1]$ inicijalizuje vrijednošću $n$.
 	\end{enumerate}
-	```
+	
 	
 \end{itemize}
 
@@ -292,47 +292,32 @@ Definišimo sada pojam vremena izvršavanja programa na RAM modelu.
 \begin{definition}
 	Vrijeme izvršavanja programa $P$ za ulaz $x \in \mathbb{N}^*$ predstavlja broj koraka koje program izvrši prije dostizanja zaustavne konfiguracije (\texttt{HALT}).
 	
-	Formalno, to je najmanji broj $t$ za koji postoji niz konfiguracija
-	
-	$
+	Formalno, to je najmanji broj $t$ za koji postoji niz konfiguracija $
 	K_0 \Rightarrow_P K_1 \Rightarrow_P \cdots \Rightarrow_P K_t,
-	$
-	
-	pri čemu je $K_0$ početna konfiguracija programa za ulaz $x$, dok je $K_t$ zaustavna konfiguracija.
+	$ pri čemu je $K_0$ početna konfiguracija programa za ulaz $x$, dok je $K_t$ zaustavna konfiguracija.
 \end{definition}
 
 Razmotrimo sljedeći primjer.
 
 \begin{minted}{Python}
 	algoritam max(a, n)
-	maximum = a[0]
+	    maximum = a[0]
 	
-	for i in 1 to n-1 do
-	if a[i] > maximum then
-	maximum = a[i]
+	    for i in 1 to n-1 do
+	        if a[i] > maximum then
+	            maximum = a[i]
 	
-	return maximum
-	
+	    return maximum
 \end{minted}
 
-Pretpostavimo da je ulaz
-
-$
-a=[1,5,2,10,7], \qquad n=5.
-$
-
-U teorijskom RAM modelu svaka dodjela, poređenje i pristup elementu niza posmatraju se kao elementarne operacije. Brojanjem svih izvršenih instrukcija može se odrediti tačno vrijeme izvršavanja algoritma za konkretnu instancu ulaza.
+Pretpostavimo da je ulaz $a=[1,5,2,10,7], n=5.$ U teorijskom RAM modelu svaka dodjela, poređenje i pristup elementu niza posmatraju se kao elementarne operacije. Brojanjem svih izvršenih instrukcija može se odrediti tačno vrijeme izvršavanja algoritma za konkretnu instancu ulaza.
 
 Međutim, određivanje tačnog broja instrukcija za svaki mogući ulaz često je nepraktično, naročito kod složenijih algoritama. Zbog toga se uvodi pojam \textit{najgoreg vremena izvršavanja} (engl. \textit{worst-case running time}), koji predstavlja standardnu mjeru efikasnosti algoritama.
 
 \begin{definition}
-	Najgore vrijeme izvršavanja programa predstavlja funkciju
-	
-	$
+	Najgore vrijeme izvršavanja programa predstavlja funkciju $
 	T : \mathbb{N}\times\mathbb{N}\rightarrow\mathbb{N},
-	$
-	
-	gdje je $T(n,k)$ maksimalno vrijeme izvršavanja programa nad svim ulazima dužine $n$ čije se vrijednosti nalaze u skupu ${0,\ldots,k}$.
+	$ gdje je $T(n,k)$ maksimalno vrijeme izvršavanja programa nad svim ulazima dužine $n$ čije se vrijednosti nalaze u skupu ${0,\ldots,k}$.
 \end{definition}
 
 \begin{example}
@@ -352,20 +337,12 @@ Međutim, određivanje tačnog broja instrukcija za svaki mogući ulaz često je
 
 Najgori slučaj nastupa kada se tijelo \texttt{if} naredbe izvršava pri svakoj iteraciji unutrašnje petlje. Na primjer, to se može dogoditi kada su elementi ulaznog niza raspoređeni u obrnutom poretku u odnosu na željeni.
 
-Za svaku vrijednost $i$, unutrašnja petlja izvršava se tačno $i$ puta. Ukupan broj izvršavanja njenog tijela jednak je
-
-$
+Za svaku vrijednost $i$, unutrašnja petlja izvršava se tačno $i$ puta. Ukupan broj izvršavanja njenog tijela jednak je$$
 \sum_{i=1}^{n-1}\sum_{j=0}^{i-1}1 = \sum_{i=1}^{n-1}i
 \frac{n(n-1)}{2}.
-$
+$$
 
-Ako svaka iteracija zahtijeva konstantan broj elementarnih operacija, ukupan broj izvršenih instrukcija proporcionalan je vrijednosti
-
-$
-\frac{n(n-1)}{2},
-$
-
-što pokazuje da vrijeme izvršavanja raste kvadratno sa veličinom ulaza.
+Ako svaka iteracija zahtijeva konstantan broj elementarnih operacija, ukupan broj izvršenih instrukcija proporcionalan je vrijednosti  $\frac{n(n-1)}{2}, $ što pokazuje da vrijeme izvršavanja raste kvadratno sa veličinom ulaza.
 
 Najgore vrijeme izvršavanja koristi se zato što predstavlja gornju granicu vremena potrebnog za obradu bilo koje instance određene veličine. Takva analiza ne zavisi od konkretne raspodjele ulaznih podataka i omogućava objektivno poređenje različitih algoritama.
 
@@ -401,34 +378,18 @@ Da bismo formalizovali ovakva poređenja, uvodimo dvije osnovne konvencije:
 	\item Posmatra se samo dominantni član funkcije, odnosno član koji najbrže raste kada $n$ teži beskonačnosti.
 \end{enumerate}
 
-Prema tome,
-
-$
-T_1(n) \sim n^{3/2},
-$
-
-dok je
-
-$
-T_2(n) \sim n\log^3 n.
-$
+Prema tome, $T_1(n) \sim n^{3/2}, $ dok je $
+T_2(n) \sim n\log^3 n. $
 
 U nastavku pretpostavljamo da posmatrane funkcije imaju nenegativne vrijednosti za dovoljno velike vrijednosti argumenta.
 
 \begin{definition}
 	Neka su date funkcije $f$ i $g$.
 	
-	Kažemo da je
-	
-	$
-	f(n)=O(g(n))
-	$
-	
-	ako postoje konstante $c>0$ i $N>0$ takve da za svako $n\geq N$ važi
-	
-	$
-	f(n)\leq c,g(n).
-	$	
+	Kažemo da je	$
+	f(n)=O(g(n)) $ ako postoje konstante $c>0$ i $N>0$ takve da za svako $n\geq N$ važi $
+	f(n)\leq c,g(n).$ 
+		
 	U tom slučaju kažemo da je $g$ asimptotska gornja granica funkcije $f$.
 \end{definition}
 
@@ -440,45 +401,31 @@ U nastavku pretpostavljamo da posmatrane funkcije imaju nenegativne vrijednosti 
 \end{figure}
 
 \begin{example}
-	Vrijedi
-	
-	$
+	Vrijedi $
 	T_1(n)=O(n^{3/2}),
 	$ ali i $
-	T_1(n)=O(n^2).
-	$	
-	Takođe,	
-	$
-	T_2(n)=O(n\log^3 n).
-	$\
+	T_1(n)=O(n^2). $	
+	Takođe,	 $ T_2(n)=O(n\log^3 n). $
 \end{example}
 
 Dominantni član funkcije određuje njeno asimptotsko ponašanje. Kada je $n$ dovoljno veliko, doprinos ostalih članova postaje zanemarljiv u odnosu na dominantni član. Zbog toga se složenost algoritma najčešće izražava upravo pomoću dominantnog člana funkcije vremena izvršavanja.
 
 Iako je $O$--notacija izuzetno korisna, ona ne daje uvijek dovoljno preciznu informaciju. Na primjer,
 
-$
-n^2+n=O(n^2),
-$ ali istovremeno važi i $
-n^2+n=O(n^3).
-$
+$n^2+n=O(n^2),$ ali istovremeno važi i $n^2+n=O(n^3).$
 
 Oba iskaza su matematički tačna, ali prvi mnogo preciznije opisuje stvarno ponašanje funkcije. Zbog toga uvodimo pojam $\Theta$--notacije.
 
 \begin{definition}
 	Neka su date funkcije $f$ i $g$.
 	
-	Kažemo da je
-	
-	$
-	f(n)=\Theta(g(n))
-	$
+	Kažemo da je $f(n)=\Theta(g(n))$
 	
 	ako postoje konstante $c_1,c_2>0$ i $N>0$ takve da za svako $n\geq N$ važi
 	
-	$
+	$$
 	c_1g(n)\leq f(n)\leq c_2g(n).
-	$
+	$$
 	
 	U tom slučaju kažemo da funkcije $f$ i $g$ imaju isto asimptotsko ponašanje.
 \end{definition}
@@ -491,52 +438,34 @@ Oba iskaza su matematički tačna, ali prvi mnogo preciznije opisuje stvarno pon
 \end{figure}
 
 \begin{example}
-	Vrijedi 	$
-	T_1(n)=\Theta(n^{3/2}),
-	$ 	dok je $
-	T_2(n)=\Theta(n\log^3 n).
-	$
+	Vrijedi 	$T_1(n)=\Theta(n^{3/2}),$ 	dok je $T_2(n)=\Theta(n\log^3 n).$
 \end{example}
 
 Pored $O$ i $\Theta$ notacije, često se koriste i $\Omega$ i $o$ notacije.
 
 \begin{definition}
 	Neka su date funkcije $f$ i $g$. 	Kažemo da je 	$
-	f(n)=\Omega(g(n))
-	$ ako postoje konstante $c>0$ i $N>0$ takve da za svako $n\geq N$ važi $
-	f(n)\geq c,g(n).
-	$
-	
-	Funkcija $g$ tada predstavlja asimptotsku donju granicu funkcije $f$.
+	f(n)=\Omega(g(n))$   ako postoje konstante $c>0$ i $N>0$ takve da za svako $n\geq N$ važi $
+	f(n)\geq c \cdot g(n).
+	$	Funkcija $g$ tada predstavlja asimptotsku donju granicu funkcije $f$.
 \end{definition}
 
 \begin{example}
-	Vrijedi 	$
-	n^3=\Omega(n^2+n),
-	$ kao i $
-	n\log n=\Omega(n).
-	$
+	Vrijedi 	$n^3=\Omega(n^2+n),$ kao i $
+	n\log n=\Omega(n).$
 \end{example}
 
 \begin{definition}
 	Neka su date funkcije $f$ i $g$.
 	
-	Kažemo da je
-	
-	$
+	Kažemo da je $
 	f(n)=o(g(n))
-	$ ako za svako $c>0$ postoji broj $N>0$ takav da za svako $n\geq N$ važi $
-	0\leq f(n)<cg(n).
-	$ Drugim riječima, funkcija $f$ raste strogo sporije od funkcije $g$.
+	$ ako za svako $c>0$ postoji broj $N>0$ takav da za svako $n\geq N$ važi $0\leq f(n)<c \cdot g(n).$ Drugim riječima, funkcija $f$ raste strogo sporije od funkcije $g$.
 \end{definition}
 
-Neformalno posmatrano, uslov $
-f(n)=o(g(n))
-$ znači da odnos
-
-$
-\frac{f(n)}{g(n)}
-$ teži nuli kada $n$ teži beskonačnosti.
+Neformalno posmatrano, uslov $f(n)=o(g(n))
+$ znači da odnos $
+\frac{f(n)}{g(n)} $ teži nuli kada $n$ teži beskonačnosti.
 
 \begin{example}
 	Vrijedi $
@@ -561,7 +490,7 @@ Sljedeća teorema navodi nekoliko korisnih pravila koja se često koriste pri ra
 	\begin{itemize}
 		\item $f = O(c \cdot f)$ za svako $c > 0$ \hfill (konstantni faktori su irelevantni);
 		
-		```
+		
 		\item Ako je $f = O(g+h)$ i $h = O(g)$, tada je $f = O(g)$ \hfill (pravilo dominantnog člana);
 		
 		\item $O(f+g)=O(f)+O(g)$ \hfill (pravilo zbira);
@@ -569,7 +498,7 @@ Sljedeća teorema navodi nekoliko korisnih pravila koja se često koriste pri ra
 		\item $O(f\cdot g)=O(f)\cdot O(g)$ \hfill (pravilo proizvoda);
 		
 		\item Ako je $f=O(g)$ i $g=O(h)$, tada je i $f=O(h)$ \hfill (pravilo tranzitivnosti).
-		```
+		
 		
 	\end{itemize}
 \end{theorem}
@@ -659,8 +588,7 @@ Važno je naglasiti da asimptotska efikasnost opisuje ponašanje algoritama za v
 
 U narednom primjeru razmotrićemo jedan klasičan problem, prikazati dva različita algoritamska pristupa njegovom rješavanju i analizirati njihovu vremensku složenost.
 
-\begin{example}
-	\textit{Problem podniza maksimalne sume.}
+\begin{example}(\textit{Problem podniza maksimalne sume})
 	
 	Dat je niz brojeva. Potrebno je odrediti neprekidni podniz čija je suma elemenata najveća moguća.
 \end{example}
@@ -685,9 +613,7 @@ U narednom primjeru razmotrićemo jedan klasičan problem, prikazati dva različ
 	\binom{n}{2}+n=\frac{n(n+1)}{2},
 	$ što pripada klasi $O(n^2)$. Kako se za svaki od tih parova funkcija $S(i,j)$ računa u vremenu $O(n)$, ukupna složenost algoritma iznosi $
 	O(n)\cdot O(n^2)=O(n^3).
-	$
-	
-	Dakle, dobijamo algoritam kubne složenosti.
+	$	Dakle, dobijamo algoritam kubne složenosti.
 	
 	Pokušajmo sada konstruisati efikasniji pristup. Primijetimo da između vrijednosti $S(i,j)$ i $S(i,j+1)$ postoji jednostavna rekurzivna veza	$
 	S(i,j+1)=S(i,j)+a[j+1].
@@ -826,7 +752,8 @@ Primijetimo da ovakav zapis ne predstavlja program u konkretnom programskom jezi
 		
 		Prolazi kroz elemente niza jedan po jedan.
 		
-		Ako je trenutni element veći od najvećeg do sada pronađenog,
+		Ako je trenutni element veći od najvećeg do sada 
+	        pronađenog,
 		    ažuriraj vrijednost najvećeg elementa.
 		Kraj prolaska kroz niz.
 		
@@ -991,11 +918,9 @@ Jedan od najstarijih i najpoznatijih algoritama u matematici jeste \textit{Eukli
 
 Osnovna ideja algoritma zasniva se na sljedećem svojstvu:
 
-$
-NZD(a,b)=NZD(b,a\bmod b).
-$
+$$\text{NZD}(a,b)=\text{NZD}(b,a\bmod b).$$
 
-Drugim riječima, najveći zajednički djelilac brojeva $a$ i $b$ jednak je najvećem zajedničkom djeliocu brojeva $b$ i ostatka pri dijeljenju broja $a$ brojem $b$. Ovo svojstvo omogućava da se problem postepeno svodi na manje brojeve, sve dok jedan od njih ne postane jednak nuli.
+Drugim riječima, najveći zajednički djelilac brojeva $a$ i $b$ jednak je najvećem zajedničkom djeliocu brojeva $b$ i ostatka pri dijeljenju broja $a$ brojem $b$. Ovo svojstvo omogućava da se problem postepeno svodi na manje ulaze, sve dok jedan od tih ulaza ne dobije vrijednost nula.
 
 \begin{algorithm}[H]
 	\begin{algorithmic}[1]
@@ -1028,26 +953,18 @@ Drugim riječima, najveći zajednički djelilac brojeva $a$ i $b$ jednak je najv
 	(16,8)
 	\rightarrow
 	(8,0).
-	$
-	
-	Pošto je u posljednjem koraku drugi broj jednak nuli, algoritam se zaustavlja i vraća vrijednost prvog broja. Dakle, $
-	NZD(400,24)=8.
-	$
+	$	Pošto je u posljednjem koraku drugi broj jednak nuli, algoritam se zaustavlja i vraća vrijednost prvog broja. Dakle, $\text{NZD}(400,24)=8.$
 	
 \end{example}
 
 Za razliku od naivnog algoritma iz prethodne sekcije, koji u najgorem slučaju ispituje sve brojeve od $\min(a,b)$ do $1$, Euklidov algoritam veoma brzo smanjuje vrijednosti brojeva nad kojima radi. Zbog toga se u praksi koristi gotovo isključivo ovaj pristup.
 
-Može se pokazati da broj iteracija Euklidovog algoritma raste proporcionalno logaritmu manjeg od ulaznih brojeva. Preciznije, broj iteracija pripada klasi $
-O(\log \min(a,b)).
-$
+Može se pokazati da broj iteracija Euklidovog algoritma raste proporcionalno logaritmu manjeg od ulaznih brojeva. Preciznije, broj iteracija pripada klasi $O(\log \min(a,b)).$
 
 Pri analizi algoritama često se veličina ulaza ne mjeri samim brojevima $a$ i $b$, već brojem bitova potrebnih za njihov zapis. Ako sa $n$ označimo ukupan broj bitova potrebnih za predstavljanje ulaznih brojeva, tada približno važi $
 n \approx \log_2(a)+\log_2(b).
-$ Prema tome, broj iteracija algoritma raste linearno u odnosu na veličinu ulaza izraženu u bitovima, odnosno pripada klasi $
-O(n).
-$ Pored male vremenske složenosti, Euklidov algoritam koristi svega nekoliko pomoćnih promjenljivih ($a$, $b$ i $r$), pa je njegova prostorna složenost jednaka $
-O(1).
+$ Prema tome, broj iteracija algoritma raste linearno u odnosu na veličinu ulaza izraženu u bitovima, odnosno pripada klasi $O(n).
+$ Pored male vremenske složenosti, Euklidov algoritam koristi svega nekoliko pomoćnih promjenljivih ($a$, $b$ i $r$), pa je njegova prostorna složenost jednaka $O(1).
 $
 
 Zahvaljujući svojoj jednostavnosti i efikasnosti, Euklidov algoritam predstavlja jedan od najvažnijih algoritama u teoriji brojeva i računarstvu. Njegove modifikacije koriste se u brojnim oblastima, uključujući kriptografiju, računarsku algebru i teoriju algoritama.
@@ -1056,8 +973,7 @@ Zahvaljujući svojoj jednostavnosti i efikasnosti, Euklidov algoritam predstavlj
 Valjanost Euklidovog algoritma direktno slijedi iz svojstva 
 
 $
-NZD(a,b)=NZD(b,a\bmod b),
-$ koje se primjenjuje u svakoj iteraciji algoritma. Budući da se vrijednost drugog argumenta strogo smanjuje, algoritam se nakon konačnog broja koraka zaustavlja, a posljednja nenulta vrijednost predstavlja najveći zajednički djelilac ulaznih brojeva.
+\text{NZD}(a,b)=\text{NZD}(b,a\bmod b),$ koje se primjenjuje u svakoj iteraciji algoritma. Budući da se vrijednost drugog argumenta strogo smanjuje, algoritam se nakon konačnog broja koraka zaustavlja, a posljednja nenulta vrijednost predstavlja najveći zajednički djelilac ulaznih brojeva.
 
 
 \section{Zadaci}

@@ -2,12 +2,12 @@
 
 Pajton (\textit{Python}) je interpretirani, objektno-orijentisani programski jezik visokog nivoa opšte namjene. Razvio ga je holandski programer Guido van Rossum, a prva javna verzija jezika objavljena je u februaru 1991. godine. Naziv jezika potiče od britanske humorističke grupe \textit{Monty Python}, čiji je rad inspirisao autora tokom razvoja jezika.
 
-Od svog nastanka Pajton je prošao kroz više razvojnih faza i danas predstavlja jedan od najrasprostranjenijih programskih jezika u akademskom i industrijskom okruženju. Njegova popularnost rezultat je prije svega jednostavne sintakse, velike čitljivosti koda i bogatog ekosistema biblioteka koje omogućavaju primjenu jezika u različitim oblastima. Pregled popularnosti programskih jezika prikazan je na Slici~\ref{fig: popular_program_lang}.
+Od svog nastanka Pajton je prošao kroz više razvojnih faza i danas predstavlja jedan od najrasprostranjenijih programskih jezika u akademskom i industrijskom okruženju. Njegova popularnost rezultat je prije svega jednostavne sintakse, velike čitljivosti koda i bogatog ekosistema biblioteka koje omogućavaju primjenu jezika u različitim oblastima. Pregled popularnosti programskih jezika prikazan je na Slici~\ref{fig: popular_program_lang}\footnote{Preuzeto sa {https://www.tiobe.com/tiobe-index/}}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=400pt,height=190pt]{slike/most_popular_language.png}
-	\caption{Statistički pregled najpopularnijih programskih jezika (2021--2022).}
+	\caption{Statistički pregled najpopularnijih programskih jezika (2021--2022)}
 	\label{fig: popular_program_lang}
 \end{figure}
 
@@ -327,8 +327,8 @@ Svaki izraz poređenja vraća logičku vrijednost \texttt{True} ili \texttt{Fals
 	\caption{Osnovni operatori poređenja u Pajtonu.}
 	\label{fig: operatori_poredjenja}
 	
-	```
 	\centering
+	\scalebox{0.85}{
 	\begin{tabular}{lll}
 		\textbf{Matematička notacija} &
 		\textbf{Pajtonova notacija} &
@@ -351,8 +351,7 @@ Svaki izraz poređenja vraća logičku vrijednost \texttt{True} ili \texttt{Fals
 		
 		$a \neq b$ & \texttt{a != b} &
 		$a$ nije jednako $b$ \\ \hline
-	\end{tabular}
-	```
+	\end{tabular}}
 	
 \end{table}
 
@@ -362,9 +361,9 @@ Najjednostavniji oblik naredbe grananja dat je sljedećom sintaksom:
 
 \begin{minted}{python}
 	if uslov:
-	naredba_1
+	    naredba_1
 	else:
-	naredba_2
+	    naredba_2
 \end{minted}
 
 Tok izvršavanja je jednostavan:
@@ -382,16 +381,13 @@ U situacijama kada postoji više alternativa koristi se naredba \texttt{elif}:
 
 \begin{minted}{python}
 	if uslov_1:
-	naredba_1
-	
+	    naredba_1
 	elif uslov_2:
-	naredba_2
-	
+	    naredba_2
 	elif uslov_3:
-	naredba_3
-	
+	    naredba_3
 	else:
-	naredba_n
+	    naredba_n
 \end{minted}
 
 Uslovi se provjeravaju redom, od vrha prema dnu. Čim se pronađe prvi tačan uslov, izvršava se odgovarajući blok naredbi, nakon čega se ostatak strukture preskače.
@@ -417,7 +413,7 @@ Njena osnovna sintaksa je:
 
 \begin{minted}{python}
 	for item in iterable:
-	naredba
+	    naredba
 \end{minted}
 
 Promjenljivoj \texttt{item} redom se dodjeljuju elementi kolekcije \texttt{iterable}, a za svaki element izvršava se odgovarajući blok koda.
@@ -426,7 +422,7 @@ Na primjer:
 
 \begin{minted}{python}
 	for broj in [1, 2, 3, 4]:
-	print(broj)
+	    print(broj)
 \end{minted}
 
 Izvršavanjem ovog programa na ekran će biti ispisani brojevi 1, 2, 3 i 4.
@@ -435,7 +431,7 @@ Vrlo često se \texttt{for} petlja koristi zajedno sa funkcijom \texttt{range()}
 
 \begin{minted}{python}
 	for i in range(5):
-	print(i)
+	    print(i)
 \end{minted}
 
 Ovaj kod ispisuje brojeve od 0 do 4.
@@ -448,7 +444,7 @@ Njena osnovna sintaksa je:
 
 \begin{minted}{python}
 	while uslov:
-	naredba
+	    naredba
 \end{minted}
 
 Prije svake iteracije provjerava se vrijednost izraza \texttt{uslov}. Ako je njegova vrijednost \texttt{True}, izvršava se tijelo petlje. Kada uslov postane netačan (\texttt{False}), izvršavanje petlje se završava, a program nastavlja sa prvom naredbom nakon petlje.
@@ -459,8 +455,8 @@ Na primjer, prvih deset parnih prirodnih brojeva može se ispisati na sljedeći 
 	i = 1
 	
 	while i <= 10:
-	print(2 * i)
-	i += 1
+	    print(2 * i)
+	    i += 1
 \end{minted}
 
 Naredba
@@ -521,20 +517,18 @@ Za višelinijske stringove koriste se trostruki navodnici:
 
 \begin{itemize}
 	
-	```
 	\item \textbf{Konkatenacija}
 	
 	Stringovi se mogu spajati pomoću operatora \texttt{+}:
-	```
 	
 	\begin{minted}{python}
 		ime = "Marko"
-		prezime = "Djukanovic"
+		prezime = "Markovic"
 		
 		print(ime + " " + prezime)
 	\end{minted}
 	
-	```
+
 	\item \textbf{Pristup pojedinačnim znakovima}
 	
 	Znakovima stringa pristupa se pomoću operatora indeksiranja \texttt{[]}.
@@ -547,13 +541,11 @@ Za višelinijske stringove koriste se trostruki navodnici:
 		print(tekst[-1])  # n
 	\end{minted}
 	
-	```
 	Pozitivni indeksi broje se od početka stringa, dok negativni indeksi broje od kraja stringa.
 	
 	\item \textbf{Rezanje stringa (slicing)}
 	
 	Dio stringa može se izdvojiti pomoću operatora \texttt{[:]}:
-	```
 	
 	\begin{minted}{python}
 		tekst = "world"
@@ -563,11 +555,9 @@ Za višelinijske stringove koriste se trostruki navodnici:
 		print(tekst[2:])   # rld
 	\end{minted}
 	
-	```
 	\item \textbf{Ponavljanje stringa}
 	
 	Operator \texttt{*} omogućava višestruko ponavljanje stringa:
-	```
 	
 	\begin{minted}{python}
 		print("abc" * 3)
@@ -578,22 +568,17 @@ Za višelinijske stringove koriste se trostruki navodnici:
 	\begin{minted}{text}
 		abcabcabc
 	\end{minted}
-	
-	```
 	\item \textbf{Dužina stringa}
 	
 	Broj znakova u stringu dobija se funkcijom \texttt{len()}:
-	```
 	
 	\begin{minted}{python}
 		print(len("Python"))
 	\end{minted}
 	
-	```
 	\item \textbf{Brisanje reference}
 	
 	Ključna riječ \texttt{del} uklanja referencu na objekat:
-	```
 	
 	\begin{minted}{python}
 		tekst = "abc"
@@ -616,7 +601,7 @@ Klasa \texttt{str} sadrži veliki broj ugrađenih metoda. Neke od najčešće ko
 
 Njihovu detaljniju upotrebu prikazaćemo kroz naredne primjere.
 
-\textit{Memorijska organizacija}. Stringovi se u Pajtonu predstavljaju kao uređene sekvence Unicode znakova smještene u neprekidnom dijelu memorije. Svakom znaku pridružen je odgovarajući Unicode k^od, što omogućava rad sa tekstom na velikom broju svjetskih jezika.
+\textit{Memorijska organizacija}. Stringovi se u Pajtonu predstavljaju kao uređene sekvence Unicode znakova smještene u neprekidnom dijelu memorije. Svakom znaku pridružen je odgovarajući Unicode k\^od, što omogućava rad sa tekstom na velikom broju svjetskih jezika.
 
 Pojednostavljen prikaz memorijske organizacije stringa
 
@@ -653,10 +638,8 @@ Prilikom ispisa rezultata često je potrebno kombinovati tekst i vrijednosti pro
 Jedan od tradicionalnih pristupa koristi metodu \texttt{format()}:
 
 \begin{minted}{python}
-	print(
-	"Moje ime je {0}, a prezime {1}".
-	format("Marko", "Marković")
-	)
+	print("Moje ime je {0}, a prezime {1}".
+	       format("Marko", "Marković"))
 \end{minted}
 
 Vrijednost označena sa \texttt{{0}} zamjenjuje se prvim argumentom funkcije \texttt{format()}, dok se \texttt{{1}} zamjenjuje drugim argumentom.
@@ -871,15 +854,15 @@ Prilikom kreiranja objekta tipa \texttt{array} potrebno je navesti oznaku tipa p
 	\centering
 	\begin{tabular}{llll}
 		\hline
-		\textbf{Typecode} & \textbf{Tip podatka} & \textbf{Pajtonov tip} & \textbf{Veličina (B)} \
+		\textbf{Typecode} & \textbf{Tip podatka} & \textbf{Pajtonov tip} & \textbf{Veličina (B)} \\
 		\hline
-		\texttt{'b'} / \texttt{'B'} & signed / unsigned char & int & 1 \
-		\texttt{'h'} / \texttt{'H'} & signed / unsigned short & int & 2 \
-		\texttt{'i'} / \texttt{'I'} & signed / unsigned int & int & 4 \
-		\texttt{'l'} / \texttt{'L'} & signed / unsigned long & int & 4 \
-		\texttt{'q'} / \texttt{'Q'} & signed / unsigned long long & int & 8 \
-		\texttt{'f'} & float & float & 4 \
-		\texttt{'d'} & double & float & 8 \
+		\texttt{'b'} / \texttt{'B'} & signed / unsigned char & int & 1 \\
+		\texttt{'h'} / \texttt{'H'} & signed / unsigned short & int & 2 \\
+		\texttt{'i'} / \texttt{'I'} & signed / unsigned int & int & 4 \\
+		\texttt{'l'} / \texttt{'L'} & signed / unsigned long & int & 4 \\
+		\texttt{'q'} / \texttt{'Q'} & signed / unsigned long long & int & 8 \\
+		\texttt{'f'} & float & float & 4 \\
+		\texttt{'d'} & double & float & 8 \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -1177,7 +1160,7 @@ ne kreira prazan skup već prazan rječnik.
 		
 	\end{minted}
 	
-	\item \texttt{intersection()} ili operator \texttt{&} -- vraća presjek dva skupa;
+	\item \texttt{intersection()} ili operator \texttt{\&} -- vraća presjek dva skupa;
 	
 	\begin{minted}{python}
 		print(A & B)
@@ -1322,11 +1305,8 @@ Bez zareza izraz \texttt{(5)} predstavlja običan cjelobrojni objekat.
 	\begin{minted}{python}
 		t1 = ("a", "bb", 2)
 		t2 = ("ee", 2, 3.4)
-		
 		t3 = t1 + t2
-		
 		print(t3)
-		
 		# ("a", "bb", 2, "ee", 2, 3.4)
 		
 	\end{minted}
@@ -1417,20 +1397,20 @@ Operator \texttt{*} sakuplja dodatne pozicione argumente u torku:
 
 \begin{minted}{python}
 	def ispisi_brojeve(*brojevi):
-	for broj in brojevi:
-	print(broj)
+	    for broj in brojevi:
+	        print(broj)
 \end{minted}
 
 Operator \texttt{**} sakuplja imenovane argumente u rječnik:
 
 \begin{minted}{python}
 	def ispisi_podatke(**podaci):
-	for kljuc, vrijednost in podaci.items():
-	print(kljuc, ":", vrijednost)
-	
+	    for kljuc, vrijednost in podaci.items():
+	        print(kljuc, ":", vrijednost)
+	#main
 	ispisi_podatke(
-	ime="Mirko",
-	prezime="Marković"
+	    ime="Mirko",
+	    prezime="Marković"
 	)
 \end{minted}
 
@@ -1440,15 +1420,12 @@ Funkcija može vratiti više vrijednosti odjednom. U pozadini se takve vrijednos
 
 \begin{minted}{python}
 	def podjela(x, y):
-	kolicnik = x // y
-	ostatak = x % y
+	    kolicnik = x // y
+	    ostatak = x % y
 	
-	```
-	return kolicnik, ostatak
-	```
-	
+	    return kolicnik, ostatak
+	#main
 	k, o = podjela(10, 3)
-	
 	print(k, o)  # 3 1
 \end{minted}
 
@@ -1460,15 +1437,13 @@ Promjenljivi objekti (liste, rječnici i skupovi) mogu biti izmijenjeni unutar f
 
 \begin{minted}{python}
 	def dodaj_element(lista, element):
-	lista.append(element)
 	
+	    lista.append(element)
+	
+	#main
 	brojevi = [1, 2, 3]
-	
 	dodaj_element(brojevi, 5)
-	
-	print(brojevi)
-	
-	# [1, 2, 3, 5]
+	print(brojevi)  # [1, 2, 3, 5]
 	
 \end{minted}
 
@@ -1486,11 +1461,11 @@ Cijeli brojevi, decimalni brojevi, stringovi i torke predstavljaju nepromjenljiv
 
 \begin{minted}{python}
 	def inkrementiraj(x):
-	x += 1
-	print("Unutar funkcije:", x)
+	    x += 1
+	    print("Unutar funkcije:", x)
 	
-	y = 5
-	
+	#main
+	y = 5	
 	inkrementiraj(y)
 	print(y)
 \end{minted}
@@ -1510,13 +1485,12 @@ Ključna riječ \texttt{global} omogućava izmjenu globalne varijable unutar fun
 
 \begin{minted}{python}
 	def my_func():
-	global x
-	x = 10
+	    global x
+	    x = 10
 	
+	#main
 	x = 20
-	
 	my_func()
-	
 	print(x)  # 10
 \end{minted}
 
@@ -1528,13 +1502,13 @@ Pošto su funkcije objekti, mogu se prosljeđivati drugim funkcijama kao argumen
 
 \begin{minted}{python}
 	def saberi(a, b):
-	return a + b
+	    return a + b
 	
 	def primijeni(funkcija, x, y):
-	return funkcija(x, y)
+	    return funkcija(x, y)
 	
+	#main
 	rezultat = primijeni(saberi, 2, 3)
-	
 	print(rezultat)  # 5
 \end{minted}
 
@@ -1555,7 +1529,6 @@ Sljedeći primjer definiše lambda funkciju za sabiranje dva broja:
 
 \begin{minted}{python}
 	suma = lambda x, y: x + y
-	
 	print(suma(4, 3))  # Output: 7
 \end{minted}
 
@@ -1594,7 +1567,7 @@ Pri tome:
 \begin{itemize}
 	\item \textit{izraz} definiše vrijednost koja se upisuje u novu listu;
 	\item \textit{element} predstavlja trenutni element iterabilnog objekta;
-	\item \textit{iterabilni_objekat} može biti lista, torka, skup, string, generator ili drugi iterabilni objekat.
+	\item \textit{iterabilni\_objekat} može biti lista, torka, skup, string, generator ili drugi iterabilni objekat.
 \end{itemize}
 
 Na primjer, listu prvih deset parnih brojeva možemo kreirati na sljedeći način:
@@ -1638,9 +1611,7 @@ Funkcija \texttt{map()} prima funkciju i iterabilni objekat te primjenjuje zadat
 \begin{minted}{python}
 	brojevi = [1, 2, 3, 4, 5]
 	dupli = map(lambda x: 2 * x, brojevi)
-	print(list(dupli))
-	
-	# [2, 4, 6, 8, 10]
+	print(list(dupli)) 	# [2, 4, 6, 8, 10]
 	
 \end{minted}
 
@@ -1654,10 +1625,7 @@ Funkcija \texttt{filter()} služi za izdvajanje elemenata koji zadovoljavaju odr
 	brojevi = [1, 2, 3, 4, 5, 6]
 	
 	parni = filter(lambda x: x % 2 == 0, brojevi)
-	
-	print(list(parni))
-	
-	# [2, 4, 6]
+	print(list(parni))  # [2, 4, 6]
 	
 \end{minted}
 
@@ -1668,7 +1636,6 @@ Funkcija koja se prosljeđuje kao prvi argument mora vraćati logičku vrijednos
 Funkcija \texttt{reduce()} sukcesivno kombinuje elemente kolekcije primjenom zadate funkcije.
 
 Njena opšta sintaksa je:
-
 \begin{minted}{python}
 	reduce(funkcija, iterable[, pocetna_vrijednost])
 \end{minted}
@@ -1681,24 +1648,20 @@ Funkcija \texttt{reduce()} nije ugrađena u osnovni skup funkcija jezika Pajton,
 	brojevi = [1, 2, 3, 4, 5]
 	
 	proizvod = reduce(
-	lambda x, y: x * y,
-	brojevi,
-	1
-	)
+	    lambda x, y: x * y,
+	    brojevi,
+	    1)
 	
-	print(proizvod)
-	
-	# 120
-	
+	print(proizvod) # 120
 \end{minted}
 
 U ovom primjeru izvršavaju se sljedeće operacije:
 
 \begin{align*}
-	1 \cdot 1 &= 1,\
-	1 \cdot 2 &= 2,\
-	2 \cdot 3 &= 6,\
-	6 \cdot 4 &= 24,\
+	1 \cdot 1 &= 1,\\
+	1 \cdot 2 &= 2,\\
+	2 \cdot 3 &= 6,\\
+	6 \cdot 4 &= 24,\\
 	24 \cdot 5 &= 120.
 \end{align*}
 
@@ -1706,9 +1669,7 @@ Dakle, funkcija \texttt{reduce()} „redukuje“ čitavu kolekciju na jednu kona
 
 \subsection*{Poređenje sa komprehenzijom liste}
 
-U savremenom Pajtonu mnoge operacije realizovane funkcijama \texttt{map()} i \texttt{filter()} često se zapisuju pomoću komprehenzije liste, jer je takav kod pregledniji.
-
-Na primjer:
+U savremenom Pajtonu mnoge operacije realizovane funkcijama \texttt{map()} i \texttt{filter()} često se zapisuju pomoću komprehenzije liste, jer je takav kod pregledniji. Na primjer:
 
 \begin{minted}{python}
 	parni = [x for x in brojevi if x % 2 == 0]
@@ -1737,18 +1698,14 @@ Njena opšta sintaksa je:
 	zip(iterable1, iterable2, ...)
 \end{minted}
 
-gdje su \textit{iterable1}, \textit{iterable2}, \ldots proizvoljni iterabilni objekti.
-
-Na primjer:
+gdje su \textit{iterable1}, \textit{iterable2}, \ldots proizvoljni iterabilni objekti. Na primjer:
 
 \begin{minted}{python}
 	lista1 = [1, 2, 3, 4]
 	lista2 = [5, 6, 7, 8]
-	
 	parovi = zip(lista1, lista2)
 	
 	print(list(parovi))
-	
 	# [(1, 5), (2, 6), (3, 7), (4, 8)]
 	
 \end{minted}
@@ -1778,7 +1735,7 @@ Primjer:
 	voce = ["jabuka", "banana", "kruška", "breskva"]
 	
 	for i, vocka in enumerate(voce):
-	print(i, vocka)
+	    print(i, vocka)
 \end{minted}
 
 Rezultat izvršavanja je:
@@ -1811,18 +1768,12 @@ Parametar \texttt{reverse} određuje redoslijed sortiranja:
 	\item \texttt{True} -- opadajući poredak.
 \end{itemize}
 
-Parametar \texttt{key} omogućava zadavanje funkcije koja određuje kriterijum sortiranja.
-
-Primjer:
+Parametar \texttt{key} omogućava zadavanje funkcije koja određuje kriterijum sortiranja. U nastavku sljijedi jedan primjer. 
 
 \begin{minted}{python}
 	brojevi = [6, 3, 8, 3, 1, 7]
-	
 	brojevi.sort(reverse=True)
-	
-	print(brojevi)
-	
-	# [8, 7, 6, 3, 3, 1]
+	print(brojevi) # [8, 7, 6, 3, 3, 1]
 	
 \end{minted}
 
@@ -1902,9 +1853,7 @@ Pajton dolazi sa velikim brojem ugrađenih modula, među kojima se posebno izdva
 
 Moduli koji su dio standardne biblioteke dostupni su odmah nakon instalacije Pajtona i nije ih potrebno dodatno instalirati. Sa druge strane, za korištenje eksternih modula potrebno ih je prethodno instalirati.
 
-Instalacija eksternih modula najčešće se vrši pomoću menadžera paketa \texttt{pip}, koji se standardno isporučuje uz većinu Pajton instalacija.
-
-Da bismo instalirali određeni modul, na terminalu izvršimo naredbu:
+Instalacija eksternih modula najčešće se vrši pomoću menadžera paketa \texttt{pip}, koji se standardno isporučuje uz većinu Pajton instalacija. Da bismo instalirali određeni modul, na terminalu izvršimo naredbu:
 
 \begin{minted}{bash}
 	pip install naziv_modula
@@ -2050,7 +1999,6 @@ Neke od najčešće korištenih funkcija su:
 \begin{itemize}
 	\item \texttt{time()} -- vraća trenutno vrijeme izraženo kao broj sekundi proteklih od 1. januara 1970. godine (tzv. Unix epoha);
 	
-	```
 	\item \texttt{sleep(secs)} -- privremeno zaustavlja izvršavanje programa na zadati broj sekundi;
 	
 	\item \texttt{localtime([secs])} -- pretvara vrijeme izraženo u sekundama od epohe u lokalni datum i vrijeme;
@@ -2058,7 +2006,6 @@ Neke od najčešće korištenih funkcija su:
 	\item \texttt{ctime([secs])} -- vraća tekstualni prikaz datuma i vremena;
 	
 	\item \texttt{perf\_counter()} -- vraća precizan brojač vremena koji se često koristi za mjerenje vremena izvršavanja algoritama.
-	```
 	
 \end{itemize}
 
@@ -2066,11 +2013,8 @@ Primjer:
 
 \begin{minted}{python}
 	import time
-	
 	print(time.time())
-	
 	time.sleep(2)
-	
 	print("Program nastavljen.")
 \end{minted}
 
@@ -2089,7 +2033,6 @@ Neke od najčešće korištenih funkcija i atributa su:
 \begin{itemize}
 	\item \texttt{os.name} -- vraća oznaku operativnog sistema;
 	
-	```
 	\item \texttt{os.getcwd()} -- vraća trenutni radni direktorijum;
 	
 	\item \texttt{os.chdir(path)} -- mijenja trenutni radni direktorijum;
@@ -2111,7 +2054,6 @@ Neke od najčešće korištenih funkcija i atributa su:
 	\item \texttt{os.path.isfile(path)} -- provjerava da li putanja predstavlja datoteku;
 	
 	\item \texttt{os.path.isdir(path)} -- provjerava da li putanja predstavlja direktorijum.
-	```
 	
 \end{itemize}
 
@@ -2121,9 +2063,8 @@ Primjer:
 	import os
 	
 	print(os.getcwd())
-	
 	if os.path.exists("podaci.txt"):
-	print("Datoteka postoji.")
+	    print("Datoteka postoji.")
 \end{minted}
 
 \subsection{Modul \texttt{copy}}
@@ -2151,15 +2092,9 @@ Funkcija \texttt{copy()} kreira novi objekat, ali elementi koji se nalaze unutar
 	import copy
 	
 	originalna_lista = [1, [2, 3], 4]
-	
 	kopija = copy.copy(originalna_lista)
-	
 	kopija[1][0] = 99
-	
-	print(originalna_lista)
-	
-	# [1, [99, 3], 4]
-	
+	print(originalna_lista) # [1, [99, 3], 4]
 \end{minted}
 
 Vidimo da je izmjena u unutrašnjoj listi vidljiva i u originalnom objektu.
@@ -2174,8 +2109,7 @@ Funkcija \texttt{deepcopy()} rekurzivno kopira sve objekte sadržane unutar orig
 	originalna_lista = [1, [2, 3], 4]
 	kopija = copy.deepcopy(originalna_lista)
 	kopija[1][0] = 99
-	print(originalna_lista)
-	# [1, [2, 3], 4]
+	print(originalna_lista) # [1, [2, 3], 4]
 \end{minted}
 
 U ovom slučaju promjene napravljene nad kopijom ne utiču na originalni objekat.
@@ -2203,26 +2137,24 @@ Mehanizam izuzetaka omogućava programu da prepozna nastalu grešku i na nju rea
 
 \subsection{Blok \texttt{try-except}}
 
-Osnovni mehanizam za obradu izuzetaka u Pajtonu zasniva se na konstrukciji \texttt{try-except}.
-
-Kod koji potencijalno može izazvati izuzetak smješta se u blok \texttt{try}, dok se obrada greške definiše u odgovarajućem bloku \texttt{except}.
+Osnovni mehanizam za obradu izuzetaka u Pajtonu zasniva se na konstrukciji \texttt{try-except}. K\^od koji potencijalno može izazvati izuzetak smješta se u blok \texttt{try}, dok se obrada greške definiše u odgovarajućem bloku \texttt{except}.
 
 Opšti oblik ove konstrukcije je:
 
 \begin{minted}{python}
 	try:
-	# kod koji može izazvati izuzetak
+	    # kod koji može izazvati izuzetak
 	except ExceptionType:
-	# obrada izuzetka
+	    # obrada izuzetka
 \end{minted}
 
 Na primjer:
 
 \begin{minted}{python}
 	try:
-	x = 10 / 0
+	    x = 10 / 0
 	except ZeroDivisionError:
-	print("Dijeljenje nulom nije dozvoljeno.")
+	    print("Dijeljenje nulom nije dozvoljeno.")
 \end{minted}
 
 U ovom slučaju program neće biti prekinut, već će se izvršiti odgovarajuća poruka o grešci.
@@ -2233,16 +2165,13 @@ Jedan blok \texttt{try} može imati više blokova \texttt{except}, pri čemu sva
 
 \begin{minted}{python}
 	try:
-	# kod koji može izazvati izuzetak
-	
+	    # kod koji može izazvati izuzetak
 	except ValueError:
-	print("Greška u vrijednosti.")
-	
+	    print("Greška u vrijednosti.")
 	except TypeError:
-	print("Greška u tipu podatka.")
-	
+	    print("Greška u tipu podatka.")
 	except Exception:
-	print("Dogodio se neočekivani izuzetak.")
+	    print("Dogodio se neočekivani izuzetak.")
 \end{minted}
 
 Klasa \texttt{Exception} predstavlja baznu klasu većine izuzetaka i često se koristi za hvatanje svih neobrađenih grešaka.
@@ -2263,9 +2192,9 @@ Ponekad je potrebno izvršiti određeni kod bez obzira na to da li je došlo do 
 
 \begin{minted}{python}
 	try:
-	# kod koji može izazvati izuzetak
+	    # kod koji može izazvati izuzetak
 	finally:
-	# kod koji se uvijek izvršava
+	    # kod koji se uvijek izvršava
 \end{minted}
 
 Blok \texttt{finally} često se koristi za zatvaranje datoteka, oslobađanje resursa ili izvršavanje operacija čišćenja nakon završetka rada programa.
@@ -2395,33 +2324,16 @@ Regularni izrazi imaju široku primjenu u obradi teksta, pretraživanju podataka
 	
 	Alternacija se označava simbolom \texttt{|} i predstavlja logičko ``ili''.
 	
-	Na primjer,
-	
-	[
-	a|b|c
-	]
-	
-	opisuje skup stringova
-	
-	[
-	{a,b,c}.
-	]
+	Na primjer, 	$a|b|c $ opisuje skup stringova  $
+	\{a,b,c\}.$
 	
 	\item \textbf{Grupisanje}
 	
 	Zagrade služe za grupisanje dijelova izraza i određivanje područja djelovanja operatora.
 	
-	Na primjer,
-	
-	[
-	\texttt{gr}(a|e)\texttt{y}
-	]
-	
-	opisuje riječi
-	
-	[
+	Na primjer, $\texttt{gr}(a|e)\texttt{y}$ opisuje riječi $
 	{\texttt{gray},\texttt{grey}}.
-	]
+	$
 	
 	\item \textbf{Specijalni simboli i klase karaktera}
 	
@@ -2540,15 +2452,10 @@ U nastavku je prikazan jednostavan primjer korištenja funkcije \texttt{search()
 	pattern = r'\b\w+'
 	
 	# Tekst koji pretražujemo
-	
 	text = 'Hello, World!'
-	
 	# Pretraga
-	
 	match = re.search(pattern, text)
-	
 	# Ispis prvog pronađenog podudaranja
-	
 	print(match.group())
 \end{minted}
 
@@ -2641,15 +2548,13 @@ Sljedeći primjer prikazuje korištenje atributa \texttt{argv}.
 	import sys
 	
 	if len(sys.argv) > 1:
-	print("Argumenti komandne linije su:")
+	    print("Argumenti komandne linije su:")
 	
-	```
-	for arg in sys.argv[1:]:
-	print(arg)
-	```
-	
+	    for arg in sys.argv[1:]:
+	        print(arg)
+	 
 	else:
-	print("Nema proslijeđenih argumenata.")
+	    print("Nema proslijeđenih argumenata.")
 \end{minted}
 
 Ako program pokrenemo naredbom
@@ -2736,17 +2641,17 @@ Znak \texttt{=} na kraju naziva opcije označava da opcija zahtijeva argument.
 	        print("test.py -i <inputfile> -o <outputfile>")
 	        sys.exit(2)
 	
-	        for opt, arg in opts:
+	    for opt, arg in opts:
 	
-	            if opt == "-h": 
-	                print("test.py -i <inputfile> -o <outputfile>")
-	                sys.exit()
+	        if opt == "-h": 
+	            print("test.py -i <inputfile> -o <outputfile>")
+	            sys.exit()
 	
-	            elif opt in ("-i", "--ifile"):
-	                inputfile = arg
+	        elif opt in ("-i", "--ifile"):
+	            inputfile = arg
 	
-	            elif opt in ("-o", "--ofile"):
-                	outputfile = arg
+	        elif opt in ("-o", "--ofile"):
+                outputfile = arg
 	
 	if __name__ == "__main__":
 	main(sys.argv[1:])
@@ -2759,8 +2664,7 @@ Program se može pokrenuti naredbom
 \end{minted}
 
  
-U slučaju da korisnik navede neispravne opcije ili izostavi obavezne argumente, aktivira se izuzetak \texttt{GetoptError}, koji se obrađuje u bloku \texttt{try-except}.
-\end{minted}
+U slučaju da korisnik navede neispravne opcije ili izostavi obavezne argumente, aktivira se izuzetak \texttt{GetOptError}, koji se obrađuje u bloku \texttt{try-except}.
 
 \bigskip
 
@@ -2846,7 +2750,7 @@ Argument \texttt{dtype} određuje tip podataka koji se koristi za skladištenje 
 	\item \textbf{Pristup elementima}
 	
 	\begin{minted}{python}
-		arr[2]           # element jednodimenzionalnog niza
+		arr[2]           # element 1D niza
 		matrica[1, 0]   # element matrice
 	\end{minted}
 	
@@ -3036,18 +2940,18 @@ Na primjer, pretpostavimo da želimo napraviti modul za osnovne matematičke ope
 
 \begin{minted}{python}
 	def add(x, y):
-	return x + y
+	    return x + y
 	
 	def subtract(x, y):
-	return x - y
+	    return x - y
 	
 	def multiply(x, y):
-	return x * y
+	    return x * y
 	
 	def divide(x, y):
-	if y == 0:
-	raise ValueError("Dijeljenje nulom nije dozvoljeno.")
-	return x / y
+	    if y == 0:
+	        raise ValueError("Dijeljenje nulom nije dozvoljeno.")
+	    return x / y
 \end{minted}
 
 Ovaj modul definiše četiri funkcije:
@@ -3065,11 +2969,8 @@ Nakon što je modul sačuvan, može se koristiti u drugoj Pajton skripti pomoću
 	import mathOps
 	
 	print(mathOps.add(3, 4))
-	
 	# Output: 7
-	
 	print(mathOps.divide(10, 2))
-	
 	# Output: 5.0
 	
 \end{minted}
@@ -3201,9 +3102,9 @@ Posmatrajmo sljedeći primjer:
 
 \begin{minted}{python}
 	def func():
-	a = 10
-	b = []
-	c = "abc"
+	    a = 10
+	    b = []
+	    c = "abc"
 \end{minted}
 
 Prilikom poziva funkcije \texttt{func()} kreira se novi zapis na steku. U njemu se čuvaju reference na objekte označene imenima \texttt{a}, \texttt{b} i \texttt{c}. Nakon završetka funkcije ove reference se uklanjaju iz memorije steka.

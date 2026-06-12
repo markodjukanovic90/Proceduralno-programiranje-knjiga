@@ -62,16 +62,7 @@ Pravilno definisanje baznih slučajeva od ključnog je značaja. Ukoliko oni ne 
 Posmatrajmo problem određivanja $n$-tog parnog broja. Neka funkcija $f(n)$ označava $n$-ti parni broj u skupu nenegativnih cijelih brojeva $\mathbb{N}_0$.
 
 Pošto je prvi parni broj jednak nuli, definišemo $
-f(0)=0.$
-
-Svaki naredni parni broj za dva je veći od prethodnog, pa važi rekurzivna relacija
-
-$f(n)=f(n-1)+2, \qquad n\geq 1.$
-
-Na primjer, $f(3)=f(2)+2=f(1)+2+2=f(0)+2+2+2=6.
-$
-
-Dakle, za izračunavanje vrijednosti $f(3)$ potrebno je izračunati $f(2)$, zatim $f(1)$ i konačno bazni slučaj $f(0)$. Nakon dostizanja baznog slučaja, rekurzija se vraća unazad i sukcesivno računa vrijednosti $f(1)$, $f(2)$ i $f(3)$.
+f(0)=0.$  Svaki naredni parni broj za dva je veći od prethodnog, pa važi rekurzivna relacija $f(n)=f(n-1)+2, n\geq 1.$ Na primjer, $f(3)=f(2)+2=f(1)+2+2=f(0)+2+2+2=6.$  Dakle, za izračunavanje vrijednosti $f(3)$ potrebno je izračunati $f(2)$, zatim $f(1)$ i konačno bazni slučaj $f(0)$. Nakon dostizanja baznog slučaja, rekurzija se vraća unazad i sukcesivno računa vrijednosti $f(1)$, $f(2)$ i $f(3)$.
 
 Rekurzivna implementacija ove funkcije u Pajtonu izgleda ovako:
 
@@ -103,7 +94,6 @@ Iz definicije neposredno slijedi rekurzivna relacija
 $$n! = n \cdot (n-1)!.$$
 
 Bazni slučaj je $0! = 1.$
-]
 
 Rekurzivna implementacija glasi:
 
@@ -130,11 +120,7 @@ Nakon dostizanja baznog slučaja, rezultati se vraćaju unazad kroz stek poziva.
 \end{figure}
 
 \textbf{Vremenska složenost.}
-Broj rekurzivnih poziva proporcionalan je vrijednosti parametra $n$, pa je složenost
-
-[
-O(n).
-]
+Broj rekurzivnih poziva proporcionalan je vrijednosti parametra $n$, pa je složenost $ O(n).$
 
 \subsection{Prekoračenje steka}
 
@@ -143,13 +129,9 @@ Ako bazni slučaj nije pravilno definisan ili nije dostižan, rekurzija se neće
 \begin{minted}{python}
 	def fact(n):
 	
-	```
-	if n == 100:
-	return 1
-	
-	return n * fact(n - 1)
-	```
-	
+	    if n == 100:
+	        return 1
+	    return n * fact(n - 1)
 \end{minted}
 
 Ukoliko je početna vrijednost parametra manja od 100, funkcija će nastaviti da poziva samu sebe sa sve manjim vrijednostima argumenta i nikada neće dostići bazni slučaj. Posljedica je prekoračenje maksimalne dubine rekurzije i aktiviranje izuzetka:
@@ -176,15 +158,14 @@ Funkcija je \textit{indirektno rekurzivna} ukoliko poziva drugu funkciju koja, d
 	# Direktna rekurzija
 	
 	def direktna():
-	direktna()
+	    direktna()
 	
 	# Indirektna rekurzija
-	
 	def funkcija1():
-	funkcija2()
+	     funkcija2()
 	
 	def funkcija2():
-	funkcija1()
+	    funkcija1()
 \end{minted}
 
 \subsection*{Repna i nerepna rekurzija}
@@ -194,12 +175,9 @@ Rekurzija se naziva \textit{repnom} (\textit{tail recursion}) ukoliko je rekurzi
 \begin{minted}{python}
 	def countdown(n):
 	
-	```
-	if n == 0:
-	return
-	
-	return countdown(n - 1)
-	```
+	    if n == 0:
+	        return
+	    return countdown(n - 1)
 	
 \end{minted}
 
@@ -208,12 +186,10 @@ U suprotnom govorimo o \textit{nerepnoj rekurziji}. Na primjer:
 \begin{minted}{python}
 	def fact(n):
 	
-	```
-	if n == 0:
-	return 1
+	    if n == 0:
+	        return 1
 	
-	return n * fact(n - 1)
-	```
+	    return n * fact(n - 1)
 	
 \end{minted}
 
@@ -229,14 +205,11 @@ Svaki rekurzivni algoritam može se implementirati i u iterativnom obliku, kori�
 \begin{itemize}
 	\item Rekurzija se završava dostizanjem baznog slučaja, dok se iteracija završava kada uslov petlje postane netačan.
 	
-	```
 	\item Rekurzija je zasnovana na pozivima funkcija, dok se iteracija zasniva na petljama (\texttt{for} i \texttt{while}).
 	
 	\item Svaki rekurzivni poziv zauzima dodatni prostor u memoriji steka, dok iterativni algoritmi uglavnom zahtijevaju manje dodatne memorije.
 	
-	\item Rekurzivna rješenja često su kraća i bliža matematičkoj formulaciji problema, dok iterativna rješenja mogu biti nešto duža, ali su obično efikasnija.
-	```
-	
+	\item Rekurzivna rješenja često su kraća i bliža matematičkoj formulaciji problema, dok iterativna rješenja mogu biti nešto duža, ali su obično efikasnija.	
 \end{itemize}
 
 Rekurzivni programi najčešće zahtijevaju više memorije od ekvivalentnih iterativnih programa, jer se informacije o svakom pozivu funkcije čuvaju u steku sve do dostizanja baznog slučaja. Takođe, dodatno vrijeme izvršavanja troši se na pozivanje funkcija i povratak rezultata.
@@ -383,17 +356,9 @@ Ovaj primjer pokazuje da rekurzija sama po sebi ne garantuje efikasan algoritam.
 	
 	Bazni slučaj je jednostavan: $	T(1)=1.$  Za proizvoljno $n>1$, najprije je potrebno premjestiti gornjih $n-1$ diskova sa štapa $A$ na štap $B$. Za to je potrebno $T(n-1)$ poteza.  Nakon toga najveći disk ostaje sam na štapu $A$ i može se direktno premjestiti na štap $C$ u jednom potezu.
 	
-	Preostaje da se $n-1$ diskova sa štapa $B$ premjesti na štap $C$, za šta je ponovo potrebno $T(n-1)$ poteza.  	Prema tome, ukupan broj poteza zadovoljava rekurentnu relaciju $ T(n)=T(n-1)+1+T(n-1),$  odnosno	$	T(n)=2T(n-1)+1, 	T(1)=1.$
+	Preostaje da se $n-1$ diskova sa štapa $B$ premjesti na štap $C$, za šta je ponovo potrebno $T(n-1)$ poteza.  	Prema tome, ukupan broj poteza zadovoljava rekurentnu relaciju $ T(n)=T(n-1)+1+T(n-1),$  odnosno	$	T(n)=2T(n-1)+1, 	T(1)=1.$ Ovo predstavlja rekurzivnu formulaciju problema Hanojskih kula.
 	
-	Ovo predstavlja rekurzivnu formulaciju problema Hanojskih kula.
-	
-	Rješavanjem navedene rekurencije dobija se zatvorena forma $T(n)=2^n-1.$
-	
-	Dakle, minimalan broj poteza potreban za premještanje $n$ diskova iznosi 	$2^n-1.$
-	
-	Na primjer, za $n=3$ dobijamo $T(3)=2^3-1=7,$
-	
-	što se slaže sa prethodno izvedenim rješenjem.
+	Rješavanjem navedene rekurencije dobija se zatvorena forma $T(n)=2^n-1.$	Dakle, minimalan broj poteza potreban za premještanje $n$ diskova iznosi 	$2^n-1.$ Na primjer, za $n=3$ dobijamo $T(3)=2^3-1=7,$ što se slaže sa prethodno izvedenim rješenjem.
 \end{solution}
 
 Implementacija rekurzivnog pristupa problema Hanojskih kula je data sljedećim k\^odom. 
@@ -416,7 +381,7 @@ Implementacija rekurzivnog pristupa problema Hanojskih kula je data sljedećim k
 \end{minted} 
 
 \textbf{Vremenska kompleksnost}. Vrlo lako dobijamo eksplicitnu funkciju koja odgovara   rekurzivnoj relaciji problema: $T(n)= 2  T(n-1) + 1 = 2 \cdot ( 2 \cdot T(n-2) + 1) + 1 = \cdots = 2^{n-2} + 2^{n-1} + \cdots + 2 + 1 = 2^n -1.$
-Rekurzija se izvrašava u eksponencijalnom $O(2^n)$ vremenu.  %Prema tome, $T(n) = O(2^n)$, što je eksponencijalno vrijeme izvođenja. 
+Rekurzija se izvrašava u eksponencijalnom $O(2^n)$ vremenu.   
 \end{solution}	
  
 
@@ -610,10 +575,8 @@ U zavisnosti od načina organizacije podataka i strategije pretraživanja, algor
 \begin{itemize}
 	\item \textit{Sekvencijalna pretraga} prolazi kroz elemente strukture jedan po jedan sve dok ne pronađe traženi element ili ne iscrpi cijelu strukturu. Najpoznatiji predstavnik ove grupe je \textit{linearna pretraga}.
 	
-	```
 	\item \textit{Intervalna pretraga} koristi dodatne informacije o organizaciji podataka, najčešće činjenicu da su podaci sortirani. Umjesto provjeravanja svih elemenata, prostor pretrage se postepeno smanjuje, čime se postiže znatno veća efikasnost. Najpoznatiji primjer je \textit{binarna pretraga}.
-	```
-	
+
 \end{itemize}
 
 \subsection{Linearna pretraga}
@@ -709,7 +672,7 @@ Rekurzivna implementacija binarne pretrage prikazana je u nastavku.
 	    mid = len(arr) // 2
 	
 	    if arr[mid] == x:
-	       return True
+	        return True
 	
 	    elif arr[mid] < x:
 	        return binary_search(arr[mid + 1:], x)
@@ -821,7 +784,6 @@ Algoritam se sastoji od sljedećih koraka:
 \begin{enumerate}
 	\item Izračunati procijenjenu poziciju \textit{pos} koristeći interpolacionu formulu.
 	
-	```
 	\item Ako je $niz[pos] = x$, pretraga se završava i vraća se pronađena pozicija.
 	
 	\item Ako je $x < niz[pos]$, pretraga se nastavlja u lijevom dijelu niza.
@@ -829,7 +791,6 @@ Algoritam se sastoji od sljedećih koraka:
 	\item Ako je $x > niz[pos]$, pretraga se nastavlja u desnom dijelu niza.
 	
 	\item Koraci 1--4 ponavljaju se sve dok se element ne pronađe ili dok interval pretrage ne postane prazan.
-	```
 	
 \end{enumerate}
 
@@ -841,7 +802,8 @@ Jedna moguća implementacija interpolacijske pretrage prikazana je u nastavku.
 	    left = 0
 	    right = len(arr) - 1
 	
-	    while (left <= right and x >= arr[left] and x <= arr[right]):
+	    while (left <= right and x >= arr[left] and \ 
+	        x <= arr[right]):
 	
 	        if left == right:
 	            if arr[left] == x:
@@ -986,9 +948,9 @@ Implementacija algoritma  sortiranja spajanjem  je data u nastavku.
 \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
  def mergeSort(niz):  
 
-   if len(niz) <= 1:    
+    if len(niz) <= 1:    
          return niz
-   else:
+    else:
       #partitioning:
           nizLeftSort = niz[0 : (len(niz)//2) ]
 	  nizRightSort = niz[ (len(niz) // 2) :] 
@@ -1176,8 +1138,9 @@ Implementacija problema je data narednim k\^odom.
               for i in range(N):
                   niz = niz + [i]
                   if valid(niz): #backtrack ako nije 
-                     NQueens(niz + [i])
+                       NQueens(niz + [i])
 
+#main
 N = 8
 sol = NQueens([], N)       
 if sol != None:
@@ -1567,7 +1530,7 @@ Napomenimo da ovako dizajniran algoritam ne garantuje nalazak opti\-malnog rješ
 	
 	\begin{center}
 		\begin{tabular}{ccc}
-			\emph{Posao} & \emph{Krajnji rok} & \emph{Profit} \ \hline
+			\emph{Posao} & \emph{Krajnji rok} & \emph{Profit} \\ \hline \hline 
 			1 & 4 & 20 \\
 			2 & 1 & 10 \\
 			3 & 1 & 40 \\
@@ -1575,14 +1538,13 @@ Napomenimo da ovako dizajniran algoritam ne garantuje nalazak opti\-malnog rješ
 		\end{tabular}
 	\end{center}
 	
-	Optimalno rješenje u ovom slučaju čine poslovi $\{3,1\}$, čiji je ukupan profit jednak #
-	40 + 20 = 60.#
+	Optimalno rješenje u ovom slučaju čine poslovi $\{3,1\}$, čiji je ukupan profit jednak $40 + 20 = 60.$
 	
 	Posmatrajmo sada drugu instancu problema.
 	
 	\begin{center}
 		\begin{tabular}{ccc}
-			\emph{Posao} & \emph{Krajnji rok} & \emph{Profit} \ \hline
+			\emph{Posao} & \emph{Krajnji rok} & \emph{Profit} \\  \hline \hline
 			1 & 2 & 100 \\
 			2 & 1 & 19 \\
 			3 & 2 & 27 \\
@@ -1620,9 +1582,7 @@ Napomenimo da ovako dizajniran algoritam ne garantuje nalazak opti\-malnog rješ
 	\textit{Pohlepna funkcija.}
 	Intuitivno je razumno dati prednost poslovima koji donose veći profit. Zbog toga se poslovi najprije sortiraju po profitu u opadajućem poretku.
 	
-	Neka je trenutno parcijalno rješenje označeno sa $I_s$. U svakoj iteraciji bira se neraspoređeni posao sa najvećim profitom. Ukoliko je moguće pronaći slobodan vremenski interval prije njegovog krajnjeg roka, posao se dodaje u raspored. U suprotnom, posao se odbacuje i razmatra se naredni posao iz sortirane liste.
-	
-	Da bi se ostavilo što više prostora za buduće poslove, odabrani posao se smješta u posljednji slobodan vremenski interval koji ne prelazi njegov krajnji rok.
+	Neka je trenutno parcijalno rješenje označeno sa $I_s$. U svakoj iteraciji bira se neraspoređeni posao sa najvećim profitom. Ukoliko je moguće pronaći slobodan vremenski interval prije njegovog krajnjeg roka, posao se dodaje u raspored. U suprotnom, posao se odbacuje i razmatra se naredni posao iz sortirane liste.  Da bi se ostavilo što više prostora za buduće poslove, odabrani posao se smješta u posljednji slobodan vremenski interval koji ne prelazi njegov krajnji rok.
 	
 	\medskip
 	
@@ -1673,7 +1633,7 @@ Implementacija algoritma je data sljedećim k\^odom.
  
  	return I_s, sum([ Profit[I_s[i]]  for i in range(len(I_s)) ])
  
- #instanca:
+ #main:
  num_jobs = 5
  Jobs = [i for i in range(num_jobs)]
  Deadline = [2, 1, 2, 1, 3]
@@ -1962,9 +1922,7 @@ Implementacija ovog rješenje je data sljedećim k\^odom (pristup odozgo prema d
 	\medskip
 	
 	\textit{Konačno rješenje.}	Nakon popunjavanja matrice $DP$, optimalna vrijednost problema nalazi se u ćeliji $
-	DP[n][C].$
-	
-	Drugim riječima, ona predstavlja najveću moguću vrijednost koju možemo smjestiti u ruksak kapaciteta $C$ koristeći svih $n$ proizvoda.
+	DP[n][C].$	Drugim riječima, ona predstavlja najveću moguću vrijednost koju možemo smjestiti u ruksak kapaciteta $C$ koristeći svih $n$ proizvoda.
 	
 	\medskip
 	
@@ -2313,10 +2271,7 @@ Ona se ostvaruje odabirom prvog i drugog proizvoda, čija je ukupna težina $2+3
 	
 	Zbir $0$ uvijek možemo ostvariti izborom praznog podskupa, pa vrijedi $
 	DP[i][0]=True, 
-	0\leq i\leq n.$
-	
-	S druge strane, ako ne raspolažemo nijednim elementom, nijedan pozitivan zbir ne može biti formiran $ DP[0][j]=False, 
-	1\leq j\leq sum.
+	0\leq i\leq n.$ 	S druge strane, ako ne raspolažemo niti jednim elementom, nijedan pozitivan zbir ne može biti formiran $ DP[0][j]=False, 1\leq j\leq sum.
 	$
 	
 	\medskip
@@ -2447,11 +2402,7 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 	
 	\textit{Vremenska složenost.}	Za svaku dužinu $i$ razmatra se najviše $i$ mogućih pozicija prvog reza. Ukupan broj operacija jednak je $	\sum_{i=1}^{n} i =
 	\frac{n(n+1)}{2},
-	$
-	
-	pa je vremenska složenost algoritma $O(n^2).$
-	
-	Prostorna složenost iznosi $O(n),$ jer se koristi jednodimenzionalni niz $DP$ veličine $n+1$.
+	$  pa je vremenska složenost algoritma $O(n^2).$  Prostorna složenost iznosi $O(n),$ jer se koristi jednodimenzionalni niz $DP$ veličine $n+1$.
 	
 \end{solution}
 
@@ -2477,10 +2428,7 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
      max_profit = stick_cut(d, price)     
      #poziv
      print(max_profit)
- \end{minted}
-
-\textit{Kompleksnost algoritma}. Dvije \texttt{for} petlje izvršavaju ukupno najviše $O(d^2)$. Kako se svaka iteracija izvršava u konstantnom vremenu, zaklju\-čujemo da je kompleksnost algoritma jednaka $O(d^2)$.
-
+ \end{minted} 
 \textit{Napomena}. Pogledajmo drvo rekurzije koje se kreira algoritmom grube sile na Slici~\ref{fig:brute-force-stick-cut}  pri rješavanju problema rezanja štapa za $d=4$. Ovaj pristup enumeriše sva moguća rješenja za rezanje štapa dužine $d=4$. Prvo uzima cio štap u razmatranje (i njegovu cijenu), zatim otkida dio štapa dužine 1, dok se ostatak štapa (dužine 3) rješava (dijeli) rekurzivno itd. Kompletno rješenje dobijamo u listovima stabla (označeni sa 0). 
 \begin{center}
 	\begin{figure}[H]

@@ -60,16 +60,12 @@ Implementacija Eratostenovog sita u programskom jeziku Pajton data je u nastavku
 	
 	    prost = [True] * (N + 1)
 	    prost[0] = prost[1] = False
-	
 	    p = 2
 	
 	    while p * p <= N:
-	
 	        if prost[p]:
-	
 	            for k in range(p * p, N + 1, p):
 	            prost[k] = False
-	
 	        p += 1
 	
 	    return [i for i in range(2, N + 1) if prost[i]]
@@ -85,12 +81,10 @@ Zahvaljujući svojoj efikasnosti, Eratostenovo sito predstavlja jedan od najpozn
 	   
 	   sieve = [True] * (N+1)
 	   sieve[0] = sieve [1] = False
-	   p = 2
-	   
+	   p = 2   
 	   while p <= N:
 	       
 	       if  sieve[p]:
-	        
 	           index = p * p
 	           while index <= N:
 	               sieve[index] = False
@@ -99,11 +93,11 @@ Zahvaljujući svojoj efikasnosti, Eratostenovo sito predstavlja jedan od najpozn
 	   for i in range(N+1):
 	       if sieve[i]: #broj je prost
 	          print(i)
-       #poziv funkcije:
+       #main:
        N = 1000
        sieve(N)
 \end{minted}  
-\textit{Kompleksnost algoritma}.  Može se pokazati da je kompleksnost pretho\-dnog algoritma jednaka $O(N \log\log N )$. 
+\textit{Kompleksnost algoritma}.  Može se pokazati da je kompleksnost prethodne implementacije jednaka $O(N \log\log N )$. 
 
 
 Demonstrirajmo   prvih nekoliko iteracija ovog algoritma u tabelarnom zapisu, za $N=50.$ 
@@ -370,15 +364,12 @@ Primijenimo sada paradigmu grube sile, odnosno direktnu rekurzivnu implementacij
 \begin{minted}{python}
 	def catalan(n):
 	
-	
 	    if n == 0:
 	        return 1
-	
+	        
 	    result = 0
-	
 	    for i in range(n):
 	        result += catalan(i) * catalan(n - 1 - i)
-	
 	return result
 	
 \end{minted}
