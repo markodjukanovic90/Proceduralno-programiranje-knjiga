@@ -4,9 +4,9 @@ U ovom poglavlju uvode se osnovni pojmovi teorije algoritama i računanja. Najpr
 
 \section{Računarski problem}
 
-\textit{Računarski problem} (engl. \textit{computational problem}) predstavlja zadatak koji je potrebno riješiti uz pomoć računara.
+\textit{Računarski problem} (eng. \textit{computational problem}) predstavlja zadatak koji je potrebno riješiti uz pomoć računara.
 
-Formalna definicija ovog pojma zahtijeva uvođenje više teorijskih koncepata, među kojima je i pojam jezika. U opštem slučaju, ulaz računarskog problema može se predstaviti kao binarno kodiran niz, odnosno element skupa $L={0,1}^*$. Izlaz predstavlja rješenje koje mora zadovoljiti određena svojstva definisana samim problemom. Drugim riječima, računarski problem određuje skup uslova koje izlaz mora zadovoljiti za svaki dopustiv ulaz.
+Formalna definicija ovog pojma zahtijeva uvođenje više teorijskih koncepata, među kojima je i pojam jezika. U opštem slučaju, ulaz računarskog problema može se predstaviti kao binarno kodiran niz, odnosno element skupa $L={0,1}^*$. Izlaz predstavlja rješenje (opet element skupa $L$) koje mora zadovoljiti određena svojstva definisana samim problemom. Drugim riječima, računarski problem određuje skup uslova koje izlaz mora zadovoljiti za svaki dopustiv ulaz.
 
 Ulaz problema često se naziva \textit{instancom problema}, dok se odgovarajući izlaz naziva \textit{rješenjem instance}. Jedan od najpoznatijih primjera računarskog problema jeste problem sortiranja. U ulazu je dat niz objekata dužine $n$, dok je cilj proizvesti uređenu verziju tog niza prema unaprijed definisanom kriterijumu uređenja. Pri tome objekti ne moraju biti brojevi; dovoljno je da je nad njima definisana relacija totalnog uređenja.
 
@@ -22,13 +22,13 @@ Prikladan način formalizacije problema odlučivanja jeste određivanje skupa sv
 
 Kod problema \textit{pretraživanja}, za dati ulaz $x \in {0,1}^*$ potrebno je pronaći objekat $y \in {0,1}^*$ koji zadovoljava određeni odnos sa ulazom. Takvi problemi formalizuju se relacijom $R \subseteq {0,1}^* \times {0,1}^*$, pri čemu $(x,y)\in R$ označava da je $y$ dopustivo rješenje za instancu $x$.
 
-Posmatrajmo ponovo problem 3-bojenja. Neka je dat neusmjereni graf $G=(V,E)$. Potrebno je pronaći, ukoliko postoji, funkciju bojanja $
-c : V \rightarrow \{1,2,3\},
+Posmatrajmo ponovo problem 3-bojenja. Neka je dat neusmjereni graf $G=(V,E)$. Potrebno je pronaći, ukoliko postoji, funkciju bojenja $
+c \colon V \rightarrow \{1,2,3\},
 $ takvu da za svaku granu $(u,v)\in E$ važi $c(u)\neq c(v)$. Za razliku od verzije odlučivanja, ovdje nije dovoljno utvrditi postojanje rješenja; potrebno je i eksplicitno konstruisati jedno takvo rješenje.
 
 Problemi \textit{optimizacije} predstavljaju jednu od najvažnijih klasa računarskih problema. Njihov cilj je pronalaženje najboljeg rješenja iz skupa svih dopustivih rješenja prema unaprijed definisanoj funkciji cilja. U zavisnosti od problema, ciljna funkcija se maksimizuje ili minimizuje uz poštovanje zadanih ograničenja.
 
-Klasičan primjer predstavlja problem trgovačkog putnika. Potrebno je pronaći najkraću kružnu rutu koja prolazi kroz sve zadate gradove tačno jednom i vraća se u početni grad. Cilj je minimizovati ukupnu pređenu udaljenost.
+Klasičan primjer predstavlja problem trgovačkog putnika. Potrebno je pronaći najkraću kružnu rutu (konturu) koja prolazi kroz sve zadate gradove tačno jednom i vraća se u početni grad. Cilj je minimizovati ukupnu pređenu udaljenost.
 
 Problemi \textit{prebrojavanja} bave se određivanjem broja mogućih rješenja određenog problema. Njihova složenost može varirati od veoma jednostavnih primjera do izuzetno zahtjevnih kombinatornih zadataka.
 
@@ -38,15 +38,15 @@ $ Za kraj ovog poglavlja dajemo formalnu definiciju računarskog problema.
 
 \begin{definition}
 	Računarski problem je funkcija 	$
-	f : \mathbb{N}^* \rightarrow 2^{\mathbb{N}^*}.
+	f \colon \mathbb{N}^* \rightarrow 2^{\mathbb{N}^*}.
 	$ Za dati ulaz $x$, skup $f(x)$ predstavlja skup svih ispravnih odgovora za instancu $x$.
 \end{definition}
 
 \section{Računarski program i pojam algoritma}
 
-Računarski program predstavlja konačan niz instrukcija napisanih u programskom jeziku koje računar može izvršavati. Instrukcije određuju redoslijed operacija potrebnih za rješavanje određenog problema ili izvršavanje konkretnog zadatka. Programi mogu biti namijenjeni obradi teksta, analizi podataka, pretraživanju informacija na internetu, komunikaciji sa korisnikom, upravljanju uređajima ili brojnim drugim primjenama.
+Računarski program predstavlja konačan niz instrukcija koje računar može izvršavati. Instrukcije određuju redoslijed operacija potrebnih za rješavanje određenog problema ili izvršavanje konkretnog zadatka. Programi mogu biti namijenjeni obradi teksta, analizi podataka, pretraživanju informacija na internetu, komunikaciji sa korisnikom, upravljanju uređajima ili brojnim drugim primjenama.
 
-Programi se izvršavaju na različitim platformama, uključujući personalne računare, mobilne uređaje, serverske sisteme i ugrađene računarske uređaje. Za njihovu implementaciju koriste se različiti programski jezici, među kojima su Pajton, Java, C i C++. Nakon što je program napisan, potrebno ga je prevesti u mašinski kod razumljiv procesoru. U zavisnosti od programskog jezika i načina izvršavanja, taj proces može uključivati kompajliranje, interpretaciju ili kombinaciju oba pristupa.
+Programi se izvršavaju na različitim platformama, uključujući personalne računare, mobilne uređaje, serverske sisteme i ugrađene računarske uređaje. Za njihovu implementaciju koriste se različiti programski jezici, među kojima su Pajton, Java, $ C$, $ C$++ itd. Nakon što je program napisan, potrebno ga je prevesti u mašinski k\^od razumljiv procesoru. U zavisnosti od programskog jezika i načina izvršavanja, taj proces može uključivati kompajliranje, interpretaciju ili kombinaciju oba pristupa.
 
 Algoritam predstavlja precizno definisan konačan niz koraka kojim se za dati ulaz proizvodi odgovarajući izlaz, odnosno rješava određeni problem. U informatici se algoritmi koriste kao formalni opisi postupaka koje računarski program izvršava kako bi ostvario željenu funkcionalnost.
 
@@ -89,24 +89,24 @@ Navedene osobine mogu se sažeti kroz nekoliko ključnih karakteristika algorita
 Tokom razvoja računarstva razvijen je veliki broj algoritamskih paradigmi za rješavanje različitih klasa problema. U nastavku navodimo neke od najvažnijih pristupa koji će biti detaljnije obrađeni u kasnijim poglavljima.
 
 \begin{enumerate}
-	\item \textit{Iscrpna pretraga} (\emph{brute force}) predstavlja jedan od najjednostavnijih pristupa rješavanju problema. Osnovna ideja sastoji se u razmatranju svih mogućih kandidata za rješenje i provjeri koji od njih zadovoljavaju uslove problema.
+	\item \textit{Iscrpna pretraga} (eng. \emph{brute force}) predstavlja jedan od najjednostavnijih pristupa rješavanju problema. Osnovna ideja sastoji se u razmatranju svih mogućih kandidata za rješenje i provjeri koji od njih zadovoljavaju uslove problema.
 	
 	\item \textit{Rekurzivni algoritmi} zasnivaju se na razlaganju problema na manje podprobleme istog tipa. Rješenje se dobija ponovnim pozivanjem iste procedure sve dok se ne dostigne trivijalan slučaj koji se može direktno riješiti.
 	
-	\item \textit{Vraćanje unazad} (\emph{backtracking}) predstavlja tehniku sistematskog pretraživanja prostora rješenja. Kandidati za rješenje grade se postepeno, pri čemu se djelimična rješenja koja ne mogu dovesti do validnog konačnog rješenja odbacuju čim se to utvrdi.
+	\item \textit{Vraćanje unazad} (eng. \emph{backtracking}) predstavlja tehniku sistematskog pretraživanja prostora rješenja. Kandidati za rješenje grade se postepeno, pri čemu se djelimična rješenja koja ne mogu dovesti do validnog konačnog rješenja odbacuju čim se to utvrdi.
 	
 	\item \textit{Algoritmi pretraživanja} koriste se za pronalaženje elemenata ili informacija unutar određene strukture podataka.
 	
 	\item \textit{Algoritmi sortiranja} uređuju podatke prema unaprijed definisanom kriterijumu uređenja.
 	
-	\item \textit{Podijeli pa vladaj} (\emph{divide and conquer}) razlaže problem na manje podprobleme, nezavisno ih rješava i zatim kombinuje njihova rješenja u konačan rezultat.
+	\item \textit{Podijeli pa vladaj} (eng. \emph{divide-and-conquer}) razlaže problem na manje podprobleme, nezavisno ih rješava i zatim kombinuje njihova rješenja u konačan rezultat.
 	
 	\item \textit{Pohlepni algoritmi} grade rješenje korak po korak birajući u svakom trenutku lokalno najpovoljniju odluku prema unaprijed definisanom kriterijumu.
 	
 	\item \textit{Dinamičko programiranje} koristi već izračunata rješenja podproblema kako bi se izbjegla višestruka izračunavanja istih vrijednosti. Posebno je efikasno kod problema sa preklapajućim podproblemima i optimalnom podstrukturom.
 \end{enumerate}
 
-Većina navedenih pristupa predstavlja opšte algoritamske paradigme koje se mogu primijeniti na širok spektar problema. U trećem dijelu knjige detaljno će biti obrađene najvažnije paradigme, zajedno sa njihovim teorijskim osnovama i praktičnim primjenama.
+Većina navedenih pristupa predstavlja opšte algoritamske paradigme koje se mogu primijeniti na širok spektar problema. U trećoj glavi knjige detaljno će biti obrađene najvažnije paradigme, zajedno sa njihovim teorijskim osnovama i praktičnim primjenama.
 
 Projektovanje efikasnih algoritama često predstavlja složen i kreativan proces koji zahtijeva dobro razumijevanje problema, poznavanje postojećih tehnika i sposobnost prepoznavanja odgovarajućih obrazaca rješavanja. Upravo zbog toga algoritamske paradigme imaju značajnu ulogu, jer pružaju opšte strategije koje se mogu prilagoditi velikom broju različitih problema.
 
@@ -123,13 +123,11 @@ Prilikom projektovanja i analize algoritama prirodno se nameće nekoliko važnih
 
 Odgovor na ova pitanja zahtijeva precizan matematički okvir za opisivanje procesa računanja. Zbog toga se u teorijskoj analizi algoritama uvode apstraktni modeli računara koji omogućavaju formalno mjerenje vremena i prostora potrebnih za izvršavanje algoritama.
 
-Jedan od najčešće korištenih modela jeste \textit{mašina sa slučajnim pristupom} (engl. \textit{Random Access Machine} -- RAM). Ovaj model predstavlja idealizovanu apstrakciju računara koja omogućava formalnu analizu algoritama nezavisno od konkretne hardverske arhitekture.
+Jedan od najčešće korištenih modela jeste \textit{mašina sa slučajnim pristupom} (eng. \textit{Random Access Machine} -- RAM). Ovaj model predstavlja idealizovanu apstrakciju računara koja omogućava formalnu analizu algoritama nezavisno od konkretne hardverske arhitekture.
 
 RAM model pretpostavlja postojanje glavne memorije organizovane kao niz adresabilnih memorijskih ćelija. Svakoj ćeliji može se pristupiti direktno, pri čemu se njen sadržaj može čitati ili mijenjati u konstantnom vremenu. Takođe se pretpostavlja da se instrukcije izvršavaju sekvencijalno, odnosno da ne postoji paralelizam.
 
-Glavna prednost RAM modela ogleda se u tome što omogućava precizno brojanje elementarnih operacija koje algoritam izvršava. Na taj način moguće je formalno definisati vremensku i prostornu složenost algoritama.
-
-Naravno, RAM model ne predstavlja potpuno vjeran opis stvarnih računa\-rskih sistema. U realnim računarima vrijeme pristupa memoriji zavisi od različitih faktora, kao što su keš memorija, hijerarhija memorijskih nivoa, brzina pristupa sekundarnoj memoriji i drugi hardverski mehanizmi. Uprkos tome, RAM model pruža dovoljno preciznu aproksimaciju za većinu teorijskih analiza i zbog toga predstavlja standardni model u teoriji algoritama.
+Glavna prednost RAM modela ogleda se u tome što omogućava precizno brojanje elementarnih operacija koje algoritam izvršava. Na taj način moguće je formalno definisati vremensku i prostornu složenost algoritama. Naravno, RAM model ne predstavlja potpuno vjeran opis stvarnih računa\-rskih sistema. U realnim računarima vrijeme pristupa memoriji zavisi od različitih faktora, kao što su keš memorija, hijerarhija memorijskih nivoa, brzina pristupa sekundarnoj memoriji i drugi hardverski mehanizmi. Uprkos tome, RAM model pruža dovoljno preciznu aproksimaciju za većinu teorijskih analiza i zbog toga predstavlja standardni model u teoriji algoritama.
 
 \subsection{Instrukcije u RAM modelu}
 
@@ -649,7 +647,7 @@ Na primjer:
 	\item kreiranje matrice dimenzija $n \times n$ zahtijeva $O(n^2)$ memorijskog prostora.
 \end{itemize}
 
-Efikasnost algoritma najčešće se procjenjuje na osnovu dva kriterijuma: vremena izvršavanja i količine korištene memorije. U mnogim situacijama postoji kompromis između ova dva resursa. Često je moguće ubrzati algoritam korišćenjem dodatne memorije, dok smanjenje memorijskih zahtjeva može dovesti do povećanja vremena izvršavanja.
+Efikasnost algoritma najčešće se procjenjuje na osnovu dva kriterijuma: vremena izvršavanja i količine korištene memorije. U mnogim situacijama postoji kompromis između ova dva resursa. Često je moguće ubrzati algoritam korišćenjem dodatne memorije, dok smanjenje memorijskih zahtijeva može dovesti do povećanja vremena izvršavanja.
 
 \begin{example}
 	Posmatrajmo sljedeće procedure.

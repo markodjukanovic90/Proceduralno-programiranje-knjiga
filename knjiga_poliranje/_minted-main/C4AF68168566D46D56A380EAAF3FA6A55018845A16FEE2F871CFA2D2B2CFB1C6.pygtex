@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	 	 \PYG{k}{def} \PYG{n+nf}{horner\PYGZus{}metod}\PYG{p}{(}\PYG{n}{coef}\PYG{p}{,} \PYG{n}{x}\PYG{p}{):}
+	 	
+	 	     \PYG{n}{rezultat} \PYG{o}{=} \PYG{l+m+mi}{0}
+	 	     \PYG{k}{for} \PYG{n}{c} \PYG{o+ow}{in} \PYG{n}{coef}\PYG{p}{:}
+	 	         \PYG{n}{rezultat} \PYG{o}{=} \PYG{n}{rezultat} \PYG{o}{*} \PYG{n}{x} \PYG{o}{+} \PYG{n}{c}
+	 	
+	 	     \PYG{k}{return} \PYG{n}{rezultat}
+	 	
+	 	 \PYG{c+c1}{\PYGZsh{} poziv funkcije}
+	 	 \PYG{c+c1}{\PYGZsh{} Evaluacija:  x\PYGZca{}3 \PYGZhy{} 3 x\PYGZca{}2 + 2 x \PYGZhy{}1, x = 3}
+	 	 \PYG{n}{coef} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}
+	 	 \PYG{n}{x} \PYG{o}{=} \PYG{l+m+mi}{3}
+	 	 \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{horner\PYGZus{}metod}\PYG{p}{(}\PYG{n}{coef}\PYG{p}{,} \PYG{n}{x}\PYG{p}{))}
+\end{Verbatim}

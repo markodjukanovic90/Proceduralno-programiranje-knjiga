@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{def} \PYG{n+nf}{func}\PYG{p}{():}
+	    \PYG{n}{a} \PYG{o}{=} \PYG{l+m+mi}{10}
+	    \PYG{n}{b} \PYG{o}{=} \PYG{p}{[]}
+	    \PYG{n}{c} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}abc\PYGZdq{}}
+\end{Verbatim}

@@ -306,11 +306,9 @@ Ovaj primjer pokazuje da rekurzija sama po sebi ne garantuje efikasan algoritam.
 	\begin{itemize}
 		\item U jednom potezu dozvoljeno je premjestiti samo jedan disk.
 		
-		```
 		\item Disk se uvijek uzima sa vrha jednog štapa i postavlja na vrh drugog štapa.
 		
 		\item Veći disk nikada ne smije biti postavljen na manji disk.
-		```
 		
 	\end{itemize}
 	
@@ -387,7 +385,7 @@ Rekurzija se izvrašava u eksponencijalnom $O(2^n)$ vremenu.
 
 \section{Algoritmi grube sile}
 
-Algoritmi grube sile (engl. \emph{brute force}) predstavljaju jednu od najjednostavnijih algoritamskih paradigmi za rješavanje računarskih problema. Osnovna ideja ove paradigme jeste sistematsko ispitivanje svih mogućih rješenja dok se ne pronađe rješenje koje zadovoljava postavljene uslove ili dok se ne odredi najbolje rješenje prema zadanom kriterijumu.
+Algoritmi grube sile predstavljaju jednu od najjednostavnijih algoritamskih paradigmi za rješavanje računarskih problema. Osnovna ideja ove paradigme jeste sistematsko ispitivanje svih mogućih rješenja dok se ne pronađe rješenje koje zadovoljava postavljene uslove ili dok se ne odredi najbolje rješenje prema zadanom kriterijumu.
 
 Iako je riječ o jednostavnom pristupu, algoritmi grube sile imaju značajnu ulogu u algoritamskom dizajnu. Često predstavljaju polaznu tačku za razvoj efikasnijih algoritama, a za probleme manjih dimenzija mogu dati zadovoljavajuća rješenja.
 
@@ -405,7 +403,6 @@ Paradigma grube sile najčešće se koristi za:
 \begin{example}
 	(\textbf{Problem najbližeg para tačaka})
 	
-	```
 	Neka je dat skup od $n$ tačaka u prostoru $\mathbb{R}^m$:
 	
 	\[
@@ -413,7 +410,6 @@ Paradigma grube sile najčešće se koristi za:
 	\]
 	
 	Potrebno je pronaći dvije tačke iz skupa $S$ čija je međusobna Euklidova udaljenost najmanja.
-	```
 	
 \end{example}
 
@@ -730,7 +726,7 @@ Ukupan broj poređenja iznosi $f(m)=\frac{n}{m}+m-1.$
  
 Rekurzivna implementacija pretage preskakanjem  je data sljedećim k\^odom.  % u jeziku Pajton. 
  
- \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
+ \begin{minted}[fontsize=\footnotesize]{python}
  def jump_search(niz, x, jump, k):
  
  	if k * jump >= len(niz): #empty array
@@ -1059,7 +1055,6 @@ Tipični primjeri primjene ove paradigme uključuju problem osam dama, bojenje g
 	\begin{algorithmic}[1]
 		\Procedure{Backtrack}{$x$}
 		
-		```
 		\If{$x$ nije dopustivo parcijalno rješenje}
 		\State \Return
 		\EndIf
@@ -1072,7 +1067,6 @@ Tipični primjeri primjene ove paradigme uključuju problem osam dama, bojenje g
 		\For{svaku moguću odluku $e$}
 		\State \textsc{Backtrack}(proširi $x$ sa $e$)
 		\EndFor
-		```
 		
 		\EndProcedure
 	\end{algorithmic}
@@ -1135,10 +1129,13 @@ Implementacija problema je data narednim k\^odom.
        if len(niz) == N: # kompletno rješenje
                return niz
        else:
-              for i in range(N):
-                  niz = niz + [i]
-                  if valid(niz): #backtrack ako nije 
-                       NQueens(niz + [i])
+              for col in range(N):
+                  kandidat = niz + [col]
+                  if valid(kandidat):
+                      rezultat = NQueens(kandidat, N)
+                      if rezultat is not None:
+                          return rezultat
+              return None
 
 #main
 N = 8
@@ -1207,7 +1204,7 @@ def FourSumSquares(sol, n):
 FourSumSquares([], 20)
  \end{minted}
 	
-	Kao što primijećujemo u prethodnom kodu, ako je \emph{sol} kardinalnosti 4, i ako je zbir kvadrata njegovih elemenata jednak $n$, ispisujemo \emph{sol} kao rješenje. U protivnom, ako je $|sol|<4$, (parcijalno) rješenje \emph{sol} proširujemo ubacujući naredni broj (varijabla $i\in \{1, \ldots, \lfloor\sqrt{n} \rfloor + 1 \}$), dobijajući niz \emph{solI}.  Ako je zbir kvadrata elemenata iz \emph{sol} veći od $n-(4 - |solI|)$, ovakva ekstenzija nikada neće voditi ka rješenju koje zadovoljava uslove zadatka, pa pretraga ide unazad, rekurzivno,  ispitujući druge kandidate za proširenje trenutnog rješenja \emph{sol}. Inicijalno, rješenje \emph{sol} je predstavljeno prazanim nizom.
+	Kao što primijećujemo u prethodnom kodu, ako je \emph{sol} kardinalnosti 4, i ako je zbir kvadrata njegovih elemenata jednak $n$, ispisujemo \emph{sol} kao rješenje. U protivnom, ako je $|sol|<4$, (parcijalno) rješenje \emph{sol} proširujemo ubacujući naredni broj (varijabla $i\in \{1, \ldots, \lfloor\sqrt{n} \rfloor + 1 \}$), dobijajući niz \emph{solI}.  Ako je zbir kvadrata elemenata iz \emph{sol} veći od $n-(4 - |solI|)$, ovakva ekstenzija nikada neće voditi ka rješenju koje zadovoljava uslove zadatka, pa pretraga ide unazad, rekurzivno,  ispitujući druge kandidate za proširenje trenutnog rješenja \emph{sol}. Inicijalno, rješenje \emph{sol} je predstavljeno praznim nizom.
 	 
 \end{solution}
  
@@ -1306,7 +1303,7 @@ Implementacija algoritma ovog problema  je data u nastavku.
 	 	i = 0
 	 	usitnjeno = 0
 	 	brojNovcanica = 0
-	 	sortApoeni = sort(P) # sort apoene opadajuće
+	 	sortApoeni = sorted(P) # sort apoene opadajuće
 	 	while i <  n and usitnjeno < X :
 	 		pi = (X - usitnjeno) // P[i]  #br. novcanica sortApoeni[i]
 	 		if pi > 0:
@@ -1320,7 +1317,7 @@ Implementacija algoritma ovog problema  je data u nastavku.
 	 \end{minted} 
 \end{solution}
 
-\textbf{Vremenska složenost}. Sortiranje algoritma zahtjeva $O(n \log n)$ vreme\-na. Dalje, glavna petlja se izvršava u $O(n)$ vremenu, odakle slijedi da je ukupno vrijeme izvršavanja algoritma jednako $O(n \log n)$, što je, svakako, polinomi\-jalno.  Napomenimo da ovakvom strategijom garantujemo nalazak optimalnog rje\-šenja problema, (ili utvrđujemo da rješenje ne postoji) što se formalno može i pokazati. 
+\textbf{Vremenska složenost}. Sortiranje algoritma zahtijeva $O(n \log n)$ vreme\-na. Dalje, glavna petlja se izvršava u $O(n)$ vremenu, odakle slijedi da je ukupno vrijeme izvršavanja algoritma jednako $O(n \log n)$, što je, svakako, polinomi\-jalno. Za kanonske sisteme apoena, kakvi se koriste u većini standardnih valuta, pohlepni algoritam daje optimalno rješenje.   %Napomenimo da ovakvom strategijom garantujemo nalazak optimalnog rje\-šenja problema, (ili utvrđujemo da rješenje ne postoji) što se formalno može i pokazati. 
 
 
 \begin{example}
@@ -1582,7 +1579,7 @@ Napomenimo da ovako dizajniran algoritam ne garantuje nalazak opti\-malnog rješ
 	\textit{Pohlepna funkcija.}
 	Intuitivno je razumno dati prednost poslovima koji donose veći profit. Zbog toga se poslovi najprije sortiraju po profitu u opadajućem poretku.
 	
-	Neka je trenutno parcijalno rješenje označeno sa $I_s$. U svakoj iteraciji bira se neraspoređeni posao sa najvećim profitom. Ukoliko je moguće pronaći slobodan vremenski interval prije njegovog krajnjeg roka, posao se dodaje u raspored. U suprotnom, posao se odbacuje i razmatra se naredni posao iz sortirane liste.  Da bi se ostavilo što više prostora za buduće poslove, odabrani posao se smješta u posljednji slobodan vremenski interval koji ne prelazi njegov krajnji rok.
+	Neka je trenutno parcijalno rješenje označeno sa $I_s$. U svakoj iteraciji bira se neraspoređeni posao sa najvećim profitom. Ukoliko je moguće pronaći slobodan vremenski interval prije njegovog krajnjeg roka, posao se dodaje u raspored. U suprotnom, posao se odbacuje i razmatra se naredni posao iz sortirane liste.  Da bi se ostavilo što više prostora za buduće poslove, odabrani posao se smješta u \textit{posljednji} slobodan vremenski interval koji ne prelazi njegov krajnji rok.
 	
 	\medskip
 	
@@ -1611,11 +1608,12 @@ Implementacija algoritma je data sljedećim k\^odom.
  def find_next_interval(I_s_covered, i):
  
  	for index, covered in enumerate(I_s_covered):
- 		if index >= Deadline[i]:
- 			return -1
+ 	    rev_index = len(I_s_covered)-index
+ 		if rev_index > Deadline[i]:
+ 			return continue
  		if covered == False:
  			return index
- 	return -1        
+ 	return -1       
  
  def sequnetial_scheduling():
  
@@ -1955,9 +1953,9 @@ Implementacija ovog rješenje je data sljedećim k\^odom (pristup odozgo prema d
 	 p = [60, 100, 120]
 	 W = [10, 20, 30]
 	 C = 50
-	 n = len(profit)
+	 n = len(p)
 	 #poziv funkcije
-	 print knapSack(n, C, W, p, n)
+	 print knapsack(n, C, W, p, n)
 	 \end{minted}
 	 
  \textit{Kompleksnost algoritma}. Najskuplji dio algoritma su dvije ugnježdene \texttt{for} petlje, koje izvršavaju $O(n \cdot C)$ iteracija. Svaka od iteracija se izvršava u konstantnom vremenu, pa je i ukupna kompleksnost algoritma jednaka $O(n \cdot C)$.
@@ -2156,7 +2154,7 @@ Ona se ostvaruje odabirom prvog i drugog proizvoda, čija je ukupna težina $2+3
 	              for i in range(1, len(s1)+1):
 	    	      for j in range(1, len(s2)+1):
 	    		     if s1[i] == s2[i]: 
-	    		         DP[i][j] = DP[i-1][j-1] + 1:
+	    		         DP[i][j] = DP[i-1][j-1] + 1
 	    		     else:
 	    		         DP[i][j] = max(DP[i-1][j], DP[i][j-1])
 	    		          
@@ -2298,6 +2296,8 @@ Ona se ostvaruje odabirom prvog i drugog proizvoda, čija je ukupna težina $2+3
    	                 DP[i][j] = DP[i-1][j-niz[i-1]] or DP[i-1][j]
    	              else:
    	                 DP[i][j] = DP[i-1][j]
+   	                 
+   	      return DP[len(niz)][suma]
    	  
    	  #instanca:
    	  niz = [3, 34, 4, 12, 5, 2]
@@ -2326,12 +2326,12 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 			DP[i][0] = True
 			return True 
 		if i == 0: 
-			DP[0][j] == False
+			DP[0][j] = False
 			return False
 		#recursion: 
 		if j >= niz[i-1]:
 			DP[i][j] = sum_array_top_down(niz, sum, i-1, j, DP) 
-	                or sum_array_top_down(niz, sum, i, j-niz[i-1], DP)
+	                or sum_array_top_down(niz, sum, i-1, j-niz[i-1], DP)
 			return DP[i][j]
 		else:
 			DP[i][j] = sum_array_top_down(niz, sum, i-1, j, DP)

@@ -566,25 +566,19 @@ $$
  Implementacija Hornerovog metoda je data narednim k\^odom. 
 	 
 	 \begin{minted}{python}
-	 	 def horner_metod(coef, n, x):
-	 	    
-	 	    if n == 0: 
-	 	       return coef[0]
-	 	    
-	 	 	# inicijalizacija
-	 	 	res = coef[n]  * x
-	 	 	for i in range(1, n):
-	 	     	res = res + coef[i]
-	 	     	if i < n-1:
-	 	     		res *= x
-	 	 	return res
+	 	 def horner_metod(coef, x):
+	 	   
+	 	     rezultat = 0
+	 	     for c in coef:
+	 	         rezultat = rezultat * x + c
+	 	     
+	 	     return rezultat
 	 	 
 	 	 # poziv funkcije
 	 	 # Evaluacija:  x^3 - 3 x^2 + 2 x -1, x = 3
 	 	 coef = [1, -3, 2, -1]
 	 	 x = 3
-	 	 n = len(coef)
-	 	 print(horner_metod(coef, n, x))
+	 	 print(horner_metod(coef, x))
 	 \end{minted}
 
 \textit{Kompleksnost algoritma.}  Jasno je da je najintenzivniji dio izvršavanja operacija smješten u \texttt{for}-petlju. Svaka iteracija se izvršava u konstantnom vremenu, pa zaključujemo da se algoritam izvršava u linearnom vremenu, tj. $O(n)$.  

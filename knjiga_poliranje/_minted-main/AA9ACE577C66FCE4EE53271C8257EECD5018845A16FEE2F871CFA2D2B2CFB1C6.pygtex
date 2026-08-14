@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n+ne}{ValueError}\PYG{p}{:} \PYG{n}{Dijeljenje} \PYG{n}{nulom} \PYG{n}{nije} \PYG{n}{dozvoljeno}\PYG{o}{.}
+\end{Verbatim}

@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{for} \PYG{n}{item} \PYG{o+ow}{in} \PYG{n}{iterable}\PYG{p}{:}
+	    \PYG{n}{naredba}
+\end{Verbatim}

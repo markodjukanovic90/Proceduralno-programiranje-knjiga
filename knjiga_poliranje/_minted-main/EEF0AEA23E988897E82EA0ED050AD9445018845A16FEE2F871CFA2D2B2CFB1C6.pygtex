@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{def} \PYG{n+nf}{dodaj\PYGZus{}element}\PYG{p}{(}\PYG{n}{lista}\PYG{p}{,} \PYG{n}{element}\PYG{p}{):}
+	
+	    \PYG{n}{lista}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{element}\PYG{p}{)}
+	
+	\PYG{c+c1}{\PYGZsh{}main}
+	\PYG{n}{brojevi} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{]}
+	\PYG{n}{dodaj\PYGZus{}element}\PYG{p}{(}\PYG{n}{brojevi}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{)}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{brojevi}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} [1, 2, 3, 5]}
+	
+\end{Verbatim}

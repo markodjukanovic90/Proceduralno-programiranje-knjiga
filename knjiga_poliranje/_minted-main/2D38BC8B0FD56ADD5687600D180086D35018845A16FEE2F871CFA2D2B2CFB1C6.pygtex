@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{def} \PYG{n+nf}{eratostenovo\PYGZus{}sito}\PYG{p}{(}\PYG{n}{N}\PYG{p}{):}
+	
+	    \PYG{n}{prost} \PYG{o}{=} \PYG{p}{[}\PYG{k+kc}{True}\PYG{p}{]} \PYG{o}{*} \PYG{p}{(}\PYG{n}{N} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)}
+	    \PYG{n}{prost}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{prost}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{k+kc}{False}
+	    \PYG{n}{p} \PYG{o}{=} \PYG{l+m+mi}{2}
+	
+	    \PYG{k}{while} \PYG{n}{p} \PYG{o}{*} \PYG{n}{p} \PYG{o}{\PYGZlt{}=} \PYG{n}{N}\PYG{p}{:}
+	        \PYG{k}{if} \PYG{n}{prost}\PYG{p}{[}\PYG{n}{p}\PYG{p}{]:}
+	            \PYG{k}{for} \PYG{n}{k} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{p} \PYG{o}{*} \PYG{n}{p}\PYG{p}{,} \PYG{n}{N} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{p}\PYG{p}{):}
+	            \PYG{n}{prost}\PYG{p}{[}\PYG{n}{k}\PYG{p}{]} \PYG{o}{=} \PYG{k+kc}{False}
+	        \PYG{n}{p} \PYG{o}{+=} \PYG{l+m+mi}{1}
+	
+	    \PYG{k}{return} \PYG{p}{[}\PYG{n}{i} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{N} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{k}{if} \PYG{n}{prost}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]]}
+	
+\end{Verbatim}

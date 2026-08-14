@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{def} \PYG{n+nf}{countdown}\PYG{p}{(}\PYG{n}{n}\PYG{p}{):}
+	
+	    \PYG{k}{if} \PYG{n}{n} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+	        \PYG{k}{return}
+	    \PYG{k}{return} \PYG{n}{countdown}\PYG{p}{(}\PYG{n}{n} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{)}
+	
+\end{Verbatim}

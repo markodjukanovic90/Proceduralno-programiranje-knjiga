@@ -1,0 +1,24 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+ \PYG{k}{def} \PYG{n+nf}{jump\PYGZus{}search}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{jump}\PYG{p}{,} \PYG{n}{k}\PYG{p}{):}
+
+ 	\PYG{k}{if} \PYG{n}{k} \PYG{o}{*} \PYG{n}{jump} \PYG{o}{\PYGZgt{}=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{):} \PYG{c+c1}{\PYGZsh{}empty array}
+ 		\PYG{k}{return} \PYG{k+kc}{False}
+
+ 	\PYG{k}{if} \PYG{n}{k} \PYG{o}{*} \PYG{n}{jump} \PYG{o}{\PYGZlt{}} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{)} \PYG{o+ow}{and} \PYG{p}{(}\PYG{n}{k}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{*} \PYG{n}{jump} \PYG{o}{\PYGZgt{}=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{):}
+ 		\PYG{n}{found} \PYG{o}{=} \PYG{n}{linear\PYGZus{}search}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{[}\PYG{n}{k}\PYG{o}{*}\PYG{n}{jump} \PYG{p}{:],} \PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}
+ 		\PYG{k}{return} \PYG{n}{found}
+ 	\PYG{c+c1}{\PYGZsh{}rekurzivni korak: oba kraja intervala su elementi niza:}
+ 	\PYG{k}{if} \PYG{n}{niz}\PYG{p}{[} \PYG{n}{k} \PYG{o}{*} \PYG{n}{jump} \PYG{p}{]} \PYG{o}{\PYGZlt{}=} \PYG{n}{x} \PYG{o+ow}{and} \PYG{n}{x} \PYG{o}{\PYGZlt{}=} \PYG{n}{niz}\PYG{p}{[} \PYG{p}{(}\PYG{n}{k}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{*} \PYG{n}{jump} \PYG{p}{]:}
+ 		\PYG{n}{found} \PYG{o}{=} \PYG{n}{linear\PYGZus{}search}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{[}\PYG{n}{k}\PYG{o}{*}\PYG{n}{jump}\PYG{p}{:} \PYG{p}{((}\PYG{n}{k}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{*}\PYG{n}{jump} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)],} \PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}
+ 		\PYG{k}{return} \PYG{n}{found}
+ 	\PYG{k}{else}\PYG{p}{:}
+ 		\PYG{k}{return} \PYG{n}{jump\PYGZus{}search}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{jump}\PYG{p}{,} \PYG{n}{k}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} idemo na naredni interval}
+
+ 	\PYG{c+c1}{\PYGZsh{}instanca:}
+ 	\PYG{n}{niz} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{21}\PYG{p}{,} \PYG{l+m+mi}{33}\PYG{p}{,} \PYG{l+m+mi}{38}\PYG{p}{,} \PYG{l+m+mi}{41}\PYG{p}{,} \PYG{l+m+mi}{45}\PYG{p}{,} \PYG{l+m+mi}{52}\PYG{p}{,} \PYG{l+m+mi}{57}\PYG{p}{,} \PYG{l+m+mi}{70}\PYG{p}{,} \PYG{l+m+mi}{75}\PYG{p}{]}
+ 	\PYG{n}{jump\PYGZus{}step} \PYG{o}{=} \PYG{l+m+mi}{3}
+ 	\PYG{n}{x}\PYG{o}{=} \PYG{l+m+mi}{57}
+ 	\PYG{c+c1}{\PYGZsh{} poziv metoda:}
+ 	\PYG{n}{found} \PYG{o}{=} \PYG{n}{jump\PYGZus{}search}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{,} \PYG{l+m+mi}{57}\PYG{p}{,} \PYG{n}{jump\PYGZus{}step}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}
+ 	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{found}\PYG{p}{)}
+\end{Verbatim}
