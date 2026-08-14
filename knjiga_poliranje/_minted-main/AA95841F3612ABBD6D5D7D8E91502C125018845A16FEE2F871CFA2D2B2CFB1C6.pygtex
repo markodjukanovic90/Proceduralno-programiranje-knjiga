@@ -2,7 +2,6 @@
 	\PYG{k}{def} \PYG{n+nf}{my\PYGZus{}func}\PYG{p}{():}
 	    \PYG{k}{global} \PYG{n}{x}
 	    \PYG{n}{x} \PYG{o}{=} \PYG{l+m+mi}{10}
-	
 	\PYG{c+c1}{\PYGZsh{}main}
 	\PYG{n}{x} \PYG{o}{=} \PYG{l+m+mi}{20}
 	\PYG{n}{my\PYGZus{}func}\PYG{p}{()}

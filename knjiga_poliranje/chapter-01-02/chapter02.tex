@@ -14,6 +14,69 @@ Na računarski problem možemo gledati kao na preslikavanje između ulaznih i iz
 
 Prije razmatranja različitih tipova računarskih problema uvedimo pojam grafa, jednog od najvažnijih matematičkih objekata u računarstvu. Graf se može posmatrati kao skup čvorova povezanih granama. U ovoj knjizi podrazumijevamo proste grafove, odnosno grafove koji ne sadrže petlje niti višestruke grane između istog para čvorova. Graf je \textit{usmjeren} ukoliko svaka grana ima pridružen smjer, odnosno uređeni par krajnjih čvorova. U suprotnom, graf se naziva \textit{neusmjerenim}. Primjeri usmjerenog i neusmjerenog grafa prikazani su na Slici~\ref{fig:graphs}.
 
+%graphs
+
+\begin{figure}[ht]
+	\centering
+	
+	\begin{tikzpicture}[
+		vertex/.style={
+			circle,
+			draw,
+			minimum size=7mm,
+			inner sep=0pt
+		},
+		edge/.style={
+			thick
+		},
+		directed/.style={
+			thick,
+			->,
+			>=Stealth
+		}
+		]
+		
+		% =====================================================
+		% Neusmjereni graf
+		% =====================================================
+		
+		\node[vertex] (u1) at (0,2) {$1$};
+		\node[vertex] (u2) at (2,2) {$2$};
+		\node[vertex] (u3) at (0,0) {$3$};
+		\node[vertex] (u4) at (2,0) {$4$};
+		
+		\draw[edge] (u1) -- (u2);
+		\draw[edge] (u1) -- (u3);
+		\draw[edge] (u2) -- (u3);
+		\draw[edge] (u2) -- (u4);
+		\draw[edge] (u3) -- (u4);
+		
+		\node at (1,-0.8) {\textbf{(a) Neusmjereni graf}};
+		
+		
+		% =====================================================
+		% Usmjereni graf
+		% =====================================================
+		
+		\node[vertex] (d1) at (5,2) {$1$};
+		\node[vertex] (d2) at (7,2) {$2$};
+		\node[vertex] (d3) at (5,0) {$3$};
+		\node[vertex] (d4) at (7,0) {$4$};
+		
+		\draw[directed] (d1) -- (d2);
+		\draw[directed] (d1) -- (d3);
+		\draw[directed] (d3) -- (d2);
+		\draw[directed] (d2) -- (d4);
+		\draw[directed] (d4) -- (d3);
+		
+		\node at (6,-0.8) {\textbf{(b) Usmjereni graf}};
+		
+	\end{tikzpicture}
+	
+	\caption{Primjeri neusmjerenog i usmjerenog grafa.}
+	\label{fig:graphs}
+\end{figure}
+
 Postoji više vrsta računarskih problema. U nastavku izdvajamo četiri najčešće klase koje se pojavljuju u literaturi: probleme odlučivanja, probleme pretraživanja, probleme optimizacije i probleme prebrojavanja.
 
 Problem \textit{odlučivanja} zahtijeva odgovor tipa DA/NE (\emph{True}/\emph{False}) za dati ulaz $x \in {0,1}^*$. Drugim riječima, potrebno je utvrditi da li ulazna instanca posjeduje određeno svojstvo. Kao primjer može poslužiti problem \textit{3-bojenja} grafa (3--COL). U ulazu je dat neusmjereni graf, a potrebno je odrediti da li postoji dodjela boja iz skupa ${1,2,3}$ svim čvorovima tako da nijedna dva susjedna čvora nemaju istu boju.
@@ -362,7 +425,7 @@ Posmatrajmo sljedeće funkcije:
 
 \begin{itemize}
 	\item $T_1(n)=2n^{3/2}+3n+10$
-	\item $T_2(n)=4n\log^3 n+\lceil \sqrt n \rceil+11$
+	\item $T_2(n)=3n\log^3 n+\lceil \sqrt n \rceil+15$
 \end{itemize}
 
 Na prvi pogled nije jednostavno uporediti ove dvije funkcije. Međutim, za velike vrijednosti $n$ dominantni član funkcije $T_1$ jeste $n^{3/2}$, dok je dominantni član funkcije $T_2$ jednak $n\log^3 n$.
@@ -938,11 +1001,10 @@ Drugim riječima, najveći zajednički djelilac brojeva $a$ i $b$ jednak je najv
 \begin{example}
 	
 	Odredimo najveći zajednički djelilac brojeva 	$
-	a=400,
-	\qquad
-	b=24.
-	$
+	a=400$ i $b=24.$ 
+\end{example}
 	
+	\begin{solution}
 	Algoritam izvršava sljedeće transformacije: 	$
 	(400,24)
 	\rightarrow
@@ -952,8 +1014,8 @@ Drugim riječima, najveći zajednički djelilac brojeva $a$ i $b$ jednak je najv
 	\rightarrow
 	(8,0).
 	$	Pošto je u posljednjem koraku drugi broj jednak nuli, algoritam se zaustavlja i vraća vrijednost prvog broja. Dakle, $\text{NZD}(400,24)=8.$
-	
-\end{example}
+\end{solution}
+
 
 Za razliku od naivnog algoritma iz prethodne sekcije, koji u najgorem slučaju ispituje sve brojeve od $\min(a,b)$ do $1$, Euklidov algoritam veoma brzo smanjuje vrijednosti brojeva nad kojima radi. Zbog toga se u praksi koristi gotovo isključivo ovaj pristup.
 
@@ -974,7 +1036,7 @@ $
 \text{NZD}(a,b)=\text{NZD}(b,a\bmod b),$ koje se primjenjuje u svakoj iteraciji algoritma. Budući da se vrijednost drugog argumenta strogo smanjuje, algoritam se nakon konačnog broja koraka zaustavlja, a posljednja nenulta vrijednost predstavlja najveći zajednički djelilac ulaznih brojeva.
 
 
-\section{Zadaci}
+\section*{Zadaci}
 
 \begin{enumerate}
 	\item Izračunati vremensku složenost sljedećeg programa:

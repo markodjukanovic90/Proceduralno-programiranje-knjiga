@@ -460,11 +460,9 @@ Na primjer, prvih deset parnih prirodnih brojeva može se ispisati na sljedeći 
 \end{minted}
 
 Naredba
-
 \begin{minted}{python}
 	i += 1
 \end{minted}
-
 predstavlja skraćeni zapis za
 
 \begin{minted}{python}
@@ -900,9 +898,7 @@ U ovom primjeru oznaka \texttt{'i'} označava cjelobrojne vrijednosti tipa \text
 	
 	\begin{minted}{python}
 		my_array[0] = 7
-		
 		print(my_array)
-		
 		# array('i', [7, 2, 3, 4, 5])
 		
 	\end{minted}
@@ -919,7 +915,6 @@ U ovom primjeru oznaka \texttt{'i'} označava cjelobrojne vrijednosti tipa \text
 		from array import array
 		
 		floats = array('f', [2.0, 3.2, 1.4])
-		
 		floats.extend([1.1, 4.1, 5.2, 9.0])
 	\end{minted}
 	
@@ -1471,7 +1466,6 @@ Cijeli brojevi, decimalni brojevi, stringovi i torke predstavljaju nepromjenljiv
 \end{minted}
 
 Rezultat izvršavanja je:
-
 \begin{minted}{text}
 	Unutar funkcije: 6
 	5
@@ -1487,13 +1481,11 @@ Ključna riječ \texttt{global} omogućava izmjenu globalne varijable unutar fun
 	def my_func():
 	    global x
 	    x = 10
-	
 	#main
 	x = 20
 	my_func()
 	print(x)  # 10
 \end{minted}
-
 Ipak, prekomjerna upotreba globalnih varijabli se ne preporučuje jer otežava razumijevanje i održavanje programa.
 
 \subsection*{Funkcije kao argumenti}
@@ -2206,16 +2198,14 @@ Još jedan koristan mehanizam predstavlja naredba \texttt{assert}, koja služi z
 Njena sintaksa je:
 
 \begin{minted}{python}
-	assert uslov, "poruka o grešci"
+	assert uslov, "poruka o greški"
 \end{minted}
 
 Ako je uslov tačan, program nastavlja izvršavanje. U suprotnom se generiše izuzetak tipa \texttt{AssertionError}.
 
-Primjer:
-
+Primjer. 
 \begin{minted}{python}
 	x = 5
-	
 	assert x > 0, "Vrijednost x mora biti pozitivna."
 \end{minted}
 
@@ -2229,7 +2219,7 @@ Pregled najvažnijih klasa izuzetaka prikazan je na Slici~\ref{fig:exceptions}.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=300pt,height=220pt]{slike/class-exceptions.png}
+	\includegraphics[width=260pt,height=200pt]{slike/class-exceptions.png}
 	\caption{Hijerarhija najvažnijih klasa izuzetaka u Pajtonu.}
 	\label{fig:exceptions}
 \end{figure}
@@ -2740,8 +2730,8 @@ Argument \texttt{dtype} određuje tip podataka koji se koristi za skladištenje 
 		\texttt{float32}, \texttt{float64} & realni brojevi \\
 		\texttt{bool} & logičke vrijednosti \\
 		\texttt{complex128} & kompleksni brojevi \\
-		\texttt{str} & stringovi 
-	\end{tabular}
+		\texttt{str} & stringovi  \\ \hline \hline
+	\end{tabular} 
 \end{center}
 
 \subsection*{Osnovne operacije}
@@ -3115,7 +3105,6 @@ Međutim, stvarni objekti na koje reference pokazuju uglavnom se nalaze u drugom
 Hip predstavlja dinamički dio memorije namijenjen skladištenju objekata čija veličina može biti poznata tek tokom izvršavanja programa. Gotovo svi Pajton objekti, uključujući liste, rječnike, skupove, torke, stringove i numeričke vrijednosti, smještaju se u hip memoriju.
 
 Na primjer:
-
 \begin{minted}{python}
 	a = [0] * 10
 \end{minted}
@@ -3208,7 +3197,7 @@ Treba napomenuti da standardna implementacija Pajtona (CPython) koristi interpre
 Na osnovu svega navedenog može se zaključiti da Pajton prvo prevodi izvorni kôd u bajtkod, a zatim taj bajtkod izvršava pomoću virtuelne mašine. Zbog toga se često kaže da je Pajton hibrid između kompajliranih i interpretiranih programskih jezika.
 
 
-\section{Zadaci}
+\section*{Zadaci}
 %regularni izrazi:
 \begin{enumerate}
     %%https://adriann.github.io/programming_problems.html

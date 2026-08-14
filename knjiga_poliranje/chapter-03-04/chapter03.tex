@@ -21,23 +21,23 @@ Kada je riječ o algoritmima, različiti problemi zahtijevaju različite strateg
 	
 	Zasnivaju se na razlaganju problema na manje podprobleme iste prirode. Rješenje se dobija rekurzivnim pozivanjem algoritma sve dok se ne dostigne jedan od baznih slučajeva.
 	
-	\item \textbf{Algoritmi grube sile} (\textit{brute force})
+	\item \textbf{Algoritmi grube sile} (eng. \textit{brute force})
 	
 	Zasnivaju se na ispitivanju svih mogućih rješenja dok se ne pronađe ispravno ili optimalno rješenje. Jednostavni su za implementaciju, ali često imaju visoku vremensku složenost.
 	
-	\item \textbf{Podijeli pa vladaj} (\textit{divide and conquer})
+	\item \textbf{Podijeli pa vladaj} (eng. \textit{divide and conquer})
 	
-	Problem se dijeli na više manjih nezavisnih podproblema koji se rješavaju odvojeno, nakon čega se njihova rješenja kombinuju u rješenje originalnog problema. Klasični primjeri su algoritmi Merge Sort i Quick Sort.
+	Problem se dijeli na više manjih nezavisnih podproblema koji se rješavaju odvojeno, nakon čega se njihova rješenja kombinuju u rješenje originalnog problema.% Klasični primjeri su Sortiranje spajanjem i Brzo sortiranje.
 	
-	\item \textbf{Pohlepni algoritmi} (\textit{greedy algorithms})
+	\item \textbf{Pohlepni algoritmi} (eng. \textit{greedy algorithms})
 	
 	U svakom koraku donose lokalno najbolje moguće rješenje, uz pretpostavku da će takav izbor dovesti do globalno optimalnog rješenja. Karakterišu ih jednostavnost i mala potrošnja memorije, ali ne garantuju optimalnost za sve probleme.
 	
-	\item \textbf{Dinamičko programiranje} (\textit{dynamic programming})
+	\item \textbf{Dinamičko programiranje} (eng. \textit{dynamic programming})
 	
 	Problem se razlaže na podprobleme koji se međusobno preklapaju. Rezultati već riješenih podproblema memorisu se i ponovo koriste, čime se izbjegava višestruko računanje istih vrijednosti.
 	
-	\item \textbf{Vraćanje unazad} (\textit{backtracking})
+	\item \textbf{Vraćanje unazad} (eng. \textit{backtracking})
 	
 	Rješenje se gradi postepeno. Kada se ustanovi da trenutno parcijalno rješenje ne može dovesti do validnog rješenja, algoritam se vraća na prethodni korak i pokušava alternativni izbor.
 	
@@ -348,7 +348,7 @@ Ovaj primjer pokazuje da rekurzija sama po sebi ne garantuje efikasan algoritam.
 		\item najmanji disk se premješta sa štapa $A$ na štap $C$.
 	\end{enumerate}
 	
-	Ukupno je potrebno sedam poteza.
+	Ukupno je potrebno sedam poteza.\\
 	
 	Da bismo riješili opšti slučaj, označimo sa $T(n)$ minimalan broj poteza potreban za premještanje $n$ diskova sa štapa $A$ na štap $C$, koristeći štap $B$ kao pomoćni.
 	
@@ -458,21 +458,15 @@ Rekurzija se izvrašava u eksponencijalnom $O(2^n)$ vremenu.
  A=[7,3,5,2].
  \]
  Rekurzivni algoritam najprije sortira prefiks dužine $3$,
- odnosno niz
- \[
- [7,3,5],
- \]
- koji nakon sortiranja postaje
- \[
- [3,5,7].
- \]
+ odnosno niz $
+ [7,3,5],$
+ koji nakon sortiranja postaje $
+ [3,5,7].$ 
  Preostaje umetanje posljednjeg elementa $2$. Pošto je $2$ manje od svih
  elemenata sortiranog prefiksa, elementi $7$, $5$ i $3$ pomjeraju se za jednu
  poziciju udesno, nakon čega se vrijednost $2$ postavlja na početak niza.
- Dobijamo konačno sortirani niz
- \[
- [2,3,5,7].
- \]
+ Dobijamo konačno sortirani niz $
+ [2,3,5,7].$
  
  \paragraph{Ispravnost algoritma.}
  Ispravnost rekurzivnog algoritma možemo pokazati indukcijom po veličini
@@ -530,10 +524,7 @@ Rekurzija se izvrašava u eksponencijalnom $O(2^n)$ vremenu.
  \]
  
  Prema tome, vremenska složenost rekurzivnog algoritma sortiranja umetanjem
- u najgorem slučaju iznosi
- \[
- \boxed{\Theta(n^2)}.
- \]
+ u najgorem slučaju iznosi ${\Theta(n^2)}.$
  
  Najgori slučaj nastupa kada je početni niz sortiran u opadajućem poretku.
  Tada se pri svakom umetanju trenutni element mora pomjeriti preko svih
@@ -553,10 +544,8 @@ Rekurzija se izvrašava u eksponencijalnom $O(2^n)$ vremenu.
  T_{\mathrm{best}}(n)=\Theta(n).
  \]
  
- Prosječna vremenska složenost algoritma iznosi
- \[
- \Theta(n^2).
- \]
+ Prosječna vremenska složenost algoritma iznosi $
+ \Theta(n^2).$
  
  \paragraph{Prostorna složenost.}
  Sama operacija umetanja koristi samo konstantan broj dodatnih promjenljivih.
@@ -675,21 +664,21 @@ Računanje Euklidove udaljenosti između dvije tačke u prostoru $\mathbb{R}^m$ 
 	\begin{center}
 		\begin{tabular}{lcc}
 			Rješenje & Ukupna težina & Ukupna vrijednost \\ \hline
-			${1}$ & 2 & 20  \\
-			${2}$ & 5 & 30  \\
-			${3}$ & 10 & 50  \\
-			${4}$ & 5 & 10  \\
-			${1,2}$ & 7 & 50  \\
-			${1,3}$ & 12 & 70  \\
-			${1,4}$ & 7 & 30  \\
-			${2,3}$ & 15 & 80  \\
-			${2,4}$ & 10 & 40  \\
-			${3,4}$ & 15 & 60 \\
-			${1,2,3}$ & 17 & nedopustivo  \\
-			${1,2,4}$ & 12 & 60  \\
-			${1,3,4}$ & 17 & nedopustivo  \\
-			${2,3,4}$ & 20 & nedopustivo  \\
-			${1,2,3,4}$ & 22 & nedopustivo  \\ \hline
+			$\{1\}$ & 2 & 20  \\
+			$\{2\}$ & 5 & 30  \\
+			$\{3\}$ & 10 & 50  \\
+			$\{4\}$ & 5 & 10  \\
+			$\{1,2\}$ & 7 & 50  \\
+			$\{1,3\}$ & 12 & 70  \\
+			$\{1,4\}$ & 7 & 30  \\
+			$\{2,3\}$ & 15 & 80  \\
+			$\{2,4\}$ & 10 & 40  \\
+			$\{3,4\}$ & 15 & 60 \\
+			$\{1,2,3\}$ & 17 & nedopustivo  \\
+			$\{1,2,4\}$ & 12 & 60  \\
+			$\{1,3,4\}$ & 17 & nedopustivo  \\
+			$\{2,3,4\}$ & 20 & nedopustivo  \\
+			$\{1,2,3,4\}$ & 22 & nedopustivo  \\ \hline
 		\end{tabular}
 	\end{center}
 	
