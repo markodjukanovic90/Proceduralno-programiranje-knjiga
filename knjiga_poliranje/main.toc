@@ -76,23 +76,27 @@
 \contentsline {section}{\numberline {3.2}Vrste rekurzije}{136}{}%
 \contentsline {subsection}{\numberline {3.2.1}Rekurzivni i iterativni pristup: poređenje}{138}{}%
 \contentsline {subsection}{\numberline {3.2.2}Primjene rekurzije}{138}{}%
-\contentsline {section}{\numberline {3.3}Algoritmi grube sile}{144}{}%
-\contentsline {section}{\numberline {3.4}Algoritmi pretraživanja}{149}{}%
-\contentsline {subsection}{\numberline {3.4.1}Linearna pretraga}{149}{}%
-\contentsline {subsection}{\numberline {3.4.2}Binarna pretraga}{151}{}%
-\contentsline {subsection}{\numberline {3.4.3}Pretraga preskakanjem}{153}{}%
-\contentsline {subsection}{\numberline {3.4.4}Interpolacijska pretraga}{155}{}%
-\contentsline {subsection}{\numberline {3.4.5}Eksponencijalna pretraga}{157}{}%
-\contentsline {section}{\numberline {3.5}Podijeli pa zavladaj}{159}{}%
-\contentsline {section}{\numberline {3.6}Algoritamska paradigma vraćanja unazad}{163}{}%
-\contentsline {section}{\numberline {3.7}Pohlepni algoritmi}{169}{}%
-\contentsline {section}{\numberline {3.8}Dinamičko programiranje}{182}{}%
-\contentsline {subsection}{\numberline {3.8.1}Rekurzija naspram dinamičkog programiranja}{185}{}%
-\contentsline {subsection}{\numberline {3.8.2}Primjene dinamičkog programiranja}{186}{}%
-\contentsline {section}{\numberline {3.9}Zadaci}{202}{}%
-\contentsline {chapter}{\numberline {4}Primjena algoritamskih paradigmi na probleme iz aritmetike}{205}{}%
-\contentsline {section}{\numberline {4.1}Eratostenovo sito}{205}{}%
-\contentsline {section}{\numberline {4.2}Faktorizacija broja}{210}{}%
-\contentsline {section}{\numberline {4.3}Izračunavanje binomnih koeficijenata}{212}{}%
-\contentsline {section}{\numberline {4.4}Hornerov metod}{220}{}%
-\contentsline {section}{\numberline {4.5}Zadaci}{222}{}%
+\contentsline {paragraph}{Ispravnost algoritma.}{146}{}%
+\contentsline {paragraph}{Vremenska složenost.}{146}{}%
+\contentsline {paragraph}{Prostorna složenost.}{148}{}%
+\contentsline {paragraph}{Komentar.}{148}{}%
+\contentsline {section}{\numberline {3.3}Algoritmi grube sile}{148}{}%
+\contentsline {section}{\numberline {3.4}Algoritmi pretraživanja}{153}{}%
+\contentsline {subsection}{\numberline {3.4.1}Linearna pretraga}{153}{}%
+\contentsline {subsection}{\numberline {3.4.2}Binarna pretraga}{155}{}%
+\contentsline {subsection}{\numberline {3.4.3}Pretraga preskakanjem}{157}{}%
+\contentsline {subsection}{\numberline {3.4.4}Interpolacijska pretraga}{159}{}%
+\contentsline {subsection}{\numberline {3.4.5}Eksponencijalna pretraga}{161}{}%
+\contentsline {section}{\numberline {3.5}Podijeli pa zavladaj}{163}{}%
+\contentsline {section}{\numberline {3.6}Algoritamska paradigma vraćanja unazad}{167}{}%
+\contentsline {section}{\numberline {3.7}Pohlepni algoritmi}{173}{}%
+\contentsline {section}{\numberline {3.8}Dinamičko programiranje}{186}{}%
+\contentsline {subsection}{\numberline {3.8.1}Rekurzija naspram dinamičkog programiranja}{189}{}%
+\contentsline {subsection}{\numberline {3.8.2}Primjene dinamičkog programiranja}{190}{}%
+\contentsline {section}{\numberline {3.9}Zadaci}{206}{}%
+\contentsline {chapter}{\numberline {4}Primjena algoritamskih paradigmi na probleme iz aritmetike}{209}{}%
+\contentsline {section}{\numberline {4.1}Eratostenovo sito}{209}{}%
+\contentsline {section}{\numberline {4.2}Faktorizacija broja}{214}{}%
+\contentsline {section}{\numberline {4.3}Izračunavanje binomnih koeficijenata}{216}{}%
+\contentsline {section}{\numberline {4.4}Hornerov metod}{224}{}%
+\contentsline {section}{\numberline {4.5}Zadaci}{226}{}%

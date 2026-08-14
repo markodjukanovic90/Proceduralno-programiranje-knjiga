@@ -382,6 +382,201 @@ Implementacija rekurzivnog pristupa problema Hanojskih kula je data sljedećim k
 Rekurzija se izvrašava u eksponencijalnom $O(2^n)$ vremenu.   
 \end{solution}	
  
+ %SORTIRANJE ALGORITAMA: TODO 
+\textbf{Rekurzivni algoritam sortiranja umetanjem}.  
+  
+ Sortiranje umetanjem (\emph{Insertion Sort}) predstavlja jednostavan algoritam
+ sortiranja koji niz gradi postepeno, održavajući jedan njegov dio sortiranim.
+ Osnovna ideja algoritma sastoji se u tome da se svaki novi element umetne na
+ odgovarajuću poziciju unutar već sortiranog dijela niza.
+ 
+ Algoritam sortiranja umetanjem može se prirodno formulirati i rekurzivno.
+ Neka je dat niz
+ \[
+ A = (a_0,a_1,\ldots,a_{n-1})
+ \]
+ od $n$ elemenata koje je potrebno sortirati u neopadajućem poretku.
+ 
+ Rekurzivna formulacija zasniva se na sljedećem zapažanju. Pretpostavimo da smo
+ već sortirali prvih $n-1$ elemenata niza:
+ \[
+ (a_0,a_1,\ldots,a_{n-2}).
+ \]
+ Tada je za sortiranje kompletnog niza dovoljno posljednji element
+ $a_{n-1}$ umetnuti na odgovarajuću poziciju unutar već sortiranog prefiksa.
+ 
+ Prema tome, algoritam se sastoji od dvije osnovne faze:
+ 
+ \begin{enumerate}
+ 	\item rekurzivno sortirati prvih $n-1$ elemenata niza;
+ 	\item umetnuti posljednji element $a_{n-1}$ na odgovarajuću poziciju
+ 	unutar sortiranog prefiksa.
+ \end{enumerate}
+ 
+ Bazni slučaj nastupa kada niz sadrži najviše jedan element. Takav niz je već
+ sortiran, pa nije potrebno izvršavati dodatne operacije.
+ 
+ Pretpostavimo sada da su elementi
+ \[
+ a_0,a_1,\ldots,a_{n-2}
+ \]
+ već sortirani. Vrijednost $a_{n-1}$ privremeno čuvamo u promjenljivoj
+ \texttt{key}. Zatim se, počevši od elementa $a_{n-2}$, krećemo unazad kroz
+ sortirani dio niza. Svaki element koji je veći od vrijednosti \texttt{key}
+ pomjera se za jednu poziciju udesno. Kada pronađemo prvi element koji nije
+ veći od \texttt{key}, vrijednost \texttt{key} umećemo neposredno iza njega.
+ 
+ Na ovaj način nakon završetka postupka prvih $n$ elemenata niza nalazi se u
+ sortiranom poretku.
+ 
+% Pseudokod rekurzivnog algoritma dat je Algoritmom~\ref{alg:recursive-insertion-sort}.
+ 
+%PSEUDOKOD:
+\begin{minted}[fontsize=\footnotesize]{python}
+	def RecursiveInsertionSort(A, n):
+	    if n <= 1:
+	        return
+	
+	    # Rekurzivno sortiramo prvih n-1 elemenata
+    	RecursiveInsertionSort(A, n - 1)
+	
+	    # Umetanje posljednjeg elementa
+	    key = A[n - 1]
+	    j = n - 2
+	
+	    while j >= 0 and A[j] > key:
+	        A[j + 1] = A[j]
+	        j = j - 1
+	
+	    A[j + 1] = key
+\end{minted}
+
+
+ 
+ Na primjer, posmatrajmo niz
+ \[
+ A=[7,3,5,2].
+ \]
+ Rekurzivni algoritam najprije sortira prefiks dužine $3$,
+ odnosno niz
+ \[
+ [7,3,5],
+ \]
+ koji nakon sortiranja postaje
+ \[
+ [3,5,7].
+ \]
+ Preostaje umetanje posljednjeg elementa $2$. Pošto je $2$ manje od svih
+ elemenata sortiranog prefiksa, elementi $7$, $5$ i $3$ pomjeraju se za jednu
+ poziciju udesno, nakon čega se vrijednost $2$ postavlja na početak niza.
+ Dobijamo konačno sortirani niz
+ \[
+ [2,3,5,7].
+ \]
+ 
+ \paragraph{Ispravnost algoritma.}
+ Ispravnost rekurzivnog algoritma možemo pokazati indukcijom po veličini
+ niza $n$.
+ 
+ Za $n=1$ niz sadrži samo jedan element i trivijalno je sortiran.
+ 
+ Pretpostavimo sada da algoritam ispravno sortira svaki niz od $n-1$
+ elemenata. Pri pozivu algoritma za niz od $n$ elemenata, rekurzivni poziv
+ sortira njegovih prvih $n-1$ elemenata. Nakon toga posljednji element
+ $a_{n-1}$ umeće se na odgovarajuću poziciju unutar sortiranog prefiksa,
+ pri čemu se svi elementi veći od njega pomjeraju za jednu poziciju udesno.
+ Prema tome, nakon umetanja svih $n$ elemenata nalazi se u neopadajućem
+ poretku. Time je pokazano da algoritam ispravno sortira niz proizvoljne
+ dužine $n$.
+ 
+ \paragraph{Vremenska složenost.}
+ Neka je $T(n)$ vrijeme potrebno za sortiranje niza od $n$ elemenata.
+ 
+ Algoritam najprije rekurzivno sortira prvih $n-1$ elemenata, što zahtijeva
+ vrijeme $T(n-1)$. Nakon toga posljednji element umeće se u već sortirani
+ prefiks.
+ 
+ U najgorem slučaju posljednji element je manji od svih prethodnih elemenata.
+ Tada je potrebno pomjeriti svih $n-1$ elemenata za jednu poziciju udesno.
+ Zbog toga operacija umetanja zahtijeva $\Theta(n)$ vremena.
+ 
+ Dobijamo rekurentnu relaciju
+ \[
+ T(n)=T(n-1)+\Theta(n),
+ \]
+ uz bazni slučaj
+ \[
+ T(1)=\Theta(1).
+ \]
+ 
+ Razvijanjem rekurzije dobijamo
+ \[
+ \begin{aligned}
+ 	T(n)
+ 	&= T(n-1)+\Theta(n)\\
+ 	&= T(n-2)+\Theta(n-1)+\Theta(n)\\
+ 	&\;\;\vdots\\
+ 	&= T(1)+\Theta(2)+\Theta(3)+\cdots+\Theta(n).
+ \end{aligned}
+ \]
+ 
+ Kako vrijedi
+ \[
+ 1+2+\cdots+n=\frac{n(n+1)}{2},
+ \]
+ slijedi
+ \[
+ T(n)=\Theta(n^2).
+ \]
+ 
+ Prema tome, vremenska složenost rekurzivnog algoritma sortiranja umetanjem
+ u najgorem slučaju iznosi
+ \[
+ \boxed{\Theta(n^2)}.
+ \]
+ 
+ Najgori slučaj nastupa kada je početni niz sortiran u opadajućem poretku.
+ Tada se pri svakom umetanju trenutni element mora pomjeriti preko svih
+ prethodno obrađenih elemenata.
+ 
+ U najboljem slučaju niz je već sortiran. Tada se pri svakom rekurzivnom
+ nivou izvršava samo jedno poređenje prije nego što se utvrdi da se
+ posljednji element već nalazi na odgovarajućoj poziciji. Rekurentna relacija
+ tada ima oblik
+ \[
+ T_{\mathrm{best}}(n)
+ =
+ T_{\mathrm{best}}(n-1)+\Theta(1),
+ \]
+ odakle slijedi
+ \[
+ T_{\mathrm{best}}(n)=\Theta(n).
+ \]
+ 
+ Prosječna vremenska složenost algoritma iznosi
+ \[
+ \Theta(n^2).
+ \]
+ 
+ \paragraph{Prostorna složenost.}
+ Sama operacija umetanja koristi samo konstantan broj dodatnih promjenljivih.
+ Međutim, zbog rekurzivne implementacije na steku se istovremeno može nalaziti
+ do $n$ aktivnih poziva funkcije. Zbog toga dodatna prostorna složenost
+ rekurzivnog algoritma iznosi $\Theta(n)$.
+ 
+ Kod standardne iterativne implementacije sortiranja umetanjem ovaj dodatni
+ trošak ne postoji, pa je njena prostorna složenost $\Theta(1)$.
+ 
+ \paragraph{Komentar.}
+ Sortiranje umetanjem nije efikasno za velike nizove zbog kvadratne prosječne
+ i najgore vremenske složenosti. Ipak, algoritam ima nekoliko važnih
+ prednosti. Jednostavan je za implementaciju, ne zahtijeva dodatnu memoriju
+ za čuvanje elemenata i veoma je efikasan za male ili skoro sortirane nizove.
+ 
+ Rekurzivna formulacija posebno je korisna sa pedagoškog stanovišta, jer
+ jasno pokazuje način na koji se problem veličine $n$ može svesti na problem
+ istog tipa veličine $n-1$. Time sortiranje umetanjem predstavlja jednostavan
+ primjer primjene rekurzivnog načina razmišljanja na problem sortiranja.
 
 \section{Algoritmi grube sile}
 
