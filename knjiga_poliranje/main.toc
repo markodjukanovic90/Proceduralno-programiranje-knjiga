@@ -93,10 +93,8 @@
 \contentsline {section}{\numberline {3.8}Dinamičko programiranje}{186}{}%
 \contentsline {subsection}{\numberline {3.8.1}Rekurzija naspram dinamičkog programiranja}{189}{}%
 \contentsline {subsection}{\numberline {3.8.2}Primjene dinamičkog programiranja}{190}{}%
-\contentsline {section}{\numberline {3.9}Zadaci}{206}{}%
 \contentsline {chapter}{\numberline {4}Primjena algoritamskih paradigmi na probleme iz aritmetike}{209}{}%
 \contentsline {section}{\numberline {4.1}Eratostenovo sito}{209}{}%
 \contentsline {section}{\numberline {4.2}Faktorizacija broja}{214}{}%
 \contentsline {section}{\numberline {4.3}Izračunavanje binomnih koeficijenata}{216}{}%
 \contentsline {section}{\numberline {4.4}Hornerov metod}{224}{}%
-\contentsline {section}{\numberline {4.5}Zadaci}{226}{}%

@@ -1550,9 +1550,7 @@ Implementacija algoritma ovog problema  je data u nastavku.
 	
 	Najprije sortiramo proizvode opadajuće prema vrijednosti $\rho_i$. Neka je nakon sortiranja redoslijed proizvoda označen indeksima $1,2,\ldots,n.$
 	
-	Algoritam zatim prolazi kroz proizvode tim redoslijedom. Za svaki proizvod uzima se najveći mogući dio koji još može stati u preostali kapacitet ruksaka. Ako proizvod može stati u cijelosti, postavlja se $c_i=1$. U suprotnom, uzima se upravo onaj dio koji popunjava preostali kapacitet: $c_i=  \frac{\text{preostali kapacitet}}{w_i}.$
-	
-	Nakon toga je ruksak popunjen i algoritam se završava.
+	Algoritam zatim prolazi kroz proizvode tim redoslijedom. Za svaki proizvod uzima se najveći mogući dio koji još može stati u preostali kapacitet ruksaka. Ako proizvod može stati u cijelosti, postavlja se $c_i=1$. U suprotnom, uzima se upravo onaj dio koji popunjava preostali kapacitet: $c_i=  \frac{\text{preostali\_kapacitet}}{w_i}.$  Nakon toga je ruksak popunjen i algoritam se završava.
 	
 	\medskip
 	
@@ -2053,7 +2051,7 @@ Implementacija ovog rješenje je data sljedećim k\^odom (pristup odozgo prema d
 	print(max_sum_path)
 \end{minted}
 
-\textit{Kompleksnost algoritma}. Funkcija \texttt{solve} se izvršava u $O(n^2)$ vremenskoj kompleksnosti kao najzahtjevniji dio implementacije. Spoljašnja petlja se izvršava $n$ puta.  Prema tome, ukupna kompleksnost algoritma je $O(n^2 \cdot n)=O(n^3)$.
+\textit{Kompleksnost algoritma}. Funkcija \texttt{solve}() se izvršava u vremenu od $O(n^2)$   kao najzahtjevniji dio implementacije. Spoljašnja petlja se izvršava $n$ puta.  Prema tome, ukupna kompleksnost algoritma je $O(n^2 \cdot n)=O(n^3)$.
 
 \end{solution}
 
@@ -2098,7 +2096,7 @@ Implementacija ovog rješenje je data sljedećim k\^odom (pristup odozgo prema d
 	DP[i][j] =
 	\begin{cases}
 		\max\bigl(DP[i-1][j],, DP[i-1][j-w_i] + p_i\bigr),
-		& \text{ako } w_i \leq j, [2mm]
+		& \text{ako } w_i \leq j, \\
 		DP[i-1][j],
 		& \text{ako } w_i > j.
 	\end{cases}
@@ -2158,15 +2156,13 @@ Implementacija ovog rješenje je data sljedećim k\^odom (pristup odozgo prema d
 
 Navedimo sada primjer konkretne instance problema i način popunjavanja DP tabele.
 
-Neka je broj proizvoda $n=4$, kapacitet ruksaka $C=5$, a težine i vrijednosti proizvoda date nizovima $W=(2,3,4,5), \qquad P=(3,4,5,6).$
+Neka je broj proizvoda $n=4$, kapacitet ruksaka $C=5$, a težine i vrijednosti proizvoda date nizovima $W=(2,3,4,5), P=(3,4,5,6).$
 
 Formiramo matricu $DP$ dimenzija $(n+1)\times(C+1)$, pri čemu vrijednost $DP[i][j]$ predstavlja maksimalnu vrijednost koju je moguće ostvariti korištenjem prvih $i$ proizvoda i ruksaka kapaciteta $j$.
 
 \medskip
 
-Prvi korak sastoji se od inicijalizacije baznih slučajeva. Kako ruksak kapaciteta $0$ ne može sadržavati nijedan proizvod, vrijedi $DP[i][0]=0$ za sve $i$. Takođe, ako ne razmatramo nijedan proizvod, ostvarena vrijednost je jednaka nuli, pa vrijedi $DP[0][j]=0$ za sve $j$.
-
-Dobijamo početnu tabelu:
+Prvi korak sastoji se od inicijalizacije baznih slučajeva. Kako ruksak kapaciteta $0$ ne može sadržavati nijedan proizvod, vrijedi $DP[i][0]=0$ za sve $i$. Takođe, ako ne razmatramo nijedan proizvod, ostvarena vrijednost je jednaka nuli, pa vrijedi $DP[0][j]=0$ za sve $j$. Dobijamo početnu tabelu:
 
 \begin{table}[H]
 	\centering
@@ -2267,14 +2263,12 @@ Ona se ostvaruje odabirom prvog i drugog proizvoda, čija je ukupna težina $2+3
  \begin{definition}
  	String $s$ je podniz stringa $s_1$ akko se $s$ može dobiti brisanjem (nula ili više)
  	karaktera iz stringa $s_1$ a čuvajući poredak ostalih karaktera. \\
- 	Npr.  \texttt{acd} je podniz stringa \texttt{abbbcdef}.   
- 	
- 	Prefiks stringa $s$ dužine $k$ je podstring stringa $s$ koji se sastoji od prvih $k$ karaktera. Npr. prefiks dužine tri stringa \texttt{abbbcdef} je string \texttt{abb}. 
+ 	Npr.  \texttt{acd} je podniz stringa \texttt{abbbcdef}.   Prefiks stringa $s$ dužine $k$ je podstring stringa $s$ koji se sastoji od prvih $k$ karaktera. Npr. prefiks dužine tri stringa \texttt{abbbcdef} je string \texttt{abb}. 
  	
  \end{definition}
  
 \begin{example}
-	(\textit{Problem najdužeg zajedničkog podniza} (\emph{Longest Common Subsequence Problem} -- LCS)). Neka su data dva stringa $s_1$ i $s_2$. Potrebno je odrediti najduži string $s$ koji je podniz oba ulazna stringa.
+	(\textit{Problem najdužeg zajedničkog podniza} (eng. \emph{Longest Common Subsequence Problem} -- LCS)). Neka su data dva stringa $s_1$ i $s_2$. Potrebno je odrediti najduži string $s$ koji je podniz oba ulazna stringa.
 	
 	Na primjer, za stringove $s_1=\texttt{aatdccddc}$ i 
 	$s_2=\texttt{agccddta} $
@@ -2287,7 +2281,7 @@ Ona se ostvaruje odabirom prvog i drugog proizvoda, čija je ukupna težina $2+3
 	Definišimo podproblem parom indeksa $(i,j)$, gdje je
 	$0 \leq i \leq |s_1|, 0 \leq j \leq |s_2|.
 	$ 
-	Podproblem $(i,j)$ odgovara određivanju dužine najdužeg zajedničkog podniza prefiksa stringa $s_1$ dužine $i$ i prefiksa stringa $s_2$ dužine $j$.
+	Podproblem označen parom $(i,j)$ odgovara određivanju dužine najdužeg zajedničkog podniza prefiksa stringa $s_1$ dužine $i$ i prefiksa stringa $s_2$ dužine $j$.
 	
 	Rješenja podproblema memorišemo u matrici $DP$, pri čemu vrijednost $DP[i][j]$ predstavlja dužinu najdužeg zajedničkog podniza pomenutih prefiksa.
 	
@@ -2435,7 +2429,7 @@ Ona se ostvaruje odabirom prvog i drugog proizvoda, čija je ukupna težina $2+3
 	
 	\medskip
 	
-	\textit{Rekurzivna relacija.} 	Posmatrajmo podproblem $(i,j)$ i element $niz[i-1]$. Postoje dva moguća slučaja.
+	\textit{Rekurzivna relacija.} 	Posmatrajmo podproblem označen parom $(i,j)$ i element $niz[i-1]$. Postoje dva moguća slučaja.
 	
 	\begin{itemize}
 		\item {Element $niz[i-1]$ pripada rješenju.}
@@ -2444,25 +2438,21 @@ Ona se ostvaruje odabirom prvog i drugog proizvoda, čija je ukupna težina $2+3
 		pod uslovom da je $
 		j \geq niz[i-1].$
 		
-		\item {Element $niz[i-1]$ ne pripada rješenju.} Tada se problem svodi na prvih $i-1$ elemenata:
+		\item {Element $niz[i-1]$ ne uzimamo u rješenje.} Tada se problem svodi na prvih $i-1$ elemenata:
 		$ DP[i][j] = DP[i-1][j].$
 		
 	\end{itemize}
 	
 	Pošto je dovoljno da bude zadovoljen bilo koji od ova dva slučaja, dobijamo rekurziju
 	
-	$
+	$$
 	DP[i][j]=
-	DP[i-1][j] \vee DP[i-1][j-niz[i-1]],$
-	ako je $j \geq niz[i-1].$
-	
-	U suprotnom, element ne može biti dio rješenja pa vrijedi $DP[i][j] =	DP[i-1][j].$
+	DP[i-1][j] \vee DP[i-1][j-niz[i-1]],$$
+	ako je $j \geq niz[i-1].$	U suprotnom, element ne može biti dio rješenja pa vrijedi $DP[i][j] =	DP[i-1][j].$
 	
 	\medskip
 	
-	\textit{Bazni slučajevi.}
-	
-	Zbir $0$ uvijek možemo ostvariti izborom praznog podskupa, pa vrijedi $
+	\textit{Bazni slučajevi.}  	Zbir $0$ uvijek možemo ostvariti izborom praznog podskupa, pa vrijedi $
 	DP[i][0]=True, 
 	0\leq i\leq n.$ 	S druge strane, ako ne raspolažemo niti jednim elementom, nijedan pozitivan zbir ne može biti formiran $ DP[0][j]=False, 1\leq j\leq sum.
 	$
@@ -2471,7 +2461,7 @@ Ona se ostvaruje odabirom prvog i drugog proizvoda, čija je ukupna težina $2+3
 	
 	Nakon popunjavanja matrice $DP$, odgovor na početni problem nalazi se u ćeliji $DP[n][sum].$
 	
-	Ako je vrijednost ove ćelije \texttt{True}, postoji podskup čiji je zbir jednak zadanoj vrijednosti \textit{sum}; u suprotnom takav podskup ne postoji.
+	Ako je vrijednost ove ćelije \textit{True}, postoji podskup čiji je zbir jednak zadanoj vrijednosti \textit{sum}; u suprotnom takav podskup ne postoji.
 	
 \end{solution}
 
@@ -2544,10 +2534,9 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 
 \begin{solution}
 	
-	Posmatrajmo primjer instance problema: $
-	price = [1,5,8,9,10,17,17,20].
-	$ Pretpostavimo da je dužina štapa $
-	n=4.$	Ako štap ne režemo, ostvarujemo profit jednak $9$. Međutim, ako ga podijelimo na dva dijela dužine $2$, dobijamo profit $
+	Posmatrajmo primjer instance problema date sa 
+	$$price = [1,5,8,9,10,17,17,20].$$ 
+	Pretpostavimo da je dužina štapa $n=4.$	Ako se štap ne reže, ostvaruje se profit jednak $9$. Međutim, ako ga podijelimo na dva dijela dužine $2$, dobijamo profit $
 	5+5=10,
 	$ što predstavlja optimalno rješenje za ovu instancu.
 	
@@ -2561,27 +2550,21 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 	
 	\medskip
 	
-	\textit{Rekurzivna relacija.} Posmatrajmo štap dužine $i$. Prvi rez možemo napraviti nakon $k$ jedinica dužine, gdje je $ 1 \leq k \leq i.$
-	
-	Na taj način štap dijelimo na:
+	\textit{Rekurzivna relacija.} Posmatrajmo štap dužine $i$. Podijelimo ovaj štap na dio dužine $k$, gdje je $ 1 \leq k \leq i.$ Na taj način štap dijelimo na:
 	
 	\begin{itemize}
 		\item dio dužine $k$, čija je vrijednost $price[k-1]$;
 		\item preostali dio dužine $i-k$, čiji je optimalni profit jednak $DP[i-k]$.
 	\end{itemize}
 	
-	Za svaku moguću vrijednost $k$ dobijamo kandidatsko rješenje $
-	price[k-1] + DP[i-k].
-	$
-	
-	Optimalna vrijednost za štap dužine $i$ dobija se izborom najboljeg među svim mogućim prvim rezovima:
+	Za svaku moguću vrijednost $k$ dobijamo kandidatsko rješenje $price[k-1] + DP[i-k].$  Optimalna vrijednost za štap dužine $i$ dobija se izborom najboljeg među svim mogućim prvim rezovima:
 	
 	$$
 	  DP[i] =
 	  \max_{1 \leq k \leq i}
-	  \left{
+	  \left\{
 		price[k-1] + DP[i-k]
-		\right}.
+		\right\}.
 	$$
 	
 	\medskip
@@ -2636,12 +2619,12 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 
 
 
-  Npr. put koji posjećuje čvorove sa oznakama 4 $\rightarrow$ 3 $\rightarrow$ 2 $\rightarrow$ 1 $\rightarrow$ 0, odgovara rješenju u kojem se štap sječe na 4 manja štapa dužine 1 (cijene $4 \times price[0]$). Slično, za put koji posjećuje čvorove sa oznakama 4 $\rightarrow$ 3 $\rightarrow$ 1 $\rightarrow$ 0, odgovara rješenju u kojem se štap sječe na dva manja štapa dužine 1, te jedan dužine 2 (cijene $2 \times price[0] + price[1]$).   
+  Npr. put koji posjećuje čvorove sa oznakama 4 $\rightarrow$ 3 $\rightarrow$ 2 $\rightarrow$ 1 $\rightarrow$ 0, odgovara rješenju u kojem se štap siječe na 4 manja štapa dužine 1 (cijene $4 \times price[0]$). Slično, za put koji posjećuje čvorove sa oznakama 4 $\rightarrow$ 3 $\rightarrow$ 1 $\rightarrow$ 0, odgovara rješenju u kojem se štap sječe na dva manja štapa dužine 1, te jedan dužine 2 (cijene $2 \times price[0] + price[1]$).   
   
    Jasno se vidi da se podproblemi isprepliću, tj. da se, npr. rješavanje problema štapa dužine dva računa više (dva) puta. U slučaju dinamičkog programiranja implementiran  pristupom odozgo prema dolje, stablo će biti značajno redukovano, jer neće postojati rekalkulacije istih podproblema (dakle, nema identičnih kopija podstabala u DP stablu). 
  
 
-\section{Zadaci}
+\section*{Zadaci}
 
 \begin{enumerate}
 	\item Riješiti problem trgovačkog putnika pomoću algoritamske paradigme grube sile.
