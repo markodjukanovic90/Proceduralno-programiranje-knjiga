@@ -19,53 +19,61 @@
 \contentsline {section}{\numberline {2.1}Osnovne karakteristike}{42}{}%
 \contentsline {section}{\numberline {2.2}Pregled ugrađenih tipova podataka}{43}{}%
 \contentsline {section}{\numberline {2.3}Deklarisanje varijabli i memorijska organizacija}{44}{}%
-\contentsline {section}{\numberline {2.4}Osnovni numerički tipovi podataka}{49}{}%
-\contentsline {subsection}{\numberline {2.4.1}Cjelobrojni i realni brojevi}{49}{}%
-\contentsline {subsection}{\numberline {2.4.2}Kompleksni brojevi}{50}{}%
-\contentsline {section}{\numberline {2.5}Naredbe grananja i petlje}{51}{}%
-\contentsline {subsection}{\numberline {2.5.1}Uslovna naredba \texttt {if}}{51}{}%
-\contentsline {subsection}{\numberline {2.5.2}For i While petlje}{52}{}%
-\contentsline {section}{\numberline {2.6}Složene strukture podataka}{54}{}%
-\contentsline {subsection}{\numberline {2.6.1}Stringovni tip podataka}{55}{}%
-\contentsline {subsection}{\numberline {2.6.2}Liste}{59}{}%
-\contentsline {subsection}{\numberline {2.6.3}Nizovi: modul \texttt {array}}{64}{}%
-\contentsline {subsection}{\numberline {2.6.4}Rječnici}{66}{}%
-\contentsline {subsection}{\numberline {2.6.5}Skupovi}{70}{}%
-\contentsline {subsection}{\numberline {2.6.6}Torke}{74}{}%
-\contentsline {section}{\numberline {2.7}Funkcije}{77}{}%
-\contentsline {section}{\numberline {2.8}Neki programski koncepti i ugrađene funkcije}{83}{}%
-\contentsline {subsection}{\numberline {2.8.1}Komprehenzija liste}{83}{}%
-\contentsline {subsection}{\numberline {2.8.2}Funkcije \texttt {map()}, \texttt {filter()} i \texttt {reduce()}}{84}{}%
-\contentsline {subsection}{\numberline {2.8.3}Funkcije \texttt {zip()}, \texttt {enumerate()} i \texttt {sort()}}{86}{}%
-\contentsline {section}{\numberline {2.9}Moduli}{90}{}%
-\contentsline {subsection}{\numberline {2.9.1}Modul \texttt {math}}{92}{}%
-\contentsline {subsection}{\numberline {2.9.2}Modul \texttt {random}}{93}{}%
-\contentsline {subsection}{\numberline {2.9.3}Modul \texttt {time}}{94}{}%
-\contentsline {subsection}{\numberline {2.9.4}Modul \texttt {os}}{95}{}%
-\contentsline {subsection}{\numberline {2.9.5}Modul \texttt {copy}}{96}{}%
-\contentsline {section}{\numberline {2.10}Izuzeci}{98}{}%
-\contentsline {subsection}{\numberline {2.10.1}Blok \texttt {try-except}}{98}{}%
-\contentsline {subsection}{\numberline {2.10.2}Hvatanje više vrsta izuzetaka}{99}{}%
-\contentsline {subsection}{\numberline {2.10.3}Generisanje izuzetaka}{99}{}%
-\contentsline {subsection}{\numberline {2.10.4}Blok \texttt {finally}}{100}{}%
-\contentsline {subsection}{\numberline {2.10.5}Naredba \texttt {assert}}{100}{}%
-\contentsline {subsection}{\numberline {2.10.6}Hijerarhija izuzetaka}{100}{}%
-\contentsline {section}{\numberline {2.11}Rad sa datotekama}{101}{}%
-\contentsline {subsection}{\numberline {2.11.1}Modul Json}{103}{}%
-\contentsline {section}{\numberline {2.12}Regularni izrazi}{104}{}%
-\contentsline {paragraph}{Registarske tablice}{105}{}%
-\contentsline {paragraph}{Datum u formatu DD.MM.GGGG.}{105}{}%
-\contentsline {subsection}{\numberline {2.12.1}Modul Re}{106}{}%
-\contentsline {section}{\numberline {2.13}Moduli Sys i Getopt}{108}{}%
-\contentsline {section}{\numberline {2.14}Modul NumPy}{112}{}%
-\contentsline {section}{\numberline {2.15}Modul Ctypes}{117}{}%
-\contentsline {section}{\numberline {2.16}Pisanje prilagođenih modula}{119}{}%
-\contentsline {section}{\numberline {2.17}Postavljanje korisnički kreiranih modula na PyPI repozitorij}{120}{}%
-\contentsline {section}{\numberline {2.18}Kompajliranje i izvršavanje programa}{123}{}%
-\contentsline {subsection}{\numberline {2.18.1}Stek i hip memorija}{123}{}%
-\contentsline {subsection}{\numberline {2.18.2}Sakupljanje otpadaka}{124}{}%
-\contentsline {subsection}{\numberline {2.18.3}Proces prevođenja i izvršavanja programa}{124}{}%
-\contentsline {subsection}{\numberline {2.18.4}Pajtonova virtuelna mašina}{126}{}%
+\contentsline {section}{\numberline {2.4}Ispis i komentari}{48}{}%
+\contentsline {section}{\numberline {2.5}Osnovni numerički tipovi podataka}{49}{}%
+\contentsline {subsection}{\numberline {2.5.1}Cjelobrojni i realni brojevi}{49}{}%
+\contentsline {subsection}{\numberline {2.5.2}Kompleksni brojevi}{50}{}%
+\contentsline {section}{\numberline {2.6}Naredbe grananja i petlje}{51}{}%
+\contentsline {subsection}{\numberline {2.6.1}Uslovna naredba \texttt {if}}{51}{}%
+\contentsline {subsection}{\numberline {2.6.2}For i While petlje}{52}{}%
+\contentsline {paragraph}{\texttt {while} petlja.}{53}{}%
+\contentsline {section}{\numberline {2.7}Složene strukture podataka}{54}{}%
+\contentsline {subsection}{\numberline {2.7.1}Stringovni tip podataka}{54}{}%
+\contentsline {paragraph}{Inicijalizacija stringova.}{55}{}%
+\contentsline {paragraph}{Korisne metode.}{56}{}%
+\contentsline {paragraph}{Formatiranje stringova.}{58}{}%
+\contentsline {subsection}{\numberline {2.7.2}Liste}{58}{}%
+\contentsline {paragraph}{Inicijalizacija liste.}{59}{}%
+\contentsline {paragraph}{Pristup elementima.}{59}{}%
+\contentsline {paragraph}{Rezanje liste (eng. slicing).}{59}{}%
+\contentsline {subsection}{\numberline {2.7.3}Nizovi: modul \texttt {array}}{63}{}%
+\contentsline {subsection}{\numberline {2.7.4}Rječnici}{65}{}%
+\contentsline {subsection}{\numberline {2.7.5}Skupovi}{69}{}%
+\contentsline {subsection}{\numberline {2.7.6}Torke}{73}{}%
+\contentsline {section}{\numberline {2.8}Funkcije}{76}{}%
+\contentsline {section}{\numberline {2.9}Neki programski koncepti i ugrađene funkcije}{81}{}%
+\contentsline {subsection}{\numberline {2.9.1}Komprehenzija liste}{81}{}%
+\contentsline {subsection}{\numberline {2.9.2}Funkcije \texttt {map()}, \texttt {filter()} i \texttt {reduce()}}{82}{}%
+\contentsline {subsection}{\numberline {2.9.3}Funkcije \texttt {zip()}, \texttt {enumerate()} i \texttt {sort()}}{85}{}%
+\contentsline {section}{\numberline {2.10}Moduli}{88}{}%
+\contentsline {subsection}{\numberline {2.10.1}Modul \texttt {math}}{90}{}%
+\contentsline {subsection}{\numberline {2.10.2}Modul \texttt {random}}{92}{}%
+\contentsline {subsection}{\numberline {2.10.3}Modul \texttt {time}}{93}{}%
+\contentsline {subsection}{\numberline {2.10.4}Modul \texttt {os}}{94}{}%
+\contentsline {subsection}{\numberline {2.10.5}Modul \texttt {copy}}{95}{}%
+\contentsline {section}{\numberline {2.11}Izuzeci}{96}{}%
+\contentsline {subsection}{\numberline {2.11.1}Blok \texttt {try-except}}{97}{}%
+\contentsline {subsection}{\numberline {2.11.2}Hvatanje više vrsta izuzetaka}{97}{}%
+\contentsline {subsection}{\numberline {2.11.3}Generisanje izuzetaka}{98}{}%
+\contentsline {subsection}{\numberline {2.11.4}Blok \texttt {finally}}{98}{}%
+\contentsline {subsection}{\numberline {2.11.5}Naredba \texttt {assert}}{98}{}%
+\contentsline {subsection}{\numberline {2.11.6}Hijerarhija izuzetaka}{99}{}%
+\contentsline {section}{\numberline {2.12}Rad sa datotekama}{100}{}%
+\contentsline {subsection}{\numberline {2.12.1}Modul Json}{101}{}%
+\contentsline {section}{\numberline {2.13}Regularni izrazi}{102}{}%
+\contentsline {paragraph}{Registarske tablice}{104}{}%
+\contentsline {paragraph}{Datum u formatu DD.MM.GGGG.}{104}{}%
+\contentsline {subsection}{\numberline {2.13.1}Modul Re}{105}{}%
+\contentsline {section}{\numberline {2.14}Moduli Sys i Getopt}{107}{}%
+\contentsline {section}{\numberline {2.15}Modul NumPy}{111}{}%
+\contentsline {section}{\numberline {2.16}Modul Ctypes}{116}{}%
+\contentsline {section}{\numberline {2.17}Pisanje prilagođenih modula}{118}{}%
+\contentsline {section}{\numberline {2.18}Postavljanje korisnički kreiranih modula na PyPI repozitorij}{119}{}%
+\contentsline {section}{\numberline {2.19}Kompajliranje i izvršavanje programa}{122}{}%
+\contentsline {subsection}{\numberline {2.19.1}Stek i hip memorija}{122}{}%
+\contentsline {subsection}{\numberline {2.19.2}Sakupljanje otpadaka}{123}{}%
+\contentsline {subsection}{\numberline {2.19.3}Proces prevođenja i izvršavanja programa}{123}{}%
+\contentsline {subsection}{\numberline {2.19.4}Pajtonova virtuelna mašina}{125}{}%
 \contentsline {chapter}{\numberline {3}Osnovne algoritamske paradigme}{131}{}%
 \contentsline {section}{\numberline {3.1}Rekurzivni algoritmi}{134}{}%
 \contentsline {subsection}{\numberline {3.1.1}Jednostavan primjer rekurzije}{134}{}%

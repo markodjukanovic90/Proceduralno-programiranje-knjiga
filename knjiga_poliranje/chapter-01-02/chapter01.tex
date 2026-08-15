@@ -115,9 +115,7 @@ Ovi tipovi predstavljaju osnovu za izgradnju složenijih struktura podataka i im
 
 \section{Deklarisanje varijabli i memorijska organizacija}
 
-Promjenljive u Pajtonu kreiraju se dodjelom vrijednosti pomoću operatora dodjele \texttt{=}.
-
-Za razliku od mnogih drugih programskih jezika, nije potrebno unaprijed deklarisati tip promjenljive. Pajton automatski određuje odgovarajući tip na osnovu dodijeljene vrijednosti.
+Promjenljive u programskom jeziku Pajtonu kreiraju se dodjelom vrijednosti pomoću operatora dodjele \texttt{=}. Za razliku od mnogih drugih programskih jezika, nije potrebno unaprijed deklarisati tip promjenljive. Pajton automatski određuje odgovarajući tip na osnovu dodijeljene vrijednosti.
 
 Na primjer, promjenljiva \texttt{x} kojoj se dodjeljuje cijeli broj 5 kreira se na sljedeći način:
 
@@ -145,7 +143,7 @@ U narednim sekcijama detaljnije ćemo razmotriti numeričke, tekstualne i slože
  	x = 42
  \end{minted}
  
- Promjenljiva \texttt{x} referencira objekat koji predstavlja broj 42, što se može ilustrovati kao na Slici~\ref{fig:var_object}.
+ Promjenljiva \texttt{x} referencira na objekat koji predstavlja broj 42, što se može ilustrovati kao na Slici~\ref{fig:var_object}.
  
  \begin{figure}[H]
  	\centering
@@ -179,7 +177,7 @@ U narednim sekcijama detaljnije ćemo razmotriti numeričke, tekstualne i slože
  
  \begin{figure}[H]
  	\centering
- 	\includegraphics[width=140pt,height=100pt]{slike/vars_different_assigned.png}
+ 	\includegraphics[width=170pt,height=120pt]{slike/vars_different_assigned.png}
  	\caption{Promjenljive referenciraju različite objekte.}
  \end{figure}
  
@@ -206,13 +204,13 @@ U narednim sekcijama detaljnije ćemo razmotriti numeričke, tekstualne i slože
  	y: int = 23
  \end{minted}
  
- Napomenimo da ove oznake ne mijenjaju način rada jezika, već prvenstveno služe kao dokumentacija i pomoć alatima za statičku analizu koda.
+ Napomenimo da ove oznake ne mijenjaju način rada jezika, već prvenstveno služe kao dokumentacija i pomoć alatima za statičku analizu k\^oda.
  
  \subsection*{Upravljanje memorijom}
  
  Pajton automatski upravlja memorijom. Svaki objekat posjeduje brojač referenci koji prati koliko promjenljivih ili drugih objekata trenutno pokazuje na njega.
  
- Kada broj referenci nekog objekta postane jednak nuli, objekat više nije dostupan programu i njegova memorija može biti oslobođena. Pored toga, Pajton koristi i mehanizam sakupljanja otpadaka (\textit{garbage collection}) koji uklanja objekte koji više nisu potrebni, uključujući i složenije slučajeve kružnih referenci.
+ Kada broj referenci nekog objekta postane jednak nuli, objekat više nije dostupan programu i njegova memorija može biti oslobođena. Pored toga, Pajton koristi i mehanizam sakupljanja otpadaka koji uklanja objekte koji više nisu potrebni, uključujući i složenije slučajeve kružnih referenci.
  
  Zahvaljujući ovim mehanizmima, programer uglavnom ne mora ručno voditi računa o dodjeljivanju i oslobađanju memorije, što značajno pojednostavljuje razvoj programa.
  
@@ -225,7 +223,7 @@ U narednim sekcijama detaljnije ćemo razmotriti numeričke, tekstualne i slože
  
  Dobijena vrijednost predstavlja jedinstveni identifikator objekta tokom njegovog životnog vijeka.
  
- \subsection*{Ispis i komentari}
+\section{Ispis i komentari}
  
  Ispis rezultata na ekran vrši se pomoću funkcije \texttt{print()}:
  
@@ -313,15 +311,7 @@ Pored osnovnih operatora, Pajton pruža i veliki broj ugrađenih funkcija za rad
 
 \subsection{Kompleksni brojevi}
 
-Tip \texttt{complex} koristi se za predstavljanje kompleksnih brojeva oblika
-
-$
-a+bj,
-$
-
-gdje su $a$ i $b$ realni brojevi, dok simbol \texttt{j} predstavlja imaginarnu jedinicu.
-
-Primjer rada sa kompleksnim brojevima:
+Tip \texttt{complex} koristi se za predstavljanje kompleksnih brojeva oblika  $a+bj,$ gdje su $a$ i $b$ realni brojevi, dok simbol \texttt{j} predstavlja imaginarnu jedinicu.  Primjer rada sa kompleksnim brojevima:
 
 \begin{minted}{python}
 	x = 1 + 1j
@@ -334,9 +324,7 @@ Primjer rada sa kompleksnim brojevima:
 	print(z.imag)  # 2.0
 \end{minted}
 
-Realni i imaginarni dio kompleksnog broja mogu se dobiti pomoću atributa \texttt{real} i \texttt{imag}.
-
-Kompleksni broj moguće je kreirati i korišćenjem funkcije \texttt{complex()}:
+Realni i imaginarni dio kompleksnog broja mogu se dobiti pomoću atributa \texttt{real} i \texttt{imag}.  Kompleksni broj moguće je kreirati i korišćenjem funkcije \texttt{complex()}:
 
 \begin{minted}{python}
 	z = complex(3, 2)
@@ -435,9 +423,7 @@ Pajton podržava dvije osnovne vrste petlji:
 	\item \texttt{while} petlju.
 \end{itemize}
 
-\subsubsection*{\texttt{for} petlja}
-
-\texttt{for} petlja koristi se za prolazak kroz elemente iterabilnih objekata, kao što su liste, torke, stringovi, skupovi i rječnici.
+\textit{\texttt{For} petlja.}  Koristi se za prolazak kroz elemente iterabilnih objekata, kao što su liste, torke, stringovi, skupovi i rječnici.
 
 Njena osnovna sintaksa je:
 
@@ -464,26 +450,21 @@ Vrlo često se \texttt{for} petlja koristi zajedno sa funkcijom \texttt{range()}
 	    print(i)
 \end{minted}
 
-Ovaj kod ispisuje brojeve od 0 do 4.
+Ovaj k\^od ispisuje brojeve od 0 do 4.
 
-\subsubsection*{\texttt{while} petlja}
-
-\texttt{while} petlja izvršava blok koda sve dok je zadovoljen zadati logički uslov.
-
-Njena osnovna sintaksa je:
+\paragraph{\texttt{while} petlja.} \texttt{while} petlja izvršava blok koda sve dok je zadovoljen zadati logički uslov. Njena osnovna sintaksa je:
 
 \begin{minted}{python}
 	while uslov:
 	    naredba
 \end{minted}
 
-Prije svake iteracije provjerava se vrijednost izraza \texttt{uslov}. Ako je njegova vrijednost \texttt{True}, izvršava se tijelo petlje. Kada uslov postane netačan (\texttt{False}), izvršavanje petlje se završava, a program nastavlja sa prvom naredbom nakon petlje.
+Prije svake iteracije provjerava se vrijednost izraza \texttt{uslov}. Ako je njegova vrijednost \emph{True}, izvršava se tijelo petlje. Kada uslov postane netačan (\emph{False}), izvršavanje petlje se završava, a program nastavlja sa prvom naredbom nakon petlje.
 
 Na primjer, prvih deset parnih prirodnih brojeva može se ispisati na sljedeći način:
 
 \begin{minted}{python}
 	i = 1
-	
 	while i <= 10:
 	    print(2 * i)
 	    i += 1
@@ -499,13 +480,11 @@ predstavlja skraćeni zapis za
 	i = i + 1
 \end{minted}
 
-i koristi se za povećavanje vrijednosti promjenljive za jedan.
+i koristi se za povećavanje vrijednosti promjenljive $i$  za jedan (inkrementiranje).
 
 \section{Složene strukture podataka}
 
-Pored osnovnih numeričkih tipova podataka, Pajton pruža i niz složenijih struktura podataka koje omogućavaju efikasno organizovanje i obradu većih količina informacija.
-
-Najvažnije među njima su:
+Pored osnovnih numeričkih tipova podataka, Pajton pruža i niz složenijih struktura podataka koje omogućavaju efikasno organizovanje i obradu većih količina informacija. Najvažnije među njima su:
 
 \begin{itemize}
 	\item stringovi (\texttt{str});
@@ -515,7 +494,7 @@ Najvažnije među njima su:
 	\item rječnici (\texttt{dict}).
 \end{itemize}
 
-Sve navedene strukture predstavljaju kolekcije objekata i koriste se u gotovo svakom ozbiljnijem programu.
+Sve navedene strukture predstavljaju kolekcije objekata i koriste se u gotovo svakom ozbiljnijem programskom jeziku.
 
 \subsection{Stringovni tip podataka}
 
@@ -523,9 +502,7 @@ Tip \texttt{str} predstavlja ugrađeni tip podataka namijenjen radu sa tekstom. 
 
 Jedna od najvažnijih osobina stringova jeste da su \textit{nepromjenjivi} (\textit{immutable}). Nakon što se string kreira, njegov sadržaj nije moguće direktno mijenjati. Svaka izmjena zapravo rezultuje kreiranjem novog string objekta.
 
-\subsubsection*{Inicijalizacija stringova}
-
-String se može definisati korišćenjem jednostrukih ili dvostrukih navodnika:
+\paragraph{Inicijalizacija stringova.}  String se može definisati korišćenjem jednostrukih ili dvostrukih navodnika:
 
 \begin{minted}{python}
 	string0 = 'hello'
@@ -615,9 +592,7 @@ Za višelinijske stringove koriste se trostruki navodnici:
 	
 \end{itemize}
 
-\subsubsection*{Korisne metode}
-
-Klasa \texttt{str} sadrži veliki broj ugrađenih metoda. Neke od najčešće korištenih su:
+\paragraph{Korisne metode.} Klasa \texttt{str} sadrži veliki broj ugrađenih metoda. Neke od najčešće korištenih su:
 
 \begin{itemize}
 	\item \texttt{lower()} -- pretvara sva slova u mala;
@@ -627,7 +602,8 @@ Klasa \texttt{str} sadrži veliki broj ugrađenih metoda. Neke od najčešće ko
 	\item \texttt{find()} -- pronalazi poziciju podstringa.
 \end{itemize}
 
-Njihovu detaljniju upotrebu prikazaćemo kroz naredne primjere.
+%Njihovu detaljniju upotrebu prikazaćemo u narednim primjerima.\\
+
 
 \textit{Memorijska organizacija}. Stringovi se u Pajtonu predstavljaju kao uređene sekvence Unicode znakova smještene u neprekidnom dijelu memorije. Svakom znaku pridružen je odgovarajući Unicode k\^od, što omogućava rad sa tekstom na velikom broju svjetskih jezika.
 
@@ -642,26 +618,23 @@ dat je na Slici~\ref{fig:str_mem}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=200pt,height=60pt]{slike/str_mem_organization.png}
-	\caption{Pojednostavljen prikaz memorijske organizacije stringa \texttt{"code"}.}
+	\caption{Pojednostavljen prikaz memorijske organizacije stringa \texttt{code}.}
 	\label{fig:str_mem}
 \end{figure}
 
 Za razliku od nekih drugih programskih jezika, stringovi u Pajtonu su \textit{nepromjenjivi} (\textit{immutable}). To znači da se sadržaj postojećeg stringa ne može direktno mijenjati. Svaka operacija koja naizgled mijenja string zapravo kreira novi string objekat.
 
-Na primjer:
 
 \begin{minted}{python}
 	s = "code"
-	s = s + "!"
+	s1 = s + "!"
 \end{minted}
 
-Nakon izvršavanja druge naredbe kreira se novi string \texttt{"code!"}, dok originalni string ostaje nepromijenjen.
+Nakon izvršavanja druge naredbe kreira se novi string \texttt{code!}, dok originalni string ostaje nepromijenjen.
 
-\textit{Dodatna napomena}. Pajton interno koristi različite optimizacije za rad sa stringovima. Jedna od njih je \textit{interniranje stringova} (\textit{string interning}), pri čemu se identični stringovi po potrebi mogu dijeliti između više promjenljivih. Time se smanjuje potrošnja memorije i poboljšavaju performanse programa.
+\textit{Dodatna napomena}. Pajton interno koristi različite optimizacije za rad sa stringovima. Jedna od njih je \textit{interniranje stringova} (eng. \textit{string interning}), pri čemu se identični stringovi po potrebi mogu dijeliti između više promjenljivih. Time se smanjuje potrošnja memorije i poboljšavaju performanse programa.
 
-\subsubsection*{Formatiranje stringova}
-
-Prilikom ispisa rezultata često je potrebno kombinovati tekst i vrijednosti promjenljivih. Pajton nudi nekoliko načina za formatiranje stringova.
+\paragraph{Formatiranje stringova.} Prilikom ispisa rezultata često je potrebno kombinovati tekst i vrijednosti promjenljivih. Pajton nudi nekoliko načina za formatiranje stringova.
 
 Jedan od tradicionalnih pristupa koristi metodu \texttt{format()}:
 
@@ -680,22 +653,18 @@ Savremeniji i danas preporučeni način predstavljaju formatirani stringovi (\te
 	print(f"Ime: {ime}, godine: {godine}")
 \end{minted}
 
-Kod f-stringova vrijednosti promjenljivih navode se direktno unutar vitičastih zagrada, što k\^od čini preglednijim i jednostavnijim za pisanje.
+Kod \texttt{f}-stringova vrijednosti promjenljivih navode se direktno unutar vitičastih zagrada, što k\^od čini preglednijim i jednostavnijim za pisanje.
 
-Zbog svoje čitljivosti i efikasnosti, f-stringovi predstavljaju preporučeni način formatiranja stringova u savremenom Pajtonu.
+Zbog svoje čitljivosti i efikasnosti, \texttt{f}-stringovi predstavljaju preporučeni način formatiranja stringova u savremenom Pajtonu.
 
 
 \subsection{Liste}
 
 Lista predstavlja uređenu, indeksiranu i promjenljivu kolekciju elemenata. U Pajtonu se implementira pomoću ugrađenog tipa podataka \texttt{list}.
 
-Za razliku od mnogih drugih programskih jezika, elementi liste ne moraju biti istog tipa. Zbog toga kažemo da su liste \textit{heterogene} kolekcije. Na primjer, ista lista može sadržavati brojeve, stringove, logičke vrijednosti i druge objekte.
+Za razliku od mnogih drugih programskih jezika, elementi liste ne moraju biti istog tipa. Zbog toga kažemo da su liste \textit{heterogene} kolekcije. Na primjer, ista lista može sadržavati brojeve, stringove, logičke vrijednosti i druge objekte.  Elementi liste indeksiraju se brojevima počevši od nule. Pored standardnog indeksiranja, Pajton podržava i negativne indekse. Pri tome indeks \texttt{-1} označava posljednji element liste, \texttt{-2} pretposljednji itd.
 
-Elementi liste indeksiraju se brojevima počevši od nule. Pored standardnog indeksiranja, Pajton podržava i negativne indekse. Pri tome indeks \texttt{-1} označava posljednji element liste, \texttt{-2} pretposljednji itd.
-
-\subsubsection*{Inicijalizacija lista}
-
-Liste se mogu kreirati na više načina:
+\paragraph{Inicijalizacija liste.}  Liste se mogu kreirati na više načina: 
 
 \begin{minted}{python}
 	lista = list()
@@ -703,9 +672,7 @@ Liste se mogu kreirati na više načina:
 	lista2 = list(("abc", "def", 2))
 \end{minted}
 
-\subsubsection*{Pristup elementima}
-
-Pojedinačnim elementima liste pristupa se pomoću operatora \texttt{[]}.
+\paragraph{Pristup elementima.}  Pojedinačnim elementima liste pristupa se pomoću operatora \texttt{[]}.
 
 \begin{minted}{python}
 	lista = [10, 20, 30]
@@ -715,7 +682,7 @@ Pojedinačnim elementima liste pristupa se pomoću operatora \texttt{[]}.
 
 U prvom slučaju pristupa se prvom elementu liste, dok se u drugom slučaju koristi negativni indeks za pristup posljednjem elementu.
 
-\subsubsection*{Rezanje liste (slicing)}
+\paragraph{Rezanje liste (eng. slicing).}
 
 Dio liste može se izdvojiti pomoću operatora
 
@@ -734,20 +701,16 @@ pri čemu se uzimaju elementi od pozicije \texttt{indeks1} do pozicije \texttt{i
 
 Rezultat operacije rezanja uvijek je nova lista.
 
-\subsubsection*{Provjera pripadnosti}
-
-Operator \texttt{in} koristi se za provjeru da li se određeni element nalazi u listi.
+\texttt{Provjera pripadnosti}.  Operator \texttt{in} koristi se za provjeru da li se određeni element nalazi u listi.
 
 \begin{minted}{python}
 	if 5 in lista:
 	    print("Pronađen element")
 \end{minted}
 
-Vrijednost izraza je \texttt{True} ako se element nalazi u listi, odnosno \texttt{False} u suprotnom.
+Vrijednost izraza je \emph{True} ako se element nalazi u listi, odnosno \emph{False} u suprotnom.
 
-\subsubsection*{Iteriranje kroz listu}
-
-Elementima liste može se pristupati jedan po jedan pomoću \texttt{for} petlje.
+\textit{Iteriranje kroz listu}. Elementima liste može se pristupati jedan po jedan pomoću \texttt{for} petlje.
 
 \begin{minted}{python}
 	for x in lista:
@@ -756,9 +719,7 @@ Elementima liste može se pristupati jedan po jedan pomoću \texttt{for} petlje.
 
 Ovakav način prolaska kroz listu predstavlja jednu od najčešće korištenih programskih konstrukcija u Pajtonu.
 
-\subsubsection*{Dodavanje i brisanje elemenata}
-
-Novi element može se dodati na kraj liste metodom \texttt{append()}:
+\textit{Dodavanje i brisanje elemenata}. Novi element može se dodati na kraj liste metodom \texttt{append()}:
 
 \begin{minted}{python}
 	lista.append(10)
@@ -778,9 +739,7 @@ Posljednji element liste može se ukloniti metodom \texttt{pop()}:
 
 Metoda \texttt{pop()} vraća uklonjeni element, što je često korisno u praksi.
 
-\subsubsection*{Umetanje elemenata}
-
-Element se može umetnuti na proizvoljnu poziciju korištenjem metode \texttt{insert()}:
+\textit{Umetanje elemenata}.  Element se može umetnuti na proizvoljnu poziciju korištenjem metode \texttt{insert()}:
 
 \begin{minted}{python}
 	lista.insert(2, 100)
@@ -788,9 +747,7 @@ Element se može umetnuti na proizvoljnu poziciju korištenjem metode \texttt{in
 
 Nakon izvršavanja ove naredbe vrijednost \texttt{100} nalaziće se na poziciji 2, dok će svi naredni elementi biti pomjereni za jedno mjesto udesno.
 
-\subsubsection*{Obrtanje i kopiranje liste}
-
-Redoslijed elemenata liste može se obrnuti metodom \texttt{reverse()}:
+\textit{Obrtanje i kopiranje liste}. Redoslijed elemenata liste može se obrnuti metodom \texttt{reverse()}:
 
 \begin{minted}{python}
 	lista.reverse()
@@ -852,9 +809,7 @@ U situacijama kada je unaprijed poznat maksimalan broj elemenata koji će se kor
 
 Na ovaj način izbjegava se veliki broj naknadnih proširenja liste, što može pozitivno uticati na performanse programa.
 
-\subsubsection*{Dodatne napomene}
-
-Za razliku od klasičnih nizova u programskom jeziku \texttt{C}, liste u Pajtonu mogu sadržavati elemente različitih tipova:
+\textit{Dodatne napomene}.   Za razliku od klasičnih nizova u programskom jeziku \texttt{C}, liste u Pajtonu mogu sadržavati elemente različitih tipova:
 
 \begin{minted}{python}
 	lista = [1, "tekst", 3.14, True]
@@ -868,7 +823,7 @@ U većini praktičnih primjena liste predstavljaju osnovnu i najčešće korišt
 
 \subsection{Nizovi: modul \texttt{array}}
 
-Pored lista, Pajton nudi i modul \texttt{array}, koji omogućava rad sa homogenim nizovima podataka. Po svojoj organizaciji i načinu korištenja, objekti tipa \texttt{array} slični su nizovima u programskim jezicima \textit{C} i \textit{C++}.
+Pored lista, Pajton nudi i modul \texttt{array}, koji omogućava rad sa \textit{homogenim} nizovima podataka. Po svojoj organizaciji i načinu korištenja, objekti tipa \texttt{array} slični su nizovima u programskim jezicima {C} i {C++}.
 
 Za razliku od lista, koje mogu sadržavati elemente različitih tipova, svi elementi objekta \texttt{array} moraju biti istog tipa. Zbog toga se podaci mogu skladištiti efikasnije i zauzimati manje memorijskog prostora.
 
@@ -901,9 +856,7 @@ Da bismo koristili modul \texttt{array}, potrebno ga je prethodno uključiti:
 	import array
 \end{minted}
 
-\subsubsection*{Inicijalizacija}
-
-Objekat tipa \texttt{array} kreira se navođenjem oznake tipa i početnih vrijednosti:
+\textit{Inicijalizacija}. Objekat tipa \texttt{array} kreira se navođenjem oznake tipa i početnih vrijednosti:
 
 \begin{minted}{python}
 	from array import array
@@ -913,7 +866,7 @@ Objekat tipa \texttt{array} kreira se navođenjem oznake tipa i početnih vrijed
 
 U ovom primjeru oznaka \texttt{'i'} označava cjelobrojne vrijednosti tipa \texttt{int}.
 
-\subsubsection*{Osnovne operacije}
+\textit{Osnovne operacije}. 
 
 \begin{itemize}
 	
@@ -972,7 +925,7 @@ U ovom primjeru oznaka \texttt{'i'} označava cjelobrojne vrijednosti tipa \text
 
 Modul \texttt{array} je posebno koristan kada radimo sa velikim kolekcijama numeričkih podataka istog tipa. U poređenju sa listama, objekti tipa \texttt{array} zauzimaju manje memorije i omogućavaju efikasnije skladištenje homogenih podataka.
 
-Ipak, u naučnom računarstvu i analizi podataka danas se mnogo češće koriste strukture iz biblioteke \texttt{NumPy}, koje predstavljaju proširenje ideje homogenih nizova i nude znatno veće performanse i bogatiji skup funkcionalnosti.
+Ipak, u naučnom računarstvu i analizi podataka danas se mnogo češće koriste strukture iz biblioteke \texttt{NumPy}, koje predstavljaju proširenje ideje homogenih nizova i nude znatno bolje performanse i bogatiji skup funkcionalnosti.
 
 
 

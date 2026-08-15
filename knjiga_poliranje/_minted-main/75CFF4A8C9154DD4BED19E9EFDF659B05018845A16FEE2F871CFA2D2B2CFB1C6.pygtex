@@ -1,4 +1,4 @@
 \begin{Verbatim}[commandchars=\\\{\}]
 	\PYG{n}{s} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}code\PYGZdq{}}
-	\PYG{n}{s} \PYG{o}{=} \PYG{n}{s} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}!\PYGZdq{}}
+	\PYG{n}{s1} \PYG{o}{=} \PYG{n}{s} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}!\PYGZdq{}}
 \end{Verbatim}
