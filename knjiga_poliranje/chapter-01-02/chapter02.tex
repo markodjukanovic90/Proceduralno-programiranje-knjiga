@@ -383,7 +383,7 @@ Razmotrimo sljedeći primjer.
 \begin{minted}{Python}
 	algoritam max(a, n)
 	    maximum = prvi element niza a
-	    for sve elemente x niza a:
+	    for svi elementi x niza a:
 	        if x > maximum then
 	            maximum = x
 	    vrati maximum
@@ -404,8 +404,8 @@ Međutim, određivanje tačnog broja instrukcija za svaki mogući ulaz često je
 
 \begin{minted}{Python}
     algorithm sort(a, n): 
-        for i (indeks) od početka do kraja niza:
-		    for j od početka do i-1 elementa niza
+        for i od  0 do duzine niza -1:
+		    for j od početka (0) do i-1  
 		        if i-ti element veći od j-tog elementa  then
 		            swap(a[i], a[j])
 		vrati a	
@@ -660,18 +660,14 @@ U narednom primjeru razmotrićemo jedan klasičan problem, prikazati dva različ
 
 \begin{example}(\textit{Problem podniza maksimalne sume})
 	
-	Dat je niz brojeva. Potrebno je odrediti neprekidni podniz čija je suma elemenata najveća moguća.
+	Dat je niz brojeva. Potrebno je odrediti neprekidni podniz početnog niza čija je suma elemenata najveća.
 \end{example}
 
 \begin{solution}
 	
 	Neka je dat niz $
 	\texttt{a}=[1,4,-2,2,10,-7,1].
-	$ 	Primjer jednog neprekidnog podniza jeste $
-	[-2,2,10],
-	$ 	dok niz $
-	[-2,-7,1]
-	$ nije neprekidan podniz jer njegovi elementi nisu uzastopni u izvornom nizu. 	Najprije razmotrimo naivan pristup. Definišimo funkciju
+	$ 	Primjer jednog neprekidnog podniza jeste $[-2,2,10],$ 	dok niz $[-2,-7,1]$ nije neprekidan podniz jer njegovi elementi nisu uzastopni u izvornom nizu. 	Najprije razmotrimo naivan pristup. Definišimo funkciju
 	
 	$$
 	S(i,j)=\sum_{k=i}^{j} a[k],
@@ -683,7 +679,7 @@ U narednom primjeru razmotrićemo jedan klasičan problem, prikazati dva različ
 	\binom{n}{2}+n=\frac{n(n+1)}{2},
 	$ što pripada klasi $O(n^2)$. Kako se za svaki od tih parova funkcija $S(i,j)$ računa u vremenu $O(n)$, ukupna složenost algoritma iznosi $
 	O(n)\cdot O(n^2)=O(n^3).
-	$	Dakle, dobijamo algoritam kubne složenosti.
+	$	Dakle, dobijamo algoritam koji ima kubnu složenost.
 	
 	Pokušajmo sada konstruisati efikasniji pristup. Primijetimo da između vrijednosti $S(i,j)$ i $S(i,j+1)$ postoji jednostavna rekurzivna veza	$
 	S(i,j+1)=S(i,j)+a[j+1].
@@ -691,8 +687,7 @@ U narednom primjeru razmotrićemo jedan klasičan problem, prikazati dva različ
 	
 	Drugim riječima, ukoliko je suma podniza od pozicije $i$ do pozicije $j$ već poznata, suma narednog podniza može se dobiti dodavanjem samo jednog novog elementa. 	Definišimo 	
 	$
-	S(i)=\max{S(i,i),S(i,i+1),\ldots,S(i,n-1)}.
-	$
+	S(i)=\max\{S(i,i),S(i,i+1),\ldots,S(i,n-1)\}.$
 	
 	Vrijednost $S(i)$ može se izračunati prolaskom kroz niz počevši od pozicije $i$, pri čemu se tekuća suma ažurira u konstantnom vremenu. Zbog toga je složenost izračunavanja funkcije $S(i)$ jednaka $O(n)$.
 	
@@ -706,16 +701,12 @@ U narednom primjeru razmotrićemo jedan klasičan problem, prikazati dva različ
 
 Pored vremena izvršavanja, važan kriterijum za procjenu kvaliteta algoritma jeste količina memorije koju algoritam koristi tokom rada.
 
-Pri tome treba razlikovati pojmove \textit{pomoćni prostor} i \textit{prostorna složenost}. Pomoćni prostor predstavlja dodatnu memoriju koju algoritam koristi tokom izvršavanja, ne računajući prostor potreban za smještanje ulaznih podataka.
+Pri tome treba razlikovati pojmove \textit{pomoćni prostor} i \textit{prostorna složenost}. Pomoćni prostor predstavlja dodatnu memoriju koju algoritam koristi tokom izvršavanja, ne računajući prostor potreban za smještanje ulaznih podataka.  Sa druge strane, \textit{prostorna složenost} algoritma predstavlja ukupnu količinu memorije potrebne za njegovo izvršavanje, uključujući i prostor za ulazne podatke i pomoćne memorijske strukture.
 
-Sa druge strane, \textit{prostorna složenost} algoritma predstavlja ukupnu količinu memorije potrebne za njegovo izvršavanje, uključujući i prostor za ulazne podatke i pomoćne memorijske strukture.
-
-Kao i kod vremenske složenosti, prostorna složenost izražava se kao funkcija veličine ulaza.
-
-Na primjer:
+Kao i kod vremenske složenosti, prostorna složenost izražava se kao funkcija veličine ulaza.  Na primjer:
 
 \begin{itemize}
-	\item kreiranje niza dužine $n$ zahtijeva $O(n)$ memorijskog prostora;
+	\item kreiranje niza dužine $n$ zahtjeva $O(n)$ memorijskog prostora;
 	\item kreiranje matrice dimenzija $n \times n$ zahtijeva $O(n^2)$ memorijskog prostora.
 \end{itemize}
 
@@ -758,17 +749,17 @@ Efikasnost algoritma najčešće se procjenjuje na osnovu dva kriterijuma: vreme
 \textbf{Napomena.} 
 U praktičnom programiranju raspoloživa memorija je ograničena. Na mnogim sistemima tipična memorijska ograničenja iznose između 128 MB i 512 MB po procesu. Zbog toga nije uvijek moguće kreirati veoma velike nizove ili matrice.
 
-Takođe, lokalne promjenljive funkcija smještaju se na stek, čija je veličina obično znatno manja od ukupne raspoložive memorije procesa. Zbog toga se veoma velike strukture podataka često alociraju u globalnoj memoriji ili na hipu (\emph{heap}), umjesto unutar tijela funkcije.
+Takođe, lokalne promjenljive funkcija smještaju se na stek, čija je veličina obično znatno manja od ukupne raspoložive memorije procesa. Zbog toga se veoma velike strukture podataka često alociraju u globalnoj memoriji ili na hipu (eng. \emph{heap}), umjesto unutar tijela funkcije.
 
-\section{Pseudokod}
+\section{Pseudok\^od}
 
 \textit{Pseudokod} predstavlja neformalni način zapisivanja algoritama pomoću kombinacije prirodnog jezika i programerskih konstrukcija. Njegova svrha nije da bude izvršiv na računaru, već da na jasan i nedvosmislen način predstavi logiku algoritma.
 
-Za razliku od programskog koda, pseudokod ne posjeduje strogo definisanu sintaksu i ne može se kompajlirati niti interpretirati. Upravo zbog toga omogućava da se pažnja usmjeri na suštinu algoritma, bez opterećivanja detaljima konkretnog programskog jezika.
+Za razliku od programskog k\^oda, pseudok\^od ne posjeduje strogo definisanu sintaksu i ne može se kompajlirati niti interpretirati. Upravo zbog toga omogućava da se pažnja usmjeri na suštinu algoritma, bez opterećivanja detaljima konkretnog programskog jezika.
 
-Pseudokod predstavlja koristan međukorak između ideje rješenja i njegove implementacije. Njime se opisuje redoslijed koraka koje je potrebno izvršiti kako bi se riješio određeni problem, pri čemu zapis ostaje dovoljno prost da ga mogu razumjeti i osobe koje nisu upoznate sa svim detaljima implementacije.
+Pseudok\^od predstavlja koristan međukorak između ideje rješenja i njegove implementacije. Njime se opisuje redoslijed koraka koje je potrebno izvršiti kako bi se riješio određeni problem, pri čemu zapis ostaje dovoljno prost da ga mogu razumjeti i osobe koje nisu upoznate sa svim detaljima implementacije.
 
-Prednosti korišćenja pseudokoda su višestruke:
+Prednosti korišćenja pseudok\^oda su višestruke:
 
 \begin{itemize}
 	\item Poboljšava čitljivost i razumijevanje algoritma.
@@ -777,7 +768,7 @@ Prednosti korišćenja pseudokoda su višestruke:
 	
 	\item Predstavlja prirodnu vezu između idejnog rješenja, dijagrama toka i implementacije.
 	
-	\item Služi kao oblik dokumentacije koji olakšava kasnije održavanje i unapređivanje programa.
+	\item Služi kao oblik dokumentacije koji olakšava kasnije održavanje i unapre\-đivanje programa.
 	
 \end{itemize}
 
@@ -832,7 +823,7 @@ Primijetimo da ovakav zapis ne predstavlja program u konkretnom programskom jezi
 	
 \end{example}
 
-U nastavku prikazujemo formalniji oblik pseudokoda, kakav se često koristi u literaturi iz algoritama. Posmatrajmo algoritam za rješavanje problema podniza maksimalne sume iz prethodne sekcije.
+U nastavku prikazujemo formalniji oblik pseudok\^oda, kakav se često koristi u literaturi iz algoritama. Posmatrajmo algoritam za rješavanje problema podniza maksimalne sume iz prethodne sekcije.
 
 \begin{algorithm}[!ht]
 	\caption{Funkcija $S_i(i)$}
@@ -890,7 +881,7 @@ Pored analize vremenske i prostorne složenosti, važno je pokazati da algoritam
 Postoji više pristupa dokazivanju ispravnosti algoritama, među kojima izdvajamo sljedeće:
 
 \begin{itemize}
-	\item \textit{Matematički dokaz}. Predstavlja najrigorozniji pristup dokazivanju ispravnosti algoritma. Cilj je pokazati da algoritam za svaki dopustiv ulaz vraća tačno rješenje problema. Jedna od najčešće korištenih tehnika jeste metoda \textit{invarijante petlje}, koju ćemo razmotriti u nastavku.
+	\item \textit{Matematički dokaz}. Predstavlja najrigorozniji pristup dokazivanju ispravnosti algoritma. Cilj je pokazati da algoritam za svaki dopustiv ulaz vraća ispravno rješenje problema. Jedna od najčešće korištenih tehnika jeste metoda \textit{invarijante petlje}, koju ćemo razmotriti u nastavku.
 	
 	\item \textit{Formalna verifikacija}. Podrazumijeva modelovanje algoritma pomoću formalnog jezika i korištenje specijalizovanih alata za automatsku provjeru željenih svojstava. Ovakve metode imaju značajnu primjenu u razvoju kritičnih softverskih sistema, gdje čak i mala greška može imati ozbiljne posljedice.
 	
@@ -900,7 +891,7 @@ Postoji više pristupa dokazivanju ispravnosti algoritama, među kojima izdvajam
 
 \subsection{Metoda invarijante petlje}
 
-Metoda \textit{invarijante petlje} (engl. \textit{loop invariant}) predstavlja jednu od najvažnijih tehnika za dokazivanje ispravnosti iterativnih algoritama.
+Metoda \textit{invarijante petlje} predstavlja jednu od najvažnijih tehnika za dokazivanje ispravnosti iterativnih algoritama.
 
 \begin{definition}
 	Invarijanta petlje je tvrđenje koje važi prije prve iteracije petlje, ostaje tačno nakon svake iteracije i važi u trenutku završetka petlje.
@@ -939,9 +930,7 @@ Prednost ove metode ogleda se u tome što omogućava formalno dokazivanje isprav
 	
 \end{algorithm}
 
-Neka je sa $d^*$ označen najveći zajednički djelilac brojeva $n$ i $m$.
-
-Posmatrajmo tvrđenje $
+Neka je sa $d^*$ označen najveći zajednički djelilac brojeva $n$ i $m$. Posmatrajmo tvrđenje $
 d^* \leq d.
 $  Pokazaćemo da ono predstavlja invarijantu petlje.
 
@@ -952,9 +941,7 @@ $  Pokazaćemo da ono predstavlja invarijantu petlje.
 	
 	Pošto najveći zajednički djelilac ne može biti veći od manjeg od dva broja, slijedi da je 	$
 	d^* \leq d.
-	$
-	
-	Dakle, invarijanta važi prije ulaska u petlju.
+	$   Dakle, invarijanta važi prije ulaska u petlju.
 	
 	\item \textbf{Održavanje.} Pretpostavimo da invarijanta važi na početku neke iteracije. U tijelu petlje vrijednost promjenljive $d$ smanjuje se za jedan.
 	
@@ -966,9 +953,7 @@ $  Pokazaćemo da ono predstavlja invarijantu petlje.
 	d^* \leq d,
 	$ pa je invarijanta očuvana.
 	
-	\item \textbf{Završetak.} Petlja se zaustavlja kada trenutna vrijednost $d$ dijeli i broj $n$ i broj $m$. Dakle, tada je $d$ zajednički djelilac.
-	
-	S druge strane, prema invarijanti petlje važi $
+	\item \textbf{Završetak.} Petlja se zaustavlja kada trenutna vrijednost $d$ dijeli i broj $n$ i broj $m$. Dakle, tada je $d$ zajednički djelilac. 	S druge strane, prema invarijanti petlje važi $
 	d^* \leq d.
 	$
 	
@@ -1026,7 +1011,7 @@ Drugim riječima, najveći zajednički djelilac brojeva $a$ i $b$ jednak je najv
 \end{solution}
 
 
-Za razliku od naivnog algoritma iz prethodne sekcije, koji u najgorem slučaju ispituje sve brojeve od $\min(a,b)$ do $1$, Euklidov algoritam veoma brzo smanjuje vrijednosti brojeva nad kojima radi. Zbog toga se u praksi koristi gotovo isključivo ovaj pristup.
+Za razliku od naivnog algoritma iz prethodne sekcije, koji u najgorem slučaju ispituje sve brojeve od $\min(a,b)$ do $1$, Euklidov algoritam veoma brzo smanjuje vrijednosti brojeva nad kojima radi. Zbog toga se u praksi koristi gotovo isključivo Euklidov pristup.
 
 Može se pokazati da broj iteracija Euklidovog algoritma raste proporcionalno logaritmu manjeg od ulaznih brojeva. Preciznije, broj iteracija pripada klasi $O(\log \min(a,b)).$
 
@@ -1039,10 +1024,7 @@ $
 Zahvaljujući svojoj jednostavnosti i efikasnosti, Euklidov algoritam predstavlja jedan od najvažnijih algoritama u teoriji brojeva i računarstvu. Njegove modifikacije koriste se u brojnim oblastima, uključujući kriptografiju, računarsku algebru i teoriju algoritama.
 
 \textbf{Napomena.}
-Valjanost Euklidovog algoritma direktno slijedi iz svojstva 
-
-$
-\text{NZD}(a,b)=\text{NZD}(b,a\bmod b),$ koje se primjenjuje u svakoj iteraciji algoritma. Budući da se vrijednost drugog argumenta strogo smanjuje, algoritam se nakon konačnog broja koraka zaustavlja, a posljednja nenulta vrijednost predstavlja najveći zajednički djelilac ulaznih brojeva.
+Valjanost Euklidovog algoritma direktno slijedi iz svojstva $\text{NZD}(a,b)=\text{NZD}(b,a\bmod b),$ koje se primjenjuje u svakoj iteraciji algoritma. Budući da se vrijednost drugog argumenta strogo smanjuje, algoritam se nakon konačnog broja koraka zaustavlja, a posljednja nenulta vrijednost predstavlja najveći zajednički djelilac ulaznih brojeva.
 
 
 \section*{Zadaci}

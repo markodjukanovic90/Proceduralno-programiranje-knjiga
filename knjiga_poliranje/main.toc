@@ -11,7 +11,7 @@
 \contentsline {subsection}{\numberline {1.4.2}Neka svojstva $O$--notacije}{21}{}%
 \contentsline {subsection}{\numberline {1.4.3}Uputstva za procjenu složenosti algoritama}{21}{}%
 \contentsline {section}{\numberline {1.5}Prostorna složenost}{25}{}%
-\contentsline {section}{\numberline {1.6}Pseudokod}{27}{}%
+\contentsline {section}{\numberline {1.6}Pseudok\^od}{27}{}%
 \contentsline {section}{\numberline {1.7}O valjanosti algoritma}{30}{}%
 \contentsline {subsection}{\numberline {1.7.1}Metoda invarijante petlje}{30}{}%
 \contentsline {section}{\numberline {1.8}Euklidov algoritam}{32}{}%
