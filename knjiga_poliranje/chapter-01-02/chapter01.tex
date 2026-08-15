@@ -13,7 +13,7 @@ Od svog nastanka Pajton je prošao kroz više razvojnih faza i danas predstavlja
 
 Početak razvoja Pajtona vezuje se za 1989. godinu, kada je Guido van Rossum započeo rad na novom programskom jeziku inspirisanom jezikom ABC. Cilj je bio kreiranje jezika koji bi zadržao jednostavnost i preglednost ABC-a, ali istovremeno pružio veću fleksibilnost i mogućnosti za razvoj složenijih softverskih sistema.
 
-Prva verzija jezika, Pajton 0.9.0, objavljena je 1991. godine. Već tada su bili prisutni brojni koncepti koji i danas predstavljaju osnovu jezika, uključujući funkcije, klase, izuzetke i module.
+Prva verzija jezika, Pajton 0.9.0, već tada sadrži brojne koncepte koji i danas predstavljaju osnovu jezika, uključujući funkcije, klase, izuzetke i module.
 
 Pajton 1.0 objavljen je 1994. godine i donio je dodatne funkcionalnosti inspirisane funkcionalnim programiranjem, kao što su funkcije \texttt{map}, \texttt{filter}, \texttt{reduce} i lambda izrazi. Verzija 2.0, objavljena 2000. godine, uvela je značajna unapređenja poput komprehenzije lista (\textit{list comprehensions}) i automatskog upravljanja memorijom putem sakupljača otpadaka (\textit{garbage collector}).
 
@@ -32,7 +32,7 @@ Danas se Pajton koristi u velikom broju oblasti, uključujući:
 
 Veliki doprinos popularnosti jezika daje i njegova izuzetno aktivna zajednica korisnika i programera. Tokom godina razvijen je veliki broj biblioteka i razvojnih okruženja koja značajno proširuju mogućnosti jezika. Među najpoznatijim bibliotekama nalaze se NumPy, Pandas, Matplotlib, SciPy, TensorFlow i PyTorch, dok su Django i Flask među najpopularnijim okvirima za razvoj veb aplikacija.
 
-Pajton se posebno ističe jednostavnošću sintakse i čitljivošću programskog koda. Za razliku od mnogih drugih programskih jezika, naglasak je stavljen na preglednost i jasnoću programa, zbog čega se često preporučuje kao prvi programski jezik za učenje programiranja. Istovremeno, njegova izražajnost i bogat skup biblioteka čine ga pogodnim i za razvoj složenih profesionalnih softverskih sistema.
+Pajton se posebno ističe jednostavnošću sintakse i čitljivošću programskog k\^oda. Za razliku od mnogih drugih programskih jezika, naglasak je stavljen na preglednost i jasnoću programa, zbog čega se često preporučuje kao prvi programski jezik za učenje programiranja. Istovremeno, njegova izražajnost i bogat skup biblioteka čine ga pogodnim i za razvoj složenih profesionalnih softverskih sistema.
 
 U ovoj knjizi Pajton će biti korišćen kao alat za implementaciju i eksperimentisanje sa različitim algoritamskim tehnikama. Njegova jednostavna sintaksa omogućava da se pažnja usmjeri na razumijevanje algoritama i struktura podataka, a ne na tehničke detalje implementacije karakteristične za jezike nižeg nivoa.\\
 
@@ -62,7 +62,7 @@ Nakon uspješnog savladavanja sadržaja ove glave student će biti u stanju da:
 	\item koristi datoteke,  regularne izraze za učitavanje,
 	obradu i zapisivanje strukturiranih podataka;
 	
-	\item objasni osnovne faze izvršavanja Pajton programa, uključujući
+	\item objasni osnovne faze izvršavanja programa napisanog u programskom jeziku Pajton, uključujući
 	generisanje bajtkoda, ulogu virtuelne mašine i osnovne principe
 	upravljanja memorijom.
 \end{itemize}
@@ -72,11 +72,11 @@ Nakon uspješnog savladavanja sadržaja ove glave student će biti u stanju da:
 Pajton posjeduje niz osobina koje ga čine pogodnim kako za učenje programiranja, tako i za razvoj složenih softverskih sistema. U nastavku navodimo njegove najvažnije karakteristike.
 
 \begin{itemize}
-	\item \textit{Jezik visokog nivoa} (\textit{high-level language}). Pajton omogućava programiranje na visokom nivou apstrakcije, pri čemu se programer može fokusirati na rješavanje problema, a ne na detalje rada računara. Sintaksa jezika je jednostavna i pregledna, zbog čega je k\^od relativno lako čitati i održavati.
+	\item \textit{Jezik visokog nivoa} (eng. \textit{high-level language}). Pajton omogućava programiranje na visokom nivou apstrakcije, pri čemu se programer može fokusirati na rješavanje problema, a ne na detalje rada računara. Sintaksa jezika je jednostavna i pregledna, zbog čega je k\^od relativno lako čitati i održavati.
 	
 	\item \textit{Dinamički tipiziran jezik}. Tip promjenljive određuje se tokom izvršavanja programa. Zbog toga nije potrebno unaprijed deklarisati tip svake promjenljive. Na primjer, ista promjenljiva može u jednom trenutku sadržavati cijeli broj, a kasnije tekstualnu vrijednost.
 	
-	\item \textit{Objektno-orijentisani jezik}. U Pajtonu su podaci i operacije nad njima organizovani kroz objekte i klase. Objektno-orijentisano programiranje omogućava modelovanje problema pomoću objekata i njihovih međusobnih interakcija, što često dovodi do preglednijeg i modularnijeg koda.
+	\item \textit{Objektno-orijentisani jezik}. U Pajtonu su podaci i operacije nad njima organizovani kroz objekte i klase. Objektno-orijentisano programiranje omogućava modelovanje problema pomoću objekata i njihovih međusobnih interakcija, što često dovodi do preglednijeg i modularnijeg k\^oda.
 	
 	\item \textit{Interpretirani i skriptni jezik}. Programi napisani u Pajtonu izvršavaju se posredstvom interpretera, bez potrebe za klasičnim procesom kompajliranja kakav postoji kod jezika poput C ili C++. Zbog toga je razvoj programa brz i pogodan za automatizaciju različitih zadataka.
 	
