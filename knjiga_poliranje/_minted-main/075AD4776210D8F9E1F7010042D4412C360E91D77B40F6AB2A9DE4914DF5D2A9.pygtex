@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{algoritam} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{n}\PYG{p}{)}
+	    \PYG{n}{maximum} \PYG{o}{=} \PYG{n}{prvi} \PYG{n}{element} \PYG{n}{niza} \PYG{n}{a}
+	    \PYG{k}{for} \PYG{n}{sve} \PYG{n}{elemente} \PYG{n}{x} \PYG{n}{niza} \PYG{n}{a}\PYG{p}{:}
+	        \PYG{k}{if} \PYG{n}{x} \PYG{o}{\PYGZgt{}} \PYG{n}{maximum} \PYG{n}{then}
+	            \PYG{n}{maximum} \PYG{o}{=} \PYG{n}{x}
+	    \PYG{n}{vrati} \PYG{n}{maximum}
+\end{Verbatim}

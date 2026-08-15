@@ -1,6 +1,6 @@
 \chapter{Uvod u osnove teorije algoritama}
 
-U ovom poglavlju uvode se osnovni pojmovi teorije algoritama i računanja. Najprije se definiše pojam računarskog problema, zatim pojam algoritma kroz apstraktni model računanja, a potom osnovni koncepti vremenske i prostorne složenosti algoritama. Na kraju se razmatra pitanje ispravnosti algoritama, sa posebnim osvrtom na metodu invarijante petlje.\\
+U ovom poglavlju uvode se osnovni pojmovi teorije algoritama i računanja. Najprije se definiše pojam računarskog problema, zatim pojam algoritma kroz apstraktni model računanja, a potom osnovni koncepti vremenske i prostorne složenosti algoritama. Na kraju se razmatra pitanje ispravnosti algoritama, sa posebnim osvrtom na metodu invarijantne petlje.\\
 
 
 Nakon uspješnog savladavanja sadržaja ove glave student će biti u stanju da:
@@ -29,13 +29,13 @@ Nakon uspješnog savladavanja sadržaja ove glave student će biti u stanju da:
 
 \textit{Računarski problem} (eng. \textit{computational problem}) predstavlja zadatak koji je potrebno riješiti uz pomoć računara.
 
-Formalna definicija ovog pojma zahtijeva uvođenje više teorijskih koncepata, među kojima je i pojam jezika. U opštem slučaju, ulaz računarskog problema može se predstaviti kao binarno kodiran niz, odnosno element skupa $L={0,1}^*$. Izlaz predstavlja rješenje (opet element skupa $L$) koje mora zadovoljiti određena svojstva definisana samim problemom. Drugim riječima, računarski problem određuje skup uslova koje izlaz mora zadovoljiti za svaki dopustiv ulaz.
+Formalna definicija ovog pojma zahtijeva uvođenje više netrivijalnih teorijskih koncepata, među kojima je i pojam jezika. U opštem slučaju, ulaz računarskog problema može se predstaviti kao binarno kodiran niz, odnosno element skupa $L=\{0,1\}^*$. Izlaz predstavlja rješenje (opet element skupa $L$) koje mora zadovoljiti određena svojstva definisana samim problemom. Drugim riječima, računarski problem određuje skup uslova koje izlaz mora zadovoljiti za svaki dopustiv ulaz.
 
 Ulaz problema često se naziva \textit{instancom problema}, dok se odgovarajući izlaz naziva \textit{rješenjem instance}. Jedan od najpoznatijih primjera računarskog problema jeste problem sortiranja. U ulazu je dat niz objekata dužine $n$, dok je cilj proizvesti uređenu verziju tog niza prema unaprijed definisanom kriterijumu uređenja. Pri tome objekti ne moraju biti brojevi; dovoljno je da je nad njima definisana relacija totalnog uređenja.
 
 Na računarski problem možemo gledati kao na preslikavanje između ulaznih i izlaznih objekata. Ulazi i izlazi mogu biti predstavljeni različitim matematičkim strukturama, kao što su brojevi, skupovi, nizovi ili grafovi. U tom kontekstu govori se o generičkoj instanci problema i odgovarajućem generičkom rješenju.
 
-Prije razmatranja različitih tipova računarskih problema uvedimo pojam grafa, jednog od najvažnijih matematičkih objekata u računarstvu. Graf se može posmatrati kao skup čvorova povezanih granama. U ovoj knjizi podrazumijevamo proste grafove, odnosno grafove koji ne sadrže petlje niti višestruke grane između istog para čvorova. Graf je \textit{usmjeren} ukoliko svaka grana ima pridružen smjer, odnosno uređeni par krajnjih čvorova. U suprotnom, graf se naziva \textit{neusmjerenim}. Primjeri usmjerenog i neusmjerenog grafa prikazani su na Slici~\ref{fig:graphs}.
+Prije razmatranja različitih tipova računarskih problema uvedimo pojam grafa, jednog od najvažnijih matematičkih objekata u računarstvu. Graf se može posmatrati kao skup čvorova povezanih granama (linijama). U ovoj knjizi podrazumijevamo proste grafove, odnosno grafove koji ne sadrže petlje niti višestruke grane između istog para čvorova. Graf je \textit{usmjeren} ukoliko svaka grana ima pridružen smjer, odnosno uređeni par krajnjih čvorova. U suprotnom, graf se naziva \textit{neusmjerenim}. Primjeri usmjerenog i neusmjerenog grafa prikazani su na Slici~\ref{fig:graphs}.
 
 %graphs
 
@@ -102,23 +102,20 @@ Prije razmatranja različitih tipova računarskih problema uvedimo pojam grafa, 
 
 Postoji više vrsta računarskih problema. U nastavku izdvajamo četiri najčešće klase koje se pojavljuju u literaturi: probleme odlučivanja, probleme pretraživanja, probleme optimizacije i probleme prebrojavanja.
 
-Problem \textit{odlučivanja} zahtijeva odgovor tipa DA/NE (\emph{True}/\emph{False}) za dati ulaz $x \in {0,1}^*$. Drugim riječima, potrebno je utvrditi da li ulazna instanca posjeduje određeno svojstvo. Kao primjer može poslužiti problem \textit{3-bojenja} grafa (3--COL). U ulazu je dat neusmjereni graf, a potrebno je odrediti da li postoji dodjela boja iz skupa ${1,2,3}$ svim čvorovima tako da nijedna dva susjedna čvora nemaju istu boju.
+Problem \textit{odlučivanja} zahtijeva odgovor tipa DA/NE (\emph{True}/\emph{False}) za dati ulaz $x \in \{0,1\}^*$. Drugim riječima, potrebno je utvrditi da li ulazna instanca posjeduje određeno svojstvo. Kao primjer može poslužiti problem \textit{3-bojenja} grafa (3--COL). U ulazu je dat neusmjereni graf, a potrebno je odrediti da li postoji dodjela boja iz skupa ${1,2,3}$ svim čvorovima tako da nijedna dva susjedna čvora nemaju istu boju.
 
-Prikladan način formalizacije problema odlučivanja jeste određivanje skupa svih ulaza za koje je odgovor potvrdan. Takav skup označavamo sa $L \subseteq {0,1}^*$ i nazivamo ga jezikom. Na taj način svaki problem odlučivanja može biti predstavljen odgovarajućim jezikom, a svaki jezik određuje jedan problem odlučivanja. Na primjer, skup svih 3-obojivih grafova predstavlja jezik koji opisuje problem 3-bojenja.
+Prikladan način formalizacije problema odlučivanja jeste određivanje skupa svih ulaza za koje je odgovor potvrdan. Takav skup označavamo sa $L \subseteq \{0,1\}^*$ i nazivamo ga jezikom. Na taj način svaki problem odlučivanja može biti predstavljen odgovarajućim jezikom, a svaki jezik određuje jedan problem odlučivanja. Na primjer, skup svih 3-obojivih grafova predstavlja jezik koji opisuje problem 3-bojenja.
 
-Kod problema \textit{pretraživanja}, za dati ulaz $x \in {0,1}^*$ potrebno je pronaći objekat $y \in {0,1}^*$ koji zadovoljava određeni odnos sa ulazom. Takvi problemi formalizuju se relacijom $R \subseteq {0,1}^* \times {0,1}^*$, pri čemu $(x,y)\in R$ označava da je $y$ dopustivo rješenje za instancu $x$.
+Kod problema \textit{pretraživanja}, za dati ulaz $x \in \{0,1\}^*$ potrebno je pronaći objekat $y \in \{0,1\}^*$ koji zadovoljava određeni odnos sa ulazom. Takvi problemi formalizuju se relacijom $R \subseteq \{0,1\}^* \times \{0,1\}^*$, pri čemu $(x,y)\in R$ označava da je $y$ dopustivo rješenje za instancu $x$.
 
-Posmatrajmo ponovo problem 3-bojenja. Neka je dat neusmjereni graf $G=(V,E)$. Potrebno je pronaći, ukoliko postoji, funkciju bojenja $
-c \colon V \rightarrow \{1,2,3\},
+Posmatrajmo ponovo problem 3-bojenja. Neka je dat neusmjereni graf $G=(V,E)$. Potrebno je pronaći, ukoliko postoji, funkciju bojenja $c \colon V \rightarrow \{1,2,3\}, 
 $ takvu da za svaku granu $(u,v)\in E$ važi $c(u)\neq c(v)$. Za razliku od verzije odlučivanja, ovdje nije dovoljno utvrditi postojanje rješenja; potrebno je i eksplicitno konstruisati jedno takvo rješenje.
 
-Problemi \textit{optimizacije} predstavljaju jednu od najvažnijih klasa računarskih problema. Njihov cilj je pronalaženje najboljeg rješenja iz skupa svih dopustivih rješenja prema unaprijed definisanoj funkciji cilja. U zavisnosti od problema, ciljna funkcija se maksimizuje ili minimizuje uz poštovanje zadanih ograničenja.
+Problemi \textit{optimizacije} predstavljaju jednu od najvažnijih klasa računa\-rskih problema. Glavni cilj je pronalaženje najboljeg rješenja iz skupa svih dopustivih rješenja prema unaprijed definisanoj funkciji cilja koja daje apsolutnu mjeru ``kvaliteta'' svakog rješenja. U zavisnosti od problema, ciljna funkcija se maksimizuje ili minimizuje uz poštovanje zadanih ograničenja.
 
-Klasičan primjer predstavlja problem trgovačkog putnika. Potrebno je pronaći najkraću kružnu rutu (konturu) koja prolazi kroz sve zadate gradove tačno jednom i vraća se u početni grad. Cilj je minimizovati ukupnu pređenu udaljenost.
+Klasičan primjer predstavlja problem trgovačkog putnika. Potrebno je pronaći najkraću kružnu rutu (konturu) koja prolazi kroz sve zadate gradove (čvorovi grafa) tačno jednom i vraća se u početni grad. Cilj je minimizovati ukupnu pređenu udaljenost.
 
-Problemi \textit{prebrojavanja} bave se određivanjem broja mogućih rješenja određenog problema. Njihova složenost može varirati od veoma jednostavnih primjera do izuzetno zahtjevnih kombinatornih zadataka.
-
-Pretpostavimo da raspolažemo sa četiri košulje i tri para pantalona različitih boja. Na koliko različitih načina se osoba može obući ukoliko bira jednu košulju i jedne pantalone? Primjenom principa množenja dobijamo da je ukupan broj mogućih kombinacija jednak  $
+Problemi \textit{prebrojavanja} bave se određivanjem broja mogućih rješenja određenog problema. Njihova složenost može varirati od veoma jednostavnih primjera do izuzetno zahtjevnih kombinatornih zadataka.  Pretpostavimo da raspolažemo sa četiri košulje i tri para pantalona različitih boja. Na koliko različitih načina se osoba može obući ukoliko bira jednu košulju i jedne pantalone? Primjenom principa množenja dobijamo da je ukupan broj mogućih kombinacija jednak  $
 4 \cdot 3 = 12.
 $ Za kraj ovog poglavlja dajemo formalnu definiciju računarskog problema.
 
@@ -130,11 +127,11 @@ $ Za kraj ovog poglavlja dajemo formalnu definiciju računarskog problema.
 
 \section{Računarski program i pojam algoritma}
 
-Računarski program predstavlja konačan niz instrukcija koje računar može izvršavati. Instrukcije određuju redoslijed operacija potrebnih za rješavanje određenog problema ili izvršavanje konkretnog zadatka. Programi mogu biti namijenjeni obradi teksta, analizi podataka, pretraživanju informacija na internetu, komunikaciji sa korisnikom, upravljanju uređajima ili brojnim drugim primjenama.
+Računarski program predstavlja konačan niz instrukcija koje računar može izvršavati. Instrukcije određuju redoslijed operacija potrebnih za rješa\-vanje određenog problema ili izvršavanje konkretnog zadatka. Programi mogu biti namijenjeni obradi teksta, analizi podataka, pretraživanju informacija na internetu, komunikaciji sa korisnikom, upravljanju uređajima ili brojnim drugim primjenama.
 
 Programi se izvršavaju na različitim platformama, uključujući personalne računare, mobilne uređaje, serverske sisteme i ugrađene računarske uređaje. Za njihovu implementaciju koriste se različiti programski jezici, među kojima su Pajton, Java, $ C$, $ C$++ itd. Nakon što je program napisan, potrebno ga je prevesti u mašinski k\^od razumljiv procesoru. U zavisnosti od programskog jezika i načina izvršavanja, taj proces može uključivati kompajliranje, interpretaciju ili kombinaciju oba pristupa.
 
-Algoritam predstavlja precizno definisan konačan niz koraka kojim se za dati ulaz proizvodi odgovarajući izlaz, odnosno rješava određeni problem. U informatici se algoritmi koriste kao formalni opisi postupaka koje računarski program izvršava kako bi ostvario željenu funkcionalnost.
+Algoritam predstavlja precizno definisan konačan niz koraka kojim za dati ulaz proizvodi odgovarajući izlaz, odnosno rješava određeni problem. U informatici se algoritmi koriste kao formalni opisi postupaka koje računarski program izvršava kako bi ostvario željenu funkcionalnost.
 
 Može se posmatrati kao recept za rješavanje problema: algoritam definiše koje operacije treba izvršiti, kojim redoslijedom i pod kojim uslovima. Jednostavna analogija iz svakodnevnog života jeste priprema jela prema receptu. Recept opisuje niz koraka koje je potrebno izvršiti kako bi se od početnih sastojaka dobio željeni rezultat. Na sličan način algoritam transformiše ulazne podatke u odgovarajući izlaz.
 
@@ -145,16 +142,16 @@ Uloga algoritama u računarstvu je višestruka:
 \begin{itemize}
 	\item Omogućavaju efikasno rješavanje složenih problema.
 	\item Predstavljaju osnovu automatizacije procesa, čineći ih bržim, pouzdanijim i jednostavnijim za izvršavanje.
-	\item Omogućavaju računarima izvršavanje zadataka koje bi čovjek teško ili praktično nemoguće mogao obaviti ručno.
+	\item Omogućavaju računarima izvršavanje zadataka koje bi čovjek teško ili praktično nemoguće mogao obaviti ručno u realnom vremenu.
 \end{itemize}
 
 Međutim, svaki niz instrukcija ne predstavlja nužno algoritam. Da bi određeni postupak bio algoritam, potrebno je da zadovoljava nekoliko osnovnih osobina:
 
 \begin{itemize}
-	\item \textit{Dobro definisani ulazi}. Ukoliko algoritam koristi ulazne podatke, oni moraju biti jasno definisani.
+	\item \textit{Dobro definisani ulazi}. Ukoliko algoritam koristi ulazne podatke, oni moraju biti jasno definisani i unaprijed određeni.
 	\item \textit{Dobro definisani izlazi}. Za svaki dopustiv ulaz algoritam mora proizvesti jasno određen rezultat.
 	\item \textit{Konačnost}. Algoritam mora završiti nakon konačnog broja koraka za svaki dopustiv ulaz.
-	\item \textit{Izvodljivost}. Svaka operacija algoritma mora biti izvršiva korišćenjem raspoloživih računarskih resursa.
+	\item \textit{Izvodljivost}. Svaka operacija algoritma mora biti izvršiva unutar raspoloživih računarskih resursa.
 	\item \textit{Nezavisnost od programskog jezika}. Algoritam predstavlja apstraktan postupak koji se može implementirati u različitim programskim jezicima.
 	\item \textit{Nedvosmislenost}. Svaka instrukcija mora biti precizno definisana i jednoznačno interpretirana.
 \end{itemize}
@@ -162,13 +159,13 @@ Međutim, svaki niz instrukcija ne predstavlja nužno algoritam. Da bi određeni
 Navedene osobine mogu se sažeti kroz nekoliko ključnih karakteristika algoritama:
 
 \begin{itemize}
-	\item Algoritam se završava nakon konačnog vremena.
-	\item Za dati ulaz proizvodi odgovarajući izlaz.
-	\item Za isti ulaz daje isti rezultat, pod pretpostavkom determinističkog izvršavanja.
+	\item Algoritam se završava u konačnom vremenu.
+	%\item Za dati ulaz proizvodi odgovarajući deterministički izlaz.
+	\item Za isti ulaz daje isti izlaz/rezultat, pod pretpostavkom determinističkog izvršavanja.
 	\item Svaki njegov korak predstavlja efektivnu i izvršivu operaciju.
 \end{itemize}
 
-\textit{Veličina ulaza} predstavlja mjeru količine podataka koje algoritam obrađuje. Način njenog određivanja zavisi od prirode problema. Kod problema sortiranja veličina ulaza odgovara broju elemenata koji se sortiraju. Kod problema nad grafovima može se definisati brojem čvorova i grana, dok se kod numeričkih problema često izražava brojem bitova potrebnih za predstavljanje ulaznih vrijednosti.
+\textit{Veličina ulaza} predstavlja mjeru količine podataka koje algoritam obra\-đuje. Način određivanja dimenzije ulaza zavisi od prirode problema. Kod problema sortiranja veličina ulaza odgovara broju elemenata koji se sortiraju. Kod problema nad grafovima može se definisati brojem čvorova i grana, dok se kod numeričkih problema često izražava brojem bitova potrebnih za predstavljanje ulaznih vrijednosti.
 
 \subsection{Vrste algoritama}
 
@@ -177,19 +174,19 @@ Tokom razvoja računarstva razvijen je veliki broj algoritamskih paradigmi za rj
 \begin{enumerate}
 	\item \textit{Iscrpna pretraga} (eng. \emph{brute force}) predstavlja jedan od najjednostavnijih pristupa rješavanju problema. Osnovna ideja sastoji se u razmatranju svih mogućih kandidata za rješenje i provjeri koji od njih zadovoljavaju uslove problema.
 	
-	\item \textit{Rekurzivni algoritmi} zasnivaju se na razlaganju problema na manje podprobleme istog tipa. Rješenje se dobija ponovnim pozivanjem iste procedure sve dok se ne dostigne trivijalan slučaj koji se može direktno riješiti.
+	\item \textit{Rekurzivni algoritmi} (eng. \textit{recursive algorithms}) zasnivaju se na razlaganju problema na manje podprobleme istog tipa. Rješenje se dobija ponovnim pozivanjem iste procedure sve dok se ne dostigne trivijalan slučaj koji se može direktno riješiti.
 	
 	\item \textit{Vraćanje unazad} (eng. \emph{backtracking}) predstavlja tehniku sistematskog pretraživanja prostora rješenja. Kandidati za rješenje grade se postepeno, pri čemu se djelimična rješenja koja ne mogu dovesti do validnog konačnog rješenja odbacuju čim se to utvrdi.
 	
-	\item \textit{Algoritmi pretraživanja} koriste se za pronalaženje elemenata ili informacija unutar određene strukture podataka.
+	\item \textit{Algoritmi pretraživanja} (eng. \textit{search algorithms}) koriste se za pronalaženje elemenata ili informacija unutar određene strukture podataka.
 	
-	\item \textit{Algoritmi sortiranja} uređuju podatke prema unaprijed definisanom kriterijumu uređenja.
+	\item \textit{Algoritmi sortiranja} (eng. \textit{sorting algorithms}) uređuju podatke prema unaprijed definisanom kriterijumu uređenja.
 	
 	\item \textit{Podijeli pa vladaj} (eng. \emph{divide-and-conquer}) razlaže problem na manje podprobleme, nezavisno ih rješava i zatim kombinuje njihova rješenja u konačan rezultat.
 	
-	\item \textit{Pohlepni algoritmi} grade rješenje korak po korak birajući u svakom trenutku lokalno najpovoljniju odluku prema unaprijed definisanom kriterijumu.
+	\item \textit{Pohlepni algoritmi} (eng. \textit{greedy algorithms}) grade rješenje korak po korak birajući u svakom trenutku lokalno najpovoljniju odluku prema unaprijed definisanom kriterijumu.
 	
-	\item \textit{Dinamičko programiranje} koristi već izračunata rješenja podproblema kako bi se izbjegla višestruka izračunavanja istih vrijednosti. Posebno je efikasno kod problema sa preklapajućim podproblemima i optimalnom podstrukturom.
+	\item \textit{Dinamičko programiranje} (eng. \textit{dynamic programming}) koristi već izračunata rješenja podproblema kako bi se izbjegla višestruka izračunavanja istih vrijednosti. Posebno je efikasno kod problema sa preklapajućim podproblemima i optimalnom podstrukturom.
 \end{enumerate}
 
 Većina navedenih pristupa predstavlja opšte algoritamske paradigme koje se mogu primijeniti na širok spektar problema. U trećoj glavi knjige detaljno će biti obrađene najvažnije paradigme, zajedno sa njihovim teorijskim osnovama i praktičnim primjenama.
@@ -202,12 +199,12 @@ Projektovanje efikasnih algoritama često predstavlja složen i kreativan proces
 Prilikom projektovanja i analize algoritama prirodno se nameće nekoliko važnih pitanja:
 
 \begin{enumerate}
-	\item Da li je algoritam efikasan?
+	\item Da li je algoritam dovoljno efikasan?
 	\item Kako uporediti efikasnost dva različita algoritma za isti problem?
 	\item Kako se vrijeme izvršavanja algoritma ponaša kada veličina ulaza postane veoma velika?
 \end{enumerate}
 
-Odgovor na ova pitanja zahtijeva precizan matematički okvir za opisivanje procesa računanja. Zbog toga se u teorijskoj analizi algoritama uvode apstraktni modeli računara koji omogućavaju formalno mjerenje vremena i prostora potrebnih za izvršavanje algoritama.
+Odgovor na ova pitanja zahtijeva precizan i nepristrasan  matematički okvir za opisivanje procesa računanja. Zbog toga se u teorijskoj analizi algoritama uvode apstraktni modeli računara koji omogućavaju formalno mjerenje vremena i prostora potrebnih za izvršavanje algoritama.
 
 Jedan od najčešće korištenih modela jeste \textit{mašina sa slučajnim pristupom} (eng. \textit{Random Access Machine} -- RAM). Ovaj model predstavlja idealizovanu apstrakciju računara koja omogućava formalnu analizu algoritama nezavisno od konkretne hardverske arhitekture.
 
@@ -271,7 +268,7 @@ $i,j,k,m\in\mathbb{N}$:
 	\item $R[i] \gets \neg R[j]$
 	\item $R[i] \gets M[R[j]]$
 	\item $M[R[j]] \gets R[i]$
-	\item IF $R[i]=0$, GOTO $l$
+	\item IF $R[i]=0$, goto $l$
 	\item MALLOC
 	\item HALT
 	\item $\vdots$
@@ -294,7 +291,7 @@ Konfiguracija programa predstavlja potpun opis stanja računanja u određenom tr
 	K=(l,S,w,R,M), $	gdje je:
 	
 	\begin{itemize}
-		\item $l \in {1,\ldots,q+1}$ programski brojač,
+		\item $l \in \{1,\ldots,q\}$ programski brojač,
 		\item $S\in\mathbb{N}$ količina korištene memorije,
 		\item $w\in\mathbb{N}$ veličina riječi,
 		\item $R=(R[0],\ldots,R[r-1])$ niz registara,
@@ -365,7 +362,7 @@ U okviru teorijskog modela algoritam se smatra ispravnim bez obzira na količinu
 
 Pri analizi vremena izvršavanja programa posmatra se broj elementarnih operacija koje algoritam izvrši. Takve operacije nazivaju se \textit{jediničnim instrukcijama} i obuhvataju aritmetičke, logičke i bitovske operacije, operacije dodjele, kao i pristup memoriji.
 
-Osnovna pretpostavka RAM modela jeste da se svaka jedinična instrukcija izvršava u konstantnom vremenu. Zbog toga se vremenska složenost algoritma može izraziti ukupnim brojem izvršenih jediničnih instrukcija. Ovaj koncept predstavlja osnovu za definisanje asimptotskih mjera složenosti koje će biti obrađene u narednoj sekciji.
+Osnovna pretpostavka RAM modela jeste da se svaka jedinična instrukcija izvršava u konstantnom vremenu, predstavljajući tzv. \textit{jedinični model kompleksnosti}.  Zbog toga se vremenska složenost algoritma može izraziti ukupnim brojem izvršenih jediničnih instrukcija u toku izvršavanja. Ovaj koncept predstavlja osnovu za definisanje asimptotskih mjera složenosti koje će biti obrađene u narednoj sekciji.
 
 \section{Pojam složenosti algoritma}
 
@@ -385,43 +382,40 @@ Razmotrimo sljedeći primjer.
 
 \begin{minted}{Python}
 	algoritam max(a, n)
-	    maximum = a[0]
-	
-	    for i in 1 to n-1 do
-	        if a[i] > maximum then
-	            maximum = a[i]
-	
-	    return maximum
+	    maximum = prvi element niza a
+	    for sve elemente x niza a:
+	        if x > maximum then
+	            maximum = x
+	    vrati maximum
 \end{minted}
 
 Pretpostavimo da je ulaz $a=[1,5,2,10,7], n=5.$ U teorijskom RAM modelu svaka dodjela, poređenje i pristup elementu niza posmatraju se kao elementarne operacije. Brojanjem svih izvršenih instrukcija može se odrediti tačno vrijeme izvršavanja algoritma za konkretnu instancu ulaza.
 
-Međutim, određivanje tačnog broja instrukcija za svaki mogući ulaz često je nepraktično, naročito kod složenijih algoritama. Zbog toga se uvodi pojam \textit{najgoreg vremena izvršavanja} (engl. \textit{worst-case running time}), koji predstavlja standardnu mjeru efikasnosti algoritama.
+Međutim, određivanje tačnog broja instrukcija za svaki mogući ulaz često je nepraktično, naročito kod složenijih algoritama. Zbog toga se uvodi pojam \textit{najgoreg vremena izvršavanja} (eng. \textit{worst-case running time}), koji predstavlja standardnu mjeru efikasnosti algoritama.
 
 \begin{definition}
 	Najgore vrijeme izvršavanja programa predstavlja funkciju $
 	T : \mathbb{N}\times\mathbb{N}\rightarrow\mathbb{N},
-	$ gdje je $T(n,k)$ maksimalno vrijeme izvršavanja programa nad svim ulazima dužine $n$ čije se vrijednosti nalaze u skupu ${0,\ldots,k}$.
+	$ gdje je $T(n,k)$ maksimalno vrijeme izvršavanja programa nad svim ulazima dužine $n$ čije se vrijednosti nalaze u skupu $\{0,\ldots,k\}$.
 \end{definition}
 
 \begin{example}
 	Posmatrajmo sljedeći algoritam:
-	
-	\begin{minted}{Python}
-		algoritam sort(a, n)
-		
-		
-		for i in 1 to n-1 do
-		    for j in 0 to i-1 do
-		        if a[i] > a[j] then
-		            swap(a[i], a[j])	
-	\end{minted}
+
+\begin{minted}{Python}
+    algorithm sort(a, n): 
+        for i (indeks) od početka do kraja niza:
+		    for j od početka do i-1 elementa niza
+		        if i-ti element veći od j-tog elementa  then
+		            swap(a[i], a[j])
+		vrati a	
+\end{minted}
 	
 \end{example}
 
 Najgori slučaj nastupa kada se tijelo \texttt{if} naredbe izvršava pri svakoj iteraciji unutrašnje petlje. Na primjer, to se može dogoditi kada su elementi ulaznog niza raspoređeni u obrnutom poretku u odnosu na željeni.
 
-Za svaku vrijednost $i$, unutrašnja petlja izvršava se tačno $i$ puta. Ukupan broj izvršavanja njenog tijela jednak je$$
+Za svaku vrijednost $i$, unutrašnja petlja izvršava se tačno $i$ puta, za svaki od prvih $i$ elemenata niza $a$. Ukupan broj izvršavanja njenog tijela jednak je$$
 \sum_{i=1}^{n-1}\sum_{j=0}^{i-1}1 = \sum_{i=1}^{n-1}i
 \frac{n(n-1)}{2}.
 $$
@@ -436,13 +430,13 @@ Ipak, čak i određivanje najgoreg vremena izvršavanja može biti zahtjevno za 
 
 Kako se veličina ulaza povećava, broj operacija koje algoritam izvršava uglavnom raste. Stoga je od posebnog interesa proučavanje ponašanja algoritama za velike vrijednosti $n$, jer razlike između različitih algoritamskih pristupa tada postaju najizraženije.
 
-U narednoj podsekciji uvodimo formalni pojam asimptotske složenosti i najvažniju notaciju koja se koristi u njenom opisivanju — $O$-notaciju.
+U narednoj podsekciji uvodimo formalno pojam asimptotske složenosti i najvažniju notaciju koja se koristi u njenom opisivanju -- $O$-notaciju.
 
 \subsection{$O$--notacija}
 
-U prethodnoj sekciji vidjeli smo da se vrijeme izvršavanja algoritma može izraziti brojem elementarnih instrukcija koje program izvrši. Međutim, čak i za relativno jednostavne algoritme, tačno određivanje broja izvršenih instrukcija može biti nepraktično. Zbog toga se u analizi algoritama koristi \textit{asimptotska analiza}, koja proučava ponašanje algoritama za velike vrijednosti ulaza.
+U prethodnoj sekciji vidjeli smo da se vrijeme izvršavanja algoritma može izraziti brojem elementarnih instrukcija koje program izvrši shodno zadatom ulazu. Međutim, čak i za relativno jednostavne algoritme, tačno određivanje broja izvršenih instrukcija može biti nepraktično. Zbog toga se u analizi algoritama koristi \textit{asimptotska analiza}, koja proučava ponašanje algoritama za velike vrijednosti ulaza.
 
-Jedan od najvažnijih alata asimptotske analize jeste $O$--notacija (engl. \textit{Big-O notation}). Njena osnovna ideja sastoji se u tome da se zanemare detalji koji ne utiču značajno na ponašanje algoritma za velike vrijednosti ulaza, te da se pažnja usmjeri na dominantne članove funkcije vremena izvršavanja.
+Jedan od najvažnijih alata asimptotske analize jeste $O$--notacija (eng. \textit{Big-O notation}). Njena osnovna ideja sastoji se u tome da se zanemare detalji koji ne utiču značajno na ponašanje algoritma za velike vrijednosti ulaza, te da se pažnja usmjeri na dominantne članove funkcije vremena izvršavanja.
 
 Posmatrajmo sljedeće funkcije:
 
@@ -468,13 +462,9 @@ T_2(n) \sim n\log^3 n. $
 U nastavku pretpostavljamo da posmatrane funkcije imaju nenegativne vrijednosti za dovoljno velike vrijednosti argumenta.
 
 \begin{definition}
-	Neka su date funkcije $f$ i $g$.
-	
-	Kažemo da je	$
+	Neka su date funkcije $f$ i $g$. Kažemo da je	$
 	f(n)=O(g(n)) $ ako postoje konstante $c>0$ i $N>0$ takve da za svako $n\geq N$ važi $
-	f(n)\leq c,g(n).$ 
-		
-	U tom slučaju kažemo da je $g$ asimptotska gornja granica funkcije $f$.
+	f(n)\leq c \cdot g(n).$   U tom slučaju kažemo da je $g$ asimptotska gornja granica funkcije $f$.
 \end{definition}
 
 \begin{figure}[H]
@@ -494,21 +484,17 @@ U nastavku pretpostavljamo da posmatrane funkcije imaju nenegativne vrijednosti 
 
 Dominantni član funkcije određuje njeno asimptotsko ponašanje. Kada je $n$ dovoljno veliko, doprinos ostalih članova postaje zanemarljiv u odnosu na dominantni član. Zbog toga se složenost algoritma najčešće izražava upravo pomoću dominantnog člana funkcije vremena izvršavanja.
 
-Iako je $O$--notacija izuzetno korisna, ona ne daje uvijek dovoljno preciznu informaciju. Na primjer,
-
-$n^2+n=O(n^2),$ ali istovremeno važi i $n^2+n=O(n^3).$
+Iako je $O$--notacija izuzetno korisna, ona ne daje uvijek dovoljno preciznu informaciju. Na primjer, $n^2+n=O(n^2),$ ali istovremeno važi i $n^2+n=O(n^3).$
 
 Oba iskaza su matematički tačna, ali prvi mnogo preciznije opisuje stvarno ponašanje funkcije. Zbog toga uvodimo pojam $\Theta$--notacije.
 
 \begin{definition}
 	Neka su date funkcije $f$ i $g$.
 	
-	Kažemo da je $f(n)=\Theta(g(n))$
-	
-	ako postoje konstante $c_1,c_2>0$ i $N>0$ takve da za svako $n\geq N$ važi
+	Kažemo da je $f(n)=\Theta(g(n))$ ako postoje konstante $c_1,c_2>0$ i $N>0$ takve da za svako $n\geq N$ važi
 	
 	$$
-	c_1g(n)\leq f(n)\leq c_2g(n).
+	c_1 \cdot g(n)\leq f(n)\leq c_2 \cdot g(n).
 	$$
 	
 	U tom slučaju kažemo da funkcije $f$ i $g$ imaju isto asimptotsko ponašanje.
@@ -543,8 +529,7 @@ Pored $O$ i $\Theta$ notacije, često se koriste i $\Omega$ i $o$ notacije.
 	Neka su date funkcije $f$ i $g$.
 	
 	Kažemo da je $
-	f(n)=o(g(n))
-	$ ako za svako $c>0$ postoji broj $N>0$ takav da za svako $n\geq N$ važi $0\leq f(n)<c \cdot g(n).$ Drugim riječima, funkcija $f$ raste strogo sporije od funkcije $g$.
+	f(n)=o(g(n))$ ako za svako $c>0$ postoji broj $N>0$ takav da za svako $n\geq N$ važi $0\leq f(n)<c \cdot g(n).$ Drugim riječima, funkcija $f$ raste strogo sporije od funkcije $g$.
 \end{definition}
 
 Neformalno posmatrano, uslov $f(n)=o(g(n))
@@ -646,7 +631,7 @@ U nastavku navodimo nekoliko praktičnih pravila koja olakšavaju procjenu slož
 		\hline
 		\textbf{IF} $C$ \textbf{THEN} $N_1$ \textbf{ELSE}  $N_2$ 
 		& 
-		$T(S)=T(C)+\max{T(N_1),T(N_2)}$ \\
+		$T(S)=T(C)+\max\{T(N_1),T(N_2)\}$ \\
 		\hline
 		\textbf{WHILE} $U$ \textbf{DO} $N_1$
 		&
@@ -659,9 +644,10 @@ U nastavku navodimo nekoliko praktičnih pravila koja olakšavaju procjenu slož
 	\end{tabular}
 \end{table}
 
-Pri procjeni složenosti algoritama najčešće se zanemaruju konstantni faktori i niži redovi rasta, a pažnja se usmjerava na dominantni član izraza. Na taj način moguće je brzo odrediti asimptotsko ponašanje algoritma bez potrebe za detaljnim brojanjem svih izvršenih instrukcija.
+Pri procjeni složenosti algoritama najčešće se zanemaruju konstantni faktori i niži redovi rasta, a pažnja se usmjerava na dominantni član izraza. Na taj način moguće je brzo odrediti asimptotsko ponašanje algoritma bez potrebe za detaljnim brojanjem svih izvršenih instrukcija.\\
 
-Postavlja se pitanje: kada možemo reći da je jedan algoritam efikasniji od drugog?
+Postavlja se pitanje: kada možemo reći da je jedan algoritam efikasniji od drugog?\\
+
 
 Odgovor daju upravo asimptotske notacije, prvenstveno $O$ i $\Theta$ notacija. Kažemo da je algoritam $X$ \textit{asimptotski efikasniji} od algoritma $Y$ ukoliko za dovoljno velike vrijednosti ulaza vrijeme izvršavanja algoritma $X$ raste sporije od vremena izvršavanja algoritma $Y$.
 
