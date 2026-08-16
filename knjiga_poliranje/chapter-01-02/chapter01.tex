@@ -1732,19 +1732,17 @@ Pored navedenih funkcija, Pajton sadrži veliki broj korisnih ugrađenih funkcij
 
 \section{Moduli}
 
-\textit{Modul} predstavlja datoteku koja sadrži definicije funkcija, klasa, promjenljivih i drugih programskih elemenata. Naziv modula odgovara nazivu datoteke sa ekstenzijom \texttt{.py}.
+\textit{Modul} predstavlja datoteku koja sadrži definicije funkcija, klasa, promjenljivih i drugih programskih elemenata. Modul sadrži jednu ili više datoteka sa ekstenzijom \texttt{.py} %Naziv modula odgovara nazivu datoteke sa ekstenzijom \texttt{.py}.
 
-Moduli omogućavaju organizovanje programa u manje cjeline i ponovnu upotrebu koda u različitim projektima.
+Moduli služe organizovanju programa u manje cjeline i ponovnu upotrebu k\^oda u različitim projektima. Da bismo ga koristili, modul je potrebno prvo uključiti pomoću naredbe \texttt{import}.
 
-Da bismo koristili modul, potrebno ga je prvo uključiti pomoću naredbe \texttt{import}.
-
-Na primjer, ako postoji datoteka \texttt{mojmodul.py}, modul se uključuje na sljedeći način:
+Na primjer, ako postoji datoteka \texttt{mojmodul.py},  uključuje na sljedeći način:
 
 \begin{minted}{python}
 	import mojmodul
 \end{minted}
 
-Nakon toga funkcijama, klasama i promjenljivama modula pristupamo pomoću tačkaste notacije:
+Nakon toga funkcijama, klasama i promjenljivama modula pristupamo pomoću notacije tačka:
 
 \begin{minted}{python}
 	mojmodul.moja_funkcija()
@@ -1762,12 +1760,12 @@ Tada se funkcija može pozivati direktno:
 	moja_funkcija()
 \end{minted}
 
-Moduli predstavljaju jedan od osnovnih mehanizama organizacije programa u Pajtonu i omogućavaju razvoj većih i preglednijih softverskih sistema.
+Moduli predstavljaju jedan od osnovnih mehanizama organizacije programa u Pajtonu i omogućavaju razvoj većih i preglednijih softverskih sistema.\\
 
 
 Pajton dolazi sa velikim brojem ugrađenih modula, među kojima se posebno izdvajaju \texttt{math}, \texttt{random}, \texttt{datetime} i \texttt{os}. Pored njih, u praksi se često koriste i brojni eksterni moduli i biblioteke, kao što je \texttt{numpy}, o kojima će biti više riječi u nastavku ovog poglavlja.
 
-Moduli koji su dio standardne biblioteke dostupni su odmah nakon instalacije Pajtona i nije ih potrebno dodatno instalirati. Sa druge strane, za korištenje eksternih modula potrebno ih je prethodno instalirati.
+Moduli koji su dio standardne biblioteke dostupni su odmah nakon instalacije Pajtona i nije ih potrebno dodatno instalirati. Sa druge strane, eksterne module je potrebno prethodno instalirati.
 
 Instalacija eksternih modula najčešće se vrši pomoću menadžera paketa \texttt{pip}, koji se standardno isporučuje uz većinu Pajton instalacija. Da bismo instalirali određeni modul, na terminalu izvršimo naredbu:
 
@@ -1783,7 +1781,7 @@ Na primjer, za instalaciju modula \texttt{requests} koristimo naredbu:
 	pip install requests
 \end{minted}
 
-Nakon pokretanja naredbe, \texttt{pip} automatski preuzima traženi paket sa repozitorijuma PyPI (\emph{Python Package Index}) i instalira ga u trenutno Pajton okruženje.
+Nakon pokretanja naredbe, \texttt{pip} automatski preuzima traženi paket sa repozitorijuma PyPI (eng. \emph{Python Package Index}) i instalira ga u trenutno Pajton okruženje.
 
 PyPI predstavlja centralni repozitorijum Pajton paketa i sadrži stotine hiljada biblioteka koje su slobodno dostupne za korištenje. Zahvaljujući njemu, funkcionalnost jezika može se značajno proširiti bez potrebe za implementacijom svega od početka.
 
@@ -1800,7 +1798,6 @@ Ponekad je potrebno instalirati tačno određenu verziju modula. To se postiže 
 \end{minted}
 
 Informacije o instaliranim modulima mogu se prikazati naredbom:
-
 \begin{minted}{bash}
 	pip list
 \end{minted}
@@ -1811,7 +1808,7 @@ dok se detaljne informacije o konkretnom modulu dobijaju naredbom:
 	pip show requests
 \end{minted}
 
-Savremeni Pajton projekti često koriste virtuelna okruženja (\emph{virtual environments}) kako bi se zavisnosti različitih projekata držale odvojeno. O ovom konceptu biće više riječi u kasnijim poglavljima.
+Savremeni projekti napisani u Pajtonu često koriste virtuelna okruženja (eng. \emph{virtual environments}) kako bi se zavisnosti različitih projekata držale odvojeno. O ovom konceptu biće više riječi u kasnijim poglavljima.
 
 \subsection{Modul \texttt{math}}
 
@@ -1827,18 +1824,13 @@ Nakon toga funkcijama i konstantama modula pristupa se preko prefiksa \texttt{ma
 
 \begin{minted}{python}
 	import math
-	
 	# Kvadratni korijen
-	
 	x = math.sqrt(25)
 	print(x)      # 5.0
 	
 	# Konstanta pi
-	
 	print(math.pi)
-	
 	# Sinus ugla od 45 stepeni
-	
 	print(math.sin(math.radians(45)))
 \end{minted}
 
@@ -1897,7 +1889,7 @@ Primjer korištenja:
 
 Generator slučajnih brojeva u modulu \texttt{random} zasniva se na determinističkom algoritmu. To znači da se za isto početno stanje, zadato funkcijom \texttt{seed()}, uvijek generiše isti niz vrijednosti. Ova osobina je posebno korisna pri testiranju programa i reprodukciji eksperimenata.
 
-Iako se generisane vrijednosti ponašaju kao slučajne, one nisu pogodne za kriptografske primjene. Za potrebe kriptografije koristi se modul \texttt{secrets}, koji generiše kriptografski sigurne slučajne vrijednosti.
+%Iako se generisane vrijednosti ponašaju kao slučajne, one nisu pogodne za kriptografske primjene. Za potrebe kriptografije koristi se modul \texttt{secrets}, koji generiše kriptografski sigurne slučajne vrijednosti.
 
 
 \subsection{Modul \texttt{time}}
@@ -1905,7 +1897,6 @@ Iako se generisane vrijednosti ponašaju kao slučajne, one nisu pogodne za krip
 Modul \texttt{time} predstavlja dio standardne Pajton biblioteke i omogućava rad sa vremenom. Njegove funkcije koriste se za mjerenje trajanja izvršavanja programa, dobijanje trenutnog vremena, privremeno zaustavljanje izvršavanja programa i konverziju između različitih vremenskih formata.
 
 Modul se uključuje naredbom:
-
 \begin{minted}{python}
 	import time
 \end{minted}
@@ -1948,7 +1939,6 @@ Neke od najčešće korištenih funkcija i atributa su:
 
 \begin{itemize}
 	\item \texttt{os.name} -- vraća oznaku operativnog sistema;
-	
 	\item \texttt{os.getcwd()} -- vraća trenutni radni direktorijum;
 	
 	\item \texttt{os.chdir(path)} -- mijenja trenutni radni direktorijum;
@@ -1956,7 +1946,6 @@ Neke od najčešće korištenih funkcija i atributa su:
 	\item \texttt{os.listdir(path)} -- vraća listu datoteka i direktorijuma;
 	
 	\item \texttt{os.mkdir(path)} -- kreira novi direktorijum;
-	
 	\item \texttt{os.makedirs(path)} -- kreira direktorijum zajedno sa svim potrebnim poddirektorijumima;
 	
 	\item \texttt{os.remove(path)} -- briše datoteku;
@@ -1985,9 +1974,7 @@ Primjer:
 
 \subsection{Modul \texttt{copy}}
 
-Modul \texttt{copy} omogućava pravljenje kopija objekata. Posebno je koristan pri radu sa složenim strukturama podataka, kao što su liste, rječnici i ugniježđene kolekcije.
-
-Modul podržava dvije osnovne vrste kopiranja:
+Modul \texttt{copy} omogućava pravljenje kopija objekata. Posebno je koristan pri radu sa složenim strukturama podataka, kao što su liste, rječnici i ugniježđene kolekcije. Ovaj modul podržava dvije osnovne vrste kopiranja:
 
 \begin{itemize}
 	\item \textbf{površinsko kopiranje} (\emph{shallow copy});
@@ -2000,7 +1987,7 @@ Modul se uključuje naredbom:
 	import copy
 \end{minted}
 
-\subsubsection*{Površinsko kopiranje}
+\subsubsection{Površinsko kopiranje}
 
 Funkcija \texttt{copy()} kreira novi objekat, ali elementi koji se nalaze unutar njega ostaju zajednički sa originalnim objektom.
 
@@ -2015,9 +2002,9 @@ Funkcija \texttt{copy()} kreira novi objekat, ali elementi koji se nalaze unutar
 
 Vidimo da je izmjena u unutrašnjoj listi vidljiva i u originalnom objektu.
 
-\subsubsection*{Dubinsko kopiranje}
+\subsubsection{Dubinsko kopiranje}
 
-Funkcija \texttt{deepcopy()} rekurzivno kopira sve objekte sadržane unutar originalnog objekta, čime nastaje potpuno nezavisna kopija.
+Funkcija \texttt{deepcopy()} rekurzivno kopira sve objekte sadržane unutar originalnog objekta, čime nastaje potpuno nezavisna kopija. Naziva se još kopiranje po vrijednosti. 
 
 \begin{minted}{python}
 	import copy
@@ -2037,9 +2024,7 @@ Površinsko kopiranje je brže i troši manje memorije, dok dubinsko kopiranje z
 
 \section{Izuzeci}
 
-Tokom izvršavanja programa mogu se pojaviti različite greške koje nije moguće otkriti u fazi prevođenja programa. Takve greške nazivaju se \textit{izuzeci} (engl. \textit{exceptions}).
-
-Tipični primjeri izuzetaka su:
+Tokom izvršavanja programa mogu se pojaviti različite greške koje nije moguće otkriti u fazi prevođenja programa. Takve greške nazivaju se \textit{izuzeci} (eng. \textit{exceptions}). Tipični primjeri izuzetaka su:
 
 \begin{itemize}
 	\item dijeljenje brojem nula;
@@ -2073,9 +2058,9 @@ Na primjer:
 	    print("Dijeljenje nulom nije dozvoljeno.")
 \end{minted}
 
-U ovom slučaju program neće biti prekinut, već će se izvršiti odgovarajuća poruka o grešci.
+U ovom slučaju program neće biti momentalno prekinut, već će se izvršiti odgovarajuća poruka o grešci.
 
-\subsection{Hvatanje više vrsta izuzetaka}
+%\subsection{Hvatanje više vrsta izuzetaka}
 
 Jedan blok \texttt{try} može imati više blokova \texttt{except}, pri čemu svaki obrađuje određenu vrstu greške.
 
@@ -2092,7 +2077,7 @@ Jedan blok \texttt{try} može imati više blokova \texttt{except}, pri čemu sva
 
 Klasa \texttt{Exception} predstavlja baznu klasu većine izuzetaka i često se koristi za hvatanje svih neobrađenih grešaka.
 
-\subsection{Generisanje izuzetaka}
+%\subsection{Generisanje izuzetaka}
 
 Pored hvatanja postojećih izuzetaka, moguće je i eksplicitno generisati izuzetak pomoću naredbe \texttt{raise}.
 
@@ -2102,7 +2087,7 @@ Pored hvatanja postojećih izuzetaka, moguće je i eksplicitno generisati izuzet
 
 Ovakav pristup je koristan kada želimo da sami signaliziramo pojavu greške ili neispravnog stanja u programu.
 
-\subsection{Blok \texttt{finally}}
+%\subsection{Blok \texttt{finally}}
 
 Ponekad je potrebno izvršiti određeni kod bez obzira na to da li je došlo do izuzetka ili ne. Za tu svrhu koristi se blok \texttt{finally}.
 
@@ -2117,10 +2102,7 @@ Blok \texttt{finally} često se koristi za zatvaranje datoteka, oslobađanje res
 
 \subsection{Naredba \texttt{assert}}
 
-Još jedan koristan mehanizam predstavlja naredba \texttt{assert}, koja služi za provjeru da li određeni uslov važi.
-
-Njena sintaksa je:
-
+Još jedan koristan mehanizam predstavlja naredba \texttt{assert}, koja služi za provjeru da li određeni uslov važi.  Njena sintaksa je:
 \begin{minted}{python}
 	assert uslov, "poruka o greški"
 \end{minted}
@@ -2150,7 +2132,7 @@ Pregled najvažnijih klasa izuzetaka prikazan je na Slici~\ref{fig:exceptions}.
 
 \bigskip
 
-Pravilna upotreba izuzetaka predstavlja važan dio razvoja pouzdanih programa. Obradom izuzetaka moguće je spriječiti neočekivani prekid izvršavanja, korisniku pružiti jasne informacije o nastaloj grešci i povećati robusnost softvera.
+Pravilna upotreba izuzetaka predstavlja važan dio razvoja pouzdanih programa. Obradom izuzetaka moguće je spriječiti neočekivani prekid izvršavanja, korisniku pružiti jasne informacije o nastaloj greški i povećati robusnost softvera.
 
 \section{Rad sa datotekama}
 
