@@ -921,7 +921,7 @@ U ovom primjeru oznaka \texttt{'i'} označava cjelobrojne vrijednosti tipa \text
 	
 \end{itemize}
 
-\subsubsection*{Kada koristiti \texttt{array}?}
+%\subsubsection*{Kada koristiti \texttt{array}?}
 
 Modul \texttt{array} je posebno koristan kada radimo sa velikim kolekcijama numeričkih podataka istog tipa. U poređenju sa listama, objekti tipa \texttt{array} zauzimaju manje memorije i omogućavaju efikasnije skladištenje homogenih podataka.
 
@@ -938,14 +938,11 @@ Za razliku od lista, gdje se elementima pristupa pomoću numeričkih indeksa, u 
 
 Rječnici se često nazivaju i \textit{heš mapama} (eng. \textit{hash maps}), jer su interno implementirani korištenjem heš tabela.
 
-\subsubsection*{Inicijalizacija}
-
-Rječnik se može kreirati na više načina.
+\textit{Inicijalizacija}.  Rječnik se može kreirati na više načina.
 
 \begin{minted}{python}
 	
 	# Kreiranje pomoću vitičastih zagrada
-	
 	dct = {
 		"ime": "Mirko",
 		"godine": 30,
@@ -955,13 +952,13 @@ Rječnik se može kreirati na više načina.
 	# Kreiranje pomoću konstruktora dict()
 	
 	dct1 = dict(
-	ime="Mirko",
-	godine=30,
-	grad="Banja Luka"
+	    ime="Mirko",
+	    godine=30,
+	    grad="Banja Luka"
 	)
 \end{minted}
 
-\subsubsection*{Osnovne operacije}
+\textit{Osnovne operacije}. 
 
 \begin{itemize}
 	
@@ -979,17 +976,14 @@ Rječnik se može kreirati na više načina.
 		print(dct["ime"])      # Mirko
 	\end{minted}
 	
-	\item \textbf{Dodavanje i izmjena elemenata}
-	
+	\item \textbf{Dodavanje i izmjena elemenata}: 
 	\begin{minted}{python}
 		dct["godine"] = 31
 	\end{minted}
 	
 	Ako ključ već postoji, njegova vrijednost se ažurira. U suprotnom se dodaje novi par ključ--vrijednost.
 	
-	\item \textbf{Brisanje elementa}
-	
-	Element se može ukloniti korištenjem ključne riječi \texttt{del} ili metode \texttt{pop()}.
+	\item \textbf{Brisanje elementa}: Element se može ukloniti korištenjem ključne riječi \texttt{del} ili metode \texttt{pop()}.
 	
 	\begin{minted}{python}
 		del dct["grad"]
@@ -1001,23 +995,21 @@ Rječnik se može kreirati na više načina.
 		dct.pop("grad")
 	\end{minted}
 	
-	\item \textbf{Provjera postojanja ključa}
-	
-	Operator \texttt{in} provjerava da li se određeni ključ nalazi u rječniku.
+	\item \textbf{Provjera postojanja ključa}:   Operator \texttt{in} provjerava da li se određeni ključ nalazi u rječniku.
 	
 	\begin{minted}{python}
 		print("ime" in dct)      # True
 		print("pol" in dct)      # False
 	\end{minted}
 	
-	\item \textbf{Iteriranje kroz rječnik}
+	\item \textbf{Iteriranje kroz rječnik}:
 	
 	\begin{minted}{python}
 		for kljuc, vrijednost in dct.items():
-		print(kljuc, vrijednost)
+		    print(kljuc, vrijednost)
 	\end{minted}
 	
-	\item \textbf{Korisne metode}
+	\item \textbf{Druge korisne metode}: 
 	
 	\begin{itemize}
 		\item \texttt{len(dct)} -- vraća broj elemenata rječnika;
@@ -1029,9 +1021,7 @@ Rječnik se može kreirati na više načina.
 	
 \end{itemize}
 
-\subsubsection*{Memorijska organizacija}
-
-Rječnici su u Pajtonu implementirani korištenjem heš tabela. Osnovna ideja sastoji se u tome da se svaki ključ transformiše u cijeli broj primjenom heš funkcije. Dobijena vrijednost koristi se za brzo pronalaženje mjesta na kojem se nalazi odgovarajuća vrijednost.
+\textit{Memorijska organizacija}. Rječnici su u Pajtonu implementirani korištenjem heš tabela. Osnovna ideja sastoji se u tome da se svaki ključ transformiše u cijeli broj primjenom heš funkcije. Dobijena vrijednost koristi se za brzo pronalaženje mjesta na kojem se nalazi odgovarajuća vrijednost.
 
 Zahvaljujući ovakvoj organizaciji, osnovne operacije nad rječnicima imaju očekivanu vremensku složenost:
 
@@ -1054,9 +1044,7 @@ Pojednostavljen prikaz organizacije rječnika dat je na Slici~\ref{fig:dict_mem_
 	\label{fig:dict_mem_organization}
 \end{figure}
 
-\subsubsection*{Dodatne napomene}
-
-Ključevi u rječniku moraju biti nepromjenljivi objekti. Zbog toga se kao ključevi mogu koristiti objekti tipa \texttt{int}, \texttt{float}, \texttt{str} ili \texttt{tuple}, dok liste (\texttt{list}) ne mogu biti ključevi.
+\textit{Dodatne napomene}.  Ključevi u rječniku moraju biti nepromjenljivi objekti. Zbog toga se kao ključevi mogu koristiti objekti tipa \texttt{int}, \texttt{float}, \texttt{str} ili \texttt{tuple}, dok liste (\texttt{list}) ne mogu biti ključevi.
 
 \begin{minted}{python}
 	dct = {
@@ -1078,29 +1066,24 @@ Osnovna namjena skupova jeste efikasna provjera pripadnosti elementa kolekciji. 
 
 Elementi skupa mogu biti objekti nepromjenljivih tipova podataka, kao što su \texttt{int}, \texttt{float}, \texttt{str}, \texttt{tuple} ili \texttt{complex}. Sa druge strane, promjenljive kolekcije poput lista (\texttt{list}), rječnika (\texttt{dict}) i drugih skupova (\texttt{set}) ne mogu biti elementi skupa.
 
-\subsubsection*{Inicijalizacija}
-
-Skup se može kreirati na nekoliko načina:
+\textit{Inicijalizacija}.  Skup se može kreirati na nekoliko načina:
 
 \begin{minted}{python}
 	skup = set()
 	
 	skup1 = {1, 2, 3, 4}
-	
-	skup2 = set((1, 2, "3"))
-	
+	skup2 = set((1, 2, "3"))  
 	skup3 = set([1, 2, 3])
 \end{minted}
 
-\textbf{Napomena.} Prazan skup se kreira pomoću funkcije \texttt{set()}. Izraz
-
+ Prazan skup se kreira pomoću funkcije \texttt{set()}. Izraz
 \begin{minted}{python}
 	skup = {}
 \end{minted}
 
 ne kreira prazan skup već prazan rječnik.
 
-\subsubsection*{Osnovne metode}
+\textit{Osnovne metode}. 
 
 \begin{itemize}
 	
@@ -1165,9 +1148,7 @@ ne kreira prazan skup već prazan rječnik.
 	
 \end{itemize}
 
-\subsubsection*{Memorijska organizacija}
-
-Skupovi su u Pajtonu implementirani korištenjem heš tabela. Svakom elementu pridružuje se heš vrijednost koja omogućava veoma brzo pronalaženje njegove pozicije u memoriji.
+\textit{Memorijska organizacija}.  Skupovi su u Pajtonu implementirani korištenjem heš tabela. Svakom elementu pridružuje se heš vrijednost koja omogućava veoma brzo pronalaženje njegove pozicije u memoriji.
 
 Zahvaljujući takvoj organizaciji, osnovne operacije nad skupovima imaju očekivanu vremensku složenost:
 
@@ -1198,10 +1179,7 @@ Pojednostavljen prikaz organizacije skupa dat je na Slici~\ref{fig:set_mem_organ
 	\caption{Pojednostavljen prikaz unutrašnje organizacije skupa u Pajtonu.}
 	\label{fig:set_mem_organization}
 \end{figure}
-
-\subsubsection*{Dodatne napomene}
-
-Skupovi su naročito korisni kada je potrebno:
+\textit{Dodatne napomene}.  Skupovi su naročito korisni kada je potrebno:
 
 \begin{itemize}
 	\item ukloniti duplikate iz kolekcije podataka;
