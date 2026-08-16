@@ -1,6 +1,5 @@
 \begin{Verbatim}[commandchars=\\\{\}]
 	\PYG{k}{def} \PYG{n+nf}{dodaj\PYGZus{}element}\PYG{p}{(}\PYG{n}{lista}\PYG{p}{,} \PYG{n}{element}\PYG{p}{):}
-	
 	    \PYG{n}{lista}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{element}\PYG{p}{)}
 	
 	\PYG{c+c1}{\PYGZsh{}main}

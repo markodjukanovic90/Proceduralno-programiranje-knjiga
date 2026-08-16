@@ -1191,17 +1191,14 @@ Zbog veoma brzih operacija pretraživanja, skupovi predstavljaju jednu od najva�
 
 \subsection{Torke}
 
-Torka (\texttt{tuple}) predstavlja uređenu, indeksiranu i nepromjenljivu (\textit{immutable}) kolekciju elemenata. U Pajtonu se implementira pomoću ugrađenog tipa podataka \texttt{tuple}.
+Torka (\texttt{tuple}) predstavlja uređenu, indeksiranu i nepromjenljivu  kolekciju elemenata. U Pajtonu se implementira pomoću ugrađenog tipa podataka \texttt{tuple}.
 
 Za razliku od lista, elementi torke se ne mogu mijenjati nakon kreiranja objekta. Torke mogu sadržavati elemente različitih tipova podataka i dopuštaju pojavljivanje duplikata.
 
-\subsubsection*{Inicijalizacija}
-
-Torka se može kreirati na nekoliko načina:
+\textit{Inicijalizacija}. Torka se može kreirati na nekoliko načina:
 
 \begin{minted}{python}
 	my_tuple = ("aa", "bb", 2.0, 3)
-	
 	my_tuple1 = tuple(["abc", 3.2, "a"])
 \end{minted}
 
@@ -1213,50 +1210,37 @@ Torka sa jednim elementom zahtijeva završni zarez:
 
 Bez zareza izraz \texttt{(5)} predstavlja običan cjelobrojni objekat.
 
-\subsubsection*{Osnovne operacije}
+\textit{Osnovne operacije}. 
 
 \begin{itemize}
 	
-	\item \textbf{Pristup elementima}
-	
-	Elementima torke pristupa se pomoću operatora \texttt{[]}:
+	\item \textbf{Pristup elementima}:	Elementima torke pristupa se pomoću operatora \texttt{[]}:
 	
 	\begin{minted}{python}
 		my_tuple = (1, 2, 3, 2, 4, 2, 5)
-		
 		print(my_tuple[2])   # 3
 		print(my_tuple[-1])  # 5
 	\end{minted}
 	
-	\item \textbf{Brojanje pojavljivanja elementa}
-	
-	Metoda \texttt{count()} vraća broj pojavljivanja elementa:
+	\item \textbf{Broj pojavljivanja elementa} u torci se dobija metodom \texttt{count()}:
 	
 	\begin{minted}{python}
 		my_tuple = (1, 2, 3, 2, 3, 5)
-		
 		print(my_tuple.count(2))  # 2
 	\end{minted}
 	
-	\item \textbf{Pronalaženje indeksa elementa}
-	
-	Metoda \texttt{index()} vraća indeks prvog pojavljivanja elementa:
+	\item \textbf{Pronalaženje indeksa elementa} se vrši  metodom \texttt{index()}:
 	
 	\begin{minted}{python}
 		print(my_tuple.index(2))  # 1
 	\end{minted}
 	
-	\item \textbf{Dužina torke}
-	
-	Broj elemenata određuje se funkcijom \texttt{len()}:
-	
+	\item \textbf{Dužina torke} se vraća funkcijom \texttt{len()}:
 	\begin{minted}{python}
 		print(len(my_tuple))  # 6
 	\end{minted}
 	
-	\item \textbf{Spajanje torki}
-	
-	Dvije torke mogu se spojiti operatorom \texttt{+}:
+	\item \textbf{Spajanje torki}: Dvije torke mogu se spojiti operatorom \texttt{+}.
 	
 	\begin{minted}{python}
 		t1 = ("a", "bb", 2)
@@ -1267,31 +1251,25 @@ Bez zareza izraz \texttt{(5)} predstavlja običan cjelobrojni objekat.
 		
 	\end{minted}
 	
-	\item \textbf{Rezanje torke (slicing)}
-	
-	Kao i kod lista, moguće je izdvojiti dio torke:
+	\item \textbf{Rezanje torke (slicing)}.	Kao i kod lista, moguće je izdvojiti dio torke
 	
 	\begin{minted}{python}
 		t = (0, 1, 2, 3, 4, 5)
-		
 		print(t[1:4])  # (1, 2, 3)
 	\end{minted}
 	
 \end{itemize}
 
-\subsubsection*{Memorijska organizacija}
-
-Torke su nepromjenljive strukture podataka. Nakon kreiranja nije moguće dodavati, uklanjati niti mijenjati njihove elemente. Zbog toga Pajton može efikasnije upravljati memorijom nego kod promjenljivih struktura kao što su liste.
+\textit{Memorijska organizacija}. Torke su nepromjenljive strukture podataka. Nakon kreiranja nije moguće dodavati, uklanjati niti mijenjati njihove elemente. Zbog toga Pajton može efikasnije upravljati memorijom nego kod promjenljivih struktura kao što su liste.
 
 Objekat tipa \texttt{tuple} sadrži reference na svoje elemente. Pošto se broj elemenata ne može mijenjati nakon kreiranja torke, nije potrebno vršiti realokaciju memorije tokom izvršavanja programa.
 
 Pristup elementima torke ostvaruje se direktnim indeksiranjem, pa je vremenska složenost operacije pristupa elementu jednaka $O(1)$.
 
-Zbog svoje nepromjenljivosti, torke često zauzimaju manje memorije od lista sa istim brojem elemenata i mogu se koristiti kao ključevi u rječnicima ili kao elementi skupova, pod uslovom da svi njihovi elementi takođe budu nepromjenljivi.
+Zbog svoje nepromjenljivosti, torke često zauzimaju manje memorije od lista sa istim brojem elemenata i mogu se koristiti kao ključevi u rječnicima ili kao elementi skupova, pod uslovom da svi njihovi elementi takođe budu nepromjenljivi. Poređenje memorijske organizacije lista i torki prikazano je na Slici~\ref{fig:mem_list_org}.\\ 
 
-Poređenje memorijske organizacije lista i torki prikazano je na Slici~\ref{fig:mem_list_org}.
 
-\subsubsection*{Kada koristiti torke?}
+%\subsubsection*{Kada koristiti torke?}
 
 Torke su pogodan izbor kada:
 
@@ -1314,30 +1292,28 @@ Funkcija se definiše pomoću ključne riječi \texttt{def}. Nakon naziva funkci
 
 \begin{minted}{python}
 	def proizvod_brojeva(x, y):
-	proizvod = x * y
-	return proizvod
+	   proizvod = x * y
+	   return proizvod
 \end{minted}
 
 Funkcija se poziva navođenjem njenog naziva i odgovarajućih argumenata:
 
 \begin{minted}{python}
 	rezultat = proizvod_brojeva(4, 3)
-	
 	print(rezultat)  # 12
 \end{minted}
 
-\subsection*{Podrazumijevane vrijednosti parametara}
+%\subsection*{Podrazumijevane vrijednosti parametara}
 
 Parametrima funkcije mogu se dodijeliti podrazumijevane vrijednosti koje će biti korištene ukoliko korisnik ne navede odgovarajući argument.
 
 \begin{minted}{python}
 	def umnozi(tekst="Mirko", broj_ponavljanja=1):
 	print(tekst * broj_ponavljanja)
-	
 	umnozi()
 \end{minted}
 
-U ovom slučaju ispisuje se:
+U ovom slučaju ispisuje se
 
 \begin{minted}{text}
 	Mirko
@@ -1345,11 +1321,9 @@ U ovom slučaju ispisuje se:
 
 jer se koriste podrazumijevane vrijednosti parametara.
 
-\subsection*{Promjenljiv broj argumenata}
+%\subsection*{Promjenljiv broj argumenata}
 
-Pajton omogućava definisanje funkcija koje prihvataju proizvoljan broj pozicionih ili imenovanih argumenata.
-
-Operator \texttt{*} sakuplja dodatne pozicione argumente u torku:
+Pajton omogućava definisanje funkcija koje prihvataju proizvoljan broj pozicionih ili imenovanih argumenata.  Operator \texttt{*} sakuplja dodatne pozicione argumente u torku:
 
 \begin{minted}{python}
 	def ispisi_brojeve(*brojevi):
@@ -1370,7 +1344,7 @@ Operator \texttt{**} sakuplja imenovane argumente u rječnik:
 	)
 \end{minted}
 
-\subsection*{Vraćanje više vrijednosti}
+%\subsection*{Vraćanje više vrijednosti}
 
 Funkcija može vratiti više vrijednosti odjednom. U pozadini se takve vrijednosti pakuju u torku.
 
@@ -1385,15 +1359,12 @@ Funkcija može vratiti više vrijednosti odjednom. U pozadini se takve vrijednos
 	print(k, o)  # 3 1
 \end{minted}
 
-\subsection*{Prosljeđivanje argumenata}
-
-U Pajtonu se funkcijama prosljeđuje referenca na objekat. Zbog toga ponašanje zavisi od toga da li je objekat promjenljiv ili nepromjenljiv.
+\textit{Prosljeđivanje argumenata}.  U Pajtonu se funkcijama prosljeđuje referenca na objekat. Zbog toga ponašanje zavisi od toga da li je objekat promjenljiv ili nepromjenljiv.
 
 Promjenljivi objekti (liste, rječnici i skupovi) mogu biti izmijenjeni unutar funkcije:
 
 \begin{minted}{python}
 	def dodaj_element(lista, element):
-	
 	    lista.append(element)
 	
 	#main
@@ -1403,17 +1374,15 @@ Promjenljivi objekti (liste, rječnici i skupovi) mogu biti izmijenjeni unutar f
 	
 \end{minted}
 
-Pošto funkcija i pozivalac referenciraju isti objekat liste, promjena je vidljiva i nakon povratka iz funkcije.
-
-Ako želimo izbjeći izmjenu originalne liste, potrebno je funkciji proslijediti kopiju:
+Pošto funkcija i pozivalac referenciraju isti objekat liste, promjena je vidljiva i nakon povratka iz funkcije. Ako želimo izbjeći izmjenu originalne liste, potrebno je funkciji proslijediti kopiju:
 
 \begin{minted}{python}
 	dodaj_element(brojevi.copy(), 5)
 \end{minted}
 
-\subsection*{Nepromjenljivi objekti}
+%\subsection*{Nepromjenljivi objekti}
 
-Cijeli brojevi, decimalni brojevi, stringovi i torke predstavljaju nepromjenljive objekte. Njihova izmjena zapravo podrazumijeva kreiranje novog objekta.
+Cijeli brojevi, decimalni brojevi, stringovi i torke predstavljaju nepromjenljive objekte. Njihova izmjena u tijelu funkcije zapravo podrazumijeva kreiranje novog objekta.
 
 \begin{minted}{python}
 	def inkrementiraj(x):
@@ -1434,9 +1403,7 @@ Rezultat izvršavanja je:
 
 Vrijednost varijable \texttt{y} ostaje nepromijenjena jer izraz \texttt{x += 1} kreira novi objekat i lokalna varijabla \texttt{x} počinje da referencira taj novi objekat.
 
-\subsection*{Globalne varijable}
-
-Ključna riječ \texttt{global} omogućava izmjenu globalne varijable unutar funkcije.
+\textit{Globalne varijable}. Ključna riječ \texttt{global} omogućava izmjenu pristupa varijabli unutar funkcije gdje ona postaje globalno vidljiva. 
 
 \begin{minted}{python}
 	def my_func():
@@ -1449,7 +1416,7 @@ Ključna riječ \texttt{global} omogućava izmjenu globalne varijable unutar fun
 \end{minted}
 Ipak, prekomjerna upotreba globalnih varijabli se ne preporučuje jer otežava razumijevanje i održavanje programa.
 
-\subsection*{Funkcije kao argumenti}
+\subsection{Funkcije kao argumenti}
 
 Pošto su funkcije objekti, mogu se prosljeđivati drugim funkcijama kao argumenti.
 
@@ -1468,7 +1435,9 @@ Pošto su funkcije objekti, mogu se prosljeđivati drugim funkcijama kao argumen
 Ovakav pristup predstavlja osnovu mnogih naprednih tehnika programiranja, uključujući funkcionalno programiranje i rad sa bibliotekama za obradu podataka.
 
 
-\textit{Anonimne funkcije.} Anonimne funkcije definišu se pomoću ključne riječi \texttt{lambda}, zbog čega se često nazivaju i \textit{lambda funkcije}. Naziv „anonimne“ potiče od činjenice da se funkcija može definisati bez eksplicitnog navođenja njenog imena, za razliku od standardnih funkcija koje se definišu pomoću ključne riječi \texttt{def}.
+\subsection{Anonimne funkcije.} 
+
+Anonimne funkcije definišu se pomoću ključne riječi \texttt{lambda}, zbog čega se često nazivaju i \textit{lambda funkcije}. Naziv ``anonimne'' potiče od činjenice da se funkcija može definisati bez eksplicitnog navođenja njenog imena, za razliku od standardnih funkcija koje se definišu pomoću ključne riječi \texttt{def}.
 
 Opšta sintaksa lambda funkcije je:
 
@@ -1500,7 +1469,7 @@ Iako lambda funkcije mogu imati proizvoljan broj parametara, njihovo tijelo mora
 Lambda funkcije se često kombinuju sa ugrađenim funkcijama za obradu kolekcija, kao što su \texttt{map()}, \texttt{filter()} i \texttt{reduce()}. O ovim funkcijama biće više riječi u nastavku knjige, u Sekciji~\ref{sec:concepts-pyhton}.
 
 
-\section{Neki programski koncepti i ugrađene funkcije}
+\section{Neki programski koncepti i često korištene ugrađene funkcije}
 \label{sec:concepts-pyhton}
 
 U ovoj sekciji predstavljamo nekoliko važnih koncepata i ugrađenih funkcija koje se često koriste u programskom jeziku Pajton. Posebna pažnja posvećena je komprehenziji liste (\textit{list comprehension}) i funkcijama \texttt{map()}, \texttt{filter()} i \texttt{reduce()}, koje omogućavaju sažetije i preglednije pisanje programa te uvode određene elemente funkcionalnog programiranja.
@@ -1551,40 +1520,38 @@ Na primjer, izdvajanje parnih brojeva iz liste:
 	print(parni)  # [2, 4, 6]
 \end{minted}
 
-Komprehenzija liste često rezultira kraćim i preglednijim kodom, posebno kod jednostavnih transformacija i filtriranja podataka.
+Komprehenzija liste često rezultira kraćim i preglednijim k\^odom, posebno kod jednostavnih transformacija i filtriranja podataka.
 
-\subsection{Funkcije \texttt{map()}, \texttt{filter()} i \texttt{reduce()}}
+\subsection{Funkcije \texttt{map}, \texttt{filter} i \texttt{reduce}}
 
 Funkcije \texttt{map()}, \texttt{filter()} i \texttt{reduce()} predstavljaju osnovne alate funkcionalnog programiranja. Njihova primjena omogućava obradu kolekcija podataka bez eksplicitnog pisanja petlji.
 
-\subsubsection*{Funkcija \texttt{map()}}
+%\subsubsection*{Funkcija \texttt{map()}}
 
-Funkcija \texttt{map()} prima funkciju i iterabilni objekat te primjenjuje zadatu funkciju na svaki element kolekcije.
+Funkcija \texttt{map()} prihvata funkciju i iterabilni objekat te primjenjuje zadatu funkciju na svaki element kolekcije.
 
 \begin{minted}{python}
 	brojevi = [1, 2, 3, 4, 5]
 	dupli = map(lambda x: 2 * x, brojevi)
 	print(list(dupli)) 	# [2, 4, 6, 8, 10]
-	
 \end{minted}
 
-U Pythonu 3 funkcija \texttt{map()} vraća iterator, pa je često potrebno rezultat pretvoriti u listu pozivom funkcije \texttt{list()}.
+U Pajtonu verzije 3 funkcija \texttt{map()} vraća iterator, pa je potrebno rezultat pretvoriti u listu pozivom funkcije \texttt{list()}.
 
-\subsubsection*{Funkcija \texttt{filter()}}
+%\subsubsection*{Funkcija \texttt{filter()}}
 
-Funkcija \texttt{filter()} služi za izdvajanje elemenata koji zadovoljavaju određeni uslov.
+Funkcija \texttt{filter()} služi za izdvajanje elemenata iterabilne kolekcije koji zadovoljavaju određeni uslov.
 
 \begin{minted}{python}
-	brojevi = [1, 2, 3, 4, 5, 6]
-	
+	brojevi = [1, 2, 3, 4, 5, 6]	
 	parni = filter(lambda x: x % 2 == 0, brojevi)
 	print(list(parni))  # [2, 4, 6]
 	
 \end{minted}
 
-Funkcija koja se prosljeđuje kao prvi argument mora vraćati logičku vrijednost (\texttt{True} ili \texttt{False}).
+Funkcija koja se prosljeđuje kao prvi argument mora vraćati logičku vrijednost (\textit{True} ili \textit{False}).
 
-\subsubsection*{Funkcija \texttt{reduce()}}
+%\subsubsection*{Funkcija \texttt{reduce()}}
 
 Funkcija \texttt{reduce()} sukcesivno kombinuje elemente kolekcije primjenom zadate funkcije.
 
@@ -1618,11 +1585,11 @@ U ovom primjeru izvršavaju se sljedeće operacije:
 	24 \cdot 5 &= 120.
 \end{align*}
 
-Dakle, funkcija \texttt{reduce()} „redukuje“ čitavu kolekciju na jednu konačnu vrijednost.
+Dakle, funkcija \texttt{reduce()} ``redukuje'' čitavu kolekciju na jednu konačnu vrijednost.
 
-\subsection*{Poređenje sa komprehenzijom liste}
+\subsection{Komprehenzija liste}
 
-U savremenom Pajtonu mnoge operacije realizovane funkcijama \texttt{map()} i \texttt{filter()} često se zapisuju pomoću komprehenzije liste, jer je takav kod pregledniji. Na primjer:
+U savremenom Pajtonu mnoge operacije realizovane funkcijama \texttt{map()} i \texttt{filter()} često se zapisuju pomoću komprehenzije liste, jer je takav k\^od pregledniji. Na primjer:
 
 \begin{minted}{python}
 	parni = [x for x in brojevi if x % 2 == 0]
@@ -1646,7 +1613,6 @@ Funkcije \texttt{zip()} i \texttt{enumerate()} spadaju među najčešće korišt
 Funkcija \texttt{zip()} prima dva ili više iterabilnih objekata i vraća iterator koji generiše torke sastavljene od odgovarajućih elemenata tih objekata.
 
 Njena opšta sintaksa je:
-
 \begin{minted}{python}
 	zip(iterable1, iterable2, ...)
 \end{minted}
@@ -1657,7 +1623,6 @@ gdje su \textit{iterable1}, \textit{iterable2}, \ldots proizvoljni iterabilni ob
 	lista1 = [1, 2, 3, 4]
 	lista2 = [5, 6, 7, 8]
 	parovi = zip(lista1, lista2)
-	
 	print(list(parovi))
 	# [(1, 5), (2, 6), (3, 7), (4, 8)]
 	
@@ -1665,7 +1630,7 @@ gdje su \textit{iterable1}, \textit{iterable2}, \ldots proizvoljni iterabilni ob
 
 Funkcija \texttt{zip()} zaustavlja generisanje parova čim se iscrpi najkraći od proslijeđenih iterabilnih objekata.
 
-\subsubsection*{Funkcija \texttt{enumerate()}}
+%\subsubsection*{Funkcija \texttt{enumerate()}}
 
 Funkcija \texttt{enumerate()} omogućava istovremeno pristupanje elementima kolekcije i njihovim indeksima.
 
@@ -1682,11 +1647,9 @@ gdje je:
 	\item \textit{start} početna vrijednost indeksa (podrazumijevano je 0).
 \end{itemize}
 
-Primjer:
 
 \begin{minted}{python}
 	voce = ["jabuka", "banana", "kruška", "breskva"]
-	
 	for i, vocka in enumerate(voce):
 	    print(i, vocka)
 \end{minted}
@@ -1702,7 +1665,7 @@ Rezultat izvršavanja je:
 
 Funkcija \texttt{enumerate()} često predstavlja pregledniju alternativu ručnom vođenju brojača unutar petlje.
 
-\subsubsection*{Sortiranje lista}
+\subsection{Sortiranje lista}
 
 Pajton omogućava sortiranje elemenata pomoću metode \texttt{sort()} i ugrađene funkcije \texttt{sorted()}.
 
@@ -1717,8 +1680,8 @@ Njena sintaksa je:
 Parametar \texttt{reverse} određuje redoslijed sortiranja:
 
 \begin{itemize}
-	\item \texttt{False} -- rastući poredak (podrazumijevano);
-	\item \texttt{True} -- opadajući poredak.
+	\item \textit{False} -- rastući poredak (podrazumijevano);
+	\item \textit{True} -- opadajući poredak.
 \end{itemize}
 
 Parametar \texttt{key} omogućava zadavanje funkcije koja određuje kriterijum sortiranja. U nastavku slijedi jedan primjer. 
@@ -1737,7 +1700,7 @@ Ako elementi liste nisu međusobno uporedivi, javlja se greška:
 	instances of 'str' and 'int'
 \end{minted}
 
-\subsubsection*{Funkcija \texttt{sorted()}}
+%\subsubsection*{Funkcija \texttt{sorted()}}
 
 Za razliku od metode \texttt{sort()}, funkcija \texttt{sorted()} ne mijenja originalnu kolekciju, već vraća novu sortiranu kolekciju.
 
@@ -1753,18 +1716,18 @@ Za razliku od metode \texttt{sort()}, funkcija \texttt{sorted()} ne mijenja orig
 
 U praksi se \texttt{sort()} koristi kada želimo izmijeniti postojeću listu, dok se \texttt{sorted()} koristi kada je potrebno sačuvati originalni redoslijed elemenata.
 
-\subsubsection*{Neke često korištene ugrađene funkcije}
+\subsection{Neke često korištene ugrađene funkcije}
 
 Pored navedenih funkcija, Pajton sadrži veliki broj korisnih ugrađenih funkcija. Neke od najčešće korištenih su:
 
 \begin{itemize}
-	\item \texttt{sum(iterable)} -- vraća sumu elemenata iterabilnog objekta;
-	\item \texttt{max(iterable)} -- vraća najveći element;
-	\item \texttt{min(iterable)} -- vraća najmanji element;
-	\item \texttt{abs(x)} -- vraća apsolutnu vrijednost broja;
-	\item \texttt{round(x, n)} -- zaokružuje broj na \texttt{n} decimalnih mjesta;
-	\item \texttt{len(obj)} -- vraća broj elemenata kolekcije;
-	\item \texttt{eval(expr)} -- izračunava izraz zapisan u obliku stringa.
+	\item \texttt{sum}(\emph{iterable}) -- vraća sumu elemenata iterabilnog objekta;
+	\item \texttt{max}(\emph{iterable}) -- vraća najveći element;
+	\item \texttt{min}(\emph{iterable}) -- vraća najmanji element;
+	\item \texttt{abs}($x$) -- vraća apsolutnu vrijednost broja;
+	\item \texttt{round}($x$, $n$) -- zaokružuje broj na \texttt{n} decimalnih mjesta;
+	\item \texttt{len}(\emph{obj}) -- vraća broj elemenata kolekcije;
+	\item \texttt{eval}(\emph{expr}) -- izračunava izraz zapisan u obliku stringa.
 \end{itemize}
 
 \section{Moduli}
