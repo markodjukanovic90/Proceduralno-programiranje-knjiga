@@ -97,17 +97,17 @@
 \contentsline {section}{\numberline {3.4}Algoritmi pretraživanja}{149}{}%
 \contentsline {subsection}{\numberline {3.4.1}Linearna pretraga}{150}{}%
 \contentsline {subsection}{\numberline {3.4.2}Binarna pretraga}{152}{}%
-\contentsline {subsection}{\numberline {3.4.3}Pretraga preskakanjem}{154}{}%
+\contentsline {subsection}{\numberline {3.4.3}Pretraga preskakanjem}{153}{}%
 \contentsline {subsection}{\numberline {3.4.4}Interpolacijska pretraga}{155}{}%
-\contentsline {subsection}{\numberline {3.4.5}Eksponencijalna pretraga}{158}{}%
-\contentsline {section}{\numberline {3.5}Podijeli pa zavladaj}{160}{}%
+\contentsline {subsection}{\numberline {3.4.5}Eksponencijalna pretraga}{157}{}%
+\contentsline {section}{\numberline {3.5}Podijeli pa zavladaj}{159}{}%
 \contentsline {section}{\numberline {3.6}Algoritamska paradigma vraćanja unazad}{163}{}%
-\contentsline {section}{\numberline {3.7}Pohlepni algoritmi}{170}{}%
-\contentsline {section}{\numberline {3.8}Dinamičko programiranje}{183}{}%
-\contentsline {subsection}{\numberline {3.8.1}Rekurzija naspram dinamičkog programiranja}{186}{}%
-\contentsline {subsection}{\numberline {3.8.2}Primjene dinamičkog programiranja}{187}{}%
-\contentsline {chapter}{\numberline {4}Primjena algoritamskih paradigmi na probleme iz aritmetike}{207}{}%
-\contentsline {section}{\numberline {4.1}Eratostenovo sito}{208}{}%
-\contentsline {section}{\numberline {4.2}Faktorizacija broja}{212}{}%
-\contentsline {section}{\numberline {4.3}Izračunavanje binomnih koeficijenata}{214}{}%
-\contentsline {section}{\numberline {4.4}Hornerov metod}{222}{}%
+\contentsline {section}{\numberline {3.7}Pohlepni algoritmi}{169}{}%
+\contentsline {section}{\numberline {3.8}Dinamičko programiranje}{182}{}%
+\contentsline {subsection}{\numberline {3.8.1}Rekurzija naspram dinamičkog programiranja}{185}{}%
+\contentsline {subsection}{\numberline {3.8.2}Primjene dinamičkog programiranja}{186}{}%
+\contentsline {chapter}{\numberline {4}Primjena algoritamskih paradigmi na probleme iz aritmetike}{205}{}%
+\contentsline {section}{\numberline {4.1}Eratostenovo sito}{206}{}%
+\contentsline {section}{\numberline {4.2}Faktorizacija broja}{210}{}%
+\contentsline {section}{\numberline {4.3}Izračunavanje binomnih koeficijenata}{212}{}%
+\contentsline {section}{\numberline {4.4}Hornerov metod}{220}{}%

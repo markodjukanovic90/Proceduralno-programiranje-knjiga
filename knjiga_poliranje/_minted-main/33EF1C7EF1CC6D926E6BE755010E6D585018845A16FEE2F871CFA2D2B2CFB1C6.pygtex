@@ -2,7 +2,6 @@
 	\PYG{n}{best\PYGZus{}fitness} \PYG{o}{=} \PYG{l+m+mi}{0}
 	
 	\PYG{c+c1}{\PYGZsh{} primjer instance}
-	
 	\PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{4}
 	\PYG{n}{w} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{]}
 	\PYG{n}{p} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{20}\PYG{p}{,} \PYG{l+m+mi}{30}\PYG{p}{,} \PYG{l+m+mi}{50}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{]}
@@ -19,7 +18,6 @@
 	
 	    \PYG{k}{if} \PYG{n}{weight} \PYG{o}{\PYGZgt{}} \PYG{n}{C}\PYG{p}{:}
 	        \PYG{k}{return} \PYG{n+nb}{float}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZhy{}inf\PYGZdq{}}\PYG{p}{)}
-	
 	    \PYG{k}{return} \PYG{n}{value}
 	
 	\PYG{k}{def} \PYG{n+nf}{knapsack\PYGZus{}brute\PYGZus{}force}\PYG{p}{(}\PYG{n}{solution}\PYG{p}{):}

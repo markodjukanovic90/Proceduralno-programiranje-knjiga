@@ -571,7 +571,7 @@ Iako je riječ o jednostavnom pristupu, algoritmi grube sile imaju značajnu ulo
 
 U svakodnevnom životu primjer algoritma grube sile je pokušaj otključavanja brave kada ne znamo koji ključ odgovara. U tom slučaju isprobavamo jedan po jedan ključ sve dok ne pronađemo odgovarajući. Slično tome, ukoliko ne znamo orijentaciju USB priključka, pokušavamo jednu mogućnost, a zatim drugu.
 
-Paradigma grube sile najčešće se koristi za:
+Paradigma grube sile može se koristi za:
 
 \begin{itemize}
 	\item probleme pretraživanja,
@@ -580,10 +580,7 @@ Paradigma grube sile najčešće se koristi za:
 	\item verifikaciju ispravnosti složenijih algoritama.
 \end{itemize}
 
-\begin{example}
-	(\textbf{Problem najbližeg para tačaka})
-	
-	Neka je dat skup od $n$ tačaka u prostoru $\mathbb{R}^m$:
+\begin{example}(\textbf{Problem najbližeg para tačaka}) Neka je dat skup od $n$ tačaka u prostoru $\mathbb{R}^m$:
 	
 	\[
 	S=\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_n\}.
@@ -623,17 +620,14 @@ Paradigma grube sile najčešće se koristi za:
 	
 \end{solution}
 
-\textbf{Analiza složenosti.} Broj različitih parova tačaka jednak je $\binom{n}{2}=\frac{n(n-1)}{2}=O(n^2).$
-
-Računanje Euklidove udaljenosti između dvije tačke u prostoru $\mathbb{R}^m$ se vrši u $O(m)$ vremenu. Kako je dimenzija prostora $m$ fiksna, ukupna vremenska složenost algoritma iznosi $O(n^2).$
+\textbf{Analiza složenosti.} Broj različitih parova tačaka jednak je $\binom{n}{2}=\frac{n(n-1)}{2}=O(n^2).$  Računanje Euklidove udaljenosti između dvije tačke u prostoru $\mathbb{R}^m$ se vrši u $O(m)$ vremenu. Kako je dimenzija prostora $m$ fiksna, ukupna vremenska složenost algoritma iznosi $O(n^2).$
 
 \vspace{0.3cm}
 
 \begin{example}
 	(\textbf{Problem ruksaka}). 
 	Neka je dato $n$ predmeta. Svaki predmet $i$ ima težinu $w_i$ i vrijednost $p_i$, za svaki $i=1,\ldots,n$. Takođe je dat ruksak kapaciteta $C$.\\
-	
-	Potrebno je odabrati podskup predmeta koji treba staviti u ruksak tako da njihova ukupna težina ne prelazi kapacitet ruksaka, a pri tome je ukupna vrijednost u ruksaku maksimalna.
+	Potrebno je odabrati predmete koje treba staviti u ruksak tako da njihova ukupna težina ne prelazi kapacitet ruksaka, a pri tome je ukupna vrijednost u ruksaku najveća moguća.
 
 \end{example}
 
@@ -647,13 +641,11 @@ Računanje Euklidove udaljenosti između dvije tačke u prostoru $\mathbb{R}^m$ 
 			1 & 2  & 20 \\
 			2 & 5  & 30 \\
 			3 & 10 & 50 \\
-			4 & 5  & 10 \\ \hline
+			4 & 5  & 10 \\ \hline \hline
 		\end{tabular}
 	\end{center}
 	
-	Neka je kapacitet ruksaka $C=16.$
-	
-	Pristup grube sile sastoji se u generisanju svih mogućih podskupova skupa predmeta. Kako postoje četiri predmeta, ukupan broj mogućih rješenja jednak je $2^4 = 16.$
+	Neka je kapacitet ruksaka $C=16.$	Pristup grube sile sastoji se u generisanju svih mogućih podskupova skupa predmeta. Kako postoje četiri predmeta, ukupan broj mogućih rješenja jednak je $2^4 = 16.$
 	
 	Za svaki podskup izračunava se ukupna težina i ukupna vrijednost.
 	
@@ -678,13 +670,13 @@ Računanje Euklidove udaljenosti između dvije tačke u prostoru $\mathbb{R}^m$ 
 		\end{tabular}
 	\end{center}
 	
-	Iz tabele se vidi da optimalno rješenje odgovara skupu $\{2,3\},$ čija je ukupna težina $15$, a ukupna vrijednost $80$.
+	Iz tabele se vidi da optimalno rješenje odgovara skupu $\{2,3\},$ čija je ukupna težina $15$, a ukupna pridružena vrijednost $80$.
 	
 \end{solution}
 
-Pošto se svaki predmet može ili nalaziti ili ne nalaziti u ruksaku, prostor rješenja odgovara skupu svih podskupova skupa ${1,\ldots,n}$. Broj mogućih rješenja jednak je $2^n.$
+Pošto se svaki predmet može ili nalaziti ili ne nalaziti u ruksaku, prostor rješenja odgovara skupu svih podskupova skupa $\{1,\ldots,n\}$. Broj mogućih rješenja jednak je $2^n.$
 
-Zbog toga je vremenska složenost algoritma grube sile eksponencijalna, $O(2^n).$
+Zbog toga je vremenska složenost algoritma grube sile eksponencijalna, $O(2^n).$\\
 
 Jedna moguća implementacija prikazana je u nastavku.
 
@@ -692,7 +684,6 @@ Jedna moguća implementacija prikazana je u nastavku.
 	best_fitness = 0
 	
 	# primjer instance
-	
 	N = 4
 	w = [2, 5, 10, 5]
 	p = [20, 30, 50, 10]
@@ -709,14 +700,13 @@ Jedna moguća implementacija prikazana je u nastavku.
 	
 	    if weight > C:
 	        return float("-inf")
-	
 	    return value
 	
 	def knapsack_brute_force(solution):
 	
 	
 	    global best_fitness
-	
+	    
 	    best_fitness = max(
 	        best_fitness,
 	        objective(solution))
@@ -733,11 +723,11 @@ Jedna moguća implementacija prikazana je u nastavku.
 	print(best_fitness)   # 80
 \end{minted}
 
-Algoritmi grube sile obično nisu praktični za velike instance problema zbog eksponencijalnog ili polinomijalno visokog vremena izvršavanja. Ipak, oni imaju značajnu teorijsku vrijednost jer garantuju pronalaženje optimalnog rješenja i često predstavljaju osnovu za razvoj efikasnijih algoritama zasnovanih na paradigmi \emph{podijeli pa vladaj}, dinamičkom programiranju, grananju i ograničavanju (\emph{branch-and-bound}) ili metaheuristikama.
+Algoritmi grube sile obično nisu praktični za velike instance problema zbog eksponencijalnog ili polinomijalno visokog vremena izvršavanja. Ipak, oni imaju značajnu teorijsku vrijednost jer garantuju pronalaženje optimalnog rješenja i često predstavljaju osnovu za razvoj efikasnijih algoritama zasnovanih na paradigmi \emph{podijeli pa zavladaj}, dinamičkom programiranju, grananju i ograničavanju (eng. \emph{branch-and-bound}) ili metaheuristikama.
 
 
 Kako primjećujemo na osnovu prethodne (rekurzivne) implementacije, svaki od  
-rekurzivnih poziva, kojih je tačno $2^n$, poziva funkciju \texttt{objective}(). Preciznije, kompleksnost pristupa brutalne sile je $O(2^n)$. Napomenimo da postoje efikasniji pristupi za rješavanje problema ruksaka. Među njima, izdvajamo metod dinamičkog programiranja, o kojem će biti više riječi u nastavku.
+rekurzivnih poziva, kojih je tačno $2^n$, poziva funkciju \texttt{objective}. Preciznije, kompleksnost pristupa brutalne sile je $O(2^n)$. Napomenimo da postoje efikasniji pristupi za rješavanje problema ruksaka. Među njima, izdvajamo metod dinamičkog programiranja, o kojem će biti više riječi u nastavku.
 
 
 \section{Algoritmi pretraživanja}
@@ -757,7 +747,7 @@ U zavisnosti od načina organizacije podataka i strategije pretraživanja, algor
 
 \subsection{Linearna pretraga}
 
-Linearna pretraga (\emph{linear search}) predstavlja najjednostavniji algoritam pretraživanja. Ideja algoritma je da se elementi strukture podataka obilaze redom, od početka prema kraju, sve dok se ne pronađe tražena vrijednost.
+Linearna pretraga (eng. \emph{linear search}) predstavlja najjednostavniji algoritam pretraživanja. Ideja algoritma je da se elementi strukture podataka obilaze redom, od početka prema kraju, sve dok se ne pronađe tražena vrijednost.
 
 U slučaju da se traženi element pronađe, algoritam vraća njegov indeks. Ukoliko se dođe do kraja strukture bez pronalaska elementa, vraća se posebna vrijednost koja označava neuspješnu pretragu.
 
@@ -783,9 +773,7 @@ Iterativna implementacija linearne pretrage prikazana je u nastavku.
 	    print("Element je pronađen na indeksu", res)
 \end{minted}
 
-\textbf{Analiza složenosti.} U najgorem slučaju algoritam mora pregledati svih $n$ elemenata strukture podataka. Zbog toga je vremenska složenost linearne pretrage $O(n),$
-
-gdje je $n$ broj elemenata u strukturi. Dodatna memorija koja se koristi tokom izvršavanja algoritma je konstantna, pa je prostorna složenost jednaka $O(1).$
+\textbf{Analiza složenosti.} U najgorem slučaju algoritam mora pregledati svih $n$ elemenata strukture podataka. Zbog toga je vremenska složenost linearne pretrage $O(n),$  gdje je $n$ broj elemenata u strukturi. Dodatna memorija koja se koristi tokom izvršavanja algoritma je konstantna, pa je prostorna složenost jednaka $O(1).$
 
 \vspace{0.3cm}
 
@@ -813,7 +801,7 @@ Sa druge strane, linearna pretraga nije efikasna za velike skupove podataka, jer
 
 \subsection{Binarna pretraga}
 
-Binarna pretraga (\emph{binary search}) predstavlja jedan od najefikasnijih algoritama za pretraživanje podataka. Za razliku od linearne pretrage, koja elemente provjerava redom, binarna pretraga u svakoj iteraciji eliminiše približno polovinu preostalog prostora pretrage.
+Binarna pretraga (eng. \emph{binary search}) predstavlja jedan od najefikasnijih algoritama za pretraživanje podataka. Za razliku od linearne pretrage, koja elemente provjerava redom, binarna pretraga u svakoj iteraciji eliminiše približno polovinu preostalog prostora pretrage.
 
 Da bi se binarna pretraga mogla primijeniti, moraju biti zadovoljena dva osnovna uslova:
 
@@ -844,15 +832,12 @@ Rekurzivna implementacija binarne pretrage prikazana je u nastavku.
 	
 	    if len(arr) == 1:
 	        return arr[0] == x
-	
 	    mid = len(arr) // 2
 	
 	    if arr[mid] == x:
 	        return True
-	
 	    elif arr[mid] < x:
 	        return binary_search(arr[mid + 1:], x)
-	
 	    else:
 	        return binary_search(arr[:mid], x)
 	
@@ -860,18 +845,17 @@ Rekurzivna implementacija binarne pretrage prikazana je u nastavku.
 	
 	arr = [2, 8, 10, 12, 15]
 	x = 10
-	
 	found = binary_search(arr, x)
 	print(found)
 \end{minted}
 
-\textbf{Analiza složenosti.} Neka je $T(n)$ vrijeme izvršavanja algoritma za niz dužine $n$. U svakoj iteraciji pretražuje se samo jedna polovina niza, pa vrijedi rekurentna relacija $T(n)=T!\left(\frac{n}{2}\right)+O(1).$ Primjenom Master teoreme dobija se $T(n)=O(\log n).$ Dakle, binarna pretraga je značajno efikasnija od linearne pretrage čija je složenost $O(n)$.
+\textbf{Analiza složenosti.} Neka je $T(n)$ vrijeme izvršavanja algoritma za niz dužine $n$. U svakoj iteraciji pretražuje se samo jedna polovina niza, pa vrijedi rekurentna relacija $T(n)=T\left(\frac{n}{2}\right)+O(1).$ Primjenom Master teoreme dobija se $T(n)=O(\log n).$ Dakle, binarna pretraga je značajno efikasnija od linearne pretrage čija je složenost $O(n)$.
 
 Binarna pretraga se posebno koristi kod velikih sortiranih skupova podataka, gdje njena logaritamska složenost omogućava veoma brzo pronalaženje traženih elemenata.
 
 \subsection{Pretraga preskakanjem}
 
-Pretraga preskakanjem (\emph{jump search}) predstavlja kompromis između linearne i binarne pretrage. Kao i binarna pretraga, zahtijeva da podaci budu sortirani.
+Pretraga preskakanjem (eng. \emph{jump search}) predstavlja kompromis između linearne i binarne pretrage. Kao i binarna pretraga, zahtijeva da podaci budu sortirani.
 
 Osnovna ideja algoritma jeste da se niz ne pretražuje element po element, već da se kroz njega kreće u koracima određene dužine. Na taj način brzo se pronalazi manji interval u kojem se potencijalno nalazi traženi element, nakon čega se unutar tog intervala primjenjuje linearna pretraga.
 

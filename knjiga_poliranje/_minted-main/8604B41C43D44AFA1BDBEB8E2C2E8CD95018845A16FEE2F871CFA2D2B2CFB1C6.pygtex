@@ -6,15 +6,12 @@
 	
 	    \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{:}
 	        \PYG{k}{return} \PYG{n}{arr}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{==} \PYG{n}{x}
-	
 	    \PYG{n}{mid} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{)} \PYG{o}{//} \PYG{l+m+mi}{2}
 	
 	    \PYG{k}{if} \PYG{n}{arr}\PYG{p}{[}\PYG{n}{mid}\PYG{p}{]} \PYG{o}{==} \PYG{n}{x}\PYG{p}{:}
 	        \PYG{k}{return} \PYG{k+kc}{True}
-	
 	    \PYG{k}{elif} \PYG{n}{arr}\PYG{p}{[}\PYG{n}{mid}\PYG{p}{]} \PYG{o}{\PYGZlt{}} \PYG{n}{x}\PYG{p}{:}
 	        \PYG{k}{return} \PYG{n}{binary\PYGZus{}search}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{[}\PYG{n}{mid} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{:],} \PYG{n}{x}\PYG{p}{)}
-	
 	    \PYG{k}{else}\PYG{p}{:}
 	        \PYG{k}{return} \PYG{n}{binary\PYGZus{}search}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{[:}\PYG{n}{mid}\PYG{p}{],} \PYG{n}{x}\PYG{p}{)}
 	
@@ -22,7 +19,6 @@
 	
 	\PYG{n}{arr} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{8}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{12}\PYG{p}{,} \PYG{l+m+mi}{15}\PYG{p}{]}
 	\PYG{n}{x} \PYG{o}{=} \PYG{l+m+mi}{10}
-	
 	\PYG{n}{found} \PYG{o}{=} \PYG{n}{binary\PYGZus{}search}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{,} \PYG{n}{x}\PYG{p}{)}
 	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{found}\PYG{p}{)}
 \end{Verbatim}
