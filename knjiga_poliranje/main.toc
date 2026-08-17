@@ -73,41 +73,42 @@
 \contentsline {subsection}{\numberline {2.14.1}Modul Sys}{105}{}%
 \contentsline {subsection}{\numberline {2.14.2}Modul Getopt}{106}{}%
 \contentsline {section}{\numberline {2.15}Modul NumPy}{108}{}%
+\contentsline {paragraph}{Memorijska organizacija.}{112}{}%
 \contentsline {section}{\numberline {2.16}Modul Ctypes}{113}{}%
-\contentsline {section}{\numberline {2.17}Pisanje prilagođenih modula}{115}{}%
-\contentsline {section}{\numberline {2.18}Postavljanje korisnički kreiranih modula na PyPI repozitorij}{117}{}%
-\contentsline {section}{\numberline {2.19}Kompajliranje i izvršavanje programa}{119}{}%
-\contentsline {subsection}{\numberline {2.19.1}Stek i hip memorija}{120}{}%
-\contentsline {subsection}{\numberline {2.19.2}Sakupljanje otpadaka}{121}{}%
-\contentsline {subsection}{\numberline {2.19.3}Proces prevođenja i izvršavanja programa}{121}{}%
-\contentsline {subsection}{\numberline {2.19.4}Pajtonova virtuelna mašina}{123}{}%
-\contentsline {chapter}{\numberline {3}Osnovne algoritamske paradigme}{129}{}%
-\contentsline {section}{\numberline {3.1}Rekurzivni algoritmi}{132}{}%
-\contentsline {subsection}{\numberline {3.1.1}Jednostavan primjer rekurzije}{132}{}%
-\contentsline {subsection}{\numberline {3.1.2}Rekurzivno računanje faktorijela}{133}{}%
-\contentsline {subsection}{\numberline {3.1.3}Prekoračenje steka}{134}{}%
-\contentsline {section}{\numberline {3.2}Vrste rekurzije}{135}{}%
-\contentsline {subsection}{\numberline {3.2.1}Rekurzivni i iterativni pristup: poređenje}{136}{}%
-\contentsline {subsection}{\numberline {3.2.2}Primjene rekurzije}{137}{}%
-\contentsline {paragraph}{Ispravnost algoritma.}{144}{}%
-\contentsline {paragraph}{Vremenska složenost.}{145}{}%
-\contentsline {paragraph}{Prostorna složenost.}{146}{}%
-\contentsline {paragraph}{Komentar.}{146}{}%
-\contentsline {section}{\numberline {3.3}Algoritmi grube sile}{147}{}%
-\contentsline {section}{\numberline {3.4}Algoritmi pretraživanja}{151}{}%
-\contentsline {subsection}{\numberline {3.4.1}Linearna pretraga}{152}{}%
-\contentsline {subsection}{\numberline {3.4.2}Binarna pretraga}{154}{}%
-\contentsline {subsection}{\numberline {3.4.3}Pretraga preskakanjem}{156}{}%
-\contentsline {subsection}{\numberline {3.4.4}Interpolacijska pretraga}{157}{}%
-\contentsline {subsection}{\numberline {3.4.5}Eksponencijalna pretraga}{160}{}%
-\contentsline {section}{\numberline {3.5}Podijeli pa zavladaj}{162}{}%
-\contentsline {section}{\numberline {3.6}Algoritamska paradigma vraćanja unazad}{165}{}%
-\contentsline {section}{\numberline {3.7}Pohlepni algoritmi}{172}{}%
-\contentsline {section}{\numberline {3.8}Dinamičko programiranje}{185}{}%
-\contentsline {subsection}{\numberline {3.8.1}Rekurzija naspram dinamičkog programiranja}{188}{}%
-\contentsline {subsection}{\numberline {3.8.2}Primjene dinamičkog programiranja}{189}{}%
-\contentsline {chapter}{\numberline {4}Primjena algoritamskih paradigmi na probleme iz aritmetike}{209}{}%
-\contentsline {section}{\numberline {4.1}Eratostenovo sito}{210}{}%
-\contentsline {section}{\numberline {4.2}Faktorizacija broja}{214}{}%
-\contentsline {section}{\numberline {4.3}Izračunavanje binomnih koeficijenata}{216}{}%
-\contentsline {section}{\numberline {4.4}Hornerov metod}{224}{}%
+\contentsline {section}{\numberline {2.17}Pisanje korisničkih modula}{115}{}%
+\contentsline {section}{\numberline {2.18}Postavljanje korisnički kreiranih modula na PyPI repozitorij}{116}{}%
+\contentsline {section}{\numberline {2.19}Kompajliranje i izvršavanje programa}{118}{}%
+\contentsline {subsection}{\numberline {2.19.1}Stek i hip memorija}{119}{}%
+\contentsline {subsection}{\numberline {2.19.2}Sakupljanje otpadaka}{120}{}%
+\contentsline {subsection}{\numberline {2.19.3}Proces prevođenja i izvršavanja programa}{120}{}%
+\contentsline {subsection}{\numberline {2.19.4}Pajtonova virtuelna mašina}{122}{}%
+\contentsline {chapter}{\numberline {3}Osnovne algoritamske paradigme}{127}{}%
+\contentsline {section}{\numberline {3.1}Rekurzivni algoritmi}{130}{}%
+\contentsline {subsection}{\numberline {3.1.1}Jednostavan primjer rekurzije}{130}{}%
+\contentsline {subsection}{\numberline {3.1.2}Rekurzivno računanje faktorijela}{131}{}%
+\contentsline {subsection}{\numberline {3.1.3}Prekoračenje steka}{132}{}%
+\contentsline {section}{\numberline {3.2}Vrste rekurzije}{133}{}%
+\contentsline {subsection}{\numberline {3.2.1}Rekurzivni i iterativni pristup: poređenje}{134}{}%
+\contentsline {subsection}{\numberline {3.2.2}Primjene rekurzije}{135}{}%
+\contentsline {paragraph}{Ispravnost algoritma.}{142}{}%
+\contentsline {paragraph}{Vremenska složenost.}{143}{}%
+\contentsline {paragraph}{Prostorna složenost.}{144}{}%
+\contentsline {paragraph}{Komentar.}{144}{}%
+\contentsline {section}{\numberline {3.3}Algoritmi grube sile}{145}{}%
+\contentsline {section}{\numberline {3.4}Algoritmi pretraživanja}{149}{}%
+\contentsline {subsection}{\numberline {3.4.1}Linearna pretraga}{150}{}%
+\contentsline {subsection}{\numberline {3.4.2}Binarna pretraga}{152}{}%
+\contentsline {subsection}{\numberline {3.4.3}Pretraga preskakanjem}{154}{}%
+\contentsline {subsection}{\numberline {3.4.4}Interpolacijska pretraga}{155}{}%
+\contentsline {subsection}{\numberline {3.4.5}Eksponencijalna pretraga}{158}{}%
+\contentsline {section}{\numberline {3.5}Podijeli pa zavladaj}{160}{}%
+\contentsline {section}{\numberline {3.6}Algoritamska paradigma vraćanja unazad}{163}{}%
+\contentsline {section}{\numberline {3.7}Pohlepni algoritmi}{170}{}%
+\contentsline {section}{\numberline {3.8}Dinamičko programiranje}{183}{}%
+\contentsline {subsection}{\numberline {3.8.1}Rekurzija naspram dinamičkog programiranja}{186}{}%
+\contentsline {subsection}{\numberline {3.8.2}Primjene dinamičkog programiranja}{187}{}%
+\contentsline {chapter}{\numberline {4}Primjena algoritamskih paradigmi na probleme iz aritmetike}{207}{}%
+\contentsline {section}{\numberline {4.1}Eratostenovo sito}{208}{}%
+\contentsline {section}{\numberline {4.2}Faktorizacija broja}{212}{}%
+\contentsline {section}{\numberline {4.3}Izračunavanje binomnih koeficijenata}{214}{}%
+\contentsline {section}{\numberline {4.4}Hornerov metod}{222}{}%

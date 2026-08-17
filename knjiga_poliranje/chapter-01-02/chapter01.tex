@@ -2578,7 +2578,6 @@ Zbog toga su NumPy nizovi posebno pogodni za obradu velikih količina numerički
 	\label{fig:numpy_array}
 \end{figure}
 
-\subsection*{Kreiranje NumPy nizova}
 
 Biblioteka se najčešće uključuje sljedećom naredbom:
 
@@ -2598,13 +2597,13 @@ Primjeri kreiranja jednodimenzionalnih i višedimenzionalnih nizova:
 	# Matrica (2D niz)
 	
 	matrica = np.array(
-	[[2, 5],
-	[1, 7]],
-	dtype=np.int32
+	    [[2, 5],
+	     [1, 7]],
+	    dtype=np.int32
 	)
 	
 	# Trodimenzionalni niz
-	
+	  
 	matrica3D = np.array(
 	[
 	[[2, 5], [1, 7]],
@@ -2631,69 +2630,63 @@ Argument \texttt{dtype} određuje tip podataka koji se koristi za skladištenje 
 
 \begin{itemize}
 	
-	\item \textbf{Pristup elementima}
+	\item \textit{Pristup elementima}: 
 	
 	\begin{minted}{python}
 		arr[2]           # element 1D niza
 		matrica[1, 0]   # element matrice
 	\end{minted}
 	
-	\item \textbf{Dimenzije niza}
+	\item \textit{Dimenzije niza}:
 	
 	\begin{minted}{python}
 		arr.shape
 	\end{minted}
 	
-	Atribut \texttt{shape} vraća dimenzije niza.
+	%Atribut \texttt{shape} vraća dimenzije niza.
 	
-	\item \textbf{Rezanje (slicing)}
+	\item \textit{Rezanje (slicing)}:
 	
 	\begin{minted}{python}
 		arr[1:5]
 		arr[::2]
 	\end{minted}
 	
-	\item \textbf{Kopiranje}
-	
+	\item \textit{Kopiranje objekta}:
 	\begin{minted}{python}
 		kopija = arr.copy()
 	\end{minted}
 	
-	\item \textbf{Promjena oblika}
-	
+	\item \textit{Promjena oblika}:
 	\begin{minted}{python}
 		arr.reshape((2, 2))
 	\end{minted}
 	
 	Broj elemenata mora ostati nepromijenjen.
 	
-	\item \textbf{Spajanje nizova}
-	
+	\item \textit{Spajanje nizova}:
 	\begin{minted}{python}
 		np.concatenate((arr1, arr2), axis=0)
 	\end{minted}
 	
-	\item \textbf{Dijeljenje niza}
-	
+	\item \textit{Dijeljenje niza}:
 	\begin{minted}{python}
 		np.array_split(arr, 3)
 	\end{minted}
 	
-	\item \textbf{Pretraga elemenata}
-	
+	\item \textit{Pretraga elemenata}:
 	\begin{minted}{python}
 		np.where(arr % 2 == 0)
 	\end{minted}
 	
 	Vraća indekse elemenata koji zadovoljavaju dati uslov.
 	
-	\item \textbf{Sortiranje}
-	
+	\item \textit{Sortiranje}:
 	\begin{minted}{python}
 		np.sort(arr)
 	\end{minted}
 	
-	\item \textbf{Filtriranje}
+	\item \textit{Filtriranje}:
 	
 	\begin{minted}{python}
 		arr = np.array([41, 42, 43, 44])
@@ -2708,7 +2701,7 @@ Argument \texttt{dtype} određuje tip podataka koji se koristi za skladištenje 
 		array([43, 44])
 	\end{minted}
 	
-	\item \textbf{Kreiranje specijalnih nizova}
+	\item \textit{Kreiranje specijalnih nizova}:
 	
 	\begin{minted}{python}
 		np.zeros((3, 4))
@@ -2717,7 +2710,7 @@ Argument \texttt{dtype} određuje tip podataka koji se koristi za skladištenje 
 	
 \end{itemize}
 
-\subsection*{Vektorizovane operacije}
+%\subsection*{Vektorizovane operacije}
 
 Jedna od najvećih prednosti biblioteke NumPy jeste mogućnost izvođenja operacija nad cijelim nizovima bez eksplicitnog korištenja petlji.
 
@@ -2736,9 +2729,7 @@ Rezultat je
 
 Na isti način moguće je izvršavati množenje, dijeljenje, poređenja i brojne matematičke operacije nad kompletnim nizovima.
 
-\subsection*{Memorijska organizacija}
-
-Objekti biblioteke NumPy implementirani su klasom \texttt{ndarray}. Pored samih podataka, svaki objekat sadrži i određene metapodatke:
+\paragraph{Memorijska organizacija.} Objekti biblioteke \texttt{NumPy} implementirani su klasom \texttt{ndarray}. Pored samih podataka, svaki objekat sadrži i određene metapodatke:
 
 \begin{itemize}
 	\item \texttt{dtype} -- tip elemenata niza;
@@ -2752,7 +2743,7 @@ Pošto su elementi smješteni u neprekidnom bloku memorije i imaju isti tip, pri
 
 \section{Modul Ctypes}
 
-Modul \texttt{ctypes} omogućava pozivanje funkcija i korištenje tipova podataka definisanih u dijeljenim bibliotekama (\textit{shared libraries}) napisanim u jeziku \textit{C} ili drugim jezicima nižeg nivoa. Na taj način moguće je koristiti postojeći kôd napisan u jeziku \textit{C} direktno iz Pajtona, bez potrebe za ponovnom implementacijom.
+Modul \texttt{ctypes} omogućava pozivanje funkcija i korištenje tipova podataka definisanih u dijeljenim bibliotekama (eng. \textit{shared libraries}) napisanim u jeziku \textit{C} ili drugim jezicima nižeg nivoa. Na taj način moguće je koristiti postojeći kôd napisan u jeziku \textit{C} direktno iz Pajtona, bez potrebe za ponovnom implementacijom.
 
 Osnovni koraci za korištenje modula \texttt{ctypes} su sljedeći:
 
@@ -2769,8 +2760,6 @@ Osnovni koraci za korištenje modula \texttt{ctypes} su sljedeći:
 	
 	\item Pozvati funkcije iz Pajtona kao da su obične Pajtonove funkcije.
 \end{enumerate}
-
-\subsection*{Primjer korištenja}
 
 Pretpostavimo da želimo koristiti jednostavnu funkciju za sabiranje napisanu u jeziku \textit{C}.
 
@@ -2816,7 +2805,7 @@ Konačno, funkciju možemo pozvati na uobičajen način:
 
 Modul \texttt{ctypes} automatski vrši konverziju između Pajtonovih i \textit{C} tipova podataka, što značajno pojednostavljuje komunikaciju između ova dva jezika.
 
-\section{Pisanje prilagođenih modula}
+\section{Pisanje korisničkih modula}
 
 Jedna od prednosti programskog jezika Pajton jeste mogućnost organizovanja koda u module. Modul predstavlja datoteku sa ekstenzijom \texttt{.py} koja sadrži funkcije, klase, konstante ili druge definicije koje se mogu koristiti u više programa.
 
@@ -2841,10 +2830,10 @@ Na primjer, pretpostavimo da želimo napraviti modul za osnovne matematičke ope
 Ovaj modul definiše četiri funkcije:
 
 \begin{itemize}
-	\item \texttt{add()} -- sabiranje dva broja;
-	\item \texttt{subtract()} -- oduzimanje dva broja;
-	\item \texttt{multiply()} -- množenje dva broja;
-	\item \texttt{divide()} -- dijeljenje dva broja.
+	\item \texttt{add} -- sabiranje dva broja;
+	\item \texttt{subtract} -- oduzimanje dva broja;
+	\item \texttt{multiply} -- množenje dva broja;
+	\item \texttt{divide} -- dijeljenje dva broja.
 \end{itemize}
 
 Nakon što je modul sačuvan, može se koristiti u drugoj Pajton skripti pomoću naredbe \texttt{import}:
@@ -2879,17 +2868,12 @@ PyPI (\textit{Python Package Index}) predstavlja centralni repozitorijum paketa 
 
 Da bismo objavili vlastiti paket na PyPI-u, potrebno je izvršiti nekoliko koraka.
 
-Prije svega, potrebno je kreirati korisnički nalog na zvaničnoj PyPI stranici:
+Prije svega, potrebno je kreirati korisnički nalog na zvaničnoj PyPI stranici \url{https://pypi.org/account/register/}. 
 
-\begin{center}
-	\texttt{https://pypi.org/account/register/}
-\end{center}
 
 Nakon registracije preporučuje se kreiranje API tokena koji služi za sigurnu autentifikaciju prilikom postavljanja paketa na PyPI.
 
-\subsection*{Priprema paketa}
-
-Pretpostavimo da imamo paket pod nazivom \texttt{modul1}. U korijenskom direktorijumu projekta kreiramo datoteku \texttt{pyproject.toml} koja sadrži osnovne metapodatke o paketu:
+\textit{Priprema paketa.} Pretpostavimo da je napisan k\^od u okviru paketa pod nazivom \texttt{modul1}. U korijenskom direktorijumu projekta kreiramo datoteku \texttt{pyproject.toml} koja sadrži osnovne metapodatke o paketu:
 
 \begin{minted}{toml}
 	[build-system]
@@ -2921,9 +2905,7 @@ Za izgradnju i objavljivanje paketa potrebno je instalirati nekoliko pomoćnih a
 
 Paket \texttt{build} služi za kreiranje distribucionih datoteka, dok \texttt{twine} omogućava njihovo postavljanje na PyPI.
 
-\subsection*{Kreiranje distribucije}
-
-Distribucione datoteke kreiraju se naredbom:
+\textit{Kreiranje distribucije.} Distribucione datoteke kreiraju se naredbom:
 
 \begin{minted}{bash}
 	python -m build
@@ -2936,9 +2918,8 @@ Nakon uspješnog izvršavanja ove naredbe kreira se direktorijum \texttt{dist} k
 	\item binarnu distribuciju (\texttt{.whl}).
 \end{itemize}
 
-\subsection*{Objavljivanje paketa}
 
-Prije objavljivanja preporučuje se provjera ispravnosti generisanih datoteka:
+Prije objavljivanja modula preporučuje se provjera ispravnosti generisanih datoteka:
 
 \begin{minted}{bash}
 	twine check dist/*
@@ -2954,7 +2935,6 @@ Prilikom objavljivanja koristi se korisničko ime \texttt{\_\_token\_\_} i preth
 
 Nakon uspješnog postavljanja paket postaje dostupan svim korisnicima putem PyPI repozitorijuma.
 
-\subsection*{Instalacija objavljenog paketa}
 
 Objavljeni paket može se instalirati standardnom \texttt{pip} naredbom:
 
@@ -2962,8 +2942,7 @@ Objavljeni paket može se instalirati standardnom \texttt{pip} naredbom:
 	pip install modul1
 \end{minted}
 
-Nakon instalacije paket se može koristiti u bilo kojem Pajton programu:
-
+Nakon instalacije paket se može koristiti u bilo kojem programu napisanim u Pajtonu:
 \begin{minted}{python}
 	import modul1
 \end{minted}
