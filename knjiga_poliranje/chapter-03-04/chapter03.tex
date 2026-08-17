@@ -300,7 +300,7 @@ Ovaj primjer pokazuje da rekurzija sama po sebi ne garantuje efikasan algoritam.
 
 
 \begin{example}
-	(\textbf{\emph{Problem Hanojskih kula}})
+	\textbf{(\emph{Problem Hanojskih kula})}
 	
 	Data su tri štapa i $n$ diskova različitih dimenzija. Svi diskovi su inicijalno složeni na jednom štapu ($A$), pri čemu se manji diskovi nalaze iznad većih. Cilj je premjestiti kompletnu kulu diskova na drugi štap ($C$), koristeći treći štap ($B$) kao pomoćni.
 	
@@ -355,9 +355,9 @@ Ovaj primjer pokazuje da rekurzija sama po sebi ne garantuje efikasan algoritam.
 	
 	Da bismo riješili opšti slučaj, označimo sa $T(n)$ minimalan broj poteza potreban za premještanje $n$ diskova sa štapa $A$ na štap $C$, koristeći štap $B$ kao pomoćni.
 	
-	Bazni slučaj je jednostavan: $	T(1)=1.$  Za proizvoljno $n>1$, najprije je potrebno premjestiti gornjih $n-1$ diskova sa štapa $A$ na štap $B$. Za to je potrebno $T(n-1)$ poteza.  Nakon toga najveći disk ostaje sam na štapu $A$ i može se direktno premjestiti na štap $C$ u jednom potezu.
+	Bazni slučaj je jednostavan: $	T(1)=1.$  Za proizvoljno $n>1$, najprije je potrebno premjestiti gornjih $n-1$ diskova sa štapa $A$ na štap $B$, koristeći štap $C$. Za to je potrebno $T(n-1)$ poteza.  Nakon toga najveći disk ostaje sam na štapu $A$ i može se direktno premjestiti na štap $C$ u jednom potezu.
 	
-	Preostaje da se $n-1$ diskova sa štapa $B$ premjesti na štap $C$, za šta je ponovo potrebno $T(n-1)$ poteza.  	Prema tome, ukupan broj poteza zadovoljava rekurentnu relaciju $ T(n)=T(n-1)+1+T(n-1),$  odnosno	$	T(n)=2T(n-1)+1, 	T(1)=1.$ Ovo predstavlja rekurzivnu formulaciju problema Hanojskih kula.
+	Preostaje da se $n-1$ diskova sa štapa $B$ rekurzivno premjesti na štap $C$, za šta je ponovo potrebno $T(n-1)$ poteza.  	Prema tome, ukupan broj poteza zadovoljava rekurentnu relaciju $ T(n)=T(n-1)+1+T(n-1),$  odnosno	$	T(n)=2T(n-1)+1, 	T(1)=1.$ Prethodni postupak opisuje rekurzivnu formulaciju problema Hanojskih kula.
 	
 	Rješavanjem navedene rekurencije dobija se zatvorena forma $T(n)=2^n-1.$	Dakle, minimalan broj poteza potreban za premještanje $n$ diskova iznosi 	$2^n-1.$ Na primjer, za $n=3$ dobijamo $T(3)=2^3-1=7,$ što se slaže sa prethodno izvedenim rješenjem.
 \end{solution}
@@ -378,23 +378,23 @@ Implementacija rekurzivnog pristupa problema Hanojskih kula je data sljedećim k
 	
 	#instanca:
 	n = 4 #broj diskova
-	TowerOfHanoi(n, 'A','B','C')
+	TowerOfHanoi(n, 'A','C','B')
 \end{minted} 
 
 \textbf{Vremenska kompleksnost}. Vrlo lako dobijamo eksplicitnu funkciju koja odgovara   rekurzivnoj relaciji problema: $T(n)= 2  T(n-1) + 1 = 2 \cdot ( 2 \cdot T(n-2) + 1) + 1 = \cdots = 2^{n-2} + 2^{n-1} + \cdots + 2 + 1 = 2^n -1.$
 Rekurzija se izvrašava u eksponencijalnom $O(2^n)$ vremenu.   
 \end{solution}	
  
- %SORTIRANJE ALGORITAMA: TODO 
-\textbf{Rekurzivni algoritam sortiranja umetanjem}.  
+
+\begin{example}
   
- Sortiranje umetanjem (\emph{Insertion Sort}) predstavlja jednostavan algoritam
- sortiranja koji niz gradi postepeno, održavajući jedan njegov dio sortiranim.
- Osnovna ideja algoritma sastoji se u tome da se svaki novi element umetne na
- odgovarajuću poziciju unutar već sortiranog dijela niza.
+     Sortiranje umetanjem (\emph{Insertion Sort}) predstavlja jednostavan algoritam
+     sortiranja koji niz gradi postepeno, održavajući   jedan njegov dio sortiranim. Ideja algoritma sastoji se u tome da se  svaki novi element umetne na odgovarajuću poziciju unutar već sortiranog dijela niza. Niz koji se sastoji od jednog elementa se smatra sortiranim. 
+ \end{example}
  
- Algoritam sortiranja umetanjem može se prirodno formulirati i rekurzivno.
- Neka je dat niz
+\begin{solution}
+    Algoritam sortiranja umetanjem može se prirodno formulirati i rekurzivno.
+     Neka je dat niz
  \[
  A = (a_0,a_1,\ldots,a_{n-1})
  \]
@@ -429,9 +429,8 @@ Rekurzija se izvrašava u eksponencijalnom $O(2^n)$ vremenu.
  pomjera se za jednu poziciju udesno. Kada pronađemo prvi element koji nije
  veći od \texttt{key}, vrijednost \texttt{key} umećemo neposredno iza njega.
  
- Na ovaj način nakon završetka postupka prvih $n$ elemenata niza nalazi se u
- sortiranom poretku.
- 
+ Na ovaj način nakon završetka postupka prvih $n$ elemenata niza nalazi se u sortiranom poretku.
+\end{solution}
 % Pseudokod rekurzivnog algoritma dat je Algoritmom~\ref{alg:recursive-insertion-sort}.
  
 %PSEUDOKOD:
@@ -471,13 +470,8 @@ Rekurzija se izvrašava u eksponencijalnom $O(2^n)$ vremenu.
  Dobijamo konačno sortirani niz $
  [2,3,5,7].$
  
- \paragraph{Ispravnost algoritma.}
- Ispravnost rekurzivnog algoritma možemo pokazati indukcijom po veličini
- niza $n$.
- 
- Za $n=1$ niz sadrži samo jedan element i trivijalno je sortiran.
- 
- Pretpostavimo sada da algoritam ispravno sortira svaki niz od $n-1$
+ \paragraph{Ispravnost algoritma.} Ispravnost rekurzivnog algoritma možemo pokazati indukcijom po veličini
+ niza $n$. Za $n=1$ niz sadrži samo jedan element i trivijalno je sortiran.  Pretpostavimo sada da algoritam ispravno sortira svaki niz od $n-1$
  elemenata. Pri pozivu algoritma za niz od $n$ elemenata, rekurzivni poziv
  sortira njegovih prvih $n-1$ elemenata. Nakon toga posljednji element
  $a_{n-1}$ umeće se na odgovarajuću poziciju unutar sortiranog prefiksa,
@@ -559,7 +553,6 @@ Rekurzija se izvrašava u eksponencijalnom $O(2^n)$ vremenu.
  Kod standardne iterativne implementacije sortiranja umetanjem ovaj dodatni
  trošak ne postoji, pa je njena prostorna složenost $\Theta(1)$.
  
- \paragraph{Komentar.}
  Sortiranje umetanjem nije efikasno za velike nizove zbog kvadratne prosječne
  i najgore vremenske složenosti. Ipak, algoritam ima nekoliko važnih
  prednosti. Jednostavan je za implementaciju, ne zahtijeva dodatnu memoriju

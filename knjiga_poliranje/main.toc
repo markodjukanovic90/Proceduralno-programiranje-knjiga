@@ -90,10 +90,9 @@
 \contentsline {section}{\numberline {3.2}Vrste rekurzije}{133}{}%
 \contentsline {subsection}{\numberline {3.2.1}Rekurzivni i iterativni pristup: poređenje}{134}{}%
 \contentsline {subsection}{\numberline {3.2.2}Primjene rekurzije}{135}{}%
-\contentsline {paragraph}{Ispravnost algoritma.}{142}{}%
+\contentsline {paragraph}{Ispravnost algoritma.}{143}{}%
 \contentsline {paragraph}{Vremenska složenost.}{143}{}%
 \contentsline {paragraph}{Prostorna složenost.}{144}{}%
-\contentsline {paragraph}{Komentar.}{144}{}%
 \contentsline {section}{\numberline {3.3}Algoritmi grube sile}{145}{}%
 \contentsline {section}{\numberline {3.4}Algoritmi pretraživanja}{149}{}%
 \contentsline {subsection}{\numberline {3.4.1}Linearna pretraga}{150}{}%

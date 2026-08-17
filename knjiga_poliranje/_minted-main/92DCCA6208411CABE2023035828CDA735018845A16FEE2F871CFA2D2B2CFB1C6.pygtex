@@ -12,5 +12,5 @@
 	
 	\PYG{c+c1}{\PYGZsh{}instanca:}
 	\PYG{n}{n} \PYG{o}{=} \PYG{l+m+mi}{4} \PYG{c+c1}{\PYGZsh{}broj diskova}
-	\PYG{n}{TowerOfHanoi}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}A\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}B\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}C\PYGZsq{}}\PYG{p}{)}
+	\PYG{n}{TowerOfHanoi}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}A\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}C\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}B\PYGZsq{}}\PYG{p}{)}
 \end{Verbatim}
