@@ -2,7 +2,7 @@
 
 Prilikom rješavanja računarskih problema često se koriste određeni obrasci razmišljanja i pristupi konstruisanju algoritama. Takvi pristupi nazivaju se \textit{algoritamske paradigme}. Svaka paradigma predstavlja opšti metod za dizajniranje algoritama i može se primijeniti na širok spektar problema.
 
-Prije nego što pređemo na algoritamske paradigme, vrijedi pomenuti da postoje i različite \textit{programske paradigme}, odnosno stilovi programiranja koji određuju način organizacije i pisanja programskog koda. Najpoznatije programske paradigme su:
+Prije nego što pređemo na algoritamske paradigme, vrijedi pomenuti da postoje i različite \textit{programske paradigme}, odnosno stilovi programiranja koji određuju način organizacije i pisanja programskog k\^oda. Najpoznatije programske paradigme su:
 
 \begin{itemize}
 	\item \textit{imperativno programiranje}, zasnovano na sekvencijalnom izvršavanju naredbi;
@@ -13,7 +13,7 @@ Prije nego što pređemo na algoritamske paradigme, vrijedi pomenuti da postoje 
 
 Savremeni programski jezici često podržavaju više paradigmi istovremeno, omogućavajući programerima da odaberu pristup koji najbolje odgovara problemu koji rješavaju.
 
-Kada je riječ o algoritmima, različiti problemi zahtijevaju različite strategije njihovog dizajniranja. Upravo te strategije nazivamo algoritamskim paradigmama. U nastavku navodimo najvažnije među njima.
+Kada je riječ o algoritmima, različiti problemi zahtijevaju različite strategije dizajniranja. Upravo te strategije nazivamo algoritamskim paradigmama. U nastavku navodimo najvažnije među njima.
 
 \begin{itemize}
 
@@ -25,17 +25,17 @@ Kada je riječ o algoritmima, različiti problemi zahtijevaju različite strateg
 	
 	Zasnivaju se na ispitivanju svih mogućih rješenja dok se ne pronađe ispravno ili optimalno rješenje. Jednostavni su za implementaciju, ali često imaju visoku vremensku složenost.
 	
-	\item \textbf{Podijeli pa vladaj} (eng. \textit{divide and conquer})
+	\item \textbf{Podijeli pa zavladaj} (eng. \textit{divide-and-conquer})
 	
 	Problem se dijeli na više manjih nezavisnih podproblema koji se rješavaju odvojeno, nakon čega se njihova rješenja kombinuju u rješenje originalnog problema.% Klasični primjeri su Sortiranje spajanjem i Brzo sortiranje.
 	
 	\item \textbf{Pohlepni algoritmi} (eng. \textit{greedy algorithms})
 	
-	U svakom koraku donose lokalno najbolje moguće rješenje, uz pretpostavku da će takav izbor dovesti do globalno optimalnog rješenja. Karakterišu ih jednostavnost i mala potrošnja memorije, ali ne garantuju optimalnost za sve probleme.
+	U svakom koraku donose lokalno najbolje moguće rješenje, uz pretpostavku da će takav izbor dovesti do globalno optimalnog rješenja. Karakterišu ih jednostavnost i mala potrošnja memorije, ali ne garantuju optimalnost za većinu problema.
 	
 	\item \textbf{Dinamičko programiranje} (eng. \textit{dynamic programming})
 	
-	Problem se razlaže na podprobleme koji se međusobno preklapaju. Rezultati već riješenih podproblema memorisu se i ponovo koriste, čime se izbjegava višestruko računanje istih vrijednosti.
+	Problem se razlaže na podprobleme koji se međusobno preklapaju. Rezultati već riješenih podproblema memorišu se i ponovo koriste, čime se izbjegava višestruko računanje istih vrijednosti.
 	
 	\item \textbf{Vraćanje unazad} (eng. \textit{backtracking})
 	
@@ -108,17 +108,11 @@ Međutim, u ovom primjeru rekurzija nije neophodna jer se lako može izvesti zat
 
 \subsection{Rekurzivno računanje faktorijela}
 
-Jedan od najpoznatijih primjera primjene rekurzije jeste računanje faktorijela prirodnog broja.
-
-Faktorijel broja $n$ definiše se kao $n! = n \cdot (n-1) \cdot (n-2)\cdots 2 \cdot 1.$
-
-Iz definicije neposredno slijedi rekurzivna relacija
+Jedan od najpoznatijih primjera primjene rekurzije jeste računanje faktorijela prirodnog broja. Faktorijel broja $n$ se može definisati rekurzivno sa $n! = n \cdot \underbrace{(n-1) \cdot (n-2)\cdots 2 \cdot 1},$ tj. 
 
 $$n! = n \cdot (n-1)!.$$
 
-Bazni slučaj je $0! = 1.$
-
-Rekurzivna implementacija glasi:
+Bazni slučaj je $0! = 1.$ Implementacija računanja faktorijela broja rekurzivnim načinom bi izgledala ovako:
 
 \begin{minted}{python}
 	def fact(n):
@@ -128,9 +122,7 @@ Rekurzivna implementacija glasi:
 	    return n * fact(n - 1)
 \end{minted}
 
-Na primjer, za $n=5$ izvršava se sljedeći niz poziva:
-
-$fact(5)\rightarrow fact(4)\rightarrow fact(3)
+Na primjer, za $n=5$ izvršava se sljedeći niz poziva: $fact(5)\rightarrow fact(4)\rightarrow fact(3)
 \rightarrow fact(2)\rightarrow fact(1)\rightarrow fact(0).$
 
 Nakon dostizanja baznog slučaja, rezultati se vraćaju unazad kroz stek poziva.
@@ -172,9 +164,7 @@ Rekurzivne funkcije mogu se klasifikovati na više načina.
 
 \subsection*{Direktna i indirektna rekurzija}
 
-Funkcija je \textit{direktno rekurzivna} ukoliko poziva samu sebe.
-
-Funkcija je \textit{indirektno rekurzivna} ukoliko poziva drugu funkciju koja, direktno ili indirektno, ponovo poziva prvu funkciju.
+Funkcija je \textit{direktno rekurzivna} ukoliko poziva samu sebe. Funkcija je \textit{indirektno rekurzivna} ukoliko poziva drugu funkciju koja, direktno ili indirektno, ponovo poziva prvu funkciju.
 
 \begin{minted}{python}
 	
@@ -193,7 +183,7 @@ Funkcija je \textit{indirektno rekurzivna} ukoliko poziva drugu funkciju koja, d
 
 \subsection*{Repna i nerepna rekurzija}
 
-Rekurzija se naziva \textit{repnom} (\textit{tail recursion}) ukoliko je rekurzivni poziv posljednja operacija koja se izvršava u funkciji.
+Rekurzija se naziva \textit{repnom} (eng. \textit{tail recursion}) ukoliko je rekurzivni poziv posljednja operacija koja se izvršava u funkciji.
 
 \begin{minted}{python}
 	def countdown(n):
@@ -232,30 +222,24 @@ Svaki rekurzivni algoritam može se implementirati i u iterativnom obliku, kori�
 	
 	\item Svaki rekurzivni poziv zauzima dodatni prostor u memoriji steka, dok iterativni algoritmi uglavnom zahtijevaju manje dodatne memorije.
 	
-	\item Rekurzivna rješenja često su kraća i bliža matematičkoj formulaciji problema, dok iterativna rješenja mogu biti nešto duža, ali su obično efikasnija.	
+	\item Rekurzivna rješenja često su kraća i bliža matematičkoj formulaciji problema, dok iterativna rješenja mogu biti nešto duža što se tiče k\^oda, ali su obično efikasnija.	
 \end{itemize}
 
 Rekurzivni programi najčešće zahtijevaju više memorije od ekvivalentnih iterativnih programa, jer se informacije o svakom pozivu funkcije čuvaju u steku sve do dostizanja baznog slučaja. Takođe, dodatno vrijeme izvršavanja troši se na pozivanje funkcija i povratak rezultata.
 
-S druge strane, rekurzija često omogućava elegantnije i preglednije implementacije. Neki problemi prirodno imaju rekurzivnu strukturu, kao što su obilazak stabala, problem Hanojskih kula, generisanje kombinacija i permutacija, te različiti algoritmi zasnovani na paradigmi \emph{podijeli pa vladaj}. U takvim situacijama rekurzivni pristup često predstavlja intuitivnije rješenje.
+S druge strane, rekurzija često omogućava elegantnije i preglednije implementacije. Neki problemi prirodno imaju rekurzivnu strukturu, kao što su obilazak stabala, problem Hanojskih kula, generisanje kombinacija i permutacija, te različiti algoritmi zasnovani na paradigmi \emph{podijeli pa zavladaj}. U takvim situacijama rekurzivni pristup često predstavlja intuitivnije rješenje.
 
 \subsection{Primjene rekurzije}
 
-Rekurzija se koristi u brojnim oblastima informatike i programiranja. Neke od najvažnijih primjena su:
+Rekurzija se koristi u brojnim oblastima informatike i programiranja. %Neke od najvažnijih primjena su:
 
 \begin{enumerate}
 	
-	\item \textbf{Pretraga stabala i grafova}
+	\item \textbf{Pretraga stabala i grafova}: Rekurzija se prirodno koristi za obilazak hijerarhijskih struktura podataka kao što su stabla i grafovi. Primjeri su algoritmi DFS (eng. \emph{Depth-First Search}) i različiti obilaci binarnih stabala.
 	
-	Rekurzija se prirodno koristi za obilazak hijerarhijskih struktura podataka kao što su stabla i grafovi. Primjeri su algoritmi DFS (\emph{Depth-First Search}) i različiti obilaci binarnih stabala.
+	\item \textbf{Algoritmi sortiranja}: Mnogi poznati algoritmi sortiranja koriste rekurziju. Primjeri su Brzo sortiranje i Sort spajanjem, koji problem sortiranja razlažu na manje podprobleme i zatim kombinuju njihova rješenja.
 	
-	\item \textbf{Algoritmi sortiranja}
-	
-	Mnogi poznati algoritmi sortiranja koriste rekurziju. Primjeri su Quick Sort i Merge Sort, koji problem sortiranja razlažu na manje podprobleme i zatim kombinuju njihova rješenja.
-	
-	\item \textbf{Generisanje fraktala}
-	
-	Brojni fraktalni objekti mogu se generisati primjenom rekurzivnih pravila. Jedan od najpoznatijih primjera je Mandelbrotov skup.
+	\item \textbf{Generisanje fraktala}:  Brojni fraktalni objekti mogu se generisati primjenom rekurzivnih pravila. Jedan od najpoznatijih primjera je Mandelbrotov skup.
 	
 	\begin{figure}[H]
 		\centering
@@ -263,13 +247,9 @@ Rekurzija se koristi u brojnim oblastima informatike i programiranja. Neke od na
 		\caption{Mandelbrotov skup.}
 	\end{figure}
 	
-	\item \textbf{Algoritmi vraćanja unazad (\emph{backtracking})}
+	\item \textbf{Algoritmi vraćanja unazad}:  Ovi algoritmi postepeno grade rješenje problema. Kada se ustanovi da trenutno parcijalno rješenje ne može dovesti do validnog konačnog rješenja, algoritam se vraća na prethodno stanje i pokušava drugu mogućnost.
 	
-	Ovi algoritmi postepeno grade rješenje problema. Kada se ustanovi da trenutno parcijalno rješenje ne može dovesti do validnog konačnog rješenja, algoritam se vraća na prethodno stanje i pokušava drugu mogućnost.
-	
-	\item \textbf{Dinamičko programiranje i memoizacija}
-	
-	Memoizacija predstavlja tehniku pohranjivanja prethodno izračunatih rezultata podproblema kako bi se izbjeglo njihovo ponovno računanje. Ova tehnika se često koristi zajedno sa rekurzijom i predstavlja osnovu mnogih algoritama dinamičkog programiranja.
+	\item \textbf{Dinamičko programiranje i memoizacija}:	Memoizacija predstavlja tehniku pohranjivanja prethodno izračunatih rezultata podproblema kako bi se izbjeglo njihovo ponovno računanje. Ova tehnika se često koristi zajedno sa rekurzijom i predstavlja osnovu mnogih algoritama dinamičkog programiranja.
 \end{enumerate}
 
 U nastavku ćemo ilustrovati primjenu rekurzije na nekoliko konkretnih problema.
@@ -313,7 +293,7 @@ Ovaj primjer pokazuje da rekurzija sama po sebi ne garantuje efikasan algoritam.
 %fib_rec.jpeg
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=250pt,height=140pt]{slike/fib_rec.jpeg} 
+	\includegraphics[width=250pt,height=140pt]{slike/fib_rec.png} 
 	\label{fig:rec_fib}
 	\caption{Drvo rekurzije za \texttt{fib} rekurzivni metod.}
 \end{figure}
