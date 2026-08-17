@@ -2136,9 +2136,10 @@ Pravilna upotreba izuzetaka predstavlja važan dio razvoja pouzdanih programa. O
 
 \section{Rad sa datotekama}
 
-Pomoću svojih ugrađenih funkcija, Pajton omogućuje jednostavan rad sa ulaznim i izlaznim datotekama. U nastavku dajemo pregled najčešće korište\-nih metoda.
+Pomoću svojih ugrađenih funkcija, Pajton omogućuje jednostavan rad sa ulaznim i izlaznim datotekama. U toku rada, ovaj modul interaguje sa operativnim sistemom. 
+U nastavku dajemo pregled najčešće korište\-nih metoda.
 
-\textit{Čitanje iz datoteke}. Koristimo funkciju \textit{open}(), koja ima dva argu\-menta -- naziv datoteke (ili putanja do datoteke) i način u kojem se otvara datoteka (npr. za čitanje, pisanje, dodavanje, itd.). Pogledajmo sljedeći primjer: 
+\textit{Čitanje iz datoteke}. Koristi se funkcija \texttt{open}, koja prihvata dva argu\-menta -- naziv datoteke (ili putanja do datoteke) i način u kojem se otvara datoteka (npr. za čitanje, pisanje, dodavanje, itd.). Pogledajmo sljedeći primjer: 
 \begin{minted}{python}
 # Otvaranje fajla za citanje
 file = open("datoteka.txt", "r")
@@ -2150,11 +2151,11 @@ file.close()
 print(sadrzaj)
 \end{minted}
 
-Dakle, prvo otvaramo datoteku  \texttt{datoteka.txt} samo za čitanje. Zatim čitamo sadržaj datoteke koristeći metodu \textit{read}() i čuvamo ga u varijabli \textit{sadrzaj}. Konačno, zatvaramo datoteku pomoću metode \textit{close}() i ispisujemo sadržaj datoteke. 
+Dakle, prvo otvaramo datoteku  \texttt{datoteka.txt} samo za čitanje. Zatim čitamo sadržaj datoteke koristeći metodu \texttt{read} i čuvamo ga u varijabli \textit{sadrzaj}. Konačno, zatvaramo datoteku pomoću metode \texttt{close} i ispisujemo sadržaj datoteke. 
 
 
 
-\textit{Pisanje u fajl}. Za pisanje u datoteku koristimo funkciju \textit{open}(), koja otvara fajl sa određenim nazivom, ali ovaj put sa načinom ``\textit{w}" (eng. \textit{write}), čime se dopušta pisanje u fajl. Pogledajmo sljedeći primjer.
+\textit{Pisanje u fajl}. Za pisanje u datoteku koristimo funkciju \texttt{open}, koja otvara fajl sa određenim nazivom, ali ovaj put sa načinom ``\textit{w}" (eng. \texttt{write}), čime se dopušta pisanje u fajl. Pogledajmo sljedeći primjer.
 \begin{minted}{python}
 # Otvaranje fajla za pisanje
 file = open("datoteka.txt", "w")
@@ -2165,22 +2166,22 @@ file.close()
 \end{minted}
 
 
-\textit{Dodavanje u fajl}. Da biste dodali sadržaj u postojeći sadržaj datoteke, otvaramo fajl sa načinom ``\textit{a}" (eng. \textit{append}), a potom pomoću funkcije \textit{write}() upisujemo novi sadržaj na postojeći. 
+\textit{Dodavanje sadržaja u fajl}. Da biste dodali sadržaj u postojeći sadržaj datoteke, otvaramo fajl sa načinom ``\textit{a}" (eng. \textit{append}), a potom pomoću funkcije \texttt{write} upisujemo novi sadržaj na postojeći. 
 
-Napomenimo da je dobra praksa zatvoriti datoteku nakon što zavr\-šite rad sa njom, kako bismo izbjegli bilo kakve potencijalne probleme sa oštećenjem datoteke ili gubitkom podataka. Praksa je da se rad u fajlovima odvija pod \textit{try}-\textit{except} blokom. Klase izuzetaka koje se u tim slučajevima mogu koristiti su: \texttt{FileNotFoundError} i \texttt{OSError}. 
+Napomenimo da je dobra praksa zatvoriti datoteku nakon što zavr\-šite rad sa njom, kako bismo izbjegli bilo kakve potencijalne probleme sa oštećenjem datoteke ili gubitkom podataka. Praksa je da se rad u fajlovima odvija pod \texttt{try}-\texttt{except} blokom. Klase izuzetaka koje se u tim slučajevima mogu koristiti su: \texttt{FileNotFoundError} i \texttt{OSError}. 
 
 % Upis json, csv, ispis itd. 
 
 \subsection{Modul Json}
 
-Modul \texttt{json} se koristi  za enkodiranje i dekodiranje podataka sa i u JSON format (eng. \textit{Java Script Object Notation}) formatu. JSON je  široko raspro\-stranjen format za razmjenu podataka, ljudima jednostavan za čitanje i pisanje, a mašinama za raščlanjivanje i generisanje.\\
+Modul \texttt{json} se koristi  za enkodiranje i dekodiranje podataka sa i u JSON (eng. \textit{Java Script Object Notation}) formatu. JSON je  široko raspro\-stranjen format za razmjenu podataka, osobama  jednostavan za čitanje i pisanje, a mašinama za raščlanjivanje i generisanje.\\
 
 Modul \texttt{json} nudi dvije glavne metode za rad sa JSON podacima:
 
 
 \begin{itemize}
 	\item json.\textit{dump}() -- koristi se za enkodiranje pajton objekata u JSON format i njegovo spremanje u objekat  datoteka.
-	\item json.\textit{loads}() -- koristi se za dekodiranje JSON niza u pajtonov objekat (obično heš mapa).
+	\item json.\textit{loads}() -- koristi se za dekodiranje JSON niza u strukturu podataka (obično heš mapa).
 \end{itemize}
 
 Pogledajmo i jedan primjer upotrebe \texttt{json} modula. 
@@ -2206,13 +2207,13 @@ Primijetite da funkcija \textit{dumps}() pretvara pajtonov objekat u string (kod
 
 \section{Regularni izrazi}
 
-Regularni izraz (engl. \textit{regular expression}, skraćeno \textit{regex}) predstavlja šablon za opisivanje i pretraživanje tekstualnih nizova. Drugim riječima, regularni izraz definiše skup stringova koji zadovoljavaju određena sintaksna pravila.
+Regularni izraz (eng. \textit{regular expression}, skraćeno \textit{regex}) predstavlja šablon za opisivanje i pretraživanje tekstualnih nizova. Drugim riječima, regularni izraz definiše skup stringova koji zadovoljavaju određena sintaksna pravila, opisujući skup riječi koje se uklapaju u isti šablon. 
 
-Osnovna svrha regularnih izraza jeste da se veliki skup stringova opiše na koncizan način, bez potrebe za njihovim pojedinačnim nabrajanjem. Na primjer, regularnim izrazom možemo opisati skup svih binarnih nizova ili skup riječi {\texttt{gray}, \texttt{grey}} koristeći samo jedan obrazac.
+Osnovna svrha regularnih izraza jeste da se veliki skup stringova opiše na koncizan način, bez potrebe za njihovim pojedinačnim nabrajanjem. Na primjer, regularnim izrazom možemo opisati skup svih binarnih nizova ili skup riječi \{\texttt{gray}, \texttt{grey}\} koristeći samo jedan obrazac.
 
 Regularni izrazi imaju široku primjenu u obradi teksta, pretraživanju podataka, validaciji korisničkog unosa, uređivačima teksta i alatima kao što je \texttt{grep} u operativnom sistemu Unix.
 
-\subsection*{Osnovni koncepti regularnih izraza}
+\subsection{Osnovni koncepti regularnih izraza}
 
 \begin{itemize}
 	
@@ -2249,7 +2250,7 @@ Regularni izrazi imaju široku primjenu u obradi teksta, pretraživanju podataka
 		
 		\item \texttt{[\^{}abc]} -- odgovara bilo kojem karakteru osim navedenih;
 		
-		\item \texttt{\textbackslash w} -- odgovara slovu, cifri ili znaku \texttt{\_};
+		\item \texttt{\textbackslash w} -- odgovara slovu, cifri ili znaku ``\texttt{\_}'';
 		
 		\item \texttt{\textbackslash s} -- odgovara praznom znaku (razmak, tabulator, novi red);
 		
@@ -2261,9 +2262,7 @@ Regularni izrazi imaju široku primjenu u obradi teksta, pretraživanju podataka
 		
 	\end{itemize}
 	
-	\item \textbf{Kvantifikatori}
-	
-	Kvantifikatori određuju koliko puta se može pojaviti izraz koji im neposredno prethodi.
+	\item \textbf{Kvantifikatori}. Kvantifikatori određuju koliko puta se izraz  može pojaviti  koji im neposredno prethodi.
 	
 	\begin{itemize}
 		
@@ -2273,15 +2272,16 @@ Regularni izrazi imaju široku primjenu u obradi teksta, pretraživanju podataka
 		
 		\item \texttt{+} -- prethodni izraz pojavljuje se 1 ili više puta;
 		
-		\item \texttt{{m,n}} -- prethodni izraz pojavljuje se najmanje $m$, a najviše $n$ puta.
+		\item \texttt{\{m,n\}} -- prethodni izraz pojavljuje se najmanje $m$, a najviše $n$ puta.
 		
 	\end{itemize}
 	
 \end{itemize}
 
-\subsection*{Primjeri}
+U nastavku slijedi nekoliko primjera regularnih izraza.
+ 
 
-\paragraph{Registarske tablice}
+\paragraph{Registarske tablice.}
 
 Pretpostavimo da registarska oznaka ima oblik:$
 \texttt{A12-B-345}$
@@ -2289,12 +2289,12 @@ Pretpostavimo da registarska oznaka ima oblik:$
 tj. jedno veliko slovo, dvije cifre, povlaku, jedno veliko slovo, novu povlaku i tri cifre.
 
 Odgovarajući regularni izraz je: $
-\texttt{[A-Z]\textbackslash d{2}-[A-Z]-\textbackslash d{3}}$
+\texttt{[A-Z]\textbackslash d\{2\}-[A-Z]-\textbackslash d\{3\}}$
 
 \paragraph{Datum u formatu DD.MM.GGGG.}
 
 Ako se dan i mjesec uvijek zapisuju sa dvije cifre (npr. \texttt{01.02.2025.}), odgovarajući regularni izraz je: $
-\texttt{(\textbackslash d{2})\textbackslash.(\textbackslash d{2})\textbackslash.(\textbackslash d{4})\textbackslash.} $
+\texttt{(\textbackslash d\{2\})\textbackslash.(\textbackslash d\{2\})\textbackslash.(\textbackslash d\{4\})\textbackslash.} $
 
 Ovaj izraz opisuje dvije cifre za dan, dvije cifre za mjesec i četiri cifre za godinu, razdvojene tačkama.
 
@@ -2304,7 +2304,7 @@ Regularni izrazi predstavljaju veoma moćan alat za obradu tekstualnih podataka.
 
 \subsection{Modul Re}
 
-Modul \texttt{re} je ugrađeni Pajtonov modul namijenjen radu sa regularnim izrazima. Omogućava definisanje, pretraživanje i obradu tekstualnih obrazaca (\textit{patterna}), pa predstavlja jedan od najvažnijih alata za manipulaciju tekstualnim podacima.
+Modul \texttt{re} je ugrađeni Pajtonov modul namijenjen radu sa regularnim izrazima. Omogućava definisanje, pretraživanje i obradu tekstualnih obrazaca (eng. \textit{pattern}), pa predstavlja jedan od najvažnijih alata za manipulaciju tekstualnim podacima.
 
 Da bismo koristili funkcionalnosti ovog modula, potrebno ga je prvo uključiti naredbom:
 
@@ -2318,7 +2318,7 @@ Neke od najčešće korištenih funkcija modula \texttt{re} su:
 	
 	\item \texttt{search(pattern, string)}
 	
-	Pretražuje string \texttt{string} i pronalazi prvo pojavljivanje obrasca \texttt{pattern}. Ukoliko se obrazac pronađe, funkcija vraća objekat podudaranja (\textit{match object}); u suprotnom vraća vrijednost \texttt{None}.
+	Pretražuje string \texttt{string} i pronalazi prvo pojavljivanje obrasca \texttt{pattern}. Ukoliko se obrazac pronađe, funkcija vraća objekat podudaranja; u suprotnom vraća vrijednost \texttt{None}.
 	
 	\item \texttt{match(pattern, string)}
 	
@@ -2344,13 +2344,14 @@ U nastavku je prikazan jednostavan primjer korištenja funkcije \texttt{search()
 	import re
 	
 	# Definisanje obrasca
-	
 	pattern = r'\b\w+'
 	
 	# Tekst koji pretražujemo
 	text = 'Hello, World!'
+	
 	# Pretraga
 	match = re.search(pattern, text)
+	
 	# Ispis prvog pronađenog podudaranja
 	print(match.group())
 \end{minted}
@@ -2383,7 +2384,7 @@ Napomenimo da se u primjeru koristi zapis
 	r'...'
 \end{minted}
 
-koji predstavlja tzv. \textit{raw string}. Kod ovakvog zapisa znak \texttt{\textbackslash} se ne tretira kao početak specijalne sekvence, što pojednostavljuje pisanje regularnih izraza i smanjuje mogućnost greške.
+koji predstavlja tzv. ravni string (eng. \textit{raw string}). Kod ovakvog zapisa znak \texttt{\textbackslash} se ne tretira kao početak specijalne sekvence, što pojednostavljuje pisanje regularnih izraza i smanjuje mogućnost greške.
 
 \section{Moduli Sys i Getopt}
 
@@ -2408,33 +2409,21 @@ Pri tome je:
 	\item \texttt{arg1}, \texttt{arg2}, \ldots argumenti komandne linije.
 \end{itemize}
 
-\subsection*{Modul Sys}
+\subsection{Modul Sys}
 
-Modul \texttt{sys} omogućava pristup informacijama i funkcijama vezanim za Pajtonov interpreter i izvršno okruženje.
-
-Neki od najčešće korištenih atributa i funkcija ovog modula su:
+Modul \texttt{sys} omogućava pristup informacijama i funkcijama vezanim za Pajtonov interpreter i izvršno okruženje. Neki od najčešće korištenih funkcija i atributa ovog modula su dati u nastavku.
 
 \begin{itemize}
 	
-	\item \texttt{sys.argv}
+	\item \texttt{sys.argv}:  Lista argumenata komandne linije. Element na poziciji \texttt{0} sadrži naziv skripte, dok ostali elementi predstavljaju argumente koje je korisnik proslijedio programu.
 	
-	Lista argumenata komandne linije. Element na poziciji \texttt{0} sadrži naziv skripte, dok ostali elementi predstavljaju argumente koje je korisnik proslijedio programu.
+	\item \texttt{sys.path}: Lista direktorijuma u kojima Pajton traži module za učitavanje.
 	
-	\item \texttt{sys.path}
+	\item \texttt{sys.exit([kod])}:  Prekida izvršavanje programa i vraća izlazni kod operativnom sistemu. Ukoliko se kod ne navede, podrazumijeva se vrijednost 0.
 	
-	Lista direktorijuma u kojima Pajton traži module za učitavanje.
+	\item \texttt{sys.version}: Vraća informaciju o verziji Pajtonovog interpretera.
 	
-	\item \texttt{sys.exit([kod])}
-	
-	Prekida izvršavanje programa i vraća izlazni kod operativnom sistemu. Ukoliko se kod ne navede, podrazumijeva se vrijednost 0.
-	
-	\item \texttt{sys.version}
-	
-	Vraća informaciju o verziji Pajtonovog interpretera.
-	
-	\item \texttt{sys.platform}
-	
-	Vraća oznaku platforme na kojoj se program izvršava.
+	\item \texttt{sys.platform}: Vraća oznaku platforme na kojoj se program izvršava.
 	
 \end{itemize}
 
@@ -2467,11 +2456,9 @@ dobijamo izlaz
 	arg2
 \end{minted}
 
-\subsection*{Modul Getopt}
+\subsection{Modul Getopt}
 
-Modul \texttt{getopt} služi za parsiranje opcija i argumenata komandne linije. Njegova funkcionalnost slična je istoimenoj funkciji dostupnoj u Unix operativnim sistemima.
-
-Najvažnija funkcija modula je:
+Modul \texttt{getopt} služi za parsiranje opcija i argumenata komandne linije. Njegova funkcionalnost slična je istoimenoj funkciji dostupnoj u Unix operativnim sistemima. Najvažnija funkcija modula je:
 
 \begin{minted}{python}
 	getopt.getopt(args, shortopts, longopts)
@@ -2564,7 +2551,7 @@ U slučaju da korisnik navede neispravne opcije ili izostavi obavezne argumente,
 
 \bigskip
 
-\textbf{Napomena.} U savremenim Pajton programima modul \texttt{argparse} uglavnom predstavlja preporučeni način za obradu argumenata komandne linije, jer nudi jednostavniju sintaksu, automatsko generisanje pomoći (\texttt{-h}) i bolju podršku za složenije aplikacije. Modul \texttt{getopt} je i dalje koristan za razumijevanje osnova parsiranja opcija i kompatibilnost sa Unix stilom komandne linije.
+\textit{Napomena.} U savremenim Pajton programima modul \texttt{argparse} uglavnom predstavlja preporučeni način za obradu argumenata komandne linije, jer nudi jednostavniju sintaksu, automatsko generisanje pomoći (\texttt{-h}) i bolju podršku za složenije aplikacije. Modul \texttt{getopt} je i dalje koristan za razumijevanje osnova parsiranja opcija i kompatibilnost sa Unix stilom komandne linije.
 
 
 \section{Modul NumPy}
