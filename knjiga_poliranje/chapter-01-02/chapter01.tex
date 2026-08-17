@@ -2955,11 +2955,11 @@ U ovom odjeljku ukratko opisujemo način na koji se izvršava program napisan u 
 
 \subsection{Stek i hip memorija}
 
-Tokom izvršavanja programa operativni sistem i Pajtonov interpreter koriste različite dijelove memorije. Među njima posebno su važni \textit{stek} (\textit{stack}) i \textit{hip} (\textit{heap}).
+Tokom izvršavanja programa operativni sistem i Pajtonov interpreter koriste različite dijelove memorije. Među njima posebno su važni \textit{stek} (eng. \textit{stack}) i \textit{hip}.
 
-\textbf{Stek} predstavlja memorijski prostor koji se koristi za čuvanje informacija o aktivnim pozivima funkcija. Svaki put kada se pozove funkcija, na steku se kreira novi zapis (engl. \textit{stack frame}) koji sadrži informacije potrebne za izvršavanje te funkcije.
+\textit{Stek} predstavlja memorijski prostor koji se koristi za čuvanje informacija o aktivnim pozivima funkcija. Svaki put kada se pozove funkcija, na steku se kreira novi zapis koji sadrži informacije potrebne za izvršavanje te funkcije.
 
-Kada funkcija završi rad, njen zapis se uklanja sa steka. Zbog toga kažemo da je stek privremena memorijska struktura čiji je životni vijek vezan za trajanje poziva funkcije.
+Kada funkcija završi rad, njen zapis se uklanja sa steka. Zbog toga kažemo da je stek privremena memorijska struktura čiji je životni vijek vezan za trajanje poziva funkcije.\\
 
 Posmatrajmo sljedeći primjer:
 
@@ -2970,9 +2970,9 @@ Posmatrajmo sljedeći primjer:
 	    c = "abc"
 \end{minted}
 
-Prilikom poziva funkcije \texttt{func()} kreira se novi zapis na steku. U njemu se čuvaju reference na objekte označene imenima \texttt{a}, \texttt{b} i \texttt{c}. Nakon završetka funkcije ove reference se uklanjaju iz memorije steka.
+Prilikom poziva funkcije \texttt{func} kreira se novi zapis na steku. U njemu se čuvaju reference na objekte označene imenima \texttt{a}, \texttt{b} i \texttt{c}. Nakon završetka funkcije ove reference se uklanjaju iz memorije steka.
 
-Međutim, stvarni objekti na koje reference pokazuju uglavnom se nalaze u drugom dijelu memorije koji se naziva \textbf{hip} (\textit{heap}).
+Međutim, stvarni objekti na koje reference pokazuju uglavnom se nalaze u drugom dijelu memorije koji se naziva \textit{hip}.
 
 Hip predstavlja dinamički dio memorije namijenjen skladištenju objekata čija veličina može biti poznata tek tokom izvršavanja programa. Gotovo svi Pajton objekti, uključujući liste, rječnike, skupove, torke, stringove i numeričke vrijednosti, smještaju se u hip memoriju.
 
@@ -2987,17 +2987,17 @@ Za razliku od jezika \textit{C} i \textit{C++}, gdje programer često mora ručn
 
 \subsection{Sakupljanje otpadaka}
 
-Pajton koristi mehanizam poznat pod nazivom \textit{garbage collection} (sakupljanje otpadaka). Njegov zadatak je automatsko uklanjanje objekata koji više nisu dostupni nijednom dijelu programa.
+Pajton koristi mehanizam poznat pod nazivom sakupljanje otpadaka (eng. \textit{garbage collection}). Njegov zadatak je automatsko uklanjanje objekata koji više nisu dostupni nijednom dijelu programa.
 
 Osnovni mehanizam zasniva se na brojanju referenci. Svaki objekat vodi evidenciju o broju aktivnih referenci koje pokazuju na njega. Kada broj referenci postane jednak nuli, objekat se može ukloniti iz memorije.
 
 Pored toga, Pajton koristi i dodatni algoritam za otkrivanje kružnih referenci, odnosno situacija u kojima dva ili više objekata međusobno referenciraju jedni na druge, ali više nisu dostupni ostatku programa.
 
-Zahvaljujući ovim mehanizmima, programer u većini slučajeva ne mora voditi računa o ručnom oslobađanju memorije, što značajno pojednostavljuje razvoj softvera i smanjuje mogućnost pojave memorijskih grešaka.
+Zahvaljujući ovim mehanizmima, programer u većini slučajeva ne mora voditi računa o ručnom oslobađanju memorije, što značajno pojednostavljuje razvoj softvera i smanjuje mogućnost grešaka u vezi sa memorijom.
 
 \subsection{Proces prevođenja i izvršavanja programa}
 
-Iako se Pajton često opisuje kao interpretirani programski jezik, proces izvršavanja programa zapravo uključuje i fazu prevođenja izvornog koda. Zbog toga se može reći da je Pajton istovremeno i kompajlirani i interpretirani jezik.
+Iako se Pajton često opisuje kao interpretirani programski jezik, proces izvršavanja programa zapravo uključuje i fazu prevođenja izvornog k\^oda. Zbog toga se može reći da je Pajton istovremeno i kompajlirani i interpretirani jezik.
 
 Proces izvršavanja programa sastoji se od nekoliko osnovnih koraka.
 
@@ -3013,13 +3013,13 @@ Proces izvršavanja programa sastoji se od nekoliko osnovnih koraka.
 	
 	\item \textbf{Generisanje bajtkoda}
 	
-	Na osnovu AST strukture Pajton generiše \textit{bajtkod} (\textit{bytecode}), koji predstavlja međureprezentaciju nezavisnu od operativnog sistema i procesorske arhitekture.
+	Na osnovu AST strukture Pajton generiše \textit{bajtkod} (eng. \textit{bytecode}), koji predstavlja međureprezentaciju nezavisnu od operativnog sistema i procesorske arhitekture.
 	
 	Generisani bajtkod može biti sačuvan u datotekama sa ekstenzijom \texttt{.pyc}.
 	
 	\item \textbf{Izvršavanje bajtkoda}
 	
-	Bajtkod izvršava Pajtonova virtuelna mašina (\textit{Python Virtual Machine -- PVM}). Virtuelna mašina čita instrukcije bajtkoda i izvršava ih jednu po jednu, upravljajući memorijom, objektima i tokom programa.
+	Bajtkod izvršava Pajtonova virtuelna mašina (eng. \textit{Python Virtual Machine -- PVM}). Virtuelna mašina čita instrukcije bajtkoda i izvršava ih jednu po jednu, upravljajući memorijom, objektima i tokom programa.
 
 \end{enumerate}
 
@@ -3038,35 +3038,25 @@ Pojednostavljen prikaz procesa izvršavanja prikazan je na Slici~\ref{fig:comp_i
 
 Pajtonova virtuelna mašina (PVM) predstavlja centralnu komponentu izvršnog okruženja jezika Pajton. Njena osnovna uloga jeste izvršavanje bajtkoda generisanog tokom procesa prevođenja izvornog programa.
 
-Najvažnije funkcije PVM-a su:
+Najvažnije funkcije PVM-a su navedene u nastavku. 
 
 \begin{itemize}
 	
-	\item \textbf{Prenosivost programa}
+	\item \textbf{Prenosivost programa}: Bajtkod je nezavisan od konkretne hardverske platforme. Zbog toga se isti Pajton program može izvršavati na različitim operativnim sistemima bez izmjene izvornog koda.
 	
-	Bajtkod je nezavisan od konkretne hardverske platforme. Zbog toga se isti Pajton program može izvršavati na različitim operativnim sistemima bez izmjene izvornog koda.
+	\item \textbf{Izvršavanje bajtkoda}: PVM interpretira instrukcije bajtkoda i prevodi ih u odgovarajuće operacije nad objektima i memorijom.
 	
-	\item \textbf{Izvršavanje bajtkoda}
+	\item \textbf{Dinamičko tipiziranje}:  Pošto se tipovi objekata određuju tokom izvršavanja programa, PVM upravlja svim provjerama i operacijama vezanim za tipove podataka.
 	
-	PVM interpretira instrukcije bajtkoda i prevodi ih u odgovarajuće operacije nad objektima i memorijom.
+	\item \textbf{Upravljanje memorijom}: PVM koristi mehanizme brojanja referenci i sakupljanja otpadaka kako bi automatski oslobađala memoriju koja više nije potrebna.
 	
-	\item \textbf{Dinamičko tipiziranje}
-	
-	Pošto se tipovi objekata određuju tokom izvršavanja programa, PVM upravlja svim provjerama i operacijama vezanim za tipove podataka.
-	
-	\item \textbf{Upravljanje memorijom}
-	
-	PVM koristi mehanizme brojanja referenci i sakupljanja otpadaka (\textit{garbage collection}) kako bi automatski oslobađala memoriju koja više nije potrebna.
-	
-	\item \textbf{Podrška za module i biblioteke}
-	
-	PVM omogućava učitavanje i korištenje velikog broja ugrađenih i eksternih biblioteka pomoću naredbe \texttt{import}.
+	\item \textbf{Podrška za module i biblioteke}:  PVM omogućava učitavanje i korištenje velikog broja ugrađenih i eksternih biblioteka pomoću naredbe \texttt{import}.
 
 \end{itemize}
 
 Treba napomenuti da standardna implementacija Pajtona (CPython) koristi interpretaciju bajtkoda. Postoje i druge implementacije, kao što su PyPy, Jython i IronPython, koje koriste drugačije tehnike izvršavanja i optimizacije programa.
 
-Na osnovu svega navedenog može se zaključiti da Pajton prvo prevodi izvorni kôd u bajtkod, a zatim taj bajtkod izvršava pomoću virtuelne mašine. Zbog toga se često kaže da je Pajton hibrid između kompajliranih i interpretiranih programskih jezika.
+Ukratko, Pajton prvo prevodi izvorni kôd u bajtkod, a zatim taj bajtkod izvršava pomoću virtuelne mašine. Zbog toga se često kaže da je Pajton hibrid između kompajliranih i interpretiranih programskih jezika.
 
 
 \section*{Zadaci}
