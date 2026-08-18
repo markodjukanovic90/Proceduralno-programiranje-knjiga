@@ -917,17 +917,11 @@ Rekurzivna implementacija pretage preskakanjem  je data sljedećim k\^odom.  % u
 
 \subsection{Interpolacijska pretraga}
 
-Interpolacijska pretraga (\emph{interpolation search}) predstavlja unapređenje binarne pretrage namijenjeno radu sa sortiranim nizovima čije su vrijednosti približno ravnomjerno raspoređene. Za razliku od binarne pretrage, koja uvijek ispituje srednji element trenutnog intervala, interpolacijska pretraga pokušava procijeniti poziciju traženog elementa na osnovu njegove vrijednosti.
+Interpolacijska pretraga (eng. \emph{interpolation search}) predstavlja unapređenje binarne pretrage namijenjeno radu sa sortiranim nizovima čije su vrijednosti približno ravnomjerno raspoređene. Za razliku od binarne pretrage, koja uvijek ispituje srednji element trenutnog intervala, interpolacijska pretraga pokušava procijeniti poziciju traženog elementa na osnovu njegove vrijednosti.
 
 Osnovna ideja algoritma zasniva se na analogiji sa pretragom riječi u rječniku. Ukoliko tražimo riječ koja počinje slovom „Š“, nećemo otvoriti rječnik na sredini, već bliže njegovom kraju. Slično tome, ako je vrijednost traženog elementa bliža najvećem elementu niza, algoritam će pretragu započeti bliže kraju niza.
 
-Pretpostavimo da je dat sortirani niz
-
-[
-niz[0],, niz[1],, \ldots,, niz[n-1]
-]
-
-i da tražimo element vrijednosti $x$. Pozicija na kojoj će se izvršiti naredno poređenje procjenjuje se linearnom interpolacijom između krajnjih elemenata trenutnog intervala pretrage.
+Pretpostavimo da je dat sortirani niz $[ niz[0],, niz[1],, \ldots,, niz[n-1] ]$ i da tražimo element vrijednosti $x$. Pozicija na kojoj će se izvršiti naredno poređenje procjenjuje se linearnom interpolacijom između krajnjih elemenata trenutnog intervala pretrage.
 
 Vrijednost indeksa \textit{pos} računa se formulom $
 pos=
@@ -937,7 +931,7 @@ pos=
 \right\rfloor .
 $
 
-Drugim riječima, ukoliko je vrijednost $x$ bliža početku intervala, dobiće se manji indeks \textit{pos}; ako je bliža kraju intervala, dobiće se veći indeks.
+Drugim riječima, ukoliko je vrijednost $x$ bliža početku intervala, dobiće se manji indeks \textit{pos}; ako je bliža kraju intervala, dobiće se veći indeks.\\
 
 Algoritam se sastoji od sljedećih koraka:
 
@@ -967,33 +961,30 @@ Jedna moguća implementacija interpolacijske pretrage prikazana je u nastavku.
 	
 	        if left == right:
 	            if arr[left] == x:
-	                return left
-	            return -1
+	                    return left
+	                return -1
 	
 	        pos = left + ((x - arr[left]) * \ 
 	              (right - left)) // (arr[right] - arr[left] )
 	
 	        if arr[pos] == x:
 	            return pos
-	
 	        elif arr[pos] < x:
 	            left = pos + 1
-	
 	        else:
 	            right = pos - 1
-	
 	    return -1
 	
 \end{minted}
 
-\textbf{Analiza složenosti.} Ako su vrijednosti u nizu približno uniformno raspoređene, interpolacijska pretraga u prosjeku ostvaruje vremensku složenost $O(\log\log n),$ što je bolje od složenosti binarne pretrage, koja iznosi $O(\log n)$.
+\textbf{Analiza složenosti.} Ako su vrijednosti u nizu približno uniformno raspoređene, interpolacijska pretraga u prosjeku ostvaruje vremensku slože\-nost $O(\log\log n),$ što je bolje od složenosti binarne pretrage, koja iznosi $O(\log n)$.
 
-Međutim, ova prednost postoji samo kada je pretpostavka o približno ravnomjernoj raspodjeli podataka zadovoljena. U nepovoljnom slučaju, kada su podaci izrazito neravnomjerno raspoređeni, vremenska složenost može degradirati na $O(n),$ što odgovara složenosti linearne pretrage. Zbog toga se interpolacijska pretraga koristi prvenstveno kod velikih sortiranih skupova numeričkih podataka za koje se očekuje približno uniformna raspodjela vrijednosti.
+Međutim, ova prednost postoji samo kada je pretpostavka o približno ravnomjernoj raspodjeli podataka zadovoljena. U nepovoljnom slučaju, kada su podaci izrazito neravnomjerno raspoređeni, vremenska složenost može degradirati na $O(n),$ što odgovara složenosti linearne pretrage. Zbog toga se interpolacijska pretraga koristi prvenstveno kod velikih sortiranih skupova numeričkih podataka za koje se očekuje približno uniformna raspodjela vrijednosti podataka.
 
 
 \subsection{Eksponencijalna pretraga}
 
-Eksponencijalna pretraga (\emph{exponential search}) predstavlja algoritam pretraživanja namijenjen sortiranim nizovima. Naziv algoritma potiče od činjenice da se granice prostora pretrage proširuju eksponencijalno, odnosno u koracima veličine $1, 2, 4, 8, 16, \ldots$.
+Eksponencijalna pretraga (eng. \emph{exponential search}) predstavlja algoritam pretraživanja namijenjen sortiranim nizovima. Naziv algoritma potiče od činjenice da se granice prostora pretrage proširuju eksponencijalno, odnosno u koracima veličine $1, 2, 4, 8, 16, \ldots$.
 
 Osnovna ideja algoritma sastoji se od dvije faze:
 
@@ -1002,11 +993,7 @@ Osnovna ideja algoritma sastoji se od dvije faze:
 	\item primjene binarne pretrage unutar pronađenog intervala.
 \end{enumerate}
 
-Pretpostavimo da tražimo element $x$ u sortiranom nizu. Najprije provjeravamo elemente na pozicijama $1,; 2,; 4,; 8,; 16,; \ldots,; 2^i,$
-
-sve dok ne pronađemo indeks $i$ za koji važi $niz[2^{i-1}] < x \leq niz[2^i],$
-
-ili dok ne dostignemo kraj niza. Na taj način određujemo interval u kojem se traženi element može nalaziti. Nakon toga nad pronađenim intervalom primjenjujemo binarnu pretragu.
+Pretpostavimo da tražimo element $x$ u sortiranom nizu. Najprije provjeravamo elemente na pozicijama $1, 2, 4, 8, 16, \ldots, 2^i,$ sve dok ne pronađemo indeks $i$ za koji važi $niz[2^{i-1}] \leq x \leq niz[2^i],$  ili dok ne dostignemo kraj niza. Na taj način određujemo interval u kojem se traženi element može nalaziti. Nakon toga nad pronađenim intervalom primjenjujemo binarnu pretragu.
 
 Drugim riječima, eksponencijalna pretraga najprije veoma brzo sužava prostor pretrage eksponencijalnim povećavanjem indeksa, a zatim koristi binarnu pretragu da precizno odredi poziciju traženog elementa. Ovakav pristup omogućava efikasno pretraživanje velikih sortiranih nizova, posebno kada se traženi element nalazi blizu početka niza.
 
