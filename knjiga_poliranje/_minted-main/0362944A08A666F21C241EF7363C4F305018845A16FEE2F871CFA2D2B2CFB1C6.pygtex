@@ -8,8 +8,7 @@
   	\PYG{n}{products}\PYG{o}{.}\PYG{n}{sort}\PYG{p}{(}\PYG{n}{key} \PYG{o}{=} \PYG{n}{fraction}\PYG{p}{,} \PYG{n}{reverse}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
   	\PYG{c+c1}{\PYGZsh{}print(products)}
   	\PYG{n}{current\PYGZus{}C} \PYG{o}{=} \PYG{n}{C}
-  	\PYG{n}{sol} \PYG{o}{=} \PYG{p}{[]}
-  	\PYG{n}{parts} \PYG{o}{=} \PYG{p}{[]}
+  	\PYG{n}{sol}\PYG{p}{,} \PYG{n}{parts} \PYG{o}{=} \PYG{p}{[],} \PYG{p}{[]}
 
   	\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{products}\PYG{p}{:}
 

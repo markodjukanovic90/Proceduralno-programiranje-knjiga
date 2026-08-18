@@ -11,7 +11,7 @@
  		\PYG{k}{if} \PYG{n}{rev\PYGZus{}index} \PYG{o}{\PYGZgt{}} \PYG{n}{Deadline}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]:}
  			\PYG{k}{return} \PYG{k}{continue}
  		\PYG{k}{if} \PYG{n}{covered} \PYG{o}{==} \PYG{k+kc}{False}\PYG{p}{:}
- 			\PYG{k}{return} \PYG{n}{index}
+ 			\PYG{k}{return} \PYG{n}{rev\PYGZus{}index}
  	\PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}
 
  \PYG{k}{def} \PYG{n+nf}{sequnetial\PYGZus{}scheduling}\PYG{p}{():}

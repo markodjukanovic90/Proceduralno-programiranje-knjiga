@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  18 AUG 2026 07:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  18 AUG 2026 10:51
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2660,14 +2660,7 @@ Overfull \hbox (3.31258pt too wide) in paragraph at lines 1200--1201
 e-ba si-ste-mat-ski istra^^Tziti. 
  []
 
-[165]
-Overfull \hbox (1.8185pt too wide) in paragraph at lines 1228--1229
-\OT1/cmr/m/it/10.95 nja \OT1/cmr/m/n/10.95 (\OT1/cmr/m/it/10.95 state-space tre
-e\OT1/cmr/m/n/10.95 ). Sva-ki ^^Tcvor sta-bla pred-sta-vlja jed-no par-ci-jal-n
-o rje^^Tsenje,
- []
-
-[166]
+[165] [166]
 <slike/n-queen-problem.png, id=610, 185.69376pt x 168.63pt>
 File: slike/n-queen-problem.png Graphic file (type png)
 <use slike/n-queen-problem.png>
@@ -2681,7 +2674,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1277 ...ontsize=\footnotesize,scale=0.8]{python}
+l.1275 ...ontsize=\footnotesize,scale=0.8]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2691,12 +2684,12 @@ If that doesn't work, type  X <return>  to quit.
 
 (./_minted-main/51759623E421236CE02A43547FBBCCC05018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex [168])
-<slike/n-queen-backtracking.png, id=618, 1159.33125pt x 877.2775pt>
+<slike/n-queen-backtracking.png, id=618, 1409.265pt x 1124.2pt>
 File: slike/n-queen-backtracking.png Graphic file (type png)
 <use slike/n-queen-backtracking.png>
 Package pdftex.def Info: slike/n-queen-backtracking.png  used on input line 130
-3.
-(pdftex.def)             Requested size: 349.9956pt x 279.99829pt.
+1.
+(pdftex.def)             Requested size: 349.993pt x 279.98576pt.
 
 
 ! LaTeX Error: \begin{document} ended by \end{trivlist}.
@@ -2705,7 +2698,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1311 \end{solution}
+l.1309 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2714,7 +2707,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.1311 \end{solution}
+l.1309 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -2725,7 +2718,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1311 \end{solution}
+l.1309 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2734,7 +2727,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.1311 \end{solution}
+l.1309 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -2745,7 +2738,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1334 ...ontsize=\footnotesize,scale=0.8]{python}
+l.1332 ...ontsize=\footnotesize,scale=0.8]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2753,20 +2746,30 @@ If that doesn't work, type  X <return>  to quit.
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/3DA4769C84D02A211E0AE58D86918D825018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [169] [170 <./slike/n-queen-backtracking.png>]) [171]
-Overfull \hbox (5.74594pt too wide) in paragraph at lines 1378--1379
+(./_minted-main/D200231C912EBBDD535968123D7D196F5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [169] [170 <./slike/n-queen-backtracking.png (PNG copy)>]) [171]
+Overfull \hbox (5.74594pt too wide) in paragraph at lines 1376--1377
 []\OT1/cmr/m/n/10.95 odre[]duje se skup svih kom-po-nen-ti ko-je na do-pu-stiv 
 na^^Tcin mo-gu pro^^Tsiriti
  []
 
-[172]
-Overfull \hbox (4.98248pt too wide) in paragraph at lines 1420--1421
+[172] [173]
+Overfull \hbox (4.98248pt too wide) in paragraph at lines 1418--1419
 []\OT1/cmr/m/n/10.95 Pohlepni al-go-rit-mi se tako[]de ^^Tcesto ko-ri-ste za ge
 -ne-ri-sa-nje po^^Tcetnih rje^^Tsenja
  []
 
-[173] [174]
+
+Underfull \hbox (badness 10000) in paragraph at lines 1425--1426
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1437--1438
+
+ []
+
+[174]
 
 ! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
 
@@ -2774,7 +2777,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1451 ...ntsize=\footnotesize,scale=0.75]{python}
+l.1447 ...ntsize=\footnotesize,scale=0.75]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2782,7 +2785,7 @@ If that doesn't work, type  X <return>  to quit.
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/5DDBC949A873DF5111C760C80DE5A2685018845A16FEE2F871CFA2D2B2CFB1C
+(./_minted-main/D4F1B3F6AE7EA0B1F5C424928945A95D5018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex)
 
 ! LaTeX Error: \begin{document} ended by \end{trivlist}.
@@ -2791,7 +2794,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1469 \end{solution}
+l.1464 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2800,7 +2803,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.1469 \end{solution}
+l.1464 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -2811,7 +2814,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1469 \end{solution}
+l.1464 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2820,25 +2823,30 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.1469 \end{solution}
+l.1464 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
 
-Overfull \hbox (3.85332pt too wide) in paragraph at lines 1471--1472
+Overfull \hbox (3.85332pt too wide) in paragraph at lines 1466--1467
 []\OT1/cmr/bx/n/10.95 Vremenska slo^^Tzenost\OT1/cmr/m/n/10.95 . Sor-ti-ra-nje 
 al-go-rit-ma zah-ti-je-va $\OML/cmm/m/it/10.95 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/
 it/10.95 n [] n\OT1/cmr/m/n/10.95 )$ vreme-
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 1470--1471
+
+ []
+
 [175]
-Overfull \hbox (4.74945pt too wide) in paragraph at lines 1501--1504
+Overfull \hbox (4.74945pt too wide) in paragraph at lines 1494--1497
 \OT1/cmr/m/n/10.95 ji ostva-ru-ju naj-ve^^Scu vri-jed-nost po je-di-ni-ci te^^T
 zine. Za sva-ki pro-i-zvod ra^^Tcunamo
  []
 
 
-Overfull \hbox (18.03133pt too wide) in paragraph at lines 1513--1514
+Overfull \hbox (18.03133pt too wide) in paragraph at lines 1502--1503
 []\OT1/cmr/m/n/10.95 Pohlepni al-go-ri-tam za raz-lo-mlje-ni pro-blem ruk-sa-ka
  ima vre-men-sku slo^^Tzenost
  []
@@ -2850,7 +2858,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1519 ...ontsize=\footnotesize,scale=0.8]{python}
+l.1508 ...ontsize=\footnotesize,scale=0.8]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2858,7 +2866,7 @@ If that doesn't work, type  X <return>  to quit.
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/0DA35B6E2E286E9913C4AF23D4DEF55D5018845A16FEE2F871CFA2D2B2CFB1C
+(./_minted-main/0362944A08A666F21C241EF7363C4F305018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex [176])
 
 ! LaTeX Error: \begin{document} ended by \end{trivlist}.
@@ -2867,7 +2875,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1553 \end{solution}
+l.1541 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2876,7 +2884,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.1553 \end{solution}
+l.1541 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -2887,7 +2895,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1553 \end{solution}
+l.1541 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2896,9 +2904,14 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.1553 \end{solution}
+l.1541 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1545--1547
+
+ []
 
 [177] [178]
 
@@ -2908,7 +2921,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1619 ...ontsize=\footnotesize,scale=0.8]{python}
+l.1601 ...ontsize=\footnotesize,scale=0.8]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2916,7 +2929,7 @@ If that doesn't work, type  X <return>  to quit.
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/F46706AEFC8D9B3BA6EB914142E5C95F5018845A16FEE2F871CFA2D2B2CFB1C
+(./_minted-main/C9A401ACA4E425D2D0E2DFA80A546C165018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex [179])
 
 ! LaTeX Error: \begin{document} ended by \end{trivlist}.
@@ -2925,7 +2938,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1661 \end{solution}
+l.1640 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2934,7 +2947,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.1661 \end{solution}
+l.1640 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -2945,7 +2958,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1661 \end{solution}
+l.1640 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2954,17 +2967,27 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.1661 \end{solution}
+l.1640 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
 
-Overfull \hbox (5.62436pt too wide) in paragraph at lines 1668--1669
+Underfull \hbox (badness 10000) in paragraph at lines 1645--1646
+
+ []
+
+
+Overfull \hbox (5.62436pt too wide) in paragraph at lines 1648--1649
 []\OT1/cmr/m/it/10.95 Potrebno je oda-bra-ti pod-skup po-slo-va i odre-di-ti nj
 i-hov ra-spo-red iz-vr^^Tsavanja
  []
 
 [180] [181]
+Underfull \hbox (badness 10000) in paragraph at lines 1704--1706
+
+ []
+
+[182]
 
 ! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
 
@@ -2972,23 +2995,27 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1751 ...ontsize=\footnotesize,scale=0.8]{python}
+l.1727 ...ontsize=\footnotesize,scale=0.8]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 \openout3 = `main.pyg'.
 
+runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -P s
+tripnl=False -o _minted-main/BCDE9D4587212E88291051DA4A04C15F5018845A16FEE2F871
+CFA2D2B2CFB1C6.pygtex main.pyg)...executed.
 
-(./_minted-main/2ACD5FBBC8123ADA14F2BFEA13853A615018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [182]) [183]
-Overfull \hbox (25.8788pt too wide) in paragraph at lines 1810--1811
+
+(./_minted-main/BCDE9D4587212E88291051DA4A04C15F5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [183])
+Overfull \hbox (25.8788pt too wide) in paragraph at lines 1786--1787
 []\OT1/cmr/m/n/10.95 Osnovna ide-ja di-na-mi^^Tckog pro-gra-mi-ra-nja sa-sto-ji
  se u iz-bje-ga-va-nju vi^^Tsestrukog
  []
 
 [184]
-Overfull \hbox (7.8476pt too wide) in paragraph at lines 1826--1827
+Overfull \hbox (7.8476pt too wide) in paragraph at lines 1802--1803
 []\OT1/cmr/m/n/10.95 Memoizacija (\OT1/cmr/m/it/10.95 top-down ap-pro-ach\OT1/c
 mr/m/n/10.95 ) pred-sta-vlja im-ple-men-ta-ci-ju di-na-mi^^Tckog
  []
@@ -3001,7 +3028,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1864 ...ontsize=\footnotesize,scale=0.8]{python}
+l.1840 ...ontsize=\footnotesize,scale=0.8]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3016,17 +3043,18 @@ If that doesn't work, type  X <return>  to quit.
 
 (./_minted-main/11AB637D21E46C6FFC0A36D34C3C77835018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex [186]) [187]
-<slike/dp-table-1.png, id=681, 272.01625pt x 263.98625pt>
+<slike/dp-table-1.png, id=680, 272.01625pt x 263.98625pt>
 File: slike/dp-table-1.png Graphic file (type png)
 <use slike/dp-table-1.png>
-Package pdftex.def Info: slike/dp-table-1.png  used on input line 1932.
+Package pdftex.def Info: slike/dp-table-1.png  used on input line 1908.
 (pdftex.def)             Requested size: 100.00108pt x 99.99759pt.
- [188 <./slike/dp-table-1.png>]
-Overfull \hbox (8.57896pt too wide) in paragraph at lines 1960--1961
+ [188]
+Overfull \hbox (8.57896pt too wide) in paragraph at lines 1936--1937
 []\OT1/cmr/m/n/10.95 Za po-zi-ci-je ko-je ni-su do-stup-ne pi-ju-nu (npr. iz-va
 n gra-ni-ca ma-tri-ce) mo^^Tzemo
  []
 
+[189 <./slike/dp-table-1.png>]
 
 ! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
 
@@ -3034,7 +3062,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1975 ...ontsize=\footnotesize,scale=0.8]{python}
+l.1951 ...ontsize=\footnotesize,scale=0.8]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3043,7 +3071,7 @@ If that doesn't work, type  X <return>  to quit.
 
 
 (./_minted-main/4C1C69C05E6ED959B7184415195C336B5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [189])
+6.pygtex [190])
 
 ! LaTeX Error: \begin{document} ended by \end{trivlist}.
 
@@ -3051,7 +3079,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2012 \end{solution}
+l.1988 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3060,7 +3088,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.2012 \end{solution}
+l.1988 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -3071,7 +3099,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2012 \end{solution}
+l.1988 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3080,11 +3108,11 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.2012 \end{solution}
+l.1988 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
-[190] [191]
+[191]
 
 ! LaTeX Error: There's no line here to end.
 
@@ -3092,7 +3120,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2080 	
+l.2056 	
         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3105,7 +3133,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2083 ...ontsize=\footnotesize,scale=0.8]{python}
+l.2059 ...ontsize=\footnotesize,scale=0.8]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3114,7 +3142,7 @@ If that doesn't work, type  X <return>  to quit.
 
 
 (./_minted-main/60B850EBE36F8B807AFB8675632D295F5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex [192])
 
 ! LaTeX Error: \begin{document} ended by \end{trivlist}.
 
@@ -3122,7 +3150,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2111 \end{solution}
+l.2087 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3131,7 +3159,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.2111 \end{solution}
+l.2087 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -3142,7 +3170,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2111 \end{solution}
+l.2087 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3151,18 +3179,18 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.2111 \end{solution}
+l.2087 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
-[192] [193] [194] [195]
-Overfull \hbox (0.54204pt too wide) in paragraph at lines 2246--2247
+[193] [194] [195]
+Overfull \hbox (0.54204pt too wide) in paragraph at lines 2222--2223
 []\OT1/cmr/m/it/10.95 Rekurzivna re-la-ci-ja. \OT1/cmr/m/n/10.95 Po-sma-traj-mo
  po-sljed-nje ka-rak-te-re raz-ma-tra-nih pre-
  []
 
 
-Overfull \hbox (18.64923pt too wide) in paragraph at lines 2266--2273
+Overfull \hbox (18.64923pt too wide) in paragraph at lines 2242--2249
 []$\OML/cmm/m/it/10.95 DP\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 i\OT1/cmr/m/n/
 10.95 ][\OML/cmm/m/it/10.95 j\OT1/cmr/m/n/10.95 ] = []$ 
  []
@@ -3174,7 +3202,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2291 ...ontsize=\footnotesize,scale=0.8]{python}
+l.2267 ...ontsize=\footnotesize,scale=0.8]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3184,7 +3212,7 @@ If that doesn't work, type  X <return>  to quit.
 
 (./_minted-main/AEC2DE16A52F962A8FD36CF5610EE3345018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex
-Overfull \hbox (6.4425pt too wide) in paragraph at lines 2290--1
+Overfull \hbox (6.4425pt too wide) in paragraph at lines 2266--1
 []\OT1/cmr/m/n/10.95 Implementacija pa-ra-dig-me di-na-mi^^Tckog pro-gra-mi-ra-
 nja za rje^^Tsavanje LCSP
  []
@@ -3197,7 +3225,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2344 \end{solution}
+l.2320 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3206,7 +3234,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.2344 \end{solution}
+l.2320 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -3217,7 +3245,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2344 \end{solution}
+l.2320 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3226,7 +3254,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.2344 \end{solution}
+l.2320 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -3238,7 +3266,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2427 ...ontsize=\footnotesize,scale=0.8]{python}
+l.2403 ...ontsize=\footnotesize,scale=0.8]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3255,7 +3283,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2450 \end{solution}
+l.2426 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3264,7 +3292,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.2450 \end{solution}
+l.2426 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -3275,7 +3303,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2450 \end{solution}
+l.2426 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3284,7 +3312,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.2450 \end{solution}
+l.2426 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -3295,7 +3323,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2455 ...ontsize=\footnotesize,scale=0.8]{python}
+l.2431 ...ontsize=\footnotesize,scale=0.8]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3304,7 +3332,7 @@ If that doesn't work, type  X <return>  to quit.
 
 
 (./_minted-main/CFCA20B58096CFE2CFFAE13231CDF15D5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [200] [201]
+6.pygtex [200]) [201]
 
 ! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
 
@@ -3312,7 +3340,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2546 ...ontsize=\footnotesize,scale=0.8]{python}
+l.2522 ...ontsize=\footnotesize,scale=0.8]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3321,16 +3349,13 @@ If that doesn't work, type  X <return>  to quit.
 
 
 (./_minted-main/47B27E86131071F3B21AF9F05CB48DD65018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
-<slike/brute-force-cutting-stick.png, id=728, 648.4225pt x 533.995pt>
+6.pygtex) [202]
+<slike/brute-force-cutting-stick.png, id=730, 648.4225pt x 533.995pt>
 File: slike/brute-force-cutting-stick.png Graphic file (type png)
 <use slike/brute-force-cutting-stick.png>
 Package pdftex.def Info: slike/brute-force-cutting-stick.png  used on input lin
-e 2570.
+e 2546.
 (pdftex.def)             Requested size: 270.00058pt x 219.99861pt.
- [202]
-Underfull \vbox (badness 6396) has occurred while \output is active []
-
  [203 <./slike/brute-force-cutting-stick.png>]
 
 ! LaTeX Error: Unicode character − (U+2212)
@@ -3340,55 +3365,51 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2589 ...o traženi broj ne postoji, vratiti $−
+l.2565 ...o traženi broj ne postoji, vratiti $−
                                                   1$.
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-Overfull \hbox (0.26112pt too wide) in paragraph at lines 2595--2603
+Overfull \hbox (0.26112pt too wide) in paragraph at lines 2571--2579
 \OT1/cmr/m/n/10.95 4\OML/cmm/m/it/10.95 ; x[] \OMS/cmtt/m/n/10.95 2 \U/msb/m/n/
 10.95 N$\OT1/cmr/m/n/10.95 . Sva mo-gu^^Sca rje^^Tsenja su: $(1 1 1 1 0)\OML/cm
 m/m/it/10.95 ; \OT1/cmr/m/n/10.95 (1 0 1 1 1)\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n
 /10.95 (0 1 1 1 1)\OML/cmm/m/it/10.95 ; [] ;$
  []
 
-
-Overfull \hbox (6.847pt too wide) in paragraph at lines 2612--2613
+[204]
+Overfull \hbox (6.847pt too wide) in paragraph at lines 2588--2589
 []\OT1/cmr/m/n/10.95 U uli-zu je dat niz bro-je-va. Kon-stru-i-sa-ti al-go-ri-t
 am di-na-mi^^Tckog programi-
  []
 
-[204]
-Overfull \hbox (4.9572pt too wide) in paragraph at lines 2615--2617
+
+Overfull \hbox (4.9572pt too wide) in paragraph at lines 2591--2593
 []\OT1/cmr/m/n/10.95 Neka su u ula-zu da-ta dva stri-ga $\OML/cmm/m/it/10.95 s[
 ]$ \OT1/cmr/m/n/10.95 i $\OML/cmm/m/it/10.95 s[]$\OT1/cmr/m/n/10.95 . Uz po-mo^
 ^Sc di-na-mi^^Tckog programi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2617--2618
+Underfull \hbox (badness 10000) in paragraph at lines 2593--2594
 
  []
 
 
-Overfull \hbox (52.5288pt too wide) detected at line 2619
+Overfull \hbox (52.5288pt too wide) detected at line 2595
 \OML/cmm/m/it/10.95 dict \OT1/cmr/m/n/10.95 = \OMS/cmtt/m/n/10.95 f[]\OML/cmm/m
 /it/10.95 ; []; []; []; []; []; []; []; []; []; []; []; []; []; []; []\OMS/cmtt
 /m/n/10.95 g
  []
 
-<slike/plococe-dp-zadatak.png, id=739, 194.7275pt x 180.675pt>
+<slike/plococe-dp-zadatak.png, id=738, 194.7275pt x 180.675pt>
 File: slike/plococe-dp-zadatak.png Graphic file (type png)
 <use slike/plococe-dp-zadatak.png>
-Package pdftex.def Info: slike/plococe-dp-zadatak.png  used on input line 2632.
+Package pdftex.def Info: slike/plococe-dp-zadatak.png  used on input line 2608.
 
 (pdftex.def)             Requested size: 119.99884pt x 100.0001pt.
-
-Underfull \vbox (badness 1502) has occurred while \output is active []
-
- [205])
-[206 <./slike/plococe-dp-zadatak.png>]
+[205]) [206 <./slike/plococe-dp-zadatak.png>]
 \openout2 = `chapter-03-04/chapter04.aux'.
 
  (./chapter-03-04/chapter04.tex
@@ -3483,7 +3504,7 @@ PARADIGMI NA PROBLEME IZ ARITMETIKE
  []
 
 [216]
-<slike/catalan-net.png, id=779, 729.72626pt x 345.29pt>
+<slike/catalan-net.png, id=778, 729.72626pt x 345.29pt>
 File: slike/catalan-net.png Graphic file (type png)
 <use slike/catalan-net.png>
 Package pdftex.def Info: slike/catalan-net.png  used on input line 361.
@@ -3664,6 +3685,9 @@ Underfull \hbox (badness 4353) in paragraph at lines 245--249
 k-tu-re po-da-ta-ka i al-go-rit-mi\OT1/cmr/m/n/10.95 ,
  []
 
+runsystem(rm _minted-main/2ACD5FBBC8123ADA14F2BFEA13853A615018845A16FEE2F871CFA
+2D2B2CFB1C6.pygtex)...executed.
+
 
 FiXme Summary: Number of notes: 0,
 (FiXme)        Number of warnings: 0,
@@ -3681,10 +3705,10 @@ runsystem(rm main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 22943 strings out of 479648
- 559026 string characters out of 5886115
- 818646 words of memory out of 5000000
- 39684 multiletter control sequences out of 15000+600000
+ 22946 strings out of 479648
+ 559270 string characters out of 5886115
+ 818643 words of memory out of 5000000
+ 39686 multiletter control sequences out of 15000+600000
  485509 words of font info for 90 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  84i,12n,131p,979b,757s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3713,9 +3737,9 @@ fonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb>
-Output written on main.pdf (235 pages, 11408849 bytes).
+Output written on main.pdf (235 pages, 12141722 bytes).
 PDF statistics:
- 941 PDF objects out of 1000 (max. 8388607)
+ 940 PDF objects out of 1000 (max. 8388607)
  604 compressed objects within 7 object streams
  0 named destinations out of 1000 (max. 500000)
  143 words of extra memory for PDF output out of 10000 (max. 10000000)

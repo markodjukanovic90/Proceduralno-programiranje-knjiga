@@ -1200,7 +1200,7 @@ Paradigma vraćanja unazad posebno je pogodna za probleme kod kojih:
 	\item postoji veliki broj mogućih kombinacija koje treba sistematski istražiti.
 \end{itemize}
 
-Tipični primjeri primjene ove paradigme uključuju problem osam dama, bojenje grafa, sudoku, problem ruksaka, generisanje permutacija i kombinacija, te mnoge druge kombinatorne optimizacione probleme. Opšti pseudokod paradigme vraćanja unazad dat je Algoritmom~\ref{alg:backtrack}.
+Tipični primjeri primjene ove paradigme uključuju Problem osam dama, bojenje grafa, sudoku, problem ruksaka, generisanje permutacija i kombinacija sa određenim ograničenjima, te mnoge druge kombinatorne optimizacione probleme. Opšti pseudokod paradigme vraćanja unazad dat je Algoritmom~\ref{alg:backtrack}.
 
 \begin{algorithm}
 	\begin{algorithmic}[1]
@@ -1225,14 +1225,14 @@ Tipični primjeri primjene ove paradigme uključuju problem osam dama, bojenje g
 	\label{alg:backtrack}
 \end{algorithm}
 
-Implementacija ove paradigme prirodno vodi ka konstrukciji \textit{stabla stanja} (\emph{state-space tree}). Svaki čvor stabla predstavlja jedno parcijalno rješenje, dok grane odgovaraju mogućim proširenjima tog rješenja. Rekurzivni pozivi algoritma odgovaraju obilasku ovog stabla. Kada se utvrdi da određena grana ne može dovesti do validnog rješenja, dalji obilazak te grane se prekida, čime se izbjegava nepotrebno pretraživanje.
+Implementacija ove paradigme prirodno vodi ka konstrukciji \textit{stabla stanja} (eng. \emph{state-space tree}). Svaki čvor stabla predstavlja jedno parcijalno rješenje, dok grane odgovaraju mogućim proširenjima tog rješenja. Rekurzivni pozivi algoritma odgovaraju obilasku ovog stabla. Kada se utvrdi da određena grana ne dovodi do validnog rješenja, dalji obilazak te grane se prekida, čime se izbjegava nepotrebno pretraživanje.
 
 U najgorem slučaju algoritmi vraćanja unazad i dalje mogu imati eksponencijalnu vremensku složenost, jer je ponekad potrebno istražiti veoma veliki broj mogućih kombinacija. Ipak, zahvaljujući ranom odbacivanju nedopustivih parcijalnih rješenja, oni su u praksi često znatno efikasniji od pristupa grube sile.
 
     %https://www.programiz.com/dsa/backtracking-algorithm ==> primjer 1...
     
  \begin{example}
- 	(\textbf{\emph{Problem $N$ kraljica}}). Neka je data šahovska ploča dimenzija $N \times N$. Potrebno je postaviti $N$ kraljica na ploču tako da se nijedne dvije kraljice međusobno ne napadaju. Riješiti problem primjenom paradigme vraćanja unazad.
+ 	(\textbf{\emph{Problem $N$ kraljica}}). Neka je data šahovska ploča dimenzija $N \times N$. Postaviti $N$ kraljica na ploču tako da se nikoje dvije kraljice međusobno ne napadaju. Riješiti problem primjenom paradigme vraćanja unazad.
  \end{example}
  
  \begin{solution}
@@ -1247,11 +1247,9 @@ U najgorem slučaju algoritmi vraćanja unazad i dalje mogu imati eksponencijaln
  	\end{figure}
  	
  	Pošto se dvije kraljice ne smiju nalaziti u istom redu, svako rješenje možemo predstaviti nizom dužine $N$. Element na poziciji $i$ označava kolonu u kojoj je postavljena kraljica u $i$-tom redu šahovske ploče. Na primjer, raspored kraljica prikazan na Slici~\ref{fig:8-queen-sol-example} može se predstaviti nizom $
- 	[5, 7, 1, 4, 2, 8, 6, 3]. $	Vrijednost na svakoj poziciji određuje kolonu u kojoj se nalazi kraljica odgovarajućeg reda.
+ 	[5, 7, 1, 4, 2, 8, 6, 3]. $	Vrijednost na svakoj poziciji određuje kolonu u kojoj se smiješta kraljica u odgovarajući red.
  	
- 	Algoritam vraćanja unazad započinje od praznog rješenja. U svakom koraku pokušava se postaviti nova kraljica u naredni red šahovske ploče. Drugim riječima, parcijalno rješenje se proširuje dodavanjem jedne nove komponente, odnosno izborom kolone u kojoj će se nalaziti kraljica u trenutno obrađivanom redu.
- 	
- 	Nakon svakog dodavanja provjerava se da li novopostavljena kraljica napada neku od prethodno postavljenih kraljica. Konflikt postoji ukoliko se dvije kraljice nalaze:
+ 	Algoritam vraćanja unazad započinje od praznog rješenja. U svakom koraku pokušava se postaviti nova kraljica u naredni red šahovske ploče. Drugim riječima, parcijalno rješenje se proširuje dodavanjem jedne nove komponente, odnosno izborom kolone u kojoj će se nalaziti kraljica u trenutno obrađivanom redu. Nakon svakog dodavanja provjerava se da li novopostavljena kraljica napada neku od prethodno postavljenih kraljica. Konflikt postoji ukoliko se dvije kraljice nalaze:
  	
  	\begin{itemize}
  		\item u istoj koloni;
@@ -1340,7 +1338,7 @@ def FourSquareSum(sol):
 		sum += pow(s, 2)
 	return sum
 
-def FourSumSquares(sol, n):
+  def FourSumSquares(sol, n):
 	if len(sol) == 4:
 		if FourSquareSum(sol) == n:
 			print(sol)
@@ -1351,8 +1349,8 @@ def FourSumSquares(sol, n):
 			sum_sol_i = FourSquareSum(solI)
 			if sum_sol_i <= n-(4-len(solI)): # else backtrack  
 				FourSumSquares(solI, n) 
-# poziv metode
-FourSumSquares([], 20)
+  # poziv metode
+  FourSumSquares([], 20)
  \end{minted}
 	
 	Kao što primijećujemo u prethodnom kodu, ako je \emph{sol} kardinalnosti 4, i ako je zbir kvadrata njegovih elemenata jednak $n$, ispisujemo \emph{sol} kao rješenje. U protivnom, ako je $|sol|<4$, (parcijalno) rješenje \emph{sol} proširujemo ubacujući naredni broj (varijabla $i\in \{1, \ldots, \lfloor\sqrt{n} \rfloor + 1 \}$), dobijajući niz \emph{solI}.  Ako je zbir kvadrata elemenata iz \emph{sol} veći od $n-(4 - |solI|)$, ovakva ekstenzija nikada neće voditi ka rješenju koje zadovoljava uslove zadatka, pa pretraga ide unazad, rekurzivno,  ispitujući druge kandidate za proširenje trenutnog rješenja \emph{sol}. Inicijalno, rješenje \emph{sol} je predstavljeno praznim nizom.
@@ -1362,13 +1360,13 @@ FourSumSquares([], 20)
  
 \section{Pohlepni algoritmi}
 
-\textit{Pohlepni algoritmi} (\emph{greedy algorithms}) predstavljaju algoritamsku paradigmu u kojoj se u svakom koraku donosi lokalno najbolja odluka prema unaprijed definisanom kriterijumu. Osnovna ideja je da se problem rješava nizom lokalno optimalnih izbora, uz pretpostavku da će takvi izbori dovesti do kvalitetnog, a ponekad i optimalnog globalnog rješenja.
+\textit{Pohlepni algoritmi}  predstavljaju algoritamsku paradigmu u kojoj se u svakom koraku donosi lokalno najbolja odluka o proširenju parcijalnog rješenja prema unaprijed definisanom kriterijumu. Osnovna ideja je da se problem rješava nizom lokalno optimalnih izbora, uz pretpostavku da će takvi izbori dovesti do kvalitetnog, a ponekad i optimalnog globalnog rješenja.
 
 Za razliku od algoritama vraćanja unazad ili dinamičkog programiranja, pohlepni algoritmi ne preispituju ranije donesene odluke. Jednom kada se neka komponenta uključi u rješenje, ona se više ne uklanja niti mijenja. Zbog toga su pohlepni algoritmi obično veoma efikasni, ali ne garantuju uvijek pronalazak optimalnog rješenja.
 
-Drugim riječima, algoritam u svakom koraku bira opciju koja trenutno izgleda najpovoljnije, bez razmatranja mogućih posljedica tog izbora na buduće korake. Zbog toga uspješnost ovog pristupa zavisi od strukture problema. Za određene klase problema može se dokazati da lokalno optimalni izbori vode ka globalno optimalnom rješenju, dok kod drugih problema pohlepni pristup daje samo aproksimativna rješenja.
+Drugim riječima, algoritam u svakom koraku bira opciju koja je trenutno najpovoljnija, bez razmatranja mogućih posljedica tog izbora na buduće korake. Zbog toga, uspješnost ovog pristupa zavisi od strukture problema. Za određene klase problema može se dokazati da lokalno optimalni izbori vode ka globalno optimalnom rješenju, dok kod drugih problema pohlepni pristup daje samo aproksimativna/heuristička rješenja. 
 
-U neformalnom smislu, pohlepni algoritam započinje od praznog ili djelimično izgrađenog rješenja i zatim ga iterativno proširuje komponentama koje imaju najveću trenutnu korist. Proces se nastavlja sve dok se ne dobije potpuno rješenje ili dok više nije moguće izvršiti njegovo dopustivo proširenje.
+U neformalnom smislu, pohlepni algoritam započinje od praznog ili djelimično izgrađenog rješenja i zatim ga iterativno proširuje komponentama koje imaju najveću trenutnu korist. Proces se nastavlja sve dok se ne dobije potpuno rješenje ili dok se ne iscrpe sve mogućnosti za dopustivo proširenje.
 
 Opšta shema pohlepnog pristupa prikazana je Algoritmom~\ref{alg:greedy-algorithm}. Ulaz u algoritam čine instanca problema $\mathcal{P}$ i pohlepna funkcija $g$, koja procjenjuje kvalitet mogućih proširenja trenutnog rješenja.
 
@@ -1384,13 +1382,13 @@ Proces se ponavlja sve dok postoji barem jedna komponenta koja može dopustivo p
 
 \begin{algorithm}
 	\begin{algorithmic}[1]
-		\State \textbf{Ulaz:} instanca problema $\mathcal{P}$, pohlepna funkcija $g$
-		\State \textbf{Izlaz:} rješenje problema $\mathcal{P}$
+		\State \textbf{Ulaz:} instanca problema, pohlepna funkcija $g$
+		\State \textbf{Izlaz:} (aproksimativno) rješenje problema
 		\State $x \gets$ inicijalno parcijalno rješenje
 		\State $\mathcal{C} \gets$ skup dopustivih proširenja rješenja $x$
 		
 		\While{$\mathcal{C} \neq \emptyset$}
-		\State $e \gets$ lokalno najbolja komponenta iz $\mathcal{C}$ prema funkciji $g$
+		\State $e \gets$ lokalno najbolja komponenta iz $\mathcal{C}$ shodno vrijednosti funkc. $g$
 		\State $x \gets$ proširi rješenje $x$ komponentom $e$
 		\State $\mathcal{C} \gets$ odredi nova dopustiva proširenja rješenja $x$
 		\EndWhile
@@ -1410,9 +1408,9 @@ Da bi se neki problem mogao rješavati pohlepnim pristupom, potrebno je definisa
 	\item uslove dopustivosti proširenja parcijalnog rješenja.
 \end{enumerate}
 
-Najpoznatiji primjeri primjene pohlepnih algoritama uključuju problem izbora aktivnosti, konstrukciju Huffmanovog stabla, algoritme za pronalaženje minimalnog razapinjućeg stabla (Kruskalov i Primov algoritam), te određene varijante problema najkraćih puteva, kao što je Dijkstrin algoritam za grafove sa nenegativnim težinama grana.
+Najpoznatiji primjeri primjene pohlepnih algoritama uključuju problem izbora aktivnosti, konstrukciju Hafmanovog stabla, algoritme za pronalaženje minimalnog razapinjućeg stabla (Kruskalov i Primov algoritam), te određene varijante problema najkraćih puteva, kao što je Dijkstrin algoritam za grafove sa nenegativnim težinama grana.
 
-Glavna prednost pohlepnih algoritama jeste njihova jednostavnost implementacije i mala vremenska složenost. Međutim, njihov osnovni nedostatak je što lokalno najbolji izbor ne mora uvijek voditi globalno optimalnom rješenju. Zbog toga je prije primjene ove paradigme potrebno dokazati da problem posjeduje tzv. \emph{pohlepno svojstvo} (\emph{greedy-choice property}), odnosno da optimalno rješenje može biti izgrađeno nizom lokalno optimalnih odluka.
+Glavna prednost pohlepnih algoritama jeste njihova jednostavnost implementacije i mala vremenska složenost. Međutim, njihov osnovni nedostatak je što lokalno najbolji izbor ne mora uvijek voditi globalno optimalnom rješenju. Zbog toga je prije primjene ove paradigme potrebno dokazati da problem posjeduje tzv. \emph{pohlepno svojstvo} (eng. \emph{greedy-choice property}), odnosno da optimalno rješenje može biti izgrađeno nizom lokalno optimalnih odluka.
 
 
 Ovu paradigmu koristimo kada je potrebno pronaći rješenje zadovoljavajućeg kvaliteta u relativno kratkom vremenu, uz jednostavnu implementaciju algoritma. Zbog svoje efikasnosti i konceptualne jednostavnosti, pohlepni pristup često predstavlja prvi korak u rješavanju složenih kombinatornih i optimizacionih problema.
@@ -1424,27 +1422,25 @@ U nastavku prikazujemo nekoliko primjera primjene pohlepnih algoritama na razli�
 \begin{example}
 	(\textbf{\emph{Problem razmjenjivanja novca}}).
 	
-	Neka je dato $X$ KM i skup apoena $x_1, x_2, \ldots, x_k$, pri čemu je svaki apoen dostupan u neograničenoj količini. Pretpostavimo da su $X$ i svi apoeni prirodni brojevi.
+	Neka je dato $X$ KM i skup apoena $x_1, x_2, \ldots, x_k$, pri čemu je svaki apoen dostupan u neograničenoj količini. Pretpostavimo da su $X$ i svi apoeni prirodni brojevi. \\
+	
 	
 	Na koji način razmijeniti iznos $X$ tako da ukupan broj novčanica i kovanica bude minimalan? Problem riješiti primjenom pohlepnog pristupa.
 \end{example}
 
 \begin{solution}
 	
-	Definišimo najprije strukturu rješenja. Svako rješenje može se predstaviti $k$-torkom $(p_1,p_2,\ldots,p_k),$
-	
-	gdje $p_i$ označava broj iskorištenih apoena vrijednosti $x_i$. Rješenje je dopustivo ukoliko vrijedi $
-	\sum_{i=1}^{k} p_i x_i = X.$
+	Definišimo najprije strukturu rješenja. Svako rješenje može se predstaviti $k$-torkom $(p_1,p_2,\ldots,p_k),$ gdje $p_i$ označava broj iskorištenih apoena vrijednosti $x_i$. Rješenje je dopustivo ukoliko vrijedi $\sum_{i=1}^{k} p_i x_i = X.$
 	
 	Parcijalno rješenje predstavlja djelimično formiranu kombinaciju apoena $(p_1,p_2,\ldots,p_s), s \leq k,$ za koju vrijedi $\sum_{i=1}^{s} p_i x_i \leq X.$ 	Takvo rješenje se može dalje proširivati dodavanjem novih apoena.
 	
-	Osnovna ideja pohlepnog algoritma jeste da se u svakom koraku bira najveći apoen koji ne premašuje preostali iznos koji treba razmijeniti. Nakon izbora apoena uzima se maksimalan mogući broj novčanica ili kovanica tog apoena, a zatim se isti postupak ponavlja za preostali iznos.
+	Osnovna ideja pohlepnog algoritma jeste da se u svakom koraku bira najveći apoen koji ne premašuje preostali iznos koji treba razmijeniti. Nakon izbora apoena uzima se maksimalan mogući broj novčanica ili kovanica tog apoena, a zatim se isti postupak ponavlja za preostali iznos.\\ 
 	
 	Pretpostavimo da su apoeni sortirani opadajuće: $ x_1 > x_2 > \cdots > x_k.$
 	
 	Neka je $X' = X - \sum_{j=1}^{s} p_j x_j$ preostali iznos koji još treba razmijeniti. Tada se bira najveći apoen $x_i$ za koji važi $x_i \leq X',$ a broj njegovih pojavljivanja određuje se kao $p_i=\left\lfloor \frac{X'}{x_i}\right\rfloor.$  	Na taj način parcijalno rješenje se proširuje novom komponentom, nakon čega se ažurira vrijednost preostalog iznosa. Postupak se ponavlja sve dok preostali iznos ne postane nula.
 	
-	Za standardne novčane sisteme (npr. konvertibilna marka, euro ili američki dolar) ovakav pohlepni postupak daje optimalno rješenje, odnosno minimalan broj novčanica i kovanica. Međutim, za proizvoljno definisane skupove apoena to ne mora uvijek biti slučaj, pa je u takvim situacijama potrebno koristiti naprednije algoritamske tehnike.
+	%Za standardne novčane sisteme (npr. konvertibilna marka, euro ili američki dolar) ovakav pohlepni postupak daje optimalno rješenje, odnosno minimalan broj novčanica i kovanica. Međutim, za proizvoljno definisane skupove apoena to ne mora uvijek biti slučaj, pa je u takvim situacijama potrebno koristiti naprednije algoritamske tehnike.
 \end{solution}
 
 Implementacija algoritma ovog problema  je data u nastavku.
@@ -1452,8 +1448,7 @@ Implementacija algoritma ovog problema  je data u nastavku.
 	 def razmijeni(P, X):
 	 	rjesenje = []
 	 	i = 0
-	 	usitnjeno = 0
-	 	brojNovcanica = 0
+	 	usitnjeno, brojNovcanica = 0, 0
 	 	sortApoeni = sorted(P) # sort apoene opadajuće
 	 	while i <  n and usitnjeno < X :
 	 		pi = (X - usitnjeno) // P[i]  #br. novcanica sortApoeni[i]
@@ -1472,9 +1467,7 @@ Implementacija algoritma ovog problema  je data u nastavku.
 
 
 \begin{example}
-	(\textbf{\emph{Razlomljeni problem ruksaka}}).
-	
-	Ovaj problem predstavlja relaksiranu verziju klasičnog problema ruksaka. Za razliku od standardne varijante, gdje se svaki proizvod mora uzeti u cijelosti ili se uopšte ne uzima, ovdje je dozvoljeno uzeti proizvoljan dio proizvoda. Takva pretpostavka ima smisla za proizvode koji se mogu dijeliti, kao što su šećer, brašno, ulje ili gorivo.
+	(\textbf{\emph{Razlomljeni problem ruksaka}}). Ovaj problem predstavlja relaksiranu verziju klasičnog problema ruksaka. Za razliku od standardne varijante, gdje se svaki proizvod mora uzeti u cijelosti ili se uopšte ne uzima, ovdje je dozvoljeno uzeti proizvoljan dio proizvoda. Takva pretpostavka ima smisla za proizvode koji se mogu dijeliti, kao što su šećer, brašno, ulje ili gorivo. \\
 	
 	Dat je skup proizvoda, pri čemu svaki proizvod $i$ ima težinu $w_i$ i vrijednost $p_i$, kao i ruksak kapaciteta $C$. Potrebno je odrediti koje proizvode, odnosno koje njihove dijelove, treba smjestiti u ruksak tako da ukupna vrijednost bude maksimalna, uz poštovanje ograničenja kapaciteta.
 	
@@ -1487,7 +1480,7 @@ Implementacija algoritma ovog problema  je data u nastavku.
 	w=[10,20,30],
 	p=[60,100,120],$ 	pri čemu je kapacitet ruksaka jednak $C=50$.
 	
-	Optimalno rješenje dobija se tako što se prvi i drugi proizvod uzimaju u potpunosti, dok se od trećeg proizvoda uzima samo dio. Ukupna težina prva dva proizvoda iznosi $10+20=30$, pa u ruksaku ostaje još $20$ jedinica slobodnog prostora. Kako treći proizvod ima težinu $30$, moguće je uzeti samo njegov dio $\frac{20}{30}=\frac{2}{3}.$  Ukupna vrijednost ruksaka tada iznosi 	$60 + 100 + \frac{2}{3}\cdot 120 = 240.$
+	Optimalno rješenje dobija se tako što se prvi i drugi proizvod uzimaju u potpunosti, dok se od trećeg proizvoda uzima samo dio. Ukupna težina prva dva proizvoda iznosi $10+20=30$, pa u ruksaku ostaje još $20$ jedinica slobodnog prostora. Kako treći proizvod ima težinu $30$, moguće je uzeti samo njegov dio $\frac{20}{30}=\frac{2}{3}.$  Ukupna vrijednost ruksaka tada iznosi 	$60 + 100 + \frac{2}{3}\cdot 120 = 240.$ \\
 	\medskip
 	\textit{Struktura rješenja.}	Rješenje predstavljamo vektorom $c=(c_1,c_2,\ldots,c_n),$ gdje je $0\leq c_i\leq 1$ udio proizvoda $i$ koji se nalazi u ruksaku. Pri tome mora važiti ograničenje kapaciteta $	\sum_{i=1}^{n} c_i w_i \leq C.$
 	
@@ -1500,17 +1493,13 @@ Implementacija algoritma ovog problema  je data u nastavku.
 	
 	\textit{Pohlepna funkcija.}
 	Ključna ideja je da prednost dajemo proizvodima koji ostvaruju najveću vrijednost po jedinici težine. Za svaki proizvod računamo omjer $
-	\rho_i=\frac{p_i}{w_i}.$
-	
-	Vrijednost $\rho_i$ predstavlja profit ostvaren po jedinici zauzetog kapaciteta i prirodno određuje prioritet proizvoda.
-	
-	Najprije sortiramo proizvode opadajuće prema vrijednosti $\rho_i$. Neka je nakon sortiranja redoslijed proizvoda označen indeksima $1,2,\ldots,n.$
+	\rho_i=\frac{p_i}{w_i}.$  Vrijednost $\rho_i$ predstavlja profit ostvaren po jedinici zauzetog kapaciteta i prirodno određuje prioritet proizvoda. Najprije se sortiraju proizvode opadajuće prema vrijednosti $\rho_i$. Neka je nakon sortiranja redoslijed proizvoda označen indeksima $1,2,\ldots,n.$
 	
 	Algoritam zatim prolazi kroz proizvode tim redoslijedom. Za svaki proizvod uzima se najveći mogući dio koji još može stati u preostali kapacitet ruksaka. Ako proizvod može stati u cijelosti, postavlja se $c_i=1$. U suprotnom, uzima se upravo onaj dio koji popunjava preostali kapacitet: $c_i=  \frac{\text{preostali\_kapacitet}}{w_i}.$  Nakon toga je ruksak popunjen i algoritam se završava.
 	
 	\medskip
 	
-	Pohlepni algoritam za razlomljeni problem ruksaka ima vremensku složenost $O(n\log n)$, koja potiče od sortiranja proizvoda prema omjeru $\frac{p_i}{w_i}$. Za razliku od klasičnog problema ruksaka, kod ove relaksirane varijante može se dokazati da opisani pohlepni pristup uvijek daje optimalno rješenje.
+	Pohlepni algoritam za razlomljeni problem ruksaka ima vremensku složenost $O(n\log n)$, koja potiče od sortiranja proizvoda (prema omjeru $\frac{p_i}{w_i}$). Za razliku od klasičnog problema ruksaka, kod ove relaksirane varijante može se dokazati da opisani pohlepni pristup uvijek daje optimalno rješenje.
 \end{solution}
 
 
@@ -1526,9 +1515,8 @@ Implementacija algoritma ovog problema  je data u nastavku.
   	products.sort(key = fraction, reverse=True)
   	#print(products)
   	current_C = C
-  	sol = []
-  	parts = []
-  
+  	sol, parts = [], []
+
   	for i in products:
   
   		part = min(current_C / W[i], 1)
@@ -1549,18 +1537,13 @@ Implementacija algoritma ovog problema  je data u nastavku.
   
    \end{minted}
 
-\textit{Kompleksnost algoritma}.  Najviše vremena je utrošeno na sortiranje proi\-zvoda, što iznosi $O(n \log n)$ vremena. Dalje, u glavnoj petlji, koja se vrti najviše $n$ puta,  svaka iteracija se izvršava u konstantnom vremenu. Dakle, vrijeme izvršavanja petlje je $O(n)$. Prema tome, algoritam se izvršava u $O(n \log n)$ vremenu. Napomenimo da ovaj algoritam takođe garantuje nalazak optimalnog rješenja, što se formalno može i pokazati. 
+\textit{Kompleksnost algoritma}.  Najviše vremena je utrošeno na sortiranje proi\-zvoda, što iznosi $O(n \log n)$ vremena. Dalje, u glavnoj petlji, koja se vrti najviše $n$ puta,  svaka iteracija se izvršava u konstantnom vremenu. Dakle, vrijeme izvršavanja petlje je $O(n)$. Prema tome, algoritam se izvršava u $O(n \log n)$ vremenu. %Napomenimo da ovaj algoritam takođe garantuje nalazak optimalnog rješenja, što se formalno može i pokazati. 
 \end{solution}
 
 
 \begin{example}
-	(\textbf{\emph{Problem pokrivanja skupa}}).
-	
-	Neka je dat konačan skup $X$ i familija njegovih podskupova
-	$\mathcal{F}\subseteq P(X)$, pri čemu važi 	$\bigcup_{F\in \mathcal{F}} F = X.$
-	
-	Potrebno je pronaći podfamiliju $S\subseteq \mathcal{F}$ minimalne kardinalnosti takvu da vrijedi $
-	\bigcup_{A\in S} A = X.$
+	(\textbf{\emph{Problem pokrivanja skupa}}). 	Neka je dat konačan skup $X$ i familija njegovih podskupova
+	$\mathcal{F}\subseteq P(X)$, pri čemu važi 	$\bigcup_{F\in \mathcal{F}} F = X.$ Potrebno je pronaći podfamiliju $S\subseteq \mathcal{F}$ minimalne kardinalnosti takvu da vrijedi $\bigcup_{A\in S} A = X.$ \\
 	
 	Drugim riječima, cilj je odabrati što manji broj skupova iz familije $\mathcal{F}$ tako da njihova unija pokrije sve elemente skupa $X$. Problem riješiti primjenom pohlepnog pristupa.
 \end{example}
@@ -1588,8 +1571,7 @@ Implementacija algoritma ovog problema  je data u nastavku.
 	
 	\medskip
 	
-	\textit{Struktura rješenja.}	Rješenje problema predstavlja podfamilija skupova $
-	S\subseteq \mathcal{F}$	takva da njihova unija pokriva sve elemente skupa $X$.
+	\textit{Struktura rješenja.}	Rješenje problema je predstavljeno podfamilijom skupova $S\subseteq \mathcal{F}$	takva da njihova unija pokriva sve elemente skupa $X$.
 	
 	\medskip
 	
@@ -1602,14 +1584,14 @@ Implementacija algoritma ovog problema  je data u nastavku.
 	
 	\textit{Pohlepna funkcija.}	Neka trenutno parcijalno rješenje $S$ pokriva skup elemenata $ X_S= \bigcup_{A\in S} A.$	Preostali nepokriveni elementi dati su skupom $
 	X\setminus X_S.
-	$   Intuitivno, najbolji izbor u datom koraku jeste skup koji pokriva najveći broj trenutno nepokrivenih elemenata. Zbog toga definišemo pohlepnu funkciju 	$ g(S,C)= \left| C\cap (X\setminus X_S) \right|,$
+	$   Intuitivno, najbolji izbor u datom koraku jeste skup koji pokriva najveći broj trenutno nepokrivenih elemenata. Zbog toga definišemo pohlepnu funkciju 	$$ g(S,C)= \left| C\cap (X\setminus X_S) \right|,$$
  koja mjeri broj novih elemenata koje skup $C$ doprinosi trenutnom rješenju.	U svakoj iteraciji bira se skup $ C^* = \arg\max_{C\in \mathcal{F}\setminus S}
 	g(S,C),
 	$ odnosno skup koji pokriva najveći broj još nepokrivenih elemenata.
 	
 	\medskip
 	
-	Pohlepni algoritam započinje praznim rješenjem $S=\emptyset$. U svakoj iteraciji bira skup $C^*$ koji maksimizuje funkciju $g$, dodaje ga u rješenje i ažurira skup pokrivenih elemenata. Postupak se ponavlja sve dok svi elementi skupa $X$ ne budu pokriveni.  Važno je naglasiti da opisani pohlepni algoritam ne garantuje uvijek optimalno rješenje. Ipak, zbog svoje jednostavnosti i efikasnosti veoma je često korišten u praksi i predstavlja jednu od najpoznatijih aproksimativnih metoda za problem pokrivanja skupa.
+	Pohlepni algoritam započinje praznim rješenjem $S=\emptyset$. U svakoj iteraciji bira skup $C^*$ koji maksimizuje funkciju $g$, dodaje ga u rješenje i ažurira skup pokrivenih elemenata. Postupak se ponavlja sve dok svi elementi skupa $X$ ne budu pokriveni ili ne postoji više skupova koji se mogu dodati u rješenje.  Važno je naglasiti da opisani pohlepni algoritam ne garantuje uvijek optimalno rješenje. Ipak, zbog svoje jednostavnosti i efikasnosti veoma je često korišten u praksi i predstavlja jednu od najpoznatijih aproksimativnih metoda za problem pokrivanja skupa.
 	
 	Radi efikasnije implementacije, umjesto samih skupova u rješenju se čuvaju odgovarajući indeksi unutar familije $\mathcal{F}$.
 \end{solution}
@@ -1619,6 +1601,7 @@ Implementacija algoritma  je data u nastavku sljedećim k\^odom.
 \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
 	def g(X_S, C):
 		return len((X.difference(X_S)).intersection(C))
+	
 	def cover_X():
 		X_S = set(())
 		S = [] # solution
@@ -1633,7 +1616,6 @@ Implementacija algoritma  je data u nastavku sljedećim k\^odom.
 					if g_best < g_i:
 						g_best = g_i
 						i_star = i
-	
 			X_S = X_S.union(F[i_star]) #update cover
 			S.append(i_star)
 		return  S            
@@ -1650,10 +1632,7 @@ Implementacija algoritma  je data u nastavku sljedećim k\^odom.
 
 \textit{Vremenska složenost}. Glavna \texttt{while}-petlja izvršava najviše $n$ iteracija. U unutrašnjoj \texttt{for}-petlji, koja se izvršava  $ |\mathcal{F}|$ puta, najskuplja operacija je poziv pohlepne funkcije \textit{g}, koja se izvršava u linearnom vremenu, tj. u $O(n)$. Dakle, kompleksnost čitave \texttt{for} petlje je $O(n \cdot  |\mathcal{F} |)$. Zajedno, kompleksnost algoritma je $O(n^2 \cdot  |\mathcal{F} |)$. Na osnovu dobijenog, zaključujemo da efikasnost algoritma najviše zavisi od veličine skupa $\mathcal{F}$. 
 
-Napomenimo da ovako dizajniran algoritam ne garantuje nalazak opti\-malnog rješenja  kao u prethodna dva problema. 
-
-
-  Uzmimo npr. instancu $X= \{1, 2, 3, 4, 5, 6\}$, te $$\mathcal{F}= \{\{1,2\}, \{3, 4\}, \{4, 5\}, \{3, 6\}, \{5\}, \{6\} \}.$$   
+Napomenimo da ovako dizajniran algoritam ne garantuje nalazak opti\-malnog rješenja  kao u prethodna dva problema. Uzmimo npr. instancu $X= \{1, 2, 3, 4, 5, 6\}$, te $$\mathcal{F}= \{\{1,2\}, \{3, 4\}, \{4, 5\}, \{3, 6\}, \{5\}, \{6\} \}.$$   
   Prva iteracija u algoritmu će odabrati, prvi skup $\{1, 2\}$ i dodati ga u parcijalno rješenje. Naredna iteracija odabire skup $\{3, 4\}$. Nakon toga, bira se $\{4, 5\}$, pa $\{6\}$. Dakle, dobijeno rješenje je kardinalnosti 4. Međutim, ono očigledno ne predstavlja optimalno rječenje. 
   
   Optimalno rješenje je veličine 3 i dato je sa $\{ \{1, 2\}, \{3, 6\}, \{4,5\}\}$.  
@@ -1663,11 +1642,10 @@ Napomenimo da ovako dizajniran algoritam ne garantuje nalazak opti\-malnog rješ
 \begin{example}
 	(\textbf{\emph{Problem sekvencijalnog raspoređivanja poslova}}).
 	
-	Dat je skup poslova, pri čemu je za svaki posao poznat krajnji rok izvršavanja (\emph{deadline}) i profit koji se ostvaruje ukoliko posao bude završen najkasnije do tog roka. Pretpostavimo da je za izvršavanje svakog posla potrebno tačno jedna jedinica vremena, te da svi poslovi mogu započeti od trenutka $t=0$.
+	Dat je skup poslova, pri čemu je za svaki posao poznat krajnji rok izvršavanja (eng. \emph{deadline}) i profit koji se ostvaruje ukoliko posao bude završen najkasnije do tog roka. Pretpostavimo da je za izvršavanje svakog posla potrebno tačno jedna jedinica vremena, te da svi poslovi mogu započeti od trenutka $t=0$.\\ 
+
 	
-	Potrebno je odabrati podskup poslova i odrediti njihov raspored izvršavanja tako da ukupan ostvareni profit bude maksimalan. Pri tome vrijedi ograničenje da se u svakoj jedinici vremena može izvršavati najviše jedan posao. 
-	
-	Problem riješiti primjenom paradigme pohlepnih algoritama.
+	Potrebno je odabrati podskup poslova i odrediti njihov raspored izvršavanja tako da ukupan ostvareni profit bude maksimalan. Pri tome vrijedi ograničenje da se u svakoj jedinici vremena može izvršavati najviše jedan posao.	Problem riješiti primjenom paradigme pohlepnih algoritama.
 \end{example}
 
 \begin{solution}
@@ -1719,16 +1697,14 @@ Napomenimo da ovako dizajniran algoritam ne garantuje nalazak opti\-malnog rješ
 	\medskip
 	
 	\textit{Parcijalno rješenje i njegovo proširenje.}
-	Parcijalno rješenje predstavlja bilo koji dopustiv raspored dijela poslova. Komponente koje mogu proširiti parcijalno rješenje jesu poslovi koji još nisu raspoređeni, a koji se mogu dodati bez narušavanja ograničenja problema.
-	
-	Proširenje parcijalnog rješenja podrazumijeva dodavanje novog posla u neki slobodan vremenski interval tako da njegov krajnji rok ostane zadovoljen.
+	Parcijalno rješenje predstavlja bilo koji dopustiv raspored dijela poslova. Komponente koje mogu proširiti parcijalno rješenje jesu poslovi koji još nisu raspoređeni, a koji se mogu dodati bez narušavanja ograničenja problema. 	Proširenje parcijalnog rješenja podrazumijeva dodavanje novog posla u neki slobodan vremenski interval tako da njegov krajnji rok ostane zadovoljen. Recimo, slobodan vremenski interval bi mogao biti onaj koji je najkasniji mogući a ne narušava ni krajnji rok izvršavanja konkretnog posla, niti postoji konflikt između poslova koji bi se simultano izvršavali u istom vremenskom intervalu. 
 	
 	\medskip
 	
 	\textit{Pohlepna funkcija.}
-	Intuitivno je razumno dati prednost poslovima koji donose veći profit. Zbog toga se poslovi najprije sortiraju po profitu u opadajućem poretku.
+	Intuitivno je razumno dati prednost poslovima koji donose veći profit. Zbog toga se poslovi najprije sortiraju po profitu u opadajućem poretku.\\
 	
-	Neka je trenutno parcijalno rješenje označeno sa $I_s$. U svakoj iteraciji bira se neraspoređeni posao sa najvećim profitom. Ukoliko je moguće pronaći slobodan vremenski interval prije njegovog krajnjeg roka, posao se dodaje u raspored. U suprotnom, posao se odbacuje i razmatra se naredni posao iz sortirane liste.  Da bi se ostavilo što više prostora za buduće poslove, odabrani posao se smješta u \textit{posljednji} slobodan vremenski interval koji ne prelazi njegov krajnji rok.
+	Neka je trenutno parcijalno rješenje označeno sa $I_s$. U svakoj iteraciji bira se neraspoređeni posao sa najvećim profitom. Ukoliko je moguće pronaći  slobodan vremenski interval prije krajnjeg roka, posao se dodaje u raspored. U suprotnom, posao se odbacuje i razmatra se naredni posao iz sortirane liste.  Da bi se ostavilo što više prostora za buduće poslove, odabrani posao se smiješta u \textit{posljednji} (najkasniji) slobodan vremenski interval koji ne prelazi njegov krajnji rok.
 	
 	\medskip
 	
@@ -1736,9 +1712,9 @@ Napomenimo da ovako dizajniran algoritam ne garantuje nalazak opti\-malnog rješ
 	
 	\begin{enumerate}
 		\item Sortirati poslove po profitu u opadajućem poretku.
-		\item Za svaki posao redom pokušati pronaći posljednji slobodan vremenski interval prije njegovog krajnjeg roka.
+		\item Poštujući redoslijed sortiranja, idući od posla do posla, pronaći  (najkasniji) slobodan vremenski interval prije krajnjeg roka.
 		\item Ako takav interval postoji, posao rasporediti u njega.
-		\item U suprotnom, posao odbaciti.
+		\item U suprotnom, posao odbaciti i preći na drugi.
 		\item Nakon razmatranja svih poslova vratiti dobijeni raspored.
 	\end{enumerate}
 	
@@ -1761,7 +1737,7 @@ Implementacija algoritma je data sljedećim k\^odom.
  		if rev_index > Deadline[i]:
  			return continue
  		if covered == False:
- 			return index
+ 			return rev_index
  	return -1       
  
  def sequnetial_scheduling():
