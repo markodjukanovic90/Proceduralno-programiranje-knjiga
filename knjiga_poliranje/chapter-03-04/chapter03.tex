@@ -1866,19 +1866,19 @@ Da zaključimo, princip dinamičkog programiranja ima smisla koristiti gdje god 
 
 \subsection{Rekurzija naspram dinamičkog programiranja}
 
-Dinamičko programiranje se najčešće primjenjuje na probleme koji se prirodno mogu formulirati rekurzivno. U velikom broju optimizacionih problema prvi korak jeste definisanje odgovarajuće rekurzivne relacije, dok se dinamičko programiranje koristi za njenu efikasnu implementaciju.
+Dinamičko programiranje se najčešće primjenjuje na probleme koji se prirodno mogu formulisati rekurzivno. U velikom broju optimizacionih problema prvi korak jeste definisanje odgovarajuće rekurzivne relacije, dok se dinamičko programiranje koristi za njenu efikasnu implementaciju.
 
 Međutim, nije svaki rekurzivni algoritam pogodan za primjenu dinamičkog programiranja. Ključni uslov jeste postojanje \textit{preklapajućih podproblema}. Ukoliko se isti podproblem pojavljuje više puta tokom izvršavanja algoritma, tada ima smisla sačuvati njegovo rješenje i koristiti ga pri narednim pozivima.
 
 Tipičan primjer takve situacije jeste rekurzivno računanje Fibonačijevih brojeva. Na primjer, pri izračunavanju vrijednosti $F(6)$ podproblem $F(4)$ se pojavljuje više puta, pa njegovo ponovno računanje predstavlja nepotreban trošak. Dinamičko programiranje eliminiše ovakva višestruka izračunavanja pohranjivanjem već dobijenih rezultata.
 
-Sa druge strane, postoje rekurzivni algoritmi kod kojih se podproblemi ne preklapaju. U takvim slučajevima dinamičko programiranje ne donosi značajno ubrzanje. Primjer je algoritam \emph{sortiranja spajanjem} (\emph{merge sort}), koji niz dijeli na dva disjunktna podniza. Svaki podproblem se rješava tačno jednom, pa nema potrebe za memorisanjem međurezultata.
+Sa druge strane, postoje rekurzivni algoritmi kod kojih se podproblemi ne preklapaju. U takvim slučajevima dinamičko programiranje ne donosi značajno ubrzanje. Primjer je algoritam \emph{sortiranja spajanjem} (tzv. \emph{merge sort}), koji niz dijeli na dva disjunktna podniza. Svaki podproblem se rješava tačno jednom, pa nema potrebe za memorisanjem međurezultata.
 
 Možemo zaključiti da je dinamičko programiranje najkorisnije kada su ispunjena dva uslova:
 
 \begin{itemize}
 	\item problem posjeduje optimalnu podstrukturu;
-	\item tokom rješavanja dolazi do ponavljanja istih podproblema.
+	\item tokom rješavanja dolazi do ponavljanja rješavanja istih podproblema.
 \end{itemize}
 
 U suprotnom, klasična rekurzija ili paradigma \emph{podijeli pa zavladaj} često predstavljaju prikladnije rješenje.
@@ -1892,12 +1892,12 @@ U suprotnom, klasična rekurzija ili paradigma \emph{podijeli pa zavladaj} čest
 		\item jedno polje dijagonalno prema dolje-desno.
 	\end{itemize}
 	
-	Odrediti putanju od početne pozicije do bilo kojeg polja u posljednjem redu matrice tako da suma vrijednosti gledajući sva posjećena polja bude maksimalna.
+	Odrediti putanju od početne pozicije do nekog polja u posljednjem redu matrice tako da suma vrijednosti na svim posjećenim poljima bude maksimalna.
 	
 \end{example}
 
 \begin{solution}
-	Na Slici~\ref{fig:pijun-putanja} prikazan je primjer jedne dopustive putanje pijuna.
+	Na Slici~\ref{fig:pijun-putanja} prikazan je primjer jedne dopustive putanje kretanja pijuna.
 	
 	\begin{figure}[H]
 		\centering
@@ -1935,9 +1935,7 @@ U suprotnom, klasična rekurzija ili paradigma \emph{podijeli pa zavladaj} čest
 		\max_{0 \leq j < n} M(n-1,j),
 	\end{equation}
 	
-	odnosno kao najveća vrijednost u posljednjem redu matrice $M$.
-	
-	Na ovaj način svaki podproblem rješava se tačno jednom, pa je vremenska složenost algoritma jednaka $O(n^2)$, dok je potrebni memorijski prostor takođe $O(n^2)$.
+	odnosno kao najveća vrijednost u posljednjem redu matrice $M$.  Na ovaj način svaki podproblem rješava se tačno jednom, pa je vremenska složenost algoritma jednaka $O(n^2)$, dok je potrebni memorijski prostor takođe $O(n^2)$.
 	
 \end{solution}
 
@@ -1991,29 +1989,25 @@ Implementacija ovog rješenje je data sljedećim k\^odom (pristup odozgo prema d
 
 \begin{solution}
 	
-	Posmatrajmo klasični problem ruksaka ($0$--$1$ ruksak). Neka je dato $n$ proizvoda, pri čemu proizvod $i$ ima težinu $w_i$ i vrijednost $p_i$, za $i=1,\ldots,n$. Kapacitet ruksaka iznosi $C$.
+	Posmatrajmo klasični problem ruksaka ($0$--$1$ ruksak). Ponovimo, neka je dato $n$ proizvoda, pri čemu proizvod $i$ ima težinu $w_i$ sa vrijednosti $p_i$,  $i=1,\ldots,n$. Kapacitet ruksaka iznosi $C$.
 	
 	\medskip
 	
-	\textit{Definisanje podproblema.} Neka $DP[i][j]$ predstavlja maksimalnu vrijednost koju je moguće ostvariti korištenjem prvih $i$ proizvoda, pri čemu je raspoloživi kapacitet ruksaka jednak $j$.
-	
-	Dakle, podproblem je određen parom indeksa $
+	\textit{Definisanje podproblema.} Neka $\textrm{DP}[i][j]$ čuva optimalnu vrijednost koju je moguće ostvariti korištenjem prvih $i$ proizvoda, za raspoloživi kapacitet ruksaka jednak $j$.  Dakle, podproblem je određen parom indeksa $
 	(i,j), 
 	i \in \{0,1,\ldots,n\}, 
 	j \in \{0,1,\ldots,C\}.$
 	
 	\medskip
 	
-	\textit{Rekurzivna relacija.} Posmatrajmo podproblem $(i,j)$.
-	
-	Postoje dva moguća slučaja:
+	\textit{Rekurzivna relacija.} Posmatrajmo podproblem $(i,j)$.	Postoje dva moguća slučaja:
 	
 	\begin{enumerate}
 		\item Proizvod $i$ ne ulazi u optimalno rješenje. Tada je
-	    $  DP[i][j] = DP[i-1][j].$
+	    $  \textrm{DP}[i][j] = \textrm{DP}[i-1][j].$
 		\item Proizvod $i$ ulazi u optimalno rješenje. To je moguće samo ako je njegova težina manja ili jednaka raspoloživom kapacitetu, odnosno ako važi $w_i \leq j$. U tom slučaju ostvarujemo vrijednost $p_i$, a preostali kapacitet postaje $j-w_i$. Tada je
 		$$
-		DP[i][j] = DP[i-1][j-w_i] + p_i.
+		\textrm{DP}[i][j] =\max\{ \textrm{DP}[i-1][j-w_i] + p_i, \textrm{DP}[i-1][j] \}.
 		$$
 		
 	\end{enumerate}
@@ -2021,31 +2015,27 @@ Implementacija ovog rješenje je data sljedećim k\^odom (pristup odozgo prema d
 	Birajući bolje od ova dva rješenja, dobijamo rekurzivnu relaciju:
 	
 	$$
-	DP[i][j] =
+	\textrm{DP}[i][j] =
 	\begin{cases}
-		\max\bigl(DP[i-1][j],, DP[i-1][j-w_i] + p_i\bigr),
+		\max\bigl(\textrm{DP}[i-1][j],\textrm{DP}[i-1][j-w_i] + p_i\bigr),
 		& \text{ako } w_i \leq j, \\
-		DP[i-1][j],
+		\textrm{DP}[i-1][j],
 		& \text{ako } w_i > j.
 	\end{cases}
 	$$
 	\medskip
 	
 	\textit{Bazni slučajevi.} Ako je kapacitet ruksaka jednak nuli, nijedan proizvod ne može biti odabran, pa vrijedi $
-	DP[i][0]=0,
-	\qquad i=0,\ldots,n.
-	$
-	
-	Takođe, ako ne razmatramo nijedan proizvod, maksimalna ostvariva vrijednost jednaka je nuli bez obzira na kapacitet: $DP[0][j]=0, j=0,\ldots,C.$
+	\textrm{DP}[i][0]=0, i=0,\ldots,n.$  Takođe, ako ne razmatramo nijedan proizvod, maksimalna ostvariva vrijednost jednaka je nuli bez obzira na kapacitet: $\textrm{DP}[0][j]=0, j=0,\ldots,C.$
 	
 	\medskip
 	
-	\textit{Konačno rješenje.}	Nakon popunjavanja matrice $DP$, optimalna vrijednost problema nalazi se u ćeliji $
-	DP[n][C].$	Drugim riječima, ona predstavlja najveću moguću vrijednost koju možemo smjestiti u ruksak kapaciteta $C$ koristeći svih $n$ proizvoda.
+	\textit{Konačno rješenje.}	Nakon popunjavanja matrice $\textrm{DP}$, optimalna vrijednost problema nalazi se u ćeliji $
+	\textrm{DP}[n][C].$	Drugim riječima, ona predstavlja najveću moguću vrijednost koju možemo smjestiti u ruksak kapaciteta $C$ razmatrajući svih $n$ proizvoda.
 	
 	\medskip
 	
-	\textit{Složenost algoritma.}  Matrica $DP$ sadrži $(n+1)(C+1)$ elemenata, a svaka ćelija se računa u konstantnom vremenu. Zbog toga je vremenska složenost algoritma $ O(nC),$ dok je prostorna složenost takođe $O(nC).$
+	\textit{Složenost algoritma.}  Matrica $\textrm{DP}$ sadrži $(n+1)(C+1)$ elemenata, a svaka ćelija se računa u konstantnom vremenu. Zbog toga je vremenska složenost algoritma $ O(n \cdot C),$ dok je prostorna složenost takođe $O(n \cdot C).$
 	
 \end{solution}
   \\
@@ -2063,10 +2053,10 @@ Implementacija ovog rješenje je data sljedećim k\^odom (pristup odozgo prema d
 	 				DP[i][j] = 0
 	 			elif W[i-1] <= j:
 	 				DP[i][j] = max(p[i-1]
-	 				         + DP[i-1][j-W[i-1]],
-	 				         DP[i-1][j])
+	 				       +DP[i-1][j-W[i-1]],
+	 				        DP[i-1][j])
 	 			else:
-	 				DP[i][j] = DP[i-1][j]
+	 				DP[i][j] = {DP}[i-1][j]
 	 
 	 	return DP[n][C]
 	 
@@ -2086,11 +2076,11 @@ Navedimo sada primjer konkretne instance problema i način popunjavanja DP tabel
 
 Neka je broj proizvoda $n=4$, kapacitet ruksaka $C=5$, a težine i vrijednosti proizvoda date nizovima $W=(2,3,4,5), P=(3,4,5,6).$
 
-Formiramo matricu $DP$ dimenzija $(n+1)\times(C+1)$, pri čemu vrijednost $DP[i][j]$ predstavlja maksimalnu vrijednost koju je moguće ostvariti korištenjem prvih $i$ proizvoda i ruksaka kapaciteta $j$.
+Formiramo matricu $\textrm{DP}$ dimenzija $(n+1)\times(C+1)$, pri čemu vrijednost $\textrm{DP}[i][j]$ predstavlja maksimalnu vrijednost koju je moguće ostvariti korištenjem prvih $i$ proizvoda i ruksaka kapaciteta $j$.
 
 \medskip
 
-Prvi korak sastoji se od inicijalizacije baznih slučajeva. Kako ruksak kapaciteta $0$ ne može sadržavati nijedan proizvod, vrijedi $DP[i][0]=0$ za sve $i$. Takođe, ako ne razmatramo nijedan proizvod, ostvarena vrijednost je jednaka nuli, pa vrijedi $DP[0][j]=0$ za sve $j$. Dobijamo početnu tabelu:
+Prvi korak sastoji se od inicijalizacije baznih slučajeva. Kako ruksak kapaciteta $0$ ne može sadržavati nijedan proizvod, vrijedi $\textrm{DP}[i][0]=0$ za sve $i$. Takođe, ako ne razmatramo nijedan proizvod, ostvarena vrijednost je jednaka nuli, pa vrijedi $\textrm{DP}[0][j]=0$ za sve $j$. Dobijamo početnu tabelu:
 
 \begin{table}[H]
 	\centering
@@ -2136,14 +2126,14 @@ Dalje popunjavamo treću vrstu ($i=2$), pri čemu su na raspolaganju prva dva pr
 	\end{tabular}
 \end{table}
 
-Razmotrimo ćeliju $DP[2][4]$. Postoje dvije mogućnosti:
+Razmotrimo ćeliju $\textrm{DP}[2][4]$. Postoje dvije mogućnosti:
 
 \begin{itemize}
-	\item ne uzimamo drugi proizvod, pa je vrijednost jednaka $DP[1][4]=3$;
-	\item uzimamo drugi proizvod, pa preostaje kapacitet $4-3=1$, odnosno dobijamo vrijednost $DP[1][1]+4=0+4=4.$
+	\item ne uzimamo drugi proizvod, pa je vrijednost jednaka $\textrm{DP}[1][4]=3$;
+	\item uzimamo drugi proizvod, pa preostaje kapacitet $4-3=1$, odnosno dobijamo vrijednost $\textrm{DP}[1][1]+4=0+4=4.$
 \end{itemize}
 
-Prema tome, $DP[2][4]=\max{3,4}=4.$ Vrijednost $DP[2][5]=7$ dobija se uzimanjem oba proizvoda, jer vrijedi $DP[1][2]+4 = 3+4 = 7.$
+Prema tome, $\textrm{DP}[2][4]=\max\{3,4\}=4.$ Vrijednost $\textrm{DP}[2][5]=7$ dobija se uzimanjem oba proizvoda, jer vrijedi $\textrm{DP}[1][2]+4 = 3+4 = 7.$
 
 \medskip
 
@@ -2161,7 +2151,7 @@ Popunjavanjem četvrte vrste ($i=3$) dobijamo:
 	\end{tabular}
 \end{table}
 
-Na primjer, za ćeliju $DP[3][4]$ imamo $DP[2][4]=4$ ako ne uzmemo treći proizvod, odnosno $DP[2][0]+5=5$ ako ga uzmemo. Zato je $DP[3][4]=\max{4,5}=5.$
+Na primjer, za ćeliju $\textrm{DP}[3][4]$ imamo $\textrm{DP}[2][4]=4$ ako ne uzmemo treći proizvod, odnosno $\textrm{DP}[2][0]+5=5$ ako ga uzmemo. Zato je $\textrm{DP}[3][4]=\max{4,5}=5.$
 
 \medskip
 
@@ -2179,14 +2169,9 @@ Konačno, nakon obrade četvrtog proizvoda dobijamo završnu tabelu:
 	\end{tabular}
 \end{table}
 
-Posmatrajmo ćeliju $DP[4][5]$. Ako ne uzmemo četvrti proizvod, vrijednost je $ DP[3][5]=7.$
+Posmatrajmo ćeliju $\textrm{DP}[4][5]$. Ako ne uzmemo četvrti proizvod, vrijednost je $ \textrm{DP}[3][5]=7.$ Ako ga uzmemo, dobijamo $\textrm{DP}[3][0]+6=6.$ Stoga je $ \textrm{DP}[4][5]=\max\{7,6\}=7.$
 
-Ako ga uzmemo, dobijamo $DP[3][0]+6=6.
-$ Stoga je $ DP[4][5]=\max{7,6}=7.$
-
-Kako se optimalna vrijednost problema nalazi u ćeliji $DP[n][C]$, zaključujemo da je optimalna vrijednost za posmatranu instancu jednaka $DP[4][5]=7.$
-
-Ona se ostvaruje odabirom prvog i drugog proizvoda, čija je ukupna težina $2+3=5$, a ukupna vrijednost $3+4=7$.
+Kako se optimalna vrijednost problema nalazi u ćeliji $\textrm{DP}[n][C]$, zaključujemo da je optimalna vrijednost za posmatranu instancu jednaka $\textrm{DP}[4][5]=7.$  Ona se ostvaruje odabirom prvog i drugog proizvoda, čija je ukupna težina $2+3=5$, a ukupna vrijednost $3+4=7$.
 
  \begin{definition}
  	String $s$ je podniz stringa $s_1$ akko se $s$ može dobiti brisanjem (nula ili više)
@@ -2209,9 +2194,7 @@ Ona se ostvaruje odabirom prvog i drugog proizvoda, čija je ukupna težina $2+3
 	Definišimo podproblem parom indeksa $(i,j)$, gdje je
 	$0 \leq i \leq |s_1|, 0 \leq j \leq |s_2|.
 	$ 
-	Podproblem označen parom $(i,j)$ odgovara određivanju dužine najdužeg zajedničkog podniza prefiksa stringa $s_1$ dužine $i$ i prefiksa stringa $s_2$ dužine $j$.
-	
-	Rješenja podproblema memorišemo u matrici $DP$, pri čemu vrijednost $DP[i][j]$ predstavlja dužinu najdužeg zajedničkog podniza pomenutih prefiksa.
+	Podproblem označen parom $(i,j)$ odgovara određivanju dužine najdužeg zajedničkog podniza između prefiksa od $s_1$ dužine $i$ i prefiksa od $s_2$ dužine $j$.  Rješenja podproblema memorišemo u matrici $\textrm{DP}$, pri čemu vrijednost $\textrm{DP}[i][j]$ predstavlja dužinu najdužeg zajedničkog podniza pomenutih prefiksa.
 	
 	\medskip
 	
@@ -2220,41 +2203,39 @@ Ona se ostvaruje odabirom prvog i drugog proizvoda, čija je ukupna težina $2+3
 	\begin{itemize}
 		\item Ako je
 		$s_1[i-1]=s_2[j-1],$
-		tada taj karakter može biti dio optimalnog rješenja. Optimalni podniz podproblema $(i,j)$ dobija se proširivanjem optimalnog rješenja podproblema $(i-1,j-1)$ za jedan karakter. Stoga vrijedi $DP[i][j]=DP[i-1][j-1]+1.$
+		tada taj karakter može biti dio optimalnog rješenja. Optimalni podniz podproblema $(i,j)$ dobija se proširivanjem optimalnog rješenja podproblema $(i-1,j-1)$ za jedan karakter. Stoga vrijedi $\textrm{DP}[i][j]=\textrm{DP}[i-1][j-1]+1.$
 		
 		\item Ako je $ s_1[i-1]\neq s_2[j-1],$
-		tada barem jedan od ta dva karaktera ne pripada optimalnom rješenju. Zbog toga razmatramo dva podproblema 
+		tada barem jedan od ta dva karaktera neće generisati optimalno rješenje. Zbog toga razmatramo dva podproblema 
 		$ (i-1,j)$ i
 		$(i,j-1)$,
 		odnosno izostavljamo posljednji karakter prvog ili drugog prefiksa. Optimalna vrijednost dobija se izborom boljeg od ta dva podproblema:
-		$$ DP[i][j]
+		$$ \textrm{DP}[i][j]
 		=
-		\max\{DP[i-1][j],\,DP[i][j-1]\}.
+		\max\{\textrm{DP}[i-1][j],\,\textrm{DP}[i][j-1]\}.
 		$$
 	\end{itemize}
 	
 	Prema tome, rekurzija ima oblik
 	
 	$
-	DP[i][j]=
+	\textrm{DP}[i][j]=
 	\begin{cases}
-		DP[i-1][j-1]+1, & \text{ako je } s_1[i-1]=s_2[j-1], \\
-		\max\{DP[i-1][j],DP[i][j-1]\}, & \text{inače}.
+		\textrm{DP}[i-1][j-1]+1, & \text{ako je } s_1[i-1]=s_2[j-1], \\
+		\max\{\textrm{DP}[i-1][j],\textrm{DP}[i][j-1]\}, & \text{inače}.
 	\end{cases}
 	$
 	
 	\medskip
 	
-	\textit{Bazni slučajevi.} Ako je jedan od prefiksa prazan, tada zajednički podniz ne postoji, pa je njegova dužina jednaka nuli. Zbog toga vrijedi  $DP[i][0]=0,
+	\textit{Bazni slučajevi.} Ako je jedan od prefiksa prazan, tada zajednički podniz ne postoji, pa je njegova dužina jednaka nuli. Zbog toga vrijedi  $\textrm{DP}[i][0]=0,
 	  0\leq i\leq |s_1|,$ i $
-	DP[0][j]=0,
+	\textrm{DP}[0][j]=0,
 	0\leq j\leq |s_2|.$
 	
 	\medskip
 	
-	Nakon popunjavanja matrice $DP$, dužina najdužeg zajedničkog podniza nalazi se u ćeliji $DP[|s_1|][|s_2|].$
-	
-	Sam podniz može se rekonstruisati prolaskom unazad kroz matricu, počevši od pozicije $(|s_1|,|s_2|)$ i prateći odluke koje su dovele do optimalne vrijednosti.
+	Nakon popunjavanja matrice $\textrm{DP}$, dužina najdužeg zajedničkog podniza nalazi se u ćeliji $\textrm{DP}[|s_1|][|s_2|].$ Sam podniz može se rekonstruisati prolaskom unazad kroz matricu, počevši od pozicije $(|s_1|,|s_2|)$ i prateći odluke koje su dovele do optimalne vrijednosti.
 	
 \end{solution}
 
@@ -2270,12 +2251,11 @@ Ona se ostvaruje odabirom prvog i drugog proizvoda, čija je ukupna težina $2+3
 	    	  DP = [ [0]*(len(s2)+1) for _ in range(len(s1)+1)]
 	              for i in range(1, len(s1)+1):
 	    	      for j in range(1, len(s2)+1):
-	    		     if s1[i] == s2[i]: 
+	    		     if s1[i-1] == s2[j-1]: 
 	    		         DP[i][j] = DP[i-1][j-1] + 1
 	    		     else:
 	    		         DP[i][j] = max(DP[i-1][j], DP[i][j-1])
-	    		          
-	    	return DP[len(s1)][len(s2)]        
+	    	  return DP[len(s1)][len(s2)]        
 	    		           
 	    	      
 	     #instanca:
@@ -2287,7 +2267,7 @@ Ona se ostvaruje odabirom prvog i drugog proizvoda, čija je ukupna težina $2+3
  \end{minted}
 	     Primijetimo da implementacija koristi princip odozdo-nagore.
 	     
-	     \textit{Kompleksnost algoritma}. Dvije \texttt{for}-petlje  izvršavaju ukupno $O(|s_1|\cdot |s_2|)$ iteracija. Svaka od iteracija se izvršava u konstantnom vremenu, pa je shodno tome ukupno vrijeme izvršavanja algoritma jednako $O(|s_1| \cdot |s_2|)$. Ako je $n = \max\{|s_1|, |s_2|\}$, dobija se (kvadratna) $O(n^2)$ kompleksnost. 
+	     \textit{Kompleksnost algoritma}. Dvije \texttt{for}-petlje  izvršavaju ukupno $O(|s_1|\cdot |s_2|)$ iteracija. Svaka od iteracija se izvršava u konstantnom vremenu, pa je shodno tome ukupno vrijeme izvršavanja algoritma jednako $O(|s_1| \cdot |s_2|)$. Ako je $n = \max\{|s_1|, |s_2|\}$, dobija se kvadratna $O(n^2)$ kompleksnost. 
 	     
 	     %\begin{figure}[H]
 	     %	\centering
@@ -2311,14 +2291,13 @@ Ona se ostvaruje odabirom prvog i drugog proizvoda, čija je ukupna težina $2+3
       	  	6& \texttt{U}& 0& 1& 1& 2& 3& 3&  3  & 4                \\	
       	  	7& \texttt{Z}& 0& 1& 2& 2& 3& 3&  3  & 4                \\	 \hline \hline
      	  \end{tabular}
- 	 \caption{DP matrica za dva stringa $s_1=$\texttt{MZJAWXU} i $s_2=$\texttt{XMJYAUZ}. Rješenje je dužine 4 (pogledati donji desni ugao matrice). }  \label{tab:dp-lcs-example} 
+ 	 \caption{DP matrica za LCSP dva stringa $s_1=$\texttt{MZJAWXU} i $s_2=$\texttt{XMJYAUZ}. Rješenje je dužine 4 (pogledati donji desni ugao matrice). }  \label{tab:dp-lcs-example} 
  	\end{table}
 \end{solution}
 
 %https://www.programiz.com/dsa/longest-common-subsequence ==> primjer tabele sa rješenjem...
 
-\begin{example}
-	(\textit{Problem sume podskupa} -- \emph{Subset Sum Problem}). Neka je dat niz od $n$ nenegativnih cijelih brojeva i ciljna vrijednost \textit{sum}. Potrebno je odrediti da li postoji podskup elemenata datog niza čiji je zbir jednak vrijednosti \textit{sum}.
+\begin{example} \textbf{Problem sume podskupa} (eng. \emph{Subset Sum Problem}). Neka je dat niz od $n$ nenegativnih cijelih brojeva i ciljna vrijednost \textit{sum}. Potrebno je odrediti da li postoji podskup elemenata datog niza čiji je zbir jednak vrijednosti \textit{sum}.
 \end{example}
 
 \begin{solution}
@@ -2345,10 +2324,10 @@ Ona se ostvaruje odabirom prvog i drugog proizvoda, čija je ukupna težina $2+3
 		Da li među prvih $i$ elemenata niza postoji podskup čiji je zbir jednak $j$?
 	\end{quote}
 	
-	Rješenja podproblema memorišemo u matrici $DP$, gdje je
+	Rješenja podproblema memorišemo u matrici $\textrm{DP}$, gdje je
 	
 	$$
-	DP[i][j]=
+	\textrm{DP}[i][j]=
 	\begin{cases}
 		True, & \text{ako takav podskup postoji},\\
 		False, & \text{inače}.
@@ -2362,39 +2341,39 @@ Ona se ostvaruje odabirom prvog i drugog proizvoda, čija je ukupna težina $2+3
 	\begin{itemize}
 		\item {Element $niz[i-1]$ pripada rješenju.}
 		
-		U tom slučaju preostali elementi moraju formirati zbir $j-niz[i-1].$	Stoga vrijedi $DP[i][j] = DP[i-1][j-niz[i-1]],$
+		U tom slučaju preostali elementi moraju formirati zbir $j-niz[i-1].$	Stoga vrijedi $\textrm{DP}[i][j] = \textrm{DP}[i-1][j-niz[i-1]],$
 		pod uslovom da je $
 		j \geq niz[i-1].$
 		
 		\item {Element $niz[i-1]$ ne uzimamo u rješenje.} Tada se problem svodi na prvih $i-1$ elemenata:
-		$ DP[i][j] = DP[i-1][j].$
+		$ \textrm{DP}[i][j] = \textrm{DP}[i-1][j].$
 		
 	\end{itemize}
 	
 	Pošto je dovoljno da bude zadovoljen bilo koji od ova dva slučaja, dobijamo rekurziju
 	
 	$$
-	DP[i][j]=
-	DP[i-1][j] \vee DP[i-1][j-niz[i-1]],$$
-	ako je $j \geq niz[i-1].$	U suprotnom, element ne može biti dio rješenja pa vrijedi $DP[i][j] =	DP[i-1][j].$
+	\textrm{DP}[i][j]=
+	\textrm{DP}[i-1][j] \vee \textrm{DP}[i-1][j-niz[i-1]],$$
+	ako je $j \geq niz[i-1].$	U suprotnom, element ne može biti dio rješenja, pa vrijedi $\textrm{DP}[i][j] =	\textrm{DP}[i-1][j].$
 	
 	\medskip
 	
 	\textit{Bazni slučajevi.}  	Zbir $0$ uvijek možemo ostvariti izborom praznog podskupa, pa vrijedi $
-	DP[i][0]=True, 
-	0\leq i\leq n.$ 	S druge strane, ako ne raspolažemo niti jednim elementom, nijedan pozitivan zbir ne može biti formiran $ DP[0][j]=False, 1\leq j\leq sum.
+	\textrm{DP}[i][0]=True, 
+	0\leq i\leq n.$ 	S druge strane, ako ne raspolažemo niti jednim elementom, nijedan pozitivan zbir ne može biti formiran $ \textrm{DP}[0][j]=False, 1\leq j\leq sum.
 	$
 	
 	\medskip
 	
-	Nakon popunjavanja matrice $DP$, odgovor na početni problem nalazi se u ćeliji $DP[n][sum].$
+	Nakon popunjavanja matrice $\textrm{DP}$, odgovor na početni problem nalazi se u ćeliji $\textrm{DP}[n][sum].$
 	
 	Ako je vrijednost ove ćelije \textit{True}, postoji podskup čiji je zbir jednak zadanoj vrijednosti \textit{sum}; u suprotnom takav podskup ne postoji.
 	
 \end{solution}
 
    
-    Implementacija paradigme dinamičkog programiranja za rješavanje pro\-blema \emph{sume podskupa} je data narednim k\^odom. 
+    Implementacija paradigme dinamičkog programiranja za rješavanje Pro\-blema \emph{sume podskupa} je data narednim k\^odom. 
    
    \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
    	  def sum_array(niz, suma):
@@ -2422,7 +2401,7 @@ Ona se ostvaruje odabirom prvog i drugog proizvoda, čija je ukupna težina $2+3
 \end{solution}
 Primijetimo da smo dinamičko programiranje implementirali pomoću pristupa \textit{odozdo prema gore} (tabuliranje). 
 
-Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo prema dolje.
+Implementirajmo sada dinamičko programiranje za ovaj problem pristupom \textit{odozgo prema dolje}.
 
    \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
 	def init(niz, sum):
@@ -2433,7 +2412,7 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 	def sum_array_top_down(niz, sum, i, j, DP = [ ]):
 	
 		if DP[i][j] != -1:
-			return DP[i][j]
+			return \textrm{DP}[i][j]
 	
 		if j == 0:
 			DP[i][0] = True
@@ -2443,8 +2422,8 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 			return False
 		#recursion: 
 		if j >= niz[i-1]:
-			DP[i][j] = sum_array_top_down(niz, sum, i-1, j, DP) 
-	                or sum_array_top_down(niz, sum, i-1, j-niz[i-1], DP)
+			DP[i][j] = sum_array_top_down(niz, sum, i-1, j, DP) or
+			sum_array_top_down(niz, sum, i-1, j-niz[i-1], DP)
 			return DP[i][j]
 		else:
 			DP[i][j] = sum_array_top_down(niz, sum, i-1, j, DP)
@@ -2454,7 +2433,7 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 \textit{Kompleksnost algoritma}. Broj iteracija koje se izvršavaju je jednak $O(n \cdot sum)$. Svaka iteracija se izvršava u konstantnom vremenu, pa je i ukupna kompleksnost algoritma jednaka  $O(n \cdot sum)$. Dakle, ako je vrijednost \emph{sum} ogromna, ekponencijalno velika u odnosu na veličinu niza, ovakav algoritam će biti neefikasan. 
 
 \begin{example}
-	(\textit{Problem rezanja štapa}). Dat je štap dužine $n$ i niz cijena \textit{price}, pri čemu \textit{price}$[i-1]$ predstavlja cijenu štapa dužine $i$, za svako $1 \leq i \leq n$.
+	(\textit{Problem rezanja štapa}). Dat je štap dužine $n$ i niz cijena \textit{price}, pri čemu \textit{price}$[i-1]$ predstavlja cijenu štapa dužine $i$, za svako $1 \leq i \leq n$.\\ 
 	
 	Potrebno je odrediti način rezanja štapa na manje dijelove tako da ukupan ostvareni profit bude maksimalan.
 	
@@ -2466,7 +2445,7 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 	$$price = [1,5,8,9,10,17,17,20].$$ 
 	Pretpostavimo da je dužina štapa $n=4.$	Ako se štap ne reže, ostvaruje se profit jednak $9$. Međutim, ako ga podijelimo na dva dijela dužine $2$, dobijamo profit $
 	5+5=10,
-	$ što predstavlja optimalno rješenje za ovu instancu.
+	$ što predstavlja bolje (u ovom slučaju optimalno) rješenje za tu instancu.
 	
 	\medskip
 	
@@ -2474,7 +2453,7 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 	0 \leq i \leq n.
 	$
 	
-	Neka $DP[i]$ označava maksimalni profit koji se može ostvariti rezanjem štapa dužine $i$. Vrijednost $DP[i]$ memorišemo u nizu $DP$ na poziciji $i$.
+	Neka $\textrm{DP}[i]$ označava maksimalni profit koji se može ostvariti rezanjem štapa dužine $i$. Vrijednost $\textrm{DP}[i]$ memorišemo u nizu $\textrm{DP}$ na poziciji $i$.
 	
 	\medskip
 	
@@ -2482,33 +2461,33 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 	
 	\begin{itemize}
 		\item dio dužine $k$, čija je vrijednost $price[k-1]$;
-		\item preostali dio dužine $i-k$, čiji je optimalni profit jednak $DP[i-k]$.
+		\item preostali dio dužine $i-k$, čiji je optimalni profit jednak $\textrm{DP}[i-k]$.
 	\end{itemize}
 	
-	Za svaku moguću vrijednost $k$ dobijamo kandidatsko rješenje $price[k-1] + DP[i-k].$  Optimalna vrijednost za štap dužine $i$ dobija se izborom najboljeg među svim mogućim prvim rezovima:
+	Za svaku moguću vrijednost $k$ dobijamo kandidatsko rješenje $price[k-1] + \textrm{DP}[i-k].$  Optimalna vrijednost za štap dužine $i$ dobija se izborom najboljeg među svim mogućim prvim rezovima:
 	
 	$$
-	  DP[i] =
+	  \textrm{DP}[i] =
 	  \max_{1 \leq k \leq i}
 	  \left\{
-		price[k-1] + DP[i-k]
+		price[k-1] + \textrm{DP}[i-k]
 		\right\}.
 	$$
 	
 	\medskip
 	
-	\textit{Bazni slučaj.} Štap dužine $0$ nema vrijednost, pa vrijedi $DP[0]=0.$
+	\textit{Bazni slučaj.} Štap dužine $0$ nema vrijednost, pa vrijedi $\textrm{DP}[0]=0.$
 	
 	\medskip
 	
-	Nakon popunjavanja niza $DP$, optimalna vrijednost početnog problema nalazi se u ćeliji $
-	DP[n].$ 	Vrijednost $DP[n]$ predstavlja maksimalan profit koji se može ostvariti rezanjem štapa dužine $n$.
+	Nakon popunjavanja niza $\textrm{DP}$, optimalna vrijednost početnog problema nalazi se u ćeliji $
+	\textrm{DP}[n].$ 	Vrijednost $\textrm{DP}[n]$ predstavlja maksimalan profit koji se može ostvariti rezanjem štapa dužine $n$.
 	
 	\medskip
 	
 	\textit{Vremenska složenost.}	Za svaku dužinu $i$ razmatra se najviše $i$ mogućih pozicija prvog reza. Ukupan broj operacija jednak je $	\sum_{i=1}^{n} i =
 	\frac{n(n+1)}{2},
-	$  pa je vremenska složenost algoritma $O(n^2).$  Prostorna složenost iznosi $O(n),$ jer se koristi jednodimenzionalni niz $DP$ veličine $n+1$.
+	$  pa je vremenska složenost algoritma $O(n^2).$  Prostorna složenost iznosi $O(n),$ jer se koristi jednodimenzionalni niz $\textrm{DP}$ veličine $n+1$.
 	
 \end{solution}
 
@@ -2519,8 +2498,7 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom odozgo p
 	def stick_cut(d, price):
 
 		DP = [-1] * (d+1)  #init
-		DP[0] = 0
-		DP[1] = price[0]
+		DP[0], DP[1] = 0, price[0]
 
 		for i in range(2, d+1):
 			for k in range(1, i+1):
