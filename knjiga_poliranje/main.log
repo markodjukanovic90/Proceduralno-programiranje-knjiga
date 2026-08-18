@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  18 AUG 2026 13:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  18 AUG 2026 14:41
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -784,6 +784,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Overfull \hbox (5.22888pt too wide) in paragraph at lines 68--69
 \OT1/cmr/m/n/10.95 dij-skog pro-gra-ma Ma-te-ma-ti-ka i in-for-ma-ti-ka (smjer 
 In-for-ma-ti-ka) na Prirodno-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+
  []
 
 [1
@@ -3429,7 +3434,7 @@ PARADIGMI NA PROBLEME IZ ARITMETIKE
  []
 
 [208]
-Overfull \hbox (0.83469pt too wide) in paragraph at lines 68--70
+Overfull \hbox (0.83469pt too wide) in paragraph at lines 67--69
 []\OT1/cmr/m/n/10.95 Ako je broj $\OML/cmm/m/it/10.95 p$ \OT1/cmr/m/n/10.95 pro
 st, ta-da ni-je-dan nje-gov vi^^Tsekratnik $2\OML/cmm/m/it/10.95 p; \OT1/cmr/m/
 n/10.95 3\OML/cmm/m/it/10.95 p; \OT1/cmr/m/n/10.95 4\OML/cmm/m/it/10.95 p; []$
@@ -3460,11 +3465,8 @@ PARADIGMI NA PROBLEME IZ ARITMETIKE
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/D86C6BC837B38501ECAA89CA023B3A395018845A16FEE2F871CFA2D2B2CFB1C
+(./_minted-main/D7686A220C2588EAF2376747C6235BA35018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex [213])
-Underfull \vbox (badness 2671) has occurred while \output is active []
-
-
 Overfull \hbox (120.70576pt too wide) has occurred while \output is active
 \OT1/cmr/m/n/10.95 214    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
 PARADIGMI NA PROBLEME IZ ARITMETIKE
@@ -3476,12 +3478,12 @@ PARADIGMI NA PROBLEME IZ ARITMETIKE
 
 (./_minted-main/D0D2C7E06FB96F5DBD475CE6B766F1435018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 314--315
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
 
  []
 
 
-Overfull \hbox (1.72789pt too wide) in paragraph at lines 318--319
+Overfull \hbox (1.72789pt too wide) in paragraph at lines 311--312
 []\OT1/cmr/m/n/10.95 Implementacija prin-ci-pa me-mo-i-za-ci-je za iz-ra^^Tcuna
 vanje bi-no-mnog koefici-
  []
@@ -3491,6 +3493,11 @@ vanje bi-no-mnog koefici-
 
 (./_minted-main/A8DAED73B0A060AD43BF7B90192A81325018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex [215])
+Underfull \hbox (badness 10000) in paragraph at lines 343--344
+
+ []
+
+
 Overfull \hbox (120.70576pt too wide) has occurred while \output is active
 \OT1/cmr/m/n/10.95 216    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
 PARADIGMI NA PROBLEME IZ ARITMETIKE
@@ -3500,7 +3507,7 @@ PARADIGMI NA PROBLEME IZ ARITMETIKE
 <slike/catalan-net.png, id=777, 729.72626pt x 345.29pt>
 File: slike/catalan-net.png Graphic file (type png)
 <use slike/catalan-net.png>
-Package pdftex.def Info: slike/catalan-net.png  used on input line 361.
+Package pdftex.def Info: slike/catalan-net.png  used on input line 355.
 (pdftex.def)             Requested size: 279.99345pt x 159.9997pt.
  [217 <./slike/catalan-net.png>]
 \openout3 = `main.pyg'.
@@ -3524,12 +3531,12 @@ PARADIGMI NA PROBLEME IZ ARITMETIKE
 
 (./_minted-main/B46E3130D963CD55C20B988C5717474E5018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex [219])
-Underfull \hbox (badness 10000) in paragraph at lines 449--450
+Underfull \hbox (badness 10000) in paragraph at lines 442--443
 
  []
 
 
-Overfull \hbox (31.75418pt too wide) in paragraph at lines 458--460
+Overfull \hbox (31.75418pt too wide) in paragraph at lines 451--453
 []\OT1/cmr/m/n/10.95 Po^^Tcinjemo od ni-za pri-rod-nih bro-je-va $1\OML/cmm/m/i
 t/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 3\OML/cm
 m/m/it/10.95 ; \OT1/cmr/m/n/10.95 4\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 5\O
@@ -3559,7 +3566,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.535  \end{solution}
+l.528  \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3568,7 +3575,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.535  \end{solution}
+l.528  \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -3579,7 +3586,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.535  \end{solution}
+l.528  \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3588,7 +3595,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.535  \end{solution}
+l.528  \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -3611,7 +3618,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.609 \end{solution}
+l.602 \end{solution}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3620,7 +3627,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.609 \end{solution}
+l.602 \end{solution}
                     
 Things are pretty mixed up, but I think the worst is over.
 
@@ -3631,7 +3638,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.609 \end{solution}
+l.602 \end{solution}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3640,12 +3647,12 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.609 \end{solution}
+l.602 \end{solution}
                     
 Things are pretty mixed up, but I think the worst is over.
 
 
-Overfull \hbox (22.27637pt too wide) in paragraph at lines 621--622
+Overfull \hbox (22.27637pt too wide) in paragraph at lines 614--615
 \OT1/cmr/m/n/10.95 ta^^Tcno 3 raz-li^^Tcita pro-sta fak-to-ra. Npr. $30\OML/cmm
 /m/it/10.95 ; \OT1/cmr/m/n/10.95 42\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 66\
 OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 70\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10
@@ -3673,7 +3680,7 @@ PARADIGMI NA PROBLEME IZ ARITMETIKE
 ] [227
 
 ] [228]
-Underfull \hbox (badness 4353) in paragraph at lines 245--249
+Underfull \hbox (badness 4353) in paragraph at lines 246--250
 []\OT1/cmr/m/n/10.95 R. Man-ger and M. Ma-ru^^Tsi^^Sc, \OT1/cmr/m/it/10.95 Stru
 k-tu-re po-da-ta-ka i al-go-rit-mi\OT1/cmr/m/n/10.95 ,
  []
@@ -3727,7 +3734,7 @@ fonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb>
-Output written on main.pdf (235 pages, 12824254 bytes).
+Output written on main.pdf (235 pages, 12824318 bytes).
 PDF statistics:
  939 PDF objects out of 1000 (max. 8388607)
  604 compressed objects within 7 object streams
