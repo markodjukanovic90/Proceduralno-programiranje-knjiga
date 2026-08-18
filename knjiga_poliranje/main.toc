@@ -47,10 +47,9 @@
 \contentsline {section}{\numberline {2.9}Neki programski koncepti i često korištene ugrađene funkcije}{82}{}%
 \contentsline {subsection}{\numberline {2.9.1}Komprehenzija liste}{82}{}%
 \contentsline {subsection}{\numberline {2.9.2}Funkcije \texttt {map}, \texttt {filter} i \texttt {reduce}}{83}{}%
-\contentsline {subsection}{\numberline {2.9.3}Komprehenzija liste}{85}{}%
-\contentsline {subsection}{\numberline {2.9.4}Funkcije \texttt {zip()}, \texttt {enumerate()} i \texttt {sort()}}{85}{}%
-\contentsline {subsection}{\numberline {2.9.5}Sortiranje lista}{87}{}%
-\contentsline {subsection}{\numberline {2.9.6}Neke često korištene ugrađene funkcije}{88}{}%
+\contentsline {subsection}{\numberline {2.9.3}Funkcije \texttt {zip()}, \texttt {enumerate()} i \texttt {sort()}}{85}{}%
+\contentsline {subsection}{\numberline {2.9.4}Sortiranje lista}{86}{}%
+\contentsline {subsection}{\numberline {2.9.5}Neke često korištene ugrađene funkcije}{88}{}%
 \contentsline {section}{\numberline {2.10}Moduli}{88}{}%
 \contentsline {subsection}{\numberline {2.10.1}Modul \texttt {math}}{90}{}%
 \contentsline {subsection}{\numberline {2.10.2}Modul \texttt {random}}{92}{}%

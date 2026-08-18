@@ -18,6 +18,6 @@
    	  \PYG{n}{niz} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{34}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{12}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{]}
    	  \PYG{n}{suma} \PYG{o}{=} \PYG{l+m+mi}{9}
    	  \PYG{n}{postoji} \PYG{o}{=} \PYG{n}{sum\PYGZus{}array}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{,} \PYG{n}{suma}\PYG{p}{)}
-   	  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Postoji podniz sa sumom\PYGZdq{}} \PYG{k}{if} \PYG{n}{postoji} \PYG{k}{else}
+   	  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Postoji podskup sa sumom\PYGZdq{}} \PYG{k}{if} \PYG{n}{postoji} \PYG{k}{else}
    	        \PYG{l+s+s2}{\PYGZdq{}Ne postoji podniz sa sumom\PYGZdq{}}\PYG{p}{)}
 \end{Verbatim}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  18 AUG 2026 14:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  18 AUG 2026 14:56
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1798,7 +1798,7 @@ Overfull \hbox (11.82584pt too wide) in paragraph at lines 1670--1671
 
 
 (./_minted-main/95EAE49B512CEC7F8DFAA9274F46299D5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [86])
+6.pygtex) [86]
 \openout3 = `main.pyg'.
 
 
@@ -1834,12 +1834,12 @@ A[]DENE FUNKCIJE \OT1/cmr/m/n/10.95 87
 
 
 (./_minted-main/3212EF501AB7526F2DBA98AF2702DADD5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [88])
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/66C566595EE298A274DEC242176666E35018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex [88])
 Underfull \hbox (badness 10000) in paragraph at lines 1763--1764
 
  []
@@ -1853,12 +1853,12 @@ A.pygtex)
 
 
 (./_minted-main/53BC4198BF5FDE807A11802C5F4F6D8982CA0C42AFE0759A4F1491A6B69BC02
-A.pygtex) [89]
+A.pygtex)
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/D1D2DA879941E3F8D1D6E918789EAA035018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex [89])
 \openout3 = `main.pyg'.
 
 
@@ -3267,7 +3267,7 @@ If that doesn't work, type  X <return>  to quit.
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/64EBDA680EF7BD92FC679681899878435018845A16FEE2F871CFA2D2B2CFB1C
+(./_minted-main/83206B6C5029175DFAE556683E2A32775018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex [199])
 
 ! LaTeX Error: \begin{document} ended by \end{trivlist}.
@@ -3377,16 +3377,9 @@ m/m/it/10.95 ; \OT1/cmr/m/n/10.95 (1 0 1 1 1)\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n
  []
 
 [204]
-Overfull \hbox (6.847pt too wide) in paragraph at lines 2562--2563
-[]\OT1/cmr/m/n/10.95 U uli-zu je dat niz bro-je-va. Kon-stru-i-sa-ti al-go-ri-t
+Overfull \hbox (9.28033pt too wide) in paragraph at lines 2562--2563
+[]\OT1/cmr/m/n/10.95 U ula-zu je dat niz bro-je-va. Kon-stru-i-sa-ti al-go-ri-t
 am di-na-mi^^Tckog programi-
- []
-
-
-Overfull \hbox (4.9572pt too wide) in paragraph at lines 2565--2567
-[]\OT1/cmr/m/n/10.95 Neka su u ula-zu da-ta dva stri-ga $\OML/cmm/m/it/10.95 s[
-]$ \OT1/cmr/m/n/10.95 i $\OML/cmm/m/it/10.95 s[]$\OT1/cmr/m/n/10.95 . Uz po-mo^
-^Sc di-na-mi^^Tckog programi-
  []
 
 
@@ -3734,7 +3727,7 @@ fonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb>
-Output written on main.pdf (235 pages, 12824318 bytes).
+Output written on main.pdf (235 pages, 12824663 bytes).
 PDF statistics:
  939 PDF objects out of 1000 (max. 8388607)
  604 compressed objects within 7 object streams

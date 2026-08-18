@@ -2395,7 +2395,7 @@ Kako se optimalna vrijednost problema nalazi u ćeliji $\textrm{DP}[n][C]$, zakl
    	  niz = [3, 34, 4, 12, 5, 2]
    	  suma = 9
    	  postoji = sum_array(niz, suma)
-   	  print("Postoji podniz sa sumom" if postoji else  
+   	  print("Postoji podskup sa sumom" if postoji else  
    	        "Ne postoji podniz sa sumom")
    \end{minted}
 \end{solution}
@@ -2554,15 +2554,15 @@ $(1\ 1\ 1\ 1\ 0), (1\ 0\ 1\ 1\ 1), (0\ 1\ 1\ 1\ 1), \ldots ,$ $(2\ 1\ 0\ 0\ 1), 
 	 \textit{Instanca}: $niz = [ -1, -1, -2, 4, 3]$; \textit{Rješenje}:  -24 ($=(-2 )\cdot (-1) \cdot (-1) \cdot 4 \cdot 3$). 
 	
 	%https://www.geeksforgeeks.org/greedy-algorithm-egyptian-fraction/
-	\item Svaki pozitivan razlomak možemo predstaviti predstaviti kao zbir jedi\-nstvenih jediničnih razlomaka. Razlomak je jedinični ako je brojnik 1, a nazivnik pozitivan cijeli broj; npr. $1/3$ je jedinični razlomak. Npr. $2/3= 1/2 + 1/6, 3/7=1/3 + 1/11 + 1/231.$   Uz pomoć paradigme pohlepnih algoritama, za proizvoljan razlomak, naći jedinične razlomke koje u zbiru daju taj razlomak.  
+	\item Svaki pozitivan razlomak možemo predstaviti kao zbir jedi\-nstvenih jediničnih razlomaka. Razlomak je jedinični ako je brojnik 1, a nazivnik pozitivan cijeli broj; npr. $1/3$ je jedinični razlomak. Npr. $2/3= 1/2 + 1/6, 3/7=1/3 + 1/11 + 1/231.$   Uz pomoć paradigme pohlepnih algoritama, za proizvoljan razlomak, naći jedinične razlomke koje u zbiru daju taj razlomak.  
 	
 	
 	\item Riješiti problem nalaska najdužeg zajedničkog podniza dva stringa pomoću dinamičkog programiranja pristupom odozgo prema dolje. 
 	
-	\item U ulizu je dat niz brojeva.  Konstruisati algoritam dinamičkog programi\-ranja koji daje odgovor na pitanje li postoji particionisanje niza na dva (disjunktna) skupa tako da je zbir elemenata u obje particije jednak.
-	\item Implementirati metod dinamičkog progrmairanja  za problem rezanja štapa koristeći pristup odozgo prema dolje.
+	\item U ulazu je dat niz brojeva.  Konstruisati algoritam dinamičkog programi\-ranja koji daje odgovor na pitanje li postoji particionisanje niza na dva (disjunktna) skupa tako da je zbir elemenata u obje particije jednak.
+	\item Implementirati metod dinamičkog programiranja  za problem rezanja štapa koristeći pristup odozgo prema dolje.
 	
-	\item Neka su u ulazu data dva striga $s_1$ i $s_2$. Uz pomoć dinamičkog programi\-ranja, pronaći najkraći string $s$ tako da
+	\item Neka su u ulazu data dva stringa $s_1$ i $s_2$. Uz pomoć dinamičkog programi\-ranja, pronaći najkraći string $s$ tako da
 	su stringovi $s_1$ i $s_2$ podnizovi stringa $s$.
 	\item  Data  je riječ i riječnik (skup riječi). Ispitati da li se riječ može podijeliti na segmente (podstringove) tako da oni pripadaju riječniku. \\
 	
