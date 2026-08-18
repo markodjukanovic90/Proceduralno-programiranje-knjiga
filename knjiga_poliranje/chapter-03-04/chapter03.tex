@@ -2396,7 +2396,7 @@ Kako se optimalna vrijednost problema nalazi u ćeliji $\textrm{DP}[n][C]$, zakl
    	  suma = 9
    	  postoji = sum_array(niz, suma)
    	  print("Postoji podskup sa sumom" if postoji else  
-   	        "Ne postoji podniz sa sumom")
+   	        "Ne postoji podskup sa sumom")
    \end{minted}
 \end{solution}
 Primijetimo da smo dinamičko programiranje implementirali pomoću pristupa \textit{odozdo prema gore} (tabuliranje). 
@@ -2404,15 +2404,15 @@ Primijetimo da smo dinamičko programiranje implementirali pomoću pristupa \tex
 Implementirajmo sada dinamičko programiranje za ovaj problem pristupom \textit{odozgo prema dolje}.
 
    \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
-	def init(niz, sum):
+	def init(niz, suma):
 		global DP
-		DP = [[-1] * (sum +1) for _ in range(len(niz) + 1) ]
+		DP = [[-1] * (suma + 1) for _ in range(len(niz) + 1) ]
 	
 	
-	def sum_array_top_down(niz, sum, i, j, DP = [ ]):
+	def sum_array_top_down(niz, suma, i, j, DP = [ ]):
 	
 		if DP[i][j] != -1:
-			return \textrm{DP}[i][j]
+			return DP[i][j]
 	
 		if j == 0:
 			DP[i][0] = True
@@ -2421,12 +2421,12 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom \textit{
 			DP[0][j] = False
 			return False
 		#recursion: 
-		if j >= niz[i-1]:
-			DP[i][j] = sum_array_top_down(niz, sum, i-1, j, DP) or
-			sum_array_top_down(niz, sum, i-1, j-niz[i-1], DP)
+		if j >= niz[i-1]:  
+			DP[i][j] = sum_array_top_down(niz, suma, i-1, j, DP) or
+			sum_array_top_down(niz, suma, i-1, j-niz[i-1], DP)
 			return DP[i][j]
 		else:
-			DP[i][j] = sum_array_top_down(niz, sum, i-1, j, DP)
+			DP[i][j] = sum_array_top_down(niz, suma, i-1, j, DP)
 			return DP[i][j]
 \end{minted}  
 

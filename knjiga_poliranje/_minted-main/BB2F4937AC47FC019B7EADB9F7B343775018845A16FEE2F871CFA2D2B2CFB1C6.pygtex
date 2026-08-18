@@ -19,5 +19,5 @@
    	  \PYG{n}{suma} \PYG{o}{=} \PYG{l+m+mi}{9}
    	  \PYG{n}{postoji} \PYG{o}{=} \PYG{n}{sum\PYGZus{}array}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{,} \PYG{n}{suma}\PYG{p}{)}
    	  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Postoji podskup sa sumom\PYGZdq{}} \PYG{k}{if} \PYG{n}{postoji} \PYG{k}{else}
-   	        \PYG{l+s+s2}{\PYGZdq{}Ne postoji podniz sa sumom\PYGZdq{}}\PYG{p}{)}
+   	        \PYG{l+s+s2}{\PYGZdq{}Ne postoji podskup sa sumom\PYGZdq{}}\PYG{p}{)}
 \end{Verbatim}
