@@ -37,7 +37,6 @@ Na primjer, prvih pet prostih brojeva su: $2, 3, 5, 7, 11.$ Broj $6$ nije prost 
 \medskip
 
 Posmatrajmo sljedeći problem:
-
 \begin{quote}
 	Odrediti sve proste brojeve manje ili jednake vrijednosti $N$.
 \end{quote}
@@ -71,7 +70,7 @@ Efikasnije rješenje daje algoritam poznat kao \textit{Eratostenovo sito}. Njego
 
 Zbog toga, nakon što identifikujemo prost broj $p$, svi njegovi višekratnici mogu se odmah eliminisati iz daljeg razmatranja.
 
-Algoritam počinje skupom svih brojeva od $2$ do $N$. Najmanji broj koji još nije eliminisan proglašava se prostim, nakon čega se svi njegovi višekratnici označavaju kao složeni brojevi. Postupak se zatim ponavlja za naredni neoznačeni broj. Na taj način se progresivno filtriraju svi složeni brojevi, dok u „situ“ ostaju upravo prosti brojevi.
+Algoritam počinje skupom svih brojeva od $2$ do $N$. Najmanji broj koji još nije eliminisan proglašava se prostim, nakon čega se svi njegovi višekratnici označavaju kao složeni brojevi. Postupak se zatim ponavlja za naredni neoznačeni broj. Na taj način se progresivno filtriraju svi složeni brojevi, dok u ``situ'' ostaju upravo prosti brojevi.
 
 Proces se završava kada više nije potrebno eliminisati nove višekratnike. Preostali neoznačeni brojevi predstavljaju sve proste brojeve manje ili jednake vrijednosti $N$.
 
