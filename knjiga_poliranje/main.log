@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  18 AUG 2026 10:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  18 AUG 2026 11:10
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -3002,25 +3002,9 @@ If that doesn't work, type  X <return>  to quit.
 
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -P s
-tripnl=False -o _minted-main/BCDE9D4587212E88291051DA4A04C15F5018845A16FEE2F871
-CFA2D2B2CFB1C6.pygtex main.pyg)...executed.
-
 
 (./_minted-main/BCDE9D4587212E88291051DA4A04C15F5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [183])
-Overfull \hbox (25.8788pt too wide) in paragraph at lines 1786--1787
-[]\OT1/cmr/m/n/10.95 Osnovna ide-ja di-na-mi^^Tckog pro-gra-mi-ra-nja sa-sto-ji
- se u iz-bje-ga-va-nju vi^^Tsestrukog
- []
-
-[184]
-Overfull \hbox (7.8476pt too wide) in paragraph at lines 1802--1803
-[]\OT1/cmr/m/n/10.95 Memoizacija (\OT1/cmr/m/it/10.95 top-down ap-pro-ach\OT1/c
-mr/m/n/10.95 ) pred-sta-vlja im-ple-men-ta-ci-ju di-na-mi^^Tckog
- []
-
-[185]
+6.pygtex [183]) [184] [185]
 
 ! Package xkeyval Error: `scale' undefined in families `minted@opt@cmd'.
 
@@ -3028,7 +3012,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1840 ...ontsize=\footnotesize,scale=0.8]{python}
+l.1836 ...ontsize=\footnotesize,scale=0.8]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3046,10 +3030,10 @@ If that doesn't work, type  X <return>  to quit.
 <slike/dp-table-1.png, id=680, 272.01625pt x 263.98625pt>
 File: slike/dp-table-1.png Graphic file (type png)
 <use slike/dp-table-1.png>
-Package pdftex.def Info: slike/dp-table-1.png  used on input line 1908.
+Package pdftex.def Info: slike/dp-table-1.png  used on input line 1904.
 (pdftex.def)             Requested size: 100.00108pt x 99.99759pt.
  [188]
-Overfull \hbox (8.57896pt too wide) in paragraph at lines 1936--1937
+Overfull \hbox (8.57896pt too wide) in paragraph at lines 1932--1933
 []\OT1/cmr/m/n/10.95 Za po-zi-ci-je ko-je ni-su do-stup-ne pi-ju-nu (npr. iz-va
 n gra-ni-ca ma-tri-ce) mo^^Tzemo
  []
@@ -3062,7 +3046,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1951 ...ontsize=\footnotesize,scale=0.8]{python}
+l.1947 ...ontsize=\footnotesize,scale=0.8]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3079,7 +3063,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1988 \end{solution}
+l.1984 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3088,7 +3072,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.1988 \end{solution}
+l.1984 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -3099,7 +3083,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1988 \end{solution}
+l.1984 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3108,7 +3092,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.1988 \end{solution}
+l.1984 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -3120,7 +3104,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2056 	
+l.2052 	
         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3133,7 +3117,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2059 ...ontsize=\footnotesize,scale=0.8]{python}
+l.2055 ...ontsize=\footnotesize,scale=0.8]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3150,7 +3134,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2087 \end{solution}
+l.2083 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3159,7 +3143,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.2087 \end{solution}
+l.2083 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -3170,7 +3154,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2087 \end{solution}
+l.2083 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3179,18 +3163,18 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.2087 \end{solution}
+l.2083 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
 [193] [194] [195]
-Overfull \hbox (0.54204pt too wide) in paragraph at lines 2222--2223
+Overfull \hbox (0.54204pt too wide) in paragraph at lines 2218--2219
 []\OT1/cmr/m/it/10.95 Rekurzivna re-la-ci-ja. \OT1/cmr/m/n/10.95 Po-sma-traj-mo
  po-sljed-nje ka-rak-te-re raz-ma-tra-nih pre-
  []
 
 
-Overfull \hbox (18.64923pt too wide) in paragraph at lines 2242--2249
+Overfull \hbox (18.64923pt too wide) in paragraph at lines 2238--2245
 []$\OML/cmm/m/it/10.95 DP\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 i\OT1/cmr/m/n/
 10.95 ][\OML/cmm/m/it/10.95 j\OT1/cmr/m/n/10.95 ] = []$ 
  []
@@ -3202,7 +3186,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2267 ...ontsize=\footnotesize,scale=0.8]{python}
+l.2263 ...ontsize=\footnotesize,scale=0.8]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3212,7 +3196,7 @@ If that doesn't work, type  X <return>  to quit.
 
 (./_minted-main/AEC2DE16A52F962A8FD36CF5610EE3345018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex
-Overfull \hbox (6.4425pt too wide) in paragraph at lines 2266--1
+Overfull \hbox (6.4425pt too wide) in paragraph at lines 2262--1
 []\OT1/cmr/m/n/10.95 Implementacija pa-ra-dig-me di-na-mi^^Tckog pro-gra-mi-ra-
 nja za rje^^Tsavanje LCSP
  []
@@ -3225,7 +3209,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2320 \end{solution}
+l.2316 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3234,7 +3218,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.2320 \end{solution}
+l.2316 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -3245,7 +3229,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2320 \end{solution}
+l.2316 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3254,7 +3238,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.2320 \end{solution}
+l.2316 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -3266,7 +3250,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2403 ...ontsize=\footnotesize,scale=0.8]{python}
+l.2399 ...ontsize=\footnotesize,scale=0.8]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3283,7 +3267,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2426 \end{solution}
+l.2422 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3292,7 +3276,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.2426 \end{solution}
+l.2422 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -3303,7 +3287,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2426 \end{solution}
+l.2422 \end{solution}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3312,7 +3296,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.2426 \end{solution}
+l.2422 \end{solution}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -3323,7 +3307,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2431 ...ontsize=\footnotesize,scale=0.8]{python}
+l.2427 ...ontsize=\footnotesize,scale=0.8]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3340,7 +3324,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2522 ...ontsize=\footnotesize,scale=0.8]{python}
+l.2518 ...ontsize=\footnotesize,scale=0.8]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3354,7 +3338,7 @@ If that doesn't work, type  X <return>  to quit.
 File: slike/brute-force-cutting-stick.png Graphic file (type png)
 <use slike/brute-force-cutting-stick.png>
 Package pdftex.def Info: slike/brute-force-cutting-stick.png  used on input lin
-e 2546.
+e 2542.
 (pdftex.def)             Requested size: 270.00058pt x 219.99861pt.
  [203 <./slike/brute-force-cutting-stick.png>]
 
@@ -3365,13 +3349,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2565 ...o traženi broj ne postoji, vratiti $−
+l.2561 ...o traženi broj ne postoji, vratiti $−
                                                   1$.
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-Overfull \hbox (0.26112pt too wide) in paragraph at lines 2571--2579
+Overfull \hbox (0.26112pt too wide) in paragraph at lines 2567--2575
 \OT1/cmr/m/n/10.95 4\OML/cmm/m/it/10.95 ; x[] \OMS/cmtt/m/n/10.95 2 \U/msb/m/n/
 10.95 N$\OT1/cmr/m/n/10.95 . Sva mo-gu^^Sca rje^^Tsenja su: $(1 1 1 1 0)\OML/cm
 m/m/it/10.95 ; \OT1/cmr/m/n/10.95 (1 0 1 1 1)\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n
@@ -3379,25 +3363,25 @@ m/m/it/10.95 ; \OT1/cmr/m/n/10.95 (1 0 1 1 1)\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n
  []
 
 [204]
-Overfull \hbox (6.847pt too wide) in paragraph at lines 2588--2589
+Overfull \hbox (6.847pt too wide) in paragraph at lines 2584--2585
 []\OT1/cmr/m/n/10.95 U uli-zu je dat niz bro-je-va. Kon-stru-i-sa-ti al-go-ri-t
 am di-na-mi^^Tckog programi-
  []
 
 
-Overfull \hbox (4.9572pt too wide) in paragraph at lines 2591--2593
+Overfull \hbox (4.9572pt too wide) in paragraph at lines 2587--2589
 []\OT1/cmr/m/n/10.95 Neka su u ula-zu da-ta dva stri-ga $\OML/cmm/m/it/10.95 s[
 ]$ \OT1/cmr/m/n/10.95 i $\OML/cmm/m/it/10.95 s[]$\OT1/cmr/m/n/10.95 . Uz po-mo^
 ^Sc di-na-mi^^Tckog programi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2593--2594
+Underfull \hbox (badness 10000) in paragraph at lines 2589--2590
 
  []
 
 
-Overfull \hbox (52.5288pt too wide) detected at line 2595
+Overfull \hbox (52.5288pt too wide) detected at line 2591
 \OML/cmm/m/it/10.95 dict \OT1/cmr/m/n/10.95 = \OMS/cmtt/m/n/10.95 f[]\OML/cmm/m
 /it/10.95 ; []; []; []; []; []; []; []; []; []; []; []; []; []; []; []\OMS/cmtt
 /m/n/10.95 g
@@ -3406,7 +3390,7 @@ Overfull \hbox (52.5288pt too wide) detected at line 2595
 <slike/plococe-dp-zadatak.png, id=738, 194.7275pt x 180.675pt>
 File: slike/plococe-dp-zadatak.png Graphic file (type png)
 <use slike/plococe-dp-zadatak.png>
-Package pdftex.def Info: slike/plococe-dp-zadatak.png  used on input line 2608.
+Package pdftex.def Info: slike/plococe-dp-zadatak.png  used on input line 2604.
 
 (pdftex.def)             Requested size: 119.99884pt x 100.0001pt.
 [205]) [206 <./slike/plococe-dp-zadatak.png>]
@@ -3685,9 +3669,6 @@ Underfull \hbox (badness 4353) in paragraph at lines 245--249
 k-tu-re po-da-ta-ka i al-go-rit-mi\OT1/cmr/m/n/10.95 ,
  []
 
-runsystem(rm _minted-main/2ACD5FBBC8123ADA14F2BFEA13853A615018845A16FEE2F871CFA
-2D2B2CFB1C6.pygtex)...executed.
-
 
 FiXme Summary: Number of notes: 0,
 (FiXme)        Number of warnings: 0,
@@ -3701,14 +3682,17 @@ FiXme Summary: Number of notes: 0,
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 runsystem(rm main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 22946 strings out of 479648
- 559270 string characters out of 5886115
+ 22943 strings out of 479648
+ 559026 string characters out of 5886115
  818643 words of memory out of 5000000
- 39686 multiletter control sequences out of 15000+600000
+ 39684 multiletter control sequences out of 15000+600000
  485509 words of font info for 90 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  84i,12n,131p,979b,757s stack positions out of 5000i,500n,10000p,200000b,80000s

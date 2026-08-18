@@ -1772,18 +1772,16 @@ Napomenimo da se može pokazati da ovaj pohlepni algoritam garantuje nalazak opt
 
 \section{Dinamičko programiranje}
 
-\textit{Dinamičko programiranje} (\emph{dynamic programming}) predstavlja algoritamsku tehniku namijenjenu efikasnom rješavanju problema koji imaju dvije ključne osobine:
+\textit{Dinamičko programiranje} predstavlja algoritamsku tehniku namijenjenu efikasnom rješavanju problema koji imaju dvije ključne karakteristike:
 
 \begin{itemize}
-	\item \textit{preklapajuće podprobleme} (\emph{overlapping subproblems});
-	\item \textit{optimalnu podstrukturu} (\emph{optimal substructure}).
+	\item \textit{preklapajuće podprobleme} (eng. \emph{overlapping subproblems});
+	\item \textit{optimalnu podstrukturu} (eng. \emph{optimal substructure}).
 \end{itemize}
 
-Pod \textit{preklapajućim podproblemima} podrazumijevamo situaciju u kojoj se isti podproblem javlja više puta tokom rješavanja većeg problema. Umjesto da se njegovo rješenje svaki put iznova računa, mnogo je efikasnije jednom izračunati rezultat i sačuvati ga za kasniju upotrebu.
+Pod \textit{preklapajućim podproblemima} podrazumijevamo situaciju u kojoj se isti podproblem javlja više puta tokom rješavanja većeg problema. Umjesto da se rješenje podproblema svaki put iznova računa, ono se  jednom izračuna i rezultat se čuva za kasniju upotrebu. Svojstvo \textit{optimalne podstrukture} znači da se optimalno rješenje početnog problema može konstruisati kombinovanjem optimalnih rješenja njegovih podproblema. Drugim riječima, rješavanje podproblema na optimalan način vodi ka optimalnom rješenju originalnog problema.
 
-Svojstvo \textit{optimalne podstrukture} znači da se optimalno rješenje početnog problema može konstruisati kombinovanjem optimalnih rješenja njegovih podproblema. Drugim riječima, rješavanje podproblema na optimalan način vodi ka optimalnom rješenju originalnog problema.
-
-Osnovna ideja dinamičkog programiranja sastoji se u izbjegavanju višestrukog rješavanja istih podproblema. Umjesto ponovnog računanja, rezultati se pohranjuju u memoriju i po potrebi ponovo koriste. Ovaj postupak naziva se \textit{memoizacija}.
+Osnovna ideja dinamičkog programiranja sastoji se u izbjegavanju više\-strukog rješavanja istih podproblema. Umjesto ponovnog računanja, rezultati se pohranjuju u memoriju i po potrebi ponovo koriste. Ovaj postupak naziva se \textit{memoizacija}.
 
 Memoizacija značajno poboljšava efikasnost rekurzivnih algoritama, jer se svaki podproblem rješava najviše jednom. Naravno, cijena ovog ubrzanja jeste dodatni memorijski prostor potreban za pohranjivanje već izračunatih rezultata.
 
@@ -1797,9 +1795,9 @@ Da bismo primijenili dinamičko programiranje na određeni problem, potrebno je:
 	\item sačuvati rješenja podproblema u odgovarajućoj memorijskoj strukturi radi njihove ponovne upotrebe.
 \end{itemize}
 
-\subsection*{Memoizacija (pristup odozgo prema dolje)}
+\subsection{Memoizacija (pristup odozgo prema dolje)}
 
-Memoizacija (\emph{top-down approach}) predstavlja implementaciju dinamičkog programiranja zasnovanu na rekurziji. Algoritam se izvršava na isti način kao i obična rekurzija, ali se rezultati već riješenih podproblema pohranjuju u pomoćnu strukturu podataka (npr. rječnik ili tabelu).
+Memoizacija (eng. \emph{top-down approach}) predstavlja implementaciju dinamičkog programiranja zasnovanu na rekurziji. Algoritam se izvršava na isti način kao i obična rekurzija, ali se rezultati već riješenih podproblema pohranjuju u pomoćnu strukturu podataka (npr. rječnik ili tabelu).
 
 Prilikom svakog novog poziva prvo se provjerava da li je odgovarajući podproblem već riješen. Ukoliko jeste, prethodno izračunato rješenje se odmah vraća bez dodatnog računanja.
 
@@ -1816,11 +1814,9 @@ Nedostatak je dodatni trošak rekurzivnih poziva i memorije steka.
 
 \subsection*{Tabuliranje (pristup odozdo prema gore)}
 
-Drugi način implementacije dinamičkog programiranja naziva se \textit{tabuliranje} (\emph{tabulation}) ili pristup \textit{odozdo prema gore} (\emph{bottom-up approach}).
+Drugi način implementacije dinamičkog programiranja naziva se \textit{tabuliranje} (eng. \emph{tabulation}) ili pristup \textit{odozdo prema gore} (eng. \emph{bottom-up approach}).
 
-Kod ovog pristupa problem se ne rješava rekurzivno. Umjesto toga, prvo se izračunavaju rješenja najmanjih podproblema, a zatim se ona sistematski koriste za konstruisanje rješenja većih podproblema, sve do konačnog rješenja.
-
-Rezultati se pohranjuju u tabelu (najčešće niz ili matricu), po čemu je ovaj pristup i dobio naziv.  Prednosti tabuliranja su:
+Kod ovog pristupa problem se ne rješava rekurzivno. Umjesto toga, prvo se izračunavaju rješenja najmanjih podproblema, a zatim se ona sistematski koriste za konstruisanje rješenja većih podproblema, sve do konačnog rješenja.  Rezultati se pohranjuju u tabelu (najčešće niz ili matricu), po čemu je ovaj pristup i dobio naziv.  Prednosti tabuliranja su:
 
 \begin{itemize}
 	\item nema troška rekurzivnih poziva;

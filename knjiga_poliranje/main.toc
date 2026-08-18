@@ -105,8 +105,9 @@
 \contentsline {section}{\numberline {3.6}Algoritamska paradigma vraćanja unazad}{165}{}%
 \contentsline {section}{\numberline {3.7}Pohlepni algoritmi}{171}{}%
 \contentsline {section}{\numberline {3.8}Dinamičko programiranje}{184}{}%
-\contentsline {subsection}{\numberline {3.8.1}Rekurzija naspram dinamičkog programiranja}{187}{}%
-\contentsline {subsection}{\numberline {3.8.2}Primjene dinamičkog programiranja}{188}{}%
+\contentsline {subsection}{\numberline {3.8.1}Memoizacija (pristup odozgo prema dolje)}{185}{}%
+\contentsline {subsection}{\numberline {3.8.2}Rekurzija naspram dinamičkog programiranja}{187}{}%
+\contentsline {subsection}{\numberline {3.8.3}Primjene dinamičkog programiranja}{188}{}%
 \contentsline {chapter}{\numberline {4}Primjena algoritamskih paradigmi na probleme iz aritmetike}{207}{}%
 \contentsline {section}{\numberline {4.1}Eratostenovo sito}{208}{}%
 \contentsline {section}{\numberline {4.2}Faktorizacija broja}{212}{}%
