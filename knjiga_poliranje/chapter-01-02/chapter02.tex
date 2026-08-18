@@ -1026,6 +1026,158 @@ Zahvaljujući svojoj jednostavnosti i efikasnosti, Euklidov algoritam predstavlj
 \textbf{Napomena.}
 Valjanost Euklidovog algoritma direktno slijedi iz svojstva $\text{NZD}(a,b)=\text{NZD}(b,a\bmod b),$ koje se primjenjuje u svakoj iteraciji algoritma. Budući da se vrijednost drugog argumenta strogo smanjuje, algoritam se nakon konačnog broja koraka zaustavlja, a posljednja nenulta vrijednost predstavlja najveći zajednički djelilac ulaznih brojeva.
 
+\section{Master teorema}
+
+Kod analize algoritama veoma često se pojavljuju rekurzivne relacije koje opisuju
+vrijeme izvršavanja algoritma. Ovakve relacije su naročito karakteristične za
+algoritamske paradigme zasnovane na rekurzivnom principu, kao što je paradigma
+\emph{podijeli pa zavladaj}.
+
+Pretpostavimo da algoritam problem veličine $n$ dijeli na $a$ podproblema,
+pri čemu svaki podproblem ima veličinu približno $n/b$. Pored vremena potrebnog
+za rješavanje podproblema, algoritam troši dodatno vrijeme za podjelu problema,
+kombinovanje parcijalnih rješenja ili druge operacije. Tada se vremenska
+složenost algoritma često može opisati rekurentnom relacijom oblika
+
+\[
+T(n)=aT\left(\frac{n}{b}\right)+f(n),
+\]
+
+gdje je:
+
+\begin{itemize}
+	\item $a \geq 1$ broj podproblema koji se rekurzivno rješavaju;
+	\item $b > 1$ faktor za koji se smanjuje veličina svakog podproblema;
+	\item $f(n)$ vrijeme potrebno za operacije koje se izvršavaju izvan
+	rekurzivnih poziva, kao što su podjela problema ili kombinovanje rješenja.
+\end{itemize}
+
+Određivanje asimptotske složenosti ovakvih rekurentnih relacija može biti
+zahtjevno. \emph{Master teorema} daje jednostavan način za određivanje
+asimptotske složenosti velikog broja rekurzija ovog tipa.
+
+\begin{theorem}[Master teorema]
+	Neka je vremenska složenost algoritma opisana relacijom
+	
+	\[
+	T(n)=aT\left(\frac{n}{b}\right)+f(n),
+	\]
+	
+	gdje su $a\geq 1$ i $b>1$ konstante. Vrijednost
+	
+	\[
+	n^{\log_b a}
+	\]
+	
+	predstavlja osnovnu veličinu sa kojom se poredi funkcija $f(n)$.
+	
+	Tada, u najčešćim slučajevima, vrijedi:
+	
+	\begin{enumerate}
+		\item Ako funkcija $f(n)$ raste asimptotski sporije od
+		$n^{\log_b a}$, tada je
+		
+		\[
+		T(n)=\Theta\left(n^{\log_b a}\right).
+		\]
+		
+		\item Ako funkcija $f(n)$ raste istom asimptotskom brzinom kao
+		$n^{\log_b a}$, tada je
+		
+		\[
+		T(n)=\Theta\left(n^{\log_b a}\log n\right).
+		\]
+		
+		\item Ako funkcija $f(n)$ raste asimptotski brže od
+		$n^{\log_b a}$, tada je, pod odgovarajućim dodatnim uslovima,
+		
+		\[
+		T(n)=\Theta(f(n)).
+		\]
+	\end{enumerate}
+\end{theorem}
+
+Drugim riječima, osnovna ideja Master teoreme jeste poređenje troška
+rekurzivnih poziva sa troškom operacija koje se izvršavaju izvan rekurzije.
+
+\begin{example}
+	 Neka je data rekurzija
+	\[
+	T(n)=T\left(\frac{n}{2}\right)+\Theta(1).
+	\]
+	
+	Ovdje je $a=1$, $b=2$ i $f(n)=\Theta(1)$. Pošto je
+	
+	\[
+	n^{\log_2 1}=n^0=1,
+	\]
+	
+	funkcija $f(n)$ ima isti red rasta kao $n^{\log_b a}$. Primjenom drugog
+	slučaja Master teoreme dobijamo
+	
+	\[
+	T(n)=\Theta(\log n).
+	\]
+	
+	Dakle, vremenska složenost binarne pretrage je logaritamska.
+\end{example}
+
+\begin{example}
+%	Kod algoritma sortiranja spajanjem (\emph{merge sort}) niz se dijeli na dva
+%	podniza približno jednake veličine. Oba podniza se rekurzivno sortiraju, dok
+%	operacija njihovog spajanja zahtijeva linearno vrijeme. 
+Neka je data rekurentna relacija
+	
+	\[
+	T(n)=2T\left(\frac{n}{2}\right)+\Theta(n).
+	\]
+	
+	U ovom slučaju je $a=2$, $b=2$ i
+	
+	\[
+	n^{\log_2 2}=n.
+	\]
+	
+	Pošto je $f(n)=\Theta(n)$, primjenjuje se drugi slučaj Master teoreme, pa je
+	
+	\[
+	T(n)=\Theta(n\log n).
+	\]
+\end{example}
+
+\begin{example}
+	%Kod Karacubinog algoritma za množenje cijelih brojeva pojavljuje se rekurzija
+	U slučaju rekurzicne relacije
+	\[
+	T(n)=3T\left(\frac{n}{2}\right)+\Theta(n).
+	\]
+	
+	imamo $a=3$ i $b=2$, pa je
+	
+	\[
+	n^{\log_2 3}\approx n^{1.585}.
+	\]
+	
+	Kako funkcija $n$ raste sporije od $n^{\log_2 3}$, primjenjuje se prvi slučaj
+	Master teoreme. Prema tome,
+	
+	\[
+	T(n)=\Theta\left(n^{\log_2 3}\right)
+	\approx \Theta\left(n^{1.585}\right).
+	\]
+\end{example}
+
+Master teorema predstavlja veoma koristan alat za brzu procjenu vremenske
+složenosti algoritama zasnovanih na rekurzivnom razlaganju problema. U ovoj
+knjizi koristićemo je prvenstveno za analizu jednostavnih algoritama zasnovanih
+na paradigmi podijeli pa zavladaj.
+
+Detaljan dokaz Master teoreme, njene preciznije formulacije, dodatni uslovi
+primjene i slučajevi koji nisu obuhvaćeni prethodno navedenim pravilima
+obrađuju se na naprednijim kursevima iz algoritama i analize algoritama na
+višim godinama studija.
+
+
 
 \section*{Zadaci}
 

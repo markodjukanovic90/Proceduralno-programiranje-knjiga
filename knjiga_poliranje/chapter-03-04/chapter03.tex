@@ -1041,14 +1041,14 @@ Eksponencijalna pretraga je posebno korisna kod veoma velikih sortiranih nizova,
 
 \section{Podijeli pa zavladaj}
 
-Paradigma \textit{podijeli pa zavladaj} (\emph{divide-and-conquer}) zasniva se na ideji da se složen problem podijeli na više manjih podproblema istog tipa, koji se zatim rješavaju nezavisno. Nakon što se dobiju rješenja podproblema, ona se kombinuju kako bi se dobilo rješenje početnog problema.
+Paradigma \textit{podijeli pa zavladaj} zasniva se na ideji da se složen problem podijeli na više manjih podproblema istog tipa, koji se zatim rješavaju nezavisno. Nakon što se dobiju rješenja podproblema, ona se kombinuju kako bi se dobilo rješenje početnog problema.
 
 Ova paradigma se sastoji od tri osnovna koraka:
 
 \begin{enumerate}
-	\item podjela početnog problema na manje, međusobno nezavisne podprobleme;
-	\item rekurzivno rješavanje svakog podproblema;
-	\item kombinovanje rješenja podproblema u rješenje originalnog problema.
+	\item \textit{podjeli} početni problem na manje, međusobno nezavisne podprobleme;
+	\item \textit{rekurzivno riješi} svaki od podproblema;
+	\item \textit{kombinuj} rješenja podproblema da bi se dobilo rješenje originalnog problema.
 \end{enumerate}
 
 Pseudokod ove paradigme dat je Algoritmom~\ref{alg:d-n-c}.
@@ -1072,13 +1072,13 @@ Pseudokod ove paradigme dat je Algoritmom~\ref{alg:d-n-c}.
 		
 		\EndProcedure
 	\end{algorithmic}
-	\caption{Opšti obrazac paradigme podijeli pa zavladaj.}
+	\caption{Paradigma Podijeli pa zavladaj.}
 	\label{alg:d-n-c}
 \end{algorithm}
 
 Uspješna primjena ove paradigme zahtijeva da podjela problema i kombinovanje parcijalnih rješenja budu dovoljno efikasni. U suprotnom, trošak ovih operacija može poništiti prednosti dobijene podjelom problema na manje dijelove.
 
-Jedan od najpoznatijih primjera primjene paradigme podijeli pa zavladaj jeste algoritam sortiranja spajanjem (\emph{merge sort}), koji sortira niz od $n$ elemenata u vremenu $O(n \log n)$.
+Jedan od najpoznatijih primjera primjene paradigme podijeli pa zavladaj jeste algoritam sortiranja spajanjem (tzv. \emph{merge sort}), koji sortira niz od $n$ elemenata u vremenu $O(n \log n)$.\\ 
 
 Osnovna ideja ovog algoritma je sljedeća:
 
@@ -1123,7 +1123,7 @@ Implementacija algoritma  sortiranja spajanjem  je data u nastavku.
 
 \end{minted}
 
-Spoljašnja \texttt{while}-petlja u rekurziji izvršava spajanje dva sortirana dijela niza (lijevi i desni). Nezavisna dva (pod)niza \textit{nizLeftSort} i \textit{nizRightSort} se rekurzivno sortiraju, a potom spajaju (u linearnom vremenu).
+Spoljašnja \texttt{while}-petlja u rekurziji izvršava spajanje dva sortirana dijela niza (lijevi i desni). Nezavisna dva (pod)niza \texttt{nizLeftSort} i \texttt{nizRightSort} se rekurzivno sortiraju, a potom spajaju (u linearnom vremenu). Rekurzivna relacija koja odgovara vremenu izvršavanja algoritma je data u Primjeru 1.12.
 
  \begin{figure}
  	\centering
@@ -1181,12 +1181,12 @@ Spoljašnja \texttt{while}-petlja u rekurziji izvršava spajanje dva sortirana d
 	x_1y_2+x_2y_1, $ 	pa se mješoviti član može dobiti bez dodatnih množenja. Prema tome, $xy=z_1 2^n	+	(z_3-z_1-z_2)2^{n/2} + z_2.$
 	
 	Na ovaj način broj rekurzivnih množenja smanjuje se sa četiri na tri, pa rekurzija postaje $T(n)=3T(n/2)+O(n).$ Primjenom Master teoreme dobijamo $T(n)=O(n^{\log_2 3})
-	\approx O(n^{1.585}),$ što je asimptotski brže od klasičnog algoritma množenja. Ovaj pristup poznat je kao \textit{Karacubin algoritam} ({Karatsuba multiplication algorithm}).
+	\approx O(n^{1.585}),$ što je asimptotski brže od klasičnog algoritma množenja (Pogledati Primjer 1.13). Ovaj pristup poznat je kao \textit{Karacubinov algoritam} (eng. {Karatsuba multiplication algorithm}).
 \end{solution}
 
 \section{Algoritamska paradigma vraćanja unazad}
 
-{Vraćanje unazad} (\emph{backtracking}) predstavlja algoritamsku paradigmu zasnovanu na rekurzivnoj izgradnji rješenja korak po korak. Tokom konstrukcije rješenja algoritam u svakom koraku provjerava da li trenutno parcijalno rješenje može biti prošireno u validno konačno rješenje. Ukoliko se utvrdi da neki izbor narušava ograničenja problema ili ne može dovesti do dopustivog rješenja, algoritam odustaje od tog pravca pretrage i vraća se na prethodnu odluku kako bi ispitao druge mogućnosti.
+{Vraćanje unazad} predstavlja algoritamsku paradigmu zasnovanu na rekurzivnoj izgradnji rješenja korak po korak. Tokom konstrukcije rješenja algoritam u svakom koraku provjerava da li trenutno parcijalno rješenje može biti prošireno u validno konačno rješenje. Ukoliko se utvrdi da neki izbor narušava ograničenja problema ili ne može dovesti do dopustivog rješenja, algoritam odustaje od tog pravca pretrage i vraća se na prethodnu odluku kako bi ispitao druge mogućnosti.
 
 Ova paradigma može se posmatrati kao unaprijeđena verzija pristupa grube sile. Dok algoritmi grube sile ispituju sva moguća rješenja, algoritmi vraćanja unazad nastoje što ranije eliminisati dijelove prostora pretrage za koje se može zaključiti da ne sadrže validno rješenje. Na taj način često se postižu značajne uštede u vremenu izvršavanja.
 
