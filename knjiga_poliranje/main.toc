@@ -13,20 +13,19 @@
 \contentsline {section}{\numberline {1.5}Prostorna složenost}{25}{}%
 \contentsline {section}{\numberline {1.6}Pseudok\^od}{27}{}%
 \contentsline {section}{\numberline {1.7}O valjanosti algoritma}{30}{}%
-\contentsline {subsection}{\numberline {1.7.1}Metoda invarijante petlje}{30}{}%
 \contentsline {section}{\numberline {1.8}Euklidov algoritam}{32}{}%
 \contentsline {section}{\numberline {1.9}Master teorema}{34}{}%
 \contentsline {chapter}{\numberline {2}Uvod u programski jezik Pajton}{41}{}%
 \contentsline {section}{\numberline {2.1}Osnovne karakteristike}{44}{}%
 \contentsline {section}{\numberline {2.2}Pregled ugrađenih tipova podataka}{45}{}%
 \contentsline {section}{\numberline {2.3}Deklarisanje varijabli i memorijska organizacija}{46}{}%
-\contentsline {section}{\numberline {2.4}Ispis i komentari}{50}{}%
+\contentsline {section}{\numberline {2.4}Ispis poruka i komentari}{50}{}%
 \contentsline {section}{\numberline {2.5}Osnovni numerički tipovi podataka}{51}{}%
 \contentsline {subsection}{\numberline {2.5.1}Cjelobrojni i realni brojevi}{51}{}%
 \contentsline {subsection}{\numberline {2.5.2}Kompleksni brojevi}{52}{}%
 \contentsline {section}{\numberline {2.6}Naredbe grananja i petlje}{53}{}%
 \contentsline {subsection}{\numberline {2.6.1}Uslovna naredba \texttt {if}}{53}{}%
-\contentsline {subsection}{\numberline {2.6.2}For i While petlje}{54}{}%
+\contentsline {subsection}{\numberline {2.6.2}\texttt {For} i \texttt {While} petlje}{54}{}%
 \contentsline {paragraph}{\texttt {while} petlja.}{55}{}%
 \contentsline {section}{\numberline {2.7}Složene strukture podataka}{56}{}%
 \contentsline {subsection}{\numberline {2.7.1}Stringovni tip podataka}{56}{}%
@@ -47,9 +46,9 @@
 \contentsline {section}{\numberline {2.9}Neki programski koncepti i često korištene ugrađene funkcije}{82}{}%
 \contentsline {subsection}{\numberline {2.9.1}Komprehenzija liste}{82}{}%
 \contentsline {subsection}{\numberline {2.9.2}Funkcije \texttt {map}, \texttt {filter} i \texttt {reduce}}{83}{}%
-\contentsline {subsection}{\numberline {2.9.3}Funkcije \texttt {zip()}, \texttt {enumerate()} i \texttt {sort()}}{85}{}%
+\contentsline {subsection}{\numberline {2.9.3}Funkcije \texttt {zip}, \texttt {enumerate} i \texttt {sort}}{85}{}%
 \contentsline {subsection}{\numberline {2.9.4}Sortiranje lista}{86}{}%
-\contentsline {subsection}{\numberline {2.9.5}Neke često korištene ugrađene funkcije}{88}{}%
+\contentsline {subsection}{\numberline {2.9.5}Korisne ugrađene funkcije}{88}{}%
 \contentsline {section}{\numberline {2.10}Moduli}{88}{}%
 \contentsline {subsection}{\numberline {2.10.1}Modul \texttt {math}}{90}{}%
 \contentsline {subsection}{\numberline {2.10.2}Modul \texttt {random}}{92}{}%
@@ -63,22 +62,22 @@
 \contentsline {subsection}{\numberline {2.11.2}Naredba \texttt {assert}}{98}{}%
 \contentsline {subsection}{\numberline {2.11.3}Hijerarhija izuzetaka}{99}{}%
 \contentsline {section}{\numberline {2.12}Rad sa datotekama}{99}{}%
-\contentsline {subsection}{\numberline {2.12.1}Modul Json}{101}{}%
+\contentsline {subsection}{\numberline {2.12.1}Modul \texttt {json}}{101}{}%
 \contentsline {section}{\numberline {2.13}Regularni izrazi}{102}{}%
 \contentsline {subsection}{\numberline {2.13.1}Osnovni koncepti regularnih izraza}{102}{}%
 \contentsline {paragraph}{Registarske tablice.}{103}{}%
 \contentsline {paragraph}{Datum u formatu DD.MM.GGGG.}{104}{}%
-\contentsline {subsection}{\numberline {2.13.2}Modul Re}{104}{}%
-\contentsline {section}{\numberline {2.14}Moduli Sys i Getopt}{106}{}%
-\contentsline {subsection}{\numberline {2.14.1}Modul Sys}{107}{}%
-\contentsline {subsection}{\numberline {2.14.2}Modul Getopt}{108}{}%
-\contentsline {section}{\numberline {2.15}Modul NumPy}{110}{}%
+\contentsline {subsection}{\numberline {2.13.2}Modul \texttt {re}}{104}{}%
+\contentsline {section}{\numberline {2.14}Moduli \texttt {sys} i \texttt {getopt}}{106}{}%
+\contentsline {paragraph}{Modul \texttt {sys}}{107}{}%
+\contentsline {paragraph}{Modul \texttt {getopt}}{108}{}%
+\contentsline {section}{\numberline {2.15}Modul \texttt {numpy}}{110}{}%
 \contentsline {paragraph}{Memorijska organizacija.}{114}{}%
-\contentsline {section}{\numberline {2.16}Modul Ctypes}{115}{}%
-\contentsline {section}{\numberline {2.17}Pisanje korisničkih modula}{117}{}%
+\contentsline {section}{\numberline {2.16}Modul \texttt {ctypes}}{115}{}%
+\contentsline {section}{\numberline {2.17}Pisanje korisničkih modula}{116}{}%
 \contentsline {section}{\numberline {2.18}Postavljanje korisnički kreiranih modula na PyPI repozitorij}{118}{}%
 \contentsline {section}{\numberline {2.19}Kompajliranje i izvršavanje programa}{120}{}%
-\contentsline {subsection}{\numberline {2.19.1}Stek i hip memorija}{121}{}%
+\contentsline {subsection}{\numberline {2.19.1}Stek i hip memorija}{120}{}%
 \contentsline {subsection}{\numberline {2.19.2}Sakupljanje otpadaka}{122}{}%
 \contentsline {subsection}{\numberline {2.19.3}Proces prevođenja i izvršavanja programa}{122}{}%
 \contentsline {subsection}{\numberline {2.19.4}Pajtonova virtuelna mašina}{124}{}%

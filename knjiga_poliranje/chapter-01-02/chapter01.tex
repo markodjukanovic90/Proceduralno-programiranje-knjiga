@@ -223,7 +223,7 @@ U narednim sekcijama detaljnije ćemo razmotriti numeričke, tekstualne i slože
  
  Dobijena vrijednost predstavlja jedinstveni identifikator objekta tokom njegovog životnog vijeka.
  
-\section{Ispis i komentari}
+\section{Ispis poruka i komentari}
  
  Ispis rezultata na ekran vrši se pomoću funkcije \texttt{print()}:
  
@@ -412,7 +412,7 @@ Uslovi se provjeravaju redom, od vrha prema dnu. Čim se pronađe prvi tačan us
 
 Ako nijedan od uslova nije zadovoljen, izvršava se blok pod granom \texttt{else}.
 
-\subsection{For i While petlje}
+\subsection{\texttt{For} i \texttt{While} petlje}
 
 Petlje predstavljaju kontrolne strukture koje omogućavaju višestruko izvršavanje istog bloka koda. Koriste se kada je potrebno ponoviti određene operacije unaprijed poznat broj puta ili sve dok je zadovoljen određeni uslov.
 
@@ -1604,7 +1604,7 @@ predstavlja alternativu izrazu
 Izbor između ova dva pristupa najčešće zavisi od stila programiranja i složenosti konkretnog problema.
 
 
-\subsection{Funkcije \texttt{zip()}, \texttt{enumerate()} i \texttt{sort()}}
+\subsection{Funkcije \texttt{zip}, \texttt{enumerate} i \texttt{sort}}
 
 Funkcije \texttt{zip()} i \texttt{enumerate()} spadaju među najčešće korištene ugrađene funkcije za obradu i iteriranje kroz kolekcije podataka.
 
@@ -1716,7 +1716,7 @@ Za razliku od metode \texttt{sort()}, funkcija \texttt{sorted()} ne mijenja orig
 
 U praksi se \texttt{sort()} koristi kada želimo izmijeniti postojeću listu, dok se \texttt{sorted()} koristi kada je potrebno sačuvati originalni redoslijed elemenata.
 
-\subsection{Neke često korištene ugrađene funkcije}
+\subsection{Korisne ugrađene funkcije}
 
 Pored navedenih funkcija, Pajton sadrži veliki broj korisnih ugrađenih funkcija. Neke od najčešće korištenih su:
 
@@ -2172,7 +2172,7 @@ Napomenimo da je dobra praksa zatvoriti datoteku nakon što zavr\-šite rad sa n
 
 % Upis json, csv, ispis itd. 
 
-\subsection{Modul Json}
+\subsection{Modul \texttt{json}}
 
 Modul \texttt{json} se koristi  za enkodiranje i dekodiranje podataka sa i u JSON (eng. \textit{Java Script Object Notation}) formatu. JSON je  široko raspro\-stranjen format za razmjenu podataka, osobama  jednostavan za čitanje i pisanje, a mašinama za raščlanjivanje i generisanje.\\
 
@@ -2302,7 +2302,7 @@ Ovaj izraz opisuje dvije cifre za dan, dvije cifre za mjesec i četiri cifre za 
 
 Regularni izrazi predstavljaju veoma moćan alat za obradu tekstualnih podataka. Iako njihova sintaksa na prvi pogled može djelovati složeno, pravilnom kombinacijom osnovnih operatora moguće je veoma precizno opisati i prepoznati složene obrasce u tekstu.
 
-\subsection{Modul Re}
+\subsection{Modul \texttt{re}}
 
 Modul \texttt{re} je ugrađeni Pajtonov modul namijenjen radu sa regularnim izrazima. Omogućava definisanje, pretraživanje i obradu tekstualnih obrazaca (eng. \textit{pattern}), pa predstavlja jedan od najvažnijih alata za manipulaciju tekstualnim podacima.
 
@@ -2386,7 +2386,7 @@ Napomenimo da se u primjeru koristi zapis
 
 koji predstavlja tzv. ravni string (eng. \textit{raw string}). Kod ovakvog zapisa znak \texttt{\textbackslash} se ne tretira kao početak specijalne sekvence, što pojednostavljuje pisanje regularnih izraza i smanjuje mogućnost greške.
 
-\section{Moduli Sys i Getopt}
+\section{Moduli \texttt{sys} i \texttt{getopt}}
 
 \subsection*{Pokretanje programa iz komandne linije}
 
@@ -2409,9 +2409,9 @@ Pri tome je:
 	\item \texttt{arg1}, \texttt{arg2}, \ldots argumenti komandne linije.
 \end{itemize}
 
-\subsection{Modul Sys}
+\paragraph{Modul \texttt{sys}}. 
 
-Modul \texttt{sys} omogućava pristup informacijama i funkcijama vezanim za Pajtonov interpreter i izvršno okruženje. Neki od najčešće korištenih funkcija i atributa ovog modula su dati u nastavku.
+Ovaj modul omogućava pristup informacijama i funkcijama vezanim za Pajtonov interpreter i izvršno okruženje. Neki od najčešće korištenih funkcija i atributa ovog modula su dati u nastavku.
 
 \begin{itemize}
 	
@@ -2456,9 +2456,7 @@ dobijamo izlaz
 	arg2
 \end{minted}
 
-\subsection{Modul Getopt}
-
-Modul \texttt{getopt} služi za parsiranje opcija i argumenata komandne linije. Njegova funkcionalnost slična je istoimenoj funkciji dostupnoj u Unix operativnim sistemima. Najvažnija funkcija modula je:
+\paragraph{Modul \texttt{getopt}}.   Ovaj modul služi za parsiranje opcija i argumenata komandne linije. Njegova funkcionalnost slična je istoimenoj funkciji dostupnoj u Unix operativnim sistemima. Najvažnija funkcija modula je:
 
 \begin{minted}{python}
 	getopt.getopt(args, shortopts, longopts)
@@ -2554,7 +2552,7 @@ U slučaju da korisnik navede neispravne opcije ili izostavi obavezne argumente,
 \textit{Napomena.} U savremenim Pajton programima modul \texttt{argparse} uglavnom predstavlja preporučeni način za obradu argumenata komandne linije, jer nudi jednostavniju sintaksu, automatsko generisanje pomoći (\texttt{-h}) i bolju podršku za složenije aplikacije. Modul \texttt{getopt} je i dalje koristan za razumijevanje osnova parsiranja opcija i kompatibilnost sa Unix stilom komandne linije.
 
 
-\section{Modul NumPy}
+\section{Modul \texttt{numpy}}
 
 \texttt{NumPy} (skraćeno od \textit{Numerical Python}) predstavlja jednu od najvažnijih biblioteka za naučno i numeričko računarstvo u programskom jeziku Pajton. Razvio ju je Travis Oliphant 2005. godine, a značajan dio implementacije napisan je u jezicima \textit{C} i \textit{C++}.
 
@@ -2741,7 +2739,7 @@ Na isti način moguće je izvršavati množenje, dijeljenje, poređenja i brojne
 
 Pošto su elementi smješteni u neprekidnom bloku memorije i imaju isti tip, pristup podacima i izvođenje numeričkih operacija znatno su efikasniji nego kod standardnih Pajtonovih lista.
 
-\section{Modul Ctypes}
+\section{Modul \texttt{ctypes}}
 
 Modul \texttt{ctypes} omogućava pozivanje funkcija i korištenje tipova podataka definisanih u dijeljenim bibliotekama (eng. \textit{shared libraries}) napisanim u jeziku \textit{C} ili drugim jezicima nižeg nivoa. Na taj način moguće je koristiti postojeći kôd napisan u jeziku \textit{C} direktno iz Pajtona, bez potrebe za ponovnom implementacijom.
 
