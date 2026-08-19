@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  18 AUG 2026 15:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  19 AUG 2026 09:06
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -3323,10 +3323,6 @@ If that doesn't work, type  X <return>  to quit.
 
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -P s
-tripnl=False -o _minted-main/88CE2A466CF7B010D2AA47A3EE1ABBB15018845A16FEE2F871
-CFA2D2B2CFB1C6.pygtex main.pyg)...executed.
-
 
 (./_minted-main/88CE2A466CF7B010D2AA47A3EE1ABBB15018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex) [200]
@@ -3682,9 +3678,6 @@ Underfull \hbox (badness 4353) in paragraph at lines 246--250
 k-tu-re po-da-ta-ka i al-go-rit-mi\OT1/cmr/m/n/10.95 ,
  []
 
-runsystem(rm _minted-main/7C5A06A7A41070A0A0D0F5A661C58AF15018845A16FEE2F871CFA
-2D2B2CFB1C6.pygtex)...executed.
-
 
 FiXme Summary: Number of notes: 0,
 (FiXme)        Number of warnings: 0,
@@ -3702,10 +3695,10 @@ runsystem(rm main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 22948 strings out of 479648
- 559292 string characters out of 5886115
+ 22945 strings out of 479648
+ 559048 string characters out of 5886115
  818646 words of memory out of 5000000
- 39688 multiletter control sequences out of 15000+600000
+ 39686 multiletter control sequences out of 15000+600000
  485509 words of font info for 90 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  84i,12n,131p,979b,757s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3734,7 +3727,7 @@ fonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb>
-Output written on main.pdf (235 pages, 12824524 bytes).
+Output written on main.pdf (235 pages, 12824533 bytes).
 PDF statistics:
  939 PDF objects out of 1000 (max. 8388607)
  604 compressed objects within 7 object streams
