@@ -825,24 +825,20 @@ Na taj način se u svakom koraku prostor pretrage prepolovljava.
 Rekurzivna implementacija binarne pretrage prikazana je u nastavku.
 
 \begin{minted}{python}
-	def binary_search(arr, x):
+    def binary_search(arr, x, left, right):
+        if left > right:
+            return -1
 
-	    if len(arr) == 0:
-	        return False
+        mid = (left + right) // 2
+
+        if arr[mid] == x:
+            return True
+        elif arr[mid] < x:
+            return binary_search(arr, x, mid + 1, right)
+        else:
+            return binary_search(arr, x, left, mid - 1)
 	
-	    if len(arr) == 1:
-	        return arr[0] == x
-	    mid = len(arr) // 2
-	
-	    if arr[mid] == x:
-	        return True
-	    elif arr[mid] < x:
-	        return binary_search(arr[mid + 1:], x)
-	    else:
-	        return binary_search(arr[:mid], x)
-	
-	# primjer poziva
-	
+	# primjer poziv
 	arr = [2, 8, 10, 12, 15]
 	x = 10
 	found = binary_search(arr, x)
@@ -995,42 +991,39 @@ Osnovna ideja algoritma sastoji se od dvije faze:
 
 Pretpostavimo da tražimo element $x$ u sortiranom nizu. Najprije provjeravamo elemente na pozicijama $1, 2, 4, 8, 16, \ldots, 2^i,$ sve dok ne pronađemo indeks $i$ za koji važi $niz[2^{i-1}] \leq x \leq niz[2^i],$  ili dok ne dostignemo kraj niza. Na taj način određujemo interval u kojem se traženi element može nalaziti. Nakon toga nad pronađenim intervalom primjenjujemo binarnu pretragu.
 
-Drugim riječima, eksponencijalna pretraga najprije veoma brzo sužava prostor pretrage eksponencijalnim povećavanjem indeksa, a zatim koristi binarnu pretragu da precizno odredi poziciju traženog elementa. Ovakav pristup omogućava efikasno pretraživanje velikih sortiranih nizova, posebno kada se traženi element nalazi blizu početka niza.
+Drugim riječima, eksponencijalna pretraga najprije veoma brzo sužava prostor pretrage eksponencijalnim povećavanjem indeksa, a zatim koristi binarnu pretragu da precizno ispita prisutnost elementa. Ovakav pristup omogućava efikasno pretraživanje velikih sortiranih nizova, posebno kada se traženi element nalazi blizu početka niza.
 
-Jedna moguća implementacija eksponencijalne pretrage data je sljedećim kodom.
+Jedna moguća implementacija eksponencijalne pretrage data je sljedećim k\^odom.
 
-  \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
- 	def exponential_search(niz, x, l):
- 	
- 	    if len(niz) <= 1:
- 	        if x in niz:
- 	           return  l + int(x in niz)
- 	    else:
- 	        return -1 
- 	
- 	    if l == 0:
- 	        pos = 2
- 	    else:
- 	        pos = l * 2
- 	
- 	    if pos >= len(niz):
- 	        ind_found = binary_search(niz[l:], x)
- 	        # ako x ne postoji u sufiksu
- 	        if ind_found == -1:  
- 	            return -1
- 	        else:
- 	            return l + binary_search(niz[l:], x)
- 	    else:
- 	        if niz[l] <= x and x <= niz[pos] :
- 	            return l + binary_search(niz[l: pos+1], x)
- 	        else:
- 	            return exponential_search(niz, x, pos)
- 	# instanca:
- 	niz = [2, 10, 22, 38, 44, 51, 100, 220, 550, 880]
- 	x = 10
- 	# poziv funkcije: 
- 	print(exponential_search(niz, x, 0))
- \end{minted}
+\begin{minted}[fontsize=\footnotesize]{python}
+	def exponential_search(niz, x):
+	    
+	    n = len(niz)
+	    if n == 0:
+	        return -1
+	
+	    # provjera prvog elementa
+	    if niz[0] == x:
+	        return 0
+	
+	    # eksponencijalno prosirivanje intervala
+            i = 1
+	    while i < n and niz[i] <= x:
+	        i *= 2
+	
+	    # binarna pretraga u pronadenom intervalu
+	    left = i // 2
+	    right = min(i, n - 1)
+	
+	    return binary_search(niz, x, left, right)
+	
+	
+	# instanca:
+	niz = [2, 10, 22, 38, 44, 51, 100, 220, 550, 880]
+	x = 10
+	# poziv funkcije:
+	print(exponential_search(niz, x))
+\end{minted}
 
 \textit{Kompleksnost algoritma}. U prvoj fazi algoritam eksponencijalnim koracima pronalazi odgovarajući interval. Broj potrebnih skokova je najviše $O(\log n)$. Nakon toga se nad pronađenim intervalom izvršava binarna pretraga, čija je složenost takođe $O(\log n)$.
 
@@ -1055,7 +1048,7 @@ Pseudokod ove paradigme dat je Algoritmom~\ref{alg:d-n-c}.
 
 \begin{algorithm}
 	\begin{algorithmic}[1]
-		\Procedure{D&C}{$n$: veličina ulaza}
+		\Procedure{D\&C}{$n$: veličina ulaza}
 		
 		\If{$n \leq n_0$}
 		\State Direktno riješiti problem
@@ -2056,7 +2049,7 @@ Implementacija ovog rješenje je data sljedećim k\^odom (pristup odozgo prema d
 	 				       +DP[i-1][j-W[i-1]],
 	 				        DP[i-1][j])
 	 			else:
-	 				DP[i][j] = {DP}[i-1][j]
+	 				DP[i][j] = DP[i-1][j]
 	 
 	 	return DP[n][C]
 	 
@@ -2066,7 +2059,7 @@ Implementacija ovog rješenje je data sljedećim k\^odom (pristup odozgo prema d
 	 C = 50
 	 n = len(p)
 	 #poziv funkcije
-	 print knapsack(n, C, W, p, n)
+	 print(knapsack(n, C, W, p))
 	 \end{minted}
 	 
  \textit{Kompleksnost algoritma}. Najskuplji dio algoritma su dvije ugnježdene \texttt{for} petlje, koje izvršavaju $O(n \cdot C)$ iteracija. Svaka od iteracija se izvršava u konstantnom vremenu, pa je i ukupna kompleksnost algoritma jednaka $O(n \cdot C)$.
@@ -2404,10 +2397,8 @@ Primijetimo da smo dinamičko programiranje implementirali pomoću pristupa \tex
 Implementirajmo sada dinamičko programiranje za ovaj problem pristupom \textit{odozgo prema dolje}.
 
    \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
-	def init(niz, suma):
-		global DP
+	def init(niz, suma, DP):
 		DP = [[-1] * (suma + 1) for _ in range(len(niz) + 1) ]
-	
 	
 	def sum_array_top_down(niz, suma, i, j, DP = [ ]):
 	
@@ -2420,6 +2411,7 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom \textit{
 		if i == 0: 
 			DP[0][j] = False
 			return False
+			
 		#recursion: 
 		if j >= niz[i-1]:  
 			DP[i][j] = sum_array_top_down(niz, suma, i-1, j, DP) or
@@ -2428,6 +2420,11 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom \textit{
 		else:
 			DP[i][j] = sum_array_top_down(niz, suma, i-1, j, DP)
 			return DP[i][j]
+		#main 
+		DP =[]
+		init(miz, suma, DP)
+		sum_array_top_down(niz, suma, len(niz), suma, DP) 
+		print(DP[len(niz)][suma])
 \end{minted}  
 
 \textit{Kompleksnost algoritma}. Broj iteracija koje se izvršavaju je jednak $O(n \cdot sum)$. Svaka iteracija se izvršava u konstantnom vremenu, pa je i ukupna kompleksnost algoritma jednaka  $O(n \cdot sum)$. Dakle, ako je vrijednost \emph{sum} ogromna, ekponencijalno velika u odnosu na veličinu niza, ovakav algoritam će biti neefikasan. 

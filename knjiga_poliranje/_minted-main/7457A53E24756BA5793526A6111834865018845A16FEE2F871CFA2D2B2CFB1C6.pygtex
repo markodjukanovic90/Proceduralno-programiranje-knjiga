@@ -12,7 +12,7 @@
 	 				       \PYG{o}{+}\PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{n}{j}\PYG{o}{\PYGZhy{}}\PYG{n}{W}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]],}
 	 				        \PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{n}{j}\PYG{p}{])}
 	 			\PYG{k}{else}\PYG{p}{:}
-	 				\PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{DP}\PYG{p}{\PYGZcb{}[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]}
+	 				\PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{DP}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]}
 	
 	 	\PYG{k}{return} \PYG{n}{DP}\PYG{p}{[}\PYG{n}{n}\PYG{p}{][}\PYG{n}{C}\PYG{p}{]}
 	
@@ -22,5 +22,5 @@
 	 \PYG{n}{C} \PYG{o}{=} \PYG{l+m+mi}{50}
 	 \PYG{n}{n} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)}
 	 \PYG{c+c1}{\PYGZsh{}poziv funkcije}
-	 \PYG{n+nb}{print} \PYG{n}{knapsack}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,} \PYG{n}{C}\PYG{p}{,} \PYG{n}{W}\PYG{p}{,} \PYG{n}{p}\PYG{p}{,} \PYG{n}{n}\PYG{p}{)}
+	 \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{knapsack}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,} \PYG{n}{C}\PYG{p}{,} \PYG{n}{W}\PYG{p}{,} \PYG{n}{p}\PYG{p}{))}
 \end{Verbatim}

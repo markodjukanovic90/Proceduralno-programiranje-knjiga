@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{k}{def} \PYG{n+nf}{binary\PYGZus{}search}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{left}\PYG{p}{,} \PYG{n}{right}\PYG{p}{):}
+        \PYG{k}{if} \PYG{n}{left} \PYG{o}{\PYGZgt{}} \PYG{n}{right}\PYG{p}{:}
+            \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}
+
+        \PYG{n}{mid} \PYG{o}{=} \PYG{p}{(}\PYG{n}{left} \PYG{o}{+} \PYG{n}{right}\PYG{p}{)} \PYG{o}{//} \PYG{l+m+mi}{2}
+
+        \PYG{k}{if} \PYG{n}{arr}\PYG{p}{[}\PYG{n}{mid}\PYG{p}{]} \PYG{o}{==} \PYG{n}{x}\PYG{p}{:}
+            \PYG{k}{return} \PYG{k+kc}{True}
+        \PYG{k}{elif} \PYG{n}{arr}\PYG{p}{[}\PYG{n}{mid}\PYG{p}{]} \PYG{o}{\PYGZlt{}} \PYG{n}{x}\PYG{p}{:}
+            \PYG{k}{return} \PYG{n}{binary\PYGZus{}search}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{mid} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{right}\PYG{p}{)}
+        \PYG{k}{else}\PYG{p}{:}
+            \PYG{k}{return} \PYG{n}{binary\PYGZus{}search}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{left}\PYG{p}{,} \PYG{n}{mid} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{)}
+	
+	\PYG{c+c1}{\PYGZsh{} primjer poziv}
+	\PYG{n}{arr} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{8}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{12}\PYG{p}{,} \PYG{l+m+mi}{15}\PYG{p}{]}
+	\PYG{n}{x} \PYG{o}{=} \PYG{l+m+mi}{10}
+	\PYG{n}{found} \PYG{o}{=} \PYG{n}{binary\PYGZus{}search}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{,} \PYG{n}{x}\PYG{p}{)}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{found}\PYG{p}{)}
+\end{Verbatim}
