@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  25 AUG 2026 22:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  25 AUG 2026 22:46
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2571,7 +2571,7 @@ Underfull \vbox (badness 2027) has occurred while \output is active []
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/E9FD9B27BF85999BD90C0BA4A26BCB885018845A16FEE2F871CFA2D2B2CFB1C
+(./_minted-main/EA3EA9ABCA664B52FCB0D97A6DCF1D075018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex [154])
 Overfull \hbox (5.29404pt too wide) in paragraph at lines 854--855
 []\OT1/cmr/m/n/10.95 Pretraga pre-ska-ka-njem (eng. \OT1/cmr/m/it/10.95 jump se
@@ -2629,7 +2629,7 @@ If that doesn't work, type  X <return>  to quit.
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/018B3107B2EC699895C3A603479B60F65018845A16FEE2F871CFA2D2B2CFB1C
+(./_minted-main/5EFAE8148A07CF8C4F5A30FE44DBABEC5018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex [162])
 <slike/mege.png, id=596, 655.44875pt x 635.37375pt>
 File: slike/mege.png Graphic file (type png)
@@ -3306,14 +3306,10 @@ If that doesn't work, type  X <return>  to quit.
 
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -P s
-tripnl=False -o _minted-main/88026EFC2E0BE24667D405964C78A74F5018845A16FEE2F871
-CFA2D2B2CFB1C6.pygtex main.pyg)...executed.
 
-
-(./_minted-main/88026EFC2E0BE24667D405964C78A74F5018845A16FEE2F871CFA2D2B2CFB1C
+(./_minted-main/3992436430675488AE86189EC087DC405018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex [199])
-Underfull \hbox (badness 10000) in paragraph at lines 2433--2434
+Underfull \hbox (badness 10000) in paragraph at lines 2432--2433
 
  []
 
@@ -3325,7 +3321,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2494 ...ontsize=\footnotesize,scale=0.8]{python}
+l.2493 ...ontsize=\footnotesize,scale=0.8]{python}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3339,7 +3335,7 @@ If that doesn't work, type  X <return>  to quit.
 File: slike/brute-force-cutting-stick.png Graphic file (type png)
 <use slike/brute-force-cutting-stick.png>
 Package pdftex.def Info: slike/brute-force-cutting-stick.png  used on input lin
-e 2517.
+e 2516.
 (pdftex.def)             Requested size: 299.99918pt x 229.99762pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -3356,13 +3352,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2536 ...o traženi broj ne postoji, vratiti $−
+l.2535 ...o traženi broj ne postoji, vratiti $−
                                                   1$.
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-Overfull \hbox (0.26112pt too wide) in paragraph at lines 2542--2550
+Overfull \hbox (0.26112pt too wide) in paragraph at lines 2541--2549
 \OT1/cmr/m/n/10.95 4\OML/cmm/m/it/10.95 ; x[] \OMS/cmtt/m/n/10.95 2 \U/msb/m/n/
 10.95 N$\OT1/cmr/m/n/10.95 . Sva mo-gu^^Sca rje^^Tsenja su: $(1 1 1 1 0)\OML/cm
 m/m/it/10.95 ; \OT1/cmr/m/n/10.95 (1 0 1 1 1)\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n
@@ -3370,18 +3366,18 @@ m/m/it/10.95 ; \OT1/cmr/m/n/10.95 (1 0 1 1 1)\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n
  []
 
 
-Overfull \hbox (9.28033pt too wide) in paragraph at lines 2559--2560
+Overfull \hbox (9.28033pt too wide) in paragraph at lines 2558--2559
 []\OT1/cmr/m/n/10.95 U ula-zu je dat niz bro-je-va. Kon-stru-i-sa-ti al-go-ri-t
 am di-na-mi^^Tckog programi-
  []
 
 [204]
-Underfull \hbox (badness 10000) in paragraph at lines 2564--2565
+Underfull \hbox (badness 10000) in paragraph at lines 2563--2564
 
  []
 
 
-Overfull \hbox (52.5288pt too wide) detected at line 2566
+Overfull \hbox (52.5288pt too wide) detected at line 2565
 \OML/cmm/m/it/10.95 dict \OT1/cmr/m/n/10.95 = \OMS/cmtt/m/n/10.95 f[]\OML/cmm/m
 /it/10.95 ; []; []; []; []; []; []; []; []; []; []; []; []; []; []; []\OMS/cmtt
 /m/n/10.95 g
@@ -3390,7 +3386,7 @@ Overfull \hbox (52.5288pt too wide) detected at line 2566
 <slike/plococe-dp-zadatak.png, id=738, 194.7275pt x 180.675pt>
 File: slike/plococe-dp-zadatak.png Graphic file (type png)
 <use slike/plococe-dp-zadatak.png>
-Package pdftex.def Info: slike/plococe-dp-zadatak.png  used on input line 2579.
+Package pdftex.def Info: slike/plococe-dp-zadatak.png  used on input line 2578.
 
 (pdftex.def)             Requested size: 119.99884pt x 100.0001pt.
 
@@ -3675,9 +3671,6 @@ Underfull \hbox (badness 4353) in paragraph at lines 246--250
 k-tu-re po-da-ta-ka i al-go-rit-mi\OT1/cmr/m/n/10.95 ,
  []
 
-runsystem(rm _minted-main/AF0F8C0401B0C4B8127E78E1EDED20B55018845A16FEE2F871CFA
-2D2B2CFB1C6.pygtex)...executed.
-
 
 FiXme Summary: Number of notes: 0,
 (FiXme)        Number of warnings: 0,
@@ -3691,17 +3684,14 @@ FiXme Summary: Number of notes: 0,
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 runsystem(rm main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 22952 strings out of 479648
- 559354 string characters out of 5886115
+ 22949 strings out of 479648
+ 559110 string characters out of 5886115
  818646 words of memory out of 5000000
- 39691 multiletter control sequences out of 15000+600000
+ 39689 multiletter control sequences out of 15000+600000
  485847 words of font info for 92 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  84i,12n,131p,979b,750s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3731,7 +3721,7 @@ s/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b>
-Output written on main.pdf (235 pages, 12834146 bytes).
+Output written on main.pdf (235 pages, 12834181 bytes).
 PDF statistics:
  944 PDF objects out of 1000 (max. 8388607)
  607 compressed objects within 7 object streams

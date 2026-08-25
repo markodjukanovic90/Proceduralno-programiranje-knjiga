@@ -13,7 +13,7 @@
 	  \PYG{n}{niz}\PYG{o}{.}\PYG{n}{clear}\PYG{p}{()}
 	  \PYG{n}{indexL} \PYG{o}{=} \PYG{n}{indexR} \PYG{o}{=}  \PYG{l+m+mi}{0}
 	  \PYG{k}{while}\PYG{p}{(}\PYG{n}{indexL} \PYG{o}{\PYGZlt{}} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{nizLeftSort}\PYG{p}{)} \PYG{o+ow}{and} \PYG{n}{indexR} \PYG{o}{\PYGZlt{}} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{nizRightSort}\PYG{p}{)):}
-	 	 \PYG{k}{if}\PYG{p}{(}\PYG{n}{nizLeftSort}\PYG{p}{[} \PYG{n}{indexL} \PYG{p}{]} \PYG{o}{\PYGZgt{}=} \PYG{n}{nizRightSort}\PYG{p}{[} \PYG{n}{indexR} \PYG{p}{]):}
+	 	 \PYG{k}{if}\PYG{p}{(}\PYG{n}{nizLeftSort}\PYG{p}{[} \PYG{n}{indexL} \PYG{p}{]} \PYG{o}{\PYGZlt{}=} \PYG{n}{nizRightSort}\PYG{p}{[} \PYG{n}{indexR} \PYG{p}{]):}
 	 		 \PYG{n}{niz}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{nizLeftSort}\PYG{p}{[}\PYG{n}{indexL}\PYG{p}{])}
 	 		 \PYG{n}{indexL} \PYG{o}{=} \PYG{n}{indexL} \PYG{o}{+} \PYG{l+m+mi}{1}
 	 	 \PYG{k}{else}\PYG{p}{:}

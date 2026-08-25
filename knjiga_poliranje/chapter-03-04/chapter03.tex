@@ -832,7 +832,7 @@ Rekurzivna implementacija binarne pretrage prikazana je u nastavku.
         mid = (left + right) // 2
 
         if arr[mid] == x:
-            return True
+            return mid
         elif arr[mid] < x:
             return binary_search(arr, x, mid + 1, right)
         else:
@@ -841,8 +841,8 @@ Rekurzivna implementacija binarne pretrage prikazana je u nastavku.
 	# primjer poziv
 	arr = [2, 8, 10, 12, 15]
 	x = 10
-	found = binary_search(arr, x)
-	print(found)
+	found = binary_search(arr, x, 0, len(arr)-1)
+	print("Nalazi se na poziciji: ", found)
 \end{minted}
 
 \textbf{Analiza složenosti.} Neka je $T(n)$ vrijeme izvršavanja algoritma za niz dužine $n$. U svakoj iteraciji pretražuje se samo jedna polovina niza, pa vrijedi rekurentna relacija $T(n)=T\left(\frac{n}{2}\right)+O(1).$ Primjenom Master teoreme dobija se $T(n)=O(\log n).$ Dakle, binarna pretraga je značajno efikasnija od linearne pretrage čija je složenost $O(n)$.
@@ -1100,7 +1100,7 @@ Implementacija algoritma  sortiranja spajanjem  je data u nastavku.
 	  niz.clear()
 	  indexL = indexR =  0
 	  while(indexL < len(nizLeftSort) and indexR < len(nizRightSort)):
-	 	 if(nizLeftSort[ indexL ] >= nizRightSort[ indexR ]):
+	 	 if(nizLeftSort[ indexL ] <= nizRightSort[ indexR ]):
 	 		 niz.append(nizLeftSort[indexL])
 	 		 indexL = indexL + 1
 	 	 else:
@@ -2398,9 +2398,9 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom \textit{
 
    \begin{minted}[fontsize=\footnotesize,scale=0.8]{python}
 	def init(niz, suma, DP):
-		DP = [[-1] * (suma + 1) for _ in range(len(niz) + 1) ]
+		return [[-1] * (suma + 1) for _ in range(len(niz) + 1) ]
 	
-	def sum_array_top_down(niz, suma, i, j, DP = [ ]):
+	def sum_array_top_down(niz, suma, i, j, DP):
 	
 		if DP[i][j] != -1:
 			return DP[i][j]
@@ -2421,8 +2421,7 @@ Implementirajmo sada dinamičko programiranje za ovaj problem pristupom \textit{
 			DP[i][j] = sum_array_top_down(niz, suma, i-1, j, DP)
 			return DP[i][j]
 		#main 
-		DP =[]
-		init(miz, suma, DP)
+		DP = init(miz, suma)
 		sum_array_top_down(niz, suma, len(niz), suma, DP) 
 		print(DP[len(niz)][suma])
 \end{minted}  
