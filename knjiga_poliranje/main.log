@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  25 AUG 2026 22:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  25 AUG 2026 22:58
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1376,11 +1376,11 @@ Package pdftex.def Info: slike/str_mem_organization.png  used on input line 620
 
 (./_minted-main/2EEA256DBCBDBB1BC331D99F07759A655018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex [62]) [63]
-<slike/img-list-tuple.png, id=264, 830.10126pt x 388.45125pt>
+<slike/img-list-tuple.png, id=264, 1541.76pt x 1027.84pt>
 File: slike/img-list-tuple.png Graphic file (type png)
 <use slike/img-list-tuple.png>
 Package pdftex.def Info: slike/img-list-tuple.png  used on input line 799.
-(pdftex.def)             Requested size: 300.00153pt x 160.00102pt.
+(pdftex.def)             Requested size: 299.99504pt x 159.98795pt.
 \openout3 = `main.pyg'.
 
 
@@ -1390,7 +1390,7 @@ Package pdftex.def Info: slike/img-list-tuple.png  used on input line 799.
 
 
 (./_minted-main/32083A644F1426ED7268168A18670DC45018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [64 <./slike/img-list-tuple.png>]
+6.pygtex) [64 <./slike/img-list-tuple.png (PNG copy)>]
 Overfull \hbox (13.00871pt too wide) in paragraph at lines 838--851
  [][] 
  []
@@ -1487,7 +1487,7 @@ ici su u Paj-to-nu im-ple-men-ti-ra-ni ko-ri^^Tstenjem
  []
 
 [69]
-<slike/dict_mem_organization.png, id=285, 1541.76pt x 1027.84pt>
+<slike/dict_mem_organization.png, id=284, 1541.76pt x 1027.84pt>
 File: slike/dict_mem_organization.png Graphic file (type png)
 <use slike/dict_mem_organization.png>
 Package pdftex.def Info: slike/dict_mem_organization.png  used on input line 10
@@ -1559,7 +1559,7 @@ i su u Paj-to-nu im-ple-men-ti-ra-ni ko-ri^^Tstenjem
 
 (./_minted-main/2677B1C40E8EAFC14B6938584C94A5415018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex)
-<slike/set_mem_organization.png, id=295, 1541.76pt x 1027.84pt>
+<slike/set_mem_organization.png, id=294, 1541.76pt x 1027.84pt>
 File: slike/set_mem_organization.png Graphic file (type png)
 <use slike/set_mem_organization.png>
 Package pdftex.def Info: slike/set_mem_organization.png  used on input line 117
@@ -1982,7 +1982,7 @@ o za-u-sta-vlja-nje iz-vr^^Tsavanja
 
 (./_minted-main/DE2EDEEB7A39BB7A6D0DD90FE1B20FC05018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex)
-<slike/class-exceptions.png, id=377, 1639.12375pt x 966.61125pt>
+<slike/class-exceptions.png, id=376, 1639.12375pt x 966.61125pt>
 File: slike/class-exceptions.png Graphic file (type png)
 <use slike/class-exceptions.png>
 Package pdftex.def Info: slike/class-exceptions.png  used on input line 2128.
@@ -2132,12 +2132,12 @@ A.pygtex
 Underfull \vbox (badness 3780) has occurred while \output is active []
 
  [109])
-<slike/numpy-array-memory.png, id=417, 501.875pt x 209.78375pt>
+<slike/numpy-array-memory.png, id=416, 1541.76pt x 1027.84pt>
 File: slike/numpy-array-memory.png Graphic file (type png)
 <use slike/numpy-array-memory.png>
 Package pdftex.def Info: slike/numpy-array-memory.png  used on input line 2574.
 
-(pdftex.def)             Requested size: 280.01425pt x 140.00058pt.
+(pdftex.def)             Requested size: 279.9985pt x 139.99141pt.
 
 [110]
 \openout3 = `main.pyg'.
@@ -2149,7 +2149,7 @@ Package pdftex.def Info: slike/numpy-array-memory.png  used on input line 2574.
 
 
 (./_minted-main/0F930488495AA9845F5DAB569A38C51C5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [111 <./slike/numpy-array-memory.png>])
+6.pygtex [111 <./slike/numpy-array-memory.png (PNG copy)>])
 \openout3 = `main.pyg'.
 
 
@@ -2326,7 +2326,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2960--2961
 
 (./_minted-main/072C6050F334F789519ABD32076034235018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex) [121] [122]
-<slike/python-code-copiler-machine-code.png, id=460, 963.6pt x 542.025pt>
+<slike/python-code-copiler-machine-code.png, id=458, 963.6pt x 542.025pt>
 File: slike/python-code-copiler-machine-code.png Graphic file (type png)
 <use slike/python-code-copiler-machine-code.png>
 Package pdftex.def Info: slike/python-code-copiler-machine-code.png  used on in
@@ -2395,7 +2395,7 @@ mr/m/n/10.95 (5) \OMS/cmtt/m/n/10.95 ! \OML/cmm/m/it/10.95 fact\OT1/cmr/m/n/10.
 95 (4) \OMS/cmtt/m/n/10.95 !
  []
 
-<slike/factorial_recursion_tree.png, id=493, 1049.9225pt x 933.4875pt>
+<slike/factorial_recursion_tree.png, id=491, 1049.9225pt x 933.4875pt>
 File: slike/factorial_recursion_tree.png Graphic file (type png)
 <use slike/factorial_recursion_tree.png>
 Package pdftex.def Info: slike/factorial_recursion_tree.png  used on input line
@@ -2427,7 +2427,7 @@ Package pdftex.def Info: slike/factorial_recursion_tree.png  used on input line
 
 (./_minted-main/DEB81F5720A7B9D270DB8410844396035018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex) [136]
-<slike/mandelbrot.png, id=508, 1204.5pt x 1204.5pt>
+<slike/mandelbrot.png, id=506, 1204.5pt x 1204.5pt>
 File: slike/mandelbrot.png Graphic file (type png)
 <use slike/mandelbrot.png>
 Package pdftex.def Info: slike/mandelbrot.png  used on input line 246.
@@ -2448,7 +2448,7 @@ Overfull \hbox (14.77792pt too wide) in paragraph at lines 287--289
 ast, pa je vre-men-ska slo^^Tzenost
  []
 
-<slike/fib_rec.png, id=516, 1585.925pt x 998.73125pt>
+<slike/fib_rec.png, id=514, 1585.925pt x 998.73125pt>
 File: slike/fib_rec.png Graphic file (type png)
 <use slike/fib_rec.png>
 Package pdftex.def Info: slike/fib_rec.png  used on input line 296.
@@ -2458,7 +2458,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [139]
 [140 <./slike/fib_rec.png (PNG copy)>]
-<slike/tower.png, id=524, 466.74374pt x 211.79124pt>
+<slike/tower.png, id=522, 466.74374pt x 211.79124pt>
 File: slike/tower.png Graphic file (type png)
 <use slike/tower.png>
 Package pdftex.def Info: slike/tower.png  used on input line 337.
@@ -2631,7 +2631,7 @@ If that doesn't work, type  X <return>  to quit.
 
 (./_minted-main/5EFAE8148A07CF8C4F5A30FE44DBABEC5018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex [162])
-<slike/mege.png, id=596, 655.44875pt x 635.37375pt>
+<slike/mege.png, id=594, 655.44875pt x 635.37375pt>
 File: slike/mege.png Graphic file (type png)
 <use slike/mege.png>
 Package pdftex.def Info: slike/mege.png  used on input line 1123.
@@ -2649,7 +2649,7 @@ e-ba si-ste-mat-ski istra^^Tziti.
  []
 
 [165] [166]
-<slike/n-queen-problem.png, id=611, 185.69376pt x 168.63pt>
+<slike/n-queen-problem.png, id=609, 185.69376pt x 168.63pt>
 File: slike/n-queen-problem.png Graphic file (type png)
 <use slike/n-queen-problem.png>
 Package pdftex.def Info: slike/n-queen-problem.png  used on input line 1237.
@@ -2672,7 +2672,7 @@ If that doesn't work, type  X <return>  to quit.
 
 (./_minted-main/51759623E421236CE02A43547FBBCCC05018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex [168])
-<slike/n-queen-backtracking.png, id=619, 1409.265pt x 1124.2pt>
+<slike/n-queen-backtracking.png, id=617, 1409.265pt x 1124.2pt>
 File: slike/n-queen-backtracking.png Graphic file (type png)
 <use slike/n-queen-backtracking.png>
 Package pdftex.def Info: slike/n-queen-backtracking.png  used on input line 129
@@ -3020,7 +3020,7 @@ If that doesn't work, type  X <return>  to quit.
 
 (./_minted-main/11AB637D21E46C6FFC0A36D34C3C77835018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex) [186] [187]
-<slike/dp-table-1.png, id=681, 272.01625pt x 263.98625pt>
+<slike/dp-table-1.png, id=679, 272.01625pt x 263.98625pt>
 File: slike/dp-table-1.png Graphic file (type png)
 <use slike/dp-table-1.png>
 Package pdftex.def Info: slike/dp-table-1.png  used on input line 1897.
@@ -3331,7 +3331,7 @@ If that doesn't work, type  X <return>  to quit.
 
 (./_minted-main/7BE88D254EF0A8E0984311E223FC7A925018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex [201])
-<slike/brute-force-cutting-stick.png, id=728, 1407.2575pt x 1126.2075pt>
+<slike/brute-force-cutting-stick.png, id=726, 1407.2575pt x 1126.2075pt>
 File: slike/brute-force-cutting-stick.png Graphic file (type png)
 <use slike/brute-force-cutting-stick.png>
 Package pdftex.def Info: slike/brute-force-cutting-stick.png  used on input lin
@@ -3383,7 +3383,7 @@ Overfull \hbox (52.5288pt too wide) detected at line 2565
 /m/n/10.95 g
  []
 
-<slike/plococe-dp-zadatak.png, id=738, 194.7275pt x 180.675pt>
+<slike/plococe-dp-zadatak.png, id=736, 194.7275pt x 180.675pt>
 File: slike/plococe-dp-zadatak.png Graphic file (type png)
 <use slike/plococe-dp-zadatak.png>
 Package pdftex.def Info: slike/plococe-dp-zadatak.png  used on input line 2578.
@@ -3490,7 +3490,7 @@ PARADIGMI NA PROBLEME IZ ARITMETIKE
  []
 
 [216]
-<slike/catalan-net.png, id=778, 729.72626pt x 345.29pt>
+<slike/catalan-net.png, id=776, 729.72626pt x 345.29pt>
 File: slike/catalan-net.png Graphic file (type png)
 <use slike/catalan-net.png>
 Package pdftex.def Info: slike/catalan-net.png  used on input line 355.
@@ -3690,7 +3690,7 @@ runsystem(rm main.pyg)...executed.
 Here is how much of TeX's memory you used:
  22949 strings out of 479648
  559110 string characters out of 5886115
- 818646 words of memory out of 5000000
+ 818640 words of memory out of 5000000
  39689 multiletter control sequences out of 15000+600000
  485847 words of font info for 92 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
@@ -3721,9 +3721,9 @@ s/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b>
-Output written on main.pdf (235 pages, 12834181 bytes).
+Output written on main.pdf (235 pages, 15233193 bytes).
 PDF statistics:
- 944 PDF objects out of 1000 (max. 8388607)
+ 942 PDF objects out of 1000 (max. 8388607)
  607 compressed objects within 7 object streams
  0 named destinations out of 1000 (max. 500000)
  143 words of extra memory for PDF output out of 10000 (max. 10000000)
