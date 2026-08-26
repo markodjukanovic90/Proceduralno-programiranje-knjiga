@@ -74,7 +74,7 @@ Prije razmatranja različitih tipova računarskih problema uvedimo pojam grafa, 
 		\draw[edge] (u2) -- (u4);
 		\draw[edge] (u3) -- (u4);
 		
-		\node at (1,-0.8) {\textbf{(a) Neusmjereni graf}};
+		\node at (1,-0.8) {(a) Neusmjereni graf};
 		
 		
 		% =====================================================
@@ -92,10 +92,9 @@ Prije razmatranja različitih tipova računarskih problema uvedimo pojam grafa, 
 		\draw[directed] (d2) -- (d4);
 		\draw[directed] (d4) -- (d3);
 		
-		\node at (6,-0.8) {\textbf{(b) Usmjereni graf}};
+		\node at (6,-0.8) {(b) Usmjereni graf};
 		
 	\end{tikzpicture}
-	
 	\caption{Primjeri neusmjerenog i usmjerenog grafa.}
 	\label{fig:graphs}
 \end{figure}
@@ -403,12 +402,12 @@ Međutim, određivanje tačnog broja instrukcija za svaki mogući ulaz često je
 	Posmatrajmo sljedeći algoritam:
 
 \begin{minted}{Python}
-    algorithm sort(a, n): 
-        for i od  0 do duzine niza -1:
-		    for j od početka (0) do i-1  
-		        if i-ti element veći od j-tog elementa  then
-		            swap(a[i], a[j])
-		vrati a	
+algorithm sort(a, n): 
+    for i od  0 do duzine niza -1:
+		for j od početka (0) do i-1  
+		    if i-ti veći od j-tog elementa then
+		        swap(a[i], a[j])
+    vrati a	
 \end{minted}
 	
 \end{example}

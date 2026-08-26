@@ -12,7 +12,7 @@
  		\PYG{n}{found} \PYG{o}{=} \PYG{n}{linear\PYGZus{}search}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{[}\PYG{n}{k}\PYG{o}{*}\PYG{n}{jump}\PYG{p}{:} \PYG{p}{((}\PYG{n}{k}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{*}\PYG{n}{jump} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)],} \PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}
  		\PYG{k}{return} \PYG{n}{found}
  	\PYG{k}{else}\PYG{p}{:}
- 		\PYG{k}{return} \PYG{n}{jump\PYGZus{}search}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{jump}\PYG{p}{,} \PYG{n}{k}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} idemo na naredni interval}
+ 		\PYG{k}{return} \PYG{n}{jump\PYGZus{}search}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{jump}\PYG{p}{,} \PYG{n}{k}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} naredni interval}
 
  	\PYG{c+c1}{\PYGZsh{}instanca:}
  	\PYG{n}{niz} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{21}\PYG{p}{,} \PYG{l+m+mi}{33}\PYG{p}{,} \PYG{l+m+mi}{38}\PYG{p}{,} \PYG{l+m+mi}{41}\PYG{p}{,} \PYG{l+m+mi}{45}\PYG{p}{,} \PYG{l+m+mi}{52}\PYG{p}{,} \PYG{l+m+mi}{57}\PYG{p}{,} \PYG{l+m+mi}{70}\PYG{p}{,} \PYG{l+m+mi}{75}\PYG{p}{]}

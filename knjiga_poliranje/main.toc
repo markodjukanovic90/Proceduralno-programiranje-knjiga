@@ -95,7 +95,7 @@
 \contentsline {section}{\numberline {3.3}Algoritmi grube sile}{147}{}%
 \contentsline {section}{\numberline {3.4}Algoritmi pretraživanja}{151}{}%
 \contentsline {subsection}{\numberline {3.4.1}Linearna pretraga}{152}{}%
-\contentsline {subsection}{\numberline {3.4.2}Binarna pretraga}{154}{}%
+\contentsline {subsection}{\numberline {3.4.2}Binarna pretraga}{153}{}%
 \contentsline {subsection}{\numberline {3.4.3}Pretraga preskakanjem}{155}{}%
 \contentsline {subsection}{\numberline {3.4.4}Interpolacijska pretraga}{157}{}%
 \contentsline {subsection}{\numberline {3.4.5}Eksponencijalna pretraga}{159}{}%

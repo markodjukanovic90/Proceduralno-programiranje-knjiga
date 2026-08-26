@@ -1,13 +1,11 @@
 \begin{Verbatim}[commandchars=\\\{\}]
 	\PYG{k}{def} \PYG{n+nf}{search}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{,} \PYG{n}{x}\PYG{p}{):}
 	
-	
 	    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{)):}
 	        \PYG{k}{if} \PYG{n}{arr}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{==} \PYG{n}{x}\PYG{p}{:}
 	        \PYG{k}{return} \PYG{n}{i}
-	
 	    \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}
-	
+	\PYG{c+c1}{\PYGZsh{}main}
 	\PYG{n}{arr} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{11}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{20}\PYG{p}{]}
 	\PYG{n}{x} \PYG{o}{=} \PYG{l+m+mi}{10}
 	\PYG{n}{res} \PYG{o}{=} \PYG{n}{search}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{,} \PYG{n}{x}\PYG{p}{)}

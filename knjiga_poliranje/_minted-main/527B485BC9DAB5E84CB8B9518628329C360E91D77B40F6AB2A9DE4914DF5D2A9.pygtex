@@ -1,8 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-    \PYG{n}{algorithm} \PYG{n}{sort}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{n}\PYG{p}{):}
-        \PYG{k}{for} \PYG{n}{i} \PYG{n}{od}  \PYG{l+m+mi}{0} \PYG{n}{do} \PYG{n}{duzine} \PYG{n}{niza} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{:}
-		    \PYG{k}{for} \PYG{n}{j} \PYG{n}{od} \PYG{n}{početka} \PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)} \PYG{n}{do} \PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}
-		        \PYG{k}{if} \PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{n}{ti} \PYG{n}{element} \PYG{n}{veći} \PYG{n}{od} \PYG{n}{j}\PYG{o}{\PYGZhy{}}\PYG{n}{tog} \PYG{n}{elementa}  \PYG{n}{then}
-		            \PYG{n}{swap}\PYG{p}{(}\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{a}\PYG{p}{[}\PYG{n}{j}\PYG{p}{])}
-		\PYG{n}{vrati} \PYG{n}{a}	
-\end{Verbatim}

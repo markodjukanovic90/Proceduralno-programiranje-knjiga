@@ -445,7 +445,6 @@ Rekurzija se izvrašava u eksponencijalnom $O(2^n)$ vremenu.
 	    # Umetanje posljednjeg elementa
 	    key = A[n - 1]
 	    j = n - 2
-	
 	    while j >= 0 and A[j] > key:
 	        A[j + 1] = A[j]
 	        j = j - 1
@@ -756,13 +755,11 @@ Iterativna implementacija linearne pretrage prikazana je u nastavku.
 \begin{minted}{python}
 	def search(arr, x):
 	
-	
 	    for i in range(len(arr)):
 	        if arr[i] == x:
 	        return i
-	
 	    return -1
-	
+	#main
 	arr = [2, 3, 1, 11, 10, 20]
 	x = 10
 	res = search(arr, x)
@@ -785,10 +782,9 @@ Linearna pretraga može se implementirati i rekurzivno.
 	    if i >= len(arr):
 	        return -1
 	    if arr[i] == x:
-	        return i
-	
+	        return i	
 	    return linear_search(arr, x, i + 1)
-	
+
 	# poziv funkcije
 	res = linear_search(arr, x, 0)
 \end{minted}
@@ -900,7 +896,7 @@ Rekurzivna implementacija pretage preskakanjem  je data sljedećim k\^odom.  % u
  		found = linear_search(niz[k*jump: ((k+1)*jump + 1)], x, 0)
  		return found
  	else:
- 		return jump_search(niz, x, jump, k+1) # idemo na naredni interval
+ 		return jump_search(niz, x, jump, k+1) # naredni interval
  
  	#instanca:
  	niz = [2, 10, 21, 33, 38, 41, 45, 52, 57, 70, 75]
@@ -1005,18 +1001,15 @@ Jedna moguća implementacija eksponencijalne pretrage data je sljedećim k\^odom
 	    # provjera prvog elementa
 	    if niz[0] == x:
 	        return 0
-	
 	    # eksponencijalno prosirivanje intervala
             i = 1
 	    while i < n and niz[i] <= x:
 	        i *= 2
-	
 	    # binarna pretraga u pronadenom intervalu
 	    left = i // 2
 	    right = min(i, n - 1)
 	
 	    return binary_search(niz, x, left, right)
-	
 	
 	# instanca:
 	niz = [2, 10, 22, 38, 44, 51, 100, 220, 550, 880]

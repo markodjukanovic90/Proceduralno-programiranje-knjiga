@@ -8,18 +8,15 @@
 	    \PYG{c+c1}{\PYGZsh{} provjera prvog elementa}
 	    \PYG{k}{if} \PYG{n}{niz}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{==} \PYG{n}{x}\PYG{p}{:}
 	        \PYG{k}{return} \PYG{l+m+mi}{0}
-	
 	    \PYG{c+c1}{\PYGZsh{} eksponencijalno prosirivanje intervala}
             \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{1}
 	    \PYG{k}{while} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{n} \PYG{o+ow}{and} \PYG{n}{niz}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZlt{}=} \PYG{n}{x}\PYG{p}{:}
 	        \PYG{n}{i} \PYG{o}{*=} \PYG{l+m+mi}{2}
-	
 	    \PYG{c+c1}{\PYGZsh{} binarna pretraga u pronadenom intervalu}
 	    \PYG{n}{left} \PYG{o}{=} \PYG{n}{i} \PYG{o}{//} \PYG{l+m+mi}{2}
 	    \PYG{n}{right} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,} \PYG{n}{n} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{)}
 	
 	    \PYG{k}{return} \PYG{n}{binary\PYGZus{}search}\PYG{p}{(}\PYG{n}{niz}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{left}\PYG{p}{,} \PYG{n}{right}\PYG{p}{)}
-	
 	
 	\PYG{c+c1}{\PYGZsh{} instanca:}
 	\PYG{n}{niz} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{22}\PYG{p}{,} \PYG{l+m+mi}{38}\PYG{p}{,} \PYG{l+m+mi}{44}\PYG{p}{,} \PYG{l+m+mi}{51}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{,} \PYG{l+m+mi}{220}\PYG{p}{,} \PYG{l+m+mi}{550}\PYG{p}{,} \PYG{l+m+mi}{880}\PYG{p}{]}
