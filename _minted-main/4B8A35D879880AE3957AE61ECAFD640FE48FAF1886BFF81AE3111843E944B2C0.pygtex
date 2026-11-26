@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		Postavi najveći element na prvi element niza.
+		
+		Prolazi kroz elemente niza jedan po jedan.
+		
+		Ako je trenutni element veći od najvećeg do sada
+	        pronađenog,
+		    ažuriraj vrijednost najvećeg elementa.
+		Kraj prolaska kroz niz.
+		
+		Prikaži najveći element.
+\end{Verbatim}
