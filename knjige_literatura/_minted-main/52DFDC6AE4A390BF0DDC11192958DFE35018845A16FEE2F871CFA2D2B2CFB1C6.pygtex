@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{res} \PYG{o}{=} \PYG{n}{proizvod\PYGZus{}brojeva}\PYG{p}{(}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{res}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} Output: 12}
+\end{Verbatim}

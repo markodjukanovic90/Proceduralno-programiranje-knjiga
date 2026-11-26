@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	 \PYG{n}{x}\PYG{p}{:} \PYG{n+nb}{str} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}abc\PYGZdq{}}
+	 \PYG{n}{y}\PYG{p}{:} \PYG{n+nb}{int} \PYG{o}{=} \PYG{l+m+mi}{23}
+\end{Verbatim}

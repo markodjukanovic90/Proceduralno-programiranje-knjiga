@@ -2984,16 +2984,16 @@ Implementacija funkcije može se sačuvati u datoteci
 
 \begin{minted}[fontsize=\footnotesize]{python}
 	def cijena_dostave(m):
-	if not 0 < m <= 10:
-	raise ValueError("Nedopustiva masa paketa.")
+	    if not 0 < m <= 10:
+	        raise ValueError("Nedopustiva masa paketa.")
 	
-	if m <= 2:
-	return 5
+	    if m <= 2:
+	        return 5
 	
-	if m <= 5:
-	return 8
+	    if m <= 5:
+	        return 8
 	
-	return 12
+	    return 12
 \end{minted}
 
 Prije testiranja funkcije potrebno je odrediti skup 

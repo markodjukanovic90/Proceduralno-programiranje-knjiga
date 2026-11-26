@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{def} \PYG{n+nf}{linear\PYGZus{}search}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{n}\PYG{p}{):}
+	\PYG{k}{if} \PYG{n}{n} \PYG{o}{\PYGZgt{}=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{):}
+	    \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}
+	
+	\PYG{k}{if} \PYG{n}{arr}\PYG{p}{[}\PYG{n}{n}\PYG{p}{]} \PYG{o}{==} \PYG{n}{x}\PYG{p}{:}
+	   \PYG{k}{return} \PYG{n}{n}
+	
+	\PYG{k}{return} \PYG{n}{linear\PYGZus{}search}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{n}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}
+	
+	\PYG{c+c1}{\PYGZsh{}poziv}
+	\PYG{n}{res} \PYG{o}{=} \PYG{n}{linear\PYGZus{}search}\PYG{p}{(}\PYG{n}{arr}\PYG{p}{,}\PYG{n}{x}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{)}
+	
+\end{Verbatim}

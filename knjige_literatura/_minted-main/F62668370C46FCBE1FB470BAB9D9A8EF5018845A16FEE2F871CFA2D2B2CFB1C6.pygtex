@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{suma} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{:} \PYG{n}{x} \PYG{o}{+} \PYG{n}{y}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{suma}\PYG{p}{(}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{))} \PYG{c+c1}{\PYGZsh{} Output: 7}
+\end{Verbatim}

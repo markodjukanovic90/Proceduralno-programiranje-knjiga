@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{k}{if} \PYG{n}{uslov}\PYG{p}{:}
+        \PYG{n}{naredba\PYGZus{}1}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{n}{naredba\PYGZus{}2}
+\end{Verbatim}

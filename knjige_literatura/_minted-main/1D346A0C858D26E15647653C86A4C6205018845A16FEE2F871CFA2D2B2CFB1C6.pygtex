@@ -1,0 +1,25 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{c+c1}{\PYGZsh{} Direktna rekurzija}
+	\PYG{k}{def} \PYG{n+nf}{direktnaRecFunc}\PYG{p}{():}
+	    \PYG{c+c1}{\PYGZsh{} Kod ....}
+	
+	    \PYG{n}{direktnaRecFunc}\PYG{p}{()}
+	
+	    \PYG{c+c1}{\PYGZsh{} Kod...}
+	
+	\PYG{c+c1}{\PYGZsh{} Indirektna rekurzija}
+	\PYG{k}{def} \PYG{n+nf}{indirektnaRecFun1}\PYG{p}{():}
+	    \PYG{c+c1}{\PYGZsh{} Kod ...}
+	
+	    \PYG{n}{indirektnaRecFun2}\PYG{p}{()}
+	
+	    \PYG{c+c1}{\PYGZsh{} Kod...}
+	
+	\PYG{k}{def} \PYG{n+nf}{indirektnaRecFun2}\PYG{p}{():}
+	
+	    \PYG{c+c1}{\PYGZsh{} Kod...}
+	
+	     \PYG{n}{indirektnaRecFun1}\PYG{p}{()}
+	
+	     \PYG{c+c1}{\PYGZsh{} Kod...}
+\end{Verbatim}

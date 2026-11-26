@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{try}\PYG{p}{:}
+    \PYG{c+c1}{\PYGZsh{} kod koji moze izbaciti izuzetak}
+\PYG{k}{except} \PYG{n+ne}{ValueError}\PYG{p}{:}
+    \PYG{c+c1}{\PYGZsh{} kod za hvatanje izuzetka greske vrijednosti}
+\PYG{k}{except} \PYG{n+ne}{TypeError}\PYG{p}{:}
+    \PYG{c+c1}{\PYGZsh{} kod za hvatanje izuzetka greske tipa}
+\PYG{k}{except} \PYG{n+ne}{Exception}\PYG{p}{:}
+    \PYG{c+c1}{\PYGZsh{} kod za hvatanje drugih izuzetaka}
+\end{Verbatim}

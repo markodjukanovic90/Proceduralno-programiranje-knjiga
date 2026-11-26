@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	 \PYG{n}{string1} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}world\PYGZsq{}}
+	 \PYG{n}{substr1} \PYG{o}{=} \PYG{n}{string1}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{3}\PYG{p}{]} \PYG{c+c1}{\PYGZsh{} Output: \PYGZsq{}or\PYGZsq{}}
+	 \PYG{n}{substr2} \PYG{o}{=} \PYG{n}{string1}\PYG{p}{[:}\PYG{l+m+mi}{3}\PYG{p}{]} \PYG{c+c1}{\PYGZsh{} Output: \PYGZsq{}wor\PYGZsq{}}
+\end{Verbatim}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  26 NOV 2026 15:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  26 NOV 2026 15:38
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2311,8 +2311,12 @@ Overfull \hbox (21.65018pt too wide) in paragraph at lines 2979--2981
 
 \openout3 = `main.pyg'.
 
+runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -P s
+tripnl=False -o _minted-main/F9A420BAB445C1154BE30DD377C2A8CC5018845A16FEE2F871
+CFA2D2B2CFB1C6.pygtex main.pyg)...executed.
 
-(./_minted-main/3466FF76E566DBAFDD24F575FEA495465018845A16FEE2F871CFA2D2B2CFB1C
+
+(./_minted-main/F9A420BAB445C1154BE30DD377C2A8CC5018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
@@ -2341,10 +2345,6 @@ Overfull \hbox (6.35446pt too wide) in paragraph at lines 3068--3072
 (./_minted-main/7032CF3588A391067BDB8C25CCA9FC1D5018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex)
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -P s
-tripnl=False -o _minted-main/F4D63A0831F4B21975B56EF685A725025018845A16FEE2F871
-CFA2D2B2CFB1C6.pygtex main.pyg)...executed.
 
 
 (./_minted-main/F4D63A0831F4B21975B56EF685A725025018845A16FEE2F871CFA2D2B2CFB1C
@@ -3240,7 +3240,7 @@ Underfull \hbox (badness 4353) in paragraph at lines 247--251
 k-tu-re po-da-ta-ka i al-go-rit-mi\OT1/cmr/m/n/10.95 ,
  []
 
-runsystem(rm _minted-main/01132BD494A036C0B0CC2269451E0DF95018845A16FEE2F871CFA
+runsystem(rm _minted-main/ADE2BA20D99A91A30F32271FE11551F75018845A16FEE2F871CFA
 2D2B2CFB1C6.pygtex)...executed.
 
 
@@ -3293,7 +3293,7 @@ s/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b>
-Output written on main.pdf (261 pages, 15290378 bytes).
+Output written on main.pdf (261 pages, 15290380 bytes).
 PDF statistics:
  1025 PDF objects out of 1200 (max. 8388607)
  664 compressed objects within 7 object streams

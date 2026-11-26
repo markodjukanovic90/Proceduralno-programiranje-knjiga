@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{\PYGZus{}longobject}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{k+kt}{long}\PYG{+w}{ }\PYG{n}{ob\PYGZus{}refcnt}\PYG{p}{;}
+\PYG{+w}{		}\PYG{n}{PyTypeObject}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{ob\PYGZus{}type}\PYG{p}{;}
+\PYG{+w}{		}\PYG{k+kt}{size\PYGZus{}t}\PYG{+w}{ }\PYG{n}{ob\PYGZus{}size}\PYG{p}{;}
+\PYG{+w}{		}\PYG{k+kt}{long}\PYG{+w}{ }\PYG{n}{ob\PYGZus{}digit}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{];}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{};}
+\end{Verbatim}

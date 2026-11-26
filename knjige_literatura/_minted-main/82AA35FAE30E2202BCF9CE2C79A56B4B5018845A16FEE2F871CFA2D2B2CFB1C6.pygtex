@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{idnum} \PYG{o}{=} \PYG{n+nb}{id}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+	\PYG{n}{idhex} \PYG{o}{=} \PYG{n+nb}{hex}\PYG{p}{(}\PYG{n+nb}{id}\PYG{p}{(}\PYG{n}{x}\PYG{p}{))}
+\end{Verbatim}

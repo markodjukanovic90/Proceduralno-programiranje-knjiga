@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{math}
+
+\PYG{c+c1}{\PYGZsh{} Računajmo korjen broja}
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{math}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{l+m+mi}{25}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Output: 5.0}
+
+\PYG{c+c1}{\PYGZsh{} Konstanta Pi}
+\PYG{n}{pi} \PYG{o}{=} \PYG{n}{math}\PYG{o}{.}\PYG{n}{pi}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{pi}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Output: 3.141592653589793}
+
+\PYG{c+c1}{\PYGZsh{} Računanje sin}
+\PYG{n}{sin\PYGZus{}angle} \PYG{o}{=} \PYG{n}{math}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{l+m+mi}{45}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{sin\PYGZus{}angle}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Output: 0.7071067811865475}
+\end{Verbatim}

@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{arr} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{l+m+mi}{41}\PYG{p}{,} \PYG{l+m+mi}{42}\PYG{p}{,} \PYG{l+m+mi}{43}\PYG{p}{,} \PYG{l+m+mi}{44}\PYG{p}{])}
+\PYG{n}{filter\PYGZus{}arr} \PYG{o}{=} \PYG{n}{arr} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{42}
+\PYG{n}{newarr} \PYG{o}{=} \PYG{n}{arr}\PYG{p}{[}\PYG{n}{filter\PYGZus{}arr}\PYG{p}{]}
+\end{Verbatim}

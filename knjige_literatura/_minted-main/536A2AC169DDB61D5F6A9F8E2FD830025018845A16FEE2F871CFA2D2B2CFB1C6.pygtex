@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{c+c1}{\PYGZsh{} Vitičaste zagrade}
+	\PYG{n}{dct} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}ime\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Mirko\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}godine\PYGZdq{}}\PYG{p}{:} \PYG{l+m+mi}{30}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}grad\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Banja Luka\PYGZdq{}}\PYG{p}{\PYGZcb{}}
+	
+	\PYG{c+c1}{\PYGZsh{} dict() konstruktor}
+	\PYG{n}{dct1} \PYG{o}{=} \PYG{n+nb}{dict}\PYG{p}{(}\PYG{n}{ime}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}Mirko\PYGZdq{}}\PYG{p}{,} \PYG{n}{godine}\PYG{o}{=}\PYG{l+m+mi}{30}\PYG{p}{,} \PYG{n}{grad}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}Banja Luka\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

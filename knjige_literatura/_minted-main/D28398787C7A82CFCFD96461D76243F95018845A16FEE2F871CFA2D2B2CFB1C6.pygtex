@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{my\PYGZus{}array}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{7}
+	
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{my\PYGZus{}array}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Output: array(\PYGZsq{}i\PYGZsq{}, [7, 2, 3, 4, 5])}
+\end{Verbatim}

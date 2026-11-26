@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+     \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}ime\PYGZdq{}} \PYG{o+ow}{in} \PYG{n}{dct}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Output: True}
+     \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}pol\PYGZdq{}} \PYG{o+ow}{in} \PYG{n}{dct}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Output: False}
+\end{Verbatim}

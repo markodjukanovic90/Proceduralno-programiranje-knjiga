@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+     \PYG{k}{for} \PYG{n}{item} \PYG{o+ow}{in} \PYG{n}{iterable}\PYG{p}{:}
+         \PYG{n}{naredba} \PYG{c+c1}{\PYGZsh{} blok koda koji se izvršava}
+\end{Verbatim}

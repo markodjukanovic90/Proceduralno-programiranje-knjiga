@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+ne}{TypeError}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZlt{}\PYGZsq{}} \PYG{o+ow}{not} \PYG{n}{supported} \PYG{n}{between} \PYG{n}{instances} \PYG{n}{of} \PYG{l+s+s1}{\PYGZsq{}str\PYGZsq{}} \PYG{o+ow}{and} \PYG{l+s+s1}{\PYGZsq{}int\PYGZsq{}}
+\end{Verbatim}

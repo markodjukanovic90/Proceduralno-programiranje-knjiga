@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{brojevi} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{6}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{8}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{7}\PYG{p}{]}
+\PYG{n}{brojevi}\PYG{o}{.}\PYG{n}{sort}\PYG{p}{(}\PYG{n}{reverse}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{brojevi}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} Output: [8, 7, 6, 3, 3, 1]}
+\end{Verbatim}
