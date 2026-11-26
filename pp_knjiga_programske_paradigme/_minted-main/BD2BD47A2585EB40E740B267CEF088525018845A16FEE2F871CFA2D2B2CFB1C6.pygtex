@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{razmijeni}\PYG{p}{(}\PYG{n}{P}\PYG{p}{,} \PYG{n}{X}\PYG{p}{):}
+    \PYG{n}{apoeni} \PYG{o}{=} \PYG{n+nb}{sorted}\PYG{p}{(}\PYG{n}{P}\PYG{p}{,} \PYG{n}{reverse}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+    \PYG{n}{broj\PYGZus{}novcanica} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{k}{for} \PYG{n}{apoen} \PYG{o+ow}{in} \PYG{n}{apoeni}\PYG{p}{:}
+        \PYG{n}{pi}\PYG{p}{,} \PYG{n}{X} \PYG{o}{=} \PYG{n+nb}{divmod}\PYG{p}{(}\PYG{n}{X}\PYG{p}{,} \PYG{n}{apoen}\PYG{p}{)}
+        \PYG{n}{broj\PYGZus{}novcanica} \PYG{o}{+=} \PYG{n}{pi}
+    \PYG{k}{if} \PYG{n}{X} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+        \PYG{k}{return} \PYG{n}{broj\PYGZus{}novcanica}
+    \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}  \PYG{c+c1}{\PYGZsh{} pohlepni postupak nije uspio}
+\end{Verbatim}

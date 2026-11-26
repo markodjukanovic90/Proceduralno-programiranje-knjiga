@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k+kn}{from} \PYG{n+nn}{dostava} \PYG{k+kn}{import} \PYG{n}{cijena\PYGZus{}dostave}
+	
+	
+	\PYG{k}{def} \PYG{n+nf}{test\PYGZus{}uobicajeni}\PYG{p}{():}
+	\PYG{k}{assert} \PYG{n}{cijena\PYGZus{}dostave}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{5}
+	\PYG{k}{assert} \PYG{n}{cijena\PYGZus{}dostave}\PYG{p}{(}\PYG{l+m+mi}{4}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{8}
+	\PYG{k}{assert} \PYG{n}{cijena\PYGZus{}dostave}\PYG{p}{(}\PYG{l+m+mi}{7}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{12}
+	
+	
+	\PYG{n}{test\PYGZus{}uobicajeni}\PYG{p}{()}
+	
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Svi testovi su uspjesno izvrseni.\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

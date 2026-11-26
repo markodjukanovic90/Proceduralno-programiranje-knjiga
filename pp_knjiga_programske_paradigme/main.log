@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  26 NOV 2026 14:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  26 NOV 2026 15:21
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1068,7 +1068,7 @@ a Paj-ton i na^^Tcin pred-
  []
 
 [45]
-Overfull \hbox (4.1667pt too wide) in paragraph at lines 65--68
+Overfull \hbox (4.1667pt too wide) in paragraph at lines 67--70
 \OT1/cmr/m/n/10.95 je-zi-ku Paj-ton, uklju^^Tcuju^^Sci ge-ne-ri-sa-nje bajt-ko-
 da, ulo-gu vir-tu-el-ne ma^^Tsine
  []
@@ -1092,7 +1092,7 @@ da, ulo-gu vir-tu-el-ne ma^^Tsine
 <slike/variable_object.png, id=209, 1505.625pt x 1052.93375pt>
 File: slike/variable_object.png Graphic file (type png)
 <use slike/variable_object.png>
-Package pdftex.def Info: slike/variable_object.png  used on input line 150.
+Package pdftex.def Info: slike/variable_object.png  used on input line 152.
 (pdftex.def)             Requested size: 139.98032pt x 99.9976pt.
 \openout3 = `main.pyg'.
 
@@ -1102,7 +1102,7 @@ Package pdftex.def Info: slike/variable_object.png  used on input line 150.
 <slike/point_two_vars.png, id=210, 1599.9775pt x 990.70125pt>
 File: slike/point_two_vars.png Graphic file (type png)
 <use slike/point_two_vars.png>
-Package pdftex.def Info: slike/point_two_vars.png  used on input line 165.
+Package pdftex.def Info: slike/point_two_vars.png  used on input line 167.
 (pdftex.def)             Requested size: 139.98792pt x 99.99805pt.
  [49 <./slike/variable_object.png (PNG copy)>]
 \openout3 = `main.pyg'.
@@ -1114,21 +1114,20 @@ Package pdftex.def Info: slike/point_two_vars.png  used on input line 165.
 File: slike/vars_different_assigned.png Graphic file (type png)
 <use slike/vars_different_assigned.png>
 Package pdftex.def Info: slike/vars_different_assigned.png  used on input line 
-180.
+182.
 (pdftex.def)             Requested size: 169.98018pt x 119.98839pt.
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/113633C7748F7940477B8A1DF8A1679A5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
-<slike/varX_different_assigned.png, id=216, 1434.35875pt x 1104.125pt>
+6.pygtex) [50 <./slike/point_two_vars.png (PNG copy)> <./slike/vars_different_a
+ssigned.png (PNG copy)>]
+<slike/varX_different_assigned.png, id=219, 1434.35875pt x 1104.125pt>
 File: slike/varX_different_assigned.png Graphic file (type png)
 <use slike/varX_different_assigned.png>
 Package pdftex.def Info: slike/varX_different_assigned.png  used on input line 
-194.
+196.
 (pdftex.def)             Requested size: 139.9862pt x 99.99031pt.
- [50 <./slike/point_two_vars.png (PNG copy)> <./slike/vars_different_assigned.p
-ng (PNG copy)>]
 \openout3 = `main.pyg'.
 
 
@@ -1153,19 +1152,18 @@ ng (PNG copy)>]
 
 
 (./_minted-main/96F56911F71E676ED8A4DB5934FD359A5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
-Overfull \hbox (11.33957pt too wide) in paragraph at lines 257--258
+6.pygtex [52])
+Overfull \hbox (11.33957pt too wide) in paragraph at lines 259--260
 []\OT1/cmr/m/n/10.95 Komentari po-ve^^Scavaju ^^Tcitljivost pro-gra-ma i olak^^
 Tsavaju nje-go-vo odr^^Tzavanje,
  []
 
 
-Overfull \hbox (4.7088pt too wide) in paragraph at lines 262--263
+Overfull \hbox (4.7088pt too wide) in paragraph at lines 264--265
 []\OT1/cmr/m/n/10.95 Numeri^^Tcki ti-po-vi po-da-ta-ka ko-ri-ste se za pred-sta
 -vlja-nje bro-je-va i izvo[]denje
  []
 
-[52]
 \openout3 = `main.pyg'.
 
 
@@ -1175,7 +1173,7 @@ Overfull \hbox (4.7088pt too wide) in paragraph at lines 262--263
 
 
 (./_minted-main/E973D2AA26519F2C22E64ED7F5EE54525018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [53]
+6.pygtex [53])
 \openout3 = `main.pyg'.
 
 
@@ -1190,24 +1188,24 @@ Overfull \hbox (4.7088pt too wide) in paragraph at lines 262--263
 
 
 (./_minted-main/F16034E45A9E04DA34569618E6F8C3235018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [54]
+6.pygtex [54])
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 376.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 378.
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/EE4A0AE03E077E02FDFFC445739805F35018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex) [55]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/1ABF32BD6D6E49B0F5A8F92FC0BD0EF45018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [55])
+6.pygtex) [56]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/E2EBA827266BC71F826145AD555B78A95018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [56]
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
@@ -1227,7 +1225,7 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 
 
 (./_minted-main/9448EE44BADD29264DF74D2EDBF85F1D5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex [57])
 \openout3 = `main.pyg'.
 
 
@@ -1237,17 +1235,18 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 
 
 (./_minted-main/71F4A4ADEF79A00B79CFE99DAD7CD98D5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [57])
-Overfull \hbox (2.79372pt too wide) in paragraph at lines 487--488
+6.pygtex)
+Overfull \hbox (2.79372pt too wide) in paragraph at lines 489--490
 []\OT1/cmr/m/n/10.95 Pored osnov-nih nu-me-ri^^Tckih ti-po-va po-da-ta-ka, Paj-
 ton pru^^Tza i niz slo^^Tzenijih
  []
 
+[58]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/A18CC6D4EFF91C2B1886E1EDAC97B6B65018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [58])
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
@@ -1262,12 +1261,12 @@ ton pru^^Tza i niz slo^^Tzenijih
 
 
 (./_minted-main/56E9A0BAA6F7305855DBA703AB3C1E6D5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex [59])
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/B6C2E5BC05B9A4337BB4D0E095B8532E5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [59])
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
@@ -1288,7 +1287,7 @@ ton pru^^Tza i niz slo^^Tzenijih
 
 (./_minted-main/7B499287B829F075B7B0E15704DE48BE5018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex) [60]
-Overfull \hbox (9.63039pt too wide) in paragraph at lines 608--609
+Overfull \hbox (9.63039pt too wide) in paragraph at lines 610--611
 []\OT1/cmr/m/it/10.95 Memorijska or-ga-ni-za-ci-ja\OT1/cmr/m/n/10.95 . Strin-go
 -vi se u Paj-to-nu pred-sta-vlja-ju kao ure[]dene
  []
@@ -1301,7 +1300,7 @@ Overfull \hbox (9.63039pt too wide) in paragraph at lines 608--609
 <slike/str_mem_organization.png, id=252, 543.02875pt x 163.61125pt>
 File: slike/str_mem_organization.png Graphic file (type png)
 <use slike/str_mem_organization.png>
-Package pdftex.def Info: slike/str_mem_organization.png  used on input line 620
+Package pdftex.def Info: slike/str_mem_organization.png  used on input line 622
 .
 (pdftex.def)             Requested size: 199.99774pt x 59.99846pt.
 \openout3 = `main.pyg'.
@@ -1338,12 +1337,12 @@ Package pdftex.def Info: slike/str_mem_organization.png  used on input line 620
 
 
 (./_minted-main/4F5B3CF23B10BCD481EAE2B7A7C0D7595018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex) [63]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/D2FCDD5010C74260CC25A2B25EBC92175018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [63])
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
@@ -1373,16 +1372,16 @@ Package pdftex.def Info: slike/str_mem_organization.png  used on input line 620
 
 
 (./_minted-main/721FF60B76DA0AEFF7DD069F7BF251365018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex [64])
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/2EEA256DBCBDBB1BC331D99F07759A655018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [64]) [65]
+6.pygtex) [65]
 <slike/img-list-tuple.png, id=270, 1541.76pt x 1027.84pt>
 File: slike/img-list-tuple.png Graphic file (type png)
 <use slike/img-list-tuple.png>
-Package pdftex.def Info: slike/img-list-tuple.png  used on input line 799.
+Package pdftex.def Info: slike/img-list-tuple.png  used on input line 801.
 (pdftex.def)             Requested size: 299.99504pt x 159.98795pt.
 \openout3 = `main.pyg'.
 
@@ -1393,16 +1392,20 @@ Package pdftex.def Info: slike/img-list-tuple.png  used on input line 799.
 
 
 (./_minted-main/32083A644F1426ED7268168A18670DC45018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [66 <./slike/img-list-tuple.png (PNG copy)>]
-Overfull \hbox (13.00871pt too wide) in paragraph at lines 838--851
+6.pygtex [66 <./slike/img-list-tuple.png (PNG copy)>])
+Overfull \hbox (13.00871pt too wide) in paragraph at lines 840--853
  [][] 
  []
 
+
+Underfull \vbox (badness 7344) has occurred while \output is active []
+
+ [67]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/2079EC0124F9AC57CAEDC193A23B46295018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [67])
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
@@ -1422,7 +1425,7 @@ Overfull \hbox (13.00871pt too wide) in paragraph at lines 838--851
 
 
 (./_minted-main/273B1DDE649C47C28F42CD0B3F3AD7805018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex [68])
 \openout3 = `main.pyg'.
 
 
@@ -1432,7 +1435,7 @@ Overfull \hbox (13.00871pt too wide) in paragraph at lines 838--851
 
 
 (./_minted-main/1749856C4179841DE89FB5A0F13EFA275018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [68])
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
@@ -1442,22 +1445,22 @@ Overfull \hbox (13.00871pt too wide) in paragraph at lines 838--851
 
 
 (./_minted-main/84475A7C93ACEFECCFD3DB7C8AF02A6D5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex) [69]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/946ED3EA60D769055DAB436CA0FDEBAA5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [69])
-\openout3 = `main.pyg'.
-
-
-(./_minted-main/F5C9BE68EDEA039F9E7621547C8E97EF5018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex)
 \openout3 = `main.pyg'.
 
 
+(./_minted-main/F5C9BE68EDEA039F9E7621547C8E97EF5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [70])
+\openout3 = `main.pyg'.
+
+
 (./_minted-main/821549CA8037ADA2D8FD0863BFEA6F3C5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [70]
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
@@ -1468,7 +1471,7 @@ Overfull \hbox (13.00871pt too wide) in paragraph at lines 838--851
 
 (./_minted-main/6FFDE403C75D18EC5314357AF546AE425018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex)
-Overfull \hbox (7.11855pt too wide) in paragraph at lines 998--999
+Overfull \hbox (7.11855pt too wide) in paragraph at lines 1000--1001
 []\OT1/cmr/bx/n/10.95 Provjera po-sto-ja-nja klju^^Tca\OT1/cmr/m/n/10.95 : Ope-
 ra-tor \OT1/cmtt/m/n/10.95 in \OT1/cmr/m/n/10.95 pro-vje-ra-va da li se odre[]d
 eni
@@ -1483,21 +1486,23 @@ eni
 
 
 (./_minted-main/684F5F1F43ADFD8B37B1AEA1501510CC5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
-Overfull \hbox (14.61871pt too wide) in paragraph at lines 1024--1025
+6.pygtex) [71]
+Overfull \hbox (14.61871pt too wide) in paragraph at lines 1026--1027
 []\OT1/cmr/m/it/10.95 Memorijska or-ga-ni-za-ci-ja\OT1/cmr/m/n/10.95 . Rje^^Tcn
 ici su u Paj-to-nu im-ple-men-ti-ra-ni ko-ri^^Tstenjem
  []
 
-[71]
 <slike/dict_mem_organization.png, id=290, 1541.76pt x 1027.84pt>
 File: slike/dict_mem_organization.png Graphic file (type png)
 <use slike/dict_mem_organization.png>
 Package pdftex.def Info: slike/dict_mem_organization.png  used on input line 10
-42.
+44.
 (pdftex.def)             Requested size: 299.99504pt x 159.98795pt.
 
-Overfull \hbox (3.86371pt too wide) in paragraph at lines 1047--1048
+Underfull \vbox (badness 3088) has occurred while \output is active []
+
+ [72]
+Overfull \hbox (3.86371pt too wide) in paragraph at lines 1049--1050
 []\OT1/cmr/m/it/10.95 Dodatne na-po-me-ne\OT1/cmr/m/n/10.95 . Klju^^Tcevi u rje
 ^^Tcniku mo-ra-ju bi-ti ne-pro-mjen-lji-vi objek-
  []
@@ -1506,7 +1511,7 @@ Overfull \hbox (3.86371pt too wide) in paragraph at lines 1047--1048
 
 
 (./_minted-main/A5584E5C681F878154C6EFAED4451C005018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [72 <./slike/dict_mem_organization.png (PNG copy)>])
+6.pygtex) [73 <./slike/dict_mem_organization.png (PNG copy)>]
 \openout3 = `main.pyg'.
 
 
@@ -1521,7 +1526,7 @@ Overfull \hbox (3.86371pt too wide) in paragraph at lines 1047--1048
 
 
 (./_minted-main/BE13394191B8364F59DB9EF4B0F798745018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [73]
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
@@ -1536,7 +1541,7 @@ Overfull \hbox (3.86371pt too wide) in paragraph at lines 1047--1048
 
 
 (./_minted-main/FEEA30666643E329D010F053F6B6DF245018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex [74])
 \openout3 = `main.pyg'.
 
 
@@ -1551,29 +1556,30 @@ Overfull \hbox (3.86371pt too wide) in paragraph at lines 1047--1048
 
 
 (./_minted-main/5C15DC69970D3AFD1086A93C5C5E04705018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [74])
-Overfull \hbox (14.77083pt too wide) in paragraph at lines 1151--1152
+6.pygtex)
+Overfull \hbox (14.77083pt too wide) in paragraph at lines 1153--1154
 []\OT1/cmr/m/it/10.95 Memorijska or-ga-ni-za-ci-ja\OT1/cmr/m/n/10.95 . Sku-po-v
 i su u Paj-to-nu im-ple-men-ti-ra-ni ko-ri^^Tstenjem
  []
 
+[75]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/2677B1C40E8EAFC14B6938584C94A5415018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex)
-<slike/set_mem_organization.png, id=301, 1541.76pt x 1027.84pt>
+<slike/set_mem_organization.png, id=304, 1541.76pt x 1027.84pt>
 File: slike/set_mem_organization.png Graphic file (type png)
 <use slike/set_mem_organization.png>
-Package pdftex.def Info: slike/set_mem_organization.png  used on input line 117
-8.
+Package pdftex.def Info: slike/set_mem_organization.png  used on input line 118
+0.
 (pdftex.def)             Requested size: 219.98538pt x 149.99751pt.
- [75]
+ [76 <./slike/set_mem_organization.png (PNG copy)>]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/02F7B78DD94D42F4DBE3B6F6C8D7AE975018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [76 <./slike/set_mem_organization.png (PNG copy)>])
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
@@ -1588,7 +1594,7 @@ Package pdftex.def Info: slike/set_mem_organization.png  used on input line 117
 
 
 (./_minted-main/5DE486D02DD28186D2A266A67AAFBE825018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex [77])
 \openout3 = `main.pyg'.
 
 
@@ -1603,31 +1609,28 @@ Package pdftex.def Info: slike/set_mem_organization.png  used on input line 117
 
 
 (./_minted-main/BDD0EEF68A0B28824B116EE5A26011225018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [77]
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/9409EDF92DCAF04D3787A6F21795689F5018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 1269--1270
+Underfull \hbox (badness 10000) in paragraph at lines 1271--1272
 
  []
 
-
-Overfull \hbox (18.16318pt too wide) in paragraph at lines 1287--1288
+[78]
+Overfull \hbox (18.16318pt too wide) in paragraph at lines 1289--1290
 \OT1/cmr/m/n/10.95 vre-men-ske slo^^Tzenosti u im-ple-men-ta-ci-ji CPyt-hon. Pr
 et-po-sta-vlja-mo da pore[]denje,
  []
 
-[78]
-Underfull \vbox (badness 8094) has occurred while \output is active []
-
- [79]
+[79]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/C80741047872A5A6D9B7D3CB275C33725018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex [80])
 \openout3 = `main.pyg'.
 
 
@@ -1642,7 +1645,7 @@ Underfull \vbox (badness 8094) has occurred while \output is active []
 
 
 (./_minted-main/8B344458BE125D4F11E9C2A2406C6D1BE48FAF1886BFF81AE3111843E944B2C
-0.pygtex) [80]
+0.pygtex)
 \openout3 = `main.pyg'.
 
 
@@ -1652,7 +1655,7 @@ Underfull \vbox (badness 8094) has occurred while \output is active []
 
 
 (./_minted-main/46FF063DCA7FC76B0A084645A9C856275018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex [81])
 \openout3 = `main.pyg'.
 
 
@@ -1662,7 +1665,7 @@ Underfull \vbox (badness 8094) has occurred while \output is active []
 
 
 (./_minted-main/E3AAF94F29BD7F826C5CC1AC5F6C6EC85018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [81])
+6.pygtex) [82]
 \openout3 = `main.pyg'.
 
 
@@ -1677,17 +1680,17 @@ Underfull \vbox (badness 8094) has occurred while \output is active []
 
 
 (./_minted-main/02F1A1C6EEE0F85D99D46B4AFCC39D72E48FAF1886BFF81AE3111843E944B2C
-0.pygtex) [82]
+0.pygtex)
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/AA95841F3612ABBD6D5D7D8E91502C125018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex) [83]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/211FF329C790423E6020668833C77A805018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [83]
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
@@ -1697,12 +1700,18 @@ Underfull \vbox (badness 8094) has occurred while \output is active []
 
 
 (./_minted-main/3320AB8A01B20ED3C9FD30CC0DA33A895018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex [84])
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/B7802138791B61700472F2EFB97B3A845018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [84]
+6.pygtex)
+Overfull \hbox (95.0785pt too wide) has occurred while \output is active
+   \OT1/cmr/m/sl/10.95 2.9.  NEKI PROGRAMSKI KONCEPTI I []CESTO KORI[]STENE UGR
+A[]DENE FUNKCIJE \OT1/cmr/m/n/10.95 85
+ []
+
+[85]
 \openout3 = `main.pyg'.
 
 
@@ -1722,18 +1731,12 @@ Underfull \vbox (badness 8094) has occurred while \output is active []
 
 
 (./_minted-main/D04DD36A18023EDE91BCC94E4F35C0195018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex
-Overfull \hbox (95.0785pt too wide) has occurred while \output is active
-   \OT1/cmr/m/sl/10.95 2.9.  NEKI PROGRAMSKI KONCEPTI I []CESTO KORI[]STENE UGR
-A[]DENE FUNKCIJE \OT1/cmr/m/n/10.95 85
- []
-
-[85])
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/8FE3CDD8B51F79BEFBD7706D817410FD5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex) [86]
 \openout3 = `main.pyg'.
 
 
@@ -1743,7 +1746,7 @@ A[]DENE FUNKCIJE \OT1/cmr/m/n/10.95 85
 
 
 (./_minted-main/B1E64315E7EB050BCCCB642FF4CB23B45018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [86]
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
@@ -1753,13 +1756,13 @@ A[]DENE FUNKCIJE \OT1/cmr/m/n/10.95 85
 
 
 (./_minted-main/6E1314853A492A82A0A80733194185425018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex
 Overfull \hbox (95.0785pt too wide) has occurred while \output is active
    \OT1/cmr/m/sl/10.95 2.9.  NEKI PROGRAMSKI KONCEPTI I []CESTO KORI[]STENE UGR
 A[]DENE FUNKCIJE \OT1/cmr/m/n/10.95 87
  []
 
-[87]
+[87])
 \openout3 = `main.pyg'.
 
 
@@ -1770,12 +1773,13 @@ A[]DENE FUNKCIJE \OT1/cmr/m/n/10.95 87
 
 (./_minted-main/8B342136EC36908E2D381EC647EAFF4B5018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex)
-Overfull \hbox (4.31218pt too wide) in paragraph at lines 1636--1637
+Overfull \hbox (4.31218pt too wide) in paragraph at lines 1638--1639
 []\OT1/cmr/m/n/10.95 Funkcije \OT1/cmtt/m/n/10.95 zip() \OT1/cmr/m/n/10.95 i \O
 T1/cmtt/m/n/10.95 enumerate() \OT1/cmr/m/n/10.95 spa-da-ju me[]du naj^^Tce^^Ts^
 ^Sce ko-ri^^Tstene ugra[]dene
  []
 
+[88]
 \openout3 = `main.pyg'.
 
 
@@ -1785,7 +1789,7 @@ T1/cmtt/m/n/10.95 enumerate() \OT1/cmr/m/n/10.95 spa-da-ju me[]du naj^^Tce^^Ts^
 
 
 (./_minted-main/9BD57AA31EEBC360F4809737514075225018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [88]
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
@@ -1800,8 +1804,14 @@ T1/cmtt/m/n/10.95 enumerate() \OT1/cmr/m/n/10.95 spa-da-ju me[]du naj^^Tce^^Ts^
 
 
 (./_minted-main/64F3649BAECCD2FD6742094916A0DFA9E48FAF1886BFF81AE3111843E944B2C
-0.pygtex)
-Overfull \hbox (11.82584pt too wide) in paragraph at lines 1697--1698
+0.pygtex
+Overfull \hbox (95.0785pt too wide) has occurred while \output is active
+   \OT1/cmr/m/sl/10.95 2.9.  NEKI PROGRAMSKI KONCEPTI I []CESTO KORI[]STENE UGR
+A[]DENE FUNKCIJE \OT1/cmr/m/n/10.95 89
+ []
+
+[89])
+Overfull \hbox (11.82584pt too wide) in paragraph at lines 1699--1700
 []\OT1/cmr/m/n/10.95 Pajton omo-gu^^Scava sor-ti-ra-nje ele-me-na-ta po-mo^^Scu
  me-to-de \OT1/cmtt/m/n/10.95 sort() \OT1/cmr/m/n/10.95 i ugra[]dene
  []
@@ -1811,12 +1821,6 @@ Overfull \hbox (11.82584pt too wide) in paragraph at lines 1697--1698
 
 (./_minted-main/95EAE49B512CEC7F8DFAA9274F46299D5018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex)
-Overfull \hbox (95.0785pt too wide) has occurred while \output is active
-   \OT1/cmr/m/sl/10.95 2.9.  NEKI PROGRAMSKI KONCEPTI I []CESTO KORI[]STENE UGR
-A[]DENE FUNKCIJE \OT1/cmr/m/n/10.95 89
- []
-
-[89]
 \openout3 = `main.pyg'.
 
 
@@ -1831,7 +1835,13 @@ A[]DENE FUNKCIJE \OT1/cmr/m/n/10.95 89
 
 
 (./_minted-main/5544C2B157CFE079F0702789FADC47325018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [90]
+6.pygtex [90])
+Overfull \hbox (95.0785pt too wide) has occurred while \output is active
+   \OT1/cmr/m/sl/10.95 2.9.  NEKI PROGRAMSKI KONCEPTI I []CESTO KORI[]STENE UGR
+A[]DENE FUNKCIJE \OT1/cmr/m/n/10.95 91
+ []
+
+[91]
 \openout3 = `main.pyg'.
 
 
@@ -1851,11 +1861,12 @@ A[]DENE FUNKCIJE \OT1/cmr/m/n/10.95 89
 
 
 (./_minted-main/66C566595EE298A274DEC242176666E35018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [91])
-Underfull \hbox (badness 10000) in paragraph at lines 1790--1791
+6.pygtex)
+Underfull \hbox (badness 10000) in paragraph at lines 1792--1793
 
  []
 
+[92]
 \openout3 = `main.pyg'.
 
 
@@ -1870,7 +1881,7 @@ A.pygtex)
 
 
 (./_minted-main/D1D2DA879941E3F8D1D6E918789EAA035018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [92])
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
@@ -1885,7 +1896,7 @@ A.pygtex)
 
 
 (./_minted-main/4A44882542632EDDD1044A0D7C45AF3182CA0C42AFE0759A4F1491A6B69BC02
-A.pygtex)
+A.pygtex) [93]
 \openout3 = `main.pyg'.
 
 
@@ -1895,40 +1906,38 @@ A.pygtex)
 
 
 (./_minted-main/F1DF5024226DC0B2950BA2D602ACCE2C5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [93])
-Overfull \hbox (5.74248pt too wide) in paragraph at lines 1886--1887
+6.pygtex) [94]
+Overfull \hbox (5.74248pt too wide) in paragraph at lines 1888--1889
 []\OT1/cmr/m/n/10.95 Modul \OT1/cmtt/m/n/10.95 random \OT1/cmr/m/n/10.95 omo-gu
 ^^Scava ge-ne-ri-sa-nje pseudo-slu^^Tcajnih bro-je-va i slu^^Tcajan
  []
 
-[94]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/7FD9DB9A88573216676ED17516F654865018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex) [95]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/E2735860E0214E7A6932BB22672F21855018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex)
-Overfull \hbox (4.56686pt too wide) in paragraph at lines 1924--1925
+Overfull \hbox (4.56686pt too wide) in paragraph at lines 1926--1927
 \OT1/cmr/m/n/10.95 rad sa vre-me-nom. Nje-go-ve funk-ci-je ko-ri-ste se za mje-
 re-nje tra-ja-nja iz-vr^^Tsavanja
  []
 
 
-Overfull \hbox (10.25005pt too wide) in paragraph at lines 1924--1925
+Overfull \hbox (10.25005pt too wide) in paragraph at lines 1926--1927
 \OT1/cmr/m/n/10.95 pro-gra-ma, do-bi-ja-nje tre-nut-nog vre-me-na, pri-vre-me-n
 o za-u-sta-vlja-nje iz-vr^^Tsavanja
  []
 
-[95]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/3EA13B510344C71B5248BD2E71FF29BD5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex) [96]
 \openout3 = `main.pyg'.
 
 
@@ -1938,12 +1947,12 @@ o za-u-sta-vlja-nje iz-vr^^Tsavanja
 
 
 (./_minted-main/50A467FFFDC6E6D9476910EDE13891315018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [96])
+6.pygtex) [97]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/47DB56451DA2D5D8EAA04B5B68A0397D5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [97]
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
@@ -1953,22 +1962,22 @@ o za-u-sta-vlja-nje iz-vr^^Tsavanja
 
 
 (./_minted-main/C526349D64697504B011D70B0EC665D75018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
-\openout3 = `main.pyg'.
-
-
-(./_minted-main/CACB462510FFD0E48E5D42A91F41AA665018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex [98])
 \openout3 = `main.pyg'.
 
 
+(./_minted-main/CACB462510FFD0E48E5D42A91F41AA665018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [99]
+\openout3 = `main.pyg'.
+
+
 (./_minted-main/4044BC8CE5E47EC72E32FF26D86472815018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [99])
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/401DCFABE4CB0D303166DE3FCC9D8F825018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex) [100]
 \openout3 = `main.pyg'.
 
 
@@ -1978,7 +1987,7 @@ o za-u-sta-vlja-nje iz-vr^^Tsavanja
 
 
 (./_minted-main/74E36D7D7484170879B0DA9FC1707E745018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [100])
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
@@ -1988,76 +1997,81 @@ o za-u-sta-vlja-nje iz-vr^^Tsavanja
 
 
 (./_minted-main/1A8394FE0D6DEB87463BCD1647BE66155018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex [101])
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/DE2EDEEB7A39BB7A6D0DD90FE1B20FC05018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex)
-<slike/class-exceptions.png, id=385, 1639.12375pt x 966.61125pt>
+<slike/class-exceptions.png, id=388, 1639.12375pt x 966.61125pt>
 File: slike/class-exceptions.png Graphic file (type png)
 <use slike/class-exceptions.png>
-Package pdftex.def Info: slike/class-exceptions.png  used on input line 2155.
+Package pdftex.def Info: slike/class-exceptions.png  used on input line 2157.
 (pdftex.def)             Requested size: 259.98915pt x 200.00024pt.
- [101] [102 <./slike/class-exceptions.png (PNG copy)>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [102]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/95E7AD731743C06897B067F2467AB8005018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex [103 <./slike/class-exceptions.png (PNG copy)>])
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/E8CF8185EF2AC98BEC90724ADB1185E85018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [103]
-Underfull \hbox (badness 10000) in paragraph at lines 2204--2205
+6.pygtex)
+Underfull \hbox (badness 10000) in paragraph at lines 2208--2209
 
  []
 
+
+Underfull \vbox (badness 2503) has occurred while \output is active []
+
+ [104]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/A4309D6B539E0CB08186B3754E266BA45018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [104]
+6.pygtex) [105]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 2
-239.
+243.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2239.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2243.
 
-
-[105]
 LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 
-2276.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 2276.
+2280.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 2280.
 
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbackslash' on input line 2276.
+(Font)              for symbol `textbackslash' on input line 2280.
 
-
-Overfull \hbox (33.82976pt too wide) in paragraph at lines 2313--2315
+[106]
+Overfull \hbox (33.82976pt too wide) in paragraph at lines 2317--2319
  \OT1/cmr/bx/n/10.95 Re-gi-star-ske ta-bli-ce.[] \OT1/cmr/m/n/10.95 Pret-po-sta
 -vi-mo da re-gi-star-ska ozna-ka ima oblik:$[]$ 
  []
 
-[106]
+[107]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/4920331393131BAA3DD5A97FE887BC225018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex)
-Overfull \hbox (11.34166pt too wide) in paragraph at lines 2348--2349
+Overfull \hbox (11.34166pt too wide) in paragraph at lines 2352--2353
 []\OT1/cmr/m/n/10.95 Pretra^^Tzuje string \OT1/cmtt/m/n/10.95 string \OT1/cmr/m
 /n/10.95 i pro-na-la-zi pr-vo po-ja-vlji-va-nje ob-ra-sca \OT1/cmtt/m/n/10.95 p
 attern\OT1/cmr/m/n/10.95 .
  []
 
-[107]
-Overfull \hbox (4.46371pt too wide) in paragraph at lines 2368--2369
+[108]
+Overfull \hbox (4.46371pt too wide) in paragraph at lines 2372--2373
 []\OT1/cmr/m/n/10.95 U na-stav-ku je pri-ka-zan jed-no-sta-van pri-mjer ko-ri^^
 Tstenja funk-ci-je \OT1/cmtt/m/n/10.95 search()\OT1/cmr/m/n/10.95 . 
  []
@@ -2076,14 +2090,14 @@ Tstenja funk-ci-je \OT1/cmtt/m/n/10.95 search()\OT1/cmr/m/n/10.95 .
 
 
 (./_minted-main/58453157F01BAE7C9564EB1DDCA52A245018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [108]
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/46EC5D1547EB2E2E182E2C39632169725018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex) [109]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2416.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2420.
 
 \openout3 = `main.pyg'.
 
@@ -2095,12 +2109,12 @@ A.pygtex)
 
 (./_minted-main/EC442C39235B3E075AFF0823C0872A8582CA0C42AFE0759A4F1491A6B69BC02
 A.pygtex)
-Overfull \hbox (21.07903pt too wide) in paragraph at lines 2447--2448
+Overfull \hbox (21.07903pt too wide) in paragraph at lines 2451--2452
 []\OT1/cmtt/m/n/10.95 sys.path\OT1/cmr/m/n/10.95 : Li-sta di-rek-to-ri-ju-ma u 
 ko-ji-ma Paj-ton tra^^Tzi mo-du-le za u^^Tcitavanje. 
  []
 
-[109]
+[110]
 \openout3 = `main.pyg'.
 
 
@@ -2115,12 +2129,12 @@ A.pygtex)
 
 
 (./_minted-main/924CFD8418FB99D471AE7D8A01389461E48FAF1886BFF81AE3111843E944B2C
-0.pygtex [110])
+0.pygtex)
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/DCEABB7E0056832655E5D452BD52632D5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex) [111]
 \openout3 = `main.pyg'.
 
 
@@ -2135,7 +2149,7 @@ A.pygtex)
 
 
 (./_minted-main/610FB3C9D466DABB4D627483B892A9375018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [111])
+6.pygtex [112])
 \openout3 = `main.pyg'.
 
 
@@ -2143,15 +2157,15 @@ A.pygtex)
 A.pygtex
 Underfull \vbox (badness 3780) has occurred while \output is active []
 
- [112])
-<slike/numpy-array-memory.png, id=425, 1541.76pt x 1027.84pt>
+ [113])
+<slike/numpy-array-memory.png, id=428, 1541.76pt x 1027.84pt>
 File: slike/numpy-array-memory.png Graphic file (type png)
 <use slike/numpy-array-memory.png>
-Package pdftex.def Info: slike/numpy-array-memory.png  used on input line 2601.
+Package pdftex.def Info: slike/numpy-array-memory.png  used on input line 2605.
 
 (pdftex.def)             Requested size: 279.9985pt x 139.99141pt.
 
-[113]
+[114]
 \openout3 = `main.pyg'.
 
 
@@ -2161,7 +2175,7 @@ Package pdftex.def Info: slike/numpy-array-memory.png  used on input line 2601.
 
 
 (./_minted-main/0F930488495AA9845F5DAB569A38C51C5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [114 <./slike/numpy-array-memory.png (PNG copy)>])
+6.pygtex [115 <./slike/numpy-array-memory.png (PNG copy)>])
 \openout3 = `main.pyg'.
 
 
@@ -2181,7 +2195,7 @@ Package pdftex.def Info: slike/numpy-array-memory.png  used on input line 2601.
 
 
 (./_minted-main/7B99157F8F56DBA143D87C9FC57D2E5B5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [115])
+6.pygtex [116])
 \openout3 = `main.pyg'.
 
 
@@ -2221,8 +2235,8 @@ Package pdftex.def Info: slike/numpy-array-memory.png  used on input line 2601.
 
 
 (./_minted-main/B0DF4AE79801C851FC9343C77B11E4815018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [116])
-Overfull \hbox (5.22586pt too wide) in paragraph at lines 2740--2741
+6.pygtex [117])
+Overfull \hbox (5.22586pt too wide) in paragraph at lines 2744--2745
 []\OT1/cmr/m/n/10.95 Jedna od naj-ve^^Scih pred-no-sti bi-bli-o-te-ke Num-Py je
 -ste mo-gu^^Scnost izvo[]denja
  []
@@ -2236,7 +2250,7 @@ Overfull \hbox (5.22586pt too wide) in paragraph at lines 2740--2741
 
 
 (./_minted-main/B47E4F60CA5CB1037D72578EA02B15A45018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [117]
+6.pygtex) [118]
 \openout3 = `main.pyg'.
 
 
@@ -2246,7 +2260,7 @@ A.pygtex)
 
 
 (./_minted-main/88CABF5B5B6E6A246243CB2D5304F56582CA0C42AFE0759A4F1491A6B69BC02
-A.pygtex [118])
+A.pygtex [119])
 \openout3 = `main.pyg'.
 
 
@@ -2266,7 +2280,7 @@ A.pygtex [118])
 
 
 (./_minted-main/D9D551BEADC2E828697C89AEE93D99C65018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [119])
+6.pygtex [120])
 \openout3 = `main.pyg'.
 
 
@@ -2281,18 +2295,150 @@ A.pygtex [118])
 
 
 (./_minted-main/AA9ACE577C66FCE4EE53271C8257EECD5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [120])
+6.pygtex [121])
+Overfull \hbox (5.45567pt too wide) in paragraph at lines 2928--2933
+[]\OT1/cmr/m/it/10.95 Gre^^Tske pri iz-vr^^Tsavanju \OT1/cmr/m/n/10.95 (eng. \O
+T1/cmr/m/it/10.95 run-ti-me er-rors\OT1/cmr/m/n/10.95 ) na-sta-ju to-kom iz-vr^
+^Tsavanja
+ []
+
+[122]
+Overfull \hbox (21.65018pt too wide) in paragraph at lines 2979--2981
+[]\OT1/cmr/m/n/10.95 Za ma-se iz-van in-ter-va-la $(0\OML/cmm/m/it/10.95 ; \OT1
+/cmr/m/n/10.95 10]$ funk-ci-ja tre-ba ge-ne-ri-sa-ti iz-u-ze-tak \OT1/cmtt/m/n/
+10.95 ValueError\OT1/cmr/m/n/10.95 . 
+ []
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/3466FF76E566DBAFDD24F575FEA495465018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
+ [123])
+Underfull \vbox (badness 1028) has occurred while \output is active []
+
+ [124]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/C360CE9D9148C73CC3130A117C2EFDC85018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/72F386812F4A9690C56A88D79A613FB05018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+Overfull \hbox (6.35446pt too wide) in paragraph at lines 3068--3072
+\OT1/cmr/m/n/10.95 zve-de re-zul-tat raz-li^^Tcit od o^^Tcekivanog, ge-ne-ri-sa
+^^Sce se iz-u-ze-tak \OT1/cmtt/m/n/10.95 AssertionError\OT1/cmr/m/n/10.95 . 
+ []
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/7032CF3588A391067BDB8C25CCA9FC1D5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/516E1EF2E8241D4CF9A515D3DD5DF6275018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [125])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/9FBE432A427DF7CCC9E31852C83121D35018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [126])
+Overfull \hbox (19.95677pt too wide) in paragraph at lines 3146--3151
+\OT1/cmr/m/n/10.95 slje-de^^Scim test-nim slu^^Tcajem. U su-prot-nom, ge-ne-ri^
+^Tse se iz-u-ze-tak \OT1/cmtt/m/n/10.95 AssertionError\OT1/cmr/m/n/10.95 ,
+ []
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/2EB9E386A3848862847C5F797B0356D75018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [127]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/A74E8B1158E512A483163B8CE9B541E85018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [128]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [129])
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/46AE43F845CA529333C5E836CC51E60682CA0C42AFE0759A4F1491A6B69BC02
+A.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/AD2D5C4404A777D772D08347B9B8C095E48FAF1886BFF81AE3111843E944B2C
+0.pygtex)
+Overfull \hbox (7.87418pt too wide) in paragraph at lines 3320--3323
+[]\OT1/cmr/m/n/10.95 Ukoliko pro-mi-je-ni-mo uslov \OT1/cmtt/m/n/10.95 m <= 2 \
+OT1/cmr/m/n/10.95 u \OT1/cmtt/m/n/10.95 m < 2\OT1/cmr/m/n/10.95 , test-na funk-
+ci-ja \OT1/cmtt/m/n/10.95 test[]granice
+ []
+
+[130]
+Overfull \hbox (10.5493pt too wide) in paragraph at lines 3334--3338
+[]\OT1/cmtt/m/n/10.95 FAIL \OT1/cmr/m/n/10.95 -- pri-li-kom iz-vr^^Tsavanja te-
+sta ge-ne-ri-san je iz-u-ze-tak \OT1/cmtt/m/n/10.95 AssertionError\OT1/cmr/m/n/
+10.95 ,
+ []
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/E42C1DA1A0B3980C76D534BE8FDE4A5B5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/E83592CF803878F67DA41BD1AC689664E48FAF1886BFF81AE3111843E944B2C
+0.pygtex)
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/116634C9637F50B382782FAF903D23AE5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [131]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/84DF43ACB2B759D10497AE0A4530654D5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [132]) [133] [134]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/8BFF97381B2FD9E88C6C31F77DBC9AEF5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+Overfull \hbox (23.35301pt too wide) in paragraph at lines 3587--3592
+[]\OT1/cmr/m/n/10.95 U na-red-nim gla-va-ma raz-ma-tra^^Scemo raz-li^^Tcite al-
+go-ri-tam-ske pri-stu-pe rje^^Tsavanju
+ []
+
+[135]
+Overfull \hbox (0.8184pt too wide) in paragraph at lines 3646--3650
+\OT1/cmr/m/n/10.95 ju dva me[]dusobno kom-ple-men-tar-na pri-stu-pa ra-zvo-ju p
+o-u-zda-nih ra^^Tcunarskih
+ []
+
+[136]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/00266285BE95E89745DC0BA80357598D121F09CDCDC517FFB7D8907D97A980A
 A.pygtex
 Overfull \hbox (97.81721pt too wide) has occurred while \output is active
-   \OT1/cmr/m/sl/10.95 2.18.  POSTAVLJANJE KORISNI[]CKI KREIRANIH MODULA NA PYP
-I REPOZITORIJ \OT1/cmr/m/n/10.95 121
+   \OT1/cmr/m/sl/10.95 2.19.  POSTAVLJANJE KORISNI[]CKI KREIRANIH MODULA NA PYP
+I REPOZITORIJ \OT1/cmr/m/n/10.95 137
  []
 
-[121])
+[137])
 \openout3 = `main.pyg'.
 
 
@@ -2312,62 +2458,61 @@ A.pygtex)
 
 
 (./_minted-main/D1A5B0AA45B742DCF316C3D6B4D2EC3982CA0C42AFE0759A4F1491A6B69BC02
-A.pygtex [122])
+A.pygtex)
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/D952FB92E458847653793A355F9E77F882CA0C42AFE0759A4F1491A6B69BC02
-A.pygtex)
+A.pygtex [138])
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/66740F566905DC31305E34D42E04EF205018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 2987--2988
+Underfull \hbox (badness 10000) in paragraph at lines 3748--3749
 
  []
 
-[123]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/3E10952FDEC9ED74960683DAE80EA10B5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex [139])
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/072C6050F334F789519ABD32076034235018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [124] [125]
-<slike/python-code-copiler-machine-code.png, id=467, 963.6pt x 542.025pt>
+6.pygtex) [140] [141]
+<slike/python-code-copiler-machine-code.png, id=519, 963.6pt x 542.025pt>
 File: slike/python-code-copiler-machine-code.png Graphic file (type png)
 <use slike/python-code-copiler-machine-code.png>
 Package pdftex.def Info: slike/python-code-copiler-machine-code.png  used on in
-put line 3055.
+put line 3816.
 (pdftex.def)             Requested size: 349.99814pt x 169.99442pt.
 
-Overfull \hbox (66.8625pt too wide) in paragraph at lines 3060--3060
+Overfull \hbox (66.8625pt too wide) in paragraph at lines 3821--3821
 [][]\OT1/cmr/m/n/9 Slika pre-u-ze-ta sa: \OT1/cmtt/m/n/9 https://www.astateofda
 ta.com/python-programming/can-python-be-compiled/| 
  []
 
-[126 <./slike/python-code-copiler-machine-code.png>] [127] [128]
-Overfull \hbox (12.10457pt too wide) detected at line 3118
+[142 <./slike/python-code-copiler-machine-code.png>] [143] [144]
+Overfull \hbox (12.10457pt too wide) detected at line 3882
 \OML/cmm/m/it/10.95 < Ime[]prezime >; < datum[]upisa[]na[]fakultet >; < godine[
 ]starosti >
  []
 
 
-Overfull \hbox (0.42302pt too wide) in paragraph at lines 3134--3136
+Overfull \hbox (0.42302pt too wide) in paragraph at lines 3898--3900
 \OT1/cmr/m/n/10.95 zan ka-rak-ter pred-sta-vlja in-va-ri-jant-na vri-jed-nost ^
 ^Tsto se po-sti^^Tze konstru-
  []
 
-[129]) [130]
+[145]) [146]
 \openout2 = `chapter-03-04/chapter03.aux'.
 
  (./chapter-03-04/chapter03.tex
 Glava 3.
-[131
+[147
 
 
 
@@ -2384,21 +2529,21 @@ Overfull \hbox (3.53151pt too wide) in paragraph at lines 39--40
 ve de-talj-ni-je ^^Scemo prou^^Tciti
  []
 
-[132]
+[148]
 Overfull \hbox (5.16808pt too wide) in paragraph at lines 57--58
 \OT1/cmr/m/n/10.95 kal-no naj-bo-lji iz-bor mo^^Tze vo-di-ti ka kva-li-tet-nom 
 ili op-ti-mal-nom rje^^Tsenju; 
  []
 
-[133]
+[149]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [134]
+ [150]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/F1694CF57145368FB9F3C6F1031E07C45018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [135]
+6.pygtex) [151]
 Overfull \hbox (5.41891pt too wide) in paragraph at lines 128--129
 []\OT1/cmr/m/it/10.95 iteracija \OT1/cmr/m/n/10.95 (eng. \OT1/cmr/m/it/10.95 it
 e-ra-ti-on\OT1/cmr/m/n/10.95 ) -- po-na-vlja-nje na-red-bi dok je is-pu-njen od
@@ -2409,17 +2554,17 @@ re[]deni
 
 
 (./_minted-main/C72D4352AB392ACC5DE9A814C09C983B5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [136])
+6.pygtex [152])
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/A887C87D4EF4C18B11AEBCE600631FA45018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [137]
+6.pygtex) [153]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/AAFE83E2102BE273C14DFC314A89A2AF5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [138]
+6.pygtex) [154]
 Overfull \hbox (11.86696pt too wide) in paragraph at lines 186--187
 \OT1/cmr/m/n/10.95 nje i te-sti-ra-nje funk-ci-ja. Proslje[]divanjem po-da-ta-k
 a kroz ar-gu-men-te i vra^^Scanjem
@@ -2428,12 +2573,12 @@ a kroz ar-gu-men-te i vra^^Scanjem
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [139]
+ [155]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/8203BC718E8910731ED1262FE3A8BE575018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [140])
+6.pygtex [156])
 Overfull \hbox (12.98793pt too wide) in paragraph at lines 244--245
 \OT1/cmr/m/n/10.95 izme[]du dvi-je ta^^Tcke, dok funk-ci-ja \OT1/cmtt/m/n/10.95
  closest[]pair \OT1/cmr/m/n/10.95 or-ga-ni-zu-je pro-ces pre-tra^^Tzivanja
@@ -2455,12 +2600,12 @@ Overfull \hbox (1.27464pt too wide) in paragraph at lines 257--258
 i-ta-ma za rje^^Tsavanje ra^^Tcunarskih
  []
 
-[141] [142]
+[157] [158]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/BD05DD22E52C13EB70B776B11C4898675018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [143]
+6.pygtex) [159]
 \openout3 = `main.pyg'.
 
 
@@ -2473,7 +2618,7 @@ mr/m/n/10.95 (5) \OMS/cmtt/m/n/10.95 ! \OML/cmm/m/it/10.95 fact\OT1/cmr/m/n/10.
 95 (4) \OMS/cmtt/m/n/10.95 !
  []
 
-<slike/factorial_recursion_tree.png, id=526, 1049.9225pt x 933.4875pt>
+<slike/factorial_recursion_tree.png, id=578, 1049.9225pt x 933.4875pt>
 File: slike/factorial_recursion_tree.png Graphic file (type png)
 <use slike/factorial_recursion_tree.png>
 Package pdftex.def Info: slike/factorial_recursion_tree.png  used on input line
@@ -2482,7 +2627,7 @@ Package pdftex.def Info: slike/factorial_recursion_tree.png  used on input line
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [144]
+ [160]
 \openout3 = `main.pyg'.
 
 
@@ -2492,7 +2637,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 (./_minted-main/843E39B893AF2132C0B0DDA2667921EA5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [145 <./slike/factorial_recursion_tree.png>]
+6.pygtex) [161 <./slike/factorial_recursion_tree.png>]
 \openout3 = `main.pyg'.
 
 
@@ -2502,18 +2647,18 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 (./_minted-main/3F1B1DE31356802240F5A7C5290B31465018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [146])
+6.pygtex [162])
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/DEB81F5720A7B9D270DB8410844396035018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [147]
-<slike/mandelbrot.png, id=542, 1204.5pt x 1204.5pt>
+6.pygtex) [163]
+<slike/mandelbrot.png, id=593, 1204.5pt x 1204.5pt>
 File: slike/mandelbrot.png Graphic file (type png)
 <use slike/mandelbrot.png>
 Package pdftex.def Info: slike/mandelbrot.png  used on input line 438.
 (pdftex.def)             Requested size: 99.98267pt x 79.98613pt.
- [148]
+ [164]
 Overfull \hbox (1.6802pt too wide) in paragraph at lines 442--443
 []\OT1/cmr/bx/n/10.95 Algoritmi vra^^Scanja una-zad\OT1/cmr/m/n/10.95 : Ovi al-
 go-rit-mi po-ste-pe-no gra-de rje^^Tsenje
@@ -2523,13 +2668,13 @@ go-rit-mi po-ste-pe-no gra-de rje^^Tsenje
 
 
 (./_minted-main/E64E991D9456F669A5FDC81E2CA347A95018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [149 <./slike/mandelbrot.png>])
+6.pygtex [165 <./slike/mandelbrot.png>])
 Overfull \hbox (14.77792pt too wide) in paragraph at lines 479--481
 []\OT1/cmr/m/n/10.95 Rje^^Tsenje ove re-ku-ren-ci-je ima ek-spo-nen-ci-jal-ni r
 ast, pa je vre-men-ska slo^^Tzenost
  []
 
-<slike/fib_rec.png, id=550, 1585.925pt x 998.73125pt>
+<slike/fib_rec.png, id=601, 1585.925pt x 998.73125pt>
 File: slike/fib_rec.png Graphic file (type png)
 <use slike/fib_rec.png>
 Package pdftex.def Info: slike/fib_rec.png  used on input line 488.
@@ -2537,9 +2682,9 @@ Package pdftex.def Info: slike/fib_rec.png  used on input line 488.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [150]
-[151 <./slike/fib_rec.png (PNG copy)>]
-<slike/tower.png, id=558, 466.74374pt x 211.79124pt>
+ [166]
+[167 <./slike/fib_rec.png (PNG copy)>]
+<slike/tower.png, id=608, 466.74374pt x 211.79124pt>
 File: slike/tower.png Graphic file (type png)
 <use slike/tower.png>
 Package pdftex.def Info: slike/tower.png  used on input line 529.
@@ -2549,42 +2694,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 546--547
 
  []
 
-[152 <./slike/tower.png>]
+[168 <./slike/tower.png>]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/92DCCA6208411CABE2023035828CDA735018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [153]) [154]
+6.pygtex [169]) [170]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/D47B9E6F1AC1A7F57273BB6C20750DA35018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
-) [155] [156]
+6.pygtex) [171] [172]
 Overfull \hbox (0.14754pt too wide) in paragraph at lines 714--716
 []\OT1/cmr/m/n/10.95 Prema to-me, vre-men-ska slo^^Tzenost re-kur-ziv-nog al-go
 -rit-ma sor-ti-ra-nja ume-
  []
 
-[157]
+[173]
 Overfull \hbox (5.01413pt too wide) in paragraph at lines 761--762
 []\OT1/cmr/m/n/10.95 Iako je ri-je^^Tc o jed-no-stav-nom pri-stu-pu, al-go-rit-
 mi gru-be si-le ima-ju zna^^Tcajnu
  []
 
-[158]
+[174]
 Underfull \hbox (badness 10000) in paragraph at lines 828--829
 
  []
 
-[159]
+[175]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/33EF1C7EF1CC6D926E6BE755010E6D585018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [160]) [161]
+6.pygtex [176]) [177]
 \openout3 = `main.pyg'.
 
 
@@ -2594,18 +2736,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 828--829
 
 
 (./_minted-main/2866A9FCC0D1F2E402F2FB8DCFAF8FD45018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [162]) [163]
+6.pygtex [178]) [179]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/EA3EA9ABCA664B52FCB0D97A6DCF1D075018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [164])
+6.pygtex [180])
 Overfull \hbox (5.29404pt too wide) in paragraph at lines 1000--1001
 []\OT1/cmr/m/n/10.95 Pretraga pre-ska-ka-njem (eng. \OT1/cmr/m/it/10.95 jump se
 -arch\OT1/cmr/m/n/10.95 ) pred-sta-vlja kom-pro-mis izme[]du
  []
 
-[165]
+[181]
 Overfull \hbox (12.37384pt too wide) in paragraph at lines 1033--1034
 []\OT1/cmr/m/n/10.95 Rekurzivna im-ple-men-ta-ci-ja pre-ta-ge pre-ska-ka-njem j
 e da-ta slje-de^^Scim k^odom. 
@@ -2615,7 +2757,7 @@ e da-ta slje-de^^Scim k^odom.
 
 
 (./_minted-main/A2EE971E89E67C3A4A53B3101541A12C5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [166])
+6.pygtex [182])
 Overfull \hbox (15.41635pt too wide) in paragraph at lines 1062--1063
 []\OT1/cmr/m/n/10.95 Interpolacijska pre-tra-ga (eng. \OT1/cmr/m/it/10.95 in-te
 r-po-la-ti-on se-arch\OT1/cmr/m/n/10.95 ) pred-sta-vlja unapre[]denje
@@ -2626,31 +2768,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 1076--1077
 
  []
 
-[167]
+[183]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/8F171E491EC6E9066313BE6EE14AA49D5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [168]
+6.pygtex) [184]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/9843A6F841191729150BFCA96230587C5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [169])
+6.pygtex [185])
 Underfull \vbox (badness 2547) has occurred while \output is active []
 
- [170]
+ [186]
 Underfull \hbox (badness 10000) in paragraph at lines 1217--1218
 
  []
 
-[171]
+[187]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/5EFAE8148A07CF8C4F5A30FE44DBABEC5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [172])
-<slike/mege.png, id=626, 655.44875pt x 635.37375pt>
+6.pygtex [188])
+<slike/mege.png, id=677, 655.44875pt x 635.37375pt>
 File: slike/mege.png Graphic file (type png)
 <use slike/mege.png>
 Package pdftex.def Info: slike/mege.png  used on input line 1266.
@@ -2661,14 +2803,14 @@ Overfull \hbox (4.25435pt too wide) in paragraph at lines 1273--1274
 /cmr/m/it/10.95 ). Po-zna-ti al-go-ri-tam za mno^^Tzenje
  []
 
-[173 <./slike/mege.png>] [174]
+[189 <./slike/mege.png>] [190]
 Overfull \hbox (3.31258pt too wide) in paragraph at lines 1336--1337
 []\OT1/cmr/m/n/10.95 postoji ve-li-ki broj mo-gu^^Scih kom-bi-na-ci-ja ko-je tr
 e-ba si-ste-mat-ski istra^^Tziti. 
  []
 
-[175]
-<slike/n-queen-problem.png, id=638, 185.69376pt x 168.63pt>
+[191]
+<slike/n-queen-problem.png, id=688, 185.69376pt x 168.63pt>
 File: slike/n-queen-problem.png Graphic file (type png)
 <use slike/n-queen-problem.png>
 Package pdftex.def Info: slike/n-queen-problem.png  used on input line 1380.
@@ -2676,31 +2818,31 @@ Package pdftex.def Info: slike/n-queen-problem.png  used on input line 1380.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [176]
-[177 <./slike/n-queen-problem.png>]
+ [192]
+[193 <./slike/n-queen-problem.png>]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/51759623E421236CE02A43547FBBCCC05018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex)
-<slike/n-queen-backtracking.png, id=646, 1409.265pt x 1124.2pt>
+<slike/n-queen-backtracking.png, id=697, 1409.265pt x 1124.2pt>
 File: slike/n-queen-backtracking.png Graphic file (type png)
 <use slike/n-queen-backtracking.png>
 Package pdftex.def Info: slike/n-queen-backtracking.png  used on input line 143
 7.
 (pdftex.def)             Requested size: 349.993pt x 279.98576pt.
- [178] [179 <./slike/n-queen-backtracking.png (PNG copy)>]
+ [194] [195 <./slike/n-queen-backtracking.png (PNG copy)>]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/D200231C912EBBDD535968123D7D196F5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [180]) [181]
+6.pygtex [196]) [197]
 Overfull \hbox (5.74594pt too wide) in paragraph at lines 1512--1513
 []\OT1/cmr/m/n/10.95 odre[]duje se skup svih kom-po-nen-ti ko-je na do-pu-stiv 
 na^^Tcin mo-gu pro^^Tsiriti
  []
 
-[182]
+[198]
 Overfull \hbox (4.98248pt too wide) in paragraph at lines 1554--1555
 []\OT1/cmr/m/n/10.95 Pohlepni al-go-rit-mi se tako[]de ^^Tcesto ko-ri-ste za ge
 -ne-ri-sa-nje po^^Tcetnih rje^^Tsenja
@@ -2711,7 +2853,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1561--1562
 
  []
 
-[183]
+[199]
 Underfull \hbox (badness 10000) in paragraph at lines 1573--1574
 
  []
@@ -2719,27 +2861,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 1573--1574
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/D4F1B3F6AE7EA0B1F5C424928945A95D5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [184])
-Overfull \hbox (3.85332pt too wide) in paragraph at lines 1602--1603
-[]\OT1/cmr/bx/n/10.95 Vremenska slo^^Tzenost\OT1/cmr/m/n/10.95 . Sor-ti-ra-nje 
-al-go-rit-ma zah-ti-je-va $\OML/cmm/m/it/10.95 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/
-it/10.95 n [] n\OT1/cmr/m/n/10.95 )$ vreme-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1606--1607
+(./_minted-main/BD2BD47A2585EB40E740B267CEF088525018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [200]
+Underfull \hbox (badness 10000) in paragraph at lines 1601--1602
 
  []
 
-[185]
-Overfull \hbox (4.74945pt too wide) in paragraph at lines 1630--1633
+[201]
+Overfull \hbox (4.74945pt too wide) in paragraph at lines 1625--1628
 \OT1/cmr/m/n/10.95 ji ostva-ru-ju naj-ve^^Scu vri-jed-nost po je-di-ni-ci te^^T
 zine. Za sva-ki pro-i-zvod ra^^Tcunamo
  []
 
 
-Overfull \hbox (18.03133pt too wide) in paragraph at lines 1638--1639
+Overfull \hbox (18.03133pt too wide) in paragraph at lines 1633--1634
 []\OT1/cmr/m/n/10.95 Pohlepni al-go-ri-tam za raz-lo-mlje-ni pro-blem ruk-sa-ka
  ima vre-men-sku slo^^Tzenost
  []
@@ -2748,41 +2883,42 @@ Overfull \hbox (18.03133pt too wide) in paragraph at lines 1638--1639
 
 
 (./_minted-main/0362944A08A666F21C241EF7363C4F305018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [186])
-Underfull \hbox (badness 10000) in paragraph at lines 1681--1683
+6.pygtex [202])
+Underfull \hbox (badness 10000) in paragraph at lines 1676--1678
 
  []
 
-[187]
+[203] [204]
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/C9A401ACA4E425D2D0E2DFA80A546C165018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [188])
-Underfull \vbox (badness 3701) has occurred while \output is active []
-
- [189]
-Underfull \hbox (badness 10000) in paragraph at lines 1781--1782
+(./_minted-main/0A5642B9BA515831273DAB6D6DC7A6615018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [205]
+Underfull \hbox (badness 10000) in paragraph at lines 1771--1772
 
  []
 
 
-Overfull \hbox (5.62436pt too wide) in paragraph at lines 1784--1785
+Overfull \hbox (5.62436pt too wide) in paragraph at lines 1774--1775
 []\OT1/cmr/m/it/10.95 Potrebno je oda-bra-ti pod-skup po-slo-va i odre-di-ti nj
 i-hov ra-spo-red iz-vr^^Tsavanja
  []
 
-[190]
-Underfull \hbox (badness 10000) in paragraph at lines 1840--1842
+[206]
+Underfull \hbox (badness 10000) in paragraph at lines 1830--1832
 
  []
 
-[191]
+[207]
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/B8F93C8437298FFAA7085FA29FA04B985018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [192]) [193] [194] [195]
+(./_minted-main/B69FB45A45EE98DE71E7D9FA9D741CBC5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [208])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [209]
+[210] [211]
 \openout3 = `main.pyg'.
 
 
@@ -2792,119 +2928,111 @@ Underfull \hbox (badness 10000) in paragraph at lines 1840--1842
 
 
 (./_minted-main/11AB637D21E46C6FFC0A36D34C3C77835018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [196] [197]
-<slike/dp-table-1.png, id=711, 272.01625pt x 263.98625pt>
+6.pygtex [212]) [213]
+<slike/dp-table-1.png, id=762, 272.01625pt x 263.98625pt>
 File: slike/dp-table-1.png Graphic file (type png)
 <use slike/dp-table-1.png>
-Package pdftex.def Info: slike/dp-table-1.png  used on input line 2040.
+Package pdftex.def Info: slike/dp-table-1.png  used on input line 2018.
 (pdftex.def)             Requested size: 100.00108pt x 99.99759pt.
- [198 <./slike/dp-table-1.png>]
-Overfull \hbox (8.57896pt too wide) in paragraph at lines 2068--2069
+ [214]
+Overfull \hbox (8.57896pt too wide) in paragraph at lines 2046--2047
 []\OT1/cmr/m/n/10.95 Za po-zi-ci-je ko-je ni-su do-stup-ne pi-ju-nu (npr. iz-va
 n gra-ni-ca ma-tri-ce) mo^^Tzemo
  []
 
+[215 <./slike/dp-table-1.png>]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/4C1C69C05E6ED959B7184415195C336B5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [199]) [200]
+6.pygtex [216]) [217]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/7457A53E24756BA5793526A6111834865018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [201]) [202] [203] [204]
-Overfull \hbox (0.54204pt too wide) in paragraph at lines 2336--2337
+6.pygtex [218]) [219] [220] [221]
+Overfull \hbox (0.54204pt too wide) in paragraph at lines 2316--2317
 []\OT1/cmr/m/it/10.95 Rekurzivna re-la-ci-ja. \OT1/cmr/m/n/10.95 Po-sma-traj-mo
  po-sljed-nje ka-rak-te-re raz-ma-tra-nih pre-
  []
 
-[205]
-Overfull \hbox (12.33704pt too wide) in paragraph at lines 2356--2363
+
+Overfull \hbox (12.33704pt too wide) in paragraph at lines 2336--2343
 []$[]\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 i\OT1/cmr/m/n/10.95 ][\OML/cmm/m/i
 t/10.95 j\OT1/cmr/m/n/10.95 ] = []$ 
  []
 
+[222]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/868EB0C10D75D545934A70674166D5E15018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex
-Overfull \hbox (6.4425pt too wide) in paragraph at lines 2378--1
+Overfull \hbox (6.4425pt too wide) in paragraph at lines 2358--1
 []\OT1/cmr/m/n/10.95 Implementacija pa-ra-dig-me di-na-mi^^Tckog pro-gra-mi-ra-
 nja za rje^^Tsavanje LCSP
  []
 
-[206]) [207] [208]
+) [223] [224]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/BB2F4937AC47FC019B7EADB9F7B343775018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
+6.pygtex [225])
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/3992436430675488AE86189EC087DC405018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [209])
-Underfull \hbox (badness 10000) in paragraph at lines 2574--2575
+(./_minted-main/D77EB1055C719896375CD3830104E2C15018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [226])
+Underfull \hbox (badness 10000) in paragraph at lines 2550--2551
 
  []
 
-[210]
+[227]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/7BE88D254EF0A8E0984311E223FC7A925018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [211])
-<slike/brute-force-cutting-stick.png, id=758, 1407.2575pt x 1126.2075pt>
+6.pygtex) [228]
+<slike/brute-force-cutting-stick.png, id=811, 1407.2575pt x 1126.2075pt>
 File: slike/brute-force-cutting-stick.png Graphic file (type png)
 <use slike/brute-force-cutting-stick.png>
 Package pdftex.def Info: slike/brute-force-cutting-stick.png  used on input lin
-e 2658.
+e 2634.
 (pdftex.def)             Requested size: 299.99918pt x 229.99762pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [212]
-Underfull \vbox (badness 2073) has occurred while \output is active []
-
- [213 <./slike/brute-force-cutting-stick.png (PNG copy)>]
-Overfull \hbox (0.26112pt too wide) in paragraph at lines 2683--2691
+ [229 <./slike/brute-force-cutting-stick.png (PNG copy)>]
+Overfull \hbox (0.26112pt too wide) in paragraph at lines 2659--2667
 \OT1/cmr/m/n/10.95 4\OML/cmm/m/it/10.95 ; x[] \OMS/cmtt/m/n/10.95 2 \U/msb/m/n/
 10.95 N$\OT1/cmr/m/n/10.95 . Sva mo-gu^^Sca rje^^Tsenja su: $(1 1 1 1 0)\OML/cm
 m/m/it/10.95 ; \OT1/cmr/m/n/10.95 (1 0 1 1 1)\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n
 /10.95 (0 1 1 1 1)\OML/cmm/m/it/10.95 ; [] ;$
  []
 
-
-Overfull \hbox (9.28033pt too wide) in paragraph at lines 2700--2701
+[230]
+Overfull \hbox (9.28033pt too wide) in paragraph at lines 2676--2677
 []\OT1/cmr/m/n/10.95 U ula-zu je dat niz bro-je-va. Kon-stru-i-sa-ti al-go-ri-t
 am di-na-mi^^Tckog programi-
  []
 
-[214]
-Underfull \hbox (badness 10000) in paragraph at lines 2705--2706
+
+Underfull \hbox (badness 10000) in paragraph at lines 2681--2682
 
  []
 
 
-Overfull \hbox (52.5288pt too wide) detected at line 2707
+Overfull \hbox (52.5288pt too wide) detected at line 2683
 \OML/cmm/m/it/10.95 dict \OT1/cmr/m/n/10.95 = \OMS/cmtt/m/n/10.95 f[]\OML/cmm/m
 /it/10.95 ; []; []; []; []; []; []; []; []; []; []; []; []; []; []; []\OMS/cmtt
 /m/n/10.95 g
  []
 
-<slike/plococe-dp-zadatak.png, id=768, 194.7275pt x 180.675pt>
+<slike/plococe-dp-zadatak.png, id=819, 194.7275pt x 180.675pt>
 File: slike/plococe-dp-zadatak.png Graphic file (type png)
 <use slike/plococe-dp-zadatak.png>
-Package pdftex.def Info: slike/plococe-dp-zadatak.png  used on input line 2720.
+Package pdftex.def Info: slike/plococe-dp-zadatak.png  used on input line 2696.
 
 (pdftex.def)             Requested size: 119.99884pt x 100.0001pt.
-
-Underfull \vbox (badness 1502) has occurred while \output is active []
-
- [215])
-[216 <./slike/plococe-dp-zadatak.png>]
+[231]) [232 <./slike/plococe-dp-zadatak.png>]
 \openout2 = `chapter-03-04/chapter04.aux'.
 
  (./chapter-03-04/chapter04.tex
@@ -2914,7 +3042,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-[217
+[233
 
 
 
@@ -2926,11 +3054,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 (./_minted-main/98837C794381314E1ED59DA07FD450DE5018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex)
 Overfull \hbox (120.70576pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10.95 218    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
+\OT1/cmr/m/n/10.95 234    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
 PARADIGMI NA PROBLEME IZ ARITMETIKE
  []
 
-[218]
+[234]
 Overfull \hbox (0.83469pt too wide) in paragraph at lines 67--69
 []\OT1/cmr/m/n/10.95 Ako je broj $\OML/cmm/m/it/10.95 p$ \OT1/cmr/m/n/10.95 pro
 st, ta-da ni-je-dan nje-gov vi^^Tsekratnik $2\OML/cmm/m/it/10.95 p; \OT1/cmr/m/
@@ -2948,35 +3076,35 @@ no-vo si-to ima vre-men-sku slo^^Tzenost $\OML/cmm/m/it/10.95 O\OT1/cmr/m/n/10.
 95 (\OML/cmm/m/it/10.95 N [] [] N\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ;$
  []
 
-[219]
+[235]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/5B122B19CBBAF58B654D70483589A3525018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex)
 Overfull \hbox (120.70576pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10.95 220    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
+\OT1/cmr/m/n/10.95 236    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
 PARADIGMI NA PROBLEME IZ ARITMETIKE
  []
 
-[220] [221]
+[236] [237]
 Overfull \hbox (120.70576pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10.95 222    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
+\OT1/cmr/m/n/10.95 238    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
 PARADIGMI NA PROBLEME IZ ARITMETIKE
  []
 
-[222]
+[238]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/D7686A220C2588EAF2376747C6235BA35018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [223])
+6.pygtex [239])
 Overfull \hbox (120.70576pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10.95 224    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
+\OT1/cmr/m/n/10.95 240    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
 PARADIGMI NA PROBLEME IZ ARITMETIKE
  []
 
-[224]
+[240]
 \openout3 = `main.pyg'.
 
 
@@ -2996,24 +3124,24 @@ vanje bi-no-mnog koefici-
 
 
 (./_minted-main/A8DAED73B0A060AD43BF7B90192A81325018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [225])
+6.pygtex [241])
 Underfull \hbox (badness 10000) in paragraph at lines 343--344
 
  []
 
 
 Overfull \hbox (120.70576pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10.95 226    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
+\OT1/cmr/m/n/10.95 242    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
 PARADIGMI NA PROBLEME IZ ARITMETIKE
  []
 
-[226]
-<slike/catalan-net.png, id=808, 729.72626pt x 345.29pt>
+[242]
+<slike/catalan-net.png, id=859, 729.72626pt x 345.29pt>
 File: slike/catalan-net.png Graphic file (type png)
 <use slike/catalan-net.png>
 Package pdftex.def Info: slike/catalan-net.png  used on input line 355.
 (pdftex.def)             Requested size: 279.99345pt x 159.9997pt.
- [227 <./slike/catalan-net.png>]
+ [243 <./slike/catalan-net.png>]
 \openout3 = `main.pyg'.
 
 
@@ -3025,16 +3153,16 @@ Package pdftex.def Info: slike/catalan-net.png  used on input line 355.
 (./_minted-main/C4420D8CFF725D849CA1BFF5C594A5125018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex
 Overfull \hbox (120.70576pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10.95 228    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
+\OT1/cmr/m/n/10.95 244    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
 PARADIGMI NA PROBLEME IZ ARITMETIKE
  []
 
-[228])
+[244])
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/B46E3130D963CD55C20B988C5717474E5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [229])
+6.pygtex [245])
 Underfull \hbox (badness 10000) in paragraph at lines 442--443
 
  []
@@ -3053,27 +3181,27 @@ m/it/10.95 ; \OT1/cmr/m/n/10.95 15\OML/cmm/m/it/10.95 ;$
 
 
 Overfull \hbox (120.70576pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10.95 230    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
+\OT1/cmr/m/n/10.95 246    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
 PARADIGMI NA PROBLEME IZ ARITMETIKE
  []
 
-[230]
+[246]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/7C6925BB28A555DC78A4800687E5D54C5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [231])
+6.pygtex [247])
 Overfull \hbox (120.70576pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10.95 232    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
+\OT1/cmr/m/n/10.95 248    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
 PARADIGMI NA PROBLEME IZ ARITMETIKE
  []
 
-[232]
+[248]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/C4AF68168566D46D56A380EAAF3FA6A55018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [233])
+6.pygtex [249])
 Overfull \hbox (22.27637pt too wide) in paragraph at lines 614--615
 \OT1/cmr/m/n/10.95 ta^^Tcno 3 raz-li^^Tcita pro-sta fak-to-ra. Npr. $30\OML/cmm
 /m/it/10.95 ; \OT1/cmr/m/n/10.95 42\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 66\
@@ -3085,23 +3213,23 @@ cmr/m/n/10.95 105\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 110\OML/cmm/m/it/10.9
 
 
 Overfull \hbox (120.70576pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10.95 234    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
+\OT1/cmr/m/n/10.95 250    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
 PARADIGMI NA PROBLEME IZ ARITMETIKE
  []
 
-[234]) [235]
+[250]) [251]
 Overfull \hbox (120.70576pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10.95 236    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
+\OT1/cmr/m/n/10.95 252    \OT1/cmr/m/sl/10.95 GLAVA 4.  PRIMJENA ALGORITAMSKIH 
 PARADIGMI NA PROBLEME IZ ARITMETIKE
  []
 
-[236
+[252
 
 
 
-] [237
+] [253
 
-] [238]
+] [254]
 Underfull \hbox (badness 4353) in paragraph at lines 247--251
 []\OT1/cmr/m/n/10.95 R. Man-ger and M. Ma-ru^^Tsi^^Sc, \OT1/cmr/m/it/10.95 Stru
 k-tu-re po-da-ta-ka i al-go-rit-mi\OT1/cmr/m/n/10.95 ,
@@ -3114,7 +3242,7 @@ FiXme Summary: Number of notes: 0,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 0.
 
-[239] (./main.aux (./chapter-01-02/chapter02.aux)
+[255] (./main.aux (./chapter-01-02/chapter02.aux)
 (./chapter-01-02/chapter01.aux) (./chapter-03-04/chapter03.aux)
 (./chapter-03-04/chapter04.aux))
 
@@ -3124,13 +3252,13 @@ runsystem(rm main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 23051 strings out of 479648
- 562666 string characters out of 5886115
- 822489 words of memory out of 5000000
- 39778 multiletter control sequences out of 15000+600000
+ 23143 strings out of 479648
+ 570186 string characters out of 5886115
+ 827377 words of memory out of 5000000
+ 39825 multiletter control sequences out of 15000+600000
  486756 words of font info for 97 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 84i,14n,131p,1123b,814s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,14n,131p,1155b,814s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/marko/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600
 pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
@@ -3157,10 +3285,10 @@ s/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b>
-Output written on main.pdf (245 pages, 15256859 bytes).
+Output written on main.pdf (261 pages, 15290305 bytes).
 PDF statistics:
- 973 PDF objects out of 1000 (max. 8388607)
- 628 compressed objects within 7 object streams
+ 1025 PDF objects out of 1200 (max. 8388607)
+ 664 compressed objects within 7 object streams
  0 named destinations out of 1000 (max. 500000)
  143 words of extra memory for PDF output out of 10000 (max. 10000000)
 

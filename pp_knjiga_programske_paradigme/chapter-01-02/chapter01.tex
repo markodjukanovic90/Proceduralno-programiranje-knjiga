@@ -58,6 +58,8 @@ Nakon uspješnog savladavanja sadržaja ove glave student će biti u stanju da:
 	
 	\item prepoznaje, generiše i obrađuje izuzetke te koristi mehanizme za
 	provjeru ispravnosti izvršavanja programa;
+
+	\item projektuje testne slučajeve i primijeni modul \texttt{unittest} za automatsko testiranje funkcija;
 	
 	\item koristi datoteke,  regularne izraze za učitavanje,
 	obradu i zapisivanje strukturiranih podataka;
@@ -2161,6 +2163,8 @@ Pregled najvažnijih klasa izuzetaka prikazan je na Slici~\ref{fig:exceptions}.
 
 Pravilna upotreba izuzetaka predstavlja važan dio razvoja pouzdanih programa. Obradom izuzetaka moguće je spriječiti neočekivani prekid izvršavanja, korisniku pružiti jasne informacije o nastaloj greški i povećati robusnost softvera.
 
+
+
 \section{Rad sa datotekama}
 
 Pomoću svojih ugrađenih funkcija, Pajton omogućuje jednostavan rad sa ulaznim i izlaznim datotekama. U toku rada, ovaj modul interaguje sa operativnim sistemom. 
@@ -2887,6 +2891,763 @@ aktiviraće se izuzetak:
 
 Korištenje modula omogućava bolju organizaciju programa, veću ponovnu upotrebljivost koda i jednostavnije održavanje većih projekata. U praksi se složeni programi gotovo uvijek organizuju kao skup međusobno povezanih modula.
 
+
+
+%TODO: unitest package 
+
+\section{Testiranje programa i modul \texttt{unittest}}
+
+U prvoj glavi razmatrali smo pitanje ispravnosti algoritma, 
+dok smo u prethodnoj sekciji upoznali mehanizme za obradu 
+izuzetaka i naredbu \texttt{assert}. Međutim, čak i kada je 
+algoritam matematički ispravan, njegova implementacija može 
+sadržavati greške. Zbog toga testiranje predstavlja sastavni 
+dio procesa razvoja računarskih programa.
+
+\textit{Testiranje programa} (eng. \emph{software testing}) 
+podrazumijeva izvršavanje programa ili njegovih komponenti 
+nad pažljivo odabranim ulazima i provjeru da li je ponašanje 
+programa u skladu sa njegovom specifikacijom.
+
+U proceduralnom programiranju naročito je korisno zasebno 
+testirati pojedinačne funkcije, prije nego što se one povežu 
+u složeniji program. Na taj način olakšava se identifikovanje 
+programskih grešaka, provjera ispravnosti pojedinačnih 
+komponenti i naknadno održavanje programskog koda.
+
+
+\subsection{Vrste grešaka i izbor testnih slučajeva}
+
+Razlikujemo tri česte vrste programskih grešaka:
+
+\begin{itemize}
+	\item \textit{Sintaksne greške} (eng. \emph{syntax errors}) 
+	nastaju usljed narušavanja sintaksnih pravila programskog 
+	jezika.
+	
+	\item \textit{Greške pri izvršavanju} (eng. 
+	\emph{runtime errors}) nastaju tokom izvršavanja 
+	programa. Primjeri uključuju dijeljenje nulom, pristup 
+	elementu liste izvan njenog opsega ili pokušaj 
+	otvaranja nepostojeće datoteke.
+	
+	\item \textit{Logičke greške} (eng. \emph{logical errors}) 
+	predstavljaju greške usljed kojih se program izvršava, 
+	ali njegov rezultat nije u skladu sa specifikacijom.
+\end{itemize}
+
+Logičke greške često je teže identifikovati od sintaksnih 
+grešaka i grešaka pri izvršavanju, jer program može završiti 
+svoje izvršavanje bez generisanja izuzetka, a ipak proizvesti 
+neispravan rezultat.
+
+\textit{Testni slučaj} (eng. \emph{test case}) obuhvata 
+ulazne podatke, očekivani rezultat ili očekivano ponašanje 
+programa, kao i eventualne početne uslove pod kojima se 
+program izvršava.
+
+Pri izboru testnih slučajeva potrebno je razmotriti:
+
+\begin{itemize}
+	\item uobičajene ulazne podatke;
+	\item granične vrijednosti ulaznih podataka;
+	\item specijalne slučajeve, kao što su prazna lista, 
+	nulta vrijednost ili lista sa jednim elementom;
+	\item nedopustive ulaze za koje se očekuje generisanje 
+	odgovarajućeg izuzetka.
+\end{itemize}
+
+Važno je da se očekivani rezultat odredi nezavisno od 
+implementacije koja se testira. U suprotnom, ista logička 
+greška može biti prisutna i u implementaciji i u postupku 
+određivanja očekivanog rezultata.
+
+\textbf{Primjer.} Posmatrajmo funkciju koja računa cijenu 
+dostave paketa, u KM, na osnovu njegove mase $m$ u 
+kilogramima. Pretpostavimo da su ulazi konačni realni 
+brojevi i da vrijedi sljedeći cjenovnik:
+
+\[
+c(m)=
+\begin{cases}
+	5, & 0<m\leq 2,\\
+	8, & 2<m\leq 5,\\
+	12, & 5<m\leq 10.
+\end{cases}
+\]
+
+Za mase izvan intervala $(0,10]$ funkcija treba generisati 
+izuzetak \texttt{ValueError}.
+
+Implementacija funkcije može se sačuvati u datoteci 
+\texttt{dostava.py}.
+
+\begin{minted}[fontsize=\footnotesize]{python}
+	def cijena_dostave(m):
+	if not 0 < m <= 10:
+	raise ValueError("Nedopustiva masa paketa.")
+	
+	if m <= 2:
+	return 5
+	
+	if m <= 5:
+	return 8
+	
+	return 12
+\end{minted}
+
+Prije testiranja funkcije potrebno je odrediti skup 
+testnih slučajeva i odgovarajuće očekivane rezultate. 
+Neki od mogućih testnih slučajeva prikazani su u 
+Tabeli~\ref{tab:test-dostava}.
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{lll}
+		\hline
+		Masa (kg) & Očekivani ishod & Vrsta slučaja \\ \hline
+		1         & 5 & uobičajeni \\
+		4         & 8 & uobičajeni \\
+		7         & 12 & uobičajeni \\
+		2         & 5 & granični \\
+		2.01      & 8 & iznad granice \\
+		5         & 8 & granični \\
+		5.01      & 12 & iznad granice \\
+		10        & 12 & granični \\
+		0         & \texttt{ValueError} & nedopustivi \\
+		$-1$      & \texttt{ValueError} & nedopustivi \\
+		10.01     & \texttt{ValueError} & nedopustivi \\ \hline
+	\end{tabular}
+	\caption{Odabrani testni slučajevi za funkciju 
+		računanja cijene dostave.}
+	\label{tab:test-dostava}
+\end{table}
+
+Ukoliko bismo u prvom uslovu za izbor cijene umjesto 
+\texttt{m <= 2} napisali \texttt{m < 2}, program bi se 
+izvršavao bez generisanja izuzetka, ali bi za masu 2 
+proizveo rezultat 8 umjesto 5. Testiranje graničnih 
+vrijednosti omogućava otkrivanje upravo ovakvih 
+logičkih grešaka.
+
+
+\subsection{Testiranje funkcija pomoću naredbe \texttt{assert}}
+
+Jedan od najjednostavnijih načina testiranja funkcija 
+u programskom jeziku Pajton zasniva se na korištenju 
+prethodno uvedene naredbe \texttt{assert}.
+
+Podsjetimo da naredba ima sljedeći opšti oblik:
+
+\begin{minted}[fontsize=\footnotesize]{python}
+	assert uslov, poruka
+\end{minted}
+
+Ukoliko je vrijednost uslova \texttt{True}, izvršavanje 
+programa se nastavlja. U suprotnom, generiše se izuzetak 
+\texttt{AssertionError}, uz odgovarajuću poruku.
+
+Testiranje prethodno definisane funkcije možemo 
+realizovati sljedećom procedurom:
+
+\begin{minted}[fontsize=\footnotesize]{python}
+	from dostava import cijena_dostave
+	
+	
+	def test_uobicajeni():
+	assert cijena_dostave(1) == 5
+	assert cijena_dostave(4) == 8
+	assert cijena_dostave(7) == 12
+	
+	
+	test_uobicajeni()
+	
+	print("Svi testovi su uspjesno izvrseni.")
+\end{minted}
+
+Ukoliko funkcija \texttt{cijena\_dostave} za bilo koji 
+od navedenih ulaza proizvede rezultat različit od 
+očekivanog, generisaće se izuzetak 
+\texttt{AssertionError}.
+
+Korisno je testne slučajeve grupisati u zasebne 
+funkcije prema vrsti ulaznih podataka. Na primjer, 
+testiranje graničnih vrijednosti možemo realizovati 
+na sljedeći način:
+
+\begin{minted}[fontsize=\footnotesize]{python}
+	def test_granice():
+	assert cijena_dostave(2) == 5
+	assert cijena_dostave(2.01) == 8
+	assert cijena_dostave(5) == 8
+	assert cijena_dostave(5.01) == 12
+	assert cijena_dostave(10) == 12
+\end{minted}
+
+U situacijama kada postoji veći broj testnih slučajeva, 
+pogodno je predstaviti ih pomoću liste torki, gdje 
+svaka torka sadrži ulaznu i očekivanu izlaznu vrijednost.
+
+\begin{minted}[fontsize=\footnotesize]{python}
+	def test_dostava():
+	testovi = [
+	(1, 5),
+	(4, 8),
+	(7, 12),
+	(2, 5),
+	(2.01, 8),
+	(5, 8),
+	(5.01, 12),
+	(10, 12)
+	]
+	
+	for m, ocekivano in testovi:
+	rezultat = cijena_dostave(m)
+	
+	assert rezultat == ocekivano, (
+	f"Masa: {m}, "
+	f"ocekivano: {ocekivano}, "
+	f"dobijeno: {rezultat}"
+	)
+\end{minted}
+
+Na ovaj način novi testni slučajevi mogu se jednostavno 
+dodavati u listu, bez potrebe za mijenjanjem ostatka 
+programskog koda.
+
+
+\subsection{Testiranje očekivanih izuzetaka}
+
+U određenim situacijama ispravno ponašanje funkcije 
+ne podrazumijeva vraćanje rezultata, već generisanje 
+odgovarajućeg izuzetka.
+
+Kod funkcije za računanje cijene dostave očekujemo 
+generisanje izuzetka \texttt{ValueError} ukoliko 
+masa paketa ne pripada intervalu $(0,10]$.
+
+Testiranje ovog ponašanja moguće je realizovati 
+korištenjem prethodno uvedenog bloka 
+\texttt{try-except}.
+
+\begin{minted}[fontsize=\footnotesize]{python}
+	def test_nedopustivi():
+	for m in [0, -1, 10.01]:
+	try:
+	cijena_dostave(m)
+	except ValueError:
+	continue
+	
+	raise AssertionError(
+	f"Ocekivan ValueError za masu {m}."
+	)
+\end{minted}
+
+Ukoliko funkcija generiše očekivani izuzetak, 
+izvršavanje se nastavlja sa sljedećim testnim slučajem. 
+U suprotnom, generiše se izuzetak 
+\texttt{AssertionError}, kojim se signalizira 
+neuspješno izvršavanje testa.
+
+Ukoliko funkcija generiše izuzetak nekog drugog tipa, 
+on se neće obraditi navedenim blokom \texttt{except}, 
+što takođe ukazuje na neispravno ponašanje funkcije.
+
+Prethodno definisane testne funkcije mogu se objediniti 
+u jednu proceduru:
+
+\begin{minted}[fontsize=\footnotesize]{python}
+	def pokreni_testove():
+	test_uobicajeni()
+	test_granice()
+	test_nedopustivi()
+	
+	print("Svi testovi su uspjesno izvrseni.")
+	
+	
+	pokreni_testove()
+\end{minted}
+
+Nedostatak ovakvog pristupa ogleda se u tome što se 
+izvršavanje programa prekida prilikom pojave prvog 
+neuspješnog testa. Kod većih programa poželjno je 
+izvršiti sve testne funkcije i na kraju dobiti 
+objedinjeni izvještaj o njihovim rezultatima.
+
+Za tu svrhu možemo koristiti modul \texttt{unittest}.
+
+
+\subsection{Jedinično testiranje pomoću modula \texttt{unittest}}
+
+\textit{Jedinično testiranje} (eng. \emph{unit testing}) 
+predstavlja postupak provjere ponašanja pojedinačne 
+programske jedinice, kao što je funkcija ili procedura, 
+nezavisno od ostalih komponenti programa, u mjeri u 
+kojoj je to moguće.
+
+Modul \texttt{unittest} dio je standardne biblioteke 
+programskog jezika Pajton i ne zahtijeva instalaciju 
+dodatnih paketa. On omogućava:
+
+\begin{itemize}
+	\item grupisanje testnih funkcija;
+	\item automatsko izvršavanje testova;
+	\item identifikovanje uspješnih i neuspješnih testova;
+	\item razlikovanje neuspješnih provjera od drugih 
+	grešaka pri izvršavanju testova;
+	\item generisanje izvještaja o rezultatima testiranja.
+\end{itemize}
+
+Iako modul \texttt{unittest} podržava i objektno 
+orijentisani pristup organizaciji testova, u nastavku 
+ćemo koristiti isključivo korisnički definisane 
+funkcije.
+
+Pomoću konstrukcije \texttt{FunctionTestCase}, obična 
+testna funkcija može se uključiti u skup testova koji 
+se automatski izvršavaju.
+
+Za izvršavanje testova koristićemo sljedeće komponente 
+modula:
+
+\begin{itemize}
+	\item \texttt{FunctionTestCase(f)} -- omogućava 
+	korištenje funkcije \texttt{f} kao jedinice testiranja;
+	
+	\item \texttt{TestSuite} -- omogućava formiranje 
+	skupa testova;
+	
+	\item \texttt{TextTestRunner} -- omogućava 
+	izvršavanje testova i generisanje tekstualnog 
+	izvještaja.
+\end{itemize}
+
+Posmatrajmo kompletnu implementaciju testnog programa 
+za prethodno definisanu funkciju za računanje cijene 
+dostave.
+
+Program možemo sačuvati u datoteci 
+\texttt{test\_dostava.py}, koja se nalazi u istom 
+direktorijumu kao datoteka \texttt{dostava.py}.
+
+\begin{minted}[fontsize=\footnotesize]{python}
+	import unittest
+	from dostava import cijena_dostave
+	
+	
+	def test_uobicajeni():
+	assert cijena_dostave(1) == 5
+	assert cijena_dostave(4) == 8
+	assert cijena_dostave(7) == 12
+	
+	
+	def test_granice():
+	assert cijena_dostave(2) == 5
+	assert cijena_dostave(2.01) == 8
+	assert cijena_dostave(5) == 8
+	assert cijena_dostave(5.01) == 12
+	assert cijena_dostave(10) == 12
+	
+	
+	def test_nedopustivi():
+	for m in [0, -1, 10.01]:
+	try:
+	cijena_dostave(m)
+	except ValueError:
+	continue
+	
+	raise AssertionError(
+	f"Ocekivan ValueError za masu {m}."
+	)
+	
+	
+	def pokreni_testove():
+	testovi = [
+	test_uobicajeni,
+	test_granice,
+	test_nedopustivi
+	]
+	
+	skup_testova = unittest.TestSuite(
+	unittest.FunctionTestCase(f)
+	for f in testovi
+	)
+	
+	unittest.TextTestRunner(
+	verbosity=2
+	).run(skup_testova)
+	
+	
+	if __name__ == "__main__":
+	pokreni_testove()
+\end{minted}
+
+Obratimo pažnju da lista \texttt{testovi} sadrži 
+reference na funkcije, a ne rezultate njihovih 
+poziva. Na taj način funkcije se mogu prosljeđivati 
+drugim programskim komponentama, što je koncept 
+koji smo prethodno razmatrali prilikom obrade 
+funkcija kao argumenata.
+
+Svaka funkcija iz liste uključuje se u skup testova 
+pomoću konstrukcije \texttt{FunctionTestCase}. 
+Formirani skup potom se prosljeđuje komponenti 
+zaduženoj za izvršavanje testova.
+
+Parametar \texttt{verbosity} određuje nivo detaljnosti 
+izvještaja o rezultatima testiranja.
+
+Program pokrećemo iz terminala naredbom:
+
+\begin{minted}[fontsize=\footnotesize]{bash}
+	python test_dostava.py
+\end{minted}
+
+Ukoliko su sve testne funkcije uspješno izvršene, 
+dobijamo izvještaj sličan sljedećem:
+
+\begin{minted}[fontsize=\footnotesize]{text}
+	unittest.case.FunctionTestCase (test_uobicajeni) ... ok
+	unittest.case.FunctionTestCase (test_granice) ... ok
+	unittest.case.FunctionTestCase (test_nedopustivi) ... ok
+	
+	--------------------------------------------------
+	Ran 3 tests
+	
+	OK
+\end{minted}
+
+Ukoliko promijenimo uslov \texttt{m <= 2} u 
+\texttt{m < 2}, testna funkcija 
+\texttt{test\_granice} neće biti uspješno izvršena.
+
+Modul \texttt{unittest} evidentiraće ovaj neuspjeh, 
+nastaviti izvršavanje preostalih testnih funkcija 
+i prikazati odgovarajući izvještaj.
+
+Pri tome razlikujemo tri osnovna ishoda izvršavanja 
+pojedinačne testne funkcije:
+
+\begin{itemize}
+	\item \texttt{OK} -- test je uspješno izvršen;
+	
+	\item \texttt{FAIL} -- prilikom izvršavanja testa 
+	generisan je izuzetak \texttt{AssertionError}, 
+	odnosno neka od očekivanih provjera nije 
+	zadovoljena;
+	
+	\item \texttt{ERROR} -- prilikom izvršavanja testa 
+	generisan je neki drugi, neobrađeni izuzetak.
+\end{itemize}
+
+Treba napomenuti da jedna testna funkcija može 
+sadržavati više pojedinačnih provjera. Ukoliko neka 
+od njih nije zadovoljena, prekida se izvršavanje 
+te funkcije, ali se nastavlja izvršavanje ostalih 
+testnih funkcija iz skupa.
+
+
+\subsection{Testiranje rezultata realne aritmetike}
+
+Zbog ograničene preciznosti reprezentacije realnih 
+brojeva u računaru, direktno poređenje rezultata 
+realne aritmetike pomoću operatora \texttt{==} 
+nije uvijek prikladno.
+
+Posmatrajmo sljedeći primjer:
+
+\begin{minted}[fontsize=\footnotesize]{python}
+	print(0.1 + 0.2 == 0.3)
+\end{minted}
+
+Rezultat izvršavanja navedene naredbe je:
+
+\begin{minted}[fontsize=\footnotesize]{text}
+	False
+\end{minted}
+
+Ovakvo ponašanje posljedica je činjenice da se mnogi 
+decimalni brojevi ne mogu egzaktno predstaviti 
+pomoću konačnog binarnog zapisa u formatu koji se 
+koristi za brojeve tipa \texttt{float}.
+
+Jedan od načina poređenja približno jednakih brojeva 
+jeste korištenje funkcije \texttt{isclose} iz modula 
+\texttt{math}.
+
+Opšti oblik poziva funkcije je:
+
+\begin{minted}[fontsize=\footnotesize]{python}
+	math.isclose(a, b, rel_tol=1e-9, abs_tol=0.0)
+\end{minted}
+
+Za konačne realne brojeve $a$ i $b$, funkcija vraća 
+vrijednost \texttt{True} ukoliko je zadovoljen 
+sljedeći uslov:
+
+\[
+|a-b|
+\leq
+\max\left\{
+\varepsilon_r\max\{|a|,|b|\},
+\varepsilon_a
+\right\},
+\]
+
+gdje su $\varepsilon_r$ i $\varepsilon_a$ relativna 
+i apsolutna tolerancija, zadate parametrima 
+\texttt{rel\_tol} i \texttt{abs\_tol}.
+
+Apsolutna tolerancija posebno je značajna prilikom 
+poređenja vrijednosti bliskih nuli.
+
+\textbf{Primjer.} Posmatrajmo funkciju koja računa 
+prosječnu brzinu kretanja na osnovu pređenog puta 
+$s$, izraženog u kilometrima, i vremena $t$, 
+izraženog u satima:
+
+\[
+v(s,t)=\frac{s}{t}.
+\]
+
+Pretpostavimo da su ulazni podaci konačni realni 
+brojevi, pri čemu je $s\geq 0$ i $t>0$.
+
+Implementacija funkcije, zajedno sa odgovarajućim 
+testnim funkcijama, data je sljedećim kodom:
+
+\begin{minted}[fontsize=\footnotesize]{python}
+	import math
+	import unittest
+	
+	
+	def brzina(put, vrijeme):
+	if put < 0 or vrijeme <= 0:
+	raise ValueError("Nedopustivi argumenti.")
+	
+	return put / vrijeme
+	
+	
+	def test_decimalni_rezultat():
+	assert math.isclose(
+	brzina(0.3, 0.1),
+	3.0,
+	rel_tol=1e-9,
+	abs_tol=1e-12
+	)
+	
+	
+	def test_mirovanje():
+	assert brzina(0, 2) == 0
+	
+	
+	def test_nedopustivi_argumenti():
+	for put, vrijeme in [(10, 0), (-5, 2), (10, -1)]:
+	try:
+	brzina(put, vrijeme)
+	except ValueError:
+	continue
+	
+	raise AssertionError(
+	"Ocekivan izuzetak ValueError."
+	)
+	
+	
+	def pokreni_testove():
+	testovi = [
+	test_decimalni_rezultat,
+	test_mirovanje,
+	test_nedopustivi_argumenti
+	]
+	
+	skup_testova = unittest.TestSuite(
+	unittest.FunctionTestCase(f)
+	for f in testovi
+	)
+	
+	unittest.TextTestRunner(
+	verbosity=2
+	).run(skup_testova)
+	
+	
+	if __name__ == "__main__":
+	pokreni_testove()
+\end{minted}
+
+Ovaj primjer ilustruje kako se različite vrste 
+testnih slučajeva mogu objediniti korištenjem 
+isključivo proceduralno organizovanog programskog 
+koda, bez potrebe za definisanjem korisničkih klasa.
+
+
+\subsection{Regresijsko testiranje i otklanjanje grešaka}
+
+Prilikom razvoja računarskih programa često se 
+javlja potreba za izmjenom prethodno implementiranih 
+funkcija. Izmjene mogu biti motivisane unapređenjem 
+efikasnosti algoritma, proširenjem funkcionalnosti 
+programa ili pojednostavljivanjem programskog koda.
+
+Međutim, izmjenom prethodno ispravnog programskog 
+koda mogu nastati nove greške.
+
+\textit{Regresijsko testiranje} (eng. \emph{regression 
+	testing}) predstavlja postupak ponovnog izvršavanja 
+postojećih testova nakon izmjene programskog koda, 
+sa ciljem provjere da li su ranije ispravne 
+funkcionalnosti programa ostale očuvane.
+
+Jedna od osnovnih prednosti automatskog testiranja 
+ogleda se upravo u mogućnosti višestrukog izvršavanja 
+istog skupa testova, bez potrebe za njihovim ponovnim 
+ručnim definisanjem.
+
+\textit{Otklanjanje grešaka} (eng. \emph{debugging}) 
+predstavlja proces pronalaženja uzroka uočenog 
+neispravnog ponašanja programa i njegove korekcije.
+
+Ovaj proces obično obuhvata sljedeće korake:
+
+\begin{enumerate}
+	\item reprodukovanje greške korištenjem 
+	odgovarajućeg testnog slučaja;
+	
+	\item identifikovanje dijela programskog koda 
+	u kojem se javlja neispravno ponašanje;
+	
+	\item analizu vrijednosti promjenljivih i toka 
+	izvršavanja programa;
+	
+	\item korekciju uzroka greške;
+	
+	\item ponovno izvršavanje svih testova.
+\end{enumerate}
+
+Jedan od najjednostavnijih načina analize toka 
+izvršavanja programa jeste korištenje funkcije 
+\texttt{print} za ispisivanje međurezultata.
+
+Pajton takođe omogućava korištenje funkcije 
+\texttt{breakpoint()}, pomoću koje se, u uobičajenoj 
+konfiguraciji, izvršavanje programa može privremeno 
+zaustaviti i aktivirati interaktivni program za 
+otklanjanje grešaka.
+
+U okviru standardne biblioteke Pajtona dostupan je 
+modul \texttt{pdb} (eng. \emph{Python debugger}), 
+koji omogućava pregled vrijednosti promjenljivih 
+i izvršavanje programa korak po korak.
+
+Neke od osnovnih naredbi koje se mogu koristiti 
+u okviru ovog modula prikazane su u 
+Tabeli~\ref{tab:pdb-naredbe}.
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{ll}
+		\hline
+		Naredba & Namjena \\ \hline
+		\texttt{n} & izvršavanje narednog koraka \\
+		\texttt{s} & ulazak u pozvanu funkciju \\
+		\texttt{p izraz} & ispis vrijednosti izraza \\
+		\texttt{l} & prikaz dijela izvornog koda \\
+		\texttt{c} & nastavak izvršavanja programa \\
+		\texttt{q} & prekid izvršavanja \\ \hline
+	\end{tabular}
+	\caption{Neke od osnovnih naredbi modula \texttt{pdb}.}
+	\label{tab:pdb-naredbe}
+\end{table}
+
+\textbf{Napomena.} Naredba \texttt{assert} može biti 
+isključena pokretanjem Pajtona sa opcijom \texttt{-O}. 
+Zbog toga testove koji se zasnivaju na ovoj naredbi 
+treba izvršavati bez navedene opcije.
+
+Ukoliko želimo da provjera ostane aktivna nezavisno 
+od načina pokretanja interpretera, možemo eksplicitno 
+generisati izuzetak:
+
+\begin{minted}[fontsize=\footnotesize]{python}
+	def provjeri_jednakost(rezultat, ocekivano):
+	if rezultat != ocekivano:
+	raise AssertionError(
+	f"Ocekivano: {ocekivano}, "
+	f"dobijeno: {rezultat}"
+	)
+\end{minted}
+
+Naredbu \texttt{assert} takođe ne treba koristiti 
+za obaveznu provjeru korisničkog ulaza. Za tu svrhu 
+koristimo eksplicitne uslovne naredbe i generisanje 
+odgovarajućih izuzetaka.
+
+
+\subsection{Testiranje i ispravnost algoritama}
+
+U narednim glavama razmatraćemo različite algoritamske 
+pristupe rješavanju istih računarskih problema. 
+Pri tome ćemo često polaziti od jednostavnih, ali 
+računski neefikasnih algoritama, a zatim projektovati 
+njihove efikasnije alternative.
+
+Jedan od korisnih pristupa testiranju efikasnijeg 
+algoritma zasniva se na poređenju njegovih rezultata 
+sa rezultatima jednostavnog, nezavisno provjerenog 
+referentnog algoritma.
+
+Neka su $A_1$ i $A_2$ dva algoritma za rješavanje 
+istog računarskog problema, pri čemu je $A_1$ 
+referentni algoritam, a $A_2$ algoritam čiju 
+implementaciju želimo testirati.
+
+Ukoliko problem za svaku instancu ima jedinstven 
+izlaz, za odabrani skup testnih instanci 
+$\mathcal{I}$ provjeravamo da li vrijedi:
+
+\[
+(\forall I\in\mathcal{I})\quad
+A_1(I)=A_2(I).
+\]
+
+Kod problema za koje može postojati više ispravnih 
+rješenja nije neophodno da oba algoritma proizvedu 
+identično rješenje. U takvim situacijama potrebno 
+je provjeriti da li dobijena rješenja zadovoljavaju 
+uslove definisane samim problemom.
+
+Na primjer, kod problema optimizacije, ukoliko oba 
+algoritma treba da pronađu optimalno rješenje, 
+provjeravamo dopustivost dobijenih rješenja i 
+jednakost vrijednosti njihovih funkcija cilja.
+
+Ako sa $f_I$ označimo funkciju cilja za instancu $I$, 
+potrebno je provjeriti da li vrijedi:
+
+\[
+(\forall I\in\mathcal{I})\quad
+f_I(A_1(I))=f_I(A_2(I)),
+\]
+
+uz pretpostavku da su oba dobijena rješenja dopustiva.
+
+Ovakav pristup posebno je koristan prilikom razvoja 
+složenijih algoritama, jer omogućava automatsku 
+provjeru velikog broja malih testnih instanci.
+
+Ipak, uspješno izvršavanje konačnog skupa testova, 
+u opštem slučaju, ne predstavlja matematički dokaz 
+ispravnosti algoritma za sve dopustive ulaze.
+
+Dok matematičkim dokazivanjem nastojimo utvrditi 
+ispravnost algoritma nezavisno od konkretne instance 
+problema, testiranjem prvenstveno provjeravamo 
+ponašanje njegove programske implementacije.
+
+Zbog toga testiranje i matematičko dokazivanje 
+ispravnosti predstavljaju dva međusobno 
+komplementarna pristupa razvoju pouzdanih 
+računarskih programa.
+
 \section{Postavljanje korisnički kreiranih modula na PyPI repozitorij}
 
 PyPI (\textit{Python Package Index}) predstavlja centralni repozitorijum paketa napisanih u programskom jeziku Pajton. Objavljivanjem paketa na PyPI-u omogućava se njegovo jednostavno distribuiranje i instaliranje od strane drugih korisnika.
@@ -3088,6 +3849,9 @@ Ukratko, Pajton prvo prevodi izvorni kôd u bajtkod, a zatim taj bajtkod izvrša
 %regularni izrazi:
 \begin{enumerate}
     %%https://adriann.github.io/programming_problems.html
+
+    \item Napisati funkciju koja za nenegativan cijeli broj minuta vraća cijenu parkinga u KM: do 60 minuta cijena iznosi 2 KM, za svaki naredni započeti sat dodaje se 1 KM, a za negativan ulaz generiše se izuzetak \texttt{ValueError}. Posebno, za nula minuta cijena je nula. Napisati jedinične testove pomoću modula \texttt{unittest}, uključujući vrijednosti 0, 1, 60, 61, 120, 121 i nedopustiv ulaz.
+
     
     \item Implementi igru pogađanja u kojoj korisnik treba da pogodi skriveni broj. Nakon pogađanja, program izvještava korisnika da li je njegov broj velik ili mali (ili je pogođen). Na kraju ispisati broj  pokušaja iz kojeg je korisnik pogodio skriveni broj. Računa se jedan pokušaj ukoliko se unese isti broj više puta uzastopno.
     

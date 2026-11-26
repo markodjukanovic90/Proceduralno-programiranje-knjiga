@@ -1574,33 +1574,28 @@ U nastavku prikazujemo nekoliko primjera primjene pohlepnih algoritama na razli�
 	
 	Pretpostavimo da su apoeni sortirani opadajuće: $ x_1 > x_2 > \cdots > x_k.$
 	
-	Neka je $X' = X - \sum_{j=1}^{s} p_j x_j$ preostali iznos koji još treba razmijeniti. Tada se bira najveći apoen $x_i$ za koji važi $x_i \leq X',$ a broj njegovih pojavljivanja određuje se kao $p_i=\left\lfloor \frac{X'}{x_i}\right\rfloor.$  	Na taj način parcijalno rješenje se proširuje novom komponentom, nakon čega se ažurira vrijednost preostalog iznosa. Postupak se ponavlja sve dok preostali iznos ne postane nula.
+	Neka je $X' = X - \sum_{j=1}^{s} p_j x_j$ preostali iznos koji još treba razmijeniti. Tada se bira najveći apoen $x_i$ za koji važi $x_i \leq X',$ a broj njegovih pojavljivanja određuje se kao $p_i=\left\lfloor \frac{X'}{x_i}\right\rfloor.$  	Na taj način parcijalno rješenje se proširuje novom komponentom, nakon čega se ažurira vrijednost preostalog iznosa. Postupak se ponavlja dok preostali iznos ne postane nula ili dok se ne iscrpe svi apoeni.
 	
 	%Za standardne novčane sisteme (npr. konvertibilna marka, euro ili američki dolar) ovakav pohlepni postupak daje optimalno rješenje, odnosno minimalan broj novčanica i kovanica. Međutim, za proizvoljno definisane skupove apoena to ne mora uvijek biti slučaj, pa je u takvim situacijama potrebno koristiti naprednije algoritamske tehnike.
 \end{solution}
 
 Implementacija algoritma ovog problema  je data u nastavku.
 	 \begin{minted}[fontsize=\footnotesize]{python}
-	 def razmijeni(P, X):
-	 	rjesenje = []
-	 	i = 0
-	 	usitnjeno, brojNovcanica = 0, 0
-	 	sortApoeni = sorted(P) # sort apoene opadajuće
-	 	while i <  n and usitnjeno < X :
-	 		pi = (X - usitnjeno) // P[i]  #br. novcanica sortApoeni[i]
-	 		if pi > 0:
-	 			usitnjeno = usitnjeno + pi * sortApoeni[i]
-	 			brojNovcanica = brojNovcanica + pi
-	 		i = i + 1
-	 	if usitnjeno == X:
-	 		return brojNovcanica
-	 	else:
-	 		return -1 # ne može se usitniti
-	 \end{minted} 
+def razmijeni(P, X):
+    apoeni = sorted(P, reverse=True)
+    broj_novcanica = 0
+    for apoen in apoeni:
+        pi, X = divmod(X, apoen)
+        broj_novcanica += pi
+    if X == 0:
+        return broj_novcanica
+    return -1  # pohlepni postupak nije uspio
+\end{minted} 
 
 
-\textbf{Vremenska složenost}. Sortiranje algoritma zahtijeva $O(n \log n)$ vreme\-na. Dalje, glavna petlja se izvršava u $O(n)$ vremenu, odakle slijedi da je ukupno vrijeme izvršavanja algoritma jednako $O(n \log n)$, što je, svakako, polinomi\-jalno. Za kanonske sisteme apoena, kakvi se koriste u većini standardnih valuta, pohlepni algoritam daje optimalno rješenje.   %Napomenimo da ovakvom strategijom garantujemo nalazak optimalnog rje\-šenja problema, (ili utvrđujemo da rješenje ne postoji) što se formalno može i pokazati. 
+\textbf{Vremenska složenost}. Sortiranje $k$ apoena zahtijeva $O(k\log k)$ vremena, a glavna petlja $O(k)$ aritmetičkih operacija. U modelu jedinične cijene ukupna vremenska složenost iznosi $O(k\log k)$, a dodatni prostor $O(k)$.
 
+Za kanonske sisteme apoena pohlepni algoritam daje optimalno rješenje, ali to ne važi za proizvoljne sisteme. Na primjer, za $P=\{1,3,4\}$ i $X=6$, pohlepni postupak daje $6=4+1+1$, dok optimalno rješenje koristi dva apoena: $6=3+3$. Ako apoen vrijednosti jedan nije dostupan, postupak može čak ostati bez dopustivog rješenja iako ono postoji: za $P=\{3,4\}$ i $X=6$ izbor apoena 4 ostavlja ostatak 2. Povratna vrijednost $-1$ stoga označava neuspjeh pohlepnog postupka, a ne dokaz da instanca nema rješenje.
 
 \begin{example}
 	(\textbf{\emph{Razlomljeni problem ruksaka}}). Ovaj problem predstavlja relaksiranu verziju klasičnog problema ruksaka. Za razliku od standardne varijante, gdje se svaki proizvod mora uzeti u cijelosti ili se uopšte ne uzima, ovdje je dozvoljeno uzeti proizvoljan dio proizvoda. Takva pretpostavka ima smisla za proizvode koji se mogu dijeliti, kao što su šećer, brašno, ulje ili gorivo. \\
@@ -1735,40 +1730,35 @@ Implementacija algoritma ovog problema  je data u nastavku.
 Implementacija algoritma  je data u nastavku sljedećim k\^odom.
 
 \begin{minted}[fontsize=\footnotesize]{python}
-	def g(X_S, C):
-		return len((X.difference(X_S)).intersection(C))
-	
-	def cover_X():
-		X_S = set(())
-		S = [] # solution
-	
-		while(X_S != X):
-			C_star = istar = None
-			g_best = 0
-	
-			for i in range(len(F)):# iteration best-next
-				if i  not  in S: 
-					g_i = g(X_S, F[i])
-					if g_best < g_i:
-						g_best = g_i
-						i_star = i
-			X_S = X_S.union(F[i_star]) #update cover
-			S.append(i_star)
-		return  S            
-	
-	#instanca: 
-	X = {1, 2, 3, 4, 5}
-	F = [{1, 2, 3}, {1, 4}, {2, 4, 5}, {2, 3}, {4, 5}, {1, 5}]
-	sol = []
-	C = 50
-	sol = cover_X()
-	print(sol)
-	
+def g(X, X_S, C):
+    return len((X - X_S) & C)
+
+
+def cover_X(X, F):
+    X_S = set()
+    S = []
+    while X_S != X:
+        i_star = None
+        g_best = 0
+        for i in range(len(F)):
+            g_i = g(X, X_S, F[i])
+            if g_i > g_best:
+                g_best = g_i
+                i_star = i
+        if i_star is None:
+            raise ValueError("Pokrivanje nije moguce.")
+        X_S.update(F[i_star])
+        S.append(i_star)
+    return S
+
+X = {1, 2, 3, 4, 5}
+F = [{1, 2, 3}, {1, 4}, {2, 4, 5}, {2, 3}, {4, 5}, {1, 5}]
+print(cover_X(X, F))
 \end{minted}
 
-\textit{Vremenska složenost}. Glavna \texttt{while}-petlja izvršava najviše $n$ iteracija. U unutrašnjoj \texttt{for}-petlji, koja se izvršava  $ |\mathcal{F}|$ puta, najskuplja operacija je poziv pohlepne funkcije \textit{g}, koja se izvršava u linearnom vremenu, tj. u $O(n)$. Dakle, složenost čitave \texttt{for} petlje je $O(n \cdot  |\mathcal{F} |)$. Zajedno, složenost algoritma je $O(n^2 \cdot  |\mathcal{F} |)$. Na osnovu dobijenog, zaključujemo da efikasnost algoritma najviše zavisi od veličine skupa $\mathcal{F}$. 
+\textit{Vremenska složenost}. Glavna \texttt{while}-petlja izvršava najviše $n$ iteracija. U unutrašnjoj \texttt{for}-petlji, koja se izvršava  $ |\mathcal{F}|$ puta, najskuplja operacija je poziv pohlepne funkcije \textit{g}, koja se izvršava u linearnom vremenu, tj. u $O(n)$. Dakle, složenost čitave \texttt{for} petlje je $O(n \cdot  |\mathcal{F} |)$. Zajedno, složenost algoritma je $O(n^2 \cdot  |\mathcal{F} |)$. Ova procjena važi uz pretpostavku očekivano konstantne cijene operacija heširanja i poređenja elemenata. Ranije odabrani skupovi imaju pohlepnu vrijednost nula, pa ih nije potrebno posebno isključivati. 
 
-Napomenimo da ovako dizajniran algoritam ne garantuje nalazak opti\-malnog rješenja  kao u prethodna dva problema. Uzmimo npr. instancu $X= \{1, 2, 3, 4, 5, 6\}$, te $$\mathcal{F}= \{\{1,2\}, \{3, 4\}, \{4, 5\}, \{3, 6\}, \{5\}, \{6\} \}.$$   
+Napomenimo da ovako dizajniran algoritam ne garantuje nalazak opti\-malnog rješenja  za razliku od razlomljenog problema ruksaka, za koji je optimalnost pohlepnog postupka garantovana. Uzmimo npr. instancu $X= \{1, 2, 3, 4, 5, 6\}$, te $$\mathcal{F}= \{\{1,2\}, \{3, 4\}, \{4, 5\}, \{3, 6\}, \{5\}, \{6\} \}.$$   
   Prva iteracija u algoritmu će odabrati, prvi skup $\{1, 2\}$ i dodati ga u parcijalno rješenje. Naredna iteracija odabire skup $\{3, 4\}$. Nakon toga, bira se $\{4, 5\}$, pa $\{6\}$. Dakle, dobijeno rješenje je kardinalnosti 4. Međutim, ono očigledno ne predstavlja optimalno rječenje. 
   
   Optimalno rješenje je veličine 3 i dato je sa $\{ \{1, 2\}, \{3, 6\}, \{4,5\}\}$.  
@@ -1778,7 +1768,7 @@ Napomenimo da ovako dizajniran algoritam ne garantuje nalazak opti\-malnog rješ
 \begin{example}
 	(\textbf{\emph{Problem sekvencijalnog raspoređivanja poslova}}).
 	
-	Dat je skup poslova, pri čemu je za svaki posao poznat krajnji rok izvršavanja (eng. \emph{deadline}) i profit koji se ostvaruje ukoliko posao bude završen najkasnije do tog roka. Pretpostavimo da je za izvršavanje svakog posla potrebno tačno jedna jedinica vremena, te da svi poslovi mogu započeti od trenutka $t=0$.\\ 
+	Dat je skup poslova, pri čemu je za svaki posao poznat nenegativan cjelobrojni krajnji rok izvršavanja (eng. \emph{deadline}) i profit koji se ostvaruje ukoliko posao bude završen najkasnije do tog roka. Pretpostavimo da je za izvršavanje svakog posla potrebno tačno jedna jedinica vremena, te da svi poslovi mogu započeti od trenutka $t=0$.\\ 
 
 	
 	Potrebno je odabrati podskup poslova i odrediti njihov raspored izvršavanja tako da ukupan ostvareni profit bude maksimalan. Pri tome vrijedi ograničenje da se u svakoj jedinici vremena može izvršavati najviše jedan posao.	Problem riješiti primjenom paradigme pohlepnih algoritama.
@@ -1861,63 +1851,51 @@ Napomenimo da ovako dizajniran algoritam ne garantuje nalazak opti\-malnog rješ
 Implementacija algoritma je data sljedećim k\^odom. 
  
  \begin{minted}[fontsize=\footnotesize]{python}
- 
- def ProfitSort(i):
- 	return Profit[i]
- 
- # možemo li dodati i-ti proizvod ili ne (-1) u I_s
- def find_next_interval(I_s_covered, i):
- 
- 	for index, covered in enumerate(reversed(I_s_covered)):
- 	    rev_index = len(I_s_covered) - 1 - index
- 		if rev_index >= Deadline[i]:
- 			continue
- 		if covered == False:
- 			return rev_index
- 	return -1       
- 
- def sequential_scheduling():
- 
- 	I_s_covered = [False] * min(len(Jobs), max(Deadline, default=0)) 
- 	I_s = []
- 	#sortiranje jobs u odnosu na Profit (preprocessing):
- 	Jobs.sort(key=ProfitSort, reverse=True)
+def find_next_interval(slots, deadline):
+    for t in range(min(len(slots), deadline) - 1, -1, -1):
+        if slots[t] is None:
+            return t
+    return -1
 
- 	for i in Jobs:
- 
- 		interval = find_next_interval(I_s_covered, i)
- 		if interval >= 0: #nadjena (dopustiv) interval:
- 			I_s_covered[interval] = True #zauzet
- 			I_s.append(i)
- 
- 	return I_s, sum([ Profit[I_s[i]]  for i in range(len(I_s)) ])
- 
- #main:
- num_jobs = 5
- Jobs = [i for i in range(num_jobs)]
- Deadline = [2, 1, 2, 1, 3]
- Profit = [100, 19, 27, 25, 15]
- # izvrsavanje algoritma:
- I_s, profit = sequential_scheduling()
- print(I_s, " profit: ", profit)
- \end{minted}
+
+def sequential_scheduling(Deadline, Profit):
+    n = len(Deadline)
+    D = min(n, max(Deadline, default=0))
+    slots = [None] * D
+    jobs = sorted(range(n), key=lambda i: Profit[i],
+                  reverse=True)
+    for i in jobs:
+        if Profit[i] <= 0:
+            continue
+        t = find_next_interval(slots, Deadline[i])
+        if t >= 0:
+            slots[t] = i
+    return slots, sum(Profit[i] for i in slots if i is not None)
+
+Deadline = [2, 1, 2, 1, 3]
+Profit = [100, 19, 27, 25, 15]
+I_s, profit = sequential_scheduling(Deadline, Profit)
+print(I_s, "profit:", profit)
+\end{minted}
 
 \textit{Vremenska složenost}. Sortiranje poslova se odvija u $O(n \log n)$. Dalje, glavna \texttt{for}-petlja se sastoji od $n$ iteracija. U svakoj iteraciji, najskuplja operacija je poziv funkcije \texttt{find\_next\_interval} koja se izvršava u vremenu $O(n)$. Prema tome,   glavna petlja se izvršava u $O(n^2)$. Zaključujemo da se implementacija algoritma izvršava u $O(n^2)$. 
+
+Lista \texttt{slots} čuva stvarni raspored: element na poziciji $t$ predstavlja indeks posla koji se izvršava u intervalu $[t,t+1)$, odnosno \texttt{None} ako je interval slobodan. Indeksi poslova počinju od nule. Za drugu instancu iz primjera rezultat je raspored \texttt{[2, 0, 4]} sa profitom 142, što odgovara poslovima 3, 1 i 5. Dovoljno je razmatrati najviše $n$ intervala, jer se svaki od najviše $n$ odabranih poslova može pomjeriti ulijevo bez narušavanja krajnjeg roka. Dodatna prostorna složenost iznosi $O(n)$.
 
 Napomenimo da se može pokazati da ovaj pohlepni algoritam garantuje nalazak optimalnog rješenja.
 
 \section{Dinamičko programiranje}
 
-\textit{Dinamičko programiranje} predstavlja algoritamsku tehniku namijenjenu efikasnom rješavanju problema koji imaju dvije ključne karakteristike:
+\textit{Dinamičko programiranje} predstavlja algoritamsku tehniku namijenjenu efikasnom rješavanju problema čija se rješenja mogu izračunati na osnovu rješenja manjih podproblema. Za efikasnu primjenu posebno su važna sljedeća svojstva:
 
 \begin{itemize}
 	\item \textit{preklapajuće podprobleme} (eng. \emph{overlapping subproblems});
-	\item \textit{optimalnu podstrukturu} (eng. \emph{optimal substructure}).
+	\item \textit{mogućnost kombinovanja rješenja podproblema}, koja se kod optimizacionih problema često naziva optimalnom podstrukturom (eng. \emph{optimal substructure}).
 \end{itemize}
 
-Pod \textit{preklapajućim podproblemima} podrazumijevamo situaciju u kojoj se isti podproblem javlja više puta tokom rješavanja većeg problema. Umjesto da se rješenje podproblema svaki put iznova računa, ono se  jednom izračuna i rezultat se čuva za kasniju upotrebu. Svojstvo \textit{optimalne podstrukture} znači da se optimalno rješenje početnog problema može konstruisati kombinovanjem optimalnih rješenja njegovih podproblema. Drugim riječima, rješavanje podproblema na optimalan način vodi ka optimalnom rješenju originalnog problema.
+Pod \textit{preklapajućim podproblemima} podrazumijevamo situaciju u kojoj se isti podproblem javlja više puta tokom rješavanja većeg problema. Umjesto da se rješenje podproblema svaki put iznova računa, ono se  jednom izračuna i rezultat se čuva za kasniju upotrebu. Svojstvo \textit{optimalne podstrukture} znači da se optimalno rješenje početnog problema može konstruisati kombinovanjem optimalnih rješenja njegovih podproblema. Pri tome stanje podproblema mora sadržavati sve informacije neophodne za ispravnu kombinaciju rješenja. Dinamičko programiranje nije ograničeno na optimizaciju: kod problema odlučivanja kombinuju se logičke vrijednosti, a kod problema prebrojavanja brojevi rješenja, vodeći računa da se ista rješenja ne prebroje više puta. Primjeri računanja binomnih koeficijenata u četvrtoj glavi takođe pripadaju ovoj paradigmi.
 
-Osnovna ideja dinamičkog programiranja sastoji se u izbjegavanju više\-strukog rješavanja istih podproblema. Umjesto ponovnog računanja, rezultati se pohranjuju u memoriju i po potrebi ponovo koriste. Ovaj postupak naziva se \textit{memoizacija}.
+Osnovna ideja dinamičkog programiranja sastoji se u izbjegavanju više\-strukog rješavanja istih podproblema. Umjesto ponovnog računanja, rezultati se pohranjuju u memoriju i po potrebi ponovo koriste. Kod rekurzivne implementacije ovaj postupak naziva se \textit{memoizacija}; kod iterativne implementacije rezultati se mogu računati unaprijed tabuliranjem.
 
 Memoizacija značajno poboljšava efikasnost rekurzivnih algoritama, jer se svaki podproblem rješava najviše jednom. Naravno, cijena ovog ubrzanja jeste dodatni memorijski prostor potreban za pohranjivanje već izračunatih rezultata.
 
@@ -2013,7 +1991,7 @@ Sa druge strane, postoje rekurzivni algoritmi kod kojih se podproblemi ne prekla
 Možemo zaključiti da je dinamičko programiranje najkorisnije kada su ispunjena dva uslova:
 
 \begin{itemize}
-	\item problem posjeduje optimalnu podstrukturu;
+	\item rješenje problema može se ispravno izračunati kombinovanjem rezultata podproblema (kod optimizacije: optimalna podstruktura);
 	\item tokom rješavanja dolazi do ponavljanja rješavanja istih podproblema.
 \end{itemize}
 
@@ -2172,6 +2150,8 @@ Implementacija ovog rješenje je data sljedećim k\^odom (pristup odozgo prema d
 	\medskip
 	
 	\textit{Složenost algoritma.}  Matrica $\textrm{DP}$ sadrži $(n+1)(C+1)$ elemenata, a svaka ćelija se računa u konstantnom vremenu. Zbog toga je vremenska složenost algoritma $ O(n \cdot C),$ dok je prostorna složenost takođe $O(n \cdot C).$
+
+\textit{Pseudopolinomijalna složenost.} Ova procjena broji operacije u modelu jedinične cijene. Kapacitet $C$ u binarnom zapisu zauzima $\lfloor\log_2 C\rfloor+1$ bitova za $C\geq 1$. Ako je $C=2^b$, zapis kapaciteta ima $b+1$ bitova, dok tabela ima $(n+1)(2^b+1)$ ćelija. Dakle, ovaj algoritam je polinomijalan u numeričkoj vrijednosti kapaciteta, ali nije polinomijalan u dužini binarnog zapisa ulaza u opštem slučaju. Takva složenost naziva se \textit{pseudopolinomijalnom}. Ovaj pojam povezuje analizu dinamičkog programiranja sa razlikovanjem modela jedinične cijene i bitovske složenosti iz prve glave.
 	
 \end{solution}
 	 
@@ -2539,36 +2519,32 @@ Primijetimo da smo dinamičko programiranje implementirali pomoću pristupa \tex
 Implementirajmo sada dinamičko programiranje za ovaj problem pristupom \textit{odozgo prema dolje}.
 
    \begin{minted}[fontsize=\footnotesize]{python}
-	def init(niz, suma, DP):
-		return [[-1] * (suma + 1) for _ in range(len(niz) + 1) ]
-	
-	def sum_array_top_down(niz, suma, i, j, DP):
-	
-		if DP[i][j] != -1:
-			return DP[i][j]
-	
-		if j == 0:
-			DP[i][0] = True
-			return True 
-		if i == 0: 
-			DP[0][j] = False
-			return False
-			
-		#recursion: 
-		if j >= niz[i-1]:  
-			DP[i][j] = sum_array_top_down(niz, suma, i-1, j, DP) or
-			sum_array_top_down(niz, suma, i-1, j-niz[i-1], DP)
-			return DP[i][j]
-		else:
-			DP[i][j] = sum_array_top_down(niz, suma, i-1, j, DP)
-			return DP[i][j]
-		#main 
-		DP = init(miz, suma)
-		sum_array_top_down(niz, suma, len(niz), suma, DP) 
-		print(DP[len(niz)][suma])
+def init(niz, suma):
+    return [[-1] * (suma + 1) for _ in range(len(niz) + 1)]
+
+
+def sum_array_top_down(niz, i, j, DP):
+    if DP[i][j] != -1:
+        return DP[i][j]
+    if j == 0:
+        DP[i][j] = True
+    elif i == 0:
+        DP[i][j] = False
+    elif j >= niz[i - 1]:
+        DP[i][j] = (sum_array_top_down(niz, i - 1, j, DP)
+                    or sum_array_top_down(niz, i - 1,
+                                          j - niz[i - 1], DP))
+    else:
+        DP[i][j] = sum_array_top_down(niz, i - 1, j, DP)
+    return DP[i][j]
+
+niz = [3, 34, 4, 12, 5, 2]
+suma = 9
+DP = init(niz, suma)
+print(sum_array_top_down(niz, len(niz), suma, DP))
 \end{minted}  
 
-\textit{Složenost algoritma}. Broj iteracija koje se izvršavaju je jednak $O(n \cdot sum)$. Svaka iteracija se izvršava u konstantnom vremenu, pa je i ukupna složenost algoritma jednaka  $O(n \cdot sum)$. Dakle, ako je vrijednost \emph{sum} ogromna, ekponencijalno velika u odnosu na veličinu niza, ovakav algoritam će biti neefikasan. 
+\textit{Složenost algoritma}. Broj iteracija koje se izvršavaju je jednak $O(n \cdot sum)$. Svaka iteracija se izvršava u konstantnom vremenu, pa je i ukupna složenost algoritma jednaka  $O(n \cdot sum)$. Dakle, vremenska i prostorna složenost su pseudopolinomijalne: zavise od numeričke vrijednosti ciljne sume, a ne samo od broja bitova potrebnih za njen zapis, analogno prethodno razmatranom problemu ruksaka. 
 
 \begin{example}
 	(\textit{Problem rezanja štapa}). Dat je štap dužine $n$ i niz cijena \textit{price}, pri čemu \textit{price}$[i-1]$ predstavlja cijenu štapa dužine $i$, za svako $1 \leq i \leq n$.\\ 
