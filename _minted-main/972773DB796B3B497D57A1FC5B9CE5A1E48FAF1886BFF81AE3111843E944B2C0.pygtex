@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+reduce(funkcija, iterable[, pocetna\PYGZus{}vrijednost])
+\end{Verbatim}

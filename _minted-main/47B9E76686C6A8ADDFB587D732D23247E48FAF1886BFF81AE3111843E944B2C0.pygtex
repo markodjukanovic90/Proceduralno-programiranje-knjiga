@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+try:
+    \PYGZsh{} kod koji može izazvati izuzetak
+except ValueError:
+    print(\PYGZdq{}Greška u vrijednosti.\PYGZdq{})
+except TypeError:
+    print(\PYGZdq{}Greška u tipu podatka.\PYGZdq{})
+except Exception:
+    print(\PYGZdq{}Dogodio se neočekivani izuzetak.\PYGZdq{})
+\end{Verbatim}

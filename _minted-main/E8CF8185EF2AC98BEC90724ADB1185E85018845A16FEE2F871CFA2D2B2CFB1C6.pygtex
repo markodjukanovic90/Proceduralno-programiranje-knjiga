@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Otvaranje fajla za pisanje}
+\PYG{n}{file} \PYG{o}{=} \PYG{n+nb}{open}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}datoteka.txt\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}w\PYGZdq{}}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} Pisanje teksta u datoteku}
+\PYG{n}{file}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Zdravo!\PYGZdq{}}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{}  Zatvaranje fajla}
+\PYG{n}{file}\PYG{o}{.}\PYG{n}{close}\PYG{p}{()}
+\end{Verbatim}

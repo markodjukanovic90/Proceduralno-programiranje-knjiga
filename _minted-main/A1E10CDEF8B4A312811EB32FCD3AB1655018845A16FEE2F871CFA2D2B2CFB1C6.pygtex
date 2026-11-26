@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{zip}\PYG{p}{(}\PYG{n}{iterable1}\PYG{p}{,} \PYG{n}{iterable2}\PYG{p}{,} \PYG{o}{...}\PYG{p}{)}
+\end{Verbatim}

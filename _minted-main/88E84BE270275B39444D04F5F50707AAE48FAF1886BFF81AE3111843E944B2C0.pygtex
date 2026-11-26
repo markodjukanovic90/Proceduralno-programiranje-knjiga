@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+try:
+    \PYGZsh{} kod koji može izazvati izuzetak
+except ExceptionType:
+    \PYGZsh{} obrada izuzetka
+\end{Verbatim}

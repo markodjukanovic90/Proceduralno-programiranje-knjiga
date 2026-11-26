@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+TypeError: \PYGZsq{}\PYGZlt{}\PYGZsq{} not supported between
+instances of \PYGZsq{}str\PYGZsq{} and \PYGZsq{}int\PYGZsq{}
+\end{Verbatim}

@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}gcc\PYG{+w}{ }\PYGZhy{}shared\PYG{+w}{ }\PYGZhy{}fPIC\PYG{+w}{ }\PYGZhy{}o\PYG{+w}{ }libdodaj.so\PYG{+w}{ }dodaj.c
+\end{Verbatim}

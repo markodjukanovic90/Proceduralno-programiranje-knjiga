@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{cijena\PYGZus{}dostave}\PYG{p}{(}\PYG{n}{m}\PYG{p}{):}
+    \PYG{k}{if} \PYG{o+ow}{not} \PYG{l+m+mi}{0} \PYG{o}{\PYGZlt{}} \PYG{n}{m} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{10}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Nedopustiva masa paketa.\PYGZdq{}}\PYG{p}{)}
+
+    \PYG{k}{if} \PYG{n}{m} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{2}\PYG{p}{:}
+        \PYG{k}{return} \PYG{l+m+mi}{5}
+
+    \PYG{k}{if} \PYG{n}{m} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{5}\PYG{p}{:}
+        \PYG{k}{return} \PYG{l+m+mi}{8}
+
+    \PYG{k}{return} \PYG{l+m+mi}{12}
+\end{Verbatim}
