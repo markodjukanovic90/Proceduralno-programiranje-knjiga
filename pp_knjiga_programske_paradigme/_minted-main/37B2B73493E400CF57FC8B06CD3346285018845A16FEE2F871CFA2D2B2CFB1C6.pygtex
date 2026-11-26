@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	
+	\PYG{c+c1}{\PYGZsh{} Direktna rekurzija}
+	
+	\PYG{k}{def} \PYG{n+nf}{direktna}\PYG{p}{():}
+	    \PYG{n}{direktna}\PYG{p}{()}
+	
+	\PYG{c+c1}{\PYGZsh{} Indirektna rekurzija}
+	\PYG{k}{def} \PYG{n+nf}{funkcija1}\PYG{p}{():}
+	     \PYG{n}{funkcija2}\PYG{p}{()}
+	
+	\PYG{k}{def} \PYG{n+nf}{funkcija2}\PYG{p}{():}
+	    \PYG{n}{funkcija1}\PYG{p}{()}
+\end{Verbatim}

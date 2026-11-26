@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{try}\PYG{p}{:}
+	    \PYG{c+c1}{\PYGZsh{} kod koji može izazvati izuzetak}
+	\PYG{k}{finally}\PYG{p}{:}
+	    \PYG{c+c1}{\PYGZsh{} kod koji se uvijek izvršava}
+\end{Verbatim}

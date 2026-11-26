@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+m+mi}{3} \PYG{o+ow}{in} \PYG{n}{A}\PYG{p}{)}   \PYG{c+c1}{\PYGZsh{} True}
+		\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+m+mi}{7} \PYG{o+ow}{in} \PYG{n}{A}\PYG{p}{)}   \PYG{c+c1}{\PYGZsh{} False}
+\end{Verbatim}

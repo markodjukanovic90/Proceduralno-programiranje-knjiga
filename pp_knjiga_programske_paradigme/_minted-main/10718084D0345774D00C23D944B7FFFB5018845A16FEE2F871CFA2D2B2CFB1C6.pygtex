@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{lista}\PYG{p}{[}\PYG{n}{indeks1}\PYG{p}{:}\PYG{n}{indeks2}\PYG{p}{:}\PYG{n}{korak}\PYG{p}{]}
+\end{Verbatim}

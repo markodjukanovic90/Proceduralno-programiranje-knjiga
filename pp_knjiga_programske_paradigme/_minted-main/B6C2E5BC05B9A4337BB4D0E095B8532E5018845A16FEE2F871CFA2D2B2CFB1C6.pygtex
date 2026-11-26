@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		\PYG{n}{tekst} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}world\PYGZdq{}}
+		
+		\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{tekst}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{3}\PYG{p}{])}  \PYG{c+c1}{\PYGZsh{} or}
+		\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{tekst}\PYG{p}{[:}\PYG{l+m+mi}{3}\PYG{p}{])}   \PYG{c+c1}{\PYGZsh{} wor}
+		\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{tekst}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{:])}   \PYG{c+c1}{\PYGZsh{} rld}
+\end{Verbatim}

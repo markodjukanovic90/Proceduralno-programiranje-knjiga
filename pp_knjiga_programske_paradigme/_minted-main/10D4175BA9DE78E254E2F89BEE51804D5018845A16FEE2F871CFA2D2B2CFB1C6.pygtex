@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Moje ime je }\PYG{l+s+si}{\PYGZob{}0\PYGZcb{}}\PYG{l+s+s2}{, a prezime }\PYG{l+s+si}{\PYGZob{}1\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{o}{.}
+	       \PYG{n+nb}{format}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Marko\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Marković\PYGZdq{}}\PYG{p}{))}
+\end{Verbatim}

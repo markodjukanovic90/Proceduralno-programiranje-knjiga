@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{z} \PYG{o}{=} \PYG{n+nb}{complex}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{z}\PYG{p}{)}   \PYG{c+c1}{\PYGZsh{} (3+2j)}
+\end{Verbatim}

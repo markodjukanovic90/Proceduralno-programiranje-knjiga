@@ -1,0 +1,277 @@
+\documentclass[b5paper, utf8, 11pt, colorlinks]{book} 
+   
+\usepackage{amsfonts}
+\usepackage[serbian]{babel}
+ 
+
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2212}{\ensuremath{-}}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{minted}
+\usepackage{fixme}
+\usepackage{theorem}
+\usepackage{algorithm} 
+\usepackage{algpseudocode}
+\usepackage[table]{xcolor}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+
+
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{definition}{Definicija}[chapter]
+%\newtheorem{example}{Primjer}[chapter]{\begin{trivlist}
+%		\item[\hskip \labelsep {\bfseries #1}]\end{trivlist}}
+\newtheorem{example}{Primjer}[chapter]
+
+\newenvironment{proof}[1][Dokaz]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+%\newenvironment{theorem}[1][Teorema]{\begin{trivlist}
+%			\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+ 
+%\newenvironment{example}[1][Primjer]{\begin{trivlist}
+%		\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+	
+\newenvironment{solution}[1][\emph{Rješenje}.]{\begin{trivlist}
+			\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+		
+		
+		\makeatletter
+		\renewcommand{\ALG@name}{Algoritam}
+		\makeatother
+ 
+%prevodi		
+	\renewcommand{\chaptername}{Glava}
+	
+\begin{document}
+
+\author{prof. dr Marko Đukanović, vanredni profesor}
+\title{Proceduralno programiranje kroz programski jezik Pajton}
+\date{Novembar 2026}
+
+%\frontmatter
+ 
+\maketitle
+ 
+\tableofcontents
+ \clearpage
+ \setcounter{page}{1}
+%\mainmatter
+
+\chapter*{Predgovor}
+
+Ovaj udžbenik namijenjen je prvenstveno studentima prve godine Studijskog programa Matematika i informatika (smjer Informatika) na Prirodno-matematičkom fakultetu Univerziteta u Banjoj Luci, koji se izučava u okviru predmeta Proceduralno programiranje. Prije svega, za savladavanje ovog gradiva,  neophodno je da student vlada  osnovama programiranja u barem jednom programskom jeziku.  \\ 
+
+
+Sadržaj udžbenika organizovan je u četiri cjeline. U prvom dijelu predstavljeni su osnovni pojmovi iz oblasti algoritama i računanja, uključujući programe, algoritme, modele izračunavanja i osnovne koncepte složenosti algoritama. Pri tome se naglasak stavlja na intuitivno razumijevanje navedenih pojmova, bez ulaženja u sitne detalje koji se sistematski obrađuju na naprednijim kursevima iz algoritmike. Drugi dio posvećen je osnovama programskog jezika Pajton. Obrađuju se osnovni i složeni tipovi podataka, rad sa ugrađenim modulima, kao i razvoj sopstvenih modula te zvanično postavljanje na repozitorijumu \texttt{PyPI}.  Treći dio uvodi programske paradigme, sa posebnim osvrtom na principe strukturiranog i proceduralnog programiranja, dekompoziciju problema i modularnost, a zatim osnovne algoritamske paradigme, uključujući iscrpnu pretragu, paradigmu podijeli pa zavladaj, pohlepne algoritme i dinamičko programiranje. Posebna pažnja posvećena je njihovoj primjeni na rješavanje različitih klasa problema i razvoju algoritamskog načina razmišljanja.
+
+Četvrti dio bavi se problemima iz elementarne aritmetike i teorije brojeva. Prikazani problemi rješavaju se primjenom prethodno uvedenih algoritamskih paradigmi i tehnika, pri čemu se poseban naglasak stavlja na proceduralni pristup modelovanja i implementacije rješenja.
+
+Na kraju svake glave nalaze se zadaci za samostalni rad i provjeru usvojenog znanja. Udžbenik sadrži više od četrdeset zadataka za vježbanje, kao i oko trideset detaljno riješenih primjera. Za većinu njih data je kompletna implementacija u programskom jeziku Pajton, uz objašnjenje ključnih koraka u procesu dizajniranja i razvoja algoritama.\\
+
+Ovaj udžbenik može koristiti širokom krugu čitalaca, uključujući studente nižih godina studija iz oblasti informatike, matematike i tehničkih nauka, kao i učenicima srednjih škola zainteresovanih za algoritmiku i takmičarsko programiranje.
+
+Iako su svi algoritmi implementirani u programskom jeziku Pajton, njihovi koncepti i struktura mogu se jednostavno prebaciti na druge programske jezike, naročito na jezike nižeg nivoa kao što su C i C++. Izbor jezika Pajton nije motivisan težnjom ka maksimalnim performansama izvršavanja, već njegovom preglednošću, jednostavnošću i izražajnošću. Na taj način studentima se omogućava da se usredsrede na razumijevanje algoritama i principa njihovog dizajniranja, umjesto na tehničke detalje implementacije.
+
+Cilj ovog udžbenika nije samo upoznavanje čitalaca sa osnovama programiranja i algoritmike, već i razvijanje sposobnosti analitičkog razmišljanja, modelovanja problema i izbora odgovarajućih algoritamskih tehnika za efikasno rješavanje razmatranih problema. 
+
+Nadam se da će ova knjiga biti od koristi učenicima, studentima i mnogim entuzijastima koji imaju strast prema algoritmima te rješavanju netrivijalnih, realnih problema pomoću kompjuterskog k\^oda.  
+
+
+\include{chapter-01-02/chapter02}
+\include{chapter-01-02/chapter01}
+ 
+\include{chapter-03-04/chapter03}
+\include{chapter-03-04/chapter04}
+\backmatter
+\begin{thebibliography}{99}
+	
+	% =========================================================
+	% OPŠTI ALGORITMI I ANALIZA ALGORITAMA
+	% =========================================================
+	
+	\bibitem{cormen2022}
+	T. H. Cormen, C. E. Leiserson, R. L. Rivest, and C. Stein,
+	\textit{Introduction to Algorithms},
+	4th ed.,
+	MIT Press, Cambridge, MA, 2022.
+	
+	\bibitem{skiena2020}
+	S. S. Skiena,
+	\textit{The Algorithm Design Manual},
+	3rd ed.,
+	Springer, Cham, 2020.
+	
+	\bibitem{kleinberg2006}
+	J. Kleinberg and E. Tardos,
+	\textit{Algorithm Design},
+	Pearson/Addison-Wesley, Boston, 2006.
+	
+	\bibitem{levitin2012}
+	A. Levitin,
+	\textit{Introduction to the Design and Analysis of Algorithms},
+	3rd ed.,
+	Pearson, Boston, 2012.
+	
+	\bibitem{sedgewick2011}
+	R. Sedgewick and K. Wayne,
+	\textit{Algorithms},
+	4th ed.,
+	Addison-Wesley Professional, Boston, 2011.
+	
+	\bibitem{erickson2019}
+	J. Erickson,
+	\textit{Algorithms},
+	1st ed.,
+	2019.
+	Available online at:
+	\url{https://jeffe.cs.illinois.edu/teaching/algorithms/}.
+	
+	\bibitem{dasgupta2008}
+	S. Dasgupta, C. H. Papadimitriou, and U. V. Vazirani,
+	\textit{Algorithms},
+	McGraw-Hill, New York, 2008.
+	
+	\bibitem{horowitz1992}
+	E. Horowitz, S. Sahni, and S. Anderson-Freed,
+	\textit{Fundamentals of Data Structures in C},
+	W. H. Freeman and Company, New York, 1992.
+	
+	\bibitem{knuth1997}
+	D. E. Knuth,
+	\textit{The Art of Computer Programming, Volume 1:
+		Fundamental Algorithms},
+	3rd ed.,
+	Addison-Wesley, Reading, MA, 1997.
+	
+	% =========================================================
+	% ALGORITAMSKE PARADIGME I DIZAJN ALGORITAMA
+	% =========================================================
+	
+	\bibitem{baase2000}
+	S. Baase and A. Van Gelder,
+	\textit{Computer Algorithms: Introduction to Design and Analysis},
+	3rd ed.,
+	Addison-Wesley, Boston, 2000.
+	
+	\bibitem{goodrich2014}
+	M. T. Goodrich, R. Tamassia, and M. H. Goldwasser,
+	\textit{Data Structures and Algorithms in Python},
+	Wiley, Hoboken, NJ, 2013.
+	
+	\bibitem{brass2008}
+	P. Brass,
+	\textit{Advanced Data Structures},
+	Cambridge University Press, Cambridge, 2008.
+	
+	\bibitem{manber1989}
+	U. Manber,
+	\textit{Introduction to Algorithms: A Creative Approach},
+	Addison-Wesley, Reading, MA, 1989.
+	
+	% =========================================================
+	% PROGRAMSKI JEZIK PYTHON
+	% =========================================================
+	
+	\bibitem{python-docs}
+	Python Software Foundation,
+	\textit{Python Documentation},
+	Python Software Foundation.
+	Available online at:
+	\url{https://docs.python.org/3/}.
+	
+	\bibitem{python-language-reference}
+	Python Software Foundation,
+	\textit{The Python Language Reference}.
+	Available online at:
+	\url{https://docs.python.org/3/reference/}.
+	
+	\bibitem{python-library}
+	Python Software Foundation,
+	\textit{The Python Standard Library}.
+	Available online at:
+	\url{https://docs.python.org/3/library/}.
+	
+	\bibitem{lutz-python}
+	M. Lutz,
+	\textit{Learning Python},
+	6th ed.,
+	O'Reilly Media, Sebastopol, CA.
+	
+	\bibitem{ramalho2022}
+	L. Ramalho,
+	\textit{Fluent Python: Clear, Concise, and Effective Programming},
+	2nd ed.,
+	O'Reilly Media, Sebastopol, CA, 2022.
+	
+	\bibitem{beazley2013}
+	D. Beazley and B. K. Jones,
+	\textit{Python Cookbook},
+	3rd ed.,
+	O'Reilly Media, Sebastopol, CA, 2013.
+	
+	\bibitem{sedgewick-python2015}
+	R. Sedgewick, K. Wayne, and R. Dondero,
+	\textit{Introduction to Programming in Python:
+		An Interdisciplinary Approach},
+	Addison-Wesley Professional, 2015.
+	
+	% =========================================================
+	% DOMAĆA I REGIONALNA LITERATURA
+	% =========================================================
+	
+	\bibitem{ognjanovic2004}
+	Z. Ognjanović and N. Krdžavac,
+	\textit{Uvod u teorijsko računarstvo},
+	Fakultet organizacionih nauka,
+	Univerzitet u Beogradu, Beograd, 2004.
+	
+	\bibitem{zivkovic2010}
+	D. Živković,
+	\textit{Uvod u algoritme i strukture podataka},
+	Univerzitet Singidunum, Beograd, 2010.
+	
+	\bibitem{zivkovic2000}
+	M. Živković,
+	\textit{Algoritmi},
+	Matematički fakultet,
+	Univerzitet u Beogradu, Beograd, 2000.
+	
+	\bibitem{manger-marusic}
+	R. Manger and M. Marušić,
+	\textit{Strukture podataka i algoritmi},
+	Prirodoslovno-matematički fakultet,
+	Sveučilište u Zagrebu, Zagreb.
+	
+	% =========================================================
+	% DOPUNSKI ELEKTRONSKI IZVORI
+	% =========================================================
+	
+	\bibitem{pypi}
+	Python Software Foundation,
+	\textit{Python Package Index (PyPI)}.
+	Available online at:
+	\url{https://pypi.org/}.
+	
+	\bibitem{geeksforgeeks}
+	GeeksforGeeks,
+	\textit{Data Structures and Algorithms}.
+	Available online at:
+	\url{https://www.geeksforgeeks.org/}.
+	
+	\bibitem{programming-problems}
+	A. Neumann,
+	\textit{Simple Programming Problems}.
+	Available online at:
+	\url{https://adriann.github.io/programming_problems.html}.
+	
+\end{thebibliography}
+
+
+\end{document}

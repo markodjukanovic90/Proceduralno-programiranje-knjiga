@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		\PYG{n}{A} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{\PYGZcb{}}
+		\PYG{n}{B} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{\PYGZcb{}}
+		
+		\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{A} \PYG{o}{|} \PYG{n}{B}\PYG{p}{)}
+		
+		\PYG{c+c1}{\PYGZsh{} \PYGZob{}1, 2, 3, 4, 5\PYGZcb{}}
+		
+\end{Verbatim}

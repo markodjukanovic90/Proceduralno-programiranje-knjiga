@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k+kn}{from} \PYG{n+nn}{functools} \PYG{k+kn}{import} \PYG{n}{reduce}
+	
+	\PYG{n}{brojevi} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{]}
+	
+	\PYG{n}{proizvod} \PYG{o}{=} \PYG{n}{reduce}\PYG{p}{(}
+	    \PYG{k}{lambda} \PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{:} \PYG{n}{x} \PYG{o}{*} \PYG{n}{y}\PYG{p}{,}
+	    \PYG{n}{brojevi}\PYG{p}{,}
+	    \PYG{l+m+mi}{1}\PYG{p}{)}
+	
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{proizvod}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} 120}
+\end{Verbatim}

@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	tip = unos sa tastature
+	
+	ako je tip = \PYGZdq{}1\PYGZdq{}
+	ispiši \PYGZdq{}Unesen je broj 1\PYGZdq{}
+	
+	ako je tip = \PYGZdq{}2\PYGZdq{}
+	ispiši \PYGZdq{}Unesen je broj 2\PYGZdq{}
+\end{Verbatim}

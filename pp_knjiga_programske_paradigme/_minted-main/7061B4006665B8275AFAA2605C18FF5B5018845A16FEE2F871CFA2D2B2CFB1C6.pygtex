@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{multiline\PYGZus{}str} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+s2}{	Ovo je}
+\PYG{l+s+s2}{	višelinijski string.}
+\PYG{l+s+s2}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\end{Verbatim}

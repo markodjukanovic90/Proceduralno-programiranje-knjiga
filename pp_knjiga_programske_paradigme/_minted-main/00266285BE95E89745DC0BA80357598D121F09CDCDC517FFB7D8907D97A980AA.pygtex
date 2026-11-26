@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{k}{[build\PYGZhy{}system]}
+\PYG{+w}{	}\PYG{n}{requires}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}setuptools\PYGZgt{}=61.0\PYGZdq{}}\PYG{p}{]}
+\PYG{+w}{	}\PYG{n}{build\PYGZhy{}backend}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}setuptools.build\PYGZus{}meta\PYGZdq{}}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{k}{[project]}
+\PYG{+w}{	}\PYG{n}{name}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}modul1\PYGZdq{}}
+\PYG{+w}{	}\PYG{n}{version}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}0.0.1\PYGZdq{}}
+\PYG{+w}{	}\PYG{n}{authors}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[}
+\PYG{+w}{	}\PYG{p}{\PYGZob{}}\PYG{n}{name}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Mirko Mirković\PYGZdq{}}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{p}{]}
+\PYG{+w}{	}\PYG{n}{description}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Primjer korisničkog modula\PYGZdq{}}
+\PYG{+w}{	}\PYG{n}{dependencies}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[}
+\PYG{+w}{	}\PYG{l+s+s2}{\PYGZdq{}numpy\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{	}\PYG{l+s+s2}{\PYGZdq{}pandas\PYGZdq{}}
+\PYG{+w}{	}\PYG{p}{]}
+\end{Verbatim}

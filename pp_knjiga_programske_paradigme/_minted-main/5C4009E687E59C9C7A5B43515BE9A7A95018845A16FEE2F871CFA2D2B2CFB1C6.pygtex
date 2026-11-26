@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{def} \PYG{n+nf}{podjela}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{):}
+	    \PYG{n}{kolicnik} \PYG{o}{=} \PYG{n}{x} \PYG{o}{//} \PYG{n}{y}
+	    \PYG{n}{ostatak} \PYG{o}{=} \PYG{n}{x} \PYG{o}{\PYGZpc{}} \PYG{n}{y}
+	
+	    \PYG{k}{return} \PYG{n}{kolicnik}\PYG{p}{,} \PYG{n}{ostatak}
+	\PYG{c+c1}{\PYGZsh{}main}
+	\PYG{n}{k}\PYG{p}{,} \PYG{n}{o} \PYG{o}{=} \PYG{n}{podjela}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{)}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{k}\PYG{p}{,} \PYG{n}{o}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} 3 1}
+\end{Verbatim}
