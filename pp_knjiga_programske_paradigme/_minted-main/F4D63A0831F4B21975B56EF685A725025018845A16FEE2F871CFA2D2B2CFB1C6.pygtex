@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{def} \PYG{n+nf}{test\PYGZus{}dostava}\PYG{p}{():}
+	\PYG{n}{testovi} \PYG{o}{=} \PYG{p}{[} \PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{),} \PYG{p}{(}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{8}\PYG{p}{),} \PYG{p}{(}\PYG{l+m+mi}{7}\PYG{p}{,} \PYG{l+m+mi}{12}\PYG{p}{),}
+	    \PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{),} \PYG{p}{(}\PYG{l+m+mf}{2.01}\PYG{p}{,} \PYG{l+m+mi}{8}\PYG{p}{),} \PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+m+mi}{8}\PYG{p}{),} \PYG{p}{(}\PYG{l+m+mf}{5.01}\PYG{p}{,} \PYG{l+m+mi}{12}\PYG{p}{),}
+	    \PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{12}\PYG{p}{)} \PYG{p}{]}
+	
+	\PYG{k}{for} \PYG{n}{m}\PYG{p}{,} \PYG{n}{ocekivano} \PYG{o+ow}{in} \PYG{n}{testovi}\PYG{p}{:}
+	    \PYG{n}{rezultat} \PYG{o}{=} \PYG{n}{cijena\PYGZus{}dostave}\PYG{p}{(}\PYG{n}{m}\PYG{p}{)}
+	
+	\PYG{k}{assert} \PYG{n}{rezultat} \PYG{o}{==} \PYG{n}{ocekivano}\PYG{p}{,} \PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}Masa, }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{m}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{, \PYGZdq{}}\PYG{p}{,}
+	    \PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}ocekivano:}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{ocekivano}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{,f\PYGZdq{}}\PYG{n}{dobijeno}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{n}{rezultat}\PYG{p}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{})}
+\end{Verbatim}

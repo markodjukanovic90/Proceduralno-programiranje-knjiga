@@ -83,13 +83,13 @@
 \contentsline {subsection}{\numberline {2.18.3}Testiranje očekivanih izuzetaka}{126}{}%
 \contentsline {subsection}{\numberline {2.18.4}Jedinično testiranje pomoću modula \texttt {unittest}}{127}{}%
 \contentsline {subsection}{\numberline {2.18.5}Testiranje rezultata realne aritmetike}{131}{}%
-\contentsline {subsection}{\numberline {2.18.6}Regresijsko testiranje i otklanjanje grešaka}{134}{}%
+\contentsline {subsection}{\numberline {2.18.6}Regresijsko testiranje i otklanjanje grešaka}{133}{}%
 \contentsline {subsection}{\numberline {2.18.7}Testiranje i ispravnost algoritama}{135}{}%
-\contentsline {section}{\numberline {2.19}Postavljanje korisnički kreiranih modula na PyPI repozitorij}{137}{}%
-\contentsline {section}{\numberline {2.20}Kompajliranje i izvršavanje programa}{139}{}%
+\contentsline {section}{\numberline {2.19}Postavljanje korisnički kreiranih modula na PyPI repozitorij}{136}{}%
+\contentsline {section}{\numberline {2.20}Kompajliranje i izvršavanje programa}{138}{}%
 \contentsline {subsection}{\numberline {2.20.1}Stek i hip memorija}{139}{}%
 \contentsline {subsection}{\numberline {2.20.2}Automatsko oslobađanje memorije}{140}{}%
-\contentsline {subsection}{\numberline {2.20.3}Proces prevođenja i izvršavanja programa}{141}{}%
+\contentsline {subsection}{\numberline {2.20.3}Proces prevođenja i izvršavanja programa}{140}{}%
 \contentsline {subsection}{\numberline {2.20.4}Pajtonova virtuelna mašina}{142}{}%
 \contentsline {chapter}{\numberline {3}Programske i algoritamske paradigme}{147}{}%
 \contentsline {section}{\numberline {3.1}Programske paradigme}{149}{}%

@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{def} \PYG{n+nf}{provjeri\PYGZus{}jednakost}\PYG{p}{(}\PYG{n}{rezultat}\PYG{p}{,} \PYG{n}{ocekivano}\PYG{p}{):}
+	    \PYG{k}{if} \PYG{n}{rezultat} \PYG{o}{!=} \PYG{n}{ocekivano}\PYG{p}{:}
+	        \PYG{k}{raise} \PYG{n+ne}{AssertionError}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}Ocekivano: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{ocekivano}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{,}
+	        \PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}dobijeno: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{rezultat}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}
+	\PYG{p}{)}
+\end{Verbatim}

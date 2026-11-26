@@ -1,0 +1,47 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k+kn}{import} \PYG{n+nn}{unittest}
+	\PYG{k+kn}{from} \PYG{n+nn}{dostava} \PYG{k+kn}{import} \PYG{n}{cijena\PYGZus{}dostave}
+	
+	
+	\PYG{k}{def} \PYG{n+nf}{test\PYGZus{}uobicajeni}\PYG{p}{():}
+	    \PYG{k}{assert} \PYG{n}{cijena\PYGZus{}dostave}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{5}
+	    \PYG{k}{assert} \PYG{n}{cijena\PYGZus{}dostave}\PYG{p}{(}\PYG{l+m+mi}{4}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{8}
+	    \PYG{k}{assert} \PYG{n}{cijena\PYGZus{}dostave}\PYG{p}{(}\PYG{l+m+mi}{7}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{12}
+	
+	
+	\PYG{k}{def} \PYG{n+nf}{test\PYGZus{}granice}\PYG{p}{():}
+	    \PYG{k}{assert} \PYG{n}{cijena\PYGZus{}dostave}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{5}
+	    \PYG{k}{assert} \PYG{n}{cijena\PYGZus{}dostave}\PYG{p}{(}\PYG{l+m+mf}{2.01}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{8}
+	    \PYG{k}{assert} \PYG{n}{cijena\PYGZus{}dostave}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{8}
+	    \PYG{k}{assert} \PYG{n}{cijena\PYGZus{}dostave}\PYG{p}{(}\PYG{l+m+mf}{5.01}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{12}
+	    \PYG{k}{assert} \PYG{n}{cijena\PYGZus{}dostave}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{12}
+	
+	
+	\PYG{k}{def} \PYG{n+nf}{test\PYGZus{}nedopustivi}\PYG{p}{():}
+	    \PYG{k}{for} \PYG{n}{m} \PYG{o+ow}{in} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mf}{10.01}\PYG{p}{]:}
+	        \PYG{k}{try}\PYG{p}{:}
+	            \PYG{n}{cijena\PYGZus{}dostave}\PYG{p}{(}\PYG{n}{m}\PYG{p}{)}
+	        \PYG{k}{except} \PYG{n+ne}{ValueError}\PYG{p}{:}
+	            \PYG{k}{continue}
+	            \PYG{k}{raise} \PYG{n+ne}{AssertionError}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}Ocekivan ValueError za masu }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{m}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{.\PYGZdq{}}\PYG{p}{)}
+	
+	
+	\PYG{k}{def} \PYG{n+nf}{pokreni\PYGZus{}testove}\PYG{p}{():}
+	    \PYG{n}{testovi} \PYG{o}{=} \PYG{p}{[}
+	        \PYG{n}{test\PYGZus{}uobicajeni}\PYG{p}{,}
+	        \PYG{n}{test\PYGZus{}granice}\PYG{p}{,}
+	        \PYG{n}{test\PYGZus{}nedopustivi}
+	    \PYG{p}{]}
+	
+	\PYG{n}{skup\PYGZus{}testova} \PYG{o}{=} \PYG{n}{unittest}\PYG{o}{.}\PYG{n}{TestSuite}\PYG{p}{(}
+	\PYG{n}{unittest}\PYG{o}{.}\PYG{n}{FunctionTestCase}\PYG{p}{(}\PYG{n}{f}\PYG{p}{)}
+	    \PYG{k}{for} \PYG{n}{f} \PYG{o+ow}{in} \PYG{n}{testovi}\PYG{p}{)}
+	
+	\PYG{n}{unittest}\PYG{o}{.}\PYG{n}{TextTestRunner}\PYG{p}{(}
+	\PYG{n}{verbosity}\PYG{o}{=}\PYG{l+m+mi}{2}
+	\PYG{p}{)}\PYG{o}{.}\PYG{n}{run}\PYG{p}{(}\PYG{n}{skup\PYGZus{}testova}\PYG{p}{)}
+	
+	
+	\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}\PYGZdq{}}\PYG{p}{:}
+	    \PYG{n}{pokreni\PYGZus{}testove}\PYG{p}{()}
+\end{Verbatim}

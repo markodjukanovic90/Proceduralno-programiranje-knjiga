@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  26 NOV 2026 15:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.31)  26 NOV 2026 15:36
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2342,32 +2342,34 @@ Overfull \hbox (6.35446pt too wide) in paragraph at lines 3068--3072
 6.pygtex)
 \openout3 = `main.pyg'.
 
+runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -P s
+tripnl=False -o _minted-main/F4D63A0831F4B21975B56EF685A725025018845A16FEE2F871
+CFA2D2B2CFB1C6.pygtex main.pyg)...executed.
 
-(./_minted-main/516E1EF2E8241D4CF9A515D3DD5DF6275018845A16FEE2F871CFA2D2B2CFB1C
+
+(./_minted-main/F4D63A0831F4B21975B56EF685A725025018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex [125])
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/9FBE432A427DF7CCC9E31852C83121D35018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [126])
-Overfull \hbox (19.95677pt too wide) in paragraph at lines 3146--3151
+(./_minted-main/17F8293037456A4D6EBAAD43089C03305018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex)
+Overfull \hbox (19.95677pt too wide) in paragraph at lines 3133--3138
 \OT1/cmr/m/n/10.95 slje-de^^Scim test-nim slu^^Tcajem. U su-prot-nom, ge-ne-ri^
 ^Tse se iz-u-ze-tak \OT1/cmtt/m/n/10.95 AssertionError\OT1/cmr/m/n/10.95 ,
  []
 
+[126]
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/2EB9E386A3848862847C5F797B0356D75018845A16FEE2F871CFA2D2B2CFB1C
+(./_minted-main/A968DE5EA90CEEBDA723FAEF1CD7DB205018845A16FEE2F871CFA2D2B2CFB1C
 6.pygtex) [127]
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/A74E8B1158E512A483163B8CE9B541E85018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [128]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [129])
+(./_minted-main/A8B2E791F2CC886A22184404842D17CE5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [128]) [129]
 \openout3 = `main.pyg'.
 
 
@@ -2378,19 +2380,20 @@ A.pygtex)
 
 (./_minted-main/AD2D5C4404A777D772D08347B9B8C095E48FAF1886BFF81AE3111843E944B2C
 0.pygtex)
-Overfull \hbox (7.87418pt too wide) in paragraph at lines 3320--3323
+Overfull \hbox (7.87418pt too wide) in paragraph at lines 3303--3306
 []\OT1/cmr/m/n/10.95 Ukoliko pro-mi-je-ni-mo uslov \OT1/cmtt/m/n/10.95 m <= 2 \
 OT1/cmr/m/n/10.95 u \OT1/cmtt/m/n/10.95 m < 2\OT1/cmr/m/n/10.95 , test-na funk-
 ci-ja \OT1/cmtt/m/n/10.95 test[]granice
  []
 
-[130]
-Overfull \hbox (10.5493pt too wide) in paragraph at lines 3334--3338
+
+Overfull \hbox (10.5493pt too wide) in paragraph at lines 3317--3321
 []\OT1/cmtt/m/n/10.95 FAIL \OT1/cmr/m/n/10.95 -- pri-li-kom iz-vr^^Tsavanja te-
 sta ge-ne-ri-san je iz-u-ze-tak \OT1/cmtt/m/n/10.95 AssertionError\OT1/cmr/m/n/
 10.95 ,
  []
 
+[130]
 \openout3 = `main.pyg'.
 
 
@@ -2409,36 +2412,29 @@ sta ge-ne-ri-san je iz-u-ze-tak \OT1/cmtt/m/n/10.95 AssertionError\OT1/cmr/m/n/
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/84DF43ACB2B759D10497AE0A4530654D5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [132]) [133] [134]
+(./_minted-main/90B7B55AA231133CC8E339C8C12711C15018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex [132]) [133]
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/8BFF97381B2FD9E88C6C31F77DBC9AEF5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
-Overfull \hbox (23.35301pt too wide) in paragraph at lines 3587--3592
+(./_minted-main/0DBC0FB8619351334FFD850B0C9205AF5018845A16FEE2F871CFA2D2B2CFB1C
+6.pygtex) [134]
+Overfull \hbox (23.35301pt too wide) in paragraph at lines 3556--3561
 []\OT1/cmr/m/n/10.95 U na-red-nim gla-va-ma raz-ma-tra^^Scemo raz-li^^Tcite al-
 go-ri-tam-ske pri-stu-pe rje^^Tsavanju
  []
 
 [135]
-Overfull \hbox (0.8184pt too wide) in paragraph at lines 3646--3650
+Overfull \hbox (0.8184pt too wide) in paragraph at lines 3615--3619
 \OT1/cmr/m/n/10.95 ju dva me[]dusobno kom-ple-men-tar-na pri-stu-pa ra-zvo-ju p
 o-u-zda-nih ra^^Tcunarskih
  []
 
-[136]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/00266285BE95E89745DC0BA80357598D121F09CDCDC517FFB7D8907D97A980A
-A.pygtex
-Overfull \hbox (97.81721pt too wide) has occurred while \output is active
-   \OT1/cmr/m/sl/10.95 2.19.  POSTAVLJANJE KORISNI[]CKI KREIRANIH MODULA NA PYP
-I REPOZITORIJ \OT1/cmr/m/n/10.95 137
- []
-
-[137])
+A.pygtex [136])
 \openout3 = `main.pyg'.
 
 
@@ -2453,7 +2449,13 @@ A.pygtex)
 
 
 (./_minted-main/75BF74C94450870D28021846F90828F282CA0C42AFE0759A4F1491A6B69BC02
-A.pygtex)
+A.pygtex
+Overfull \hbox (97.81721pt too wide) has occurred while \output is active
+   \OT1/cmr/m/sl/10.95 2.19.  POSTAVLJANJE KORISNI[]CKI KREIRANIH MODULA NA PYP
+I REPOZITORIJ \OT1/cmr/m/n/10.95 137
+ []
+
+[137])
 \openout3 = `main.pyg'.
 
 
@@ -2463,13 +2465,13 @@ A.pygtex)
 
 
 (./_minted-main/D952FB92E458847653793A355F9E77F882CA0C42AFE0759A4F1491A6B69BC02
-A.pygtex [138])
+A.pygtex)
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/66740F566905DC31305E34D42E04EF205018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 3748--3749
+6.pygtex) [138]
+Underfull \hbox (badness 10000) in paragraph at lines 3717--3718
 
  []
 
@@ -2477,32 +2479,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 3748--3749
 
 
 (./_minted-main/3E10952FDEC9ED74960683DAE80EA10B5018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex [139])
+6.pygtex)
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/072C6050F334F789519ABD32076034235018845A16FEE2F871CFA2D2B2CFB1C
-6.pygtex) [140] [141]
-<slike/python-code-copiler-machine-code.png, id=519, 963.6pt x 542.025pt>
+6.pygtex) [139] [140]
+<slike/python-code-copiler-machine-code.png, id=516, 963.6pt x 542.025pt>
 File: slike/python-code-copiler-machine-code.png Graphic file (type png)
 <use slike/python-code-copiler-machine-code.png>
 Package pdftex.def Info: slike/python-code-copiler-machine-code.png  used on in
-put line 3816.
+put line 3785.
 (pdftex.def)             Requested size: 349.99814pt x 169.99442pt.
 
-Overfull \hbox (66.8625pt too wide) in paragraph at lines 3821--3821
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [141]
+Overfull \hbox (66.8625pt too wide) in paragraph at lines 3790--3790
 [][]\OT1/cmr/m/n/9 Slika pre-u-ze-ta sa: \OT1/cmtt/m/n/9 https://www.astateofda
 ta.com/python-programming/can-python-be-compiled/| 
  []
 
-[142 <./slike/python-code-copiler-machine-code.png>] [143] [144]
-Overfull \hbox (12.10457pt too wide) detected at line 3882
+[142 <./slike/python-code-copiler-machine-code.png>] [143]
+Overfull \hbox (12.10457pt too wide) detected at line 3851
 \OML/cmm/m/it/10.95 < Ime[]prezime >; < datum[]upisa[]na[]fakultet >; < godine[
 ]starosti >
  []
 
-
-Overfull \hbox (0.42302pt too wide) in paragraph at lines 3898--3900
+[144]
+Overfull \hbox (0.42302pt too wide) in paragraph at lines 3867--3869
 \OT1/cmr/m/n/10.95 zan ka-rak-ter pred-sta-vlja in-va-ri-jant-na vri-jed-nost ^
 ^Tsto se po-sti^^Tze konstru-
  []
@@ -3235,6 +3240,9 @@ Underfull \hbox (badness 4353) in paragraph at lines 247--251
 k-tu-re po-da-ta-ka i al-go-rit-mi\OT1/cmr/m/n/10.95 ,
  []
 
+runsystem(rm _minted-main/01132BD494A036C0B0CC2269451E0DF95018845A16FEE2F871CFA
+2D2B2CFB1C6.pygtex)...executed.
+
 
 FiXme Summary: Number of notes: 0,
 (FiXme)        Number of warnings: 0,
@@ -3252,10 +3260,10 @@ runsystem(rm main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 23143 strings out of 479648
- 570186 string characters out of 5886115
+ 23146 strings out of 479648
+ 570430 string characters out of 5886115
  827377 words of memory out of 5000000
- 39825 multiletter control sequences out of 15000+600000
+ 39827 multiletter control sequences out of 15000+600000
  486756 words of font info for 97 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  84i,14n,131p,1155b,814s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3285,7 +3293,7 @@ s/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b>
-Output written on main.pdf (261 pages, 15290305 bytes).
+Output written on main.pdf (261 pages, 15290378 bytes).
 PDF statistics:
  1025 PDF objects out of 1200 (max. 8388607)
  664 compressed objects within 7 object streams
