@@ -128,7 +128,7 @@ Tri osnovne kontrolne strukture su:
 \item \textit{iteracija} (eng. \textit{iteration}) -- ponavljanje naredbi dok je ispunjen određeni uslov ili za elemente zadate kolekcije.
 \end{itemize}
 
-Teorijsku osnovu ovog pristupa predstavlja rezultat B\"ohma i Jacopinija iz 1966. godine: tok računanja opisan dijagramom toka može se predstaviti strukturiranim konstrukcijama sekvence, selekcije i iteracije, uz eventualno uvođenje pomoćnih promjenljivih. Ovaj rezultat ne znači da je svaka takva transformacija podjednako čitljiva ili efikasna; njegov značaj je u pokazivanju izražajne moći osnovnih kontrolnih konstrukcija.
+Osnovu ovog pristupa predstavlja dijagram toka koji se može se predstaviti strukturiranim konstrukcijama sekvence, selekcije i iteracije, uz eventualno uvođenje pomoćnih promjenljivih. Ovaj rezultat ne znači da je svaka takva transformacija podjednako čitljiva ili efikasna; njegov značaj je u pokazivanju izražajne moći osnovnih kontrolnih konstrukcija.
 
 Posmatrajmo algoritam koji određuje broj pozitivnih elemenata liste i njihovu sumu.
 \begin{minted}{python}
@@ -162,7 +162,7 @@ print(gcd(24, 18))  # 6
 
 U ovom primjeru argumenti su cijeli brojevi, a rezultat je njihov nenegativni najveći zajednički djelilac (uz konvenciju da je \texttt{gcd(0, 0)} jednak nuli). Lokalne promjenljive \texttt{a} i \texttt{b} omogućavaju da se međurezultati računanja odvoje od ostatka programa. Ista funkcija može se koristiti za različite ulazne podatke, bez ponavljanja implementacije algoritma.
 
-\textbf{Ulaz, izlaz i ugovor funkcije.} Prilikom definisanja funkcije korisno je precizirati preduslove koje argumenti moraju zadovoljiti i postuslove koji opisuju rezultat. Preduslovi i postuslovi zajedno čine dio ugovora funkcije (eng. \textit{contract}). Na primjer, funkcija za određivanje maksimuma neprazne liste kao preduslov zahtijeva da lista sadrži barem jedan element, a kao postuslov da rezultat pripada listi i da nije manji od bilo kojeg njenog elementa.
+\textit{Ulaz, izlaz i ugovor funkcije.} Prilikom definisanja funkcije korisno je precizirati preduslove koje argumenti moraju zadovoljiti i postuslove koji opisuju rezultat. Preduslovi i postuslovi zajedno čine dio ugovora funkcije (eng. \textit{contract}). Na primjer, funkcija za određivanje maksimuma neprazne liste kao preduslov zahtijeva da lista sadrži barem jedan element, a kao postuslov da rezultat pripada listi i da nije manji od bilo kojeg njenog elementa.
 
 \textbf{Sporedni efekti.} Matematička funkcija $f:X\to Y$ svakom elementu domena pridružuje tačno jedan element kodomena. Programska funkcija, međutim, može pored vraćanja rezultata mijenjati objekte izvan svog lokalnog prostora imena, ispisivati poruke ili upisivati podatke u datoteku. Takve promjene nazivamo sporednim efektima (eng. \textit{side effects}). Posmatrajmo dvije funkcije:
 

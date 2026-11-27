@@ -63,7 +63,7 @@
 \contentsline {subsection}{\numberline {2.11.1}Blok \texttt {try-except}}{100}{}%
 \contentsline {subsection}{\numberline {2.11.2}Naredba \texttt {assert}}{101}{}%
 \contentsline {subsection}{\numberline {2.11.3}Hijerarhija izuzetaka}{102}{}%
-\contentsline {section}{\numberline {2.12}Rad sa datotekama}{102}{}%
+\contentsline {section}{\numberline {2.12}Rad sa datotekama}{103}{}%
 \contentsline {subsection}{\numberline {2.12.1}Modul \texttt {json}}{104}{}%
 \contentsline {section}{\numberline {2.13}Regularni izrazi}{105}{}%
 \contentsline {subsection}{\numberline {2.13.1}Osnovni koncepti regularnih izraza}{105}{}%
@@ -79,7 +79,7 @@
 \contentsline {section}{\numberline {2.17}Pisanje korisničkih modula}{119}{}%
 \contentsline {section}{\numberline {2.18}Testiranje programa i modul \texttt {unittest}}{121}{}%
 \contentsline {subsection}{\numberline {2.18.1}Vrste grešaka i izbor testnih slučajeva}{121}{}%
-\contentsline {subsection}{\numberline {2.18.2}Testiranje funkcija pomoću naredbe \texttt {assert}}{124}{}%
+\contentsline {subsection}{\numberline {2.18.2}Testiranje funkcija pomoću naredbe \texttt {assert}}{123}{}%
 \contentsline {subsection}{\numberline {2.18.3}Testiranje očekivanih izuzetaka}{125}{}%
 \contentsline {subsection}{\numberline {2.18.4}Jedinično testiranje pomoću modula \texttt {unittest}}{126}{}%
 \contentsline {subsection}{\numberline {2.18.5}Testiranje rezultata realne aritmetike}{130}{}%

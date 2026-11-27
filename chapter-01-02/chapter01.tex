@@ -304,6 +304,8 @@ Pored osnovnih operatora, Pajton pruža i veliki broj ugrađenih funkcija za rad
 
 \begin{example}
 	\begin{minted}{python}
+		
+		
 print(abs(-7))          # 7
 print(round(3.14159,2)) # 3.14
 print(min(2, 5, -1))    # -1
@@ -2143,7 +2145,7 @@ Pregled najvažnijih klasa izuzetaka prikazan je na Slici~\ref{fig:exceptions}.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=260pt,height=200pt]{slike/class-exceptions.png}
+	\includegraphics[width=280pt,height=210pt]{slike/class-exceptions.png}
 	\caption{Hijerarhija najvažnijih klasa izuzetaka u Pajtonu.}
 	\label{fig:exceptions}
 \end{figure}
@@ -2398,12 +2400,9 @@ Njegove komponente imaju sljedeće značenje:
 
 Dakle, izraz \texttt{\textbackslash b\textbackslash w+} odgovara prvoj riječi u tekstu, odnosno prvom nizu uzastopnih alfanumeričkih znakova koji počinje na granici riječi.
 
-Napomenimo da se u primjeru koristi zapis
-
-\begin{minted}{python}
+Napomenimo da se u primjeru koristi zapis \begin{minted}{python}
 r'...'
 \end{minted}
-
 koji predstavlja tzv. ravni string (eng. \textit{raw string}). Kod ovakvog zapisa znak \texttt{\textbackslash} se ne tretira kao početak specijalne sekvence, što pojednostavljuje pisanje regularnih izraza i smanjuje mogućnost greške.
 
 \section{Moduli \texttt{sys} i \texttt{getopt}}
@@ -2623,10 +2622,7 @@ matrica = np.array(
 # Trodimenzionalni niz
 
 matrica3D = np.array(
-[
-[[2, 5], [1, 7]],
-[[2, 3], [5, 5]]
-],
+[[[2, 5], [1, 7]], [[2, 3], [5, 5]]],
 dtype=np.int32
 )
 \end{minted}
