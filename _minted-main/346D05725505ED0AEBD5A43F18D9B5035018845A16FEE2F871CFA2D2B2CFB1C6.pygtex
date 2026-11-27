@@ -5,6 +5,7 @@
 
 
 \PYG{k}{def} \PYG{n+nf}{binom\PYGZus{}memoization}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{,} \PYG{n}{Binom}\PYG{p}{):}
+
     \PYG{k}{if} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{o+ow}{or} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{j}\PYG{p}{:}
         \PYG{k}{return} \PYG{l+m+mi}{0}
     \PYG{k}{if} \PYG{n}{Binom}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{!=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{:}

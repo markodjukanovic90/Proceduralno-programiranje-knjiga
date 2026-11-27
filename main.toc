@@ -105,17 +105,17 @@
 \contentsline {section}{\numberline {3.3}Vrste rekurzije}{162}{}%
 \contentsline {subsection}{\numberline {3.3.1}Rekurzivni i iterativni pristup: poređenje}{163}{}%
 \contentsline {subsection}{\numberline {3.3.2}Primjene rekurzije}{164}{}%
-\contentsline {paragraph}{Ispravnost algoritma.}{172}{}%
+\contentsline {paragraph}{Ispravnost algoritma.}{171}{}%
 \contentsline {paragraph}{Vremenska složenost.}{172}{}%
 \contentsline {paragraph}{Prostorna složenost.}{173}{}%
-\contentsline {section}{\numberline {3.4}Algoritmi grube sile}{174}{}%
+\contentsline {section}{\numberline {3.4}Algoritmi grube sile}{173}{}%
 \contentsline {section}{\numberline {3.5}Algoritmi pretraživanja}{177}{}%
-\contentsline {subsection}{\numberline {3.5.1}Linearna pretraga}{178}{}%
+\contentsline {subsection}{\numberline {3.5.1}Linearna pretraga}{177}{}%
 \contentsline {subsection}{\numberline {3.5.2}Binarna pretraga}{179}{}%
 \contentsline {subsection}{\numberline {3.5.3}Pretraga preskakanjem}{181}{}%
-\contentsline {subsection}{\numberline {3.5.4}Interpolacijska pretraga}{183}{}%
-\contentsline {subsection}{\numberline {3.5.5}Eksponencijalna pretraga}{185}{}%
-\contentsline {section}{\numberline {3.6}Podijeli pa zavladaj}{186}{}%
+\contentsline {subsection}{\numberline {3.5.4}Interpolacijska pretraga}{182}{}%
+\contentsline {subsection}{\numberline {3.5.5}Eksponencijalna pretraga}{184}{}%
+\contentsline {section}{\numberline {3.6}Paradigma Podijeli pa zavladaj}{186}{}%
 \contentsline {section}{\numberline {3.7}Algoritamska paradigma vraćanja unazad}{190}{}%
 \contentsline {section}{\numberline {3.8}Pohlepni algoritmi}{196}{}%
 \contentsline {section}{\numberline {3.9}Dinamičko programiranje}{208}{}%

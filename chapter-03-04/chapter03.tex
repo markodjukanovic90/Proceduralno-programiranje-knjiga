@@ -164,7 +164,7 @@ U ovom primjeru argumenti su cijeli brojevi, a rezultat je njihov nenegativni na
 
 \textit{Ulaz, izlaz i ugovor funkcije.} Prilikom definisanja funkcije korisno je precizirati preduslove koje argumenti moraju zadovoljiti i postuslove koji opisuju rezultat. Preduslovi i postuslovi zajedno čine dio ugovora funkcije (eng. \textit{contract}). Na primjer, funkcija za određivanje maksimuma neprazne liste kao preduslov zahtijeva da lista sadrži barem jedan element, a kao postuslov da rezultat pripada listi i da nije manji od bilo kojeg njenog elementa.
 
-\textbf{Sporedni efekti.} Matematička funkcija $f:X\to Y$ svakom elementu domena pridružuje tačno jedan element kodomena. Programska funkcija, međutim, može pored vraćanja rezultata mijenjati objekte izvan svog lokalnog prostora imena, ispisivati poruke ili upisivati podatke u datoteku. Takve promjene nazivamo sporednim efektima (eng. \textit{side effects}). Posmatrajmo dvije funkcije:
+\textit{Sporedni efekti.} Matematička funkcija $f:X\to Y$ svakom elementu domena pridružuje tačno jedan element kodomena. Programska funkcija, međutim, može pored vraćanja rezultata mijenjati objekte izvan svog lokalnog prostora imena, ispisivati poruke ili upisivati podatke u datoteku. Takve promjene nazivamo sporednim efektima (eng. \textit{side effects}). Posmatrajmo dvije funkcije:
 
 \begin{minted}{python}
 def extended(a, x):
@@ -301,10 +301,8 @@ Međutim, u ovom primjeru rekurzija nije neophodna jer se lako može izvesti zat
 \subsection{Rekurzivno računanje faktorijela}
 
 Jedan od najpoznatijih primjera primjene rekurzije jeste računanje faktorijela prirodnog broja. Faktorijel broja $n$ se može definisati rekurzivno sa $n! = n \cdot \underbrace{(n-1) \cdot (n-2)\cdots 2 \cdot 1},$ tj. 
-
-$$n! = n \cdot (n-1)!.$$
-
-Bazni slučaj je $0! = 1.$ Implementacija računanja faktorijela broja rekurzivnim načinom bi izgledala ovako:
+\[n! = n \cdot (n-1)!.\]
+Bazni slučaj je $0! = 1.$ Implementacija računanja faktorijela broja rekurzivnim načinom izgleda ovako:
 
 \begin{minted}{python}
 def fact(n):
@@ -327,7 +325,7 @@ Nakon dostizanja baznog slučaja, rezultati se vraćaju unazad kroz stek poziva.
 \end{figure}
 
 \textbf{Vremenska složenost.}
-Broj rekurzivnih poziva proporcionalan je vrijednosti parametra $n$, pa je složenost $ O(n).$
+Broj rekurzivnih poziva proporcionalan je vrijednosti parametra $n$, pa je složenost ove implementacije jednaka $ O(n).$
 
 \subsection{Prekoračenje steka}
 
@@ -425,11 +423,11 @@ Rekurzija se koristi u brojnim oblastima informatike i programiranja. %Neke od n
 
 \begin{enumerate}
 	
-	\item \textbf{Pretraga stabala i grafova}: Rekurzija se prirodno koristi za obilazak hijerarhijskih struktura podataka kao što su stabla i grafovi. Primjeri su algoritmi DFS (eng. \emph{Depth-First Search}) i različiti obilaci binarnih stabala.
+	\item \textit{Pretraga stabala i grafova}: Rekurzija se prirodno koristi za obilazak hijerarhijskih struktura podataka kao što su stabla i grafovi. Primjeri su algoritmi DFS (eng. \emph{Depth-First Search}) i različiti obilaci binarnih stabala.
 	
-	\item \textbf{Algoritmi sortiranja}: Mnogi poznati algoritmi sortiranja koriste rekurziju. Primjeri su Brzo sortiranje i Sort spajanjem, koji problem sortiranja razlažu na manje podprobleme i zatim kombinuju njihova rješenja.
+	\item \textit{Algoritmi sortiranja}: Mnogi poznati algoritmi sortiranja koriste rekurziju. Primjeri su Brzo sortiranje i Sort spajanjem, koji problem sortiranja razlažu na manje podprobleme i zatim kombinuju njihova rješenja.
 	
-	\item \textbf{Generisanje fraktala}:  Brojni fraktalni objekti mogu se generisati primjenom rekurzivnih pravila. Jedan od najpoznatijih primjera je Mandelbrotov skup.
+	\item \textit{Generisanje fraktala}:  Brojni fraktalni objekti mogu se generisati primjenom rekurzivnih pravila. Jedan od najpoznatijih primjera je Mandelbrotov skup.
 	
 	\begin{figure}[H]
 		\centering
@@ -437,9 +435,9 @@ Rekurzija se koristi u brojnim oblastima informatike i programiranja. %Neke od n
 		\caption{Mandelbrotov skup.}
 	\end{figure}
 	
-	\item \textbf{Algoritmi vraćanja unazad}:  Ovi algoritmi postepeno grade rješenje problema. Kada se ustanovi da trenutno parcijalno rješenje ne može dovesti do validnog konačnog rješenja, algoritam se vraća na prethodno stanje i pokušava drugu mogućnost.
+	\item \textit{Algoritmi vraćanja unazad}:  Ovi algoritmi postepeno grade rješenje problema. Kada se ustanovi da trenutno parcijalno rješenje ne može dovesti do validnog konačnog rješenja, algoritam se vraća na prethodno stanje i pokušava drugu mogućnost.
 	
-	\item \textbf{Dinamičko programiranje i memoizacija}:	Memoizacija predstavlja tehniku pohranjivanja prethodno izračunatih rezultata podproblema kako bi se izbjeglo njihovo ponovno računanje. Ova tehnika se često koristi zajedno sa rekurzijom i predstavlja osnovu mnogih algoritama dinamičkog programiranja.
+	\item \textit{Dinamičko programiranje i memoizacija}:	Memoizacija predstavlja tehniku pohranjivanja prethodno izračunatih rezultata podproblema kako bi se izbjeglo njihovo ponovno računanje. Ova tehnika se često koristi zajedno sa rekurzijom i predstavlja osnovu mnogih algoritama dinamičkog programiranja.
 \end{enumerate}
 
 U nastavku ćemo ilustrovati primjenu rekurzije na nekoliko konkretnih problema.
@@ -458,18 +456,15 @@ U nastavku ćemo ilustrovati primjenu rekurzije na nekoliko konkretnih problema.
 \end{solution}
 
 Odgovarajuća rekurzivna implementacija glasi:
-
 \begin{minted}{python}
 def fib(n):
     if n == 0:
         return 0
-
     if n == 1:
         return 1
 
     return fib(n - 1) + fib(n - 2)
 \end{minted}
-
 U svakom netrivijalnom koraku funkcija generiše dva nova rekurzivna poziva. Zbog toga se broj poziva vrlo brzo povećava sa rastom vrijednosti parametra $n$.
 
 \textbf{Vremenska složenost.}  Za funkciju vrijedi rekurentna relacija $T(n)=T(n-1)+T(n-2)+O(1).$
@@ -490,21 +485,15 @@ Ovaj primjer pokazuje da rekurzija sama po sebi ne garantuje efikasan algoritam.
 
 
 \begin{example}
-	\textbf{(\emph{Problem Hanojskih kula})}
-	
-	Data su tri štapa i $n$ diskova različitih dimenzija. Svi diskovi su inicijalno složeni na jednom štapu ($A$), pri čemu se manji diskovi nalaze iznad većih. Cilj je premjestiti kompletnu kulu diskova na drugi štap ($C$), koristeći treći štap ($B$) kao pomoćni.
+	(\textbf{\emph{Problem Hanojskih kula}}). Data su tri štapa i $n$ diskova različitih dimenzija. Svi diskovi su inicijalno složeni na jednom štapu ($A$), pri čemu se manji diskovi nalaze iznad većih. Cilj je premjestiti kompletnu kulu diskova na drugi štap ($C$), koristeći treći štap ($B$) kao pomoćni.
 	
 	Pri tome moraju biti zadovoljena sljedeća pravila:
 	
 	\begin{itemize}
 		\item U jednom potezu dozvoljeno je premjestiti samo jedan disk.
-		
 		\item Disk se uvijek uzima sa vrha jednog štapa i postavlja na vrh drugog štapa.
-		
 		\item Veći disk nikada ne smije biti postavljen na manji disk.
-		
 	\end{itemize}
-	
 	Odrediti minimalan broj poteza potreban za premještanje svih diskova sa štapa $A$ na štap $C$.
 \end{example}
 
@@ -578,7 +567,7 @@ Rekurzija se izvršava u eksponencijalnom $O(2^n)$ vremenu.
 
 \begin{example}
   
-     Sortiranje umetanjem (\emph{Insertion Sort}) predstavlja jednostavan algoritam
+     Sortiranje umetanjem (eng. \emph{Insertion Sort}) predstavlja jednostavan algoritam
      sortiranja koji niz gradi postepeno, održavajući   jedan njegov dio sortiranim. Ideja algoritma sastoji se u tome da se  svaki novi element umetne na odgovarajuću poziciju unutar već sortiranog dijela niza. Niz koji se sastoji od jednog elementa se smatra sortiranim. 
  \end{example}
  
@@ -823,9 +812,7 @@ Paradigma grube sile može se koristi za:
 
 Pošto se svaki predmet može ili nalaziti ili ne nalaziti u ruksaku, prostor rješenja odgovara skupu svih podskupova skupa $\{1,\ldots,n\}$. Broj mogućih rješenja jednak je $2^n.$
 
-Zbog toga je vremenska složenost algoritma grube sile eksponencijalna, $O(2^n).$\\
-
-Jedna moguća implementacija prikazana je u nastavku.
+Zbog toga je vremenska složenost algoritma grube sile eksponencijalna, $O(2^n).$  Jedna moguća implementacija prikazana je u nastavku.
 
 \begin{minted}[fontsize=\footnotesize]{python}
 best_fitness = 0
@@ -907,11 +894,10 @@ def search(arr, x):
         if arr[i] == x:
             return i
     return -1
-#main
+#poziv funkcije
 arr = [2, 3, 1, 11, 10, 20]
 x = 10
 res = search(arr, x)
-
 if res == -1:
     print("Element nije pronađen.")
 else:
@@ -932,8 +918,7 @@ def linear_search(arr, x, i):
     if arr[i] == x:
         return i    
     return linear_search(arr, x, i + 1)
-
-# poziv funkcije
+#poziv funkcije
 res = linear_search(arr, x, 0)
 \end{minted}
 
@@ -970,11 +955,11 @@ Rekurzivna implementacija binarne pretrage prikazana je u nastavku.
 
 \begin{minted}{python}
 def binary_search(arr, x, left, right):
+
     if left > right:
         return -1
-
+        
     mid = (left + right) // 2
-
     if arr[mid] == x:
         return mid
     elif arr[mid] < x:
@@ -982,7 +967,7 @@ def binary_search(arr, x, left, right):
     else:
         return binary_search(arr, x, left, mid - 1)
 
-# primjer poziv
+#poziv
 arr = [2, 8, 10, 12, 15]
 x = 10
 found = binary_search(arr, x, 0, len(arr)-1)
@@ -1005,12 +990,8 @@ sve dok ne pronađe interval koji sadrži traženi element $x$.
 
 Preciznije, traži se prvi indeks $k$ za koji vrijedi $\texttt{niz}[k \cdot m] \geq x.$ Nakon toga vrši se linearna pretraga unutar prethodnog bloka.
 
-Posmatrajmo niz
-
-$$
-[0,1,1,2,3,5,8,12,24,37,55,82,140,433,567,622]$$
-
-i pretpostavimo da je potrebno naći vrijednost $x=55$, koristeći korak $m=4.$ Algoritam izvršava sljedeće korake:
+Posmatrajmo niz $
+[0,1,1,2,3,5,8,12,24,37,55,82,140,433,567,622]$ i pretpostavimo da je potrebno naći vrijednost $x=55$, koristeći korak $m=4.$ Algoritam izvršava sljedeće korake:
 
 \begin{enumerate}
 	\item provjerava element na indeksu $0$;
@@ -1069,9 +1050,7 @@ pos=
 \frac{(n-1),(x-niz[0])}
 {niz[n-1]-niz[0]}
 \right\rfloor .
-$
-
-Drugim riječima, ukoliko je vrijednost $x$ bliža početku intervala, dobiće se manji indeks \textit{pos}; ako je bliža kraju intervala, dobiće se veći indeks.\\
+$ Drugim riječima, ukoliko je vrijednost $x$ bliža početku intervala, dobiće se manji indeks \textit{pos}; ako je bliža kraju intervala, dobiće se veći indeks.\\
 
 Algoritam se sastoji od sljedećih koraka:
 
@@ -1163,7 +1142,7 @@ Prema tome, ukupna vremenska složenost eksponencijalne pretrage iznosi $O(\log 
 Eksponencijalna pretraga je posebno korisna kod veoma velikih sortiranih nizova, naročito kada veličina niza nije unaprijed poznata ili kada se očekuje da se traženi element nalazi blizu početka niza. U takvim situacijama često postiže bolje praktične performanse od klasične binarne pretrage, jer brže sužava prostor pretraživanja na relevantan interval.
 
 
-\section{Podijeli pa zavladaj}
+\section{Paradigma Podijeli pa zavladaj}
 
 Paradigma \textit{podijeli pa zavladaj} zasniva se na ideji da se složen problem podijeli na više manjih podproblema istog tipa, koji se zatim rješavaju nezavisno. Nakon što se dobiju rješenja podproblema, ona se kombinuju kako bi se dobilo rješenje početnog problema.
 
@@ -1243,7 +1222,7 @@ Spoljašnja \texttt{while}-petlja u rekurziji izvršava spajanje dva sortirana d
 
  \begin{figure}
  	\centering
- 	\includegraphics[width=200pt,height=150pt]{slike/mege.png} %merge-sort-example.png}
+ 	\includegraphics[width=250pt,height=180pt]{slike/mege.png} %merge-sort-example.png}
  	\label{fig:merge-sort}
  	\caption{Sortiranje niza spajanjem pomoću Podijeli-pa-zavladaj paradigme: korak po korak}
  \end{figure}
@@ -1896,11 +1875,9 @@ Prednosti memoizacije su:
 	\item računanje samo onih podproblema koji su zaista potrebni.
 \end{itemize}
 
-Nedostatak je dodatni trošak rekurzivnih poziva i memorije steka.
+Nedostatak ovog pristupa je dodatni trošak rekurzivnih poziva i memorije steka.
 
-\subsection*{Tabuliranje (pristup odozdo prema gore)}
-
-Drugi način implementacije dinamičkog programiranja naziva se \textit{tabuliranje} (eng. \emph{tabulation}) ili pristup \textit{odozdo prema gore} (eng. \emph{bottom-up approach}).
+\subsection*{Tabuliranje (pristup odozdo prema gore)}. Drugi način implementacije dinamičkog programiranja naziva se \textit{tabuliranje} (eng. \emph{tabulation}) ili pristup \textit{odozdo prema gore} (eng. \emph{bottom-up approach}).
 
 Kod ovog pristupa problem se ne rješava rekurzivno. Umjesto toga, prvo se izračunavaju rješenja najmanjih podproblema, a zatim se ona sistematski koriste za konstruisanje rješenja većih podproblema, sve do konačnog rješenja.  Rezultati se pohranjuju u tabelu (najčešće niz ili matricu), po čemu je ovaj pristup i dobio naziv.  Prednosti tabuliranja su:
 
@@ -2372,19 +2349,10 @@ print("Duzina LCS-a je:", LCS(s1, s2))
 	
 	\medskip
 	
-	Da bismo riješili problem dinamičkim programiranjem, definišimo podproblem određen parom indeksa
-	
-	$$
+	Da bismo riješili problem dinamičkim programiranjem, definišimo podproblem određen parom indeksa $
 	(i,j),
 	0 \leq i \leq n,
-	0 \leq j \leq sum.
-	$$
-	
-	Podproblem $(i,j)$ odgovara pitanju:
-	
-	\begin{quote}
-		Da li među prvih $i$ elemenata niza postoji podskup čiji je zbir jednak $j$?
-	\end{quote}
+	0 \leq j \leq sum.$ Za podproblem indeksiran parom  $(i,j)$ postavlja se  pitanje: Da li među prvih $i$ elemenata niza postoji podskup čiji je zbir jednak $j$? 
 	
 	Rješenja podproblema memorišemo u matrici $\textrm{DP}$, gdje je
 	
@@ -2627,7 +2595,7 @@ $(1\ 1\ 1\ 1\ 0), (1\ 0\ 1\ 1\ 1), (0\ 1\ 1\ 1\ 1), \ldots ,$ $(2\ 1\ 0\ 0\ 1), 
 	su stringovi $s_1$ i $s_2$ podnizovi stringa $s$.
 	\item  Data  je riječ i riječnik (skup riječi). Ispitati da li se riječ može podijeliti na segmente (podstringove) tako da oni pripadaju riječniku. \\
 	
-	\textit{Instanca}: $$dict = \{\texttt{this}, \texttt{th}, \texttt{is}, \texttt{famous}, \texttt{Word}, \texttt{break}, \texttt{b}, \texttt{r}, \texttt{e}, \texttt{a}, \texttt{k},	\texttt{br}, \texttt{bre}, \texttt{brea}, \texttt{ak}, \texttt{problem} \} $$ te   $$word = \texttt{Wordbreakproblem}.$$  
+	\textit{Instanca}: $$dict = \{\texttt{this}, \texttt{th}, \texttt{is}, \texttt{famous}, \texttt{Word}, \texttt{break}, \texttt{b}, \texttt{r}, \texttt{e}, \texttt{a}, \texttt{k},	\texttt{br}, \texttt{bre}, \texttt{brea}, \texttt{ak}, \texttt{problem} \} $$ te   $word = \texttt{Wordbreakproblem}.$  
 	\textit{Rješenje}: \texttt{Word break problem},  kao jedno od rješenja.
 	
 	\item Neka je dat pravougaonik dimenzija $N\times M$. Pretpostavimo da je na raspolaganju beskonačan broj pločica

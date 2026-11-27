@@ -2,7 +2,6 @@
 \PYG{k}{def} \PYG{n+nf}{fib}\PYG{p}{(}\PYG{n}{n}\PYG{p}{):}
     \PYG{k}{if} \PYG{n}{n} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
         \PYG{k}{return} \PYG{l+m+mi}{0}
-
     \PYG{k}{if} \PYG{n}{n} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{:}
         \PYG{k}{return} \PYG{l+m+mi}{1}
 

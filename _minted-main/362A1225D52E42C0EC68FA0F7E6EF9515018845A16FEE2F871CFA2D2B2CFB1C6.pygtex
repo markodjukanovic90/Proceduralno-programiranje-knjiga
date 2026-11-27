@@ -25,8 +25,7 @@
         \PYG{n}{F}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}
         \PYG{n}{n} \PYG{o}{//=} \PYG{n}{i}
     \PYG{k}{return} \PYG{n}{F}
-
-
+\PYG{c+c1}{\PYGZsh{}poziv}
 \PYG{n}{n} \PYG{o}{=} \PYG{l+m+mi}{120}
 \PYG{n}{F} \PYG{o}{=} \PYG{n}{factorization}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}
 \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Lista faktora je:\PYGZdq{}}\PYG{p}{,} \PYG{n}{F}\PYG{p}{)}
