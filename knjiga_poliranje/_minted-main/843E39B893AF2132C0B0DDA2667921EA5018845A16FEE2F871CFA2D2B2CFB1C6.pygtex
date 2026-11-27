@@ -1,4 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-	\PYG{n+ne}{RecursionError}\PYG{p}{:}
-	\PYG{n}{maximum} \PYG{n}{recursion} \PYG{n}{depth} \PYG{n}{exceeded}
-\end{Verbatim}

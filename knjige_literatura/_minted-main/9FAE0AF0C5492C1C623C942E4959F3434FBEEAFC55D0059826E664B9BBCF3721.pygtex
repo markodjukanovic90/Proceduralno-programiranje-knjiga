@@ -1,3 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-        \PYG{n}{python} \PYG{n}{setup}\PYG{o}{.}\PYG{n}{py} \PYG{n}{sdist} \PYG{n}{bdist\PYGZus{}wheel}
-\end{Verbatim}

@@ -1,6 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
- 	
- 	\PYG{c+c1}{\PYGZsh{} Ovo je komentar}
- 	
- 	\PYG{n}{x} \PYG{o}{=} \PYG{l+m+mi}{5}
-\end{Verbatim}

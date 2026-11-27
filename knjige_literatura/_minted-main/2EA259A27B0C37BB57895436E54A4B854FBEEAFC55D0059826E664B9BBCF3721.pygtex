@@ -1,3 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{k+kn}{from} \PYG{n+nn}{mojmodul} \PYG{k+kn}{import} \PYG{n}{mojafunkcija}
-\end{Verbatim}

@@ -1,3 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{x}{	python3 test.py \PYGZhy{}i ulaz.txt \PYGZhy{}o izlaz.txt}
-\end{Verbatim}

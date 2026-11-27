@@ -1,3 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-		\PYG{n}{kopija} \PYG{o}{=} \PYG{n}{arr}\PYG{o}{.}\PYG{n}{copy}\PYG{p}{()}
-\end{Verbatim}

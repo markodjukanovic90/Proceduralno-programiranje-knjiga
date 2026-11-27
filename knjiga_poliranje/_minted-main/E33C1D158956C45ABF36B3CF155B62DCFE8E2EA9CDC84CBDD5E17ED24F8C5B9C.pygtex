@@ -1,3 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{+w}{	}pip\PYG{+w}{ }install\PYG{+w}{ }build\PYG{+w}{ }twine
-\end{Verbatim}

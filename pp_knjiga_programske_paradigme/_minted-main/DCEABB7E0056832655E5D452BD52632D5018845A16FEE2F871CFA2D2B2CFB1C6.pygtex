@@ -1,3 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-	\PYG{n}{getopt}\PYG{o}{.}\PYG{n}{getopt}\PYG{p}{(}\PYG{n}{args}\PYG{p}{,} \PYG{n}{shortopts}\PYG{p}{,} \PYG{n}{longopts}\PYG{p}{)}
-\end{Verbatim}

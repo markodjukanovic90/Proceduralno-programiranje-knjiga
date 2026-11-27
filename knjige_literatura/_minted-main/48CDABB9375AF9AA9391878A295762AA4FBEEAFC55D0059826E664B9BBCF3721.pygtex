@@ -1,3 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-	\PYG{n}{reduce}\PYG{p}{(}\PYG{n}{func}\PYG{p}{,} \PYG{n}{iterable}\PYG{p}{[,} \PYG{n}{initial} \PYG{p}{])}
-\end{Verbatim}

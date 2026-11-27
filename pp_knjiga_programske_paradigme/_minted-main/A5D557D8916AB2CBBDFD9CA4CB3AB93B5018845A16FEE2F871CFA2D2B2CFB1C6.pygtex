@@ -1,3 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-	\PYG{n}{reduce}\PYG{p}{(}\PYG{n}{funkcija}\PYG{p}{,} \PYG{n}{iterable}\PYG{p}{[,} \PYG{n}{pocetna\PYGZus{}vrijednost}\PYG{p}{])}
-\end{Verbatim}

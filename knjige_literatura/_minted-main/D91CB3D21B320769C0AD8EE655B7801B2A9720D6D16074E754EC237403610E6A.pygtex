@@ -1,8 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{+w}{ }\PYG{n}{Inicijalizuj}\PYG{+w}{ }\PYG{n}{najveći}\PYG{+w}{ }\PYG{n}{broj}\PYG{+w}{ }\PYG{n}{na}\PYG{+w}{ }\PYG{n}{prvi}\PYG{+w}{ }\PYG{n}{element}\PYG{+w}{ }\PYG{n}{niza}\PYG{p}{.}
-\PYG{+w}{ }\PYG{n}{Proći}\PYG{+w}{ }\PYG{n}{elemente}\PYG{+w}{ }\PYG{n}{niza}\PYG{+w}{ }\PYG{n}{jedan}\PYG{+w}{ }\PYG{n}{po}\PYG{+w}{ }\PYG{n}{jedan}\PYG{o}{:}
-\PYG{+w}{    }\PYG{n}{Ako}\PYG{+w}{ }\PYG{n}{je}\PYG{+w}{ }\PYG{n}{trenutni}\PYG{+w}{ }\PYG{n}{element}\PYG{+w}{ }\PYG{n}{veći}\PYG{+w}{ }\PYG{n}{od}\PYG{+w}{ }\PYG{n}{trenutno}\PYG{+w}{ }\PYG{n}{najvećeg}\PYG{+w}{ }\PYG{n}{broja}\PYG{p}{,}
-\PYG{+w}{    }\PYG{n}{postavi}\PYG{+w}{ }\PYG{n}{trenutni}\PYG{+w}{ }\PYG{n}{element}\PYG{+w}{ }\PYG{n}{za}\PYG{+w}{ }\PYG{n}{novi}\PYG{+w}{ }\PYG{n}{najveći}\PYG{p}{.}
-\PYG{+w}{ }\PYG{n}{Kraj}\PYG{+w}{ }\PYG{n}{petlje}\PYG{p}{.}
-\PYG{+w}{ }\PYG{n}{Ispiši}\PYG{+w}{ }\PYG{n}{najveći}\PYG{+w}{ }\PYG{n}{broj}\PYG{p}{.}
-\end{Verbatim}

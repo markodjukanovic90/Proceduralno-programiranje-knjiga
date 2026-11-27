@@ -1,3 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-	\PYG{n}{twine} \PYG{n}{upload} \PYG{n}{dist}\PYG{o}{/*}
-\end{Verbatim}
